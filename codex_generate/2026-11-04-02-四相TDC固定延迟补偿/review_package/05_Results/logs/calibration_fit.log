@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\tdc_skew_20261104_02\scripts\experiment.py", line 361, in <module>
+    elif args.action=="calibrate": calibrate(args.case)
+                                   ~~~~~~~~~^^^^^^^^^^^
+  File "D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\tdc_skew_20261104_02\scripts\experiment.py", line 244, in calibrate
+    sha256={str(f.relative_to(ROOT)):sha(f) for f in
+                ~~~~~~~~~~~~~^^^^^^
+  File "F:\Program Files\Python313\Lib\pathlib\_local.py", line 385, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'results\\baseline\\gate_calibration\\raw.csv' is not in the subpath of 'D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-04-02-四相TDC固定延迟补偿验证'

@@ -1,0 +1,80 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source ../scripts/build.tcl
+# set task_root [file normalize [file join [file dirname [info script]] ..]]
+# set variant [lindex $argv 0]
+# if {$variant ni {baseline compensated}} { error "variant must be baseline or compensated" }
+# set out [file join $task_root results $variant]
+# file mkdir $out
+# set project_dir [file join $task_root build $variant]
+# if {[file exists [file join $out design.dcp]]} { error "Refusing to overwrite implementation evidence" }
+# if {[file exists [file join $project_dir tdc_${variant}.xpr]]} {
+#     open_project [file join $project_dir tdc_${variant}.xpr]
+# } else {
+# create_project tdc_${variant} $project_dir -part xc7k325tffg900-2
+# set_property target_language Verilog [current_project]
+# set_property simulator_language Mixed [current_project]
+# set_property target_simulator XSim [current_project]
+# if {$variant eq "baseline"} {
+#     set rtl_dir [file join $task_root baseline rtl]
+# } else {
+#     set rtl_dir [file normalize [file join $task_root .. .. fpga_tdc_v3_cal_rtl]]
+# }
+# add_files [glob [file join $rtl_dir *.v]]
+# set_property top tdc_meas_top [get_filesets sources_1]
+# foreach ip {clk_wiz_0 fifo_tdc_result ila_2 ila_3} {
+#     import_ip -files [file join $task_root inputs ip $ip ${ip}.xci]
+# }
+# add_files -fileset constrs_1 [file join $task_root inputs combine.xdc]
+# set_property USED_IN_SYNTHESIS false [get_files combine.xdc]
+# set_property PROCESSING_ORDER LATE [get_files combine.xdc]
+# if {$variant eq "compensated"} {
+#     set param_file [file join $task_root results calibration_params.tcl]
+#     if {![file exists $param_file]} { error "No measured calibration parameters" }
+#     source $param_file
+#     set_property generic $compensation_generics [get_filesets sources_1]
+# }
+# generate_target all [get_ips]
+# }
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1062.801 ; gain = 178.414
+# foreach ip [get_ips] {
+#     if {![llength [get_runs -quiet ${ip}_synth_1]]} { create_ip_run $ip }
+# }
+# launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+
+[Wed Nov  4 16:55:45 2026] Launched clk_wiz_0_synth_1, fifo_tdc_result_synth_1, ila_2_synth_1, ila_3_synth_1...
+Run output will be captured here:
+clk_wiz_0_synth_1: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline/tdc_baseline.runs/clk_wiz_0_synth_1/runme.log
+fifo_tdc_result_synth_1: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline/tdc_baseline.runs/fifo_tdc_result_synth_1/runme.log
+ila_2_synth_1: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline/tdc_baseline.runs/ila_2_synth_1/runme.log
+ila_3_synth_1: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline/tdc_baseline.runs/ila_3_synth_1/runme.log
+[Wed Nov  4 16:55:45 2026] Launched synth_1...
+Run output will be captured here: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-����TDC�̶��ӳٲ�����֤/build/baseline/tdc_baseline.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Wed Nov  4 16:55:45 2026] Waiting for synth_1 to finish...
+[Wed Nov  4 16:56:36 2026] synth_1 finished
+WARNING: [Vivado 12-13638] Failed runs(s) : 'clk_wiz_0_synth_1', 'ila_2_synth_1', 'ila_3_synth_1'
+ 'clk_wiz_0_synth_1' run failed with below errors.
+ 'ila_2_synth_1' run failed with below errors.
+ 'ila_3_synth_1' run failed with below errors.
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:51 . Memory (MB): peak = 1090.555 ; gain = 11.426
+# if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} { error "synthesis failed" }
+synthesis failed
+    while executing
+"error "synthesis failed" "
+    invoked from within
+"if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} { error "synthesis failed" }"
+    (file "../scripts/build.tcl" line 42)
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 16:56:36 2026...

@@ -1,0 +1,8 @@
+vivado=2022.2
+level=gate
+variant=baseline
+dataset=smoke
+testbench=T:/sim/tb_tdc.sv
+stimulus=T:/sim/stimuli/smoke.txt
+timing_checks=enabled
+annotation=Vivado post-implementation timing flow; inspect xelab/xsim logs

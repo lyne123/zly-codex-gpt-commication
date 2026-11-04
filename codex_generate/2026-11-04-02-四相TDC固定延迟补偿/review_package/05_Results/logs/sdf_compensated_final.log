@@ -1,0 +1,31 @@
+{
+  "variant": "compensated",
+  "critical_inventory": {
+    "LUT1": 7,
+    "CARRY4": 64,
+    "FDRE": 256
+  },
+  "missing_critical": [],
+  "changed_critical_sdf_records": [],
+  "total_sdf_cells": 8759,
+  "cell_record_inventory_equal": true,
+  "case_annotation_logs": [
+    {
+      "case": "gate_fifo_probe",
+      "annotation_success": true,
+      "annotation_warnings": []
+    },
+    {
+      "case": "gate_validation",
+      "annotation_success": true,
+      "annotation_warnings": []
+    }
+  ],
+  "note": "清单覆盖不是仿真器逐路径百分比报告；时序违例另行统计，不能据此宣称时序通过。",
+  "sha256": {
+    "design.dcp": "b3b6d726c938c917db3d68de6860ce66b08e00414cef49ff439cee37fbf515af",
+    "design.sdf": "558d83601b246e747257fa7f9444989ccc9113ab58b60f432a7d7e0c648078b6",
+    "annotated_design.sdf": "22ad8d3dccc9209c9384e847f1f6bef41b5625ee02c6ce10355eea9fb92b9b9e",
+    "annotated_design.v": "67ccfbc0596d17875181f303ac985946d15808be39303aa9ddcbff03f7a51bcd"
+  }
+}

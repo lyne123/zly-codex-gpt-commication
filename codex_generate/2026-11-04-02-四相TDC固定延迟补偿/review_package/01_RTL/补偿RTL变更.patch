@@ -1,0 +1,200 @@
+--- a/fpga_tdc_v3_cal_rtl/tdc_meas_top.v
++++ b/fpga_tdc_v3_cal_rtl/tdc_meas_top.v
+@@ -2,7 +2,17 @@
+     parameter integer COARSE_W = 10,         // 500 MHz: 2048 ns wrap period
+     parameter integer TAP_PS = 10,
+     parameter integer CARRY_NUM = 16,          // 16个CARRY4
+-    parameter integer TAPS      = CARRY_NUM*4  // 64 taps
++    parameter integer TAPS      = CARRY_NUM*4, // 64个采样tap
++    // 默认关闭；8个有符号ps参数由独立校准CSV生成的Tcl统一装载。
++    parameter integer ENABLE_SKEW_COMP = 0,
++    parameter signed [17:0] RISE_OFFSET_0_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_90_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_180_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_270_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_0_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_90_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_180_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_270_PS = 18'sd0
+ )(
+     // input  wire             clk_500m,
+     // input  wire             clk_500m_deg90,
+@@ -138,7 +148,16 @@
+     tdc_time_locate #(
+         .COARSE_W (COARSE_W),
+         .MAX_TAP  (TAPS),
+-        .TAP_PS   (TAP_PS)
++        .TAP_PS   (TAP_PS),
++        .ENABLE_SKEW_COMP(ENABLE_SKEW_COMP),
++        .RISE_OFFSET_0_PS(RISE_OFFSET_0_PS),
++        .RISE_OFFSET_90_PS(RISE_OFFSET_90_PS),
++        .RISE_OFFSET_180_PS(RISE_OFFSET_180_PS),
++        .RISE_OFFSET_270_PS(RISE_OFFSET_270_PS),
++        .FALL_OFFSET_0_PS(FALL_OFFSET_0_PS),
++        .FALL_OFFSET_90_PS(FALL_OFFSET_90_PS),
++        .FALL_OFFSET_180_PS(FALL_OFFSET_180_PS),
++        .FALL_OFFSET_270_PS(FALL_OFFSET_270_PS)
+     ) u_tdc_time_locate (
+         .clk_500m             (clk_500m),
+         .rst_n                (rst_n_500m),
+--- a/fpga_tdc_v3_cal_rtl/tdc_time_locate.v
++++ b/fpga_tdc_v3_cal_rtl/tdc_time_locate.v
+@@ -3,7 +3,17 @@
+ module tdc_time_locate #(
+     parameter integer COARSE_W = 8,
+     parameter integer MAX_TAP  = 64,
+-    parameter integer TAP_PS   = 10
++    parameter integer TAP_PS   = 10,
++    // 偏移为正向时间戳的测量偏差，单位ps；默认0仅为未校准占位。
++    parameter integer ENABLE_SKEW_COMP = 0,
++    parameter signed [17:0] RISE_OFFSET_0_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_90_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_180_PS = 18'sd0,
++    parameter signed [17:0] RISE_OFFSET_270_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_0_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_90_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_180_PS = 18'sd0,
++    parameter signed [17:0] FALL_OFFSET_270_PS = 18'sd0
+ )(
+     input  wire                    clk_500m,
+     input  wire                    rst_n,
+@@ -18,16 +28,34 @@
+     output reg [COARSE_W+10:0]     timestamp_ps
+ );
+     localparam integer TIME_W = COARSE_W + 11;
++    // 额外符号位覆盖18位偏移与中细时间之差，也兼容小粗计数器测试。
++    localparam integer ARITH_W = (TIME_W+2 > 20) ? TIME_W+2 : 20;
+     // One whole coarse-counter revolution, in ps (2000 ps per 500-MHz cycle).
+     localparam [TIME_W-1:0] MODULO = {11'd2000, {COARSE_W{1'b0}}};
+-    localparam signed [TIME_W+1:0] MODULO_EXT = {2'b00, MODULO};
++    localparam signed [ARITH_W-1:0] MODULO_EXT = {{(ARITH_W-TIME_W){1'b0}}, MODULO};
+ 
+ `ifndef SYNTHESIS
++    function offset_in_range;
++        input signed [17:0] value;
++        reg signed [ARITH_W-1:0] expanded;
++        begin
++            expanded = value;
++            // 留出一个中细周期的余量，确保单次加减MODULO即可归一化。
++            offset_in_range = (expanded >= -MODULO_EXT+2000) &&
++                              (expanded <= MODULO_EXT-2000);
++        end
++    endfunction
+     initial begin
+         if (COARSE_W < 1 || MAX_TAP < 1 || MAX_TAP > 255 ||
+             TAP_PS < 10 || (TAP_PS % 10) != 0 ||
+             MAX_TAP * TAP_PS > 2000)
+             $error("tdc_time_locate: invalid parameter");
++        if (ENABLE_SKEW_COMP != 0 &&
++            !(offset_in_range(RISE_OFFSET_0_PS) && offset_in_range(RISE_OFFSET_90_PS) &&
++              offset_in_range(RISE_OFFSET_180_PS) && offset_in_range(RISE_OFFSET_270_PS) &&
++              offset_in_range(FALL_OFFSET_0_PS) && offset_in_range(FALL_OFFSET_90_PS) &&
++              offset_in_range(FALL_OFFSET_180_PS) && offset_in_range(FALL_OFFSET_270_PS)))
++            $fatal(1,"补偿偏移超出当前粗计数回卷范围");
+     end
+ `endif
+ 
+@@ -80,6 +108,20 @@
+     reg                    s2_valid, s2_type;
+     reg [10:0]             s2_mid_time, s2_fine_time;
+     reg [COARSE_W-1:0]     s2_coarse;
++    reg signed [17:0]      s2_offset;
++    // sel_index不是物理TDL号：0/1/2/3对应90/180/270/下一周期0度。
++    function signed [17:0] selected_offset;
++        input [1:0] index;
++        input is_rise;
++        begin
++            case (index)
++                2'd0: selected_offset = is_rise ? RISE_OFFSET_90_PS : FALL_OFFSET_90_PS;
++                2'd1: selected_offset = is_rise ? RISE_OFFSET_180_PS : FALL_OFFSET_180_PS;
++                2'd2: selected_offset = is_rise ? RISE_OFFSET_270_PS : FALL_OFFSET_270_PS;
++                2'd3: selected_offset = is_rise ? RISE_OFFSET_0_PS : FALL_OFFSET_0_PS;
++            endcase
++        end
++    endfunction
+     always @(posedge clk_500m or negedge rst_n) begin
+         if (!rst_n) begin
+             s2_valid     <= 1'b0;
+@@ -87,6 +129,7 @@
+             s2_mid_time  <= 11'd0;
+             s2_fine_time <= 11'd0;
+             s2_coarse    <= {COARSE_W{1'b0}};
++            s2_offset    <= 18'sd0;
+         end else begin
+             s2_valid <= s1_valid;
+             if (s1_valid) begin
+@@ -99,6 +142,7 @@
+                 endcase
+                 s2_fine_time <= taps_to_ps(s1_tap);
+                 s2_coarse    <= coarse_counter;
++                s2_offset    <= selected_offset(s1_index, s1_type);
+             end
+         end
+     end
+@@ -110,22 +154,33 @@
+         (coarse_ext << 11) - ((coarse_ext << 5) + (coarse_ext << 4));
+     wire signed [11:0] mid_minus_fine =
+         $signed({1'b0, s2_mid_time}) - $signed({1'b0, s2_fine_time});
++    wire signed [18:0] relative_adjusted;
++    generate
++        if (ENABLE_SKEW_COMP != 0) begin : g_skew_comp
++            // 保持理想中测不变，只从正向时间戳减去已测偏移。
++            assign relative_adjusted = {{7{mid_minus_fine[11]}}, mid_minus_fine}
++                                     - {{1{s2_offset[17]}}, s2_offset};
++        end else begin : g_skew_bypass
++            // 显式旁路与参数数值无关，保持原始5级流水及其时间戳。
++            assign relative_adjusted = {{7{mid_minus_fine[11]}}, mid_minus_fine};
++        end
++    endgenerate
+ 
+     reg                 s3_valid, s3_type;
+     reg [TIME_W-1:0]    s3_coarse_time;
+-    reg signed [11:0]   s3_relative;
++    reg signed [18:0]   s3_relative;
+     always @(posedge clk_500m or negedge rst_n) begin
+         if (!rst_n) begin
+             s3_valid       <= 1'b0;
+             s3_type        <= 1'b0;
+             s3_coarse_time <= {TIME_W{1'b0}};
+-            s3_relative    <= 12'sd0;
++            s3_relative    <= 19'sd0;
+         end else begin
+             s3_valid <= s2_valid;
+             if (s2_valid) begin
+                 s3_type        <= s2_type ? 1'b1 : 1'b0;
+                 s3_coarse_time <= coarse_x2000;
+-                s3_relative    <= mid_minus_fine;
++                s3_relative    <= relative_adjusted;
+             end
+         end
+     end
+@@ -133,14 +188,14 @@
+     //==================================================
+     // Stage 4：合并粗时间与中细时间，寄存原始时间戳
+     //==================================================
+-    wire signed [TIME_W+1:0] relative_ext =
+-        {{(TIME_W-10){s3_relative[11]}}, s3_relative};
+-
+-    wire signed [TIME_W+1:0] sum_signed =
+-        $signed({2'b00, s3_coarse_time}) + relative_ext;
++    wire signed [ARITH_W-1:0] relative_ext =
++        {{(ARITH_W-19){s3_relative[18]}}, s3_relative};
++
++    wire signed [ARITH_W-1:0] sum_signed =
++        $signed({{(ARITH_W-TIME_W){1'b0}}, s3_coarse_time}) + relative_ext;
+ 
+     reg                       s4_valid, s4_type;
+-    reg signed [TIME_W+1:0]   s4_sum;
++    reg signed [ARITH_W-1:0]   s4_sum;
+ 
+     always @(posedge clk_500m or negedge rst_n) begin
+         if (!rst_n) begin
+@@ -160,7 +215,7 @@
+     //==================================================
+     // Stage 5：正常模回卷，输出最终时间戳
+     //==================================================
+-    wire signed [TIME_W+1:0] wrapped_time =
++    wire signed [ARITH_W-1:0] wrapped_time =
+         (s4_sum < 0)           ? (s4_sum + MODULO_EXT) :
+         (s4_sum >= MODULO_EXT) ? (s4_sum - MODULO_EXT) :
+                                 s4_sum;

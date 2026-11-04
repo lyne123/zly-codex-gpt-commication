@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  4 17:39:49 2026
+# Process ID: 29308
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs
+# Command line: vivado.exe -mode batch -source T:/scripts/prepare_sim.tcl -tclargs baseline -log T:/logs/baseline_prepare.log -journal T:/logs/baseline_prepare.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs/vivado.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source T:/scripts/prepare_sim.tcl
+# set root $::env(TDC_TASK_ROOT)
+# set variant [lindex $argv 0]
+# open_project [file join $root build ${variant}_ascii tdc_${variant}.xpr]
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1067.812 ; gain = 183.793
+# add_files -fileset sim_1 [file join $root sim tb_tdc.sv]
+WARNING: [filemgmt 56-12] File 'T:/sim/tb_tdc.sv' cannot be added to the project because it already exists in the project, skipping this file
+# set_property top tb_tdc [get_filesets sim_1]
+# set_property verilog_define {GATE_NETLIST} [get_filesets sim_1]
+# set_property xsim.elaborate.debug_level typical [get_filesets sim_1]
+# launch_simulation -mode post-implementation -type timing -scripts_only
+Command: launch_simulation  -mode post-implementation -type timing -scripts_only
+INFO: [Vivado 12-12492] Generating simulation scripts for 'XSim' simulator.
+INFO: [Vivado 12-12493] Simulation top is 'tb_tdc'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5680] Creating post-implementation timing simulation scripts in 'T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'F:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1554.809 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2336.469 ; gain = 4.988
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2336.469 ; gain = 4.988
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2336.469 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 2336.469 ; gain = 1254.121
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.v
+INFO: [SIM-utils-37] SDF generated:T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.sdf
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tdc' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-60] Script generated:T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/compile.bat
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-60] Script generated:T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/elaborate.bat
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-60] Script generated:T:/build/baseline_ascii/tdc_baseline.sim/sim_1/impl/timing/xsim/simulate.bat
+launch_simulation: Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 2365.848 ; gain = 1284.449
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 17:40:37 2026...

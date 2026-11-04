@@ -1,0 +1,28 @@
+{
+  "part": "xc7k325tffg900-2",
+  "vivado": "2022.2",
+  "tap_ps": 10,
+  "coarse_w": 10,
+  "carry_num": 16,
+  "compensation_mode": "original_no_compensation",
+  "rtl_sha256": {
+    "tdc_fine_layer.v": "0923dcb0696b62828f00b1edf0538acdf2843162480901433b44117d44060010",
+    "tdc_meas_top.v": "d61c4504d8d6aeb535ee35530b05449a27bc82f5700f464e0b2f45960fa2f28e",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b07392d5abf3d528ede1aed794b79a85e7f421e20ae88146ea33c516306e0875",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "constraint_sha256": "587f3e7c7d3f43b198b107c1bb838b999705f7063761b4d3dbec72ad368a1a1e",
+  "ip_sha256": {
+    "ip\\clk_wiz_0\\clk_wiz_0.xci": "9e684923939ac1506e5691ca9f50c9fa8d5b5a2e0e29a89aadf229fc0c56b616",
+    "ip\\fifo_tdc_result\\fifo_tdc_result.xci": "8240615427d04fbd11216ebe61318722ed85a62e472c4d191ba107214d16f59c",
+    "ip\\ila_2\\ila_2.xci": "6e84b85c2e36c640f5284a555dafbba928b004245b57bebbac997af74ee4eb7f",
+    "ip\\ila_3\\ila_3.xci": "78325021c4fc72f3ad58deb8f8e501b310c8b2d998173aca5c8af8ed855ef3d3"
+  },
+  "bit_sha256": "2e1a25fedfc070c30d3aa7c609ea5b30bc5d656555de1354cf76a3de5b78c539",
+  "dcp_sha256": "0534d05b0b633f31957079f46cd5a8d55ee0a8aade3d85f72e32494adc465c71",
+  "annotated_sdf_sha256": "224f359e5b30ef372e99dcd56d76947c0170c35c56bbf8917b05a0f0b63d660f",
+  "calibration_params_sha256": null,
+  "strategy": "vivado=2022.2\npart=xc7k325tffg900-2\nvariant=baseline\nstrategy=Vivado Implementation Defaults\ncorner=slow\nsdf_mode=max\nseed=Vivado default; no public seed override used\nrtl=T:/baseline/rtl\n",
+  "validation_input_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+}

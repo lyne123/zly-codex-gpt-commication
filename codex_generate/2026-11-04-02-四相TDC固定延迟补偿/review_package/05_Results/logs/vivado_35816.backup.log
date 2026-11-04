@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  4 18:16:58 2026
+# Process ID: 35816
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs
+# Command line: vivado.exe -mode batch -source T:/scripts/inspect_implementation.tcl -tclargs compensated -log T:/logs/compensated_inspect.log -journal T:/logs/compensated_inspect.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs/vivado.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#------------------------------------------------source T:/scsource T:/scripts/inspect_implementation.tcl
+# set root $::env(TDC_TASK_ROOT)
+# set variant [lindex $argv 0]
+# set out [file join $root results $variant]
+# open_Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1498.613 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 314 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2283.789 ; gain = 7.234
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2283.789 ; gain = 7.234
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2283.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: da108897
+----- Checksum: PlaceDB: 49db0085 ShapeSum: 2aacae5e RouteDB: 6588d9b4 
+open_checkpoint: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 2283.789 ; gain = 1399.973
+# set fd [open [file join $out frontend_structure.csv] w]
+# puts $fd "name,ref_name,loc,bel"
+# foreach cell [lsort [get_cells -hier -filter {NAME =~ u_tdcINFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2335.168 ; gain = 7.523
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2335.168 ; gain = 7.523
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2335.168 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+open_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 2335.168 ; gain = 1254.848
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.sdf"
+write_sdf: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2365.660 ; gain = 9.984
+INFO: [SIM-utils-36] Netlist generated:T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.v
+INFO: [SIM-utils-37] SDF generated:T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/tb_tdc_time_impl.sdf
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tdc' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-60] Script generated:T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/compile.bat
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-60] Script generated:T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/elaborate.bat
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-60] Script generated:T:/build/compensated_ascii/tdc_compensated.sim/sim_1/impl/timing/xsim/simulate.bat
+launch_simulation: Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 2365.660 ; gain = 1297.785
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 18:17:52 2026...
+ngParams: -from_pins  -to_pins  -max_paths 64 -nworst 64 -delay_type max -sort_by slack.
+# close_design
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 18:17:44 2026...

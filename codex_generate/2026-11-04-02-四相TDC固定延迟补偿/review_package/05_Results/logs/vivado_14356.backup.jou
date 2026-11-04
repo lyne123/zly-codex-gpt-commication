@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  4 17:25:32 2026
+# Process ID: 14356
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs
+# Command line: vivado.exe -mode batch -source T:/scripts/run_sim.tcl -tclargs baseline smoke gate -log T:/logs/gate_smoke.log -journal T:/logs/gate_smoke.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs/vivado.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source T:/scripts/run_sim.tcl

@@ -1,0 +1,7 @@
+vivado=2022.2
+level=gate
+variant=baseline
+dataset=validation
+timing_checks=enabled
+annotation=see elaboration.log and input_sha256.json
+wave_logging=disabled; CSV and warning logs retained

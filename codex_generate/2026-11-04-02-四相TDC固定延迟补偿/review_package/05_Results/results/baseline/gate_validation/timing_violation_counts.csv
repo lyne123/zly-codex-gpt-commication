@@ -1,0 +1,6 @@
+category,check,count
+MMCM_unused_CLKOUT5_6,$period,1073744
+PWM_async_synchronizer,$setuphold,383
+TDL_async_sampling,$setuphold,85549
+other_logic_or_IP,$recrem,2
+other_logic_or_IP,$setuphold,109

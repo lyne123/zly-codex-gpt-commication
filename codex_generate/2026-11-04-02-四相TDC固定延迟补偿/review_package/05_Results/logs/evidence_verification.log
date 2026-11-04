@@ -1,0 +1,10 @@
+{
+  "evidence_integrity": "PASS",
+  "experiment_acceptance": "FAIL",
+  "checked_files": 310,
+  "delivery_manifest_sha256": "8e8c0df31445d6071d61cb6eb120c38b2f6bec1a912722dd49ad63feb7df68c5",
+  "bit_sha256": [
+    "2e1a25fedfc070c30d3aa7c609ea5b30bc5d656555de1354cf76a3de5b78c539",
+    "1e12a91c1be0f9df43917444d8b0f758f46782988fc538071bc6ad8d732d2ffd"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "variant": "baseline",
+  "critical_inventory": {
+    "LUT1": 7,
+    "CARRY4": 64,
+    "FDRE": 256
+  },
+  "missing_critical": [],
+  "changed_critical_sdf_records": [],
+  "total_sdf_cells": 8705,
+  "cell_record_inventory_equal": true,
+  "case_annotation_logs": [
+    {
+      "case": "gate_calibration",
+      "annotation_success": true,
+      "annotation_warnings": []
+    },
+    {
+      "case": "gate_fifo_probe",
+      "annotation_success": true,
+      "annotation_warnings": []
+    },
+    {
+      "case": "gate_smoke",
+      "annotation_success": true,
+      "annotation_warnings": []
+    },
+    {
+      "case": "gate_validation",
+      "annotation_success": true,
+      "annotation_warnings": []
+    }
+  ],
+  "note": "清单覆盖不是仿真器逐路径百分比报告；时序违例另行统计，不能据此宣称时序通过。",
+  "sha256": {
+    "design.dcp": "0534d05b0b633f31957079f46cd5a8d55ee0a8aade3d85f72e32494adc465c71",
+    "design.sdf": "3b62fbf00214708b7d6442c7917dfa98bfd36f14597eb379a9e8b93d60e4ac49",
+    "annotated_design.sdf": "224f359e5b30ef372e99dcd56d76947c0170c35c56bbf8917b05a0f0b63d660f",
+    "annotated_design.v": "354f57e3910d3845e8768a8b341662441b671054126eeb9ed9b4240370f95d2c"
+  }
+}

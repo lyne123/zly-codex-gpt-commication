@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_tdc_time_impl/xsimk.exe -simmode gui -testplusarg STIMULUS=T:/sim/stimuli/fifo_probe.txt -testplusarg OUTPUT_DIR=T:/results/compensated/gate_fifo_probe -wdb tb_tdc_time_impl.wdb -simrunnum 0 -socket 60886
+Design successfully loaded
+Design Loading Memory Usage: 147724 KB (Peak: 147724 KB)
+Design Loading CPU Usage: 249 ms
+Simulation completed
+Simulation Memory Usage: 176744 KB (Peak: 176744 KB)
+Simulation CPU Usage: 67577 ms

@@ -1,0 +1,8 @@
+vivado=2022.2
+part=xc7k325tffg900-2
+variant=baseline
+strategy=Vivado Implementation Defaults
+corner=slow
+sdf_mode=max
+seed=Vivado default; no public seed override used
+rtl=T:/baseline/rtl

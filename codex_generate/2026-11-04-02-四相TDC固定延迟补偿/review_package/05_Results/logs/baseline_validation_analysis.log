@@ -1,0 +1,134 @@
+{
+  "expected_pulses": 3512,
+  "output_widths": 3509,
+  "valid_matched_pulses": 3507,
+  "valid_rate": 0.9985763097949886,
+  "duplicate": [],
+  "candidate_count": 7019,
+  "timestamp_count": 7019,
+  "fifo_sequence_equal": true,
+  "rise": {
+    "n": 3509,
+    "rmse_ps": 34760.286624209635,
+    "bias_ps": 34760.190367626106,
+    "std_ps": 81.8034449187643,
+    "max_abs_ps": 34928
+  },
+  "fall": {
+    "n": 3510,
+    "rmse_ps": 34754.31026785867,
+    "bias_ps": 34754.21054131054,
+    "std_ps": 83.25770142242536,
+    "max_abs_ps": 34929
+  },
+  "selection_counts": {
+    "3": 2479,
+    "2": 2079,
+    "0": 905,
+    "1": 1556
+  },
+  "maximum_association_residual_ps": 354.0,
+  "minimum_association_margin_ps": 3213.0,
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "rmse_ps": 135.60235986147143,
+      "bias_ps": 0,
+      "std_ps": 135.60235986147143,
+      "max_abs_ps": 230
+    },
+    "all": {
+      "n": 3507,
+      "rmse_ps": 124.70014105130355,
+      "bias_ps": -5.786997433704021,
+      "std_ps": 124.56578919959244,
+      "max_abs_ps": 289
+    },
+    "10MHz_50": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20MHz_50": {
+      "n": 200,
+      "rmse_ps": 143.26897780049944,
+      "bias_ps": 0,
+      "std_ps": 143.26897780049944,
+      "max_abs_ps": 230
+    },
+    "10MHz_5": {
+      "n": 200,
+      "rmse_ps": 143.26897780049944,
+      "bias_ps": 0,
+      "std_ps": 143.26897780049944,
+      "max_abs_ps": 230
+    },
+    "10MHz_95": {
+      "n": 200,
+      "rmse_ps": 143.26897780049944,
+      "bias_ps": 0,
+      "std_ps": 143.26897780049944,
+      "max_abs_ps": 230
+    },
+    "20MHz_5": {
+      "n": 200,
+      "rmse_ps": 121.99180300331658,
+      "bias_ps": 0,
+      "std_ps": 121.99180300331658,
+      "max_abs_ps": 270
+    },
+    "20MHz_95": {
+      "n": 200,
+      "rmse_ps": 121.99180300331658,
+      "bias_ps": 0,
+      "std_ps": 121.99180300331658,
+      "max_abs_ps": 270
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "rmse_ps": 125.40555799992569,
+      "bias_ps": 3.300189393939394,
+      "std_ps": 125.36212636692494,
+      "max_abs_ps": 289
+    },
+    "complete_frame": {
+      "n": 2107,
+      "rmse_ps": 124.36509665599645,
+      "bias_ps": -9.63217845277646,
+      "std_ps": 123.99152553505103,
+      "max_abs_ps": 289
+    },
+    "header_5": {
+      "n": 29,
+      "rmse_ps": 129.34850011793188,
+      "bias_ps": 3.4482758620689653,
+      "std_ps": 129.30252849939822,
+      "max_abs_ps": 140
+    },
+    "header_95": {
+      "n": 32,
+      "rmse_ps": 101.9803902718557,
+      "bias_ps": 100,
+      "std_ps": 20.0,
+      "max_abs_ps": 120
+    },
+    "spwm_data": {
+      "n": 2046,
+      "rmse_ps": 124.61139790869274,
+      "bias_ps": -11.53225806451613,
+      "std_ps": 124.07661952475961,
+      "max_abs_ps": 289
+    },
+    "ATC_20MHz": {
+      "n": 1051,
+      "rmse_ps": 123.31084390493827,
+      "bias_ps": -22.626070409134158,
+      "std_ps": 121.21726429180356,
+      "max_abs_ps": 271
+    }
+  },
+  "stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+}
+missing 5 faults 2 business_errors 5

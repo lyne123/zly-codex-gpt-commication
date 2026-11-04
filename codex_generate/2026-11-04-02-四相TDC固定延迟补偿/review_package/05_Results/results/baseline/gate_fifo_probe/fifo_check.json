@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "post-route directed error-FIFO reproduction; not a precision-validation replacement",
+  "source_error_codes": [
+    2
+  ],
+  "read_100MHz_error_codes": [
+    2
+  ],
+  "result_fifo_sequence_equal": true,
+  "stimulus_sha256": "1f18db05d3dddf0fbae38731483fe4c8ec0760f84e4d0967aa41a768d9af169d"
+}

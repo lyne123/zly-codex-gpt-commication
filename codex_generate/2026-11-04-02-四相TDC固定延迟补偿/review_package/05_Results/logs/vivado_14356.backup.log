@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  4 17:25:32 2026
+# Process ID: 14356
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs
+# Command line: vivado.exe -mode batch -source T:/scripts/run_sim.tcl -tclargs baseline smoke gate -log T:/logs/gate_smoke.log -journal T:/logs/gate_smoke.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs/vivado.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/tdc_skew_20261104_02/logs\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source T:/scripts/run_sim.tcl
+# set root [file join [file dirname [info script]] ..]
+# if {[info exists ::env(TDC_TASK_ROOT)]} { set root $::env(TDC_TASK_ROOT) }
+# set variant [lindex $argv 0]
+# set dataset [lindex $argv 1]
+# set level [lindex $argv 2]
+# if {$variant ni {baseline compensated} || $dataset ni {calibration validation smoke} || $level ni {rtl gate}} {
+#     error "usage: baseline|compensated calibration|validation|smoke rtl|gate"
+# }
+# set out [file join $root results $variant ${level}_${dataset}]
+# file mkdir $out
+# if {[file exists [file join $out widths.csv]]} { error "Refusing to overwrite measurements" }
+# open_project [file join $root build ${variant}_ascii tdc_${variant}.xpr]
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1066.383 ; gain = 181.914
+# add_files -fileset sim_1 [file join $root sim tb_tdc.sv]
+# set_property top tb_tdc [get_filesets sim_1]
+# set options "-testplusarg STIMULUS=[file join $root sim stimuli ${dataset}.txt] -testplusarg OUTPUT_DIR=$out"
+# if {$level eq "gate"} {
+#     set_property verilog_define {GATE_SDF} [get_filesets sim_1]
+#     append options " -testplusarg SDF=[file join $root results $variant design.sdf]"
+# }
+# set_property xsim.simulate.xsim.more_options $options [get_filesets sim_1]
+ERROR: [Common 17-170] Unknown option '-testplusarg STIMULUS=T:/sim/stimuli/smoke.txt -testplusarg OUTPUT_DIR=T:/results/baseline/gate_smoke -testplusarg SDF=T:/results/baseline/design.sdf', please type 'set_property -help' for usage info.
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 17:25:44 2026...

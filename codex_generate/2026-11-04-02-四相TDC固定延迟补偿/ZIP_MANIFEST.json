@@ -1,0 +1,16 @@
+[
+  {
+    "file": "TDC_Review_Source_Results.zip",
+    "bytes": 26001908,
+    "sha256": "3ac2874029e4d481ef8f503ce55559d855f1204906ec65db6bd0152e9e187e70",
+    "members": 518,
+    "roundtrip": "PASS"
+  },
+  {
+    "file": "TDC_Review_Implementation.zip",
+    "bytes": 60332803,
+    "sha256": "ac6c6c1ccb792e27237d805014e4bcee767ef124643e520d72437684cd49a3a4",
+    "members": 257,
+    "roundtrip": "PASS"
+  }
+]

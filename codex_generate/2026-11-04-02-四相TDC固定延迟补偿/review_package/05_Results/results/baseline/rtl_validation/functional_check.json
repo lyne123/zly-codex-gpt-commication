@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "simulation_level": "RTL_WITH_IDEAL_TEST_MODELS_ONLY",
+  "physical_accuracy_claim": false,
+  "expected_pulses": 3512,
+  "output_widths": 3512,
+  "timestamp_count": 7024,
+  "business_errors": 0,
+  "fifo_sequence_equal": true,
+  "ideal_model_width_errors": {
+    "n": 3512,
+    "rmse_ps": 3.2047622593496956,
+    "bias_ps": 0.07232346241457858,
+    "std_ps": 3.2039460756599087,
+    "max_abs_ps": 9
+  }
+}

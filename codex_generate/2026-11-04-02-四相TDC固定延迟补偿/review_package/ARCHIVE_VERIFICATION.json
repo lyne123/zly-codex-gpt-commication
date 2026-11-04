@@ -1,0 +1,11 @@
+{
+  "archive_integrity": "PASS",
+  "experiment_acceptance": "FAIL",
+  "source_files_indexed": 708,
+  "original_csv_paths": 123,
+  "original_log_paths": 120,
+  "all_original_csv_and_logs_preserved": true,
+  "both_rtl_sets_complete": true,
+  "originals_rehashed_unchanged": true,
+  "excluded_cache_files": 2956
+}

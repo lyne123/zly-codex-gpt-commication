@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Nov  4 16:55:50 2026
+# Process ID: 14896
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-四相TDC固定延迟补偿验证/build/baseline/tdc_baseline.runs/ila_3_synth_1
+# Command line: vivado.exe -log ila_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_3.tcl
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-四相TDC固定延迟补偿验证/build/baseline/tdc_baseline.runs/ila_3_synth_1/ila_3.vds
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-04-02-四相TDC固定延迟补偿验证/build/baseline/tdc_baseline.runs/ila_3_synth_1\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source ila_3.tcl -notrace

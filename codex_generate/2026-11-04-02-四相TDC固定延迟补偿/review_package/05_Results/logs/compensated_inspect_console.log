@@ -1,0 +1,78 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source T:/scripts/inspect_implementation.tcl
+# set root $::env(TDC_TASK_ROOT)
+# set variant [lindex $argv 0]
+# set out [file join $root results $variant]
+# open_checkpoint [file join $out design.dcp]
+Command: open_checkpoint T:/results/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 892.590 ; gain = 8.574
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1498.613 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 314 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2283.789 ; gain = 7.234
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2283.789 ; gain = 7.234
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2283.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: da108897
+----- Checksum: PlaceDB: 49db0085 ShapeSum: 2aacae5e RouteDB: 6588d9b4 
+open_checkpoint: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 2283.789 ; gain = 1399.973
+# set fd [open [file join $out frontend_structure.csv] w]
+# puts $fd "name,ref_name,loc,bel"
+# foreach cell [lsort [get_cells -hier -filter {NAME =~ u_tdc_fine_layer/*}]] {
+#     set name [get_property NAME $cell]
+#     if {[string match *g_carry* $name] || [string match *thermo_q_reg* $name] || [string match *g_pwm_dist* $name]} {
+#         puts $fd "$name,[get_property REF_NAME $cell],[get_property LOC $cell],[get_property BEL $cell]"
+#     }
+# }
+# close $fd
+# set fd [open [file join $out frontend_route.tsv] w]
+# puts $fd "name\troute"
+# foreach net [lsort [get_nets -hier -filter {NAME =~ u_tdc_fine_layer/* || NAME =~ clk_500m* || NAME =~ pwm_in*}]] {
+#     puts $fd "[get_property NAME $net]\t[get_property ROUTE $net]"
+# }
+# close $fd
+# set_input_delay -clock [get_clocks sys_clk] 0 [get_ports pwm_in]
+# foreach phase {0 90 180 270} {
+#     set targets [get_pins -hier -filter "NAME =~ u_tdc_fine_layer/u_tdl${phase}/thermo_q_reg*/D"]
+#     report_timing -from [get_ports pwm_in] -to $targets -max_paths 64 -nworst 64 -path_type full_clock_expanded -input_pins -nets -file [file join $out pwm_distribution_${phase}_diagnostic.rpt]
+# }
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 64 -nworst 64 -delay_type max -sort_by slack.
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 64 -nworst 64 -delay_type max -sort_by slack.
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 64 -nworst 64 -delay_type max -sort_by slack.
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 64 -nworst 64 -delay_type max -sort_by slack.
+# close_design
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 18:17:44 2026...
