@@ -1,0 +1,7 @@
+﻿event_id,rtl_rise_count,rtl_fall_count,rtl_correct_width_count,rtl_status,sdf_rise_count,sdf_fall_count,sdf_correct_width_count,sdf_status,reason
+2917,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF
+2918,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF
+2983,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF
+2984,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF
+3049,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF
+3050,1,1,1,PASS,,,,NOT_EXECUTED,补偿RTL与旁路前端逐字节一致且全量补偿算术检查通过；不能代替新实现SDF

@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Nov  5 21:47:12 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_pins -quiet {u_tdc_time_locate/timestamp_ps_reg[19]/D}] -delay_type max -max_paths 10 -path_type full_clock_expanded -input_pins -file W://results/compensated/locate19_setup.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.506ns  (required time - arrival time)
+  Source:                 u_tdc_time_locate/s4_sum_reg[16]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_time_locate/timestamp_ps_reg[19]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            2.000ns  (clk_out1_clk_wiz_0 rise@2.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        1.443ns  (logic 0.399ns (27.651%)  route 1.044ns (72.349%))
+  Logic Levels:           3  (LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.275ns = ( 0.725 - 2.000 ) 
+    Source Clock Delay      (SCD):    -1.834ns
+    Clock Pessimism Removal (CPR):    -0.609ns
+  Clock Uncertainty:      0.060ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.000ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.834     0.834 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           1.081     1.915    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -7.786    -5.871 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           2.130    -3.741    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.093    -3.648 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        1.814    -1.834    u_tdc_time_locate/clk_500m
+                  SLICE_X12Y9          FDCE                                         r  u_tdc_time_locate/s4_sum_reg[16]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Placement     SLICE_X12Y9          FDCE (Prop_fdce_C_Q)         0.259    -1.575 f  u_tdc_time_locate/s4_sum_reg[16]/Q
+                                       net (fo=5, routed)           0.369    -1.206    u_tdc_time_locate/sum_high[2]
+    New           SLICE_X13Y9                                                       f  u_tdc_time_locate/timestamp_ps[20]_i_4/I1
+    New           SLICE_X13Y9          LUT4 (Prop_lut4_I1_O)        0.043    -1.163 f  u_tdc_time_locate/timestamp_ps[20]_i_4/O
+                                       net (fo=2, routed)           0.426    -0.738    u_tdc_time_locate/timestamp_ps[20]_i_4_n_0
+    New           SLICE_X10Y9                                                       f  u_tdc_time_locate/timestamp_ps[20]_i_2/I0
+    New           SLICE_X10Y9          LUT6 (Prop_lut6_I0_O)        0.043    -0.695 r  u_tdc_time_locate/timestamp_ps[20]_i_2/O
+                                       net (fo=2, routed)           0.249    -0.445    u_tdc_time_locate/timestamp_ps[20]_i_2_n_0
+    Placement     SLICE_X11Y11                                                      r  u_tdc_time_locate/timestamp_ps[19]_i_1/I0
+    Routing       SLICE_X11Y11         LUT5 (Prop_lut5_I0_O)        0.054    -0.391 r  u_tdc_time_locate/timestamp_ps[19]_i_1/O
+                                       net (fo=1, routed)           0.000    -0.391    u_tdc_time_locate/wrapped_time[19]
+    Routing       SLICE_X11Y11         FDCE                                         r  u_tdc_time_locate/timestamp_ps_reg[19]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    2.000     2.000 r  
+                  AD12                                              0.000     2.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     2.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.737     2.737 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.986     3.723    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -6.759    -3.036 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           2.005    -1.031    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.083    -0.948 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        1.673     0.725    u_tdc_time_locate/clk_500m
+                  SLICE_X11Y11         FDCE                                         r  u_tdc_time_locate/timestamp_ps_reg[19]/C
+                                       clock pessimism             -0.609     0.117    
+                                       clock uncertainty           -0.060     0.057    
+                  SLICE_X11Y11         FDCE (Setup_fdce_C_D)        0.058     0.115    u_tdc_time_locate/timestamp_ps_reg[19]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.115    
+                                       arrival time                           0.391    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.506    
+
+
+
+

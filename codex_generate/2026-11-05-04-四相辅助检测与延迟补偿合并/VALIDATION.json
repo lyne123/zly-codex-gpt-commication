@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "rtl_functional": true,
+    "verified_aux_rtl_unchanged": true,
+    "original_parameters_unchanged": true,
+    "identical_full_stimulus_and_truth": true,
+    "full_MAX_SDF": null,
+    "phase_compensation": null,
+    "core_static_timing": false,
+    "format_and_valid_timing": true
+  },
+  "bit_generation_allowed": false,
+  "global_timing_pass": false,
+  "global_ILA2_violations_separate": true,
+  "rtl_source_commit": "6b341d88497541f23eaefee1cfad4e4925c7f2aa",
+  "previous_compensated_commit": "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b",
+  "validation_time_beijing": "2026-11-05T19:29:05.217734+08:00",
+  "bit_generated": false,
+  "stage_status": {
+    "source_and_merge": "PASS",
+    "rtl_functional": "PASS",
+    "synthesis_and_route": "COMPLETED",
+    "core_static_timing": "FAIL",
+    "full_MAX_SDF": "NOT_EXECUTED_BLOCKED_BY_CORE_TIMING",
+    "physical_compensation_and_C_precision": "NOT_EXECUTED_BLOCKED_BY_CORE_TIMING",
+    "final_BIT": "NOT_GENERATED"
+  },
+  "core_setup_violation_count": 4,
+  "formal_baseline_unchanged": true
+}

@@ -1,0 +1,4 @@
+tb_wrap_equivalence WRAP_EQUIVALENCE_PASS CW=8 samples=2560
+WRAP_EQUIVALENCE_PASS CW=10 samples=2560
+WRAP_EQUIVALENCE_PASS CW=1 samples=163840
+tb_fifo_reset FIFO_RESET_PASS checks=2552 outputs=76 assertions=3 releases=4

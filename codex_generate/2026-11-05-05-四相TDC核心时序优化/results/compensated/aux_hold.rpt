@@ -1,0 +1,1901 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Nov  5 21:47:12 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -from [get_cells -quiet -hier -filter {NAME =~ u_tdc_fine_layer/g_aux_4phase*}] -delay_type min -max_paths 30 -path_type full_clock_expanded -input_pins -file W://results/compensated/aux_hold.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.108ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.155ns  (logic 0.100ns (64.566%)  route 0.055ns (35.434%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X47Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X47Y2          FDCE (Prop_fdce_C_Q)         0.100    -0.376 r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[1]/Q
+                                       net (fo=1, routed)           0.055    -0.321    u_tdc_fine_layer/g_aux_4phase.aux_fall_slots[1]
+    Routing       SLICE_X47Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X47Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[1]/C
+                                       clock pessimism             -0.004    -0.476    
+                  SLICE_X47Y2          FDCE (Hold_fdce_C_D)         0.047    -0.429    u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.429    
+                                       arrival time                          -0.321    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.108    
+
+Slack (MET) :             0.108ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Path Group:             clk_out3_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out3_clk_wiz_0 rise@1.000ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.155ns  (logic 0.100ns (64.566%)  route 0.055ns (35.434%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.529 - 1.000 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.524 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.733     0.524    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y0          FDCE (Prop_fdce_C_Q)         0.100     0.624 r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta_reg/Q
+                                       net (fo=1, routed)           0.055     0.679    u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta
+    Routing       SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.493    -1.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           1.007    -0.493    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.030    -0.463 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.992     0.529    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/C
+                                       clock pessimism             -0.004     0.524    
+                  SLICE_X49Y0          FDCE (Hold_fdce_C_D)         0.047     0.571    u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.571    
+                                       arrival time                           0.679    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.108    
+
+Slack (MET) :             0.108ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_meta_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out4_clk_wiz_0  {rise@1.500ns fall@2.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_sync_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out4_clk_wiz_0  {rise@1.500ns fall@2.500ns period=2.000ns})
+  Path Group:             clk_out4_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out4_clk_wiz_0 rise@1.500ns - clk_out4_clk_wiz_0 rise@1.500ns)
+  Data Path Delay:        0.155ns  (logic 0.100ns (64.566%)  route 0.055ns (35.434%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.472ns = ( 1.028 - 1.500 ) 
+    Source Clock Delay      (SCD):    -0.477ns = ( 1.023 - 1.500 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out4_clk_wiz_0 rise edge)
+                                                                    1.500     1.500 r  
+                  AD12                                              0.000     1.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     2.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT3)
+                                                                   -3.040    -0.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3
+                                       net (fo=1, routed)           0.940     0.265    u_clk_wiz_0/inst/clk_out4_clk_wiz_0
+                  BUFGCTRL_X0Y3                                                     r  u_clk_wiz_0/inst/clkout4_buf/I
+                  BUFGCTRL_X0Y3        BUFG (Prop_bufg_I_O)         0.026     0.291 r  u_clk_wiz_0/inst/clkout4_buf/O
+                                       net (fo=211, routed)         0.732     1.023    u_tdc_fine_layer/clk_500m_deg270
+                  SLICE_X49Y4          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_meta_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y4          FDCE (Prop_fdce_C_Q)         0.100     1.123 r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_meta_reg/Q
+                                       net (fo=1, routed)           0.055     1.178    u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_meta
+    Routing       SLICE_X49Y4          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_sync_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out4_clk_wiz_0 rise edge)
+                                                                    1.500     1.500 r  
+                  AD12                                              0.000     1.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     2.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT3)
+                                                                   -3.493    -1.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3
+                                       net (fo=1, routed)           1.007     0.007    u_clk_wiz_0/inst/clk_out4_clk_wiz_0
+                  BUFGCTRL_X0Y3                                                     r  u_clk_wiz_0/inst/clkout4_buf/I
+                  BUFGCTRL_X0Y3        BUFG (Prop_bufg_I_O)         0.030     0.037 r  u_clk_wiz_0/inst/clkout4_buf/O
+                                       net (fo=211, routed)         0.991     1.028    u_tdc_fine_layer/clk_500m_deg270
+                  SLICE_X49Y4          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_sync_reg/C
+                                       clock pessimism             -0.004     1.023    
+                  SLICE_X49Y4          FDCE (Hold_fdce_C_D)         0.047     1.070    u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_sync_reg
+  ---------------------------------------------------------------------------------
+                                       required time                         -1.070    
+                                       arrival time                           1.178    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.108    
+
+Slack (MET) :             0.108ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.155ns  (logic 0.100ns (64.566%)  route 0.055ns (35.434%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X47Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X47Y1          FDCE (Prop_fdce_C_Q)         0.100     0.124 r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/Q
+                                       net (fo=1, routed)           0.055     0.179    u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta
+    Routing       SLICE_X47Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X47Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/C
+                                       clock pessimism             -0.004     0.024    
+                  SLICE_X47Y1          FDCE (Hold_fdce_C_D)         0.047     0.071    u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.071    
+                                       arrival time                           0.179    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.108    
+
+Slack (MET) :             0.124ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.145ns  (logic 0.091ns (62.919%)  route 0.054ns (37.081%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X48Y1          FDCE (Prop_fdce_C_Q)         0.091     0.115 r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/Q
+                                       net (fo=1, routed)           0.054     0.169    u_tdc_fine_layer/g_aux_4phase.rec180_to90[0]
+    Routing       SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[0]/C
+                                       clock pessimism              0.326    -0.146    
+                                       clock uncertainty            0.180     0.034    
+                  SLICE_X49Y1          FDCE (Hold_fdce_C_D)         0.011     0.045    u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.045    
+                                       arrival time                           0.169    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.124    
+
+Slack (MET) :             0.128ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.146ns  (logic 0.091ns (62.121%)  route 0.055ns (37.879%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X48Y1          FDCE (Prop_fdce_C_Q)         0.091     0.115 r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/Q
+                                       net (fo=1, routed)           0.055     0.171    u_tdc_fine_layer/g_aux_4phase.rec180_to90[1]
+    Routing       SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/C
+                                       clock pessimism              0.326    -0.146    
+                                       clock uncertainty            0.180     0.034    
+                  SLICE_X49Y1          FDCE (Hold_fdce_C_D)         0.008     0.042    u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.042    
+                                       arrival time                           0.171    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.128    
+
+Slack (MET) :             0.131ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.173ns  (logic 0.118ns (68.255%)  route 0.055ns (31.745%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[2]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X46Y2          FDCE (Prop_fdce_C_Q)         0.118    -0.358 r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[2]/Q
+                                       net (fo=1, routed)           0.055    -0.303    u_tdc_fine_layer/g_aux_4phase.aux_fall_slots[2]
+    Routing       SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/C
+                                       clock pessimism             -0.004    -0.476    
+                  SLICE_X46Y2          FDCE (Hold_fdce_C_D)         0.042    -0.434    u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.434    
+                                       arrival time                          -0.303    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.131    
+
+Slack (MET) :             0.139ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.196ns  (logic 0.100ns (51.054%)  route 0.096ns (48.946%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.503ns = ( -0.003 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.492 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.701     0.492    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X51Y0          FDCE (Prop_fdce_C_Q)         0.100     0.592 r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/Q
+                                       net (fo=1, routed)           0.096     0.688    u_tdc_fine_layer/g_aux_4phase.rec270_to180[0]
+    Routing       SLICE_X51Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.960    -0.003    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X51Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[0]/C
+                                       clock pessimism              0.326     0.322    
+                                       clock uncertainty            0.180     0.502    
+                  SLICE_X51Y1          FDCE (Hold_fdce_C_D)         0.047     0.549    u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.549    
+                                       arrival time                           0.688    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.139    
+
+Slack (MET) :             0.145ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.261ns  (logic 0.155ns (59.291%)  route 0.106ns (40.709%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.029ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.474ns
+    Clock Pessimism Removal (CPR):    -0.027ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.735    -0.474    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X45Y1          FDCE (Prop_fdce_C_Q)         0.091    -0.383 f  u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/Q
+                                       net (fo=2, routed)           0.106    -0.276    u_tdc_fine_layer/g_aux_4phase.previous_sample
+    Routing       SLICE_X46Y1                                                       f  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[0]_i_1/I1
+    Routing       SLICE_X46Y1          LUT3 (Prop_lut3_I1_O)        0.064    -0.212 r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[0]_i_1/O
+                                       net (fo=1, routed)           0.000    -0.212    u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[0]_i_1_n_0
+    Routing       SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[0]/C
+                                       clock pessimism              0.027    -0.445    
+                  SLICE_X46Y1          FDCE (Hold_fdce_C_D)         0.087    -0.358    u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.358    
+                                       arrival time                          -0.212    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.145    
+
+Slack (MET) :             0.146ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec270_d1_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.armed_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.233ns  (logic 0.171ns (73.524%)  route 0.062ns (26.476%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_d1_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X46Y1          FDCE (Prop_fdce_C_Q)         0.107    -0.369 r  u_tdc_fine_layer/g_aux_4phase.rec270_d1_reg[1]/Q
+                                       net (fo=2, routed)           0.062    -0.307    u_tdc_fine_layer/p_0_in1_in
+    Routing       SLICE_X46Y1                                                       r  u_tdc_fine_layer/g_aux_4phase.armed_i_1/I2
+    Routing       SLICE_X46Y1          LUT4 (Prop_lut4_I2_O)        0.064    -0.243 r  u_tdc_fine_layer/g_aux_4phase.armed_i_1/O
+                                       net (fo=1, routed)           0.000    -0.243    u_tdc_fine_layer/g_aux_4phase.ordered_ready
+    Routing       SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.armed_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.armed_reg/C
+                                       clock pessimism             -0.004    -0.476    
+                  SLICE_X46Y1          FDCE (Hold_fdce_C_D)         0.087    -0.389    u_tdc_fine_layer/g_aux_4phase.armed_reg
+  ---------------------------------------------------------------------------------
+                                       required time                          0.389    
+                                       arrival time                          -0.243    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.146    
+
+Slack (MET) :             0.148ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Path Group:             clk_out3_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out3_clk_wiz_0 rise@1.000ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.142ns  (logic 0.091ns (64.233%)  route 0.051ns (35.767%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.503ns = ( 0.497 - 1.000 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.492 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.701     0.492    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X51Y0          FDCE (Prop_fdce_C_Q)         0.091     0.583 r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[0]/Q
+                                       net (fo=1, routed)           0.051     0.634    u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup[0]
+    Routing       SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.493    -1.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           1.007    -0.493    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.030    -0.463 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.960     0.497    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[1]/C
+                                       clock pessimism             -0.004     0.492    
+                  SLICE_X51Y0          FDCE (Hold_fdce_C_D)        -0.006     0.486    u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.486    
+                                       arrival time                           0.634    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.148    
+
+Slack (MET) :             0.148ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.195ns  (logic 0.100ns (51.316%)  route 0.095ns (48.684%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.469ns
+    Source Clock Delay      (SCD):    -0.474ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.735    -0.474    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X45Y0          FDCE (Prop_fdce_C_Q)         0.100    -0.374 r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/Q
+                                       net (fo=1, routed)           0.095    -0.279    u_tdc_fine_layer/g_aux_4phase.rec0_d1[0]
+    Routing       SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.994    -0.469    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/C
+                                       clock pessimism             -0.004    -0.474    
+                  SLICE_X45Y0          FDCE (Hold_fdce_C_D)         0.047    -0.427    u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.427    
+                                       arrival time                          -0.279    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.148    
+
+Slack (MET) :             0.151ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_history_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out4_clk_wiz_0  {rise@1.500ns fall@2.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Path Group:             clk_out3_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out3_clk_wiz_0 rise@1.000ns - clk_out4_clk_wiz_0 rise@1.500ns)
+  Data Path Delay:        0.204ns  (logic 0.100ns (48.936%)  route 0.104ns (51.064%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.503ns = ( 0.497 - 1.000 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.992 - 1.500 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out4_clk_wiz_0 rise edge)
+                                                                    1.500     1.500 r  
+                  AD12                                              0.000     1.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     2.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT3)
+                                                                   -3.040    -0.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3
+                                       net (fo=1, routed)           0.940     0.265    u_clk_wiz_0/inst/clk_out4_clk_wiz_0
+                  BUFGCTRL_X0Y3                                                     r  u_clk_wiz_0/inst/clkout4_buf/I
+                  BUFGCTRL_X0Y3        BUFG (Prop_bufg_I_O)         0.026     0.291 r  u_clk_wiz_0/inst/clkout4_buf/O
+                                       net (fo=211, routed)         0.701     0.992    u_tdc_fine_layer/clk_500m_deg270
+                  SLICE_X53Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_history_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X53Y0          FDCE (Prop_fdce_C_Q)         0.100     1.092 r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_history_reg/Q
+                                       net (fo=1, routed)           0.104     1.197    u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_history
+    Routing       SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.493    -1.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           1.007    -0.493    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.030    -0.463 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.960     0.497    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]/C
+                                       clock pessimism              0.326     0.822    
+                                       clock uncertainty            0.180     1.002    
+                  SLICE_X51Y0          FDCE (Hold_fdce_C_D)         0.043     1.045    u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                         -1.045    
+                                       arrival time                           1.197    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.151    
+
+Slack (MET) :             0.152ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[3].warmup_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out4_clk_wiz_0  {rise@1.500ns fall@2.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Path Group:             clk_out3_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out3_clk_wiz_0 rise@1.000ns - clk_out4_clk_wiz_0 rise@1.500ns)
+  Data Path Delay:        0.206ns  (logic 0.100ns (48.542%)  route 0.106ns (51.458%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.503ns = ( 0.497 - 1.000 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.992 - 1.500 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out4_clk_wiz_0 rise edge)
+                                                                    1.500     1.500 r  
+                  AD12                                              0.000     1.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     2.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT3)
+                                                                   -3.040    -0.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3
+                                       net (fo=1, routed)           0.940     0.265    u_clk_wiz_0/inst/clk_out4_clk_wiz_0
+                  BUFGCTRL_X0Y3                                                     r  u_clk_wiz_0/inst/clkout4_buf/I
+                  BUFGCTRL_X0Y3        BUFG (Prop_bufg_I_O)         0.026     0.291 r  u_clk_wiz_0/inst/clkout4_buf/O
+                                       net (fo=211, routed)         0.701     0.992    u_tdc_fine_layer/clk_500m_deg270
+                  SLICE_X53Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].warmup_reg[2]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X53Y0          FDCE (Prop_fdce_C_Q)         0.100     1.092 r  u_tdc_fine_layer/g_aux_4phase.g_phase[3].warmup_reg[2]/Q
+                                       net (fo=1, routed)           0.106     1.198    u_tdc_fine_layer/g_aux_4phase.g_phase[3].warmup[2]
+    Routing       SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.493    -1.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           1.007    -0.493    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.030    -0.463 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.960     0.497    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/C
+                                       clock pessimism              0.326     0.822    
+                                       clock uncertainty            0.180     1.002    
+                  SLICE_X51Y0          FDCE (Hold_fdce_C_D)         0.044     1.046    u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -1.046    
+                                       arrival time                           1.198    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.152    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_align[2].rise_q_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.157ns (71.505%)  route 0.063ns (28.495%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.469ns
+    Source Clock Delay      (SCD):    -0.474ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.735    -0.474    u_tdc_fine_layer/clk_500m
+                  SLICE_X44Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[2].rise_q_reg[3]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X44Y2          FDCE (Prop_fdce_C_Q)         0.091    -0.383 r  u_tdc_fine_layer/g_aux_4phase.g_align[2].rise_q_reg[3]/Q
+                                       net (fo=4, routed)           0.063    -0.320    u_tdc_fine_layer/g_aux_4phase.g_align[2].rise_q[3]
+    Routing       SLICE_X44Y2                                                       r  u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous[3]_i_1/I3
+    Routing       SLICE_X44Y2          LUT4 (Prop_lut4_I3_O)        0.066    -0.254 r  u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous[3]_i_1/O
+                                       net (fo=1, routed)           0.000    -0.254    u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous[3]_i_1_n_0
+    Routing       SLICE_X44Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous_reg[3]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.994    -0.469    u_tdc_fine_layer/clk_500m
+                  SLICE_X44Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous_reg[3]/C
+                                       clock pessimism             -0.004    -0.474    
+                  SLICE_X44Y2          FDCE (Hold_fdce_C_D)         0.060    -0.414    u_tdc_fine_layer/g_aux_4phase.rise_claimed_previous_reg[3]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.414    
+                                       arrival time                          -0.254    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.160    
+
+Slack (MET) :             0.161ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_history_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.193ns  (logic 0.100ns (51.898%)  route 0.093ns (48.102%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.469ns
+    Source Clock Delay      (SCD):    -0.474ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.735    -0.474    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_history_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X45Y0          FDCE (Prop_fdce_C_Q)         0.100    -0.374 r  u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_history_reg/Q
+                                       net (fo=1, routed)           0.093    -0.281    u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_history
+    Routing       SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.994    -0.469    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]/C
+                                       clock pessimism             -0.004    -0.474    
+                  SLICE_X45Y0          FDCE (Hold_fdce_C_D)         0.032    -0.442    u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.442    
+                                       arrival time                          -0.281    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.161    
+
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.187ns  (logic 0.091ns (48.634%)  route 0.096ns (51.366%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.503ns = ( -0.003 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.492 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.701     0.492    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X51Y0          FDCE (Prop_fdce_C_Q)         0.091     0.583 r  u_tdc_fine_layer/g_aux_4phase.rec270_to180_reg[1]/Q
+                                       net (fo=1, routed)           0.096     0.680    u_tdc_fine_layer/g_aux_4phase.rec270_to180[1]
+    Routing       SLICE_X51Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.960    -0.003    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X51Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[1]/C
+                                       clock pessimism              0.326     0.322    
+                                       clock uncertainty            0.180     0.502    
+                  SLICE_X51Y1          FDCE (Hold_fdce_C_D)         0.013     0.515    u_tdc_fine_layer/g_aux_4phase.rec270_to90_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.515    
+                                       arrival time                           0.680    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.164    
+
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_history_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.187ns  (logic 0.091ns (48.600%)  route 0.096ns (51.400%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    -0.010ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X47Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X47Y1          FDCE (Prop_fdce_C_Q)         0.091     0.115 r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg/Q
+                                       net (fo=1, routed)           0.096     0.212    u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync
+    Routing       SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_history_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_history_reg/C
+                                       clock pessimism              0.010     0.038    
+                  SLICE_X48Y1          FDCE (Hold_fdce_C_D)         0.009     0.047    u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_history_reg
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.047    
+                                       arrival time                           0.212    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.164    
+
+Slack (MET) :             0.166ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec90_d1_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec90_d2_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.186ns  (logic 0.091ns (48.949%)  route 0.095ns (51.051%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.011ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.504ns
+    Source Clock Delay      (SCD):    -0.509ns
+    Clock Pessimism Removal (CPR):    -0.007ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.700    -0.509    u_tdc_fine_layer/clk_500m
+                  SLICE_X53Y3          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec90_d1_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X53Y3          FDCE (Prop_fdce_C_Q)         0.091    -0.418 r  u_tdc_fine_layer/g_aux_4phase.rec90_d1_reg[1]/Q
+                                       net (fo=1, routed)           0.095    -0.323    u_tdc_fine_layer/g_aux_4phase.rec90_d1[1]
+    Routing       SLICE_X52Y3          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec90_d2_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.959    -0.504    u_tdc_fine_layer/clk_500m
+                  SLICE_X52Y3          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec90_d2_reg[1]/C
+                                       clock pessimism              0.007    -0.498    
+                  SLICE_X52Y3          FDCE (Hold_fdce_C_D)         0.009    -0.489    u_tdc_fine_layer/g_aux_4phase.rec90_d2_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.489    
+                                       arrival time                          -0.323    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.166    
+
+Slack (MET) :             0.180ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.213ns  (logic 0.100ns (46.921%)  route 0.113ns (53.079%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X48Y1          FDCE (Prop_fdce_C_Q)         0.100     0.124 r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/Q
+                                       net (fo=1, routed)           0.113     0.238    u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup[1]
+    Routing       SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[2]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[2]/C
+                                       clock pessimism             -0.004     0.024    
+                  SLICE_X48Y1          FDCE (Hold_fdce_C_D)         0.033     0.057    u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[2]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.057    
+                                       arrival time                           0.238    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.180    
+
+Slack (MET) :             0.181ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.238ns  (logic 0.100ns (42.030%)  route 0.138ns (57.970%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.330ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.524 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.733     0.524    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y0          FDCE (Prop_fdce_C_Q)         0.100     0.624 r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/Q
+                                       net (fo=1, routed)           0.138     0.762    u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history
+    Routing       SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]/C
+                                       clock pessimism              0.326     0.354    
+                                       clock uncertainty            0.180     0.534    
+                  SLICE_X48Y1          FDCE (Hold_fdce_C_D)         0.047     0.581    u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.581    
+                                       arrival time                           0.762    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.181    
+
+Slack (MET) :             0.185ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Path Group:             clk_out3_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out3_clk_wiz_0 rise@1.000ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.185ns  (logic 0.091ns (49.139%)  route 0.094ns (50.861%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.529 - 1.000 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.524 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.733     0.524    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y0          FDCE (Prop_fdce_C_Q)         0.091     0.615 r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/Q
+                                       net (fo=1, routed)           0.094     0.710    u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync
+    Routing       SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.493    -1.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           1.007    -0.493    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.030    -0.463 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.992     0.529    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X49Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg/C
+                                       clock pessimism             -0.004     0.524    
+                  SLICE_X49Y0          FDCE (Hold_fdce_C_D)         0.000     0.524    u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_history_reg
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.524    
+                                       arrival time                           0.710    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.185    
+
+Slack (MET) :             0.187ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.184ns  (logic 0.091ns (49.477%)  route 0.093ns (50.523%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y1          FDCE (Prop_fdce_C_Q)         0.091    -0.385 r  u_tdc_fine_layer/g_aux_4phase.rec180_d1_reg[1]/Q
+                                       net (fo=1, routed)           0.093    -0.292    u_tdc_fine_layer/g_aux_4phase.rec180_d1[1]
+    Routing       SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[1]/C
+                                       clock pessimism             -0.004    -0.476    
+                  SLICE_X49Y1          FDCE (Hold_fdce_C_D)        -0.003    -0.479    u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.479    
+                                       arrival time                          -0.292    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.187    
+
+Slack (MET) :             0.188ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.289ns  (logic 0.155ns (53.646%)  route 0.134ns (46.354%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    -0.010ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X49Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X49Y1          FDCE (Prop_fdce_C_Q)         0.091    -0.385 f  u_tdc_fine_layer/g_aux_4phase.rec180_d2_reg[0]/Q
+                                       net (fo=4, routed)           0.134    -0.251    u_tdc_fine_layer/g_aux_4phase.ordered_samples[1]
+    Routing       SLICE_X46Y1                                                       f  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[2]_i_1/I1
+    Routing       SLICE_X46Y1          LUT3 (Prop_lut3_I1_O)        0.064    -0.187 r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[2]_i_1/O
+                                       net (fo=1, routed)           0.000    -0.187    u_tdc_fine_layer/g_aux_4phase.aux_rise_slots[2]_i_1_n_0
+    Routing       SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[2]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[2]/C
+                                       clock pessimism              0.010    -0.462    
+                  SLICE_X46Y1          FDCE (Hold_fdce_C_D)         0.087    -0.375    u_tdc_fine_layer/g_aux_4phase.aux_rise_slots_reg[2]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.375    
+                                       arrival time                          -0.187    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.188    
+
+Slack (MET) :             0.200ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out3_clk_wiz_0  {rise@1.000ns fall@2.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.500ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out3_clk_wiz_0 rise@1.000ns)
+  Data Path Delay:        0.291ns  (logic 0.100ns (34.347%)  route 0.191ns (65.653%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.362ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.508ns = ( 0.492 - 1.000 ) 
+    Clock Pessimism Removal (CPR):    -0.326ns
+  Clock Uncertainty:      0.180ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.097ns
+    Phase Error              (PE):    0.120ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out3_clk_wiz_0 rise edge)
+                                                                    1.000     1.000 r  
+                  AD12                                              0.000     1.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     1.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     1.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                                   -3.040    -1.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2
+                                       net (fo=1, routed)           0.940    -0.235    u_clk_wiz_0/inst/clk_out3_clk_wiz_0
+                  BUFGCTRL_X0Y2                                                     r  u_clk_wiz_0/inst/clkout3_buf/I
+                  BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.026    -0.209 r  u_clk_wiz_0/inst/clkout3_buf/O
+                                       net (fo=223, routed)         0.701     0.492    u_tdc_fine_layer/clk_500m_deg180
+                  SLICE_X51Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[2]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X51Y0          FDCE (Prop_fdce_C_Q)         0.100     0.592 r  u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup_reg[2]/Q
+                                       net (fo=1, routed)           0.191     0.784    u_tdc_fine_layer/g_aux_4phase.g_phase[2].warmup[2]
+    Routing       SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]/C
+                                       clock pessimism              0.326     0.354    
+                                       clock uncertainty            0.180     0.534    
+                  SLICE_X48Y1          FDCE (Hold_fdce_C_D)         0.049     0.583    u_tdc_fine_layer/g_aux_4phase.rec180_to90_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.583    
+                                       arrival time                           0.784    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.200    
+
+Slack (MET) :             0.202ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec90_d3_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.353ns  (logic 0.128ns (36.286%)  route 0.225ns (63.714%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.064ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.509ns
+    Clock Pessimism Removal (CPR):    -0.027ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.700    -0.509    u_tdc_fine_layer/clk_500m
+                  SLICE_X51Y3          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec90_d3_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X51Y3          FDCE (Prop_fdce_C_Q)         0.100    -0.409 f  u_tdc_fine_layer/g_aux_4phase.rec90_d3_reg[0]/Q
+                                       net (fo=4, routed)           0.225    -0.184    u_tdc_fine_layer/g_aux_4phase.ordered_samples[0]
+    Routing       SLICE_X46Y2                                                       f  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots[0]_i_1/I1
+    Routing       SLICE_X46Y2          LUT3 (Prop_lut3_I1_O)        0.028    -0.156 r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots[0]_i_1/O
+                                       net (fo=1, routed)           0.000    -0.156    u_tdc_fine_layer/g_aux_4phase.aux_fall_slots[0]_i_1_n_0
+    Routing       SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[0]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[0]/C
+                                       clock pessimism              0.027    -0.445    
+                  SLICE_X46Y2          FDCE (Hold_fdce_C_D)         0.087    -0.358    u_tdc_fine_layer/g_aux_4phase.aux_fall_slots_reg[0]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.358    
+                                       arrival time                          -0.156    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.202    
+
+Slack (MET) :             0.203ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             clk_out2_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out2_clk_wiz_0 rise@0.500ns - clk_out2_clk_wiz_0 rise@0.500ns)
+  Data Path Delay:        0.200ns  (logic 0.091ns (45.590%)  route 0.109ns (54.410%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns = ( 0.029 - 0.500 ) 
+    Source Clock Delay      (SCD):    -0.476ns = ( 0.024 - 0.500 ) 
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.862 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     1.365    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.040    -1.675 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           0.940    -0.735    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026    -0.709 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.733     0.024    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X48Y1          FDCE (Prop_fdce_C_Q)         0.091     0.115 r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[0]/Q
+                                       net (fo=1, routed)           0.109     0.224    u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup[0]
+    Routing       SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out2_clk_wiz_0 rise edge)
+                                                                    0.500     0.500 r  
+                  AD12                                              0.000     0.500 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                                   -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                                       net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+                  BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+                  BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                                       net (fo=235, routed)         0.992     0.029    u_tdc_fine_layer/clk_500m_deg90
+                  SLICE_X48Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]/C
+                                       clock pessimism             -0.004     0.024    
+                  SLICE_X48Y1          FDCE (Hold_fdce_C_D)        -0.003     0.021    u_tdc_fine_layer/g_aux_4phase.g_phase[1].warmup_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                         -0.021    
+                                       arrival time                           0.224    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.203    
+
+Slack (MET) :             0.209ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.231ns  (logic 0.091ns (39.408%)  route 0.140ns (60.592%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.469ns
+    Source Clock Delay      (SCD):    -0.474ns
+    Clock Pessimism Removal (CPR):    -0.010ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.735    -0.474    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y0          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X45Y0          FDCE (Prop_fdce_C_Q)         0.091    -0.383 r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[0]/Q
+                                       net (fo=3, routed)           0.140    -0.243    u_tdc_fine_layer/g_aux_4phase.ordered_samples[3]
+    Routing       SLICE_X45Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.994    -0.469    u_tdc_fine_layer/clk_500m
+                  SLICE_X45Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.previous_sample_reg/C
+                                       clock pessimism              0.010    -0.460    
+                  SLICE_X45Y1          FDCE (Hold_fdce_C_D)         0.008    -0.452    u_tdc_fine_layer/g_aux_4phase.previous_sample_reg
+  ---------------------------------------------------------------------------------
+                                       required time                          0.452    
+                                       arrival time                          -0.243    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.209    
+
+Slack (MET) :             0.213ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.283ns  (logic 0.118ns (41.739%)  route 0.165ns (58.261%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.030ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.475ns
+    Clock Pessimism Removal (CPR):    -0.027ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.734    -0.475    u_tdc_fine_layer/clk_500m
+                  SLICE_X42Y4          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[1]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X42Y4          FDCE (Prop_fdce_C_Q)         0.118    -0.357 r  u_tdc_fine_layer/g_aux_4phase.rec0_d1_reg[1]/Q
+                                       net (fo=1, routed)           0.165    -0.192    u_tdc_fine_layer/g_aux_4phase.rec0_d1[1]
+    Routing       SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[1]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y1          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[1]/C
+                                       clock pessimism              0.027    -0.445    
+                  SLICE_X46Y1          FDCE (Hold_fdce_C_D)         0.040    -0.405    u_tdc_fine_layer/g_aux_4phase.rec0_d2_reg[1]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.405    
+                                       arrival time                          -0.192    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.213    
+
+Slack (MET) :             0.216ns  (arrival time - required time)
+  Source:                 u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_align[2].fall_q_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.212ns  (logic 0.107ns (50.369%)  route 0.105ns (49.631%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    -0.476ns
+    Clock Pessimism Removal (CPR):    0.004ns
+
+    Pin Reuse     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  ---------------------------------------------------------------------------------    -------------------
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.362     0.362 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.503     0.865    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.040    -2.175 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           0.940    -1.235    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.209 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.733    -0.476    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/C
+  ---------------------------------------------------------------------------------    -------------------
+    Routing       SLICE_X46Y2          FDCE (Prop_fdce_C_Q)         0.107    -0.369 r  u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q_reg[2]/Q
+                                       net (fo=1, routed)           0.105    -0.263    u_tdc_fine_layer/g_aux_4phase.g_align[1].fall_q[2]
+    Routing       SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[2].fall_q_reg[2]/D
+  ---------------------------------------------------------------------------------    -------------------
+
+                                       (clock clk_out1_clk_wiz_0 rise edge)
+                                                                    0.000     0.000 r  
+                  AD12                                              0.000     0.000 r  sys_clk (IN)
+                                       net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+                  AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+                  AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                                       net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+                  MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+                  MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                                   -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                                       net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+                  BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+                  BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                                       net (fo=1268, routed)        0.992    -0.471    u_tdc_fine_layer/clk_500m
+                  SLICE_X46Y2          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_align[2].fall_q_reg[2]/C
+                                       clock pessimism             -0.004    -0.476    
+                  SLICE_X46Y2          FDCE (Hold_fdce_C_D)        -0.004    -0.480    u_tdc_fine_layer/g_aux_4phase.g_align[2].fall_q_reg[2]
+  ---------------------------------------------------------------------------------
+                                       required time                          0.480    
+                                       arrival time                          -0.263    
+  ---------------------------------------------------------------------------------
+                                       slack                                  0.216    
+
+
+
+

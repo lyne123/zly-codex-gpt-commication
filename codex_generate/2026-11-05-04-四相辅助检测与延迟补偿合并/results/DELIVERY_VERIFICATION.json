@@ -1,0 +1,28 @@
+{
+  "delivery_integrity_pass": true,
+  "experiment_acceptance": "FAIL",
+  "actual_compensation_generics": {
+    "ENABLE_SKEW_COMP": "1",
+    "RISE_OFFSET_90_PS": "36011",
+    "FALL_OFFSET_90_PS": "36011",
+    "RISE_OFFSET_180_PS": "35742",
+    "FALL_OFFSET_180_PS": "35742",
+    "RISE_OFFSET_270_PS": "35756",
+    "FALL_OFFSET_270_PS": "35756",
+    "RISE_OFFSET_0_PS": "36081",
+    "FALL_OFFSET_0_PS": "36081"
+  },
+  "IP_parameter_values_unchanged": true,
+  "formal_baseline_unchanged": true,
+  "verified_aux_source_byte_identical": true,
+  "old_parameters_byte_identical": true,
+  "raw_rtl_frontend_byte_identical": true,
+  "full_rtl_edges": 7024,
+  "full_rtl_widths": 3512,
+  "core_setup_violations": 4,
+  "ILA2_setup_violations": 14,
+  "full_MAX_SDF": "NOT_EXECUTED",
+  "BIT": "NOT_GENERATED",
+  "historical_git_worktree_clean": true,
+  "pushed_to_GitHub": false
+}

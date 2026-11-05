@@ -1,0 +1,117 @@
+{
+  "reset_replica_equivalent_inputs": true,
+  "replica_cells": [
+    {
+      "cell": "rst_sync_500m_reg[1]",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X21Y13",
+      "bel": "SLICEL.B5FF",
+      "D_net": "rst_sync_500m[0]",
+      "C_net": "clk_500m",
+      "CLR_net": "rst_sync_500m[1]_i_1_n_0",
+      "Q_net": "rst_sync_500m[1]",
+      "Q_endpoint_loads": "471",
+      "ASYNC_REG": "1",
+      "DONT_TOUCH": ""
+    },
+    {
+      "cell": "rst_result_fifo_500m_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X21Y13",
+      "bel": "SLICEL.BFF",
+      "D_net": "rst_sync_500m[0]",
+      "C_net": "clk_500m",
+      "CLR_net": "rst_sync_500m[1]_i_1_n_0",
+      "Q_net": "rst_result_fifo_500m",
+      "Q_endpoint_loads": "38",
+      "ASYNC_REG": "1",
+      "DONT_TOUCH": "1"
+    }
+  ],
+  "low_bits": [
+    {
+      "bit": 0,
+      "s4_Q_net": "wrapped_time[0]",
+      "timestamp_D_net": "wrapped_time[0]",
+      "direct": true
+    },
+    {
+      "bit": 1,
+      "s4_Q_net": "wrapped_time[1]",
+      "timestamp_D_net": "wrapped_time[1]",
+      "direct": true
+    },
+    {
+      "bit": 2,
+      "s4_Q_net": "wrapped_time[2]",
+      "timestamp_D_net": "wrapped_time[2]",
+      "direct": true
+    },
+    {
+      "bit": 3,
+      "s4_Q_net": "wrapped_time[3]",
+      "timestamp_D_net": "wrapped_time[3]",
+      "direct": true
+    },
+    {
+      "bit": 4,
+      "s4_Q_net": "wrapped_time[4]",
+      "timestamp_D_net": "wrapped_time[4]",
+      "direct": true
+    },
+    {
+      "bit": 5,
+      "s4_Q_net": "wrapped_time[5]",
+      "timestamp_D_net": "wrapped_time[5]",
+      "direct": true
+    },
+    {
+      "bit": 6,
+      "s4_Q_net": "wrapped_time[6]",
+      "timestamp_D_net": "wrapped_time[6]",
+      "direct": true
+    },
+    {
+      "bit": 7,
+      "s4_Q_net": "wrapped_time[7]",
+      "timestamp_D_net": "wrapped_time[7]",
+      "direct": true
+    },
+    {
+      "bit": 8,
+      "s4_Q_net": "wrapped_time[8]",
+      "timestamp_D_net": "wrapped_time[8]",
+      "direct": true
+    },
+    {
+      "bit": 9,
+      "s4_Q_net": "wrapped_time[9]",
+      "timestamp_D_net": "wrapped_time[9]",
+      "direct": true
+    },
+    {
+      "bit": 10,
+      "s4_Q_net": "wrapped_time[10]",
+      "timestamp_D_net": "wrapped_time[10]",
+      "direct": true
+    },
+    {
+      "bit": 11,
+      "s4_Q_net": "wrapped_time[11]",
+      "timestamp_D_net": "wrapped_time[11]",
+      "direct": true
+    },
+    {
+      "bit": 12,
+      "s4_Q_net": "wrapped_time[12]",
+      "timestamp_D_net": "wrapped_time[12]",
+      "direct": true
+    },
+    {
+      "bit": 13,
+      "s4_Q_net": "wrapped_time[13]",
+      "timestamp_D_net": "wrapped_time[13]",
+      "direct": true
+    }
+  ]
+}

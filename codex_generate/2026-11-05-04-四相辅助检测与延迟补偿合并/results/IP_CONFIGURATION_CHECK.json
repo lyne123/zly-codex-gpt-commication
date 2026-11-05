@@ -1,0 +1,26 @@
+{
+  "clk_wiz_0": {
+    "parameter_values_equal": true,
+    "parameter_count": 256,
+    "source_sha256": "ad95c87aeaf8392dd6ead194844ad1162f364be7139e15bd9c5ec50e31f09ad0",
+    "registered_sha256": "18b3bea5cdc66b5172e3412145b1900da95ff32500fe8c56f485e41b6d7ab84b"
+  },
+  "fifo_tdc_result": {
+    "parameter_values_equal": true,
+    "parameter_count": 168,
+    "source_sha256": "29f1dbf1b9b5ba2bfdaef8fda04f6d0306a12c4cb82fac5cc9c98e0b3df07850",
+    "registered_sha256": "e837eb5bd7d4a93fb51725e1f7148bf53172b41ef69e985f3d70d8896c0ae4e0"
+  },
+  "ila_2": {
+    "parameter_values_equal": true,
+    "parameter_count": 3110,
+    "source_sha256": "22685f160847ab3fc7b137229430ae0b3419c2987aaceb3179728a24c3c15c04",
+    "registered_sha256": "991c0dddf4f9cb2ceb55cacb698ff43bd9ffa7a39e818d438428a3b9153c4989"
+  },
+  "ila_3": {
+    "parameter_values_equal": true,
+    "parameter_count": 3110,
+    "source_sha256": "0158eabe692b60bbd72c93b7f0f59c741cff4c43ccfcd46b1ace0873f319958c",
+    "registered_sha256": "dd61ce011b35d62ea18176d26c88cb06069cb996cbf528c41ecfa54a280861cf"
+  }
+}

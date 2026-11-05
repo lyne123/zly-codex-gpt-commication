@@ -1,0 +1,7 @@
+{
+  "source_commit": "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b",
+  "ENABLE_SKEW_COMP": 1,
+  "auxiliary": "legacy single-phase",
+  "parameters_file": "compensation_params.tcl",
+  "implementation_reference": "U:/results/optimized/compensated"
+}

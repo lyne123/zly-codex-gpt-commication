@@ -1,0 +1,6 @@
+{
+  "source_commit": "6b341d88497541f23eaefee1cfad4e4925c7f2aa",
+  "ENABLE_SKEW_COMP": 0,
+  "ENABLE_AUX_4PHASE": 1,
+  "implementation_reference": "X:/results/baseline"
+}

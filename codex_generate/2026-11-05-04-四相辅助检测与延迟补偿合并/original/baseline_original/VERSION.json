@@ -1,0 +1,7 @@
+{
+  "source_archive_commit": "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b",
+  "source_archive_path": "original/rtl",
+  "ENABLE_SKEW_COMP": 0,
+  "auxiliary": "legacy single-phase",
+  "implementation_reference": "U:/results/original/baseline"
+}

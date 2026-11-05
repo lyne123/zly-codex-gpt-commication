@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 19:24:18 2026
+# Process ID: 29640
+# Current directory: W:/logs
+# Command line: vivado.exe -mode batch -source W:/scripts/audit_failure.tcl -log audit_failure.log -journal audit_failure.jou
+# Log file: W:/logs/audit_failure.log
+# Journal file: W:/logs\audit_failure.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source W:/scripts/audit_failure.tcl
+# set_param general.maxThreads 2
+# set out W:/results/compensated
+# open_checkpoint $out/design.dcp
+Command: open_checkpoint W:/results/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 892.672 ; gain = 8.508
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1497.066 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 311 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.543 . Memory (MB): peak = 2279.660 ; gain = 7.355
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.760 . Memory (MB): peak = 2279.660 ; gain = 7.355
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2279.660 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: a94854fd
+----- Checksum: PlaceDB: 83fa46d6 ShapeSum: 1d40b7da RouteDB: 080d564d 
+open_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2279.660 ; gain = 1395.707
+# update_timing -full
+# set fd [open $out/module_all_boundary_setup.csv w]
+# puts $fd "module,perspective,slack_ns,startpoint,endpoint,data_delay_ns,logic_delay_ns,net_delay_ns"
+# foreach module {u_tdc_fine_layer u_tdc_time_candicate u_tdc_time_locate u_tdc_time_merge u_fifo_tdc_result u_fifo_tdc_error u_ila2} {
+#     set cells [get_cells -quiet -hier -filter "NAME =~ $module/*"]
+#     foreach direction {from to} {
+#         set paths [get_timing_paths -quiet -$direction $cells -delay_type max -max_paths 1]
+#         if {![llength $paths]} {continue}
+#         set p [lindex $paths 0]
+#         puts $fd "$module,$direction,[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p],[get_property DATAPATH_DELAY $p],[get_property DATAPATH_LOGIC_DELAY $p],[get_property DATAPATH_NET_DELAY $p]"
+#     }
+# }
+# close $fd
+# report_timing -from [get_cells {rst_sync_500m_reg[1]}] -delay_type max -max_paths 50 -path_type full_clock_expanded -input_pins -file $out/reset_control_setup_top50.rpt
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+# report_timing -to [get_cells -hier -filter {NAME =~ u_fifo_tdc_result/*}] -delay_type max -max_paths 50 -path_type full_clock_expanded -input_pins -file $out/result_fifo_incoming_setup_top50.rpt
+INFO: [Timing 38-78] ReportTimingParams: -to_pins  -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+# report_timing_summary -delay_type min_max -report_unconstrained -file $out/failure_audit_timing_summary.rpt
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# close_design
+# puts "READ_ONLY_FAILURE_AUDIT_COMPLETE"
+READ_ONLY_FAILURE_AUDIT_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 19:24:38 2026...

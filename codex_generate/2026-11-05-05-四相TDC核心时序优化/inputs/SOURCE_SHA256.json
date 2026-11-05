@@ -1,0 +1,82 @@
+{
+  "W:\\rtl\\tdc_fine_layer.v": {
+    "bytes": 28067,
+    "sha256": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0"
+  },
+  "W:\\rtl\\tdc_meas_top.v": {
+    "bytes": 11802,
+    "sha256": "6fc47bdb03fc0fed570a1d20335eb5eaae5c6c0282115d306c4a62c1548d8927"
+  },
+  "W:\\rtl\\tdc_time_candicate.v": {
+    "bytes": 9711,
+    "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2"
+  },
+  "W:\\rtl\\tdc_time_locate.v": {
+    "bytes": 10656,
+    "sha256": "8e0336a75d844a727bfe6c0eb9be067cd9a2ef9701cb22a098ff36619d8a45e2"
+  },
+  "W:\\rtl\\tdc_time_merge.v": {
+    "bytes": 4874,
+    "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "W:\\original\\rtl\\tdc_fine_layer.v": {
+    "bytes": 28067,
+    "sha256": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0"
+  },
+  "W:\\original\\rtl\\tdc_meas_top.v": {
+    "bytes": 11311,
+    "sha256": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d"
+  },
+  "W:\\original\\rtl\\tdc_time_candicate.v": {
+    "bytes": 9711,
+    "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2"
+  },
+  "W:\\original\\rtl\\tdc_time_locate.v": {
+    "bytes": 9997,
+    "sha256": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662"
+  },
+  "W:\\original\\rtl\\tdc_time_merge.v": {
+    "bytes": 4874,
+    "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "W:\\inputs\\ip\\clk_wiz_0\\clk_wiz_0.xci": {
+    "bytes": 75805,
+    "sha256": "ad95c87aeaf8392dd6ead194844ad1162f364be7139e15bd9c5ec50e31f09ad0"
+  },
+  "W:\\inputs\\ip\\fifo_tdc_result\\fifo_tdc_result.xci": {
+    "bytes": 50329,
+    "sha256": "29f1dbf1b9b5ba2bfdaef8fda04f6d0306a12c4cb82fac5cc9c98e0b3df07850"
+  },
+  "W:\\inputs\\ip\\ila_2\\ila_2.xci": {
+    "bytes": 691471,
+    "sha256": "22685f160847ab3fc7b137229430ae0b3419c2987aaceb3179728a24c3c15c04"
+  },
+  "W:\\inputs\\ip\\ila_3\\ila_3.xci": {
+    "bytes": 691822,
+    "sha256": "0158eabe692b60bbd72c93b7f0f59c741cff4c43ccfcd46b1ace0873f319958c"
+  },
+  "W:\\inputs\\frozen_compensation.csv": {
+    "bytes": 668,
+    "sha256": "184c030bcd104c5f14951159db84ee459c3c89afcd025aeff107986536fb3e4d"
+  },
+  "W:\\inputs\\compensation_params.tcl": {
+    "bytes": 310,
+    "sha256": "7586183f5fb5ce6fbe623a94d080af877f8ab467b773e1f993d9ecc5a811b715"
+  },
+  "W:\\inputs\\combine.xdc": {
+    "bytes": 64950,
+    "sha256": "587f3e7c7d3f43b198b107c1bb838b999705f7063761b4d3dbec72ad368a1a1e"
+  },
+  "W:\\sim\\stimuli\\full.txt": {
+    "bytes": 110530,
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+  },
+  "W:\\sim\\stimuli\\full_truth.csv": {
+    "bytes": 301310,
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac"
+  },
+  "Y:\\results\\compensated\\design.dcp": {
+    "bytes": 3871983,
+    "sha256": "4737383b8ab377a64a9ae958bd1f5e7305ae03e157aed976f7fed0e03d456502"
+  }
+}

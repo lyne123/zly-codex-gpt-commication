@@ -1,0 +1,216 @@
+--- previous_compensated/tdc_fine_layer.v
++++ new_compensated/tdc_fine_layer.v
+@@ -13,7 +13,8 @@
+     parameter integer CARRY_NUM     = 16,
+     parameter integer MAX_VALID_TAP = 60,
+     parameter integer MIN_VALID_TAP = 5,
+-    parameter integer PWM_DIST_ENABLE = 1  // 1: 对称LUT树形PWM分发；0: 原始直连对照
++    parameter integer PWM_DIST_ENABLE = 1, // 1: 对称LUT树形PWM分发；0: 原始直连对照
++    parameter integer ENABLE_AUX_4PHASE = 1 // 0: 原单相辅助通路；1: 四相有序采样
+ )(
+     input  wire        clk_500m,
+     input  wire        clk_500m_deg90,
+@@ -218,8 +219,12 @@
+     wire frame_ready = ready0_d1 & ready90_d2 & ready180_d1 & ready270_to90;
+ 
+     //==================================================================
+-    // 4. 辅助通路：PWM → 0°双级同步 → 边沿检测 → 延迟对齐
+-    //==================================================================
++    // 4. 辅助通路：四相独立采样 → 相关时钟固定延迟传输 → 有序边沿归属
++    //==================================================================
++    wire [3:0] aux_rise_match, aux_fall_match;
++    wire pwm_aux_in = pwm_in;
++    generate if (ENABLE_AUX_4PHASE == 0) begin : g_aux_legacy
++    // 保留原单相逻辑及其匹配位置，供同一份 RTL 做 A/B 对照。
+     (* ASYNC_REG="TRUE", SHREG_EXTRACT="NO" *) reg pwm_meta, pwm_sync;
+     reg pwm_history;
+     always @(posedge clk_500m or negedge rst_n_0) begin
+@@ -228,7 +233,7 @@
+             pwm_sync    <= 1'b0;
+             pwm_history <= 1'b0;
+         end else begin
+-            pwm_meta    <= pwm_in;
++            pwm_meta    <= pwm_aux_in;
+             pwm_sync    <= pwm_meta;
+             pwm_history <= pwm_sync;
+         end
+@@ -251,13 +256,162 @@
+         end
+     end
+     // 允许辅助边沿相对原匹配位置延迟1拍
+-    wire aux_rise_match =
++    wire legacy_rise_match =
+                         aux_rise_pipe[AUX_GATE_INDEX] |
+                         aux_rise_pipe[AUX_GATE_INDEX-1];
+ 
+-    wire aux_fall_match =
++    wire legacy_fall_match =
+                         aux_fall_pipe[AUX_GATE_INDEX] |
+                         aux_fall_pipe[AUX_GATE_INDEX-1];
++    assign aux_rise_match = {4{legacy_rise_match}};
++    assign aux_fall_match = {4{legacy_fall_match}};
++    end else begin : g_aux_4phase
++        wire [3:0] phase_clk = {clk_500m_deg270,clk_500m_deg180,clk_500m_deg90,clk_500m};
++        wire [3:0] phase_rst_n = {rst_n_270,rst_n_180,rst_n_90,rst_n_0};
++        wire [3:0] sampled_level, sample_ready;
++        wire [3:0] aux_rise_phase, aux_fall_phase;
++        genvar phase;
++        for (phase=0; phase<4; phase=phase+1) begin : g_phase
++            (* ASYNC_REG="TRUE", SHREG_EXTRACT="NO" *) reg pwm_meta, pwm_sync;
++            reg pwm_history;
++            reg [2:0] warmup;
++            always @(posedge phase_clk[phase] or negedge phase_rst_n[phase]) begin
++                if (!phase_rst_n[phase]) begin
++                    pwm_meta <= 1'b0;
++                    pwm_sync <= 1'b0;
++                    pwm_history <= 1'b0;
++                    warmup <= 3'b000;
++                end else begin
++                    pwm_meta <= pwm_aux_in;
++                    pwm_sync <= pwm_meta;
++                    pwm_history <= pwm_sync;
++                    warmup <= {warmup[1:0],1'b1};
++                end
++            end
++            assign sampled_level[phase] = pwm_history;
++            assign sample_ready[phase] = warmup[2];
++            assign aux_rise_phase[phase] = pwm_sync & ~pwm_history;
++            assign aux_fall_phase[phase] = ~pwm_sync & pwm_history;
++        end
++
++        // 传输电平记录而非异步 OR 脉冲，也不依赖 Toggle 的最小翻转间隔。
++        // 所有跨相位跳转均沿 270→180→90→0，最短名义建立预算为 1.5ns。
++        // 两位记录同时传递有效标志和采样电平；同相位补拍组成同一采样帧。
++        reg [1:0] rec270_to180, rec270_to90, rec180_to90;
++        reg [1:0] rec0_d1, rec0_d2;
++        reg [1:0] rec90_d1, rec90_d2, rec90_d3;
++        reg [1:0] rec180_d1, rec180_d2, rec270_d1;
++        always @(posedge clk_500m_deg180 or negedge rst_n_180)
++            if (!rst_n_180) rec270_to180 <= 2'b00;
++            else rec270_to180 <= {sample_ready[3],sampled_level[3]};
++        always @(posedge clk_500m_deg90 or negedge rst_n_90) begin
++            if (!rst_n_90) begin
++                rec270_to90 <= 2'b00;
++                rec180_to90 <= 2'b00;
++            end else begin
++                rec270_to90 <= rec270_to180;
++                rec180_to90 <= {sample_ready[2],sampled_level[2]};
++            end
++        end
++        always @(posedge clk_500m or negedge rst_n_0) begin
++            if (!rst_n_0) begin
++                rec0_d1 <= 0; rec0_d2 <= 0;
++                rec90_d1 <= 0; rec90_d2 <= 0; rec90_d3 <= 0;
++                rec180_d1 <= 0; rec180_d2 <= 0; rec270_d1 <= 0;
++            end else begin
++                rec0_d1 <= {sample_ready[0],sampled_level[0]};
++                rec0_d2 <= rec0_d1;
++                rec90_d1 <= {sample_ready[1],sampled_level[1]};
++                rec90_d2 <= rec90_d1;
++                rec90_d3 <= rec90_d2;
++                rec180_d1 <= rec180_to90;
++                rec180_d2 <= rec180_d1;
++                rec270_d1 <= rec270_to90;
++            end
++        end
++        // 位0..3按真实采样先后排列：90°、180°、270°、下一周期0°。
++        // 比较连续采样值，同一物理边沿只有一个0→1或1→0位置，无合并计时窗。
++        wire [3:0] ordered_samples = {rec0_d2[0],rec270_d1[0],rec180_d2[0],rec90_d3[0]};
++        wire ordered_ready = rec0_d2[1] & rec270_d1[1] & rec180_d2[1] & rec90_d3[1];
++        reg previous_sample, armed;
++        reg [3:0] aux_rise_slots, aux_fall_slots;
++        wire [3:0] previous_slots = {ordered_samples[2:0],previous_sample};
++        wire aux_rise_event = |aux_rise_slots;
++        wire aux_fall_event = |aux_fall_slots;
++        always @(posedge clk_500m or negedge rst_n_0) begin
++            if (!rst_n_0) begin
++                previous_sample <= 0;
++                armed <= 0;
++                aux_rise_slots <= 0;
++                aux_fall_slots <= 0;
++            end else begin
++                armed <= ordered_ready;
++                previous_sample <= ordered_samples[3];
++                aux_rise_slots <= (armed && ordered_ready) ? (ordered_samples & ~previous_slots) : 4'b0000;
++                aux_fall_slots <= (armed && ordered_ready) ? (~ordered_samples & previous_slots) : 4'b0000;
++            end
++        end
++
++        // thermo→code_q 为 LEVELS+2 拍，原四相输出为采样帧后 LEVELS+5 拍。
++        // 本通路含 history 的有序事件在帧后6拍形成；最终确认前补 LEVELS-2 拍。
++        // 保留四个500ps位置，不把辅助事件拉成长脉冲；每相仅查询自身及之前3个位置。
++        localparam integer LEVELS = $clog2(CARRY_NUM);
++        localparam integer ALIGN_CYCLES = (LEVELS>=2) ? LEVELS-2 : 0;
++        wire [3:0] rise_history [0:ALIGN_CYCLES+1];
++        wire [3:0] fall_history [0:ALIGN_CYCLES+1];
++        assign rise_history[0] = aux_rise_slots;
++        assign fall_history[0] = aux_fall_slots;
++        genvar delay_stage;
++        for (delay_stage=1; delay_stage<=ALIGN_CYCLES+1; delay_stage=delay_stage+1) begin : g_align
++            reg [3:0] rise_q, fall_q;
++            always @(posedge clk_500m or negedge rst_n_0)
++                if (!rst_n_0) begin rise_q <= 0; fall_q <= 0; end
++                else begin
++                    rise_q <= rise_history[delay_stage-1];
++                    fall_q <= fall_history[delay_stage-1];
++                end
++            assign rise_history[delay_stage] = rise_q;
++            assign fall_history[delay_stage] = fall_q;
++        end
++        wire [3:0] rise_now = rise_history[ALIGN_CYCLES];
++        wire [3:0] fall_now = fall_history[ALIGN_CYCLES];
++        // 同一边沿可能在相邻两个TDL帧中都有候选。只允许其首次确认帧参与选择，
++        // 防止已确认边沿的尾部候选与下一个真实异极性边沿混成冲突帧。
++        // 归属位随事件采样帧推进，不使用超时窗口，也不改变原候选的优先级或码值。
++        reg [3:0] rise_claimed_previous, fall_claimed_previous;
++        wire [3:0] rise_previous = rise_history[ALIGN_CYCLES+1] & ~rise_claimed_previous;
++        wire [3:0] fall_previous = fall_history[ALIGN_CYCLES+1] & ~fall_claimed_previous;
++        wire [3:0] rise_claimed_now = rise_now &
++            (({4{pack0_d1[9:8]==2'b11}} & 4'b1111) |
++             ({4{pack270_to90[9:8]==2'b11}} & 4'b0111) |
++             ({4{pack180_d1[9:8]==2'b11}} & 4'b0011) |
++             ({4{pack90_d2[9:8]==2'b11}} & 4'b0001));
++        wire [3:0] fall_claimed_now = fall_now &
++            (({4{pack0_d1[9:8]==2'b10}} & 4'b1111) |
++             ({4{pack270_to90[9:8]==2'b10}} & 4'b0111) |
++             ({4{pack180_d1[9:8]==2'b10}} & 4'b0011) |
++             ({4{pack90_d2[9:8]==2'b10}} & 4'b0001));
++        always @(posedge clk_500m or negedge rst_n_0) begin
++            if (!rst_n_0) begin
++                rise_claimed_previous <= 0;
++                fall_claimed_previous <= 0;
++            end else begin
++                rise_claimed_previous <= frame_ready ? rise_claimed_now : 4'b0000;
++                fall_claimed_previous <= frame_ready ? fall_claimed_now : 4'b0000;
++            end
++        end
++        assign aux_rise_match[0] = rise_now[0] | (|rise_previous[3:1]);
++        assign aux_rise_match[1] = (|rise_now[1:0]) | (|rise_previous[3:2]);
++        assign aux_rise_match[2] = (|rise_now[2:0]) | rise_previous[3];
++        assign aux_rise_match[3] = |rise_now;
++        assign aux_fall_match[0] = fall_now[0] | (|fall_previous[3:1]);
++        assign aux_fall_match[1] = (|fall_now[1:0]) | (|fall_previous[3:2]);
++        assign aux_fall_match[2] = (|fall_now[2:0]) | fall_previous[3];
++        assign aux_fall_match[3] = |fall_now;
++`ifndef SYNTHESIS
++        initial if (CARRY_NUM<4) $fatal(1,"四相辅助通路要求CARRY_NUM>=4");
++`endif
++    end endgenerate
+     //==================================================================
+     // 5. 联合判断：TDL极性与PWM辅助检测一致才判为有效
+     //    判别结果及原始码在同一个0°上升沿寄存后输出。
+@@ -276,10 +430,10 @@
+         end
+     endfunction
+ 
+-    wire [1:0] final_type0   = confirm_edge(pack0_d1[9:8],        aux_rise_match, aux_fall_match);
+-    wire [1:0] final_type90  = confirm_edge(pack90_d2[9:8],       aux_rise_match, aux_fall_match);
+-    wire [1:0] final_type180 = confirm_edge(pack180_d1[9:8],      aux_rise_match, aux_fall_match);
+-    wire [1:0] final_type270 = confirm_edge(pack270_to90[9:8],    aux_rise_match, aux_fall_match);
++    wire [1:0] final_type0   = confirm_edge(pack0_d1[9:8],        aux_rise_match[3], aux_fall_match[3]);
++    wire [1:0] final_type90  = confirm_edge(pack90_d2[9:8],       aux_rise_match[0], aux_fall_match[0]);
++    wire [1:0] final_type180 = confirm_edge(pack180_d1[9:8],      aux_rise_match[1], aux_fall_match[1]);
++    wire [1:0] final_type270 = confirm_edge(pack270_to90[9:8],    aux_rise_match[2], aux_fall_match[2]);
+ 
+     always @(posedge clk_500m or negedge rst_n_0) begin
+         if (!rst_n_0) begin

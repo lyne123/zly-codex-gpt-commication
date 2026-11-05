@@ -1,0 +1,1 @@
+rtl_full {"expected_pulses": 3512, "actual_edges": 7024, "correct_widths": 3512, "mispairs": 0, "pass_measurement": true, "pass_aux": true, "rmse_ps": 3.2047622593496956}

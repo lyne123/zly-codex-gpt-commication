@@ -1,0 +1,3 @@
+cell,ref_name,loc,bel,D_net,C_net,CLR_net,Q_net,Q_endpoint_loads,ASYNC_REG,DONT_TOUCH
+rst_sync_500m_reg[1],FDCE,SLICE_X21Y13,SLICEL.B5FF,rst_sync_500m[0],clk_500m,rst_sync_500m[1]_i_1_n_0,rst_sync_500m[1],471,1,
+rst_result_fifo_500m_reg,FDCE,SLICE_X21Y13,SLICEL.BFF,rst_sync_500m[0],clk_500m,rst_sync_500m[1]_i_1_n_0,rst_result_fifo_500m,38,1,1

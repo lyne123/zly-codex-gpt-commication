@@ -1,0 +1,14 @@
+{
+  "wrap_equivalence_samples": {
+    "8": 2560,
+    "10": 2560,
+    "1": 163840
+  },
+  "fifo_reset_checks": {
+    "cycles": 2552,
+    "outputs": 76,
+    "assertions": 3,
+    "releases": 4
+  },
+  "unit_pass": true
+}

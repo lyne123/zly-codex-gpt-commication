@@ -1,0 +1,22 @@
+{
+  "rtl_pass": true,
+  "expected_pulses": 3512,
+  "actual_pulses": 3512,
+  "valid_edges": 7024,
+  "frontend_byte_identical": true,
+  "baseline_matches_verified_commit": true,
+  "timestamp_checks": 7024,
+  "width_checks": 3512,
+  "locate_boundary_samples": 8321,
+  "phase_polarity_tap_combinations": 520,
+  "negative_wrap_cases": 162,
+  "positive_wrap_cases": 1,
+  "parameters_recalculated": false,
+  "rtl_sha256": {
+    "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+    "tdc_meas_top.v": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  }
+}

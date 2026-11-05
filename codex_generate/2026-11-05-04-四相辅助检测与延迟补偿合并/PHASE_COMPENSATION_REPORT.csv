@@ -1,0 +1,9 @@
+﻿tdl_phase,sel_index,polarity,offset_ps,offset_unit,rtl_formula_checks,rtl_raw_fine_min_ps,rtl_raw_fine_max_ps,sdf_status,sdf_sample_count,raw_bias_ps,compensated_bias_ps,raw_relative_to_tdl0_ps,compensated_relative_to_tdl0_ps,reason
+90,0,rise,36011,ps,861,70,520,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+90,0,fall,36011,ps,788,70,520,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+180,1,rise,35742,ps,875,70,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+180,1,fall,35742,ps,843,70,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+270,2,rise,35756,ps,873,70,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+270,2,fall,35756,ps,832,70,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+0,3,rise,36081,ps,903,30,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟
+0,3,fall,36081,ps,1049,30,560,NOT_EXECUTED,,,,,,缺少本版SDF实际测量，不估算残余固定延迟

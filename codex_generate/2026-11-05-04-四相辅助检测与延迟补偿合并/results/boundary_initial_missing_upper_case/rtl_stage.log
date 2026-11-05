@@ -1,0 +1,10 @@
+RTL_SIM_COMPLETE baseline 3512
+RTL_SIM_COMPLETE compensated 3512
+Traceback (most recent call last):
+  File "W:\scripts\run_rtl.py", line 76, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "W:\scripts\run_rtl.py", line 72, in main
+    assert len(seen)==4*2*65 and wrap_low and wrap_high
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

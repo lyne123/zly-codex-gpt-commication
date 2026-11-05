@@ -1,0 +1,89 @@
+{
+  "versions": {
+    "baseline_original": {},
+    "baseline_aux4": {
+      "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+      "tdc_meas_top.v": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+      "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+      "tdc_time_locate.v": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+      "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+    },
+    "compensated_previous": {
+      "tdc_fine_layer.v": "fa811e21687908d6ccda5191d51cb4b377a3218a487cc17b0dcdf31ec849342b",
+      "tdc_meas_top.v": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+      "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+      "tdc_time_locate.v": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+      "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+    },
+    "new_compensated": {
+      "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+      "tdc_meas_top.v": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+      "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+      "tdc_time_locate.v": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+      "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+    }
+  },
+  "git_evidence": {
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:rtl/tdc_fine_layer.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\rtl\\tdc_fine_layer.v",
+      "sha256": "fa811e21687908d6ccda5191d51cb4b377a3218a487cc17b0dcdf31ec849342b",
+      "git_blob": "846357991a981f49e3881862367c15ffa7bf2b1b"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:rtl/tdc_meas_top.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\rtl\\tdc_meas_top.v",
+      "sha256": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+      "git_blob": "38fb43144e9322877545a74f3f33b3fb87a473ab"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:rtl/tdc_time_candicate.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\rtl\\tdc_time_candicate.v",
+      "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+      "git_blob": "00e33b48430ea3e0f49d859e11f345635808f154"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:rtl/tdc_time_locate.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\rtl\\tdc_time_locate.v",
+      "sha256": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+      "git_blob": "a9cb26939a52fdf0c09ddcababf32f53f700a540"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:rtl/tdc_time_merge.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\rtl\\tdc_time_merge.v",
+      "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a",
+      "git_blob": "eae50a66ae5ceb2d8c9a3eda83adc38dde358a18"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:results/optimized/compensated/parameters_used.tcl": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\optimized\\compensated\\parameters_used.tcl",
+      "sha256": "7586183f5fb5ce6fbe623a94d080af877f8ab467b773e1f993d9ecc5a811b715",
+      "git_blob": "b19a27a31d111568cfd18ee2ff4a2e8bdda967f6"
+    },
+    "d30dfeb9779f7d3c4859fbfb300bebd2d9481a7b:results/tdc_skew_calibration.csv": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\tdc_skew_calibration.csv",
+      "sha256": "184c030bcd104c5f14951159db84ee459c3c89afcd025aeff107986536fb3e4d",
+      "git_blob": "3b20dd7cb6a2fc3fa3e7b8b942459daea30f4358"
+    },
+    "6b341d88497541f23eaefee1cfad4e4925c7f2aa:rtl/tdc_fine_layer.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-03-四相TDC辅助边沿检测优化\\rtl\\tdc_fine_layer.v",
+      "sha256": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+      "git_blob": "40bf5245f7f2cf078bfb1001c350916e212b52e3"
+    },
+    "6b341d88497541f23eaefee1cfad4e4925c7f2aa:rtl/tdc_meas_top.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-03-四相TDC辅助边沿检测优化\\rtl\\tdc_meas_top.v",
+      "sha256": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+      "git_blob": "38fb43144e9322877545a74f3f33b3fb87a473ab"
+    },
+    "6b341d88497541f23eaefee1cfad4e4925c7f2aa:rtl/tdc_time_candicate.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-03-四相TDC辅助边沿检测优化\\rtl\\tdc_time_candicate.v",
+      "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+      "git_blob": "00e33b48430ea3e0f49d859e11f345635808f154"
+    },
+    "6b341d88497541f23eaefee1cfad4e4925c7f2aa:rtl/tdc_time_locate.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-03-四相TDC辅助边沿检测优化\\rtl\\tdc_time_locate.v",
+      "sha256": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+      "git_blob": "a9cb26939a52fdf0c09ddcababf32f53f700a540"
+    },
+    "6b341d88497541f23eaefee1cfad4e4925c7f2aa:rtl/tdc_time_merge.v": {
+      "local_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-03-四相TDC辅助边沿检测优化\\rtl\\tdc_time_merge.v",
+      "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a",
+      "git_blob": "eae50a66ae5ceb2d8c9a3eda83adc38dde358a18"
+    }
+  },
+  "parameters_recalculated": false
+}

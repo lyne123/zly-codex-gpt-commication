@@ -1,0 +1,14 @@
+[
+  {
+    "old_path": "W:\\results\\rtl\\baseline\\rtl_full\\associated_timestamps.csv",
+    "new_path": "W:\\results\\rtl\\baseline\\rtl_full\\analysis_failed_sdf_reference\\original_associated_timestamps.csv",
+    "sha256": "269bfe2863f08d1a1b360791ca1adb2498b408db32d0058ab9e797f419f67400",
+    "reason": "首轮错误分析产物移入失败记录，保留内容，避免混入最终RTL数据"
+  },
+  {
+    "old_path": "W:\\results\\rtl\\baseline\\rtl_full\\channel_statistics.csv",
+    "new_path": "W:\\results\\rtl\\baseline\\rtl_full\\analysis_failed_sdf_reference\\original_channel_statistics.csv",
+    "sha256": "530ea03b4a8d83e193751daf6d08390589d770132e775e728a765a434147141f",
+    "reason": "首轮错误分析产物移入失败记录，保留内容，避免混入最终RTL数据"
+  }
+]
