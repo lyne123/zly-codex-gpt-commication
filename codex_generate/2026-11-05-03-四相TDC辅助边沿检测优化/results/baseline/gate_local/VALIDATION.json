@@ -1,0 +1,82 @@
+{
+  "dataset": "local",
+  "expected_pulses": 160,
+  "expected_edges": 320,
+  "actual_edges": 320,
+  "correct_widths": 160,
+  "missing_rise": [],
+  "missing_fall": [],
+  "duplicate_rise": [],
+  "duplicate_fall": [],
+  "mispairs": 0,
+  "aux_rises": 160,
+  "aux_falls": 160,
+  "aux_unknown_rows": 0,
+  "annotation_success": true,
+  "functional_pass": true,
+  "timing_checks": "enabled",
+  "active_synchronous_warning_count": 0,
+  "all_observed_width_stats": {
+    "n": 160,
+    "rmse_ps": 136.91498274476757,
+    "bias_ps": -22.4,
+    "std_ps": 135.07017620481585
+  },
+  "full_set_stats": {
+    "n": 160,
+    "rmse_ps": 136.91498274476757,
+    "bias_ps": -22.4,
+    "std_ps": 135.07017620481585
+  },
+  "matched_only_stats": {
+    "n": 160,
+    "rmse_ps": 136.91498274476757,
+    "bias_ps": -22.4,
+    "std_ps": 135.07017620481585,
+    "max_abs_ps": 280,
+    "expected_n": 160,
+    "matched_unique_n": 160,
+    "complete": true
+  },
+  "minimum_association_margin_ps": 3310.0,
+  "maximum_association_residual_ps": 381.0,
+  "timing_warnings": [
+    {
+      "kind": "AUX_first_stage_asynchronous_input",
+      "check": "setuphold",
+      "count": 72,
+      "active_after_5us": 72,
+      "in_target_windows": 7
+    },
+    {
+      "kind": "ILA_asynchronous_debug_PWM",
+      "check": "setuphold",
+      "count": 55,
+      "active_after_5us": 55,
+      "in_target_windows": 2
+    },
+    {
+      "kind": "MMCM_unused_outputs_model",
+      "check": "period",
+      "count": 81074,
+      "active_after_5us": 62928,
+      "in_target_windows": 3600
+    },
+    {
+      "kind": "TDL_asynchronous_sampling",
+      "check": "setuphold",
+      "count": 3732,
+      "active_after_5us": 3732,
+      "in_target_windows": 373
+    },
+    {
+      "kind": "reset_synchronizer",
+      "check": "recrem",
+      "count": 1,
+      "active_after_5us": 0,
+      "in_target_windows": 0
+    }
+  ],
+  "no_parameters_recalculated": true,
+  "association_reference": "frozen prior independent calibration, used only for event IDs"
+}

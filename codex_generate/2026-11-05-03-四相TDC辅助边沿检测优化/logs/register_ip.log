@@ -1,0 +1,175 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 17:33:03 2026
+# Process ID: 22592
+# Current directory: W:/build/vivado_run
+# Command line: vivado.exe -mode batch -notrace -source W:/scripts/register_ip.tcl -log W:/logs/register_ip.log -journal W:/logs/register_ip.jou
+# Log file: W:/logs/register_ip.log
+# Journal file: W:/logs/register_ip.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source W:/scripts/register_ip.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.727 ; gain = 118.711
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.veo'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_0' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v'. Please regenerate to continue.
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/doc/clk_wiz_v6_0_changelog.txt
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.veo
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_7s_mmcm.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_7s_pll.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_mmcm.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_pll.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_plus_pll.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_plus_mmcm.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xml
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_tdc_result' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_sim_netlist.v'. Please regenerate to continue.
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/doc/fifo_generator_v13_2_changelog.txt
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.vho
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.veo
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/simulation/fifo_generator_vlog_beh.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/hdl/fifo_generator_v13_2_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/hdl/fifo_generator_v13_2_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/sim/fifo_tdc_result.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_stub.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_stub.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_sim_netlist.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_sim_netlist.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/synth/fifo_tdc_result.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_ooc.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xml
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2.veo'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/synth/ila_2.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/sim/ila_2.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_sim_netlist.v'. Please regenerate to continue.
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/doc/ila_v6_2_changelog.txt
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2.veo
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/sim/ila_2.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2.dcp
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_stub.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_stub.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_sim_netlist.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_sim_netlist.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ltlib_v1_0_0_ver.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ltlib_v1_0_0_lib_fn.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/ltlib_v1_0_vl_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbs_v1_0_2_i2x.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbs_v1_0_2_in.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/xsdbs_v1_0_vl_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/fifo_generator_v13_1_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_i2x.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_in.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_icn.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_ext.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_ports.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bsid_ports.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bsid_vec_ports.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_vec.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_sl_prt_map.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_id_map.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_id_vec_map.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ila_v6_2_12_ila_ver.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ila_v6_2_12_ila_in.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ila_v6_2_12_ila_param.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ila_v6_2_12_ila_lparam.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/hdl/verilog/ila_v6_2_12_ila_lib_fn.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2_ooc.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/synth/ila_2.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_2/ila_2.xml
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3.veo'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/synth/ila_3.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/sim/ila_3.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_3' generated file not found 'w:fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v'. Please regenerate to continue.
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/doc/ila_v6_2_changelog.txt
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3.veo
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/sim/ila_3.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3.dcp
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_stub.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/verilog/ltlib_v1_0_0_ver.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/verilog/ltlib_v1_0_0_lib_fn.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/ltlib_v1_0_vl_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/verilog/xsdbs_v1_0_2_i2x.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/verilog/xsdbs_v1_0_2_in.vh
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/xsdbs_v1_0_vl_rfs.v
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/fifo_generator_v13_1_vhsyn_rfs.vhd
+INFO: [IP_Flow 19-7005] Skipping external file W:/build/vivado_run/fpga_tdc_v3.gen/sources_1/ip/ila_3/hdl/verilog/xsdbm_v3_0_0_i2x.vh
+INFO: [Common 17-14] Message 'IP_Flow 19-7005' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_2'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'w:/build/registered/aux_baseline.gen/sources_1/ip/ila_2/ila_2_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_3'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'w:/build/registered/aux_baseline.gen/sources_1/ip/ila_3/ila_3_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_3'...
+REGISTER_IP_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 17:33:23 2026...

@@ -1,0 +1,196 @@
+{
+  "expected_pulses": 224,
+  "actual_edges": 443,
+  "expected_edges": 448,
+  "missing_rise": [
+    0
+  ],
+  "missing_fall": [
+    110,
+    111,
+    112,
+    113
+  ],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 219,
+  "output_widths": 219,
+  "errors": [
+    {
+      "time_ps": "10000000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10000500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10046000",
+      "kind": "merge",
+      "code": "2"
+    },
+    {
+      "time_ps": "32034000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "32082000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "32084000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "32094000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "32432000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "32434000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "32444000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "32482000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "32484000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "32494000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "32832000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "32834000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "32844000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "32884000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33234000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33284000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33634000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33684000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "34034000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "34084000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 224,
+  "aux_falls": 224,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

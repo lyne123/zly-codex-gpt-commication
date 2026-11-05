@@ -1,0 +1,59 @@
+{
+  "attempted_extra_LOC_applied": false,
+  "reason": "Vivado rejects foreach in XDC; active replay script omits the ineffective file; exact used script retained",
+  "actual_aux_placements": [
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_meta_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X43Y1",
+      "bel": "SLICEL.C5FF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[0].pwm_sync_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X43Y1",
+      "bel": "SLICEL.D5FF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X47Y1",
+      "bel": "SLICEL.AFF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_sync_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X47Y1",
+      "bel": "SLICEL.A5FF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X49Y0",
+      "bel": "SLICEL.AFF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X49Y0",
+      "bel": "SLICEL.A5FF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_meta_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X49Y4",
+      "bel": "SLICEL.AFF"
+    },
+    {
+      "name": "u_tdc_fine_layer/g_aux_4phase.g_phase[3].pwm_sync_reg",
+      "ref_name": "FDCE",
+      "loc": "SLICE_X49Y4",
+      "bel": "SLICEL.A5FF"
+    }
+  ],
+  "critical_warnings": [
+    "Designutils 20-1307: unsupported foreach, no extra LOC applied",
+    "Vivado_Tcl 4-426: one reference SRL optimization not replayed"
+  ],
+  "implemented_effective_constraints_sha256": "3639986ea05d0445a525a7b687a3d0677fe3aa193ab706603defdc8c479addab"
+}

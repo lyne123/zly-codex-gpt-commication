@@ -1,0 +1,102 @@
+{
+  "expected_pulses": 160,
+  "output_widths": 160,
+  "valid_matched_pulses": 160,
+  "valid_rate": 1.0,
+  "missing": [],
+  "duplicate": [],
+  "faults": [],
+  "business_errors": [],
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "candidate_count": 320,
+  "timestamp_count": 320,
+  "fifo_sequence_equal": true,
+  "rise": {
+    "n": 160,
+    "rmse_ps": 36034.9608294674,
+    "bias_ps": 36034.90625,
+    "std_ps": 62.71789984476122,
+    "max_abs_ps": 36097
+  },
+  "fall": {
+    "n": 160,
+    "rmse_ps": 36012.85992852067,
+    "bias_ps": 36012.50625,
+    "std_ps": 159.60521595780477,
+    "max_abs_ps": 36177
+  },
+  "selection_counts": {
+    "0": 147,
+    "2": 59,
+    "3": 93,
+    "1": 21
+  },
+  "maximum_association_residual_ps": 381.0,
+  "minimum_association_margin_ps": 3310.0,
+  "groups": {
+    "ATC_20MHz": {
+      "n": 160,
+      "rmse_ps": 136.91498274476757,
+      "bias_ps": -22.4,
+      "std_ps": 135.07017620481585,
+      "max_abs_ps": 280,
+      "expected_n": 160,
+      "matched_unique_n": 160,
+      "complete": true
+    },
+    "all": {
+      "n": 160,
+      "rmse_ps": 136.91498274476757,
+      "bias_ps": -22.4,
+      "std_ps": 135.07017620481585,
+      "max_abs_ps": 280,
+      "expected_n": 160,
+      "matched_unique_n": 160,
+      "complete": true
+    },
+    "complete_frame": {
+      "n": 160,
+      "rmse_ps": 136.91498274476757,
+      "bias_ps": -22.4,
+      "std_ps": 135.07017620481585,
+      "max_abs_ps": 280,
+      "expected_n": 160,
+      "matched_unique_n": 160,
+      "complete": true
+    },
+    "spwm_data": {
+      "n": 154,
+      "rmse_ps": 136.73640391587077,
+      "bias_ps": -27.16883116883117,
+      "std_ps": 134.01006965434988,
+      "max_abs_ps": 280,
+      "expected_n": 154,
+      "matched_unique_n": 154,
+      "complete": true
+    },
+    "header_5": {
+      "n": 3,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 3,
+      "matched_unique_n": 3,
+      "complete": true
+    },
+    "header_95": {
+      "n": 3,
+      "rmse_ps": 200.0,
+      "bias_ps": 200,
+      "std_ps": 0.0,
+      "max_abs_ps": 200,
+      "expected_n": 3,
+      "matched_unique_n": 3,
+      "complete": true
+    }
+  },
+  "stimulus_sha256": "05aaa708638505e747b850311a97052bc70642cc01fb84c81f0d7ea3e9a3c3d8"
+}

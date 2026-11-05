@@ -1,0 +1,56 @@
+{
+  "pass_all": true,
+  "events_checked": 320,
+  "target_pairs_checked": 3,
+  "physical_gap_review": [
+    {
+      "polarity": 0,
+      "effective_sample_phases": {
+        "0": 234,
+        "90": 543,
+        "180": 954,
+        "270": 1358
+      },
+      "gaps_ps": [
+        309,
+        411,
+        404,
+        876
+      ],
+      "maximum_gap_ps": 876,
+      "D_dly_path_skew_ps": 374
+    },
+    {
+      "polarity": 1,
+      "effective_sample_phases": {
+        "0": 234,
+        "90": 543,
+        "180": 954,
+        "270": 1358
+      },
+      "gaps_ps": [
+        309,
+        411,
+        404,
+        876
+      ],
+      "maximum_gap_ps": 876,
+      "D_dly_path_skew_ps": 374
+    }
+  ],
+  "fixed_capture_to_emit_latency_ps": {
+    "0": [
+      11142
+    ],
+    "90": [
+      12644
+    ],
+    "180": [
+      12144
+    ],
+    "270": [
+      11644
+    ]
+  },
+  "not_compensation_calibration": true
+}

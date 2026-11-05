@@ -1,0 +1,194 @@
+{
+  "expected_pulses": 64,
+  "actual_edges": 80,
+  "expected_edges": 128,
+  "missing_rise": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    61,
+    62,
+    63
+  ],
+  "missing_fall": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    24,
+    25,
+    26,
+    60,
+    61,
+    62
+  ],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 8,
+  "correct_widths": 32,
+  "output_widths": 40,
+  "errors": [
+    {
+      "time_ps": "10078000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10128000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10178000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10478000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10528000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10578000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10878000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10928000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "10978000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11278000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11328000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11378000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11678000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11728000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "11778000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12078000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12128000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12178000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12478000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12528000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "12578000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "16080000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "16130000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "16180000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 64,
+  "aux_falls": 64,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

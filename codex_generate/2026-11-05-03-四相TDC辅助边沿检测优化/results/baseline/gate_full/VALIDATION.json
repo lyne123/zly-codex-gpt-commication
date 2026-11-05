@@ -1,0 +1,82 @@
+{
+  "dataset": "full",
+  "expected_pulses": 3512,
+  "expected_edges": 7024,
+  "actual_edges": 7024,
+  "correct_widths": 3512,
+  "missing_rise": [],
+  "missing_fall": [],
+  "duplicate_rise": [],
+  "duplicate_fall": [],
+  "mispairs": 0,
+  "aux_rises": 3512,
+  "aux_falls": 3512,
+  "aux_unknown_rows": 0,
+  "annotation_success": true,
+  "functional_pass": true,
+  "timing_checks": "enabled",
+  "active_synchronous_warning_count": 0,
+  "all_observed_width_stats": {
+    "n": 3512,
+    "rmse_ps": 161.61419688027846,
+    "bias_ps": 1.6469248291571754,
+    "std_ps": 161.6058051923399
+  },
+  "full_set_stats": {
+    "n": 3512,
+    "rmse_ps": 161.61419688027846,
+    "bias_ps": 1.6469248291571754,
+    "std_ps": 161.6058051923399
+  },
+  "matched_only_stats": {
+    "n": 3512,
+    "rmse_ps": 161.61419688027846,
+    "bias_ps": 1.6469248291571754,
+    "std_ps": 161.6058051923399,
+    "max_abs_ps": 380,
+    "expected_n": 3512,
+    "matched_unique_n": 3512,
+    "complete": true
+  },
+  "minimum_association_margin_ps": 3310.0,
+  "maximum_association_residual_ps": 387.0,
+  "timing_warnings": [
+    {
+      "kind": "AUX_first_stage_asynchronous_input",
+      "check": "setuphold",
+      "count": 1312,
+      "active_after_5us": 1312,
+      "in_target_windows": 7
+    },
+    {
+      "kind": "ILA_asynchronous_debug_PWM",
+      "check": "setuphold",
+      "count": 177,
+      "active_after_5us": 177,
+      "in_target_windows": 2
+    },
+    {
+      "kind": "MMCM_unused_outputs_model",
+      "check": "period",
+      "count": 1073744,
+      "active_after_5us": 1055598,
+      "in_target_windows": 3600
+    },
+    {
+      "kind": "TDL_asynchronous_sampling",
+      "check": "setuphold",
+      "count": 85416,
+      "active_after_5us": 85416,
+      "in_target_windows": 373
+    },
+    {
+      "kind": "reset_synchronizer",
+      "check": "recrem",
+      "count": 1,
+      "active_after_5us": 0,
+      "in_target_windows": 0
+    }
+  ],
+  "no_parameters_recalculated": true,
+  "association_reference": "frozen prior independent calibration, used only for event IDs"
+}

@@ -1,0 +1,87 @@
+{
+  "expected_pulses": 224,
+  "actual_edges": 446,
+  "expected_edges": 448,
+  "missing_rise": [],
+  "missing_fall": [
+    100,
+    101
+  ],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 222,
+  "output_widths": 222,
+  "errors": [
+    {
+      "time_ps": "30030000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30078000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "30080000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30090000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "30428000",
+      "kind": "repeat",
+      "code": "1"
+    },
+    {
+      "time_ps": "30430000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30440000",
+      "kind": "merge",
+      "code": "1"
+    },
+    {
+      "time_ps": "30480000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30830000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30880000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "31230000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "31280000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 224,
+  "aux_falls": 224,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

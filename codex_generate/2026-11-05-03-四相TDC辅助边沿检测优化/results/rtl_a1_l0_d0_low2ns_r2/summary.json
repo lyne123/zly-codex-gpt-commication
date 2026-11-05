@@ -1,0 +1,39 @@
+{
+  "expected_pulses": 224,
+  "actual_edges": 448,
+  "expected_edges": 448,
+  "missing_rise": [],
+  "missing_fall": [],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 224,
+  "output_widths": 224,
+  "errors": [
+    {
+      "time_ps": "30478000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "30878000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "31278000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 224,
+  "aux_falls": 224,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

@@ -1,0 +1,91 @@
+{
+  "expected_pulses": 64,
+  "actual_edges": 127,
+  "expected_edges": 128,
+  "missing_rise": [
+    0
+  ],
+  "missing_fall": [],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 63,
+  "output_widths": 63,
+  "errors": [
+    {
+      "time_ps": "10000000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10000500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10070000",
+      "kind": "merge",
+      "code": "2"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 64,
+  "aux_falls": 64,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

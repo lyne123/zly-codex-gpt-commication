@@ -1,0 +1,34 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Nov  5 17:44:06 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_clock_interaction -file W://results/baseline/clock_interaction.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+-------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                                                                                                                                                                        WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock              
+From Clock                                                                                  To Clock                                                                                    Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints              
+------------------------------------------------------------------------------------------  ------------------------------------------------------------------------------------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -----------------------  
+clk_out1_clk_wiz_0                                                                          clk_out1_clk_wiz_0                                                                          rise - rise    -0.05    -0.17           14         2121             2.00  Clean                Partial False Path       
+clk_out1_clk_wiz_0                                                                          clk_out5_clk_wiz_0                                                                          rise - rise     1.29     0.00            0           43             2.00  Ignored              Max Delay Datapath Only  
+clk_out2_clk_wiz_0                                                                          clk_out1_clk_wiz_0                                                                          rise - rise     0.05     0.00            0           52             1.50  Clean                Timed                    
+clk_out2_clk_wiz_0                                                                          clk_out2_clk_wiz_0                                                                          rise - rise     0.40     0.00            0          162             2.00  Clean                Timed                    
+clk_out3_clk_wiz_0                                                                          clk_out2_clk_wiz_0                                                                          rise - rise     0.32     0.00            0           24             1.50  Clean                Timed                    
+clk_out3_clk_wiz_0                                                                          clk_out3_clk_wiz_0                                                                          rise - rise     0.26     0.00            0          159             2.00  Clean                Timed                    
+clk_out4_clk_wiz_0                                                                          clk_out3_clk_wiz_0                                                                          rise - rise     0.30     0.00            0           12             1.50  Clean                Timed                    
+clk_out4_clk_wiz_0                                                                          clk_out4_clk_wiz_0                                                                          rise - rise     0.18     0.00            0          156             2.00  Clean                Timed                    
+clk_out5_clk_wiz_0                                                                          clk_out1_clk_wiz_0                                                                          rise - rise     9.25     0.00            0          110            10.00  Ignored              Max Delay Datapath Only  
+clk_out5_clk_wiz_0                                                                          clk_out5_clk_wiz_0                                                                          rise - rise     4.82     0.00            0         4922            10.00  Clean                Partial False Path       
+clk_out5_clk_wiz_0                                                                          dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK  rise - rise     9.34     0.00            0          103            10.00  Ignored              Max Delay Datapath Only  
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK  clk_out5_clk_wiz_0                                                                          rise - rise    32.35     0.00            0           87            33.00  Ignored              Max Delay Datapath Only  
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK  rise - rise    29.15     0.00            0         1033            33.00  Clean                Timed                    
+
+

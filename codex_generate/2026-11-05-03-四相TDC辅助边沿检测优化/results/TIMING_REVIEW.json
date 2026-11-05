@@ -1,0 +1,36 @@
+{
+  "wns_ns": -0.05,
+  "tns_ns": -0.166,
+  "setup_failing_endpoints": 14,
+  "whs_ns": 0.054,
+  "ths_ns": 0.0,
+  "hold_failing_endpoints": 0,
+  "main_module_slacks_ns": {
+    "u_tdc_fine_layer": 0.05,
+    "u_tdc_time_candicate": 0.265,
+    "u_tdc_time_locate": 0.021,
+    "u_tdc_time_merge": 0.202,
+    "u_fifo_tdc_result": 0.099,
+    "u_fifo_tdc_error": 0.136
+  },
+  "aux_setup_slack_ns": 0.22,
+  "aux_hold_slack_ns": 0.108,
+  "negative_setup_only_nonfeedback_ila2": true,
+  "unchanged_fixed_tdl_structure": true,
+  "fixed_cells_checked": 327,
+  "constraint_checks": {
+    "no_clock": 0,
+    "constant_clock": 0,
+    "pulse_width_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "no_input_delay": 2,
+    "no_output_delay": 0,
+    "multiple_clock": 0,
+    "generated_clocks": 0,
+    "loops": 0,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "latch_loops": 0
+  },
+  "main_static_pass": true
+}

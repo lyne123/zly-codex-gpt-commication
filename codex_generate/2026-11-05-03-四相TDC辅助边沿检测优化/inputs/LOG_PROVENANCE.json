@@ -1,0 +1,16 @@
+[
+  {
+    "original": "W:\\results\\baseline\\gate_local\\simulation.log",
+    "archived": "results\\baseline\\gate_local\\simulation.log.gz",
+    "original_bytes": 19907170,
+    "uncompressed_sha256": "cec80eaf4b1031dbcb1d6f513a69e4803ec4349dc6f75c3f53fbda5e010daa90",
+    "compressed_bytes": 301434
+  },
+  {
+    "original": "W:\\results\\baseline\\gate_full\\simulation.log",
+    "archived": "results\\baseline\\gate_full\\simulation.log.gz",
+    "original_bytes": 275383560,
+    "uncompressed_sha256": "6da36b9882b49964f7f262fb36f0fdf77faf87a0f8faacdc265ec7580f0af420",
+    "compressed_bytes": 4465687
+  }
+]

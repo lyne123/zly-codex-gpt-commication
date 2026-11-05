@@ -1,0 +1,111 @@
+{
+  "expected_pulses": 224,
+  "actual_edges": 447,
+  "expected_edges": 448,
+  "missing_rise": [
+    0
+  ],
+  "missing_fall": [],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 223,
+  "output_widths": 223,
+  "errors": [
+    {
+      "time_ps": "10000000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10000500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10001500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10002500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10003500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004000",
+      "kind": "tap_unknown_0",
+      "code": "1"
+    },
+    {
+      "time_ps": "10004500",
+      "kind": "tap_unknown_90",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005000",
+      "kind": "tap_unknown_180",
+      "code": "1"
+    },
+    {
+      "time_ps": "10005500",
+      "kind": "tap_unknown_270",
+      "code": "1"
+    },
+    {
+      "time_ps": "10092000",
+      "kind": "merge",
+      "code": "2"
+    },
+    {
+      "time_ps": "32882000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33282000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "33682000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "34082000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 224,
+  "aux_falls": 224,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

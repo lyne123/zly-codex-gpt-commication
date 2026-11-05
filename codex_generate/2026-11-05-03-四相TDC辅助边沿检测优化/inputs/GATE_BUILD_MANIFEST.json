@@ -1,0 +1,10 @@
+{
+  "netlist_sha256": "968272502c8dbe94993e701a6a9880e3024a2cf4dd58628ffa0a10b04f13d4f5",
+  "sdf_sha256": "3927d19bbc16e112f88f64b6d7d0b8eba2d2ff98d7795f53668e92bd7db4c222",
+  "dcp_sha256": "f16b8bce9a7c19c77f1d23a5a85b698638ea172aa7a2365b43b156510a3a229e",
+  "tb_sha256": "edd63f4a0aa72027b55c7f5a49812f9d245f00475eac0a449c3e209ead390866",
+  "observer_sha256": "d8781bd15f617beeda86404a623a65de37ace20a06322d2a4e9a46c9c318f4d7",
+  "timing_checks": "enabled",
+  "corner": "slow/MAX",
+  "tool": "XSim 2022.2"
+}

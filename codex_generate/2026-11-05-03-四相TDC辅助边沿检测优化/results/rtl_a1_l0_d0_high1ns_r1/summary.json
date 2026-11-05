@@ -1,0 +1,82 @@
+{
+  "expected_pulses": 16,
+  "actual_edges": 16,
+  "expected_edges": 32,
+  "missing_rise": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "missing_fall": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 8,
+  "output_widths": 8,
+  "errors": [
+    {
+      "time_ps": "12830000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "13230000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "13630000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "14030000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "14430000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "14830000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "15230000",
+      "kind": "conflict",
+      "code": "1"
+    },
+    {
+      "time_ps": "15630000",
+      "kind": "conflict",
+      "code": "1"
+    }
+  ],
+  "association_faults": [],
+  "aux_rises": 16,
+  "aux_falls": 16,
+  "rmse_ps": 0.0,
+  "bias_ps": 0,
+  "std_ps": 0.0,
+  "pass_measurement": false,
+  "pass_aux": true
+}

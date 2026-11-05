@@ -1,0 +1,9 @@
+{
+  "pass_all": true,
+  "frontend_byte_identical": true,
+  "timestamps_checked": 320,
+  "widths_checked": 160,
+  "parameter_count": 8,
+  "parameters_recalculated": false,
+  "formal_compensated_rms_deferred": true
+}

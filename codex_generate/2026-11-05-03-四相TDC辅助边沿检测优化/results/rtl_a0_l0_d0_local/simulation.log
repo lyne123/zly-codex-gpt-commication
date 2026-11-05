@@ -1,0 +1,2 @@
+internal error: 18vvp_fun_anyedge_sa: recv_string(D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-05-03-四相TDC辅助边沿检测优化/results/rtl_a0_l0_d0_local) not implemented
+Assertion failed: 0, file ../../vvp/vvp_net.cc, line 3336

@@ -1,0 +1,197 @@
+[
+  {
+    "name": "rise_slots",
+    "bits": 4,
+    "expression": "{dut.u_tdc_fine_layer.\\g_aux_4phase.aux_rise_slots_reg[3] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_rise_slots_reg[2] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_rise_slots_reg[1] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_rise_slots_reg[0] .Q}"
+  },
+  {
+    "name": "fall_slots",
+    "bits": 4,
+    "expression": "{dut.u_tdc_fine_layer.\\g_aux_4phase.aux_fall_slots_reg[3] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_fall_slots_reg[2] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_fall_slots_reg[1] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.aux_fall_slots_reg[0] .Q}"
+  },
+  {
+    "name": "rise_claim_3_1",
+    "bits": 3,
+    "expression": "{dut.u_tdc_fine_layer.\\g_aux_4phase.rise_claimed_previous_reg[3] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.rise_claimed_previous_reg[2] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.rise_claimed_previous_reg[1] .Q}"
+  },
+  {
+    "name": "fall_claim_3_1",
+    "bits": 3,
+    "expression": "{dut.u_tdc_fine_layer.\\g_aux_4phase.fall_claimed_previous_reg[3] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.fall_claimed_previous_reg[2] .Q,dut.u_tdc_fine_layer.\\g_aux_4phase.fall_claimed_previous_reg[1] .Q}"
+  },
+  {
+    "name": "p0_meta",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_meta_reg .Q"
+  },
+  {
+    "name": "p0_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_meta_reg .D"
+  },
+  {
+    "name": "p0_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_meta_reg .C"
+  },
+  {
+    "name": "p0_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_meta_reg .D_dly"
+  },
+  {
+    "name": "p0_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_meta_reg .C_dly"
+  },
+  {
+    "name": "p0_sync",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_sync_reg .Q"
+  },
+  {
+    "name": "p0_history",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[0].pwm_history_reg .Q"
+  },
+  {
+    "name": "p90_meta",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_meta_reg .Q"
+  },
+  {
+    "name": "p90_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_meta_reg .D"
+  },
+  {
+    "name": "p90_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_meta_reg .C"
+  },
+  {
+    "name": "p90_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_meta_reg .D_dly"
+  },
+  {
+    "name": "p90_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_meta_reg .C_dly"
+  },
+  {
+    "name": "p90_sync",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_sync_reg .Q"
+  },
+  {
+    "name": "p90_history",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[1].pwm_history_reg .Q"
+  },
+  {
+    "name": "p180_meta",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_meta_reg .Q"
+  },
+  {
+    "name": "p180_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_meta_reg .D"
+  },
+  {
+    "name": "p180_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_meta_reg .C"
+  },
+  {
+    "name": "p180_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_meta_reg .D_dly"
+  },
+  {
+    "name": "p180_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_meta_reg .C_dly"
+  },
+  {
+    "name": "p180_sync",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_sync_reg .Q"
+  },
+  {
+    "name": "p180_history",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[2].pwm_history_reg .Q"
+  },
+  {
+    "name": "p270_meta",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_meta_reg .Q"
+  },
+  {
+    "name": "p270_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_meta_reg .D"
+  },
+  {
+    "name": "p270_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_meta_reg .C"
+  },
+  {
+    "name": "p270_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_meta_reg .D_dly"
+  },
+  {
+    "name": "p270_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_meta_reg .C_dly"
+  },
+  {
+    "name": "p270_sync",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_sync_reg .Q"
+  },
+  {
+    "name": "p270_history",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\g_aux_4phase.g_phase[3].pwm_history_reg .Q"
+  },
+  {
+    "name": "pack0_d1",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack0_d1_reg[9] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack0_d1_reg[6] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[5] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[4] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[3] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[2] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[1] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[0] .Q}"
+  },
+  {
+    "name": "pack90_d2",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack90_d2_reg[9] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack90_d2_reg[6] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[5] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[4] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[3] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[2] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[1] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[0] .Q}"
+  },
+  {
+    "name": "pack180_d1",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack180_d1_reg[9] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack180_d1_reg[6] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[5] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[4] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[3] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[2] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[1] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[0] .Q}"
+  },
+  {
+    "name": "pack270_to90",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack270_to90_reg[9] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack270_to90_reg[6] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[5] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[4] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[3] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[2] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[1] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[0] .Q}"
+  },
+  {
+    "name": "confirmed_type_D",
+    "bits": 8,
+    "expression": "{dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[7] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[6] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[5] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[4] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[3] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[2] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[1] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[0] .D}"
+  },
+  {
+    "name": "raw_mask",
+    "bits": 4,
+    "expression": "dut.sync_edge_valid"
+  },
+  {
+    "name": "raw_polarity",
+    "bits": 8,
+    "expression": "dut.sync_edge_polarity"
+  }
+]

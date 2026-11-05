@@ -1,0 +1,16 @@
+{
+  "mode": 1,
+  "lut_delay_ps": 1300,
+  "aux_delay_ps": 2771,
+  "delay_model": "transport",
+  "rtl_sha256": {
+    "tdc_fine_layer.v": "9820ec67992b9036630d8f2451d603ddbaa01b5b5645bb4c29b99acb81fd0b30",
+    "tdc_meas_top.v": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "tb_sha256": "82423834167f4b2ab5e5214d25d11be5484ae2b4487bbe05f525c917f7477d9d",
+  "model_sha256": "688e82aa7ee96929721adaf0450d96196cee559f0299275afae1e8c3cd87720a",
+  "stimulus_sha256": "120b44c5f3d9499754473ba5a91d8d74eafacea18bae524340b8aaad5d8a6ab2"
+}

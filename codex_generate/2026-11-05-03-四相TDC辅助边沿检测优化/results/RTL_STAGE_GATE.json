@@ -1,0 +1,103 @@
+{
+  "rtl_stage_pass": true,
+  "min_new_boundary_high_low_ps": 2000,
+  "user_scope": "用户明确暂不考虑2ns以下脉宽；原3512激励及六异常事件不删改",
+  "cases": [
+    {
+      "case": "rtl_a1_l0_d0_local_r3",
+      "summary_sha256": "6a76abed23dc422f443c687ccc79c8c054df81a40cec6ba44696d51a57925175",
+      "expected_pulses": 160,
+      "matched": 160
+    },
+    {
+      "case": "rtl_a1_l0_d0_fixed253_r3",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l0_d0_pwm20_5_r3",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l0_d0_pwm20_95_r3",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l0_d0_pwm20_50_r3",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l0_d0_high2ns_r3",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    },
+    {
+      "case": "rtl_a1_l0_d0_low2ns_r3",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    },
+    {
+      "case": "rtl_a1_l0_d0_high_low2ns_r3",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_local_r4",
+      "summary_sha256": "6a76abed23dc422f443c687ccc79c8c054df81a40cec6ba44696d51a57925175",
+      "expected_pulses": 160,
+      "matched": 160
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_fixed253_r4",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_pwm20_5_r4",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_pwm20_95_r4",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_pwm20_50_r4",
+      "summary_sha256": "913a7597fdfa094e2652fdf042ae0f09c97aa1fda13a1e220129545dd1565a3f",
+      "expected_pulses": 64,
+      "matched": 64
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_high2ns_r4",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_low2ns_r4",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    },
+    {
+      "case": "rtl_a1_l1300_d2771_high_low2ns_r4",
+      "summary_sha256": "3ddef1c7c350d0e575ef8e035cca63b62dbf34cbf84fd579366ec4dc56eb8856",
+      "expected_pulses": 224,
+      "matched": 224
+    }
+  ]
+}

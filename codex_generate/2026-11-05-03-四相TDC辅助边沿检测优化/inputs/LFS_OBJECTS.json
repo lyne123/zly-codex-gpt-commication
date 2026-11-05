@@ -1,0 +1,22 @@
+[
+  {
+    "path": "codex_generate/2026-11-05-03-四相TDC辅助边沿检测优化/results/baseline/Baseline_Aux4Phase.bit",
+    "bytes": 11443721,
+    "oid": "40520ca165447359bccb134db752887e62c9dd7003276633c3d88808ff03f0af"
+  },
+  {
+    "path": "codex_generate/2026-11-05-03-四相TDC辅助边沿检测优化/results/baseline/design.dcp",
+    "bytes": 3871819,
+    "oid": "f16b8bce9a7c19c77f1d23a5a85b698638ea172aa7a2365b43b156510a3a229e"
+  },
+  {
+    "path": "codex_generate/2026-11-05-03-四相TDC辅助边沿检测优化/results/baseline/design.sdf",
+    "bytes": 12972737,
+    "oid": "3927d19bbc16e112f88f64b6d7d0b8eba2d2ff98d7795f53668e92bd7db4c222"
+  },
+  {
+    "path": "codex_generate/2026-11-05-03-四相TDC辅助边沿检测优化/results/baseline/design.v",
+    "bytes": 5936479,
+    "oid": "968272502c8dbe94993e701a6a9880e3024a2cf4dd58628ffa0a10b04f13d4f5"
+  }
+]

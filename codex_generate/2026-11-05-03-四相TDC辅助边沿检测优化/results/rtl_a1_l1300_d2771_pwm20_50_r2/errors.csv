@@ -1,0 +1,14 @@
+time_ps,kind,code
+10000000,tap_unknown_0,1
+10000500,tap_unknown_90,1
+10001000,tap_unknown_180,1
+10001500,tap_unknown_270,1
+10002000,tap_unknown_0,1
+10002500,tap_unknown_90,1
+10003000,tap_unknown_180,1
+10003500,tap_unknown_270,1
+10004000,tap_unknown_0,1
+10004500,tap_unknown_90,1
+10005000,tap_unknown_180,1
+10005500,tap_unknown_270,1
+10068000,merge,2

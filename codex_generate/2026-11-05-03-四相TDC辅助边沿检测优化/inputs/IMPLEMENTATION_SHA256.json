@@ -1,0 +1,50 @@
+{
+  "W:\\rtl\\tdc_fine_layer.v": {
+    "bytes": 28067,
+    "sha256": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0"
+  },
+  "W:\\rtl\\tdc_meas_top.v": {
+    "bytes": 11311,
+    "sha256": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d"
+  },
+  "W:\\rtl\\tdc_time_candicate.v": {
+    "bytes": 9711,
+    "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2"
+  },
+  "W:\\rtl\\tdc_time_locate.v": {
+    "bytes": 9997,
+    "sha256": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662"
+  },
+  "W:\\rtl\\tdc_time_merge.v": {
+    "bytes": 4874,
+    "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "W:\\inputs\\ip\\clk_wiz_0\\clk_wiz_0.xci": {
+    "bytes": 75825,
+    "sha256": "9e684923939ac1506e5691ca9f50c9fa8d5b5a2e0e29a89aadf229fc0c56b616"
+  },
+  "W:\\inputs\\ip\\fifo_tdc_result\\fifo_tdc_result.xci": {
+    "bytes": 50349,
+    "sha256": "8240615427d04fbd11216ebe61318722ed85a62e472c4d191ba107214d16f59c"
+  },
+  "W:\\inputs\\ip\\ila_2\\ila_2.xci": {
+    "bytes": 691438,
+    "sha256": "6e84b85c2e36c640f5284a555dafbba928b004245b57bebbac997af74ee4eb7f"
+  },
+  "W:\\inputs\\ip\\ila_3\\ila_3.xci": {
+    "bytes": 691789,
+    "sha256": "78325021c4fc72f3ad58deb8f8e501b310c8b2d998173aca5c8af8ed855ef3d3"
+  },
+  "W:\\inputs\\combine.xdc": {
+    "bytes": 64950,
+    "sha256": "587f3e7c7d3f43b198b107c1bb838b999705f7063761b4d3dbec72ad368a1a1e"
+  },
+  "W:\\inputs\\aux_capture_placement.xdc": {
+    "bytes": 598,
+    "sha256": "22db4b53f4fac3edac1ac0dc7e017a6817e3bd54a26b7dd43682ba46b0a7e893"
+  },
+  "U:\\results\\optimized\\baseline\\design.dcp": {
+    "bytes": 3840097,
+    "sha256": "486d29daf309a55f666a2dd15440255b2d111e63e8b92130261c036fd811f35f"
+  }
+}

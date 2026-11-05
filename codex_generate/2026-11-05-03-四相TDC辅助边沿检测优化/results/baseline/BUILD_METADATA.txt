@@ -1,0 +1,10 @@
+part=xc7k325tffg900-2
+vivado=2022.2
+variant=Baseline
+ENABLE_SKEW_COMP=0
+ENABLE_AUX_4PHASE=1
+frequency_mhz=500
+corner=slow/MAX
+new_false_paths=0
+new_multicycles=0
+implementation_count=1

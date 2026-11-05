@@ -1,0 +1,2 @@
+FATAL: W:\sim\tb_quick.sv:105: 测试平台路径模型丢失了输入转换
+       Time: 20732212 Scope: tb_tdc

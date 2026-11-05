@@ -1,0 +1,6 @@
+level=gate
+variant=baseline
+dataset=full
+time_shift_ps=0
+timing_checks=enabled
+corner=slow/MAX

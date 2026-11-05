@@ -1,0 +1,22 @@
+{
+  "candidate.csv": {
+    "equal": true,
+    "old_sha256": "ec03931c8e66673c6b00942c1563b065c3ca3ee7bf4bb5e3d802359d4b1f215a",
+    "new_sha256": "ec03931c8e66673c6b00942c1563b065c3ca3ee7bf4bb5e3d802359d4b1f215a"
+  },
+  "timestamps.csv": {
+    "equal": true,
+    "old_sha256": "8c25c6a4ed411e20dc668caeb337fd2e40c874dbcc54239ae55dd494b62ab340",
+    "new_sha256": "8c25c6a4ed411e20dc668caeb337fd2e40c874dbcc54239ae55dd494b62ab340"
+  },
+  "widths.csv": {
+    "equal": true,
+    "old_sha256": "7772d96af0ee38806e8a9e9733501b6a22f601ccfab8d13a806048958da7d466",
+    "new_sha256": "7772d96af0ee38806e8a9e9733501b6a22f601ccfab8d13a806048958da7d466"
+  },
+  "fifo.csv": {
+    "equal": true,
+    "old_sha256": "e8295c93252ff39f32afe3bdb8df18ac81d6c6fd30dbfe5177fdcf9854296733",
+    "new_sha256": "e8295c93252ff39f32afe3bdb8df18ac81d6c6fd30dbfe5177fdcf9854296733"
+  }
+}

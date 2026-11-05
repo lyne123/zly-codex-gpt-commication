@@ -1,0 +1,72 @@
+{
+  "pass_all": true,
+  "time_translation_ps": 225280000,
+  "excluded_metadata_column": "local_time_ps",
+  "comparisons": {
+    "raw.csv": {
+      "local_rows": 36,
+      "full_rows": 36,
+      "all_fields_equal": true
+    },
+    "candidate.csv": {
+      "local_rows": 36,
+      "full_rows": 36,
+      "all_fields_equal": true
+    },
+    "timestamps.csv": {
+      "local_rows": 36,
+      "full_rows": 36,
+      "all_fields_equal": true
+    },
+    "widths.csv": {
+      "local_rows": 18,
+      "full_rows": 18,
+      "all_fields_equal": true
+    },
+    "errors.csv": {
+      "local_rows": 0,
+      "full_rows": 0,
+      "all_fields_equal": true
+    },
+    "fifo.csv": {
+      "local_rows": 18,
+      "full_rows": 18,
+      "all_fields_equal": true
+    },
+    "error_fifo.csv": {
+      "local_rows": 0,
+      "full_rows": 0,
+      "all_fields_equal": true
+    },
+    "sampled_taps.csv": {
+      "local_rows": 55,
+      "full_rows": 55,
+      "all_fields_equal": true
+    },
+    "anomaly_pipeline_trace.csv": {
+      "local_rows": 450,
+      "full_rows": 450,
+      "all_fields_equal": true
+    },
+    "aux_events.csv": {
+      "local_rows": 69,
+      "full_rows": 69,
+      "all_fields_equal": true
+    },
+    "aux_windows.csv": {
+      "local_rows": 450,
+      "full_rows": 450,
+      "all_fields_equal": true
+    },
+    "meta_capture.csv": {
+      "local_rows": 1800,
+      "full_rows": 1800,
+      "all_fields_equal": true
+    },
+    "meta_changes.csv": {
+      "local_rows": 4290,
+      "full_rows": 4290,
+      "all_fields_equal": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "expected_pulses": 3512,
+  "actual_edges": 7024,
+  "expected_edges": 7024,
+  "missing_rise": [],
+  "missing_fall": [],
+  "duplicates": {
+    "0": [],
+    "1": []
+  },
+  "mispairs": 0,
+  "correct_widths": 3512,
+  "output_widths": 3512,
+  "errors": [],
+  "association_faults": [],
+  "aux_rises": 3512,
+  "aux_falls": 3512,
+  "rmse_ps": 3.2047622593496956,
+  "bias_ps": 0.07232346241457858,
+  "std_ps": 3.2039460756599087,
+  "pass_measurement": true,
+  "pass_aux": true
+}
