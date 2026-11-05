@@ -1,0 +1,8 @@
+* -text
+logs/simulation.log.gz filter=lfs diff=lfs merge=lfs -text
+logs/timing_violations.log.gz filter=lfs diff=lfs merge=lfs -text
+netlist/post_route_max.sdf filter=lfs diff=lfs merge=lfs -text
+netlist/post_route_timing.v filter=lfs diff=lfs merge=lfs -text
+results/TIMING_VIOLATIONS.csv.gz filter=lfs diff=lfs merge=lfs -text
+results/compensated/gate_full/aux_events.csv filter=lfs diff=lfs merge=lfs -text
+results/compensated/gate_full/console.log.gz filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,57 @@
+{
+  "ModelSim_version": "SE-64 2020.4",
+  "ModelSim_binary": "F:\\Program Files\\modeltech64_2020.4\\win64\\vsim.exe",
+  "Vivado_version": "2022.2",
+  "license_and_real_primitive_SDF_probe_pass": true,
+  "probe_exit_code": 0,
+  "existing_library_mapping": {
+    "unisims_ver": {
+      "historical_path": "D:\\software\\modelsim\\xilinx_lib\\unisims_ver",
+      "exists": false
+    },
+    "unimacro_ver": {
+      "historical_path": "D:\\software\\modelsim\\xilinx_lib\\unimacro_ver",
+      "exists": false
+    },
+    "simprims_ver": {
+      "historical_path": "D:\\software\\modelsim\\xilinx_lib\\simprims_ver",
+      "exists": false
+    },
+    "secureip": {
+      "historical_path": "D:\\software\\modelsim\\xilinx_lib\\secureip",
+      "exists": false
+    }
+  },
+  "required_primitives": [
+    "BSCANE2",
+    "BUFG",
+    "CARRY4",
+    "FDCE",
+    "FDPE",
+    "FDRE",
+    "FDSE",
+    "GND",
+    "IBUF",
+    "LUT1",
+    "LUT2",
+    "LUT3",
+    "LUT4",
+    "LUT5",
+    "LUT6",
+    "MMCME2_ADV",
+    "RAMD32",
+    "RAMS32",
+    "SRL16E",
+    "VCC"
+  ],
+  "primitive_count": 20,
+  "protected_IP_units_to_validate_by_real_compilation": [
+    "fifo_tdc_resultfifo_generator_v13_2_7",
+    "fifo_tdc_resultfifo_generator_v13_2_7_HD9",
+    "ila_2ila_v6_2_12_ila",
+    "ila_3ila_v6_2_12_ila"
+  ],
+  "all_primitive_sources_from_Vivado_2022_2": true,
+  "secureip_required": false,
+  "full_library_compile_needed": true
+}

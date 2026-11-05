@@ -1,0 +1,43 @@
+﻿version,scope,metric,condition,expected_pulses,correct_pulses,n,bias_ps,rms_ps,std_ps,max_abs_ps,min_error_ps,max_error_ps
+03_aux_baseline_RTL,all_available_correct,rise,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3512,32002.56776765376,32002.567918863646,3.1109820583583447,32009,32000,32009
+03_aux_baseline_RTL,all_available_correct,fall,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3512,32002.640091116173,32002.64024634377,3.152044712355935,32009,32000,32009
+03_aux_baseline_RTL,all_available_correct,pulse_width,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3512,0.07232346241457858,3.2047622593496956,3.2039460756599087,9,-9,9
+03_aux_baseline_RTL,same_3506_historical_ids,rise,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3506,32002.567598402737,32002.56774957108,3.110554653206565,32009,32000,32009
+03_aux_baseline_RTL,same_3506_historical_ids,fall,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3506,32002.64204221335,32002.6421975314,3.152963047306741,32009,32000,32009
+03_aux_baseline_RTL,same_3506_historical_ids,pulse_width,ideal RTL; 10ps/tap model; no routed input delay,3512,3512,3506,0.0744438106103822,3.204077906517336,3.203212972952988,9,-9,9
+04_merged_compensated_RTL,all_available_correct,rise,ideal RTL with fixed physical-calibration offsets,3512,3512,3512,-3896.023348519362,3898.947295428405,150.97046174815222,4081,-4081,-3733
+04_merged_compensated_RTL,all_available_correct,fall,ideal RTL with fixed physical-calibration offsets,3512,3512,3512,-3904.2890091116174,3907.2846315092916,152.9723012800913,4081,-4081,-3733
+04_merged_compensated_RTL,all_available_correct,pulse_width,ideal RTL with fixed physical-calibration offsets,3512,3512,3512,-8.265660592255125,190.8558271418149,190.6767568660637,348,-348,348
+04_merged_compensated_RTL,same_3506_historical_ids,rise,ideal RTL with fixed physical-calibration offsets,3512,3512,3506,-3896.12606959498,3899.0510450507068,150.99901235896377,4081,-4081,-3733
+04_merged_compensated_RTL,same_3506_historical_ids,fall,ideal RTL with fixed physical-calibration offsets,3512,3512,3506,-3904.081859669139,3907.076230671229,152.9362784902861,4081,-4081,-3733
+04_merged_compensated_RTL,same_3506_historical_ids,pulse_width,ideal RTL with fixed physical-calibration offsets,3512,3512,3506,-7.955790074158585,190.7737487636643,190.60778741079184,348,-348,348
+05_optimized_compensated_RTL,all_available_correct,rise,ideal RTL with same fixed physical-calibration offsets,3512,3512,3512,-3896.023348519362,3898.947295428405,150.97046174815222,4081,-4081,-3733
+05_optimized_compensated_RTL,all_available_correct,fall,ideal RTL with same fixed physical-calibration offsets,3512,3512,3512,-3904.2890091116174,3907.2846315092916,152.9723012800913,4081,-4081,-3733
+05_optimized_compensated_RTL,all_available_correct,pulse_width,ideal RTL with same fixed physical-calibration offsets,3512,3512,3512,-8.265660592255125,190.8558271418149,190.6767568660637,348,-348,348
+05_optimized_compensated_RTL,same_3506_historical_ids,rise,ideal RTL with same fixed physical-calibration offsets,3512,3512,3506,-3896.12606959498,3899.0510450507068,150.99901235896377,4081,-4081,-3733
+05_optimized_compensated_RTL,same_3506_historical_ids,fall,ideal RTL with same fixed physical-calibration offsets,3512,3512,3506,-3904.081859669139,3907.076230671229,152.9362784902861,4081,-4081,-3733
+05_optimized_compensated_RTL,same_3506_historical_ids,pulse_width,ideal RTL with same fixed physical-calibration offsets,3512,3512,3506,-7.955790074158585,190.7737487636643,190.60778741079184,348,-348,348
+original_baseline_RTL_archive,all_available_correct,rise,historical original RTL archive; different original frontend/pipeline,3512,3512,3512,30002.56776765376,30002.56792894344,3.1109820583583447,30009.0,30000.0,30009.0
+original_baseline_RTL_archive,all_available_correct,fall,historical original RTL archive; different original frontend/pipeline,3512,3512,3512,30002.640091116173,30002.640256691368,3.152044712355935,30009.0,30000.0,30009.0
+original_baseline_RTL_archive,all_available_correct,pulse_width,historical original RTL archive; different original frontend/pipeline,3512,3512,3512,0.07232346241457858,3.2047622593496956,3.2039460756599087,9.0,-9.0,9.0
+original_baseline_RTL_archive,same_3506_historical_ids,rise,historical original RTL archive; different original frontend/pipeline,3512,3512,3506,30002.567598402737,30002.567759648107,3.110554653206565,30009.0,30000.0,30009.0
+original_baseline_RTL_archive,same_3506_historical_ids,fall,historical original RTL archive; different original frontend/pipeline,3512,3512,3506,30002.64204221335,30002.642207885023,3.152963047306741,30009.0,30000.0,30009.0
+original_baseline_RTL_archive,same_3506_historical_ids,pulse_width,historical original RTL archive; different original frontend/pipeline,3512,3512,3506,0.0744438106103822,3.204077906517336,3.203212972952988,9.0,-9.0,9.0
+01_compensated_SDF_historical,all_available_correct,rise,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-5.188819167142042,49.76483774584156,49.493587781859546,133.0,-133.0,124.0
+01_compensated_SDF_historical,all_available_correct,fall,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-6.234169994295494,49.47563893159617,49.0812996177964,131.0,-131.0,123.0
+01_compensated_SDF_historical,all_available_correct,pulse_width,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-1.0453508271534513,68.83682972951686,68.82889196303152,209.0,-209.0,183.0
+01_compensated_SDF_historical,same_3506_historical_ids,rise,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-5.188819167142042,49.76483774584156,49.493587781859546,133.0,-133.0,124.0
+01_compensated_SDF_historical,same_3506_historical_ids,fall,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-6.234169994295494,49.47563893159617,49.0812996177964,131.0,-131.0,123.0
+01_compensated_SDF_historical,same_3506_historical_ids,pulse_width,historical MAX-SDF; same 8 offsets; six original failed pulse IDs retained,3512,3506,3506,-1.0453508271534513,68.83682972951686,68.82889196303152,209.0,-209.0,183.0
+03_aux_baseline_SDF,all_available_correct,rise,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3512,35957.465261959,35957.6960851537,128.83977371080582,36180.0,35727.0,36180.0
+03_aux_baseline_SDF,all_available_correct,fall,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3512,35959.11218678815,35959.35204389613,131.3398448304728,36180.0,35728.0,36180.0
+03_aux_baseline_SDF,all_available_correct,pulse_width,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3512,1.6469248291571754,161.61419688027846,161.6058051923399,380.0,-380.0,380.0
+03_aux_baseline_SDF,same_3506_historical_ids,rise,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3506,35957.539075869936,35957.76995649414,128.85593288405389,36180.0,35727.0,36180.0
+03_aux_baseline_SDF,same_3506_historical_ids,fall,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3506,35959.17940673132,35959.41898634383,131.26397043858302,36180.0,35728.0,36180.0
+03_aux_baseline_SDF,same_3506_historical_ids,pulse_width,historical MAX-SDF; auxiliary four-phase; compensation bypass,3512,3512,3506,1.6403308613804906,161.72352599142366,161.71520699601473,380.0,-380.0,380.0
+05_compensated_MAX_SDF,all_available_correct,rise,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3512,54.36104783599089,73.48707136846828,49.44922786543245,185.0,-71.0,185.0
+05_compensated_MAX_SDF,all_available_correct,fall,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3512,53.88610478359909,73.19741537316787,49.53937149947557,183.0,-72.0,183.0
+05_compensated_MAX_SDF,all_available_correct,pulse_width,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3512,-0.47494305239179957,70.46984362866031,70.46824313224235,209.0,-209.0,180.0
+05_compensated_MAX_SDF,same_3506_historical_ids,rise,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3506,54.312606959498005,73.45867436663532,49.46026248380062,185.0,-71.0,185.0
+05_compensated_MAX_SDF,same_3506_historical_ids,fall,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3506,53.87934968625214,73.21634711902465,49.57468268017527,183.0,-72.0,183.0
+05_compensated_MAX_SDF,same_3506_historical_ids,pulse_width,current full MAX-SDF from 05 frozen final DCP; XSim 2022.2,3512,3512,3506,-0.4332572732458642,70.49066684994,70.48933537127733,209.0,-209.0,180.0

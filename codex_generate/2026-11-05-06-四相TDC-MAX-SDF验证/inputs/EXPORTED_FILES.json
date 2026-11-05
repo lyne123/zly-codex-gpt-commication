@@ -1,0 +1,10 @@
+{
+  "source_DCP_sha256": "d4d983986e7b84bf06fc786f91c258d58cabc110e6e4b87c09e0ae6268cbbb52",
+  "netlist_sha256": "fd41c50e022b219df2344ba940c4f087f41b9bbd2cba2069fb8e07ad70ed947e",
+  "SDF_sha256": "36a45a270e2ecd446643b40854d4ffe8217f26f4d3c87f4f3cc13f78363a7862",
+  "netlist_internal_sdf_annotations": 0,
+  "external_annotation": "/tb_tdc/dut with -sdfmax; sole annotation",
+  "timescale": "1ps",
+  "process_corner": "slow",
+  "source_files_unchanged": true
+}

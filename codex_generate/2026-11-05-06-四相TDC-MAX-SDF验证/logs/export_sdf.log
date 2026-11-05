@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 22:17:32 2026
+# Process ID: 34408
+# Current directory: Z:/logs
+# Command line: vivado.exe -mode batch -source Z:/scripts/export_sdf.tcl -log export_sdf.log -journal export_sdf.jou
+# Log file: Z:/logs/export_sdf.log
+# Journal file: Z:/logs\export_sdf.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source Z:/scripts/export_sdf.tcl
+# set_param general.maxThreads 2
+# set root Z:/
+# if {![file exists $root/results/FREEZE_CHECK.json]} {error "冻结输入核验尚未通过"}
+# if {[file exists $root/netlist/post_route_max.sdf]} {error "禁�?��?�盖已�?�出的SDF证据"}
+# puts "ACTUAL_WRITE_SDF_OPTIONS_BEGIN"
+ACTUAL_WRITE_SDF_OPTIONS_BEGIN
+# help write_sdf
+# puts "ACTUAL_WRITE_SDF_OPTIONS_END"
+ACTUAL_WRITE_SDF_OPTIONS_END
+# puts "ACTUAL_WRITE_VERILOG_OPTIONS_BEGIN"
+ACTUAL_WRITE_VERILOG_OPTIONS_BEGIN
+# help write_verilog
+# puts "ACTUAL_WRITE_VERILOG_OPTIONS_END"
+ACTUAL_WRITE_VERILOG_OPTIONS_END
+# open_checkpoint W:/results/compensated/design.dcp
+Command: open_checkpoint W:/results/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 890.934 ; gain = 5.242
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1499.098 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.549 . Memory (MB): peak = 2283.594 ; gain = 3.941
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.775 . Memory (MB): peak = 2283.594 ; gain = 3.941
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2283.594 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1f0478262
+----- Checksum: PlaceDB: 721b892d ShapeSum: aa23a5d5 RouteDB: d4085360 
+open_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2283.594 ; gain = 1398.113
+# set fd [open $root/inputs/DCP_PRIMITIVES.csv w]
+# puts $fd "primitive,instances"
+# foreach ref [lsort -unique [get_property REF_NAME [get_cells -hier -filter {IS_PRIMITIVE == 1}]]] {
+#     puts $fd "$ref,[llength [get_cells -hier -filter "IS_PRIMITIVE == 1 && REF_NAME == $ref"]]"
+# }
+# close $fd
+# write_sdf -process_corner slow $root/netlist/post_route_max.sdf
+# write_verilog -mode timesim -sdf_anno false $root/netlist/post_route_timing.v
+# close_design
+# puts "FROZEN_DCP_SDF_EXPORT_COMPLETE"
+FROZEN_DCP_SDF_EXPORT_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 22:17:56 2026...

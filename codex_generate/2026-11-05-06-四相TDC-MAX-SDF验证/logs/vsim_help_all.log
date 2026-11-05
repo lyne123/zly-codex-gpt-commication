@@ -1,0 +1,1616 @@
+# Model Technology ModelSim SE-64 vsim 2020.4 Simulator 2020.10 Oct 13 2020
+#     The vsim tool provides HDL simulation based on the compiled and optimized
+#     design and it provides various post-simulation analysis capabilities. In
+#     simulation mode it expects to be provided with the optimization output for
+#     the root of the design, or it will automatically produce such an
+#     optimization from the root of the design.
+#     
+#     Try the following to get help on specific options or categories: 
+# 
+#     vsim -help all            : List all categories and options
+#     vsim -help category       : List all categories
+#     vsim -help <option>       : Help on an option
+#     vsim -help <command-line> : Help on all options in a command-line
+#     vsim -help <category>     : List all options in a category
+# 
+# ------------------------------------General------------------------------------
+# General Category for option
+# 
+# --------------------------------------------------------------------------------
+# -32                             Run in 32-bit mode.
+#                                 
+# -64                             Run in 64-bit mode.
+#                                 
+# -F <filename>                   Read command line arguments from <filename>
+#                                 
+# -G<Name>=<Value>                Override generic/parameter with specified Value
+#                                 
+# -autofindloop                   Identification of an infinite zero delay loop
+#                                 
+# -batch                          Batch mode
+#                                 
+# -c                              Command line mode
+#                                 
+# -colormap new                   Specifies that the window should have a new
+#                                 private colormap instead of using the default
+#                                 colormap for the screen.
+#                                 
+# -default_radix radix|radix_flag[,radix_flag...]
+#                                 Set default radix and radix flags. Specifying
+#                                 just a radix will clear all radix flags.
+#                                 Specifying just radix flags will set the flags
+#                                 but leave the default radix unchanged.
+#                                 
+# -detectzerodelayloop            Identification of an infinite zero delay loop
+#                                 
+# -display <display-spec>         Specifies the name of the display to use.
+#                                 
+# -displaymsgmode <mode>          Controls transcripting of display system task
+#                                 messages. Messages will appear in transcript
+#                                 and/or MsgViewer (.wlf file). Valid modes -
+#                                 tran, wlf, both (Default: tran)
+#                                 Controls output of write/witeline functions to
+#                                 transcript.(VHDL only)
+#                                 
+# -do <command>                   Execute <command> on startup; <command> can be
+#                                 a macro filename
+#                                 
+# -f <filename>                   Read command line arguments from <filename>
+#                                 
+# -file <filename>                Read command line arguments from <filename>
+#                                 
+# -g<Name>=<Value>                Specify generic/parameter default Value for
+#                                 Name
+#                                 
+# -geometry <geometry_spec>       Specifies the size and location of the main
+#                                 window. Where <geometry_spec> is of the form:
+#                                 WxH+X+Y
+#                                 
+# -gui                            Open the GUI without loading a design
+#                                 
+# -hazards                        Enable hazard checking
+#                                 
+# -i                              Force interactive mode
+#                                 
+# -modelsimini <modelsim.ini>     Specify path to the modelsim.ini file
+#                                 
+# -mvchome <path>                 Location of Questa Verification IP
+#                                 installation. Overrides 'MvcHome' modelsim.ini
+#                                 setting
+#                                 
+# -name <name>                    Specifies the application name used by the
+#                                 interpreter for send commands.
+#                                 
+# -nocollapse                     Disable optimization of internal port map
+#                                 connections
+#                                 
+# -nocompress                     Create/restore uncompressed checkpoint file
+#                                 
+# -noglitch                       Disable VITAL glitch generation
+#                                 
+# -nostdout                       Do not write transcript to stdout (batch mode
+#                                 only)
+#                                 
+# -novopt                         Force incremental mode (pre-6.0 behavior)
+#                                 
+# -optionset <optionset_name>     Calls an option set in modelsim.ini.
+#                                 
+# -quiet                          Do not report 'Loading...' messages
+#                                 
+# -runinit                        Execute run -init before command prompt or
+#                                 running -do files.
+#                                 
+# -title <string>                 Optional title for the Main window
+#                                 
+# -version                        Print the version of the simulator
+#                                 
+# -visual <visual>                Specify the visual to use for the window. Does
+#                                 not apply to Windows platforms.
+#                                 
+# -vopt                           Run vopt optimization before elaborating the
+#                                 simulator
+#                                 
+# -voptargs=<arglist>             Pass the specified arguments to vopt
+#                                 
+# -work <libname>                 Work library to write the optimized design
+#                                 into. (Default: top-level library i.e.
+#                                 <libname> used with -lib option)
+#                                 
+# ------------------------------------Coverage------------------------------------
+# Coverage Category
+# 
+# --------------------------------------------------------------------------------
+# -attemptedimmedcovers           Exclude unattempted immediate covers to
+#                                 participate in coverage calculations
+#                                 
+# -coverage                       Allows enabled coverage statistics to be kept
+#                                 
+# -covercountnone                 Disables the default behavior to increment the
+#                                 count of all matching rows in condition and
+#                                 expression coverage UDP tables. Has no effect
+#                                 on FEC coverage.
+#                                 
+# -coverenhanced                  Enables functionality which may change the
+#                                 appearance or content of coverage metrics. A
+#                                 detailed list of these changes can be found by
+#                                 searching in the release notes for
+#                                 'coverenhanced'. This option only takes
+#                                 meaningful effect in letter releases (e.g.
+#                                 10.2b). It has no effect in initial major
+#                                 releases (e.g. 10.2).
+#                                 
+# -coverstore <path>              Specifies the path where coverage data will be
+#                                 dumped during exit of a simulation run. The
+#                                 -testname argument is required for this option
+#                                 to specify a testname for the current
+#                                 simulation run.
+#                                 
+# -covtoggleenablealiasinterface  Enable toggle of alias interface ports
+#                                 
+# -cvgbintstamp                   Record simulation timestamp when a covergroup
+#                                 bin is covered during simulation run
+#                                 
+# -cvghaltillbin                  Halt simulation when an illegal cover/cross bin
+#                                 gets hit
+#                                 
+# -cvgmaxrptrhscross <string_arg> Set the maximum cross bin BINRHS terms in
+#                                 coverage report.
+#                                 
+# -cvgmergeinstances              Set the default value of covergroup
+#                                 type_option.merge_instances to 1
+#                                 
+# -cvgopt[=[+|-]<mode>[,[+|-]<mode>]*]
+#                                 Enable Covergroup optimization modes. Valid
+#                                 modes are:
+#                                 minhitcnt - stop sampling coverpoint/cross when
+#                                 it is fully covered.
+#                                 
+# -cvgperinstance                 Force the option.per_instance control in all
+#                                 covergroup declarations to 1.
+#                                 
+# -cvgprecollect <ucdb_filename>  Specify a UCDB file as optimization control for
+#                                 the current simulation. This switch can occur
+#                                 multiple times.
+#                                 
+# -cvgprecollectlog <log_filename>
+#                                 Specify the path of the log file where the
+#                                 precollect processing information will be
+#                                 written to.
+#                                 
+# -cvgsingledefaultbin            Collapse a Covergroup default array bin into a
+#                                 scalar bin
+#                                 
+# -cvgsparsearraybin              Force modelling of Covergroup unsize array bins
+#                                 in a sparse fashion.
+#                                 
+# -cvgsparsecross                 Force modelling of Covergroup cross bins in a
+#                                 sparse fashion.
+#                                 
+# -cvgzwnocollect <1|0>           Turn on/off the coverage data collection of
+#                                 zero-weight coverage items.
+#                                 
+# -extendedtogglemode [1|2|3]     Change the level of support for extended
+#                                 toggles.
+#                                 The levels of support are:
+#                                 1 - 0L->1H & 1H->0L & any one 'Z' transition
+#                                 (to/from 'Z')
+#                                 2 - 0L->1H & 1H->0L & one transition to 'Z' &
+#                                 one transition from 'Z'
+#                                 3 - 0L->1H & 1H->0L & all 'Z' transitions
+#                                 
+# -feccountlimit [<n> | 0 ]       Limits the number of counts that are tracked
+#                                 for. Focused Expression Coverage.
+#                                 
+# -multicount=<arg>               Specifies the single-bit or multi-bit count
+#                                 modes for bins of different coverage types.
+#                                 
+# -nocoverage                     Passed to vopt to turn off code coverage
+#                                 compile options
+#                                 
+# -nocrossautobins[=[uncond|cond]]
+#                                 Avoid generating auto bins in cross coverage
+#                                 computation.
+#                                 
+# -nocvg                          Disable Covergroup object construction and
+#                                 builtin calls
+#                                 
+# -nocvgcollapseembeddedinstances Turning off the optimization of collapsing
+#                                 embedded covergroup instances when
+#                                 type_option.merge_instances is set to zero.
+#                                 
+# -nocvgmergeinstances            Set the default value of covergroup
+#                                 type_option.merge_instances to 0
+#                                 
+# -nocvgperinstance               Force the option.per_instance control in all
+#                                 covergroup declarations to 0.
+#                                 
+# -nocvgzwopt                     Enable sampling for zero weight covergroup
+#                                 items
+#                                 
+# -noexcludehiz                   Do not automatically exclude rows with Hi-Z for
+#                                 expression coverage
+#                                 
+# -noexcludeternary               Disables the automatic exclusion of UCDB
+#                                 coverage data rows resulting from ternary
+#                                 expressions for the entire design.
+#                                 
+# -noimplicitcoverpoint           Avoid collecting coverage for implicit
+#                                 coverpoints.
+#                                 
+# -notogglefixedsizearray         Excludes Verilog unpacked fixed-size arrays,
+#                                 VHDL multi-d arrays and VHDL arrays-of-arrays
+#                                 in toggle coverage
+#                                 
+# -notoggleints                   Excludes VHDL integers from toggle coverage
+#                                 
+# -notogglevhdlrecords            Excludes VHDL records from toggle coverage
+#                                 
+# -notogglevlogints               Excludes Verilog integers from toggle coverage
+#                                 
+# -notogglevlogreal               Excludes Verilog real type in toggle coverage
+#                                 
+# -showautoexcludprows            Display auto-excluded UDP rows of table, in
+#                                 expression coverage
+#                                 
+# -testname <name>                Specifies a testname for the current simulation
+#                                 run. Required only when coverage data is saved
+#                                 in a coverstore.
+#                                 
+# -toggleMaxIntValues <number_arg>
+#                                 Sets max number of values saved for VHDL
+#                                 integers
+#                                 
+# -toggleVlogInts                 Includes Verilog integers for toggle coverage
+#                                 
+# -togglecountlimit <number_arg>  Sets max count saved for a toggle node
+#                                 
+# -toggledeglitch <period>        Enable toggle deglitching. Require signal
+#                                 stable longer than period value
+#                                 <period> must be a time value with units
+#                                 
+# -togglefixedsizearray           Includes Verilog unpacked fixed-size arrays,
+#                                 VHDL multi-d arrays and VHDL arrays-of-arrays
+#                                 in toggle coverage
+#                                 
+# -togglemaxfixedsizearray <size> Sets the limit on the size of Verilog unpacked
+#                                 fixed-size arrays that are included for toggle
+#                                 coverage
+#                                 
+# -togglemaxrealvalues <number_arg>
+#                                 Sets max number of values saved for
+#                                 SystemVerilog reals
+#                                 
+# -togglepackedasvec              Treat SystemVerilog packed structures and
+#                                 multi-d arrays as flattened vectors
+#                                 
+# -toggleportsonly                Enable toggle statistics collection only for
+#                                 ports
+#                                 
+# -togglevhdlrecords              Includes VHDL records for toggle coverage
+#                                 
+# -togglevlogenumbits             Treat SystemVerilog enums as reg-vectors for
+#                                 toggle coverage
+#                                 
+# -togglevlogreal                 Includes Verilog real type in toggle coverage
+#                                 
+# -togglewidthlimit <number_arg>  Sets max width for vectors counted for toggles
+#                                 
+# -ucdbfile <ucdbfilename>        save the contents of the coverage ucdb file
+#                                 
+# -ucdbteststatusmsgfilter <TCL style regular expression>
+#                                 Matching messages do not propagate their status
+#                                 to UCDB TESTSTATUS
+#                                 
+# -udpcountlimit [<n> | 0 ]       Limit the number of counts that are tracked for
+#                                 UDP Coverage.
+#                                 
+# -unattemptedimmed               Include immediate assertions to participate in
+#                                 assertion coverage calculations
+#                                 
+# -usenonstdcoveragesavesysf      Replaces implementation of the built-in, IEEE
+#                                 1800 compliant system function with the
+#                                 non-standard variant, and thus affects all
+#                                 calls to $coverage_save().
+#                                 
+# -viewcov [<dataset>=]<ucdbfilename>
+#                                 View the contents of the coverage ucdb file
+#                                 
+# --------------------------------------Cpp--------------------------------------
+# C/C++ Category for option
+# 
+# --------------------------------------------------------------------------------
+# -allowcheckpointcpp <val>       Turn on/off the support for checkpointing
+#                                 foreign C/C++ libraries. Must be used in the
+#                                 vsim session where a checkpoint is created.
+#                                 Option values <val> are:
+#                                      0: off  (default)
+#                                      1: on   (manually save/restore user shared
+#                                 library data)
+#                                      2: auto (automatically save/restore user
+#                                 shared library data)
+#                                 
+# -cppinstall <[gcc|g++] version> Specify the version of the desired GNU compiler
+#                                 supported and distributed by Mentor. Use same
+#                                 compiler path as specified on the sccom command
+#                                 line.
+#                                 
+# -cpppath </path/to/[gcc|g++]>   Specify path to the desired GNU compiler. Use
+#                                 same compiler path as specified on the sccom
+#                                 command line.
+#                                 
+# -dpicppinstall <[gcc|g++] version>
+#                                 Specify the version of the desired GNU compiler
+#                                 supported and distributed by Mentor for the DPI
+#                                 compilation
+#                                 
+# -dpicpppath </path/to/gcc>      Specify desired GCC path for DPI compilation
+#                                 
+# -dpiexportcheckref              (Deprecated) Check the staleness of
+#                                 exportwrapper source file generated previously.
+#                                 
+# -dpiexportobj <filename>        (Deprecated) Generate specified DPI export
+#                                 object file then quit
+#                                 
+# -dpiexportonly                  (Deprecated) Quit simulation after
+#                                 exportwrapper compilation. This is to support
+#                                 locked work library flow.
+#                                 
+# -dpiforceheader                 Force generation of dpi header file even when
+#                                 empty of function prototypes
+#                                 
+# -dpiheader <filename>           Generate specified DPI C header file
+#                                 
+# -dpilib <libname>               Specify the library that contains DPI exports
+#                                 and object files
+#                                 
+# -dpioutoftheblue 1|0            Turn on/off DPI out-of-the-blue call from C
+#                                 function
+#                                 
+# -enabledpisoscb                 Enable calling DPI export task/function from
+#                                 the SystemC start_of_simulation callback
+#                                 
+# -gblso <shared_obj>[,<shared_obj>...]
+#                                 Open the specified shared object(s) with global
+#                                 symbol visibility. If multiple shared objects
+#                                 are specified, they will first be merged
+#                                 internally and then loaded as single shared
+#                                 object.
+#                                 
+# -gblsoauto                      Enable global symbol visibility when loading
+#                                 vsim_auto_compile shared library.
+#                                 
+# -ldflags <linkopts>             Specify in quotes the option for linking auto
+#                                 compiled DPI/PLI/VPI object files
+#                                 
+# -noautoldlibpath                Disable setting of LD_LIBRARY_PATH set
+#                                 internally.
+#                                 
+# -nodpiexports                   (Deprecated) Turn off the exportwrapper
+#                                 generation.
+#                                 
+# -nodpimasking                   Turn off masking of unused bits of bit vectors
+#                                 from user C data.
+#                                 
+# -noscmainscopename              Strip sc_main() scope from the hierarchical
+#                                 path.
+#                                 
+# -nosyncio                       Disables synchronization of I/O from different
+#                                 sources like C/C++ application(PLI,VPI,DPI)
+#                                 
+# -pli <object list>              Load the list of PLI shared objects
+#                                 
+# -plicompatdefault [latest | 2009 | 2005 | 2001]
+#                                 Specify the VPI object model behavior within
+#                                 vsim. This switch applies globally, not to
+#                                 individual libraries.
+#                                 
+# -sc_arg <string> ...            Specify a SystemC command line argument
+#                                 accessible using sc_main(), sc_argc() and
+#                                 sc_argv()
+#                                 
+# -scasyncupdate                  Enable SystemC IEEE 1666-2011
+#                                 async_request_update() feature.
+#                                 
+# -scchkpntrestore                Enable limited checkpoint/restore support with
+#                                 SystemC hierarchy in the designs.
+#                                 
+# -scdpidebug                     Turn on debugging for SystemC DPI export
+#                                 function call
+#                                 
+# -sclib <libname>                Load the SystemC shared library from <libname>
+#                                 By default the systemc.so shared library is
+#                                 loaded from the library in which the top level
+#                                 SystemC design unit is compiled. This option
+#                                 should be used when systemc.so is not in the
+#                                 same library as the top level SystemC design
+#                                 unit.
+#                                 
+# -scnolps                        Remove the leading hierarchical path separator
+#                                 in mixed-language designs.
+#                                 
+# -scstacksize <value>            Set SystemC thread stack size. The stack size
+#                                 is set as an integer number followed by the
+#                                 unit which can be Kb(Kilo-byte), Mb(Mega-byte)
+#                                 or Gb(Giga-byte). Examples: '1000 Kb', '1 Mb',
+#                                 '1 Gb'
+#                                 
+# -sv_lib <shared_obj>            DPI shared object, without extension
+#                                 
+# -sv_liblist <filename>          The name of a bootstrap file containing names
+#                                 of DPI shared objects to load
+#                                 
+# -sv_root <dirname>              Directory name to use as prefix for DPI shared
+#                                 object lookups
+#                                 
+# -trace_dpi <n>                  Set DPI tracing to level <n>. The default is 0
+#                                 which turns off tracing.
+#                                 The levels of support are:
+#                                 1 - turning on all tracing
+#                                 0 - turning off all tracing (default)
+#                                 i - turning on the tracing of DPI import call
+#                                 only
+#                                 e - turning on the tracing of DPI export call
+#                                 only
+#                                 a - turning on the tracing of DPI import/export
+#                                 call arguments only
+#                                 
+# -trace_foreign <int>            Set FLI/PLI tracing to level <n>
+#                                 
+# -valgrind [options]             Run valgrind in simulation with user given
+#                                 options
+#                                 
+# -vpicompatcb=<arg>              Enable legacy VPI callback ordering prior to
+#                                 10.5
+#                                 
+# -------------------------------------Debug-------------------------------------
+# Debug Category contains debug, and assertion options
+# 
+# --------------------------------------------------------------------------------
+# -accessobjdebug                 Enable access value designated object debug
+#                                 features.
+#                                 
+# -assertcounts                   Maintain assertion counts
+#                                 
+# -assertdebug                    Keep data for debugging assertion failures
+#                                 
+# -assertfile <filename>          Alternative file for recording assert messages
+#                                 
+# -classdebug                     Enable class debug features.
+#                                 
+# -debugdb[=<dbname>]             To create or use Schematic Debug database
+#                                 (Default: vsim.dbg)
+#                                 
+# -evcddump                       Mandatory option to enable dumping of EVCD
+#                                 using any of the dumpports commands.
+#                                 
+# -fsmdebug                       Enables visualization of FSMs in the GUI.
+#                                 
+# -immedassert                    Enable SystemVerilog and VHDL immediate
+#                                 assertions
+#                                 
+# -lineinfo                       Enables accurate file/line information in
+#                                 messages and profiler.
+#                                 
+# -msgfile <filename>             Alternative file for recording non-assert
+#                                 messages
+#                                 
+# -no_autoacc                     Prevents vsim from automatically passing the
+#                                 +acc switch to vopt.
+#                                 
+# -noassertcounts                 Do not maintain assertion counts
+#                                 
+# -noassertdebug                  Do not keep data for debugging assertion
+#                                 failures
+#                                 
+# -noautofindloop                 Disable the analysis/identification of an
+#                                 infinite zero-delay loop when Iteration Limit
+#                                 is exceeded.
+#                                 
+# -nodefferedfanoutopt            Turn off deffered fanout optimizations
+#                                 
+# -noimmedassert                  Disable SystemVerilog and VHDL immediate
+#                                 assertions
+#                                 
+# -nolineinfo                     Disables accurate file/line information in
+#                                 messages and profiler.
+#                                 
+# -nopsl                          Disable PSL assertions
+#                                 
+# -nosharedtrigopt                Turn off shared Trigger memory optimizations
+#                                 
+# -nosva                          Disable SystemVerilog concurrent assertions
+#                                 
+# -nowlfcollapse                  Log every item event and preserve event order.
+#                                 
+# -nowlfcompress                  Turn off WLF file compression
+#                                 
+# -nowlfdeleteonquit              Preserve the current simulation WLF file
+#                                 (vsim.wlf) when the simulator exits.
+#                                 
+# -nowlflock                      Turn off WLF file locking
+#                                 
+# -nowlfopt                       Turn off WLF file optimizations
+#                                 
+# -postsimdataflow                Needed with -debugdb, to enable post simulation
+#                                 dataflow
+#                                 
+# -tab <filename>                 Specify PLI TAB file
+#                                 
+# -view [<dataset>=]<filename>    View the contents of a WLF file
+#                                 
+# -wlf <filename>                 Specify the name of the WLF file (Default:
+#                                 vsim.wlf)
+#                                 
+# -wlfcachesize[=]<arg>           Specify WLF reader cache size for current
+#                                 simulation (Default: no reader cache)
+#                                 
+# -wlfcollapsedelta               Log item values only at end of iteration.
+#                                 (default)
+#                                 
+# -wlfcollapsetime                Log item values only at end of time step.
+#                                 
+# -wlfcompress                    Create compressed WLF files.
+#                                 
+# -wlfdeleteonquit                Delete WLF file when simulation quits.
+#                                 
+# -wlflock                        Lock a WLF file.
+#                                 
+# -wlfopt                         Turn on WLF file optimizations (default)
+#                                 
+# -wlfsimcachesize[=]<arg>        Specify WLF reader cache size for current
+#                                 simulation (Default: no reader cache)
+#                                 
+# -wlfslim[=]<arg>                Specifies a size restriction for the event
+#                                 portion of the WLF file (Default: all)
+#                                 
+# -wlftlim <duration>             Specify maximum duration of time to be saved in
+#                                 WLF file (Default: all)
+#                                 
+# --------------------------------------GLS--------------------------------------
+# Gate level simulation category
+# 
+# --------------------------------------------------------------------------------
+# +alt_path_delays                Use current output value instead of pending
+#                                 value when selecting inertial specify path
+#                                 output delay
+#                                 
+# +int_delays                     Optimize annotation of interconnect delays
+#                                 
+# +maxdelays                      Use maximum timing from min:typ:max expressions
+#                                 
+# +mindelays                      Use minimum timing from min:typ:max expressions
+#                                 
+# +no_autodtc                     Turn off auto-detection of optimized cells with
+#                                 negative timing checks and autoapplication of
+#                                 +delayed_timing_checks to those cells.
+#                                 
+# +no_neg_tchk                    Set negative timing check limits to zero
+#                                 
+# +no_path_edge                   Ignore the input edge specification on path
+#                                 delays
+#                                 
+# +no_pulse_msg                   Disable path pulse error warning messages
+#                                 
+# +no_show_cancelled_e            Cancel negative pulse (Default)
+#                                 
+# +nosdferror                     Treat SDF errors as warnings
+#                                 
+# +nosdfwarn                      Disable warnings from SDF annotator
+#                                 
+# +nospecify                      Disable specify path delays and timing checks
+#                                 
+# +notiftoggle01[+<seed>]         Use the metastable UDP evaluation of enabled
+#                                 Verilog cells in simulation. Default seed value
+#                                 is 0
+#                                 
+# +ntc_warn                       Enable warnings from negative timing constraint
+#                                 algorithm
+#                                 
+# +ntcnotchks                     Disable timing checks while maintaining NTC
+#                                 delays
+#                                 
+# +pulse_e/<percent>              Set path pulse error limit as percentage of
+#                                 path delay
+#                                 
+# +pulse_e_style_ondetect         Drive pulse error state immediately on
+#                                 detection
+#                                 
+# +pulse_e_style_onevent          Drive pulse error state on time of pending
+#                                 event (Default)
+#                                 
+# +pulse_int_e/<percent>          Set interconnect pulse error limit as
+#                                 percentage of delay
+#                                 
+# +pulse_int_r/<percent>          Set interconnect pulse rejection limit as
+#                                 percentage of delay
+#                                 
+# +pulse_r/<percent>              Set path pulse rejection limit as percentage of
+#                                 path delay
+#                                 
+# +sdf_iopath_to_prim_ok          Prevent vsim from issuing an error when it
+#                                 cannot locate specify path delays to annotate
+#                                 
+# +sdf_nocheck_celltype           Disable check between SDF celltype name and
+#                                 module name
+#                                 
+# +sdf_report_unannotated_insts   Enable error messages for any un-annotated
+#                                 Verilog instances with specify blocks or VHDL
+#                                 instances with VITAL timing generics that are
+#                                 under regions of SDF annotation.
+#                                 
+# +sdf_verbose                    Display SDF annotator status messages
+#                                 
+# +show_cancelled_e               Drive pulse error state on negative pulse
+#                                 
+# +transport_int_delays           Use transport mode for interconnect delays
+#                                 
+# +transport_path_delays          Use transport mode for path delays (Default:
+#                                 inertial)
+#                                 
+# +typdelays                      Use typical timing from min:typ:max expressions
+#                                 (Default)
+#                                 
+# +vlog_retain_off                Enable or disable SDF RETAIN delay processing.
+#                                 +vlog_retain_on is the default behavior.
+#                                 
+# +vlog_retain_on                 Enable or disable SDF RETAIN delay processing.
+#                                 +vlog_retain_on is the default behavior.
+#                                 
+# +vlog_retain_same2same_off      Enable or disable SDF RETAIN delay processing
+#                                 of X insertion on outputs that do not change,
+#                                 but the causal inputs change.
+#                                 +vlog_retain_same2same_on is the default
+#                                 behavior.
+#                                 
+# +vlog_retain_same2same_on       Enable or disable SDF RETAIN delay processing
+#                                 of X insertion on outputs that do not change,
+#                                 but the causal inputs change.
+#                                 +vlog_retain_same2same_on is the default
+#                                 behavior.
+#                                 
+# -cellimmeval                    Ensure updation of output in same delta for
+#                                 zero delay optimized cell flow.
+#                                 
+# -extend_tcheck_data_limit <percent relaxation>
+#                                 Relax data limit for convergence
+#                                 
+# -extend_tcheck_ref_limit  <percent relaxation>
+#                                 Relax ref limit for convergence
+#                                 
+# -glsnegtchk <solver_level>      Specifies the negative timing check solver.
+#                                 
+# -glspath <string_arg>           Modify specify path selection mode.  Simuconddc
+#                                 - minimize zero delay path selection
+#                                 
+# -no_notifier_on_disable         Notifier triggering is prevented when timing
+#                                 check warning is disabled via system task
+#                                 $disable_warning("timing"). By default notifier
+#                                 toggles whenever a timing check violation is
+#                                 encountered even if the timing check warning is
+#                                 disabled.
+#                                 
+# -no_risefall_delaynets          Disables the rise/fall delay net delay negative
+#                                 timing check algorithm.
+#                                 
+# -sdfallowvlogescapeport         Allows matching of bit-blasted scalar port
+#                                 names in rtl with normal non-escaped port names
+#                                 in SDF.
+#                                 
+# -sdfannotatepercentage          Display annotation percentage of tchecks and
+#                                 path delays specified in SDF.
+#                                 
+# -sdfmax[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 maximum timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# -sdfmaxerrors <n>               Max number of missing instances reported
+#                                 (default is 5)
+#                                 
+# -sdfmaxr[@<delayScale>] [<instance>=]<sdffile>
+#                                 Specifies when an instance of a Preoptimized
+#                                 Design Unit (vopt -pdu) with an associated
+#                                 default SDF file is to be re-annotated with
+#                                 maximum timing from the specified SDF file.
+#                                 
+# -sdfmin[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 minimum timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# -sdfminr[@<delayScale>] [<instance>=]<sdffile>
+#                                 Specifies when an instance of a Preoptimized
+#                                 Design Unit (vopt -pdu) with an associated
+#                                 default SDF file is to be re-annotated with
+#                                 minimum, typical, or maximum timing from the
+#                                 specified SDF file.
+#                                 
+# -sdfnoerror                     Treat SDF errors as warnings
+#                                 
+# -sdfnowarn                      Disable warnings from SDF annotator
+#                                 
+# -sdfreport=<fileName>           Report unannotated/partially-annotated specify
+#                                 objects into <fileName>
+#                                 
+# -sdftyp[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 typical timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# ------------------------------------Language------------------------------------
+# Options to control Language features
+# 
+# --------------------------------------------------------------------------------
+# +bitblast[=[iopath|tcheck]]     Bit-blast Verilog specify paths and/or tchecks
+#                                 with wide ports. Without the optional
+#                                 qualifiers operates on specify paths and
+#                                 tchecks.
+#                                 +bitblast=iopath bit-blasts specify paths with
+#                                 wide ports.
+#                                 +bitblast=tcheck bit-blasts tchecks with wide
+#                                 ports.
+#                                 
+# +delayed_timing_checks          Causes timing checks to be performed on the
+#                                 delayed versions of input ports
+#                                 
+# +dumpports+direction            direction          Provide port direction info
+#                                 in VCD file for dumpports
+#                                 unique             Provide unique Extended VCD
+#                                 identifier for each port
+#                                 no_strength_range  Ignore strength range when
+#                                 resolving conflicts
+#                                 collapse           Collapse dumpport vectors
+#                                 into single VCD ids
+#                                 nocollapse         Don't collapse dumpport
+#                                 vectors into single VCD ids
+#                                 force_direction    Ignore driver location. Use
+#                                 port direction for input and output ports
+#                                 
+# +initmem+<seed>                 Specify seed value to be used for randomizing
+#                                 fixed-size arrays marked for randomization by
+#                                 vlog/vopt.
+#                                 
+# +initreg+<seed>                 Specify seed value to be used for randomizing
+#                                 variables marked for randomization by
+#                                 vlog/vopt.
+#                                 
+# +initregNBA                     Controls whether +initreg settings applied to
+#                                 registers of sequential UDPs should be
+#                                 non-blocking. This is useful when continuous
+#                                 assignments overwrite register initialization.
+#                                 +initregNBA -- (default) enables this
+#                                 functionality
+#                                 
+# +multisource_int_delays         Enable multisource interconnect delays for both
+#                                 Verilog and VHDL
+#                                 
+# +no_glitch_msg                  Disable glitch error messages
+#                                 
+# +no_notifier                    Disable notifier toggling for timing constraint
+#                                 violations
+#                                 
+# +no_tchk_msg                    Disable timing constraint error messages
+#                                 
+# +noinitregNBA                   Controls whether +initreg settings applied to
+#                                 registers of sequential UDPs should be
+#                                 non-blocking. This is useful when continuous
+#                                 assignments overwrite register initialization.
+#                                 +noinitregNBA -- disables this functionality.
+#                                 
+# +notimingchecks                 Disable Verilog and VITAL timing checks
+#                                 
+# -absentisempty                  Treat non-existent VHDL files opened for read
+#                                 as empty
+#                                 
+# -assume                         Simulate PSL and Verilog assume directives same
+#                                 as assert directives
+#                                 
+# -autoexclusions=fsm|assertions|all|none
+#                                 Turns on/off automatic fsm or assertions code
+#                                 coverage exclusions
+#                                 
+# -autoexclusionsdisable=fsm|assertions|all|none
+#                                 Turns on/off automatic fsm or assertions code
+#                                 coverage exclusions
+#                                 
+# -autoprofile[=<profile_database>]
+#                                 Automatically collect profile data without
+#                                 requiring the use of profile commands.
+#                                 Specifying a profile database name is optional
+#                                 
+# -checkvifacedrivers 1|0         Include assignments through virtual interfaces
+#                                 in the multiple-driver analysis.
+#                                 
+# -codelink=<path>                Specify the path to CODELINK_HOME directory
+#                                 
+# -compress_elab                  In conjunction with -elab, enables compression
+#                                 of the elab file, This option is now deprecated
+#                                 and will be removed in future releases.
+#                                 
+# -defaultstdlogicinittoz         Sets the default VHDL initialization of
+#                                 std_logic to "Z" (high impedance) for ports of
+#                                 type OUT and INOUT.
+#                                 
+# -elab <filename>                Elaborate a design into a file
+#                                 
+# -elab_cont <filename>           Elaborate a design into a file and simulate
+#                                 
+# -elab_defer_fli                 Defer calling FLI initialization routines
+#                                 
+# -enumfirstinit                  Initializes enum variables in SystemVerilog
+#                                 using the leftmost value as the default.
+#                                 Argument must be used with the vlog command in
+#                                 order to implement this initialization
+#                                 behavior. Specify the EnumBaseInit variable as
+#                                 0 in the modelsim.ini file to set this as a
+#                                 permanent default.
+#                                 
+# -filemap_elab <HDLfilename>=<NEWfilename>
+#                                 Define a mapping used during -load_elab
+#                                 
+# -foreign <C_init_func> <shared_lib>
+#                                 Load a foreign module
+#                                 
+# -gconrun                        Enable/disable garbage collection after each
+#                                 simulation run command.
+#                                 
+# -gconstep                       Enable/disable garbage collection after each
+#                                 step command.
+#                                 
+# -gcthreshold <n>                Specify the threshold for Garbage Collection.
+#                                 The default size is 100.  (i.e. Garbage
+#                                 Collection will be triggered after every 100M
+#                                 byte of class object allocation.)
+#                                 
+# -ignoreinilibs                  Ignore the libraries specified with the
+#                                 'LibrarySearchPath' variable in the vsim
+#                                 section of the ini file
+#                                 
+# -immed_ca                       Continuous assignment event ordering (OFF
+#                                 switch reverts to pre-6.5 continuous assignment
+#                                 event ordering)
+#                                 
+# -immedca                        Continuous assignment event ordering (OFF
+#                                 switch reverts to pre-6.5 continuous assignment
+#                                 event ordering)
+#                                 
+# -infacthome  <path>             Location of inFact installation. Overrides
+#                                 'InFactHome' modelsim.ini setting
+#                                 
+# -installcolormap                Cause the application to use its own color map
+#                                 
+# -int_force_inout                Under this option if a rtl force is applied on
+#                                 an inout instance terminal which is present at
+#                                 the target of an interconnect delay the force
+#                                 will be applied to the high conn net instead of
+#                                 the loconn one.
+#                                 
+# -iterationlimit=<arg>           arg=<limit>[k][m][g] Override iteration limit.
+#                                 Default: 10m.
+#                                 arg=f[ind]           Find iteration limit.
+#                                 Increase as needed and report final value at
+#                                 end of simulation
+#                                 
+# -keeploaded                     Prevent the simulator from unloading/reloading
+#                                 shared libraries
+#                                 
+# -keeploadedrestart              Prevent the simulator from unloading/reloading
+#                                 shared libraries during restart
+#                                 
+# -keepstdout                     Do not redirect stdout to transcript window
+#                                 
+# -learn <fname>                  Learn the names of objects externally accessed
+#                                 at runtime (by methods such as PLI, VPI, Signal
+#                                 Spy, or CLI). <fname>.ocf, <fname>.ocm and
+#                                 <fname>.acc files created
+#                                 
+# -load_elab <filename>           Load simulation from previous elaboration
+#                                 
+# -mlopt                          Optimize mixed language nets
+#                                 
+# -multisource_delay min|max|latest
+#                                 min|max|latest Controls annotation of SDF
+#                                 INTERCONNECT construct. (Default: max)
+#                                 
+# -noappendclose                  Do not physically close VHDL files when they
+#                                 are opened in append mode.
+#                                 
+# -noassume                       Do not simulate PSL and Verilog assume
+#                                 directives
+#                                 
+# -nocodelink                     Ignore the CODELINK_HOME environment variable
+#                                 and disable codelink loading.
+#                                 
+# -nocompress_elab                In conjunction with -elab, disables compression
+#                                 of the elab file
+#                                 
+# -nofileshare                    Do not share file descriptors for VHDL files
+#                                 opened for write or append that have identical
+#                                 names
+#                                 
+# -nogconrun                      Enable/disable garbage collection after each
+#                                 simulation run command.
+#                                 
+# -nogconstep                     Enable/disable garbage collection after each
+#                                 step command.
+#                                 
+# -noimmedca                      Revert to pre-6.5 continuous assignment event
+#                                 ordering
+#                                 
+# -novhdlvariablelogging          Disables higher performance VHDL variable
+#                                 logging
+#                                 
+# -nowiremodelforce               Restores the force command to previous usage
+#                                 (prior to version 10.0b) where an input port
+#                                 cannot be forced directly if it is mapped at a
+#                                 higher level in VHDL and mixed models. Signals
+#                                 must be forced at the top of the hierarchy
+#                                 connected to the input port.
+#                                 
+# -nowrealdefaultzero             Sets the default value for an undriven wreal
+#                                 net to `wrealZState.
+#                                 
+# -oldvhdlforgennames             Enable the use of a previous style of naming in
+#                                 VHDL for...generate statement iteration names
+#                                 in the design hierarchy.
+#                                 
+# -onfinish <mode>                Customize the kernel shutdown behavior at the
+#                                 end of simulation
+#                                 Valid modes - ask, stop, exit, final (Default:
+#                                 ask)
+#                                 
+# -pedanticerrors                 Enforce strict language checks
+#                                 
+# -permissive                     Relax some language error checks to warnings.
+#                                 
+# -psl                            Enable PSL assertions
+#                                 
+# -pslinfinitythreshold=<arg>     Redefine infinite clock tick for strong
+#                                 operators
+#                                 
+# -psloneattempt                  Force single PSL assertion coverage attempt
+#                                 
+# -restore <pathname>             Restore simulation from previous checkpoint
+#                                 file or directory, represented by <pathname>.
+#                                 
+# -saifdump <filename>            Dump power report file with -r option for all
+#                                 signals
+#                                 
+# -stackcheck                     Enable runtime stack usage sanity checking.
+#                                 
+# -std_input <filename>           Use filename for VHDL textio STD_INPUT file
+#                                 
+# -std_output <filename>          Use filename for VHDL textio STD_OUTPUT file
+#                                 
+# -strictvital                    Sacrifice performance for strict VITAL
+#                                 compliance
+#                                 
+# -sva                            Enable SystemVerilog concurrent assertions
+#                                 
+# -svext=[+|-]<extension>[,[+|-]<extension>]*
+#                                 Enable/disable non-LRM compliant SystemVerilog
+#                                 language extensions. Valid extensions are:
+#                                 altdpiheader - Alternative style function
+#                                 signature generated in DPI header
+#                                 cfce - generate an error if $cast fails as a
+#                                 function
+#                                 cfmt - C like formatting for specifiers with
+#                                 '#' prefix ('%#x', '%#h')
+#                                 dfsp - sets default format specifier as %p, if
+#                                 no format specifier is given for unpacked array
+#                                 in $display and related systasks
+#                                 expdfmt - enable format string extensions for
+#                                 $display/$sformatf
+#                                 extscan - support values greater than 32 bit
+#                                 for string builtin methods (atohex, atobin,
+#                                 atooct, atoi)
+#                                 fmtcap - prints capital hex digits with %X/%H
+#                                 in display calls
+#                                 iddp - ignore DPI disable protocol check
+#                                 kctfp - Kill child threads of finished process 
+#                                 lfmt - zero-pad data if '0' prefixes width in
+#                                 format specifier (e.g. "%04h")
+#                                 noexptc - ignore DPI export SV type name
+#                                 overloading check
+#                                 realrand - support randomize() with real
+#                                 variables and constraints (Default)
+#                                 rsc - Allow type comparision of two structures
+#                                 with same members field
+#                                 
+# -t [1|10|100]fs|ps|ns|us|ms|sec Time resolution limit
+#                                 (VHDL default: resolution setting from .ini
+#                                 file)
+#                                 (Verilog default: minimum time_precision in the
+#                                 design)
+#                                 
+# -tag <string>                   Set tag for FLI/PLI tracing to <string>
+#                                 
+# -tbxhvllint                     Enables TBX to identify delays encountered at
+#                                 runtime, with file name line number and the
+#                                 delay maturity time. (This feature depends on
+#                                 libraries that have been compiled with
+#                                 -tbxhvllint specified to vlog)
+#                                 
+# -tran_int_delay                 The presence of interconnect delays around tran
+#                                 gate breaks the tran network which may result
+#                                 incorrect simulation behavior. 
+#                                 Under this option if the src or dst of any
+#                                 interconnect delay is connected to any tran
+#                                 gate terminal that will be ignored to ensure
+#                                 proper simulation behavior. 
+#                                 
+# -uvmcontrol=[all,disable,struct,reseed,msglog,trlog,certe]
+#                                 Control specific UVM-aware debug options
+#                                 
+# -v2k_intr_delay                 Use Verilog 2000 style interconnect delays
+#                                 
+# -vcd=[+<option>[+<option>+...]] Specifies VCD logging-related option settings.
+#                                 Options are:
+#                                 [+multid]                 Enable logging for
+#                                 multi-d arrays.
+#                                 [+maxmultid=<max-limit>]  Override limit on
+#                                 size of multi-d arrays that are logged.
+#                                 [+vhvar]                  Enable logging for
+#                                 VHDL variables.
+#                                 
+# -vcddump <filename>             Dump VCD file with -r option for all signals
+#                                 
+# -vcdread <filename>             Stimulate the VHDL top-level design from a VCD
+#                                 file
+#                                 
+# -vcdstim [<instance>=]<filename>
+#                                 Stimulate the top-level design or instances
+#                                 from an Extended VCD file
+#                                 
+# -vital2.2b                      Select SDF mapping for VITAL 2.2b (Default:
+#                                 VITAL 95)
+#                                 
+# -vital_fix_negative_setup_hold_sum
+#                                 Set negative time to zero when setuphold sum is
+#                                 negative
+#                                 
+# -wreal_resolution <resolver>[,check|,nocheck ]
+#                                 Specify resolve behavior for AMS wreal net with
+#                                 multiple drivers, where <resolver> is default,
+#                                 4state, sum, avg, min, or max. check/nocheck
+#                                 determine if compatibility with nettype real
+#                                 resolution functions is to be checked.
+#                                 
+# -wrealdefaultzero               Sets the default value for an undriven wreal
+#                                 net to 0.0.
+#                                 
+# ------------------------------------Library------------------------------------
+# Library Category for option
+# 
+# --------------------------------------------------------------------------------
+# -L <libname>                    Search library for design units instantiated
+#                                 from Verilog and for VHDL default component
+#                                 binding
+#                                 
+# -Ldir <dirname>                 Specify the container folder for libraries
+#                                 passed with -L and -Lf options.
+#                                 
+# -Lf <libname>                   Same as -L, but libraries are searched before
+#                                 `uselib
+#                                 
+# -lib <libname>                  Load top-level design units from <libname>.
+#                                 (Default: work)
+#                                 
+# -libverbose[=prlib]             Verbose messaging about library mappings,
+#                                 search and resolution. The =prlib modifier
+#                                 prints out the -L/-Lf/-Ltop option that was
+#                                 used to locate each design unit loaded by vsim.
+#                                 
+# -noltop                         Stops promotion of libraries containing top
+#                                 design units to searchable libraries.
+#                                 
+# -showlibsearchpath              Show all the libraries which will be searched
+#                                 for precompiled modules
+#                                 
+# -undefsyms=[<args>]             Generate stubs for undefined symbols in the
+#                                 shared libraries being loaded
+#                                 <args> are on, off, verbose
+#                                 
+# ------------------------------------License------------------------------------
+# License Category
+# 
+# --------------------------------------------------------------------------------
+# -lic_lnl_only                   Disable checkout of qhsimvh, qhsimvl, vsim,
+#                                 vsimvlog, msimhdlmix, hdlmix license features
+#                                 
+# -lic_mixed_only                 Disable checkout of qhsimvh, qhsimvl, vsim,
+#                                 vsimvlog single language license features
+#                                 
+# -lic_no_lnl                     Disable checkout of msimhdlsim and hdlsim
+#                                 language neutral license features
+#                                 
+# -lic_no_mix                     Disable checkout of msimhdlmix and hdlmix
+#                                 second language only license features
+#                                 
+# -lic_no_slvhdl                  Disable checkout of qhsimvh and vsim single
+#                                 language VHDL license features
+#                                 
+# -lic_no_slvlog                  Disable checkout of qhsimvl and vsimvlog single
+#                                 language Verilog license features
+#                                 
+# -lic_nomti                      Do not look for Model Technology Licenses
+#                                 
+# -lic_noqueue                    Do not wait in the license queue when a license
+#                                 is not available
+#                                 
+# -lic_plus                       Immediately reserve a VHDL and Verilog license
+#                                 
+# -lic_vhdl                       Immediately reserve a VHDL license
+#                                 
+# -lic_vlog                       Immediately reserve a Verilog license
+#                                 
+# ------------------------------------Messages------------------------------------
+# Options to suppress or downgrade errors.
+# 
+# --------------------------------------------------------------------------------
+# +nowarn<CODE | Number>          Disable specified warning message. (Example:
+#                                 +nowarnTFMPC)
+#                                 
+# -error <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Error
+#                                 
+# -fatal <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Fatal
+#                                 
+# -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                                 Limit the listed messages to display five times
+#                                 
+# -msglimitcount <limit_value> -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                                 Limit the reporting of listed messages to user
+#                                 defined count
+#                                 
+# -msgmode <mode>                 Controls transcripting of elaboration/runtime
+#                                 messages. Messages will appear in transcript
+#                                 and/or MsgViewer (.wlf file)
+#                                 Valid modes - tran, wlf, both (Default: tran)
+#                                 
+# -msgsingleline                  Display the messages in a single line.
+#                                 
+# -note <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Note
+#                                 
+# -suppress <msgNumber/msgGroup>[,<msgNumber/msgGroup>...]
+#                                 Suppress the listed messages using number or
+#                                 group. Valid <msgGroup> are All, GroupNote,
+#                                 GroupWarning, GroupFLI, GroupPLI, GroupSDF,
+#                                 GroupVCD, GroupVital, GroupWLF, GroupTCHK,
+#                                 GroupPA, GroupLRM
+#                                 
+# -warning <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Warning.
+#                                 -warning error: report all warnings as errors.
+#                                 
+# -----------------------------------MultiCore-----------------------------------
+# MultiCore Category
+# 
+# --------------------------------------------------------------------------------
+# -mc2                            Run simulation in MC2 mode
+#                                 
+# ---------------------------------------PA---------------------------------------
+# PA Category
+# 
+# --------------------------------------------------------------------------------
+# -pa                             Enable PowerAware RTL mode
+#                                 
+# -pa_allowtimezeroevent[=all]    Enable corruption, isolation, or release of
+#                                 signals at time 0 for the following events:
+#                                 pa_corrupt_register, pa_iso_on and pa_iso_off.
+#                                 
+# -pa_apps                        Helps in initializing the Power Aware apps and
+#                                 also it dumps the Power Aware information model
+#                                 database, design.bin.padb, in the current
+#                                 working directory 
+#                                 
+# -pa_db <dbfilelocation>         Specify a location and file name for the Power
+#                                 Aware database, which you use with Mentor
+#                                 Visualizer Debug Environment.
+#                                 If -pa_db <dbfilelocation> is not specified
+#                                 then Power Aware database is
+#                                 CWD/design.bin.padb.
+#                                 
+# -pa_debugdir <directory>        Specify the location for the writing and
+#                                 retrieval of post-simulation debug information
+#                                 for power aware simulations.
+#                                 
+# -pa_disabletimezeroevent        Disable the default behavior of the
+#                                 -pa_allowtimezeroevent switch.
+#                                 
+# -pa_excludedefaultps            Excludes DEFAULT_NORMAL and DEFAULT_CORRUPT
+#                                 power states in the coverage report
+#                                 
+# -pa_highlight=<arg>             Enables visual indication (highlighting) of
+#                                 power states of signals viewed in the Wave
+#                                 window.
+#                                 
+# -pa_lib <libname>               Specify a library location to store the Power
+#                                 Aware database files.
+#                                 If -pa_lib <libname> is not specified then
+#                                 library location is CWD/work.
+#                                 
+# -pa_loadimdb                    Load the information model database in vsim.
+#                                 
+# -pa_logfile <filename>          Write PA specific simulation log/messages to
+#                                 <filename>. (Default: transcript)
+#                                 
+# -pa_togglelimit=<n>             Instructs vsim to discontinue reporting an
+#                                 error (8906) for each signal that toggles
+#                                 during power off and issue note (8922) instead.
+#                                 The default value is 5.
+#                                 
+# -pa_top <dut path>              Specify DUT hierarchy for PA analysis of UPF
+#                                 file. This option is used to support
+#                                 PA analysis of UPF from hierarchy other than
+#                                 vopt TOP hierarchy.
+#                                 
+# --------------------------------------Pdu--------------------------------------
+# Pdu Category
+# 
+# --------------------------------------------------------------------------------
+# -pduignore[=<instpath>]         Ignore Preoptimized Design Unit.
+#                                 If optional <instpath> is not specified all
+#                                 PDUs found in compiled libraries will be
+#                                 ignored. Otherwise the PDU specified by
+#                                 <instpath> will be ignored. This option may be
+#                                 specified multiple times with different
+#                                 <instpath>s. (Equivalent to the deprecated
+#                                 "-ignore_bbox" option).
+#                                 
+# -pdupath[=<lib_path>]           Specify library path for PDU when library is
+#                                 moved after top level optimized design unit
+#                                 creation.
+#                                 
+# -vhdlmergepdupackage            VHDL packages with the same name and same
+#                                 library are shared between PDUs
+#                                 
+# -vhdlseparatepdupackage         VHDL packages with the same name and same
+#                                 library are not shared between PDUs
+#                                 
+# -vhdlvariablelogging            Enables higher performance VHDL variable
+#                                 logging
+#                                 
+# -------------------------------------Report-------------------------------------
+# Report Category
+# 
+# --------------------------------------------------------------------------------
+# +fsdb+<fsdb dumping command>    +fsdb+all[=on|off]              Enables dumping
+#                                 of all signals 
+#                                 +fsdb+autoflush                 Enables the
+#                                 automatic flush function
+#                                 +fsdb+fsdfile+<filename>        Specifies the
+#                                 FSDB file name
+#                                 +fsdb+mda[=on|off]             
+#                                 Enables/disables dumping all MDA signals  
+#                                 +fsdb+packedmda[=on|off]       
+#                                 Enables/disables dumping packed MDA signals    
+#                                 
+#                                 +fsdb+packed_size=<number>      Sets the
+#                                 threshold for dumping packed vects
+#                                 +fsdb+parameter[=on|off]       
+#                                 Enables/disables parameter dumping
+#                                 +fsdb+skip_cell_instance=<0-2> 
+#                                 Enables/Disables dumping of cell instance 
+#                                 +fsdb+keep_cell_module=<name>   Specifies the
+#                                 module that is not skipped
+#                                 +fsdb+struct[=on|off]          
+#                                 Enables/disables dumping struct signals
+#                                 
+# +no_cancelled_e_msg             Disable negative pulse warning messages
+#                                 
+# -capacity[=line]                Enable fine grain capacity analysis. Optional
+#                                 line option enables line based capacity
+#                                 reporting.
+#                                 
+# -capstats[=<args>[,]]           Enables capstats report
+#                                 <args> are du, decl, line, eor and
+#                                 filename=<filename>.
+#                                 Arguments are specified separated by comma. The
+#                                 argument du has suboptions: summary, details
+#                                 and duname=<duname>. These suboptions can be
+#                                 specified separated by '+'
+#                                 
+# -initreport <filename>          Report initial values generated due to applying
+#                                 +initreg/+initmem options to vlog/vopt
+#                                 
+# -l <filename>                   Write simulation log to <filename>. (Default:
+#                                 transcript)
+#                                 
+# -logfile <string_arg>           Write simulation log to <filename>. (Default:
+#                                 transcript)
+#                                 
+# -nocapacity                     Do not display capacity related information
+#                                 
+# -nolog                          Do not generate a simulation log file
+#                                 
+# -printsimstats[=[val][v]]       Print simstats results. Possible values:
+#                                 0 - disable simstats
+#                                 1 - end of simulation(default)
+#                                 2 - end of each run command and simulation
+#                                 v - verbose stats
+#                                 
+# -stats[=[+-]<args>]             Enables simulation statistics
+#                                 <args> are
+#                                 all,none,time,cmd,msg,perf,verbose,list,kb,eor
+#                                 
+# -syncio                         Enable I/O synchronization with -batch option
+#                                 where I/O synchronization is disabled by
+#                                 default for optimal performance.
+#                                 
+# -vopt_verbose                   Display verbose informational messages
+#                                 
+# -vv                             Print auto C/C++ compile/link and MC2
+#                                 subprocess command line information
+#                                 
+# -------------------------------------Solver-------------------------------------
+# Solver Category
+# 
+# --------------------------------------------------------------------------------
+# -rngtrace[=filename]            Enable the RNG trace reporting feature.
+#                                 Optionally specify a filename to which RNG
+#                                 trace related output will be directed.
+#                                 
+# -rngtracebuffersize=<value>     Specify the buffer size for fltering RNG
+#                                 operations written to a RNG trace file.
+#                                 
+# -rngtraceclassfilter=<class_prefix>[,<class_prefix>]
+#                                 The switch will restrict the RNG trace
+#                                 generated output for instance RNG changes to
+#                                 class instances where the name of the class
+#                                 (type) affected matches one of the specified
+#                                 prefix strings.
+#                                 
+# -rngtracemax=<value>            RNG Trace will stop writing operations to the
+#                                 trace file after the specified number of
+#                                 operation.
+#                                 
+# -rngtraceopt=[+|-]<option>[,[+|-]<option>]*
+#                                 Specify configuration options for RNG trace
+#                                 generated output. Valid options are:
+#                                 guiprocessnames - process names are reported
+#                                 similar to how they are reported in the GUI
+#                                 (default: disabled)
+#                                 nosuppress - disable automatic filtering of RNG
+#                                 operation preceding a reset of the randstate
+#                                 (default: disabled)
+#                                 showciid - report ciid of class instances
+#                                 associated with RNG operation (default:
+#                                 disabled)
+#                                 shownonrandclass - report class init RNG
+#                                 operations for non-random class instances
+#                                 (default: disabled)
+#                                 showsimtime - report simulation time for each
+#                                 RNG operation (default: disabled)
+#                                 showtrivialset - report set_randstate RNG
+#                                 operations where old and new randstate are the
+#                                 same (default: disabled)
+#                                 showthreadinit - report thread init RNG
+#                                 operations (default: disabled)
+#                                 
+# -rngtraceprocessfilter=<scope>[,<scope>]*
+#                                 The switch will restrict the RNG trace
+#                                 generated output for process and class instance
+#                                 RNG changes to processes that match one of the
+#                                 spcified scopes.
+#                                 
+# -rngtraceskip=<value>           RNG Trace will initially skip writing the
+#                                 specified number of operations to the trace
+#                                 file.
+#                                 
+# -solvebeforeerrorseverity=<value>
+#                                 Specify error message severity for suppressible
+#                                 errors that are detected in a solve/before
+#                                 constraint
+#                                 Valid values:
+#                                 0 - no error
+#                                 1 - warning
+#                                 2 - error
+#                                 3 - failure
+#                                 4 - fatal
+#                                 
+# -solveengine <engine>           Use specified solver engine to evaluate
+#                                 randomize() scenarios Valid engines - auto,
+#                                 bdd, act
+#                                 
+# -solveengineerrorseverity=<value>
+#                                 Specify error message severity for suppressible
+#                                 errors that are related to solve engine
+#                                 capacity limits
+#                                 Valid values:
+#                                 0 - no error
+#                                 1 - warning
+#                                 2 - error
+#                                 3 - failure
+#                                 4 - fatal
+#                                 
+# -solvefaildebug[=value]         Display constraint conflicts on randomize()
+#                                 failure
+#                                 Valid values:
+#                                 0 - disable solvefaildebug
+#                                 1 - basic debug (no performance penalty)
+#                                 2 - enhanced debug (runtime performance
+#                                 penalty)
+#                                 If no value is specified, basic debug will be
+#                                 enabled.
+#                                 
+# -solvefailseverity=<value1>[<value2>]
+#                                 Specify error message severity when randomize()
+#                                 and randomize(null) failures are detected.When
+#                                 both <value1> and <value2> are present,
+#                                 <value1> specifies the severity of randomize(),
+#                                 and <value2> specifies the severity for
+#                                 randomize(null). When only <value1> is present,
+#                                 the severity setting applies to both
+#                                 randomize() and randomize(null).
+#                                 Valid values for both <value1> and <value2>:
+#                                 0 - no error
+#                                 1 - warning
+#                                 2 - error
+#                                 3 - failure
+#                                 4 - fatal
+#                                 
+# -solvefailtestcase[=filename]   Upon encountering a randomize() failure,
+#                                 generate a simplified testcase that will
+#                                 reproduce the failure. Optionally output the
+#                                 testcase to the specified file. Testcases for
+#                                 'no-solution' failures will only be produced if
+#                                 -solvefaildebug is enabled.
+#                                 
+# -solveinfo[=<option>[,<option> ...]]
+#                                 Enable and/or specify solver debug output
+#                                 options for randomize() calls. Specifying
+#                                 "-solveinfo" without options is equivalent to
+#                                 "-solveinfo=1".
+#                                 
+# -solveinfoclassfilter=<prefix>[,<prefix> ...]
+#                                 Restrict -solveinfo output to
+#                                 class::randomize() calls where the name of the
+#                                 class (type) being randomized matches one of
+#                                 the the specified "prefix" strings.
+#                                 
+# -solverecord=<filename>         Record the randomize() results to the recording
+#                                 file specified <filename>. When the filename is
+#                                 not specified, 'solver.dat' will be used.
+#                                 
+# -solvereplay=<filename>         Replay randomize() results from a recording
+#                                 file specified <filename>. When the filename is
+#                                 not specified, 'solver.dat' will be used.
+#                                 
+# -solvereplayopt=[+|-]<opt>[,[+|-]<opt>]*
+#                                 Specify the alternative behavior during solver
+#                                 replay. Must be used when combined with
+#                                 -solvereplay switch.
+#                                 The valid <opt> settings are:
+#                                     validate : toggle the checking of value
+#                                 changes of non-random variables involved in
+#                                 randomize(). (default is off)
+#                                 
+# -solverev <version>             Specify random sequence compatibility with
+#                                 <version> (Example: "-solverev 2019.2")
+#                                 
+# -solvetimeout <value>           Specify solver timeout threshold (in seconds).
+#                                 randomize() will fail if the CPU time required
+#                                 to evaluate any randset exceeds the specified
+#                                 timeout. A value of 0 will disable timeout
+#                                 failures.
+#                                 
+# -solveverbose                   Print information about randomize() call
+#                                 processing
+#                                 
+# -sv_reseed <seed|random>        Reseed existing SystemVerilog RNGs with
+#                                 specified seed value (or 'random') when
+#                                 restoring from checkpoint
+#                                 
+# -sv_seed <seed|random>          Specify seed value (or 'random') for the random
+#                                 number generator (RNG) of the SystemVerilog
+#                                 root thread
+#                                 
+# -svrandext=[+|-]<extension>[,[+|-]<extension>]*
+#                                 Enable/disable non-LRM compliant SystemVerilog
+#                                 constrained-random language extensions. Valid
+#                                 extensions are:
+#                                 arraymode - consider rand_mode of unpacked
+#                                 array field independently from its elements
+#                                 deepcheck - allow randomize(null) to
+#                                 recursively consider constraints from member
+#                                 rand class handles (Default)
+#                                 funcback - enable function backtracking (ACT
+#                                 only)
+#                                 genmodseedfix - enable LRM-compliant seeding of
+#                                 module/interface instances under for-generate
+#                                 blocks (Default)
+#                                 nodist - interpret 'dist' constraint as
+#                                 'inside' (ACT only)
+#                                 noorder - ignore solve/before ordering
+#                                 constraints (ACT only)
+#                                 pathseed - enable unique seeding of module
+#                                 instances based on hierarchical path name
+#                                 prerandfirst - execute all pre_randomize()
+#                                 functions before evaluating any constraints 
+#                                 promotedist - promote priority of 'dist'
+#                                 constraint if LHS has no solve/before
+#                                 purecheck - suppress pre_randomize() and
+#                                 post_randomize() calls for randomize(null) 
+#                                 randindex - allow random index in constraint
+#                                 (Default)
+#                                 randstruct - consider all fields of unpacked
+#                                 structs as 'rand'
+#                                 skew - skew randomize results (ACT only)
+#                                 strictstab - strict random stability
+#                                 
+# -----------------------------------Visualizer-----------------------------------
+# -qwavedb[=+<option>[+<option>+...]]
+# Specifies the name of the qwave.db simulation database file and
+# other logging-related option settings.  Options are:
+# [+assertion[=pass]]                     Log assertions.
+# [+cells]                                Log inside cells.
+# [+class[=<class_filter_file>]]          Log classes.
+# [+classdynarray[=[all]|[dyn][,][queue][,][assoc]]]    Log dynamic arrays,queues
+# and associative arrays inside classes.
+# [+classmemory[=<max-depth>[,<max-dim>]]]Log memories inside classes.
+# [+displaymsgmode[=log | both | tran]]   Log $display, etc messages.
+# [+dt_instance]                          Trace the full name of each instance
+#                                         entered.
+# [+dt_recursion]                         Indicate the reason that a recursive
+#                                         trace continues or stops.
+# [+dt_wild]                              Enable instance wild-card matching.
+# [+force]                                Log Force/Release information.
+# [+glitch | +delta | +eventorder]        Glitch enables log of multiple value
+#                                         changes at a single simulation time.
+#                                         Delta enables logging of delta
+#                                         numbers along with glitches.
+#                                         Eventorder enables logging of delta
+#                                         numbers and event ordering along
+#                                         with glitches.
+# [+ignoretxntime]                        Force logging transactions with
+#                                         begin/end time in the future.
+# [+locals]                               Enable wave add support for task and
+# function automatics in livesim mode.
+# [+logtimezero]                          Force logging at end of vsim elab.
+# [+maxbits[=<n>]]                        Adjust max. size of a (packed) wave.
+# [+memory[=<max-depth>[,<max-dim>]]]     Log memories.
+# [+msgmode[=log | both | tran]]          Log simulation messages.
+# [+msg[=[error][,][note][,][warning][,][uvm][,][pa][,][display][,][other]]] Log
+# simulation messages with severity and category filtering.
+# [+nologtimezero]                        Defer logging until end of time 0.
+# [+report[=class][=memories]]            Report everything logged.
+# [+rollover[=<file-size>[,<num-files>]]] Rollover files.
+# [+signal[=<signal_file>]]               Log items listed in a file.
+# [+statictaskfunc]                       Log parameters and static variables in
+#                                         SV tasks and functions.
+# [+transaction[=[uvm | vip | <transaction_filter_file>]]]
+#                                         Log transactions.
+# [+uvm_schematic]                        Logs UVM Schematic objects.
+# [+vhdlvariable]                         Log VHDL variables.
+# [+systemc]                              Log SystemC signals and variables.
+# [+wavedir=<dir name>]                   Create the wavefiles in a directory.
+#                                         Used in MC2 mode.
+# [+wavefile[=<filename>.db]]             Set the name of the qwave.db file.
+# 
+# Other vsim command line options for qwave logging are:
+# [+class_memleak_threshold+<n>]          Report classes undeleted instances.
+# [+qwave_dt_file=<filename>]             Dump trace output to a file.
+# [+qwave_trace_systasks]                 Note when system tasks are called.
+# [+qwavedb_dump_start+<start_time>]      Start dumping at the specied time.
+# [+qwavedb_dump_stop+<stop_time>]        Stop dumping at the specied time.
+# [-visualizer[=<designfile>]]            Specify the design.bin file name.
+# [-voptargs=<args>]                      Arguements to pass to vopt.
+# 
+# --------------------------------------------------------------------------------
+# -qwavedb=<options>...           Use qwavedb to log event data in place of
+#                                 wlf.Please refer to full options in "Visualizer
+#                                 options" section.
+#                                 
+# -visteestdout                   Tee stdout to Visualizer transcript window
+#                                 
+# -visualizer[=<designfile>|<visualizer-options>...]
+#                                 Visualizer interactive mode
+#                                 
+# 

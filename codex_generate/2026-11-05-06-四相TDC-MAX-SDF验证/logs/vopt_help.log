@@ -1,0 +1,48 @@
+Model Technology ModelSim SE-64 vopt 2020.4 Compiler 2020.10 Oct 13 2020
+    The vopt command performs global optimizations on designs after they have
+    been compiled with vcom or vlog. For detailed usage information on
+    optimization, refer to the chapter titled "Optimizing Designs with vopt" in
+    the User's Manual.
+    
+    Use the vopt command before simulation to produce an optimized version of
+    your design in the working directory. You provide a name for this optimized
+    version using the -o argument. You can then run the vsim command directly
+    on that new design unit name.
+    
+    The default operation of vopt -o <name> is incremental compilation that is,
+    Questa SIM reuses elements of the design that have not changed. This
+    improves performance when using vopt on a design that has been minimally
+    modified.
+    
+    In the course of optimizing a design, vopt will remove objects that are
+    deemed unnecessary for simulation. For example, line numbers are removed,
+    processes are merged, nets and registers may be removed, and so on. If you
+    need visibility into your design for debugging purposes, use the vopt
+    accessibility arguments (listed in Using vopt for Access Control for
+    Visibility During Optimization) to conditionally enable visibility for
+    parts of your design.
+    
+    Try the following to get help on specific options or categories: 
+
+    vopt -help all            : List all categories and options
+    vopt -help category       : List all categories
+    vopt -help <option>       : Help on an option
+    vopt -help <command-line> : Help on all options in a command-line
+    vopt -help <category>     : List all options in a category
+
+    Category:       The list of categories in vopt tool.
+
+    General         List most common general options
+    Analog          List options supporting analog mixed-signal (AMS)
+    Coverage        List options for Coverage
+    Cpp             List options supporting SystemC module
+    Debug           List options for debug, and assertion
+    GLS             List options for Gate Level Simulation
+    HDS             List options for HDS
+    Language        List all options supported by hardware language Verilog/VHDL
+    Library         List options for design, work library
+    Messages        List all warn, error, note, fatal messages options
+    Optimize        List options for optimization
+    PA              List most common options supporting for Power Aware
+    Pdu             List options for Preoptimized Design Unit.
+    Report          List options for reporting log file, statistics, capstats

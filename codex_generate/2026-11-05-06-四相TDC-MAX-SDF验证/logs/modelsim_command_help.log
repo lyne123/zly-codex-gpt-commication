@@ -1,0 +1,8 @@
+Reading pref.tcl
+
+# 2020.4
+
+# help vsim
+# The vsim command invokes the VSIM simulator or displays the results of a previous simulation run (when invoked with the -view switch). Type 'vsim -help' for complete syntax.
+# Usage: vsim
+#  quit -f

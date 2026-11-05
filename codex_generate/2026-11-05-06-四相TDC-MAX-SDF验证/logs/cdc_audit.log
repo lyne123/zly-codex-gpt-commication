@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 22:48:48 2026
+# Process ID: 25688
+# Current directory: Z:/logs
+# Command line: vivado.exe -mode batch -source Z:/scripts/audit_cdc.tcl -log cdc_audit.log -journal cdc_audit.jou
+# Log file: Z:/logs/cdc_audit.log
+# Journal file: Z:/logs\cdc_audit.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source Z:/scripts/audit_cdc.tcl
+# set_param general.maxThreads 1
+# open_checkpoint W:/results/compensated/design.dcp
+Command: open_checkpoint W:/results/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 892.996 ; gain = 8.391
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1499.598 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.560 . Memory (MB): peak = 2285.020 ; gain = 4.945
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.788 . Memory (MB): peak = 2285.020 ; gain = 4.945
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2285.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1f0478262
+----- Checksum: PlaceDB: 721b892d ShapeSum: aa23a5d5 RouteDB: d4085360 
+open_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2285.020 ; gain = 1400.641
+# update_timing -full
+# set out Z:/results
+# proc props {property objects} {if {![llength $objects]} {return ""};return [join [get_property $property $objects] ;]}
+# set fd [open $out/CDC_RESET_STRUCTURE.csv w]
+# puts $fd "cell,reference,ASYNC_REG,INIT,clock,clock_period_ns,D_net,D_drivers,Q_net"
+# foreach fifo {u_fifo_tdc_result u_fifo_tdc_error} {
+#     set cells [get_cells -hier -filter "NAME =~ $fifo/*xpm_cdc_sync_rst_inst_wrst/syncstages_ff_reg*"]
+#     foreach cell [lsort $cells] {
+#         set name [get_property NAME $cell]
+#         set clock [get_clocks -quiet -of_objects [get_pins $name/C]]
+#         set dn [get_nets -of_objects [get_pins $name/D]]
+#         set qn [get_nets -of_objects [get_pins $name/Q]]
+#         set drivers [all_fanin -flat -startpoints_only -to [get_pins $name/D]]
+#         puts $fd "$name,[get_property REF_NAME $cell],[get_property ASYNC_REG $cell],[get_property INIT $cell],[props NAME $clock],[props PERIOD $clock],[props NAME $dn],[props NAME $drivers],[props NAME $qn]"
+#     }
+# }
+# close $fd
+# set fd [open $out/CDC_RESET_FANOUT.csv w]
+# puts $fd "endpoint,reference,clock,clock_period_ns"
+# foreach pin [lsort [all_fanout -flat -endpoints_only -from [get_pins {rst_sync_500m_reg[1]/Q}]]] {
+#     set name [get_property NAME $pin]
+#     if {![string match u_fifo_tdc_* $name]} {continue}
+#     set cell [get_cells -of_objects $pin]
+#     set clocks [get_clocks -quiet -of_objects [get_pins -of_objects $cell -filter {REF_PIN_NAME == C || REF_PIN_NAME == CLKARDCLK || REF_PIN_NAME == CLKBWRCLK}]]
+#     puts $fd "$name,[get_property REF_NAME $cell],[props NAME $clocks],[props PERIOD $clocks]"
+# }
+# close $fd
+# report_cdc -details -file $out/CDC_FROZEN_RECHECK.rpt
+INFO: [Timing 38-91] UpdateTimingParams: No interconnect No Cell Dly, Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-433] Consider using Xilinx recommended XPM_CDC modules to avoid Critical severities
+INFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.
+# close_design
+# puts "READ_ONLY_CDC_AUDIT_COMPLETE"
+READ_ONLY_CDC_AUDIT_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 22:49:10 2026...

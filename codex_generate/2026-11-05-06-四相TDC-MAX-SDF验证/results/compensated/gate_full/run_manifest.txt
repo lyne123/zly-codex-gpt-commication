@@ -1,0 +1,7 @@
+level=gate
+variant=compensated
+dataset=full
+corner=slow/MAX
+simulator=XSim 2022.2
+timing_checks=enabled
+stimulus_count=3512

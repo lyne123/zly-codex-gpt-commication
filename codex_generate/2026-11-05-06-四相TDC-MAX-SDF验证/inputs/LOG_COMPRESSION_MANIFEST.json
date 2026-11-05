@@ -1,0 +1,92 @@
+[
+  {
+    "original": "Z:\\results\\TIMING_VIOLATIONS.csv",
+    "original_bytes": 203313740,
+    "compressed": "Z:\\results\\TIMING_VIOLATIONS.csv.gz",
+    "compressed_bytes": 7519367,
+    "uncompressed_sha256": "e5f396ea90f8eaf52a7e5d3afa78b2898276bc5b1b240da1206b8911bcbab23b",
+    "archive_compressed_path": "results/TIMING_VIOLATIONS.csv.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\results\\TIMING_VIOLATIONS.csv"
+  },
+  {
+    "original": "Z:\\logs\\simulation.log",
+    "original_bytes": 275383520,
+    "compressed": "Z:\\logs\\simulation.log.gz",
+    "compressed_bytes": 4754544,
+    "uncompressed_sha256": "d18bd92c85508e0d5d3bbd4bf1238a8c899ecd3ddc2d7eaa5a0bd8655d5e88c1",
+    "archive_compressed_path": "logs/simulation.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\simulation.log"
+  },
+  {
+    "original": "Z:\\logs\\timing_violations.log",
+    "original_bytes": 275382186,
+    "compressed": "Z:\\logs\\timing_violations.log.gz",
+    "compressed_bytes": 4753362,
+    "uncompressed_sha256": "8a97cee1f43e88b2224485cb82702cd877ec55b916650c35dbe9abb57a2817a8",
+    "archive_compressed_path": "logs/timing_violations.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\timing_violations.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation.log",
+    "original_bytes": 2154826,
+    "compressed": "Z:\\logs\\sdf_annotation.log.gz",
+    "compressed_bytes": 40075,
+    "uncompressed_sha256": "c74f1cd9da3444959393e341233419f1ef29c1bcc7717e1d9dc0f1c97b5b7a1a",
+    "archive_compressed_path": "logs/sdf_annotation.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation_conditional.log",
+    "original_bytes": 3000327,
+    "compressed": "Z:\\logs\\sdf_annotation_conditional.log.gz",
+    "compressed_bytes": 53883,
+    "uncompressed_sha256": "37b1f39fefebbde471fb96f90cb28ee723288981cf182ab7e70426366c793212",
+    "archive_compressed_path": "logs/sdf_annotation_conditional.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation_conditional.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation_conditional_unannotated.log",
+    "original_bytes": 9045892,
+    "compressed": "Z:\\logs\\sdf_annotation_conditional_unannotated.log.gz",
+    "compressed_bytes": 96889,
+    "uncompressed_sha256": "d25e8d2b059ff26c108746d40a07f19d5d9655c564f4c0bf6c4eb4a5aa890e53",
+    "archive_compressed_path": "logs/sdf_annotation_conditional_unannotated.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation_conditional_unannotated.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation_legacy.log",
+    "original_bytes": 5857766,
+    "compressed": "Z:\\logs\\sdf_annotation_legacy.log.gz",
+    "compressed_bytes": 82332,
+    "uncompressed_sha256": "88728de9a6f10a76f98b9202160b0cc56d8b1a91fce37d3eb9ded49d97294dc9",
+    "archive_compressed_path": "logs/sdf_annotation_legacy.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation_legacy.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation_legacy_unannotated.log",
+    "original_bytes": 8998744,
+    "compressed": "Z:\\logs\\sdf_annotation_legacy_unannotated.log.gz",
+    "compressed_bytes": 96325,
+    "uncompressed_sha256": "a5d455c1af1c27ebc3b669e56d8e7477dddf9099a912c305f15b3c6082a9e7e2",
+    "archive_compressed_path": "logs/sdf_annotation_legacy_unannotated.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation_legacy_unannotated.log"
+  },
+  {
+    "original": "Z:\\logs\\sdf_annotation_unannotated.log",
+    "original_bytes": 9045892,
+    "compressed": "Z:\\logs\\sdf_annotation_unannotated.log.gz",
+    "compressed_bytes": 96877,
+    "uncompressed_sha256": "d25e8d2b059ff26c108746d40a07f19d5d9655c564f4c0bf6c4eb4a5aa890e53",
+    "archive_compressed_path": "logs/sdf_annotation_unannotated.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\logs\\sdf_annotation_unannotated.log"
+  },
+  {
+    "original": "Z:\\results\\compensated\\gate_full\\console.log",
+    "original_bytes": 276543753,
+    "compressed": "Z:\\results\\compensated\\gate_full\\console.log.gz",
+    "compressed_bytes": 4761004,
+    "uncompressed_sha256": "91355589ddef2744ea4f504a84051ac96de6314a6599e81530e2e23cf9065fe2",
+    "archive_compressed_path": "results/compensated/gate_full/console.log.gz",
+    "original_local_full_path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\results\\compensated\\gate_full\\console.log"
+  }
+]

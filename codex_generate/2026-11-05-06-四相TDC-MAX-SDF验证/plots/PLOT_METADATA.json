@@ -1,0 +1,18 @@
+{
+  "timestamp_x": "EDGE_RESULTS.csv event_id",
+  "timestamp_y": "EDGE_RESULTS.csv error_ps",
+  "timestamp_group": "polarity 1=rise,0=fall",
+  "width_x": "PULSE_RESULTS.csv event_id",
+  "width_y": "PULSE_RESULTS.csv error_ps",
+  "units": "ps",
+  "rows_per_series": 3512,
+  "smoothing": false,
+  "outlier_removal": false,
+  "histogram_bin_width_ps": 20,
+  "formats": [
+    "SVG vector",
+    "PNG 360dpi"
+  ],
+  "palette": "science-muted",
+  "visual_QA": "PASS: labels/units readable, all data included, no clipping; external legends do not cover samples; SVG/PNG checked"
+}

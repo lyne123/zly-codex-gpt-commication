@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# xsim v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 22:42:44 2026
+# Process ID: 30944
+# Current directory: Z:/build/xsim
+# Command line: xsim.exe -log Z:/logs/xsim_zero.log -mode tcl -source {xsim.dir/measurement/xsim_script.tcl}
+# Log file: Z:/logs/xsim_zero.log
+# Journal file: Z:/build/xsim\xsim.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source xsim.dir/measurement/xsim_script.tcl
+# xsim {measurement} -testplusarg STIMULUS=Z:/results/xsim_annotation_probe/stimulus.txt -testplusarg OUTPUT_DIR=Z:/results/xsim_annotation_probe -testplusarg TIME_SHIFT=0 -autoloadwcfg -tclbatch {run_zero.tcl}
+Time resolution is 1 ps
+source run_zero.tcl
+## run 0 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Thu Nov  5 22:42:46 2026...

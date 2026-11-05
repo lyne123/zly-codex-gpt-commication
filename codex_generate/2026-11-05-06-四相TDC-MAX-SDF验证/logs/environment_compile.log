@@ -1,0 +1,12 @@
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 22:17:29 on Nov 05,2026
+vlog "+define+XIL_TIMING" -sv F:\Xilinx\Vivado\2022.2\data\verilog\src\unisims\FDCE.v F:\Xilinx\Vivado\2022.2\data\verilog\src\glbl.v Z:\build\environment\probe.sv 
+-- Compiling module FDCE
+-- Compiling module glbl
+-- Compiling module tb_environment
+
+Top level modules:
+	glbl
+	tb_environment
+End time: 22:17:29 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

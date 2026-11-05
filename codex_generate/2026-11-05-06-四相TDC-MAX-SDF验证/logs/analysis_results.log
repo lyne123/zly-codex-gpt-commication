@@ -1,0 +1,35 @@
+{
+  "functional_pass": true,
+  "correct_pulses": 3512,
+  "actual_edges": 7024,
+  "mispairs": 0,
+  "fifo_pass": true,
+  "reset_pass": true,
+  "rise": {
+    "n": 3512,
+    "bias_ps": 54.36104783599089,
+    "rms_ps": 73.48707136846828,
+    "std_ps": 49.44922786543245,
+    "max_abs_ps": 185,
+    "min_error_ps": -71,
+    "max_error_ps": 185
+  },
+  "fall": {
+    "n": 3512,
+    "bias_ps": 53.88610478359909,
+    "rms_ps": 73.19741537316787,
+    "std_ps": 49.53937149947557,
+    "max_abs_ps": 183,
+    "min_error_ps": -72,
+    "max_error_ps": 183
+  },
+  "pulse_width": {
+    "n": 3512,
+    "bias_ps": -0.47494305239179957,
+    "rms_ps": 70.46984362866031,
+    "std_ps": 70.46824313224235,
+    "max_abs_ps": 209,
+    "min_error_ps": -209,
+    "max_error_ps": 180
+  }
+}

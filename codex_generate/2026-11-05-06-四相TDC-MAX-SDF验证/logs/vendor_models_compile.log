@@ -1,0 +1,63 @@
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 22:20:14 on Nov 05,2026
+vlog -modelsimini Z:\build\modelsim\modelsim.ini -work simprims_ver "+define+XIL_TIMING" -sv -f Z:\build\modelsim\vendor_models.f 
+-- Compiling module BSCANE2
+-- Compiling module BUFG
+-- Compiling module CARRY4
+-- Compiling module CFGLUT5
+-- Compiling module FDCE
+-- Compiling module FDPE
+-- Compiling module FDRE
+-- Compiling module FDSE
+-- Compiling module GND
+-- Compiling module IBUF
+-- Compiling module LUT1
+-- Compiling UDP x_lut1_mux2
+-- Compiling module LUT2
+-- Compiling UDP x_lut2_mux4
+-- Compiling module LUT3
+-- Compiling UDP x_lut3_mux8
+-- Compiling module LUT4
+-- Compiling module LUT5
+-- Compiling module LUT6
+-- Compiling module MMCME2_ADV
+-- Compiling module MUXF7
+-- Compiling module RAM32M
+-- Compiling module RAMB36E1
+-- Compiling module RB36_INTERNAL_VLOG
+-- Compiling module RAMD32
+-- Compiling module RAMS32
+-- Compiling module SRL16E
+-- Compiling module SRLC16E
+-- Compiling module SRLC32E
+-- Compiling module VCC
+
+Top level modules:
+	BSCANE2
+	BUFG
+	CARRY4
+	CFGLUT5
+	FDCE
+	FDPE
+	FDRE
+	FDSE
+	GND
+	IBUF
+	LUT1
+	LUT2
+	LUT3
+	LUT4
+	LUT5
+	LUT6
+	MMCME2_ADV
+	MUXF7
+	RAM32M
+	RAMB36E1
+	RAMD32
+	RAMS32
+	SRL16E
+	SRLC16E
+	SRLC32E
+	VCC
+End time: 22:20:14 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

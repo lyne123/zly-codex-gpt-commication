@@ -1,0 +1,292 @@
+{
+  "expected_pulses": 3512,
+  "expected_edges": 7024,
+  "actual_edges": 7024,
+  "actual_widths": 3512,
+  "correct_pulses": 3512,
+  "valid_rate": 1.0,
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "missing_pulse_ids": [],
+  "duplicate_pulse_ids": [],
+  "mispairs": 0,
+  "unmatched_or_invalid_edges": 0,
+  "invalid_raw_edges": 0,
+  "business_errors": [],
+  "error_fifo": [],
+  "arithmetic_or_association_faults": [],
+  "pairing_faults": [],
+  "functional_pass": true,
+  "fifo_pass": true,
+  "fifo_writes": 3512,
+  "fifo_reads": 3512,
+  "fifo_outputs": 3512,
+  "fifo_sequence_equal": true,
+  "fifo_write_sequence_equal": true,
+  "reset_pass": true,
+  "reset_releases": {
+    "original": [
+      {
+        "time_ps": "675164",
+        "signal": "original",
+        "value": "1",
+        "own_clock_cycles": "106",
+        "original_Q": "1",
+        "replica_Q": "0",
+        "MMCM_locked": "1"
+      }
+    ],
+    "replica": [
+      {
+        "time_ps": "675183",
+        "signal": "replica",
+        "value": "1",
+        "own_clock_cycles": "106",
+        "original_Q": "1",
+        "replica_Q": "1",
+        "MMCM_locked": "1"
+      }
+    ]
+  },
+  "first_pulse": {
+    "row": 0,
+    "status": "MATCHED",
+    "event_id": 0,
+    "rise_event_id": 0,
+    "fall_event_id": 0,
+    "emission_time_ps": 10074150,
+    "measured_width_ps": 25311,
+    "truth_width_ps": 25300,
+    "error_ps": 11,
+    "rise_timestamp_mod_ps": 1130918,
+    "fall_timestamp_mod_ps": 1156229,
+    "case": "fixed_25300",
+    "nominal_carrier_period_ps": "50000",
+    "duty_percent": 50.6,
+    "bank": "-1",
+    "channel": "-1",
+    "header": "-1"
+  },
+  "aux_rises": 3512,
+  "aux_falls": 3512,
+  "epoch_ps": 677150,
+  "minimum_association_margin_ps": 3310.0,
+  "maximum_association_residual_ps": 387.0,
+  "rise": {
+    "n": 3512,
+    "bias_ps": 54.36104783599089,
+    "rms_ps": 73.48707136846828,
+    "std_ps": 49.44922786543245,
+    "max_abs_ps": 185,
+    "min_error_ps": -71,
+    "max_error_ps": 185
+  },
+  "fall": {
+    "n": 3512,
+    "bias_ps": 53.88610478359909,
+    "rms_ps": 73.19741537316787,
+    "std_ps": 49.53937149947557,
+    "max_abs_ps": 183,
+    "min_error_ps": -72,
+    "max_error_ps": 183
+  },
+  "pulse_width": {
+    "n": 3512,
+    "bias_ps": -0.47494305239179957,
+    "rms_ps": 70.46984362866031,
+    "std_ps": 70.46824313224235,
+    "max_abs_ps": 209,
+    "min_error_ps": -209,
+    "max_error_ps": 180
+  },
+  "groups": {
+    "all": {
+      "n": 3512,
+      "bias_ps": -0.47494305239179957,
+      "rms_ps": 70.46984362866031,
+      "std_ps": 70.46824313224235,
+      "max_abs_ps": 209,
+      "min_error_ps": -209,
+      "max_error_ps": 180
+    },
+    "case:fixed_25300": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 74.03607228912134,
+      "std_ps": 74.03607228912134,
+      "max_abs_ps": 209,
+      "min_error_ps": -209,
+      "max_error_ps": 175
+    },
+    "nominal_period_ps:50000": {
+      "n": 1856,
+      "bias_ps": 0.4832974137931034,
+      "rms_ps": 71.13304451203902,
+      "std_ps": 71.13140266550032,
+      "max_abs_ps": 209,
+      "min_error_ps": -209,
+      "max_error_ps": 175
+    },
+    "duty:other": {
+      "n": 2224,
+      "bias_ps": 1.2095323741007193,
+      "rms_ps": 71.48956632631912,
+      "std_ps": 71.47933355146215,
+      "max_abs_ps": 209,
+      "min_error_ps": -209,
+      "max_error_ps": 180
+    },
+    "case:10MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 0.0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "min_error_ps": 0,
+      "max_error_ps": 0
+    },
+    "nominal_period_ps:100000": {
+      "n": 1656,
+      "bias_ps": -1.548913043478261,
+      "rms_ps": 69.71904885285555,
+      "std_ps": 69.70184101822994,
+      "max_abs_ps": 180,
+      "min_error_ps": -171,
+      "max_error_ps": 180
+    },
+    "duty:50": {
+      "n": 400,
+      "bias_ps": 0,
+      "rms_ps": 57.289789666222376,
+      "std_ps": 57.289789666222376,
+      "max_abs_ps": 120,
+      "min_error_ps": -120,
+      "max_error_ps": 120
+    },
+    "case:20MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 81.01999753147368,
+      "std_ps": 81.01999753147368,
+      "max_abs_ps": 120,
+      "min_error_ps": -120,
+      "max_error_ps": 120
+    },
+    "case:10MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 81.01999753147368,
+      "std_ps": 81.01999753147368,
+      "max_abs_ps": 120,
+      "min_error_ps": -120,
+      "max_error_ps": 120
+    },
+    "duty:5": {
+      "n": 438,
+      "bias_ps": -3.410958904109589,
+      "rms_ps": 73.14509880676937,
+      "std_ps": 73.06552428338915,
+      "max_abs_ps": 150,
+      "min_error_ps": -150,
+      "max_error_ps": 120
+    },
+    "case:10MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 81.01999753147368,
+      "std_ps": 81.01999753147368,
+      "max_abs_ps": 120,
+      "min_error_ps": -120,
+      "max_error_ps": 120
+    },
+    "duty:95": {
+      "n": 450,
+      "bias_ps": -6.364444444444445,
+      "rms_ps": 73.30338782530222,
+      "std_ps": 73.02657402329817,
+      "max_abs_ps": 150,
+      "min_error_ps": -120,
+      "max_error_ps": 150
+    },
+    "case:20MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 65.35059295828921,
+      "std_ps": 65.35059295828921,
+      "max_abs_ps": 150,
+      "min_error_ps": -150,
+      "max_error_ps": 79
+    },
+    "case:20MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rms_ps": 65.35059295828921,
+      "std_ps": 65.35059295828921,
+      "max_abs_ps": 150,
+      "min_error_ps": -79,
+      "max_error_ps": 150
+    },
+    "case:ATC_10MHz": {
+      "n": 1056,
+      "bias_ps": -2.428977272727273,
+      "rms_ps": 71.66643983403144,
+      "std_ps": 71.6252655694443,
+      "max_abs_ps": 180,
+      "min_error_ps": -171,
+      "max_error_ps": 180
+    },
+    "ATC_all": {
+      "n": 2112,
+      "bias_ps": -0.7897727272727273,
+      "rms_ps": 71.16953191308254,
+      "std_ps": 71.16514969960036,
+      "max_abs_ps": 180,
+      "min_error_ps": -177,
+      "max_error_ps": 180
+    },
+    "ATC_header_0": {
+      "n": 32,
+      "bias_ps": -56.5,
+      "rms_ps": 70.70007072132248,
+      "std_ps": 42.5,
+      "max_abs_ps": 99,
+      "min_error_ps": -99,
+      "max_error_ps": -14
+    },
+    "ATC_header_1": {
+      "n": 32,
+      "bias_ps": -84,
+      "rms_ps": 85.32877591996736,
+      "std_ps": 15.0,
+      "max_abs_ps": 99,
+      "min_error_ps": -99,
+      "max_error_ps": -69
+    },
+    "SPWM_data": {
+      "n": 2048,
+      "bias_ps": 1.380859375,
+      "rms_ps": 70.93320471577468,
+      "std_ps": 70.91976282134955,
+      "max_abs_ps": 180,
+      "min_error_ps": -177,
+      "max_error_ps": 180
+    },
+    "case:ATC_20MHz": {
+      "n": 1056,
+      "bias_ps": 0.8494318181818182,
+      "rms_ps": 70.66913008499324,
+      "std_ps": 70.66402488222673,
+      "max_abs_ps": 177,
+      "min_error_ps": -177,
+      "max_error_ps": 167
+    }
+  },
+  "precision_complete": true,
+  "parameters_recalibrated": false,
+  "outlier_removal": false,
+  "timestamp_error_definition": "unwrapped(measured_mod + observed_epoch, cycle chosen from frozen event-association latency) - absolute truth; no bias subtraction",
+  "STD_definition": "population STD: sqrt(mean((error-bias)^2))",
+  "RMS_definition": "sqrt(mean(error^2))"
+}

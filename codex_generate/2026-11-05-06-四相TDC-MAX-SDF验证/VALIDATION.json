@@ -1,0 +1,63 @@
+{
+  "overall_status": "NOT_ALL_PASS",
+  "acceptance": {
+    "SDF_generation": "PASS",
+    "SDF_annotation_coverage": "PASS",
+    "real_gate_models": "PASS",
+    "edge_capture": "PASS",
+    "pulse_width": "PASS",
+    "FIFO_integrity": "PASS",
+    "reset_behavior_initial_sequence": "PASS",
+    "precision_statistics": "PASS",
+    "Timing_Check_raw": "FAIL"
+  },
+  "functional_and_precision_status": "PASS",
+  "core_synchronous_Timing_Check_status": "PASS",
+  "global_static_timing_status": "FAIL_14_HISTORICAL_ILA2_SETUP",
+  "source_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "actual_simulator": "XSim 2022.2",
+  "ModelSim_2020_4_status": "license and real primitive probe passed; full annotation attempts not accepted",
+  "formal_RTL_XDC_IP_parameters_unchanged": true,
+  "new_DCP_generated": false,
+  "synthesis_or_place_route_executed": false,
+  "parameters_recalibrated": false,
+  "BIT_generated": false,
+  "full_MAX_SDF_completed": true,
+  "pulses": 3512,
+  "correct_pulses": 3512,
+  "valid_edges": 7024,
+  "raw_timing_violations": 1160650,
+  "core_synchronous_after_reset_violations": 0,
+  "rise": {
+    "n": 3512,
+    "bias_ps": 54.36104783599089,
+    "rms_ps": 73.48707136846828,
+    "std_ps": 49.44922786543245,
+    "max_abs_ps": 185,
+    "min_error_ps": -71,
+    "max_error_ps": 185
+  },
+  "fall": {
+    "n": 3512,
+    "bias_ps": 53.88610478359909,
+    "rms_ps": 73.19741537316787,
+    "std_ps": 49.53937149947557,
+    "max_abs_ps": 183,
+    "min_error_ps": -72,
+    "max_error_ps": 183
+  },
+  "pulse_width": {
+    "n": 3512,
+    "bias_ps": -0.47494305239179957,
+    "rms_ps": 70.46984362866031,
+    "std_ps": 70.46824313224235,
+    "max_abs_ps": 209,
+    "min_error_ps": -209,
+    "max_error_ps": 180
+  },
+  "CDC_11_closed": false,
+  "ready_for_unqualified_BIT_hardware_acceptance": false,
+  "next_step": "功能/精度链路通过，但Timing Check总项及CDC未完全签核；不把当前报告作为无条件可上板验收。本轮不生成BIT，后续需明确处置现存告警与复位风险。",
+  "branch": "codex/2026-11-05-06-tdc-max-sdf-validation",
+  "commit_message": "2026-11-05-06-四相TDC-MAX-SDF验证"
+}

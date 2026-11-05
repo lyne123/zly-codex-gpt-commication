@@ -1,0 +1,47 @@
+# Model Technology ModelSim SE-64 vsim 2020.4 Simulator 2020.10 Oct 13 2020
+# ------------------------------------Messages------------------------------------
+# Options to suppress or downgrade errors.
+# 
+# --------------------------------------------------------------------------------
+# +nowarn<CODE | Number>          Disable specified warning message. (Example:
+#                                 +nowarnTFMPC)
+#                                 
+# -error <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Error
+#                                 
+# -fatal <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Fatal
+#                                 
+# -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                                 Limit the listed messages to display five times
+#                                 
+# -msglimitcount <limit_value> -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                                 Limit the reporting of listed messages to user
+#                                 defined count
+#                                 
+# -msgmode <mode>                 Controls transcripting of elaboration/runtime
+#                                 messages. Messages will appear in transcript
+#                                 and/or MsgViewer (.wlf file)
+#                                 Valid modes - tran, wlf, both (Default: tran)
+#                                 
+# -msgsingleline                  Display the messages in a single line.
+#                                 
+# -note <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Note
+#                                 
+# -suppress <msgNumber/msgGroup>[,<msgNumber/msgGroup>...]
+#                                 Suppress the listed messages using number or
+#                                 group. Valid <msgGroup> are All, GroupNote,
+#                                 GroupWarning, GroupFLI, GroupPLI, GroupSDF,
+#                                 GroupVCD, GroupVital, GroupWLF, GroupTCHK,
+#                                 GroupPA, GroupLRM
+#                                 
+# -warning <msgNumber>[,<msgNumber>...]
+#                                 Change the severity of the listed messages to
+#                                 Warning.
+#                                 -warning error: report all warnings as errors.
+#                                 
+# 

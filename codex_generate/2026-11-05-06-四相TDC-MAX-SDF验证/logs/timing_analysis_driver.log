@@ -1,0 +1,51 @@
+{
+  "total_timing_violations": 1160650,
+  "parse_failures": [],
+  "reset_release_ps": 675183,
+  "first_input_ps": 10000010,
+  "raw_Timing_Check_pass": false,
+  "core_synchronous_after_reset_violations": 0,
+  "core_synchronous_after_reset_pass": true,
+  "raw_checks_combined_note": "setuphold为联合Setup/Hold检查，recrem为联合Recovery/Removal检查；保留仿真器原检查类型，不擅自拆分归因。",
+  "categories": [
+    {
+      "category": "AUX_first_stage_asynchronous_sampling",
+      "check": "setuphold",
+      "count": 1312,
+      "after_reset_release": 1312,
+      "after_first_input": 1312
+    },
+    {
+      "category": "ILA_PWM_asynchronous_debug",
+      "check": "setuphold",
+      "count": 177,
+      "after_reset_release": 177,
+      "after_first_input": 177
+    },
+    {
+      "category": "TDL_asynchronous_sampling",
+      "check": "setuphold",
+      "count": 85416,
+      "after_reset_release": 85416,
+      "after_first_input": 85416
+    },
+    {
+      "category": "reset_synchronizer",
+      "check": "recrem",
+      "count": 1,
+      "after_reset_release": 0,
+      "after_first_input": 0
+    },
+    {
+      "category": "unused_MMCM_CLKOUT5_6_model",
+      "check": "period",
+      "count": 1073744,
+      "after_reset_release": 1072898,
+      "after_first_input": 1035598
+    }
+  ],
+  "core_examples": [],
+  "timing_checks_disabled": false,
+  "all_raw_lines_preserved": true,
+  "compression": "lossless gzip; uncompressed originals retained locally"
+}

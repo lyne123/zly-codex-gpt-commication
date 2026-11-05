@@ -1,0 +1,9 @@
+﻿signal,polarity,samples,min_delay_ps,max_delay_ps,mean_delay_ps,purpose
+p0_D,fall,18,2775,2775,2775.0,SDF path-effect observation only; not a compensation refit
+p0_D,rise,18,2775,2775,2775.0,SDF path-effect observation only; not a compensation refit
+p180_D,fall,18,3053,3053,3053.0,SDF path-effect observation only; not a compensation refit
+p180_D,rise,18,3053,3053,3053.0,SDF path-effect observation only; not a compensation refit
+p270_D,fall,18,3149,3149,3149.0,SDF path-effect observation only; not a compensation refit
+p270_D,rise,18,3149,3149,3149.0,SDF path-effect observation only; not a compensation refit
+p90_D,fall,18,2964,2964,2964.0,SDF path-effect observation only; not a compensation refit
+p90_D,rise,18,2964,2964,2964.0,SDF path-effect observation only; not a compensation refit

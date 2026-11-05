@@ -1,0 +1,11 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -c -t 1ps -modelsimini Z:/build/modelsim/modelsim.ini -L simprims_ver "+transport_int_delays" "+STIMULUS=Z:\results\annotation_probe_novopt\stimulus.txt" "+OUTPUT_DIR=Z:\results\annotation_probe_novopt" "+transport_path_delays" "+pulse_int_r/0" "+pulse_int_e/0" "+pulse_r/0" "+pulse_e/0" -msglimit none "+sdf_verbose" -sdfannotatepercentage -sdfmaxerrors 1000000 -sdfmax "/tb_tdc/dut=Z:/netlist/post_route_max.sdf" work.tb_tdc work.glbl -novopt "+ntc_warn" -sdfreport=Z:\logs\sdf_annotation_novopt_unannotated.log "+TIME_SHIFT=0" -do "run 0; quit -f" 
+# Start time: 22:31:46 on Nov 05,2026
+# ** Error (suppressible): (vsim-12110) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Error loading design
+Error loading design
+# End time: 22:31:46 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

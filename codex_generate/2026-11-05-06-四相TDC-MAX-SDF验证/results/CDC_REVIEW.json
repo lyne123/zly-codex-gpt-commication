@@ -1,0 +1,12 @@
+{
+  "CDC_11_count": 2,
+  "source": "rst_sync_500m_reg[1]",
+  "destination": "FIFO IP xpm_cdc_sync_rst_inst_wrst read-domain first stages",
+  "preexisting_in_03_04_05": true,
+  "read_domain": "100MHz; five FDRE stages per FIFO; ASYNC_REG=1; INIT=1",
+  "parallel_write_domain": "500MHz; five stages per FIFO; same external reset source",
+  "SDF_initial_reset_pass": true,
+  "runtime_reset_or_MMCM_relock_tested": false,
+  "CDC_warning_waived": false,
+  "risk_assessment": "观察到厂商FIFO内部两域复位同步和同源扇出，原设计已有；本次初始释放及首脉冲/FIFO通过。SDF不模拟统计亚稳态，且未扫描运行中复位/失锁或任意释放相位，不能据此无条件签核CDC风险。"
+}

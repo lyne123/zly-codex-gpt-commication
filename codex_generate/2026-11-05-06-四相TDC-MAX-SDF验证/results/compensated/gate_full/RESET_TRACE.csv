@@ -1,0 +1,5 @@
+time_ps,signal,value,own_clock_cycles,original_Q,replica_Q,MMCM_locked
+146,original,0,0,0,x,0
+165,replica,0,0,0,0,0
+675164,original,1,106,1,0,1
+675183,replica,1,106,1,1,1

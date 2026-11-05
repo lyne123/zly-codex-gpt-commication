@@ -1,0 +1,38 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -help
+# Model Technology ModelSim SE-64 vsim 2020.4 Simulator 2020.10 Oct 13 2020
+#     The vsim tool provides HDL simulation based on the compiled and optimized
+#     design and it provides various post-simulation analysis capabilities. In
+#     simulation mode it expects to be provided with the optimization output for
+#     the root of the design, or it will automatically produce such an
+#     optimization from the root of the design.
+#     
+#     Try the following to get help on specific options or categories: 
+# 
+#     vsim -help all            : List all categories and options
+#     vsim -help category       : List all categories
+#     vsim -help <option>       : Help on an option
+#     vsim -help <command-line> : Help on all options in a command-line
+#     vsim -help <category>     : List all options in a category
+# 
+#     Category:       The list of categories in vsim tool.
+# 
+#     General         List most common general options
+#     Coverage        List options for Coverage
+#     Cpp             List options supporting SystemC module
+#     Debug           List options for debug, and assertion
+#     GLS             List options for Gate Level Simulation
+#     Language        List all options supported by hardware language Verilog/VHDL
+#     Library         List options for design, work library
+#     License         List options helping for license issues
+#     Messages        List all warn, error, note, fatal messages options
+#     MultiCore       List options supporting for Multicore (MC2)
+#     PA              List most common options supporting for Power Aware
+#     Pdu             List options for Preoptimized Design Unit.
+#     Report          List options for reporting log file, statistics, capstats
+#     Solver          List options supporting for Solver
+#     Visualizer      List options supporting for visualizer
+#  quit -f

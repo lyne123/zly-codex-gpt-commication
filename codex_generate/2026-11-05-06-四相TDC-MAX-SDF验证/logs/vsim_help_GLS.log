@@ -1,0 +1,173 @@
+# Model Technology ModelSim SE-64 vsim 2020.4 Simulator 2020.10 Oct 13 2020
+# --------------------------------------GLS--------------------------------------
+# Gate level simulation category
+# 
+# --------------------------------------------------------------------------------
+# +alt_path_delays                Use current output value instead of pending
+#                                 value when selecting inertial specify path
+#                                 output delay
+#                                 
+# +int_delays                     Optimize annotation of interconnect delays
+#                                 
+# +maxdelays                      Use maximum timing from min:typ:max expressions
+#                                 
+# +mindelays                      Use minimum timing from min:typ:max expressions
+#                                 
+# +no_autodtc                     Turn off auto-detection of optimized cells with
+#                                 negative timing checks and autoapplication of
+#                                 +delayed_timing_checks to those cells.
+#                                 
+# +no_neg_tchk                    Set negative timing check limits to zero
+#                                 
+# +no_path_edge                   Ignore the input edge specification on path
+#                                 delays
+#                                 
+# +no_pulse_msg                   Disable path pulse error warning messages
+#                                 
+# +no_show_cancelled_e            Cancel negative pulse (Default)
+#                                 
+# +nosdferror                     Treat SDF errors as warnings
+#                                 
+# +nosdfwarn                      Disable warnings from SDF annotator
+#                                 
+# +nospecify                      Disable specify path delays and timing checks
+#                                 
+# +notiftoggle01[+<seed>]         Use the metastable UDP evaluation of enabled
+#                                 Verilog cells in simulation. Default seed value
+#                                 is 0
+#                                 
+# +ntc_warn                       Enable warnings from negative timing constraint
+#                                 algorithm
+#                                 
+# +ntcnotchks                     Disable timing checks while maintaining NTC
+#                                 delays
+#                                 
+# +pulse_e/<percent>              Set path pulse error limit as percentage of
+#                                 path delay
+#                                 
+# +pulse_e_style_ondetect         Drive pulse error state immediately on
+#                                 detection
+#                                 
+# +pulse_e_style_onevent          Drive pulse error state on time of pending
+#                                 event (Default)
+#                                 
+# +pulse_int_e/<percent>          Set interconnect pulse error limit as
+#                                 percentage of delay
+#                                 
+# +pulse_int_r/<percent>          Set interconnect pulse rejection limit as
+#                                 percentage of delay
+#                                 
+# +pulse_r/<percent>              Set path pulse rejection limit as percentage of
+#                                 path delay
+#                                 
+# +sdf_iopath_to_prim_ok          Prevent vsim from issuing an error when it
+#                                 cannot locate specify path delays to annotate
+#                                 
+# +sdf_nocheck_celltype           Disable check between SDF celltype name and
+#                                 module name
+#                                 
+# +sdf_report_unannotated_insts   Enable error messages for any un-annotated
+#                                 Verilog instances with specify blocks or VHDL
+#                                 instances with VITAL timing generics that are
+#                                 under regions of SDF annotation.
+#                                 
+# +sdf_verbose                    Display SDF annotator status messages
+#                                 
+# +show_cancelled_e               Drive pulse error state on negative pulse
+#                                 
+# +transport_int_delays           Use transport mode for interconnect delays
+#                                 
+# +transport_path_delays          Use transport mode for path delays (Default:
+#                                 inertial)
+#                                 
+# +typdelays                      Use typical timing from min:typ:max expressions
+#                                 (Default)
+#                                 
+# +vlog_retain_off                Enable or disable SDF RETAIN delay processing.
+#                                 +vlog_retain_on is the default behavior.
+#                                 
+# +vlog_retain_on                 Enable or disable SDF RETAIN delay processing.
+#                                 +vlog_retain_on is the default behavior.
+#                                 
+# +vlog_retain_same2same_off      Enable or disable SDF RETAIN delay processing
+#                                 of X insertion on outputs that do not change,
+#                                 but the causal inputs change.
+#                                 +vlog_retain_same2same_on is the default
+#                                 behavior.
+#                                 
+# +vlog_retain_same2same_on       Enable or disable SDF RETAIN delay processing
+#                                 of X insertion on outputs that do not change,
+#                                 but the causal inputs change.
+#                                 +vlog_retain_same2same_on is the default
+#                                 behavior.
+#                                 
+# -cellimmeval                    Ensure updation of output in same delta for
+#                                 zero delay optimized cell flow.
+#                                 
+# -extend_tcheck_data_limit <percent relaxation>
+#                                 Relax data limit for convergence
+#                                 
+# -extend_tcheck_ref_limit  <percent relaxation>
+#                                 Relax ref limit for convergence
+#                                 
+# -glsnegtchk <solver_level>      Specifies the negative timing check solver.
+#                                 
+# -glspath <string_arg>           Modify specify path selection mode.  Simuconddc
+#                                 - minimize zero delay path selection
+#                                 
+# -no_notifier_on_disable         Notifier triggering is prevented when timing
+#                                 check warning is disabled via system task
+#                                 $disable_warning("timing"). By default notifier
+#                                 toggles whenever a timing check violation is
+#                                 encountered even if the timing check warning is
+#                                 disabled.
+#                                 
+# -no_risefall_delaynets          Disables the rise/fall delay net delay negative
+#                                 timing check algorithm.
+#                                 
+# -sdfallowvlogescapeport         Allows matching of bit-blasted scalar port
+#                                 names in rtl with normal non-escaped port names
+#                                 in SDF.
+#                                 
+# -sdfannotatepercentage          Display annotation percentage of tchecks and
+#                                 path delays specified in SDF.
+#                                 
+# -sdfmax[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 maximum timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# -sdfmaxerrors <n>               Max number of missing instances reported
+#                                 (default is 5)
+#                                 
+# -sdfmaxr[@<delayScale>] [<instance>=]<sdffile>
+#                                 Specifies when an instance of a Preoptimized
+#                                 Design Unit (vopt -pdu) with an associated
+#                                 default SDF file is to be re-annotated with
+#                                 maximum timing from the specified SDF file.
+#                                 
+# -sdfmin[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 minimum timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# -sdfminr[@<delayScale>] [<instance>=]<sdffile>
+#                                 Specifies when an instance of a Preoptimized
+#                                 Design Unit (vopt -pdu) with an associated
+#                                 default SDF file is to be re-annotated with
+#                                 minimum, typical, or maximum timing from the
+#                                 specified SDF file.
+#                                 
+# -sdfnoerror                     Treat SDF errors as warnings
+#                                 
+# -sdfnowarn                      Disable warnings from SDF annotator
+#                                 
+# -sdfreport=<fileName>           Report unannotated/partially-annotated specify
+#                                 objects into <fileName>
+#                                 
+# -sdftyp[@<delayScale>] [<instance>=]<sdffile>
+#                                 Annotate VITAL or Verilog <instance> with
+#                                 typical timing from <sdffile>, scaled by
+#                                 <delayScale>
+#                                 
+# 

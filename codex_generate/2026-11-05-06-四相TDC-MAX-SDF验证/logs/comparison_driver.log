@@ -1,0 +1,32 @@
+{
+  "same_event_ids_historical_compensated_count": 3506,
+  "RTL_04_05_width_error_identical": true,
+  "old_04_MAX_SDF": "NOT_EXECUTED in 04; no measurement invented",
+  "all_figures_condition_labeled": true,
+  "current_routed_frontend_byte_identical_to_03": {
+    "raw.csv": true,
+    "candidate.csv": true,
+    "sampled_taps.csv": true
+  },
+  "runtime_SDF_path_effect_verified": true,
+  "same_SDF_reconstructed_uncorrected_width_stats": {
+    "n": 3512,
+    "bias_ps": 1.6469248291571754,
+    "rms_ps": 161.61419688027846,
+    "std_ps": 161.6058051923399,
+    "max_abs_ps": 380,
+    "min_error_ps": -380,
+    "max_error_ps": 380
+  },
+  "same_SDF_compensated_width_stats": {
+    "n": 3512,
+    "bias_ps": -0.47494305239179957,
+    "rms_ps": 70.46984362866031,
+    "std_ps": 70.46824313224235,
+    "max_abs_ps": 209,
+    "min_error_ps": -209,
+    "max_error_ps": 180
+  },
+  "no_parameters_refitted": true,
+  "comparison_does_not_equate_ideal_RTL_with_SDF": true
+}

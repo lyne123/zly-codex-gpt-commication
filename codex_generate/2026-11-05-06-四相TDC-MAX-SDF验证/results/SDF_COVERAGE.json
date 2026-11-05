@@ -1,0 +1,70 @@
+{
+  "annotation_pass": true,
+  "accepted_simulator": "XSim 2022.2",
+  "sole_DCP_sha256": "d4d983986e7b84bf06fc786f91c258d58cabc110e6e4b87c09e0ae6268cbbb52",
+  "SDF_sha256": "36a45a270e2ecd446643b40854d4ffe8217f26f4d3c87f4f3cc13f78363a7862",
+  "netlist_sha256": "fd41c50e022b219df2344ba940c4f087f41b9bbd2cba2069fb8e07ad70ed947e",
+  "SDF_version": "3.0",
+  "timescale": "1ps",
+  "corner": "slow/MAX",
+  "SDF_generated": true,
+  "netlist_internal_sdf_annotations": 0,
+  "external_annotation": "/tb_tdc/dut once via xelab --sdfmax",
+  "SDF_construct_counts": {
+    "CELL": 8828,
+    "INSTANCE": 8828,
+    "PATHPULSE": 3383,
+    "IOPATH": 25083,
+    "INTERCONNECT": 30001,
+    "SETUPHOLD": 30832,
+    "WIDTH": 2204,
+    "PERIOD": 1146,
+    "RECREM": 833
+  },
+  "unique_SDF_instances_requested": 8828,
+  "root_instances": 1,
+  "requested_timing_checks": 35015,
+  "strict_global_annotation_success": true,
+  "unmatched_instance_path_or_check_diagnostics": [],
+  "zero_unmatched_diagnostics": true,
+  "success_counts_interpretation": "SDF请求项精确计数，与XSim严格全局注释成功且零缺失/路径/端口/检查诊断交叉核对；工具未提供逐条成功计数，不冒称逐条读回。",
+  "accepted_SDF_instances_inferred": 8828,
+  "accepted_SDF_IOPATHs_inferred": 25083,
+  "accepted_SDF_INTERCONNECTs_inferred": 30001,
+  "accepted_SDF_timing_checks_inferred": 35015,
+  "timing_checks_enabled": true,
+  "source_DCP_unchanged": true,
+  "ModelSim_attempts_preserved": [
+    {
+      "log": "sdf_annotation.log",
+      "errors": 1,
+      "interconnect_not_connected": 5184,
+      "negative_zeroing_messages": 1,
+      "passed_for_acceptance": false
+    },
+    {
+      "log": "sdf_annotation_conditional.log",
+      "errors": 1,
+      "interconnect_not_connected": 5184,
+      "negative_zeroing_messages": 2499,
+      "passed_for_acceptance": false
+    },
+    {
+      "log": "sdf_annotation_legacy.log",
+      "errors": 1,
+      "interconnect_not_connected": 4799,
+      "negative_zeroing_messages": 11099,
+      "passed_for_acceptance": false
+    },
+    {
+      "log": "sdf_annotation_novopt.log",
+      "errors": 1,
+      "interconnect_not_connected": 0,
+      "negative_zeroing_messages": 0,
+      "passed_for_acceptance": false
+    }
+  ],
+  "ModelSim_raw_percentage_note": "68.94%/36.10%是原语完整specify对象分母，不是SDF请求项缺失率；ModelSim未用于验收是因为核心互连未匹配和负限制自动归零。",
+  "runtime_SDF_effect_verification": "8 phase/polarity D-path delay observations in RUNTIME_SDF_PATH_DELAYS.csv, all nonzero physical delays; no refit",
+  "runtime_SDF_effect_verified": true
+}

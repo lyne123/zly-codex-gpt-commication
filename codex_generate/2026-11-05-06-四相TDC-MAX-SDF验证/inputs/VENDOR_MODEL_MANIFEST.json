@@ -1,0 +1,176 @@
+{
+  "tool": "ModelSim SE-64 2020.4",
+  "Vivado": "2022.2",
+  "library": "simprims_ver",
+  "XIL_TIMING": true,
+  "behavioral_replacements": false,
+  "primitive_sources": [
+    {
+      "primitive": "BSCANE2",
+      "instances": 1,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\BSCANE2.v",
+      "sha256": "77795f9c236f62c74c07ce61a2deaecc5c8816e94fe8cd4b2de1646f56bbaf8b"
+    },
+    {
+      "primitive": "BUFG",
+      "instances": 7,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\BUFG.v",
+      "sha256": "60723e6942d19fd6a04e64b3a61f0aec5657f3d5ca918d780bc4d82acbbc5d43"
+    },
+    {
+      "primitive": "CARRY4",
+      "instances": 174,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\CARRY4.v",
+      "sha256": "a9fbbf068a2f99d44b6293053c526a2af9efd9ce42c8ef5ddde2a897194d413e"
+    },
+    {
+      "primitive": "CFGLUT5",
+      "instances": 100,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\CFGLUT5.v",
+      "sha256": "bc60ad91be333da5b8183755dc52af8d7941556041ef5722cc244e2338912497"
+    },
+    {
+      "primitive": "FDCE",
+      "instances": 792,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\FDCE.v",
+      "sha256": "74d30d7c788e7db47f12b92d5b4b57b707974a0962708b309e4cc081d5f98b04"
+    },
+    {
+      "primitive": "FDPE",
+      "instances": 41,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\FDPE.v",
+      "sha256": "4ec91e1101288ae35ebda302ed5e31b670f5bb5b16cd48922d1cbf891407bcfc"
+    },
+    {
+      "primitive": "FDRE",
+      "instances": 4186,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\FDRE.v",
+      "sha256": "e2965e4b5174bd8de84b82e89a7b4ea5df36d8715c4f585580c16b8e6d9aa80d"
+    },
+    {
+      "primitive": "FDSE",
+      "instances": 40,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\FDSE.v",
+      "sha256": "055468fd8372bcf67f359ec4c496c966bae1fdd5e8a6aaa71dd658ae99c69c68"
+    },
+    {
+      "primitive": "GND",
+      "instances": 261,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\GND.v",
+      "sha256": "bd9c955d8e43d0f4653adee3d59020ec5e82869001aec02543d00f04e480e2d0"
+    },
+    {
+      "primitive": "IBUF",
+      "instances": 3,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\IBUF.v",
+      "sha256": "195addbb5e49ea3650ec4313b622d07246e6bcb78214c006afcd78586169cae8"
+    },
+    {
+      "primitive": "LUT1",
+      "instances": 99,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT1.v",
+      "sha256": "ec93df0e5faad049f3174ed9cdefa1b4eba97b7afa6101da857454225995fabb"
+    },
+    {
+      "primitive": "LUT2",
+      "instances": 441,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT2.v",
+      "sha256": "76b7d6bccf478a4d7a90d36853efcece3bd87e124da4e9cdb70ab5ab02451922"
+    },
+    {
+      "primitive": "LUT3",
+      "instances": 479,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT3.v",
+      "sha256": "eba87b032e85b6cd3f5edc4588b0c014e3370fcf10fac90f5d2eccb29e3035b7"
+    },
+    {
+      "primitive": "LUT4",
+      "instances": 684,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT4.v",
+      "sha256": "5ba0120322bd29831facf4a9c06fd7427f2ffa561915b466c6156341807e432a"
+    },
+    {
+      "primitive": "LUT5",
+      "instances": 397,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT5.v",
+      "sha256": "46bbd854c888b8b2a819923fb3f646a81015f868082ae5408a107f6f49726cf3"
+    },
+    {
+      "primitive": "LUT6",
+      "instances": 1099,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\LUT6.v",
+      "sha256": "ad30839aaf8d6b39df914aa3a3d24bbaabd1167bed8c6b6833cea680eebb202c"
+    },
+    {
+      "primitive": "MMCME2_ADV",
+      "instances": 1,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\MMCME2_ADV.v",
+      "sha256": "29cf4b7bf04e15f2508d9a55521a5c656ec38a8c8342bce5bf7e218073572f98"
+    },
+    {
+      "primitive": "MUXF7",
+      "instances": 7,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\MUXF7.v",
+      "sha256": "2402b77b44aef7ab5993820dacbe843331f0134a33f37bfd9599b7680369b6db"
+    },
+    {
+      "primitive": "RAM32M",
+      "instances": 6,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\RAM32M.v",
+      "sha256": "e8a23fd698b66faa7143bbb17d40585f97ec4cf7a4fd351db2a63a3b87cb92a6"
+    },
+    {
+      "primitive": "RAMB36E1",
+      "instances": 5,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\RAMB36E1.v",
+      "sha256": "afe0e11c4895443eb53bbb40d3c2d48a0b9d5608be687776993372360fad702d"
+    },
+    {
+      "primitive": "RAMD32",
+      "instances": 36,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\RAMD32.v",
+      "sha256": "4bdfb848bc83aee9f29e0e833feacea7f836f14d53e49e17c9e5a804614d9136"
+    },
+    {
+      "primitive": "RAMS32",
+      "instances": 12,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\RAMS32.v",
+      "sha256": "f0dd85a8d63f7b2c2bcb4989b02bec6d7e0d3088ad3efbd77e94b6d5a0df0bfa"
+    },
+    {
+      "primitive": "SRL16E",
+      "instances": 171,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\SRL16E.v",
+      "sha256": "ecf94e3cc1739d26fb6737cb3170c939f1f0aea5ac9c8f611627396bceab684d"
+    },
+    {
+      "primitive": "SRLC16E",
+      "instances": 4,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\SRLC16E.v",
+      "sha256": "701438ea355b588ae7186af41a35d1d1b846392285758eb7f5f5562c30d0dc58"
+    },
+    {
+      "primitive": "SRLC32E",
+      "instances": 149,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\SRLC32E.v",
+      "sha256": "0c041ab17dc47d615dac7bc3a7d6221e53fead5e2a622081aa2e76e15c7e9bb1"
+    },
+    {
+      "primitive": "VCC",
+      "instances": 213,
+      "source": "F:\\Xilinx\\Vivado\\2022.2\\data\\verilog\\src\\unisims\\VCC.v",
+      "sha256": "ebe490fcb856151d8996d17c5d28086505d02e62cbcd2f16e0a5456a5867c6a2"
+    }
+  ],
+  "command": [
+    "F:\\Program Files\\modeltech64_2020.4\\win64\\vlog.exe",
+    "-modelsimini",
+    "Z:\\build\\modelsim\\modelsim.ini",
+    "-work",
+    "simprims_ver",
+    "+define+XIL_TIMING",
+    "-sv",
+    "-f",
+    "Z:\\build\\modelsim\\vendor_models.f"
+  ]
+}

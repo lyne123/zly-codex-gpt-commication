@@ -1,0 +1,162 @@
+# 本轮实际上传文件清单
+
+所有原始大日志的gzip映射见inputs/LOG_COMPRESSION_MANIFEST.json。
+
+| 文件 | 字节数 | 存储 |
+|---|---:|---|
+| .gitattributes | 499 | Git |
+| ARCHIVE_SELECTION.json | 14651 | Git |
+| inputs/compensation_params.tcl | 310 | Git |
+| inputs/DCP_PRIMITIVES.csv | 293 | Git |
+| inputs/EXPORTED_FILES.json | 469 | Git |
+| inputs/frozen_compensation.csv | 668 | Git |
+| inputs/frozen_event_association.json | 4818 | Git |
+| inputs/full.txt | 110530 | Git |
+| inputs/full_truth.csv | 301310 | Git |
+| inputs/LOG_COMPRESSION_MANIFEST.json | 5323 | Git |
+| inputs/PRIMITIVE_SOURCES.json | 4053 | Git |
+| inputs/SIMULATION_COMMAND.json | 531 | Git |
+| inputs/source_cdc.rpt | 29128 | Git |
+| inputs/source_commit.txt | 42 | Git |
+| inputs/source_effective_constraints.xdc | 178096 | Git |
+| inputs/SOURCE_MANIFEST.json | 3553 | Git |
+| inputs/source_timing_summary.rpt | 402611 | Git |
+| inputs/stimulus_sha256.txt | 158 | Git |
+| inputs/VENDOR_MODEL_MANIFEST.json | 6639 | Git |
+| logs/analysis_results.log | 798 | Git |
+| logs/cdc_audit.jou | 669 | Git |
+| logs/cdc_audit.log | 5106 | Git |
+| logs/cdc_audit_console.log | 4748 | Git |
+| logs/cdc_audit_initial_console.log | 3809 | Git |
+| logs/cdc_audit_initial_hierarchical_driver.log | 4183 | Git |
+| logs/comparison_driver.log | 995 | Git |
+| logs/compile.log | 5603 | Git |
+| logs/compile_xsim.log | 42447 | Git |
+| logs/compile_xsim_argument_error.log | 34051 | Git |
+| logs/environment_check.log | 1466 | Git |
+| logs/environment_compile.log | 493 | Git |
+| logs/environment_sdf_probe.log | 1825 | Git |
+| logs/environment_sdf_probe_first_polarity.log | 1561 | Git |
+| logs/export_console.log | 3475 | Git |
+| logs/export_sdf.jou | 675 | Git |
+| logs/export_sdf.log | 3836 | Git |
+| logs/final_report_driver.log | 2210 | Git |
+| logs/full_run_driver.log | 26 | Git |
+| logs/git_clone.log | 2219 | Git |
+| logs/modelsim_command_help.log | 249 | Git |
+| logs/modelsim_version.log | 77 | Git |
+| logs/sdf_annotation.log.gz | 40075 | Git |
+| logs/sdf_annotation_conditional.log.gz | 53883 | Git |
+| logs/sdf_annotation_conditional_unannotated.log.gz | 96889 | Git |
+| logs/sdf_annotation_legacy.log.gz | 82332 | Git |
+| logs/sdf_annotation_legacy_unannotated.log.gz | 96325 | Git |
+| logs/sdf_annotation_novopt.log | 1160 | Git |
+| logs/sdf_annotation_unannotated.log.gz | 96877 | Git |
+| logs/sdf_annotation_xsim.log | 8822 | Git |
+| logs/simulation.log.gz | 4754544 | Git LFS |
+| logs/timing_analysis_driver.log | 1543 | Git |
+| logs/timing_violations.log.gz | 4753362 | Git LFS |
+| logs/tool_help.jou | 669 | Git |
+| logs/tool_help.log | 37543 | Git |
+| logs/tool_help_console.log | 38001 | Git |
+| logs/vendor_models_compile.log | 1397 | Git |
+| logs/vivado_version.log | 209 | Git |
+| logs/vlog_help.log | 2260 | Git |
+| logs/vlog_version.log | 74 | Git |
+| logs/vopt_help.log | 2676 | Git |
+| logs/vsim_help.log | 271 | Git |
+| logs/vsim_help_all.log | 97257 | Git |
+| logs/vsim_help_GLS.log | 10160 | Git |
+| logs/vsim_help_Messages.log | 2695 | Git |
+| logs/vsim_runtime_help.log | 1947 | Git |
+| logs/xelab.log | 0 | Git |
+| logs/xelab_help.log | 15568 | Git |
+| logs/xsim_zero.log | 1022 | Git |
+| netlist/post_route_max.sdf | 12943506 | Git LFS |
+| netlist/post_route_timing.v | 5953796 | Git LFS |
+| plots/error_histogram.png | 107018 | Git |
+| plots/error_histogram.svg | 40089 | Git |
+| plots/PLOT_METADATA.json | 589 | Git |
+| plots/pulse_width_error.png | 225944 | Git |
+| plots/pulse_width_error.svg | 396871 | Git |
+| plots/timestamp_error.png | 282673 | Git |
+| plots/timestamp_error.svg | 788792 | Git |
+| README.md | 349 | Git |
+| REPRODUCE.md | 2887 | Git |
+| results/annotation_probe/RUN_COMMAND.json | 748 | Git |
+| results/annotation_probe_conditional/RUN_COMMAND.json | 772 | Git |
+| results/annotation_probe_legacy/RUN_COMMAND.json | 806 | Git |
+| results/annotation_probe_novopt/RUN_COMMAND.json | 778 | Git |
+| results/CDC_FROZEN_RECHECK.rpt | 29130 | Git |
+| results/CDC_RESET_FANOUT.csv | 6914 | Git |
+| results/CDC_RESET_STRUCTURE.csv | 11983 | Git |
+| results/CDC_REVIEW.json | 735 | Git |
+| results/COMPARISON_VALIDATION.json | 993 | Git |
+| results/compensated/gate_full/anomaly_pipeline_trace.csv | 33351 | Git |
+| results/compensated/gate_full/aux_events.csv | 1481090 | Git LFS |
+| results/compensated/gate_full/aux_windows.csv | 48631 | Git |
+| results/compensated/gate_full/candidate.csv | 179256 | Git |
+| results/compensated/gate_full/clock_epoch.csv | 18 | Git |
+| results/compensated/gate_full/console.log.gz | 4761004 | Git LFS |
+| results/compensated/gate_full/error_fifo.csv | 14 | Git |
+| results/compensated/gate_full/errors.csv | 19 | Git |
+| results/compensated/gate_full/fifo.csv | 57944 | Git |
+| results/compensated/gate_full/FIFO_READS.csv | 103621 | Git |
+| results/compensated/gate_full/FIFO_WRITES.csv | 103628 | Git |
+| results/compensated/gate_full/meta_capture.csv | 58103 | Git |
+| results/compensated/gate_full/meta_changes.csv | 142128 | Git |
+| results/compensated/gate_full/raw.csv | 202203 | Git |
+| results/compensated/gate_full/RESET_TRACE.csv | 176 | Git |
+| results/compensated/gate_full/run.bat | 299 | Git |
+| results/compensated/gate_full/run_manifest.txt | 131 | Git |
+| results/compensated/gate_full/sampled_taps.csv | 610658 | Git |
+| results/compensated/gate_full/stimulus.txt | 110530 | Git |
+| results/compensated/gate_full/timestamps.csv | 141339 | Git |
+| results/compensated/gate_full/truth.csv | 301310 | Git |
+| results/compensated/gate_full/widths.csv | 57943 | Git |
+| results/EDGE_RESULTS.csv | 807961 | Git |
+| results/ENVIRONMENT_CHECK.json | 1464 | Git |
+| results/ERROR_HISTOGRAM_DATA.csv | 1525 | Git |
+| results/ERROR_STATISTICS.json | 7527 | Git |
+| results/EVENT_RECOVERY.csv | 168 | Git |
+| results/EVENT_VERSION_COMPARISON.csv | 128343 | Git |
+| results/FINAL_SOURCE_INTEGRITY.json | 2727 | Git |
+| results/FREEZE_CHECK.json | 213 | Git |
+| results/FREQUENCY_TRANSITIONS.csv | 1125 | Git |
+| results/INVALID_RAW_EDGES.json | 2 | Git |
+| results/PHASE_COMPENSATION_REPORT.csv | 1814 | Git |
+| results/PULSE_RESULTS.csv | 344416 | Git |
+| results/RUNTIME_SDF_PATH_DELAYS.csv | 806 | Git |
+| results/SAME_SDF_COMPENSATION_EFFECT.csv | 398933 | Git |
+| results/SDF_COVERAGE.json | 2712 | Git |
+| results/TIMING_CHECK_SUMMARY.json | 1541 | Git |
+| results/TIMING_VIOLATIONS.csv.gz | 7519367 | Git LFS |
+| results/VERSION_COMPARISON.csv | 8762 | Git |
+| scripts/analyze_results.py | 13684 | Git |
+| scripts/analyze_timing.py | 5120 | Git |
+| scripts/archive_delivery.py | 8320 | Git |
+| scripts/audit_cdc.tcl | 1884 | Git |
+| scripts/check_environment.py | 4784 | Git |
+| scripts/check_sdf_coverage.py | 4126 | Git |
+| scripts/compare_versions.py | 8633 | Git |
+| scripts/compile_models.py | 2043 | Git |
+| scripts/export_sdf.tcl | 1048 | Git |
+| scripts/final_report.py | 19471 | Git |
+| scripts/freeze_inputs.py | 3583 | Git |
+| scripts/plot_results.py | 4287 | Git |
+| scripts/prepare_simulation.py | 4798 | Git |
+| scripts/replay_xsim.py | 3840 | Git |
+| scripts/run_modelsim.py | 3299 | Git |
+| scripts/run_xsim.py | 3834 | Git |
+| scripts/tool_help.tcl | 179 | Git |
+| SDF_VALIDATION.md | 14135 | Git |
+| sim/fifo_reset_observer.svh | 2069 | Git |
+| sim/gate_observer.svh | 13748 | Git |
+| sim/simulation.do | 99 | Git |
+| sim/tb_tdc_sdf.sv | 9685 | Git |
+| VALIDATION.json | 2208 | Git |
+| FILE_LIST.md | 自列清单 | Git |
+| SHA256SUMS.txt | 校验清单 | Git |
+
+实际文件数：153；LFS文件数：7。
+SHA256SUMS覆盖除自身外的全部归档文件；旧DCP/RTL/BIT继续引用父提交，不重复上传。

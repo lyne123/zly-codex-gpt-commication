@@ -1,0 +1,362 @@
+{
+  "archive_task": "2026-11-05-06-四相TDC-MAX-SDF验证",
+  "parent_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "excluded_files": [
+    {
+      "path": "scripts/__pycache__/analyze_results.cpython-313.pyc",
+      "bytes": 30893,
+      "reason": "工具缓存/可再生中间文件"
+    },
+    {
+      "path": "netlist/post_route_max.sdf_max.csd",
+      "bytes": 1100467,
+      "reason": "工具缓存/可再生中间文件"
+    },
+    {
+      "path": "logs/cdc_audit_2468.backup.jou",
+      "bytes": 668,
+      "reason": "与已保存失败日志重复的工具自动备份"
+    },
+    {
+      "path": "logs/cdc_audit_2468.backup.log",
+      "bytes": 4183,
+      "reason": "与已保存失败日志重复的工具自动备份"
+    },
+    {
+      "path": "logs/manual_reader_install.log",
+      "bytes": 1000,
+      "reason": "商业手册参考摘录或其阅读器安装记录，不属于实验数据"
+    },
+    {
+      "path": "logs/modelsim_manual_NTC_excerpt.txt",
+      "bytes": 5824,
+      "reason": "商业手册参考摘录或其阅读器安装记录，不属于实验数据"
+    },
+    {
+      "path": "logs/modelsim_manual_NTC_options.txt",
+      "bytes": 1932,
+      "reason": "商业手册参考摘录或其阅读器安装记录，不属于实验数据"
+    },
+    {
+      "path": "logs/sdf_annotation.log",
+      "bytes": 2154826,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/sdf_annotation_conditional.log",
+      "bytes": 3000327,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/sdf_annotation_conditional_unannotated.log",
+      "bytes": 9045892,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/sdf_annotation_legacy.log",
+      "bytes": 5857766,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/sdf_annotation_legacy_unannotated.log",
+      "bytes": 8998744,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/sdf_annotation_unannotated.log",
+      "bytes": 9045892,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/simulation.log",
+      "bytes": 275383520,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/timing_violations.log",
+      "bytes": 275382186,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "logs/xelab.pb",
+      "bytes": 0,
+      "reason": "工具缓存/可再生中间文件"
+    },
+    {
+      "path": "results/TIMING_VIOLATIONS.csv",
+      "bytes": 203313740,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    },
+    {
+      "path": "results/annotation_probe/anomaly_pipeline_trace.csv",
+      "bytes": 261,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/candidate.csv",
+      "bytes": 54,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/clock_epoch.csv",
+      "bytes": 10,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/errors.csv",
+      "bytes": 19,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/error_fifo.csv",
+      "bytes": 14,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/fifo.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/raw.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/sampled_taps.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/stimulus.txt",
+      "bytes": 110530,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/timestamps.csv",
+      "bytes": 27,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/truth.csv",
+      "bytes": 301310,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe/widths.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/anomaly_pipeline_trace.csv",
+      "bytes": 261,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/candidate.csv",
+      "bytes": 54,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/clock_epoch.csv",
+      "bytes": 10,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/errors.csv",
+      "bytes": 19,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/error_fifo.csv",
+      "bytes": 14,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/fifo.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/raw.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/sampled_taps.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/stimulus.txt",
+      "bytes": 110530,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/timestamps.csv",
+      "bytes": 27,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/truth.csv",
+      "bytes": 301310,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_conditional/widths.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/anomaly_pipeline_trace.csv",
+      "bytes": 261,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/candidate.csv",
+      "bytes": 54,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/clock_epoch.csv",
+      "bytes": 10,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/errors.csv",
+      "bytes": 19,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/error_fifo.csv",
+      "bytes": 14,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/fifo.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/raw.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/sampled_taps.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/stimulus.txt",
+      "bytes": 110530,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/timestamps.csv",
+      "bytes": 27,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/truth.csv",
+      "bytes": 301310,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_legacy/widths.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_novopt/stimulus.txt",
+      "bytes": 110530,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/annotation_probe_novopt/truth.csv",
+      "bytes": 301310,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/anomaly_pipeline_trace.csv",
+      "bytes": 261,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/candidate.csv",
+      "bytes": 54,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/clock_epoch.csv",
+      "bytes": 10,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/console.log",
+      "bytes": 602,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/errors.csv",
+      "bytes": 19,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/error_fifo.csv",
+      "bytes": 14,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/fifo.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/raw.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/run.bat",
+      "bytes": 299,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/sampled_taps.csv",
+      "bytes": 36,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/stimulus.txt",
+      "bytes": 110530,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/timestamps.csv",
+      "bytes": 27,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/truth.csv",
+      "bytes": 301310,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/xsim_annotation_probe/widths.csv",
+      "bytes": 18,
+      "reason": "零时刻注释探针的空结果/重复激励；失败命令和全部注释日志已保存"
+    },
+    {
+      "path": "results/compensated/gate_full/console.log",
+      "bytes": 276543753,
+      "reason": "全部字节已无损gzip归档，原件本地保留；见LOG_COMPRESSION_MANIFEST.json"
+    }
+  ],
+  "excluded_trees": {
+    "build/": "可再生编译缓存/工具库/阅读器，不包含实验原始结果",
+    "github/": "独立Git克隆本身，不递归归档"
+  },
+  "critical_evidence_omitted": false,
+  "compression_note": "gzip无损恢复原始全部字节；没有删行或修改CSV/日志"
+}
