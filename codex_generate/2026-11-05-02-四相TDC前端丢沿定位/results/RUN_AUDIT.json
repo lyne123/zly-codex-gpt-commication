@@ -1,0 +1,66 @@
+{
+  "annotation_success": true,
+  "annotation_messages": [
+    "INFO: [XSIM 43-3451] SDF backannotation process started with SDF file \"design.sdf\", for root module \"tb_tdc/dut\".",
+    "INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file \"design.sdf\", for root module \"tb_tdc/dut\"."
+  ],
+  "normal_finish": true,
+  "timing_checks": "enabled",
+  "delay_corner": "MAXIMUM",
+  "simulator": "Vivado XSim 2022.2",
+  "counts": [
+    {
+      "category": "ILA_asynchronous_PWM_debug_capture",
+      "check": "setuphold",
+      "count": 55,
+      "after_5us_count": 55
+    },
+    {
+      "category": "MMCM_unused_CLKOUT5_6_model",
+      "check": "period",
+      "count": 81074,
+      "after_5us_count": 62928
+    },
+    {
+      "category": "PWM_asynchronous_synchronizer",
+      "check": "setuphold",
+      "count": 10,
+      "after_5us_count": 10
+    },
+    {
+      "category": "TDL_asynchronous_sampling",
+      "check": "setuphold",
+      "count": 3994,
+      "after_5us_count": 3994
+    },
+    {
+      "category": "reset_synchronizer",
+      "check": "recrem",
+      "count": 1,
+      "after_5us_count": 0
+    },
+    {
+      "category": "synchronous_TDC_digital_requires_review",
+      "check": "setuphold",
+      "count": 2,
+      "after_5us_count": 0
+    }
+  ],
+  "synchronous_check_details": [
+    {
+      "local_time_ps": 684645,
+      "scope": "/tb_tdc/dut/u_tdc_fine_layer/u_tdl270/ready_pipe_reg[5]/TChk170_37188",
+      "check": "setuphold"
+    },
+    {
+      "local_time_ps": 685645,
+      "scope": "/tb_tdc/dut/u_tdc_fine_layer/u_tdl90/ready_pipe_reg[5]/TChk170_37188",
+      "check": "setuphold"
+    }
+  ],
+  "window_counts": {
+    "MMCM_unused_CLKOUT5_6_model": 3600,
+    "TDL_asynchronous_sampling": 378,
+    "ILA_asynchronous_PWM_debug_capture": 2
+  }
+}

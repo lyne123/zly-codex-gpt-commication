@@ -1,0 +1,42 @@
+{
+  "raw.csv": {
+    "bytes": 222549,
+    "sha256": "58ce2841b7427c4cbbb092738c46f2634086877ab39aa8459a8dc67cf93e4752"
+  },
+  "candidate.csv": {
+    "bytes": 179107,
+    "sha256": "ceac0399c3f0bd525514958856c7391e5e9f2d97b47b29c8e77fee51a327757a"
+  },
+  "timestamps.csv": {
+    "bytes": 141177,
+    "sha256": "09c402e8403c5dbdddfc0de57f35bad2053fbb232d0978a2f059aea45c9b39c7"
+  },
+  "widths.csv": {
+    "bytes": 57896,
+    "sha256": "aac87acbace96b6b83e47d7f5c0f3d09b4335d9dcdb3bee962e893f279191f8e"
+  },
+  "errors.csv": {
+    "bytes": 19,
+    "sha256": "5956b5ddf9aaa72435ae32bc8375c00ec98b48c49cf03b9910426fa8869f5d69"
+  },
+  "fifo.csv": {
+    "bytes": 57897,
+    "sha256": "d0cfe64d51e04f1a4607288849c70fe192ad91c5cf65e42a167240697132af50"
+  },
+  "sampled_taps.csv": {
+    "bytes": 614636,
+    "sha256": "42a7559aa18d345dc36851c3c2db6077eb95acf1aac48532d9db6dc6c2e7b613"
+  },
+  "clock_epoch.csv": {
+    "bytes": 18,
+    "sha256": "853ebe4ddb44815306d3f38fe19b7ca949e304411eb9b039891a55b07382bd51"
+  },
+  "error_fifo.csv": {
+    "bytes": 14,
+    "sha256": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443"
+  },
+  "anomaly_pipeline_trace.csv": {
+    "bytes": 33501,
+    "sha256": "edfa9761cd4df914e7e6cbedf355a4bd17659cb102a6dfb58cd330c772308973"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\optimized\\baseline\\design.v": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\optimized\\baseline\\design.sdf": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\sim\\stimuli\\validation.txt": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\sim\\stimuli\\validation_truth.csv": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_fine_layer.v": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_meas_top.v": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_candicate.v": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_locate.v": true,
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_merge.v": true
+}

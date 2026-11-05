@@ -1,0 +1,73 @@
+{
+  "pass_all_fields": true,
+  "windows_absolute_ps": [
+    [
+      238600000,
+      238900000
+    ],
+    [
+      241900000,
+      242200000
+    ],
+    [
+      245200000,
+      245500000
+    ]
+  ],
+  "comparisons": {
+    "raw.csv": {
+      "original_rows": 30,
+      "short_rows": 30,
+      "equal": true,
+      "first_differences": []
+    },
+    "candidate.csv": {
+      "original_rows": 30,
+      "short_rows": 30,
+      "equal": true,
+      "first_differences": []
+    },
+    "timestamps.csv": {
+      "original_rows": 30,
+      "short_rows": 30,
+      "equal": true,
+      "first_differences": []
+    },
+    "widths.csv": {
+      "original_rows": 15,
+      "short_rows": 15,
+      "equal": true,
+      "first_differences": []
+    },
+    "errors.csv": {
+      "original_rows": 0,
+      "short_rows": 0,
+      "equal": true,
+      "first_differences": []
+    },
+    "fifo.csv": {
+      "original_rows": 15,
+      "short_rows": 15,
+      "equal": true,
+      "first_differences": []
+    },
+    "error_fifo.csv": {
+      "original_rows": 0,
+      "short_rows": 0,
+      "equal": true,
+      "first_differences": []
+    },
+    "sampled_taps.csv": {
+      "original_rows": 59,
+      "short_rows": 59,
+      "equal": true,
+      "first_differences": []
+    },
+    "anomaly_pipeline_trace.csv": {
+      "original_rows": 450,
+      "short_rows": 450,
+      "equal": true,
+      "first_differences": []
+    }
+  }
+}

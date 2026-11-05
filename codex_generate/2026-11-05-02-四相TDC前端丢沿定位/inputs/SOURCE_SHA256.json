@@ -1,0 +1,38 @@
+{
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\optimized\\baseline\\design.v": {
+    "bytes": 5950234,
+    "sha256": "e4389019c08446f841f20c4feb9ce2be1966d0d19753a78b5977a9583dda9fd7"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\results\\optimized\\baseline\\design.sdf": {
+    "bytes": 12859190,
+    "sha256": "824f7490473fc2afe86341e23f04f64d14cb90b178dcc5223f621323df6adea1"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\sim\\stimuli\\validation.txt": {
+    "bytes": 110530,
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\sim\\stimuli\\validation_truth.csv": {
+    "bytes": 301310,
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_fine_layer.v": {
+    "bytes": 19853,
+    "sha256": "fa811e21687908d6ccda5191d51cb4b377a3218a487cc17b0dcdf31ec849342b"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_meas_top.v": {
+    "bytes": 11311,
+    "sha256": "a1917a2a4076e09d78493591d97f5a76ed14b6c97906afa5a02e6ebc489fd89d"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_candicate.v": {
+    "bytes": 9711,
+    "sha256": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_locate.v": {
+    "bytes": 9997,
+    "sha256": "1e6c588d933bdd2fa62ae9bd7da217330b95c8adadc1d62496c88fa46349c662"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\fpga_tdc_v3_cal_rtl\\tdc_time_merge.v": {
+    "bytes": 4874,
+    "sha256": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  }
+}

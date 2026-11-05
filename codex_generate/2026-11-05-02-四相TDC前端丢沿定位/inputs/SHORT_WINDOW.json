@@ -1,0 +1,23 @@
+{
+  "shift_ps": 225280000,
+  "clock_period_ps": 2000,
+  "sys_clock_period_ps": 10000,
+  "coarse_modulo_ps": 2048000,
+  "windows_absolute_ps": [
+    [
+      238600000,
+      238900000
+    ],
+    [
+      241900000,
+      242200000
+    ],
+    [
+      245200000,
+      245500000
+    ]
+  ],
+  "pulse_count": 160,
+  "first_original_rise_ps": 237515453,
+  "last_original_fall_ps": 245512212
+}

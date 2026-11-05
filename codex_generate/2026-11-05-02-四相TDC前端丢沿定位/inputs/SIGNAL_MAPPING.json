@@ -1,0 +1,569 @@
+[
+  {
+    "name": "p0_thermo",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl0.thermo_q",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p0_carry",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl0.carry_tap",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p0_detected_type",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl0.\\type_pipe_reg[7]_srl4 .D,dut.u_tdc_fine_layer.u_tdl0.\\type_pipe_reg[6]_srl4 .D}",
+    "kind": "mapped_pin",
+    "note": "极性流水线第一存储单元的实际 D 端；包含布线延迟"
+  },
+  {
+    "name": "p0_code_raw",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][6] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][5] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][4] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][3] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][2] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][1] ,dut.u_tdc_fine_layer.u_tdl0.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][0] }",
+    "kind": "mapped_net",
+    "note": "code_q.D 的实际驱动网；计数树末级寄存器输出"
+  },
+  {
+    "name": "p0_raw_edge_type",
+    "bits": 2,
+    "expression": "dut.u_tdc_fine_layer.u_tdl0.raw_edge_type",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p0_code_in_range",
+    "bits": 1,
+    "expression": "((obs_p0_raw_edge_type==3 && obs_p0_code_raw>=1 && obs_p0_code_raw<=60) || (obs_p0_raw_edge_type==2 && obs_p0_code_raw>=5 && obs_p0_code_raw<64))",
+    "kind": "reconstructed",
+    "note": "独立物理节点被 LUT 合并；按实际 60/5 参数重建，只作解释"
+  },
+  {
+    "name": "p0_encoder_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl0.output_ready_reg.D",
+    "kind": "mapped_pin",
+    "note": "encoder_ready 对应 output_ready 的实际 D 端"
+  },
+  {
+    "name": "p0_code_q",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[6] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[5] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[4] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[3] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[2] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl0.\\code_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p0_edge_type_d",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl0.\\edge_type_q_reg[1] .D,dut.u_tdc_fine_layer.u_tdl0.\\edge_type_q_reg[0] .D}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p0_edge_type_q",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl0.\\edge_type_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl0.\\edge_type_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p0_output_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl0.output_ready_reg.Q",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p90_thermo",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl90.thermo_q",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p90_carry",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl90.carry_tap",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p90_detected_type",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl90.\\type_pipe_reg[7]_srl4_srlopt .D,dut.u_tdc_fine_layer.u_tdl90.\\type_pipe_reg[6]_srl4_srlopt .D}",
+    "kind": "mapped_pin",
+    "note": "极性流水线第一存储单元的实际 D 端；包含布线延迟"
+  },
+  {
+    "name": "p90_code_raw",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][6] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][5] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][4] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][3] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][2] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][1] ,dut.u_tdc_fine_layer.u_tdl90.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][0] }",
+    "kind": "mapped_net",
+    "note": "code_q.D 的实际驱动网；计数树末级寄存器输出"
+  },
+  {
+    "name": "p90_raw_edge_type",
+    "bits": 2,
+    "expression": "dut.u_tdc_fine_layer.u_tdl90.raw_edge_type",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p90_code_in_range",
+    "bits": 1,
+    "expression": "((obs_p90_raw_edge_type==3 && obs_p90_code_raw>=1 && obs_p90_code_raw<=60) || (obs_p90_raw_edge_type==2 && obs_p90_code_raw>=5 && obs_p90_code_raw<64))",
+    "kind": "reconstructed",
+    "note": "独立物理节点被 LUT 合并；按实际 60/5 参数重建，只作解释"
+  },
+  {
+    "name": "p90_encoder_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl90.output_ready_reg.D",
+    "kind": "mapped_pin",
+    "note": "encoder_ready 对应 output_ready 的实际 D 端"
+  },
+  {
+    "name": "p90_code_q",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[6] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[5] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[4] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[3] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[2] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl90.\\code_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p90_edge_type_d",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl90.\\edge_type_q_reg[1] .D,dut.u_tdc_fine_layer.u_tdl90.\\edge_type_q_reg[0] .D}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p90_edge_type_q",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl90.\\edge_type_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl90.\\edge_type_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p90_output_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl90.output_ready_reg.Q",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p180_thermo",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl180.thermo_q",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p180_carry",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl180.carry_tap",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p180_detected_type",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl180.\\type_pipe_reg[7]_srl4 .D,dut.u_tdc_fine_layer.u_tdl180.\\type_pipe_reg[6]_srl4 .D}",
+    "kind": "mapped_pin",
+    "note": "极性流水线第一存储单元的实际 D 端；包含布线延迟"
+  },
+  {
+    "name": "p180_code_raw",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][6] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][5] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][4] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][3] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][2] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][1] ,dut.u_tdc_fine_layer.u_tdl180.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][0] }",
+    "kind": "mapped_net",
+    "note": "code_q.D 的实际驱动网；计数树末级寄存器输出"
+  },
+  {
+    "name": "p180_raw_edge_type",
+    "bits": 2,
+    "expression": "dut.u_tdc_fine_layer.u_tdl180.raw_edge_type",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p180_code_in_range",
+    "bits": 1,
+    "expression": "((obs_p180_raw_edge_type==3 && obs_p180_code_raw>=1 && obs_p180_code_raw<=60) || (obs_p180_raw_edge_type==2 && obs_p180_code_raw>=5 && obs_p180_code_raw<64))",
+    "kind": "reconstructed",
+    "note": "独立物理节点被 LUT 合并；按实际 60/5 参数重建，只作解释"
+  },
+  {
+    "name": "p180_encoder_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl180.output_ready_reg.D",
+    "kind": "mapped_pin",
+    "note": "encoder_ready 对应 output_ready 的实际 D 端"
+  },
+  {
+    "name": "p180_code_q",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[6] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[5] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[4] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[3] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[2] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl180.\\code_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p180_edge_type_d",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl180.\\edge_type_q_reg[1] .D,dut.u_tdc_fine_layer.u_tdl180.\\edge_type_q_reg[0] .D}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p180_edge_type_q",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl180.\\edge_type_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl180.\\edge_type_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p180_output_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl180.output_ready_reg.Q",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p270_thermo",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl270.thermo_q",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p270_carry",
+    "bits": 64,
+    "expression": "dut.u_tdc_fine_layer.u_tdl270.carry_tap",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p270_detected_type",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl270.\\type_pipe_reg[7]_srl4 .D,dut.u_tdc_fine_layer.u_tdl270.\\type_pipe_reg[6]_srl4 .D}",
+    "kind": "mapped_pin",
+    "note": "极性流水线第一存储单元的实际 D 端；包含布线延迟"
+  },
+  {
+    "name": "p270_code_raw",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][6] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][5] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][4] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][3] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][2] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][1] ,dut.u_tdc_fine_layer.u_tdl270.\\g_sum[4].g_node[0].g_add2.sum_reg_n_0_[0][0] }",
+    "kind": "mapped_net",
+    "note": "code_q.D 的实际驱动网；计数树末级寄存器输出"
+  },
+  {
+    "name": "p270_raw_edge_type",
+    "bits": 2,
+    "expression": "dut.u_tdc_fine_layer.u_tdl270.raw_edge_type",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "p270_code_in_range",
+    "bits": 1,
+    "expression": "((obs_p270_raw_edge_type==3 && obs_p270_code_raw>=1 && obs_p270_code_raw<=60) || (obs_p270_raw_edge_type==2 && obs_p270_code_raw>=5 && obs_p270_code_raw<64))",
+    "kind": "reconstructed",
+    "note": "独立物理节点被 LUT 合并；按实际 60/5 参数重建，只作解释"
+  },
+  {
+    "name": "p270_encoder_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl270.output_ready_reg.D",
+    "kind": "mapped_pin",
+    "note": "encoder_ready 对应 output_ready 的实际 D 端"
+  },
+  {
+    "name": "p270_code_q",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[6] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[5] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[4] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[3] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[2] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl270.\\code_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p270_edge_type_d",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl270.\\edge_type_q_reg[1] .D,dut.u_tdc_fine_layer.u_tdl270.\\edge_type_q_reg[0] .D}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p270_edge_type_q",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.u_tdl270.\\edge_type_q_reg[1] .Q,dut.u_tdc_fine_layer.u_tdl270.\\edge_type_q_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "p270_output_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.u_tdl270.output_ready_reg.Q",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "pwm_history",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "frame_ready",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.frame_ready",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "aux_up",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.aux_up",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta_reg.D",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta_reg.C",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta_reg.D_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta_reg.C_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_meta_Q",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_meta_reg.Q",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync_reg.D",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync_reg.C",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync_reg.D_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync_reg.C_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_sync_Q",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_sync_reg.Q",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_history_D",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history_reg.D",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_history_C",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history_reg.C",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "pwm_history_D_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history_reg.D_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_history_C_dly",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history_reg.C_dly",
+    "kind": "primitive_internal",
+    "note": ""
+  },
+  {
+    "name": "pwm_history_Q",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.pwm_history_reg.Q",
+    "kind": "primitive_port",
+    "note": ""
+  },
+  {
+    "name": "aux_rise",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\aux_rise_pipe_reg[3]_srl4_u_tdl0_ready_pipe_reg_c_2 .D",
+    "kind": "mapped_pin",
+    "note": "边沿检测 LUT 输出，SRL 实际 D 端"
+  },
+  {
+    "name": "aux_rise_pipe",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.\\aux_rise_pipe_reg[6] .Q,dut.u_tdc_fine_layer.\\aux_rise_pipe_reg[5] .Q,dut.u_tdc_fine_layer.\\aux_rise_pipe_reg[4]_u_tdl0_ready_pipe_reg_c_3 .Q,dut.u_tdc_fine_layer.\\aux_rise_pipe_reg[3]_srl4_u_tdl0_ready_pipe_reg_c_2 .data[3:0]}",
+    "kind": "primitive_internal",
+    "note": "bit0..3 读取 SRL16E 模型 data；bit4..6 读取物理 FF.Q；被优化掉的 bit7 未重建"
+  },
+  {
+    "name": "aux_rise_match",
+    "bits": 1,
+    "expression": "(|obs_aux_rise_pipe[6:5])",
+    "kind": "reconstructed",
+    "note": "物理组合 LUT 中的等价或表达式；最终确认另观测实际 FF.D"
+  },
+  {
+    "name": "aux_fall",
+    "bits": 1,
+    "expression": "dut.u_tdc_fine_layer.\\aux_fall_pipe_reg[3]_srl4_u_tdl0_ready_pipe_reg_c_2 .D",
+    "kind": "mapped_pin",
+    "note": "边沿检测 LUT 输出，SRL 实际 D 端"
+  },
+  {
+    "name": "aux_fall_pipe",
+    "bits": 7,
+    "expression": "{dut.u_tdc_fine_layer.\\aux_fall_pipe_reg[6] .Q,dut.u_tdc_fine_layer.\\aux_fall_pipe_reg[5] .Q,dut.u_tdc_fine_layer.\\aux_fall_pipe_reg[4]_u_tdl0_ready_pipe_reg_c_3 .Q,dut.u_tdc_fine_layer.\\aux_fall_pipe_reg[3]_srl4_u_tdl0_ready_pipe_reg_c_2 .data[3:0]}",
+    "kind": "primitive_internal",
+    "note": "bit0..3 读取 SRL16E 模型 data；bit4..6 读取物理 FF.Q；被优化掉的 bit7 未重建"
+  },
+  {
+    "name": "aux_fall_match",
+    "bits": 1,
+    "expression": "(|obs_aux_fall_pipe[6:5])",
+    "kind": "reconstructed",
+    "note": "物理组合 LUT 中的等价或表达式；最终确认另观测实际 FF.D"
+  },
+  {
+    "name": "pack0_d1",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack0_d1_reg[9] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack0_d1_reg[6] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[5] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[4] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[3] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[2] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[1] .Q,dut.u_tdc_fine_layer.\\pack0_d1_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "pack90_d2",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack90_d2_reg[9] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack90_d2_reg[6] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[5] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[4] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[3] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[2] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[1] .Q,dut.u_tdc_fine_layer.\\pack90_d2_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "pack180_d1",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack180_d1_reg[9] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack180_d1_reg[6] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[5] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[4] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[3] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[2] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[1] .Q,dut.u_tdc_fine_layer.\\pack180_d1_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "pack270_to90",
+    "bits": 10,
+    "expression": "{dut.u_tdc_fine_layer.\\pack270_to90_reg[9] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[8] .Q,1'b0,dut.u_tdc_fine_layer.\\pack270_to90_reg[6] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[5] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[4] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[3] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[2] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[1] .Q,dut.u_tdc_fine_layer.\\pack270_to90_reg[0] .Q}",
+    "kind": "mapped_pin",
+    "note": ""
+  },
+  {
+    "name": "final_type90",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[1] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[0] .D}",
+    "kind": "mapped_pin",
+    "note": "最终确认/就绪门控后的实际寄存器 D 输入，包含物理延迟"
+  },
+  {
+    "name": "final_type180",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[3] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[2] .D}",
+    "kind": "mapped_pin",
+    "note": "最终确认/就绪门控后的实际寄存器 D 输入，包含物理延迟"
+  },
+  {
+    "name": "final_type270",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[5] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[4] .D}",
+    "kind": "mapped_pin",
+    "note": "最终确认/就绪门控后的实际寄存器 D 输入，包含物理延迟"
+  },
+  {
+    "name": "final_type0",
+    "bits": 2,
+    "expression": "{dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[7] .D,dut.u_tdc_fine_layer.\\sync_edge_polarity_reg[6] .D}",
+    "kind": "mapped_pin",
+    "note": "最终确认/就绪门控后的实际寄存器 D 输入，包含物理延迟"
+  },
+  {
+    "name": "sync_edge_valid",
+    "bits": 4,
+    "expression": "dut.sync_edge_valid",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "sync_edge_polarity",
+    "bits": 8,
+    "expression": "dut.sync_edge_polarity",
+    "kind": "physical",
+    "note": ""
+  },
+  {
+    "name": "sync_valid",
+    "bits": 1,
+    "expression": "dut.sync_valid",
+    "kind": "physical",
+    "note": ""
+  }
+]
