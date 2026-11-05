@@ -1,0 +1,5 @@
+level=gate
+phase=original
+variant=compensated
+dataset=validation
+timing_checks=enabled_for_gate

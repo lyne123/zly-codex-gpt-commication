@@ -1,0 +1,31 @@
+{
+  "raw.csv": {
+    "fresh": "41300ac8fe09fce00e155788ebd562778d199c2cc21b55346dc8fa1672387b51",
+    "original": "41300ac8fe09fce00e155788ebd562778d199c2cc21b55346dc8fa1672387b51"
+  },
+  "candidate.csv": {
+    "fresh": "54b4e3022dfca6bb7c5ddede2c7aeb723c4b100bae3d9fa4374c64bb7f9f5bf6",
+    "original": "54b4e3022dfca6bb7c5ddede2c7aeb723c4b100bae3d9fa4374c64bb7f9f5bf6"
+  },
+  "timestamps.csv": {
+    "fresh": "de22c6f264feaf17e42f966d572fdec19c9787f668ed0fdc6c01e2be65120632",
+    "original": "de22c6f264feaf17e42f966d572fdec19c9787f668ed0fdc6c01e2be65120632"
+  },
+  "widths.csv": {
+    "fresh": "47a56c2c44e2484a6064dc9fae124552c8fc48e219a3c67914a2a1a7162fa052",
+    "original": "47a56c2c44e2484a6064dc9fae124552c8fc48e219a3c67914a2a1a7162fa052"
+  },
+  "errors.csv": {
+    "fresh": "b7b5c877893c70e37548d78910a9d0ac48aa731f989f4503dc3cbdae86e0b755",
+    "original": "b7b5c877893c70e37548d78910a9d0ac48aa731f989f4503dc3cbdae86e0b755"
+  },
+  "fifo.csv": {
+    "fresh": "5ba6a9d84693fc0ca378e4c65d3c1906626a944c340b7073638822b427bed21c",
+    "original": "5ba6a9d84693fc0ca378e4c65d3c1906626a944c340b7073638822b427bed21c"
+  },
+  "sampled_taps.csv": {
+    "fresh": "2b2495b6dd702c6405c06e6104adfcc267f77cd601c25583b5ff3e5cac857a70",
+    "original": "2b2495b6dd702c6405c06e6104adfcc267f77cd601c25583b5ff3e5cac857a70"
+  },
+  "all_equal": true
+}

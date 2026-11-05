@@ -1,0 +1,111 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/inspect_ila_bram.tcl
+# set_param general.maxThreads 2
+# foreach label {original optimized} {
+#     if {$label eq "original"} {set dcp T:/results/baseline/design.dcp} else {set dcp U:/results/optimized/baseline/design.dcp}
+#     open_checkpoint $dcp
+#     set fd [open U:/results/${label}_ila_bram_properties.txt w]
+#     foreach cell [get_cells -hier -filter {REF_NAME == RAMB36E1 && NAME =~ u_ila2/*}] {
+#         puts $fd "CELL=[get_property NAME $cell]"
+#         foreach prop [lsort [list_property $cell]] {puts $fd "$prop\t[get_property $prop $cell]"}
+#     }
+#     close $fd
+#     close_design
+# }
+Command: open_checkpoint T:/results/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 892.762 ; gain = 7.645
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1499.672 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2282.977 ; gain = 4.949
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2282.977 ; gain = 4.949
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2282.977 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: d5dbd379
+----- Checksum: PlaceDB: 1df85da7 ShapeSum: 11478ef7 RouteDB: a69be6db 
+open_checkpoint: Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2282.977 ; gain = 1398.039
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.COLOCATED_MEMORIES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.COLOCATED_NODES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.NOT_COLOCATED_MEMORIES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.NOT_COLOCATED_NODES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.BANK' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.COLUMN' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.OFFSET' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.ROW' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RUNTIME' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.COLUMN' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.NAME' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.ROW' is only valid on AIE cell(s).
+WARNING: [Common 17-69] Command failed: HD.ISOLATED can only be set on hierarchical instances. 'DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not a hierarchical instance
+WARNING: [Common 17-69] Command failed: HD.RECONFIGURABLE can only be set on hierarchical instances. 'DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not a hierarchical instance
+Command: open_checkpoint U:/results/optimized/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2282.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 2282.977 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 2293.652 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 2293.652 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2293.652 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1a9c523bc
+----- Checksum: PlaceDB: 45a548a3 ShapeSum: 9626e164 RouteDB: cdf8f9b5 
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2293.652 ; gain = 10.676
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.COLOCATED_MEMORIES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.COLOCATED_NODES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.NOT_COLOCATED_MEMORIES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.NOT_COLOCATED_NODES' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.BANK' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.COLUMN' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.OFFSET' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RESERVED_MEMORY.ROW' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.RUNTIME' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.COLUMN' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.NAME' is only valid on AIE cell(s).
+WARNING: [Vivado 12-8382] 'u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not an AIE cell.  Property 'AIE.TILE.ROW' is only valid on AIE cell(s).
+WARNING: [Common 17-69] Command failed: HD.ISOLATED can only be set on hierarchical instances. 'DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not a hierarchical instance
+WARNING: [Common 17-69] Command failed: HD.RECONFIGURABLE can only be set on hierarchical instances. 'DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram' is not a hierarchical instance
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 02:26:22 2026...

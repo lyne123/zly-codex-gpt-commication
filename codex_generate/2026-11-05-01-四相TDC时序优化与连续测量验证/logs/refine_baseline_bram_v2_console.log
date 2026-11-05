@@ -1,0 +1,216 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/refine_baseline.tcl
+# set_param general.maxThreads 2
+# set out U:/results/trials/baseline_bram_routing
+# if {[file exists $out/design.dcp]} {error "禁�?��?�盖试验DCP"}
+# file mkdir $out
+# open_checkpoint T:/results/baseline/design.dcp
+Command: open_checkpoint T:/results/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 890.508 ; gain = 6.707
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1498.895 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2281.102 ; gain = 4.910
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2281.102 ; gain = 4.910
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2281.102 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: d5dbd379
+----- Checksum: PlaceDB: 1df85da7 ShapeSum: 11478ef7 RouteDB: a69be6db 
+open_checkpoint: Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 2281.102 ; gain = 1397.488
+# set fd [open U:/results/original_ila_pwm_warning_fanin.txt w]
+# foreach cell [get_cells -hier -filter {NAME =~ u_ila3/*}] {
+#     set name [get_property NAME $cell]
+#     if {[string first {shifted_data_in_reg[7][27]_srl8} $name]>=0 || ([string first {G_NMU[4]} $name]>=0 && [string first {probeDelay1_reg[0]} $name]>=0)} {
+#         foreach pin [get_pins -of_objects $cell -filter {REF_PIN_NAME == D}] {
+#             puts $fd "$name\t[get_property NAME [all_fanin -flat -startpoints_only -to $pin]]"
+#         }
+#     }
+# }
+# close $fd
+# close_design
+# open_checkpoint U:/results/optimized/baseline/design.dcp
+Command: open_checkpoint U:/results/optimized/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2281.102 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 2281.102 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2291.602 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2291.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2291.602 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1a9c523bc
+----- Checksum: PlaceDB: 45a548a3 ShapeSum: 9626e164 RouteDB: cdf8f9b5 
+open_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2291.602 ; gain = 10.500
+# opt_design -bram_power_opt
+Command: opt_design -bram_power_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2337.223 ; gain = 27.770
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 28d6e187a
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2337.223 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+WARNING: [Pwropt 34-340] Power optimization is not supported for post-route design.
+Ending Power Optimization Task | Checksum: 28d6e187a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.167 . Memory (MB): peak = 2337.223 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 28d6e187a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 2337.223 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2337.223 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 28d6e187a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.153 . Memory (MB): peak = 2337.223 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+6 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+# report_timing_summary -delay_type min_max -report_unconstrained -file $out/after_bram_power_opt.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# report_route_status -file $out/after_bram_route_status.rpt
+# phys_opt_design -placement_opt -routing_opt -critical_cell_opt -critical_pin_opt
+Command: phys_opt_design -placement_opt -routing_opt -critical_cell_opt -critical_pin_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode ( 100.0% nets are fully routed)
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.00s |  WALL: 0.86s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2337.223 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.141 | TNS=-0.670 | WHS=0.049 | THS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 2f3f490c8
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2342.754 ; gain = 5.531
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.141 | TNS=-0.670 | WHS=0.049 | THS=0.000 |
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q_0[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_clk_wiz_0/inst/clk_out1_clk_wiz_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/DUT/I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE/DOUT_O.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_hcmp_temp.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/DUT/I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE/u_srlA/O5.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9]. Replicated 1 times.
+INFO: [Physopt 32-952] Improved path group WNS = -0.116. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_clk_wiz_0/inst/clk_out1_clk_wiz_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.116 | TNS=-0.556 | WHS=0.049 | THS=0.000 |
+Phase 2 Critical Path Optimization | Checksum: 2f3f490c8
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:44 . Memory (MB): peak = 2683.605 ; gain = 346.383
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2683.605 ; gain = 0.000
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=-0.116 | TNS=-0.556 | WHS=0.049 | THS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Path  |          0.026  |          0.115  |            1  |              0  |                     1  |           0  |           1  |  00:00:42  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2683.605 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 3017d7052
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:44 . Memory (MB): peak = 2683.605 ; gain = 346.383
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:45 . Memory (MB): peak = 2683.605 ; gain = 346.383
+# report_timing_summary -delay_type min_max -report_unconstrained -file $out/timing_summary.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# report_timing -delay_type max -max_paths 50 -path_type full_clock_expanded -file $out/setup_top50.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+# report_timing -delay_type min -max_paths 50 -path_type full_clock_expanded -file $out/hold_top50.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type min -sort_by slack.
+# check_timing -verbose -file $out/check_timing.rpt
+# report_route_status -file $out/route_status.rpt
+# write_checkpoint -force $out/design.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2683.605 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'U:/results/trials/baseline_bram_routing/design.dcp' has been generated.
+# close_design
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 02:42:13 2026...

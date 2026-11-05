@@ -1,0 +1,666 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "U:/build/gate_original_compensated/design.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM32M_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module RAM32M_HD1
+INFO: [VRFC 10-311] analyzing module RAM32M_HD2
+INFO: [VRFC 10-311] analyzing module RAM32M_HD3
+INFO: [VRFC 10-311] analyzing module RAM32M_HD4
+INFO: [VRFC 10-311] analyzing module RAM32M_HD5
+INFO: [VRFC 10-311] analyzing module dbg_hub
+INFO: [VRFC 10-311] analyzing module dbg_hub_clk_x_pntrs
+INFO: [VRFC 10-311] analyzing module dbg_hub_clk_x_pntrs_8
+INFO: [VRFC 10-311] analyzing module dbg_hub_dmem
+INFO: [VRFC 10-311] analyzing module dbg_hub_dmem_14
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_ramfifo
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_ramfifo__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_top
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_top__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_v13_1_4
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_v13_1_4__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_v13_1_4_synth
+INFO: [VRFC 10-311] analyzing module dbg_hub_fifo_generator_v13_1_4_synth__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_ltlib_v1_0_0_bscan
+INFO: [VRFC 10-311] analyzing module dbg_hub_ltlib_v1_0_0_generic_mux
+INFO: [VRFC 10-311] analyzing module dbg_hub_memory
+INFO: [VRFC 10-311] analyzing module dbg_hub_memory__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_bin_cntr
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_bin_cntr_19
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_fwft
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_handshaking_flags
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_handshaking_flags__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_logic
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_logic__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_status_flags_as
+INFO: [VRFC 10-311] analyzing module dbg_hub_rd_status_flags_as_18
+INFO: [VRFC 10-311] analyzing module dbg_hub_reset_blk_ramfifo
+INFO: [VRFC 10-311] analyzing module dbg_hub_reset_blk_ramfifo_9
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_10
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_11
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_12
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_13
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_2
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_3
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff_4
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_20
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_21
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_22
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_23
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_5
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_6
+INFO: [VRFC 10-311] analyzing module dbg_hub_synchronizer_ff__parameterized0_7
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_bin_cntr
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_bin_cntr_17
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_handshaking_flags
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_handshaking_flags_16
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_logic
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_logic__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_status_flags_as
+INFO: [VRFC 10-311] analyzing module dbg_hub_wr_status_flags_as_15
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_addr_ctl
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bscan_switch
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_burst_wdlen_ctl
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bus_ctl
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bus_ctl_cnt
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bus_ctl_flg
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bus_ctl_flg__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_bus_mstr2sl_if
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_cmd_decode
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_ctl_reg
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_ctl_reg_1
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_ctl_reg__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_ctl_reg__parameterized1
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_icon
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_icon2xsdb
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_if
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_if_static_status
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_rdfifo
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_rdreg
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_stat
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_stat_reg
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_stat_reg_0
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_stat_reg__parameterized0
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_sync
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_wrfifo
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_wrreg
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_xsdbm
+INFO: [VRFC 10-311] analyzing module dbg_hub_xsdbm_v3_0_0_xsdbm_id
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_HD2
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_gray_HD8
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_gray__2
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_gray__2_HD9
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_single_HD29
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_single__2
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_single__2_HD30
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_sync_rst_HD31
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_sync_rst__2
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_xpm_cdc_sync_rst__2_HD32
+INFO: [VRFC 10-311] analyzing module ila_2
+INFO: [VRFC 10-311] analyzing module ila_3
+INFO: [VRFC 10-311] analyzing module tdc_fine_layer
+INFO: [VRFC 10-311] analyzing module tdc_meas_top
+INFO: [VRFC 10-311] analyzing module tdc_phase_tdl_encoder
+INFO: [VRFC 10-311] analyzing module tdc_phase_tdl_encoder_0
+INFO: [VRFC 10-311] analyzing module tdc_phase_tdl_encoder_1
+INFO: [VRFC 10-311] analyzing module tdc_phase_tdl_encoder_2
+INFO: [VRFC 10-311] analyzing module tdc_time_candicate
+INFO: [VRFC 10-311] analyzing module tdc_time_locate
+INFO: [VRFC 10-311] analyzing module tdc_time_merge
+INFO: [VRFC 10-311] analyzing module CFGLUT5_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD10
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD100
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD101
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD102
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD103
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD104
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD11
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD12
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD13
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD14
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD15
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD16
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD17
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD18
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD19
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD20
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD21
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD22
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD23
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD24
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD25
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD26
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD27
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD28
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD29
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD30
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD31
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD32
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD33
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD34
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD35
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD36
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD37
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD38
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD39
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD40
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD41
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD42
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD43
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD44
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD45
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD46
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD47
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD48
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD49
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD50
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD51
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD52
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD53
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD54
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD55
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD56
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD57
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD58
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD59
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD6
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD60
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD61
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD62
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD63
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD64
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD65
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD66
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD67
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD68
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD69
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD7
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD70
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD71
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD72
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD73
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD74
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD75
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD76
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD77
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD78
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD79
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD8
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD80
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD81
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD82
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD83
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD84
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD85
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD86
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD87
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD88
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD89
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD9
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD90
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD91
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD92
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD93
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD94
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD95
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD96
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD97
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD98
+INFO: [VRFC 10-311] analyzing module CFGLUT5_HD99
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_cap_addrgen
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_cap_ctrl_legacy
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_cap_sample_counter
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_cap_window_counter
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_core
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_register
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_reset_ctrl
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_trace_memory
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_trig_match
+INFO: [VRFC 10-311] analyzing module ila_2_ila_v6_2_12_ila_trigger
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_cap_addrgen
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_cap_ctrl_legacy
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_cap_sample_counter
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_cap_window_counter
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_core
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_register
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_reset_ctrl
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_trace_memory
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_trig_match
+INFO: [VRFC 10-311] analyzing module ila_3_ila_v6_2_12_ila_trigger
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_2
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA__parameterized1_22
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA__parameterized1_26
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice_1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice_3
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized0_0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized1_23
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized1_27
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized2_24
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_all_typeA_slice__parameterized2_28
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA_nodelay
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA_nodelay_21
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_allx_typeA_nodelay_25
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_async_edge_xfer
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_async_edge_xfer__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_async_edge_xfer__2
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_async_edge_xfer__3
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut4
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut4__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut5
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut5__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut5__2
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut6
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut6__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut6__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut7
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_cfglut7__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_generic_memrd
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match_nodelay
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match_nodelay__1
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_match_nodelay__2
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_rising_edge_detection
+INFO: [VRFC 10-311] analyzing module ila_2_ltlib_v1_0_0_rising_edge_detection__1
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized13
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized14
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized15
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized16
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized28
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized29
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized30
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized31
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized32
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized33
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized34
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized35
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized36
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized37
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized38
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized39
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized41
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized43
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg__parameterized46
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_10
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_13
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_14
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_15
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_16
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_17
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_20
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_7
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_8
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl_9
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl__parameterized1_11
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_ctl__parameterized1_12
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_p2s
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_p2s__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_p2s__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_p2s__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat_18
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat_19
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat_4
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat_5
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stat_6
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stream
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_reg_stream__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_2_xsdbs_v1_0_2_xsdbs
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_10
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_3
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_8
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA__parameterized1_30
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA__parameterized1_34
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice_1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice_11
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice_4
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice_6
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice_9
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized0_5
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized1_31
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized1_35
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized2_32
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_all_typeA_slice__parameterized2_36
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA__parameterized0_2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA__parameterized0_7
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA_nodelay
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA_nodelay_29
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_allx_typeA_nodelay_33
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_async_edge_xfer
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_async_edge_xfer__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_async_edge_xfer__2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_async_edge_xfer__3
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut4
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut4__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut5
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut5__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut5__2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut6
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut6__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut6__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut7
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_cfglut7__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_generic_memrd
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match__parameterized0__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match__parameterized0__2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match_nodelay
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match_nodelay__1
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_match_nodelay__2
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_rising_edge_detection
+INFO: [VRFC 10-311] analyzing module ila_3_ltlib_v1_0_0_rising_edge_detection__1
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized19
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized20
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized21
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized22
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized34
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized35
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized36
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized37
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized38
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized39
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized40
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized41
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized42
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized43
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized44
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized45
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized47
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized49
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg__parameterized52
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_15
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_16
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_17
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_18
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_21
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_22
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_23
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_24
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_25
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl_28
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl__parameterized1_19
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_ctl__parameterized1_20
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized1
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized2
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized3
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized4
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_p2s__parameterized5
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat_12
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat_13
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat_14
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat_26
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stat_27
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stream
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_reg_stream__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_xsdbs_v1_0_2_xsdbs
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_generic_cstr_HD25
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_prim_width_HD26
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_prim_wrapper_HD27
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_top_HD24
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_v8_4_5_HD22
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_blk_mem_gen_v8_4_5_synth_HD23
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_clk_x_pntrs
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_clk_x_pntrs_HD7
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_0
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_0_HD19
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_1
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_1_HD12
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_2
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_2_HD13
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_compare_HD18
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_ramfifo
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_ramfifo_HD6
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_top
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_top_HD5
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_v13_2_7
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_v13_2_7_HD3
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_v13_2_7_synth
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_fifo_generator_v13_2_7_synth_HD4
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_memory
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_memory_HD21
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_bin_cntr
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_bin_cntr_HD15
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_handshaking_flags
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_handshaking_flags_HD14
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_logic
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_logic_HD10
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_status_flags_as
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_rd_status_flags_as_HD11
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_reset_blk_ramfifo
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_reset_blk_ramfifo_HD28
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_bin_cntr
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_bin_cntr_HD20
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_logic
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_logic_HD16
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_status_flags_as
+INFO: [VRFC 10-311] analyzing module fifo_tdc_result_wr_status_flags_as_HD17
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module ila_2_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module ila_3_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "U:/build/gate_original_compensated/input_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tdc
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: F:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --O3 --debug off --relax --mt 2 --maxdelay -d GATE_NETLIST= -L xil_defaultlib -L uvm -L simprims_ver -L secureip --snapshot measurement -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_tdc xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "tb_tdc_time_impl.sdf", for root module "tb_tdc/dut".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "tb_tdc_time_impl.sdf", for root module "tb_tdc/dut".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.FDRE(XON="FALSE")
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.FDRE_default
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_ctl_reg
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_stat_reg
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_stat_reg_0
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_ctl_reg__pa...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_ctl_reg__pa...
+Compiling module simprims_ver.GND
+Compiling module simprims_ver.VCC
+Compiling module simprims_ver.FDCE(XON="FALSE")
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module simprims_ver.FDCE_default
+Compiling module xil_defaultlib.dbg_hub_clk_x_pntrs_8
+Compiling module simprims_ver.FDPE_default
+Compiling module xil_defaultlib.dbg_hub_rd_fwft
+Compiling module xil_defaultlib.dbg_hub_rd_status_flags_as_18
+Compiling module xil_defaultlib.dbg_hub_rd_handshaking_flags__pa...
+Compiling module xil_defaultlib.dbg_hub_rd_bin_cntr_19
+Compiling module xil_defaultlib.dbg_hub_rd_logic__parameterized0
+Compiling module xil_defaultlib.dbg_hub_wr_status_flags_as_15
+Compiling module xil_defaultlib.dbg_hub_wr_handshaking_flags_16
+Compiling module xil_defaultlib.dbg_hub_wr_bin_cntr_17
+Compiling module xil_defaultlib.dbg_hub_wr_logic__parameterized0
+Compiling module simprims_ver.RAMD32
+Compiling module simprims_ver.RAMS32
+Compiling module xil_defaultlib.RAM32M_UNIQ_BASE_
+Compiling module xil_defaultlib.RAM32M_HD1
+Compiling module xil_defaultlib.RAM32M_HD2
+Compiling module xil_defaultlib.dbg_hub_dmem_14
+Compiling module xil_defaultlib.dbg_hub_memory__parameterized0
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_10
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_11
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_12
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_13
+Compiling module simprims_ver.FDPE(XON="FALSE")
+Compiling module xil_defaultlib.dbg_hub_reset_blk_ramfifo_9
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_ramfifo__...
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_top__para...
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_v13_1_4_s...
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_v13_1_4__...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_rdfifo
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_rdreg
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff__paramet...
+Compiling module xil_defaultlib.dbg_hub_clk_x_pntrs
+Compiling module xil_defaultlib.dbg_hub_rd_status_flags_as
+Compiling module xil_defaultlib.dbg_hub_rd_handshaking_flags
+Compiling module xil_defaultlib.dbg_hub_rd_bin_cntr
+Compiling module xil_defaultlib.dbg_hub_rd_logic
+Compiling module xil_defaultlib.dbg_hub_wr_status_flags_as
+Compiling module xil_defaultlib.dbg_hub_wr_handshaking_flags
+Compiling module xil_defaultlib.dbg_hub_wr_bin_cntr
+Compiling module xil_defaultlib.dbg_hub_wr_logic
+Compiling module xil_defaultlib.RAM32M_HD3
+Compiling module xil_defaultlib.RAM32M_HD4
+Compiling module xil_defaultlib.RAM32M_HD5
+Compiling module xil_defaultlib.dbg_hub_dmem
+Compiling module xil_defaultlib.dbg_hub_memory
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_2
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_3
+Compiling module xil_defaultlib.dbg_hub_synchronizer_ff_4
+Compiling module xil_defaultlib.dbg_hub_reset_blk_ramfifo
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_ramfifo
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_top
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_v13_1_4_s...
+Compiling module xil_defaultlib.dbg_hub_fifo_generator_v13_1_4
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_wrfifo
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_wrreg
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_ctl_reg_1
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_stat_reg__p...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_if_static_s...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_if
+Compiling module simprims_ver.CARRY4
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_addr_ctl
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_burst_wdlen...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bus_ctl_flg...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bus_ctl_flg
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bus_ctl_cnt
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bus_ctl
+Compiling module xil_defaultlib.dbg_hub_ltlib_v1_0_0_generic_mux
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bus_mstr2sl...
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_icon2xsdb
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_cmd_decode
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_stat
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_sync
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_icon
+Compiling module simprims_ver.BSCANE2
+Compiling module xil_defaultlib.dbg_hub_ltlib_v1_0_0_bscan
+Compiling module simprims_ver.FDSE_default
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_bscan_switc...
+Compiling module simprims_ver.BUFG
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_xsdbm_id
+Compiling module xil_defaultlib.dbg_hub_xsdbm_v3_0_0_xsdbm
+Compiling module xil_defaultlib.dbg_hub
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_gray
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_gray__2
+Compiling module simprims_ver.SRL16E_default
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(READ_WIDTH_A=...
+Compiling module simprims_ver.RAMB36E1(READ_WIDTH_A=36,READ_WI...
+Compiling module simprims_ver.FDSE(XON="FALSE")
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_single
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_single__...
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_sync_rst
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_sync_rst...
+Compiling module xil_defaultlib.fifo_tdc_result
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_gray_HD8
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_gray__2_...
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_single_H...
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_single__...
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_sync_rst...
+Compiling module xil_defaultlib.fifo_tdc_result_xpm_cdc_sync_rst...
+Compiling module xil_defaultlib.fifo_tdc_result_HD2
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,DOB_REG=1,REA...
+Compiling module simprims_ver.SRLC32E_default
+Compiling module simprims_ver.SRLC16E_default
+Compiling module simprims_ver.MUXF7
+Compiling module xil_defaultlib.ila_2
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,DOB_REG=1,REA...
+Compiling module xil_defaultlib.ila_3
+Compiling module xil_defaultlib.tdc_phase_tdl_encoder
+Compiling module xil_defaultlib.tdc_phase_tdl_encoder_0
+Compiling module xil_defaultlib.tdc_phase_tdl_encoder_1
+Compiling module xil_defaultlib.tdc_phase_tdl_encoder_2
+Compiling module xil_defaultlib.tdc_fine_layer
+Compiling module xil_defaultlib.tdc_time_candicate
+Compiling module xil_defaultlib.tdc_time_locate
+Compiling module xil_defaultlib.tdc_time_merge
+Compiling module xil_defaultlib.tdc_meas_top
+Compiling module xil_defaultlib.tb_tdc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot measurement

@@ -1,0 +1,9 @@
+{
+  "raw.csv": true,
+  "candidate.csv": true,
+  "timestamps.csv": true,
+  "widths.csv": true,
+  "errors.csv": true,
+  "fifo.csv": true,
+  "sampled_taps.csv": true
+}

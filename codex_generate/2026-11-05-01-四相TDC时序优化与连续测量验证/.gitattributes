@@ -1,0 +1,5 @@
+* -text
+*.bit filter=lfs diff=lfs merge=lfs -text
+*.dcp filter=lfs diff=lfs merge=lfs -text
+*.sdf filter=lfs diff=lfs merge=lfs -text
+results/**/design.v filter=lfs diff=lfs merge=lfs -text

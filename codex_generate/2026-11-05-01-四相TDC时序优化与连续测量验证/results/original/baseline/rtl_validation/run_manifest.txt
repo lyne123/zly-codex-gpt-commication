@@ -1,0 +1,5 @@
+level=rtl
+phase=original
+variant=baseline
+dataset=validation
+timing_checks=enabled_for_gate

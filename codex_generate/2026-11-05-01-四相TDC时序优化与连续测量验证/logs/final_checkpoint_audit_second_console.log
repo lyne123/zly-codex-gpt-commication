@@ -1,0 +1,264 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/final_checkpoint_audit.tcl
+# set_param general.maxThreads 2
+# set root U:/
+# foreach phase {original optimized} {
+#     foreach variant {baseline compensated} {
+#         set dir $root/results/$phase/$variant
+#         if {![file exists $dir/design.dcp]} {continue}
+#         if {[file exists $dir/bus_skew_audit.rpt] && [file exists $dir/module_worst_setup.csv] && [file exists $dir/ila_bram_modes_final.txt] && ($phase eq "original" || [file exists $dir/fresh_timing_summary.rpt])} {continue}
+#         open_checkpoint $dir/design.dcp
+#         if {$phase eq "optimized"} {
+#             puts [help update_timing]
+#             update_timing -full
+#             report_timing_summary -delay_type min_max -report_unconstrained -file $dir/fresh_timing_summary.rpt
+#             report_timing -delay_type max -max_paths 50 -path_type full_clock_expanded -input_pins -file $dir/fresh_setup_top50.rpt
+#             report_timing -delay_type min -max_paths 50 -path_type full_clock_expanded -input_pins -file $dir/fresh_hold_top50.rpt
+#             check_timing -verbose -file $dir/fresh_check_timing.rpt
+#         }
+#         if {![file exists $dir/bus_skew_audit.rpt]} {report_bus_skew -file $dir/bus_skew_audit.rpt}
+#         if {$phase eq "original"} {file copy $dir/bus_skew_audit.rpt $root/results/original_inspection/$variant/bus_skew_audit.rpt}
+#         if {![file exists $dir/hierarchical_utilization.rpt]} {report_utilization -hierarchical -file $dir/hierarchical_utilization.rpt}
+#         set fd [open $dir/module_worst_setup.csv w]
+#         puts $fd "module,slack_ns,startpoint,endpoint,data_delay_ns,logic_delay_ns,net_delay_ns"
+#         foreach module {u_tdc_fine_layer u_tdc_time_candicate u_tdc_time_locate u_tdc_time_merge u_ila2 u_fifo_tdc_result u_fifo_tdc_error} {
+#             set cells [get_cells -quiet -hier -filter "NAME =~ $module/*"]
+#             if {![llength $cells]} {continue}
+#             set paths [get_timing_paths -quiet -from $cells -delay_type max -max_paths 1]
+#             if {![llength $paths]} {continue}
+#             set path [lindex $paths 0]
+#             puts $fd "$module,[get_property SLACK $path],[get_property STARTPOINT_PIN $path],[get_property ENDPOINT_PIN $path],[get_property DATAPATH_DELAY $path],[get_property DATAPATH_LOGIC_DELAY $path],[get_property DATAPATH_NET_DELAY $path]"
+#         }
+#         close $fd
+#         set fd [open $dir/ila_bram_modes_final.txt w]
+#         foreach cell [get_cells -hier -filter {REF_NAME == RAMB36E1 && NAME =~ u_ila2/*}] {
+#             puts $fd "[get_property NAME $cell]\t[get_property WRITE_MODE_A $cell]\t[get_property WRITE_MODE_B $cell]\t[get_property DOA_REG $cell]\t[get_property DOB_REG $cell]"
+#         }
+#         close $fd
+#         close_design
+#     }
+# }
+Command: open_checkpoint U://results/optimized/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 893.582 ; gain = 8.781
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1497.070 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.493 . Memory (MB): peak = 2278.988 ; gain = 4.012
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.493 . Memory (MB): peak = 2278.988 ; gain = 4.012
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2278.988 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1ace79b6c
+----- Checksum: PlaceDB: 359bac8f ShapeSum: 8ee02d70 RouteDB: e86bc16d 
+open_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2278.988 ; gain = 1394.375
+update_timing
+
+Description: 
+update timing
+
+Syntax: 
+update_timing  [-full] [-quiet] [-verbose]
+
+Usage: 
+  Name        Description
+  -----------------------
+  [-full]     Perform a full timing update instead of an incremental one
+  [-quiet]    Ignore command errors
+  [-verbose]  Suspend message limits during command execution
+
+Categories: 
+Timing
+
+Description:
+
+  Updates timing for the current design.
+
+  Update the timing data to reflect any timing constraints that were added to
+  the design since the timing engine was last run. This command updates the
+  in-memory view of the timing database, without incurring the time of a full
+  timing analysis.
+
+  Timing is automatically updated by commands that change timing or need
+  updated timing information, such as the report_timing command. The
+  update_timing command lets you manually trigger the timing update to insure
+  the latest constraints are applied to the timing engine.
+
+  The update_timing command uses an incremental analysis approach by default,
+  which updates only out-of-date information, to reduce process and analysis
+  time. You can also specify a complete or full update to insure a
+  comprehensive review of timing data in the design. However, to avoid long
+  timing analysis run times, you should use the -full option only when you
+  need to.
+
+Arguments:
+
+  -full - (Optional) Perform a complete timing analysis rather than the
+  default incremental update of the timing data.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example performs a full update of the in-memory timing data:
+
+    update_timing -full 
+    
+
+See Also:
+
+   *  report_timing
+   *  report_timing_summary
+   *  reset_timing
+
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type min -sort_by slack.
+Command: open_checkpoint U://results/optimized/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2296.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 2296.250 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 311 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.465 . Memory (MB): peak = 2297.703 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.667 . Memory (MB): peak = 2297.703 ; gain = 0.000
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2297.703 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 226c65763
+----- Checksum: PlaceDB: 6ce042b7 ShapeSum: ebe9b5e7 RouteDB: cdfc5ec5 
+update_timing
+
+Description: 
+update timing
+
+Syntax: 
+update_timing  [-full] [-quiet] [-verbose]
+
+Usage: 
+  Name        Description
+  -----------------------
+  [-full]     Perform a full timing update instead of an incremental one
+  [-quiet]    Ignore command errors
+  [-verbose]  Suspend message limits during command execution
+
+Categories: 
+Timing
+
+Description:
+
+  Updates timing for the current design.
+
+  Update the timing data to reflect any timing constraints that were added to
+  the design since the timing engine was last run. This command updates the
+  in-memory view of the timing database, without incurring the time of a full
+  timing analysis.
+
+  Timing is automatically updated by commands that change timing or need
+  updated timing information, such as the report_timing command. The
+  update_timing command lets you manually trigger the timing update to insure
+  the latest constraints are applied to the timing engine.
+
+  The update_timing command uses an incremental analysis approach by default,
+  which updates only out-of-date information, to reduce process and analysis
+  time. You can also specify a complete or full update to insure a
+  comprehensive review of timing data in the design. However, to avoid long
+  timing analysis run times, you should use the -full option only when you
+  need to.
+
+Arguments:
+
+  -full - (Optional) Perform a complete timing analysis rather than the
+  default incremental update of the timing data.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example performs a full update of the in-memory timing data:
+
+    update_timing -full 
+    
+
+See Also:
+
+   *  report_timing
+   *  report_timing_summary
+   *  reset_timing
+
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type min -sort_by slack.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 11:00:04 2026...

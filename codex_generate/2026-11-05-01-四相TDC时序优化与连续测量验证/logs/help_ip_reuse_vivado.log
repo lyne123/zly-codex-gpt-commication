@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 10:33:52 2026
+# Process ID: 29540
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -nojournal -log U:/logs/help_ip_reuse_vivado.log -source U:/scripts/help_ip_reuse.tcl
+# Log file: U:/logs/help_ip_reuse_vivado.log
+# Journal file: 
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/help_ip_reuse.tcl
+# help config_ip_cache
+# help import_files
+# help read_checkpoint
+# help export_ip_user_files
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:33:55 2026...

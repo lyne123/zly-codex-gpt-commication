@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 00:58:17 2026
+# Process ID: 22980
+# Current directory: U:/build/baseline/timing_baseline.runs/fifo_tdc_result_synth_1
+# Command line: vivado.exe -log fifo_tdc_result.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_tdc_result.tcl
+# Log file: U:/build/baseline/timing_baseline.runs/fifo_tdc_result_synth_1/fifo_tdc_result.vds
+# Journal file: U:/build/baseline/timing_baseline.runs/fifo_tdc_result_synth_1\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source fifo_tdc_result.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1004.086 ; gain = 118.855
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: fifo_tdc_result
+Command: synth_design -top fifo_tdc_result -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Common 17-83] Releasing license: Synthesis
+4 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+The application has run out of memory
+    while executing
+"synth_design -top fifo_tdc_result -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context"
+    invoked from within
+"if { $cacheID == "" } {
+close [open __synthesis_is_running__ w]
+
+OPTRACE "synth_design" START { }
+synth_design -top fifo_tdc_result -part xc7k325tffg9..."
+    (file "fifo_tdc_result.tcl" line 114)
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 00:58:37 2026...

@@ -1,0 +1,94 @@
+
+*** Running vivado
+    with args -log tdc_meas_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source tdc_meas_top.tcl -notrace
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source tdc_meas_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.262 ; gain = 117.547
+Command: link_design -top tdc_meas_top -part xc7k325tffg900-2
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint 'u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'u_clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint 'u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp' for cell 'u_fifo_tdc_error'
+INFO: [Project 1-454] Reading design checkpoint 'u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_2.dcp' for cell 'u_ila2'
+INFO: [Project 1-454] Reading design checkpoint 'u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_3.dcp' for cell 'u_ila3'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1567.621 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 292 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: u_ila2 UUID: c83c0949-52f2-54a2-a908-34971c4269be 
+INFO: [Chipscope 16-324] Core: u_ila3 UUID: 005aaa8f-6beb-5365-914c-104c10152ec8 
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz_0/inst'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz_0/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2325.098 ; gain = 626.367
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz_0/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_error/U0'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_error/U0'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_result/U0'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_result/U0'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila2/inst'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila2/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc] for cell 'u_ila2/inst'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc] for cell 'u_ila2/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila3/inst'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila3/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'u_ila3/inst'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'u_ila3/inst'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_error/U0'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_error/U0'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_result/U0'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_result/U0'
+Parsing XDC File [U:/inputs/combine.xdc]
+WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [U:/inputs/combine.xdc:8]
+Finished Parsing XDC File [U:/inputs/combine.xdc]
+INFO: [Project 1-1714] 12 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2328.086 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 100 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+
+16 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2328.086 ; gain = 1261.754
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2328.086 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+ERROR: [IP_Flow 19-3805] Failed to generate and synthesize debug IPs. 
+ error copying "u:/build/baseline/timing_baseline.runs/impl_1/.Xil/Vivado-24732-Lyne/dc_drv.0/dc/prj_ip.runs/dbg_hub_synth_1/dbg_hub.dcp": no such file or directory
+ERROR: [Chipscope 16-330] Synthesis of Debug Cores has failed 
+ERROR: [Chipscope 16-578] Check "u:/build/baseline/timing_baseline.runs/impl_1/.Xil/Vivado-24732-Lyne/dc_drv.0/vivado.log" file for more details.
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 19c4432fd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:30 . Memory (MB): peak = 2582.672 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 1 Warnings, 0 Critical Warnings and 4 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-338] Implementing debug Cores failed due to earlier errors
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 01:54:00 2026...

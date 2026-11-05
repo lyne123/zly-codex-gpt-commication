@@ -1,0 +1,16 @@
+[
+  {
+    "original": "U:\\logs\\debug_capture\\Vivado-24732-Lyne\\dc_drv.0\\dc\\debug_ip_core.tcl",
+    "replayed": "U:\\build\\dbgshort\\debug_ip_core.tcl",
+    "original_sha256": "e5f5827fb579f9ec2c22a2f0f8b64a4043ad529a80c7cd3c90930d8fd9f2a79e",
+    "replayed_sha256": "29a86d4354fcf112dde4d17687d4f21ad2f5f9e349b1ed69452bfafe6ce8e9c0",
+    "change": "仅替换工作路径，所有IP参数和官方调用不变；cmd进程工作目录强制使用U盘"
+  },
+  {
+    "original": "U:\\logs\\debug_capture\\Vivado-24732-Lyne\\dbg_hub_CV.0\\out\\get_cs_ip.tcl",
+    "replayed": "U:\\build\\dbgshort\\dbg_hub_CV.0\\out\\get_cs_ip.tcl",
+    "original_sha256": "64dd072ed048b4c7e1cab5f5556cf98f30129a43bf5787128e9b35aa03a13dfb",
+    "replayed_sha256": "c9d29217ed6b022d94492a99adf918a6b412ebc467c45e4246e05bf4125b6953",
+    "change": "仅替换工作路径，所有IP参数和官方调用不变；cmd进程工作目录强制使用U盘"
+  }
+]

@@ -1,0 +1,7 @@
+event_id,polarity,true_time_ps,valid_raw_channel_samples_in_window,best_raw_error_ps,best_raw_time_ps,calibration_max_abs_residual_ps,any_raw_inside_calibration_envelope,all_raw_samples
+2918,rise,238713990,0,NONE,NONE,131,False,[]
+2984,rise,242013990,0,NONE,NONE,131,False,[]
+3050,rise,245313990,0,NONE,NONE,131,False,[]
+2917,fall,238712660,3,3718,238738150,131,False,"[{""raw_time_ps"": 238738150, ""index"": 1, ""code"": 61, ""error_ps"": 3718}, {""raw_time_ps"": 238738150, ""index"": 2, ""code"": 26, ""error_ps"": 3854}, {""raw_time_ps"": 238738150, ""index"": 3, ""code"": 14, ""error_ps"": 3909}]"
+2983,fall,242012697,3,3681,242038150,131,False,"[{""raw_time_ps"": 242038150, ""index"": 1, ""code"": 61, ""error_ps"": 3681}, {""raw_time_ps"": 242038150, ""index"": 2, ""code"": 26, ""error_ps"": 3817}, {""raw_time_ps"": 242038150, ""index"": 3, ""code"": 14, ""error_ps"": 3872}]"
+3049,fall,245312254,3,4124,245338150,131,False,"[{""raw_time_ps"": 245338150, ""index"": 1, ""code"": 61, ""error_ps"": 4124}, {""raw_time_ps"": 245338150, ""index"": 2, ""code"": 26, ""error_ps"": 4260}, {""raw_time_ps"": 245338150, ""index"": 3, ""code"": 14, ""error_ps"": 4315}]"

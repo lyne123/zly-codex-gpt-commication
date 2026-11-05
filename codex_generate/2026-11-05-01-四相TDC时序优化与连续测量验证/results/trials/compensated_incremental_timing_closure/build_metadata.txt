@@ -1,0 +1,11 @@
+vivado=2022.2
+part=xc7k325tffg900-2
+variant=compensated
+frequency_mhz=500
+synthesis=Flow_PerfOptimized_high
+implementation=Performance_ExplorePostRoutePhysOpt
+post_route_physopt=AggressiveExplore
+corner=slow/MAX
+added_frontend_cycles=1
+generics=ENABLE_SKEW_COMP=1 RISE_OFFSET_90_PS=36011 FALL_OFFSET_90_PS=36011 RISE_OFFSET_180_PS=35742 FALL_OFFSET_180_PS=35742 RISE_OFFSET_270_PS=35756 FALL_OFFSET_270_PS=35756 RISE_OFFSET_0_PS=36081 FALL_OFFSET_0_PS=36081
+flow_notes=source=U://results/optimized/compensated/design.dcp;incremental_directive=TimingClosure_target_WNS_0;place_phys_route_use_actual_TimingClosure_override;RTL_and_parameters_unchanged

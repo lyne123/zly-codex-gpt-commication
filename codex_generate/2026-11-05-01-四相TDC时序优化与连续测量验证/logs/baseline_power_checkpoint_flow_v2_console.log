@@ -1,0 +1,1381 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/baseline_power_checkpoint_flow.tcl
+# set_param general.maxThreads 2
+# set root U:/
+# set variant baseline
+# set applied_generics ENABLE_SKEW_COMP=0
+# set out $root/results/trials/baseline_power_replicated
+# if {[file exists $out/design.dcp]} {error "禁�?��?�盖已有试验"}
+# file mkdir $out
+# open_checkpoint $root/results/trials/baseline_initial/design.dcp
+Command: open_checkpoint U://results/trials/baseline_initial/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.086 . Memory (MB): peak = 891.586 ; gain = 5.688
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 1500.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2283.898 ; gain = 4.969
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2283.898 ; gain = 4.969
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2283.898 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1a9c523bc
+----- Checksum: PlaceDB: 45a548a3 ShapeSum: 9626e164 RouteDB: cdf8f9b5 
+open_checkpoint: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 2283.898 ; gain = 1398.191
+# route_design -unroute
+Command: route_design -unroute
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Route 35-163] All nets in the design were unrouted.
+INFO: [Common 17-83] Releasing license: Implementation
+3 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+# opt_design -bram_power_opt
+Command: opt_design -bram_power_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2329.020 ; gain = 26.020
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1bf751ec5
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2329.020 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.134 | TNS=-0.812 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 3 BRAM(s) out of a total of 5 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 2 newly gated: 0 Total Ports: 10
+Ending PowerOpt Patch Enables Task | Checksum: 155aa89f6
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 131d31329
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2514.184 ; gain = 185.164
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 131d31329
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 131d31329
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 2514.184 ; gain = 211.184
+# set fd [open $out/bram_mode_after_power_opt.txt w]
+# foreach cell [get_cells -hier -filter {REF_NAME == RAMB36E1 && NAME =~ u_ila2/*}] {puts $fd "[get_property NAME $cell]\t[get_property WRITE_MODE_A $cell]\t[get_property PWROPT_WRITE_MODE_CHANGE_A $cell]"}
+# close $fd
+# place_design -directive ExtraPostPlacementOpt
+Command: place_design -directive ExtraPostPlacementOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 21 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'ExtraPostPlacementOpt' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 725a2594
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 725a2594
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: d8b99f9e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: d8b99f9e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: d8b99f9e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 2 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Place 30-281] No place-able instance is found; design doesn't contain any instance or all instances are placed
+Ending Placer Task | Checksum: 725a2594
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2514.184 ; gain = 0.000
+# phys_opt_design -directive Explore
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: Explore
+
+Starting Initial Update Timing Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 4.00s |  WALL: 2.95s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.134 | TNS=-0.812 |
+Phase 1 Physical Synthesis Initialization | Checksum: 26159082d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.964 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 2 SLR Crossing Optimization
+Phase 2 SLR Crossing Optimization | Checksum: 26159082d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.134 | TNS=-0.812 |
+
+Phase 3 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 3 Fanout Optimization | Checksum: 26159082d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 4 Single Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 30 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_NS1_i_1_replica
+INFO: [Physopt 32-663] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Re-placed instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_NS1_i_2_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/en_adv_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/en_adv_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[0].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[6].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[6]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[7].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[7]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[2].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[2]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[3].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[3]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[4].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[4]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[5].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[5]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-661] Optimized 1 net.  Re-placed 1 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 0 new cell, deleted 0 existing cell and moved 1 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.116 | TNS=-0.707 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 4 Single Cell Placement Optimization | Checksum: 1d2193153
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 5 Multi Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 26 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg/Q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0/O
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 5 Multi Cell Placement Optimization | Checksum: 1c97a29a8
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 6 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-241] No nets found for rewiring () optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 6 Rewire | Checksum: 1c97a29a8
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 7 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 22 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1] was not replicated.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/basic_trigger was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_0 was not replicated.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8] was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[9] was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1 was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9] was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/gmux.gm[4].gms.ms_0 was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[0] was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[2] was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/U_NS0/O was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_busy_i was not replicated.
+INFO: [Physopt 32-571] Net result_fifo_wr_en was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[8] was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/gmux.gm[4].gms.ms_0 was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[2] was not replicated.
+INFO: [Physopt 32-571] Net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/U_NS1/O was not replicated.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 7 Critical Cell Optimization | Checksum: 1ddb47cdb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 8 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 8 Fanout Optimization | Checksum: 1ddb47cdb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 9 Single Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 37 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_NS1_i_1_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_NS1_i_2_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/en_adv_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/en_adv_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[0].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[6].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[6]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[7].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[7]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[2].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[2]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[3].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[3]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[4].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[4]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[5].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[5]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_hcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_hcmp_q_i_1
+INFO: [Physopt 32-662] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/gmux.gm[4].gms.ms_0.  Did not re-place instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/ram_full_i_i_1
+INFO: [Physopt 32-662] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[0].  Did not re-place instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_reg[0]
+INFO: [Physopt 32-662] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i.  Did not re-place instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg
+INFO: [Physopt 32-663] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/v1_reg_0[0].  Re-placed instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gmux.gm[0].gm1.m1_i_1__0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_lcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_lcmp_q_i_1
+INFO: [Physopt 32-661] Optimized 1 net.  Re-placed 1 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 0 new cell, deleted 0 existing cell and moved 1 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.116 | TNS=-0.707 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 9 Single Cell Placement Optimization | Checksum: 27cc79dfb
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 10 Multi Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 22 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg/Q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0/O
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 10 Multi Cell Placement Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 11 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-241] No nets found for rewiring () optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 11 Rewire | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 12 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 2 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/gmux.gm[4].gms.ms_0 was not replicated.
+INFO: [Physopt 32-571] Net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[0] was not replicated.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 12 Critical Cell Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 13 SLR Crossing Optimization
+Phase 13 SLR Crossing Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 14 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 14 Fanout Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 15 Single Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 33 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_NS1_i_1_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_NS1_i_2_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/en_adv_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/en_adv_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[0].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[6].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[6]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[7].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[7]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[2].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[2]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[3].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[3]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[4].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[4]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[5].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[5]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_hcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_hcmp_q_i_1
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_lcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_lcmp_q_i_1
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 15 Single Cell Placement Optimization | Checksum: 27cc79dfb
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 16 Multi Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 22 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg/Q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0/O
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 16 Multi Cell Placement Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 17 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-241] No nets found for rewiring () optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 17 Rewire | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 18 Critical Cell Optimization
+INFO: [Physopt 32-68] No nets found for critical-cell optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 18 Critical Cell Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 19 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 19 DSP Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 20 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 20 BRAM Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 21 URAM Register Optimization
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 21 URAM Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 22 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 22 Shift Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 23 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 23 DSP Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 24 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 24 BRAM Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 25 URAM Register Optimization
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 25 URAM Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 26 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 26 Shift Register Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 27 Critical Pin Optimization
+INFO: [Physopt 32-606] Identified 3 candidate nets for critical-pin optimization.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 15 pins.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 0 new cell, deleted 0 existing cell and moved 15 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.096 | TNS=-0.647 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 27 Critical Pin Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 28 Very High Fanout Optimization
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 28 Very High Fanout Optimization | Checksum: 23503da2f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 29 Single Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 37 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_NS1_i_1_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_NS1_i_2_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/en_adv_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/en_adv_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[0].  Did not re-place instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_0.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[0]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[6].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[6]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[7].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[7]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q31.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[1].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[1]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[2].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[2]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[3].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[3]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[4].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[4]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[5].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[5]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q_0[0].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/CFG_DOUT_O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9].  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[9]
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_hcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_hcmp_q_i_1
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_regs/wcnt_lcmp_temp.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_regs/u_wcnt_lcmp_q_i_1
+INFO: [Physopt 32-662] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/gmux.gm[4].gms.ms_0.  Did not re-place instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/c2/ram_full_i_i_1
+INFO: [Physopt 32-663] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/Q[2].  Re-placed instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_reg[2]
+INFO: [Physopt 32-662] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i.  Did not re-place instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg
+INFO: [Physopt 32-663] Processed net u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/v1_reg_0[1].  Re-placed instance u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gmux.gm[1].gms.ms_i_1__0
+INFO: [Physopt 32-661] Optimized 2 nets.  Re-placed 2 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 2 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.096 | TNS=-0.647 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 29 Single Cell Placement Optimization | Checksum: 25e22c23a
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:20 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 30 Multi Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 22 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O_INST_0/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/basic_trigger.  Did not re-place instance u_ila2/inst/ila_core_inst/basic_trigger_reg/Q
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_repN.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0_replica/O
+INFO: [Physopt 32-662] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.  Did not re-place instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O_INST_0/O
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 30 Multi Cell Placement Optimization | Checksum: 23e870a38
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 31 SLR Crossing Optimization
+Phase 31 SLR Crossing Optimization | Checksum: 23e870a38
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 32 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.096 | TNS=-0.647 |
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/O. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.SRL_Q_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.096 | TNS=-0.647 |
+Phase 32 Critical Path Optimization | Checksum: 23e870a38
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Phase 33 BRAM Enable Optimization
+Phase 33 BRAM Enable Optimization | Checksum: 23e870a38
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Physopt 32-960] Skip hold-fix as initial WHS does not violate hold threshold 250 ps
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.096 | TNS=-0.647 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization            |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Fanout                  |          0.000  |          0.000  |            0  |              0  |                     0  |           3  |           3  |  00:00:00  |
+|  Single Cell Placement   |          0.018  |          0.105  |            0  |              0  |                     4  |           0  |           4  |  00:00:06  |
+|  Multi Cell Placement    |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           4  |  00:00:16  |
+|  Rewire                  |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           3  |  00:00:00  |
+|  Critical Cell           |          0.000  |          0.000  |            0  |              0  |                     0  |           6  |           3  |  00:00:00  |
+|  SLR Crossing            |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           3  |  00:00:00  |
+|  DSP Register            |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+|  BRAM Register           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+|  URAM Register           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+|  Shift Register          |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+|  Critical Pin            |          0.020  |          0.060  |            0  |              0  |                     1  |           0  |           1  |  00:00:00  |
+|  Very High Fanout        |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Enable             |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:02  |
+|  Total                   |          0.038  |          0.165  |            0  |              0  |                     5  |           9  |          32  |  00:00:25  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 245652492
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+281 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 2514.184 ; gain = 0.000
+# source $root/scripts/replicate_ila_drivers.tcl
+## set nets {}
+## set fd [open [file join [pwd] ila_forced_replication_sources.txt] w]
+## foreach cell [get_cells -hier -filter {NAME =~ u_ila2/*}] {
+##     set name [get_property NAME $cell]
+##     set select 0
+##     foreach token {{iwcnt_reg[9]} {iscnt_reg[8]} {capture_qual_ctrl_reg[1]} {en_adv_trigger_reg}} {
+##         if {[string first $token $name]>=0} {set select 1}
+##     }
+##     if {[string first {G_NMU[1]} $name]>=0 && [string first {probeDelay2_reg[0]} $name]>=0} {set select 1}
+##     if {$select} {
+##         foreach pin [get_pins -of_objects $cell -filter {REF_PIN_NAME == Q}] {
+##             foreach net [get_nets -of_objects $pin] {lappend nets $net; puts $fd "$name\t[get_property NAME $net]"}
+##         }
+##     }
+## }
+## close $fd
+## set nets [lsort -unique $nets]
+## if {![llength $nets]} {error "�?找到已报告的ILA关键�?径源网络"}
+## phys_opt_design -force_replication_on_nets $nets
+Command: phys_opt_design -force_replication_on_nets {{u_ila2/inst/ila_core_inst/capture_qual_ctrl[1]} u_ila2/inst/ila_core_inst/en_adv_trigger {u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]} {u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9]} {u_ila2/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly2[0]}}
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.769 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 1.00s |  WALL: 1.44s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2514.184 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.096 | TNS=-0.647 |
+Phase 1 Physical Synthesis Initialization | Checksum: 25b5e034d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.000 | TNS=0.000 |
+
+Phase 2 Critical Cell Optimization
+INFO: [Physopt 32-697] Replication is not feasible on the instance u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1] as it has constraints that cannot be copied
+INFO: [Physopt 32-117] Net u_ila2/inst/ila_core_inst/capture_qual_ctrl[1] could not be optimized because driver u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1] could not be replicated
+CRITICAL WARNING: [Physopt 32-723] Replication is not feasible due to the presence of ASYNC_REG property.
+Resolution: In order to allow replication to occur, either remove the ASYNC_REG property on the flip flop or add another register that does not have the ASYNC_REG property set.
+INFO: [Physopt 32-697] Replication is not feasible on the instance u_ila2/inst/ila_core_inst/en_adv_trigger_reg as it has constraints that cannot be copied
+INFO: [Physopt 32-117] Net u_ila2/inst/ila_core_inst/en_adv_trigger could not be optimized because driver u_ila2/inst/ila_core_inst/en_adv_trigger_reg could not be replicated
+CRITICAL WARNING: [Physopt 32-723] Replication is not feasible due to the presence of ASYNC_REG property.
+Resolution: In order to allow replication to occur, either remove the ASYNC_REG property on the flip flop or add another register that does not have the ASYNC_REG property set.
+INFO: [Physopt 32-46] Identified 3 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9]. Replicated 2 times.
+INFO: [Physopt 32-572] Net u_ila2/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly2[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-232] Optimized 3 nets. Created 4 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 3 nets or cells. Created 4 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.000 | TNS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Phase 2 Critical Cell Optimization | Checksum: 1ee821331
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.255 | TNS=-2.631 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization    |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Cell   |          0.000  |          0.000  |            4  |              0  |                     3  |           0  |           1  |  00:00:00  |
+|  Total           |          0.000  |          0.000  |            4  |              0  |                     3  |           0  |           1  |  00:00:00  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2514.184 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 1d58a9522
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2514.184 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+18 Infos, 0 Warnings, 2 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design -directive Explore
+Command: route_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'Explore'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: f3b94f45 ConstDB: 0 ShapeSum: 8ec7b919 RouteDB: 0
+Post Restoration Checksum: NetGraph: cca068aa NumContArr: 2344f372 Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: efe55c1c
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:37 . Memory (MB): peak = 2649.762 ; gain = 135.578
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: efe55c1c
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:37 . Memory (MB): peak = 2659.301 ; gain = 145.117
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: efe55c1c
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:37 . Memory (MB): peak = 2659.301 ; gain = 145.117
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1a185e29d
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:45 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.259 | TNS=-2.913 | WHS=-0.393 | THS=-466.698|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 1cf1e5e24
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:46 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.259 | TNS=-1.392 | WHS=N/A    | THS=N/A    |
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 1fa20c52b
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:47 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 6601
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 6601
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 24e3fae75
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:47 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 24e3fae75
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:47 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 3 Initial Routing | Checksum: 1176c953e
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:49 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-580] Design has 33 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+====================+====================================================================================================================================================================================================================================================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                                                                                                                                                                                                                                                |
++====================+====================+====================================================================================================================================================================================================================================================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[12] |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[20] |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[24]              |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[20]              |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[16] |
++--------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 423
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.286 | TNS=-4.019 | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 20df14d5a
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:54 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.286 | TNS=-3.880 | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 172ab0708
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:54 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 4 Rip-up And Reroute | Checksum: 172ab0708
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:54 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1ab9f6a0e
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:55 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.194 | TNS=-1.509 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1afa1eb0c
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:55 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1afa1eb0c
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:55 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 5 Delay and Skew Optimization | Checksum: 1afa1eb0c
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:55 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: f3c80cf4
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:55 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.194 | TNS=-1.501 | WHS=0.054  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1e13ab10d
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:56 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 6 Post Hold Fix | Checksum: 1e13ab10d
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:56 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 7 Timing Verification
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 1292348e1
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:57 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.194 | TNS=-1.501 | WHS=N/A    | THS=N/A    |
+
+Phase 7 Timing Verification | Checksum: 1292348e1
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:57 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.247386 %
+  Global Horizontal Routing Utilization  = 0.351783 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.036%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 39.6396%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 45.5882%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 50%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 1292348e1
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:57 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 1292348e1
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:57 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 113975a52
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:58 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 11 Incr Placement Change
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2762.855 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.157. For the most accurate timing information please run report_timing.
+Ending IncrPlace Task | Checksum: 1b83ce7e8
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2762.855 ; gain = 0.000
+Google Cpuprofiler is only supported on Linux.
+Phase 11 Incr Placement Change | Checksum: 113975a52
+
+Time (s): cpu = 00:01:29 ; elapsed = 00:01:18 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 12 Build RT Design
+Checksum: PlaceDB: f14a63af ConstDB: 0 ShapeSum: c6f28439 RouteDB: eb162f07
+Post Restoration Checksum: NetGraph: a661560e NumContArr: 9805f8d8 Constraints: 0 Timing: 0
+Phase 12 Build RT Design | Checksum: 13e674ee6
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:20 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 13 Router Initialization
+
+Phase 13.1 Fix Topology Constraints
+Phase 13.1 Fix Topology Constraints | Checksum: 13e674ee6
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:20 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 13.2 Pre Route Cleanup
+Phase 13.2 Pre Route Cleanup | Checksum: ae24c775
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:20 . Memory (MB): peak = 2762.855 ; gain = 248.672
+ Number of Nodes with overlaps = 0
+
+Phase 13.3 Update Timing
+Phase 13.3 Update Timing | Checksum: d26bccdd
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:24 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.171 | TNS=-2.666 | WHS=-0.393 | THS=-461.630|
+
+
+Phase 13.4 Update Timing for Bus Skew
+
+Phase 13.4.1 Update Timing
+Phase 13.4.1 Update Timing | Checksum: fdf699b8
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:26 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.171 | TNS=-0.621 | WHS=N/A    | THS=N/A    |
+
+Phase 13.4 Update Timing for Bus Skew | Checksum: 8cbd45ea
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:26 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.246265 %
+  Global Horizontal Routing Utilization  = 0.350764 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 58
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 29
+  Number of Partially Routed Nets     = 29
+  Number of Node Overlaps             = 0
+
+Phase 13 Router Initialization | Checksum: 11cd6f2d7
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:01:27 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 14 Initial Routing
+
+Phase 14.1 Global Routing
+Phase 14.1 Global Routing | Checksum: 11cd6f2d7
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:01:27 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 14 Initial Routing | Checksum: 19ac98a42
+
+Time (s): cpu = 00:01:42 ; elapsed = 00:01:27 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-580] Design has 46 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+====================+====================================================================================================================================================================================================================================================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                                                                                                                                                                                                                                                |
++====================+====================+====================================================================================================================================================================================================================================================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[20] |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[16] |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ila2/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[0]               |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[8]  |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[12] |
++--------------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 15 Rip-up And Reroute
+
+Phase 15.1 Global Iteration 0
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.178 | TNS=-2.810 | WHS=N/A    | THS=N/A    |
+
+Phase 15.1 Global Iteration 0 | Checksum: 13c4ac52d
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:30 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 15.2 Global Iteration 1
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.178 | TNS=-2.984 | WHS=N/A    | THS=N/A    |
+
+Phase 15.2 Global Iteration 1 | Checksum: d1d4ddf1
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:31 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 15 Rip-up And Reroute | Checksum: d1d4ddf1
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:31 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 16 Delay and Skew Optimization
+
+Phase 16.1 Delay CleanUp
+
+Phase 16.1.1 Update Timing
+Phase 16.1.1 Update Timing | Checksum: 18c8a6b5f
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:32 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.069 | TNS=-0.773 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 16.1 Delay CleanUp | Checksum: 1c115d0e3
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:32 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 16.2 Clock Skew Optimization
+Phase 16.2 Clock Skew Optimization | Checksum: 1c115d0e3
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:32 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 16 Delay and Skew Optimization | Checksum: 1c115d0e3
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:32 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 17 Post Hold Fix
+
+Phase 17.1 Hold Fix Iter
+
+Phase 17.1.1 Update Timing
+Phase 17.1.1 Update Timing | Checksum: 2a821757e
+
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:33 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.069 | TNS=-0.766 | WHS=0.054  | THS=0.000  |
+
+Phase 17.1 Hold Fix Iter | Checksum: 1e69160d2
+
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:33 . Memory (MB): peak = 2762.855 ; gain = 248.672
+Phase 17 Post Hold Fix | Checksum: 1e69160d2
+
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:33 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 18 Timing Verification
+
+Phase 18.1 Update Timing
+Phase 18.1 Update Timing | Checksum: 1c4a31b0b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:34 . Memory (MB): peak = 2762.855 ; gain = 248.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.069 | TNS=-0.766 | WHS=N/A    | THS=N/A    |
+
+Phase 18 Timing Verification | Checksum: 1c4a31b0b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:34 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 19 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.248308 %
+  Global Horizontal Routing Utilization  = 0.35359 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.036%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 35.1351%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 45.5882%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 51.4706%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 19 Route finalize | Checksum: 1c4a31b0b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:34 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 20 Verifying routed nets
+
+ Verification completed successfully
+Phase 20 Verifying routed nets | Checksum: 1c4a31b0b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:34 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 21 Depositing Routes
+Phase 21 Depositing Routes | Checksum: 1590b348c
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:35 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Phase 22 Post Router Timing
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=-0.069 | TNS=-0.769 | WHS=0.054  | THS=0.000  |
+
+Phase 22 Post Router Timing | Checksum: 1fff0a617
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:37 . Memory (MB): peak = 2762.855 ; gain = 248.672
+CRITICAL WARNING: [Route 35-39] The design did not meet timing requirements. Please run report_timing_summary for detailed reports.
+Resolution: Verify that the timing was met or had small violations at all previous steps (synthesis, placement, power_opt, and phys_opt). Run report_timing_summary and analyze individual timing paths.
+INFO: [Route 35-253] TNS is the sum of the worst slack violation on every endpoint in the design. Review the paths with the biggest WNS violations in the timing reports and modify your constraints or your design to improve both WNS and TNS.
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:54 ; elapsed = 00:01:38 . Memory (MB): peak = 2762.855 ; gain = 248.672
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:58 ; elapsed = 00:01:40 . Memory (MB): peak = 2762.855 ; gain = 248.672
+# phys_opt_design -placement_opt -routing_opt -critical_cell_opt -critical_pin_opt
+Command: phys_opt_design -placement_opt -routing_opt -critical_cell_opt -critical_pin_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode ( 100.0% nets are fully routed)
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2762.855 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 3.00s |  WALL: 2.73s
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2762.855 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.069 | TNS=-0.769 | WHS=0.054 | THS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: aa9436e5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2762.855 ; gain = 0.000
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.069 | TNS=-0.769 | WHS=0.054 | THS=0.000 |
+INFO: [Physopt 32-663] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]_repN_1.  Re-placed instance u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]_replica_1
+INFO: [Physopt 32-952] Improved path group WNS = -0.069. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]_repN_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]_repN_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_clk_wiz_0/inst/clk_out1_clk_wiz_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/basic_trigger.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]_repN_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_clk_wiz_0/inst/clk_out1_clk_wiz_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.SRL_Q_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0. Processed net: u_ila2/inst/ila_core_inst/basic_trigger.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.069 | TNS=-0.769 | WHS=0.054 | THS=0.000 |
+Phase 2 Critical Path Optimization | Checksum: aa9436e5
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:45 . Memory (MB): peak = 2762.855 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2762.855 ; gain = 0.000
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=-0.069 | TNS=-0.769 | WHS=0.054 | THS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Path  |          0.000  |          0.000  |            0  |              0  |                     1  |           0  |           1  |  00:00:43  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2762.855 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 154ab0313
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:45 . Memory (MB): peak = 2762.855 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:48 . Memory (MB): peak = 2762.855 ; gain = 0.000
+# set flow_notes "source=Explore_opt_checkpoint;preplace_bram_power_opt;place=ExtraPostPlacementOpt;force_ILA_driver_replication;route=Explore;postroute=targeted_placement_routing"
+# set slack [get_property SLACK [get_timing_paths -delay_type max -max_paths 1]]
+# set export_bitstream [expr {$slack >= 0}]
+# source $root/scripts/export_evidence.tcl
+## write_checkpoint -force $out/design.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2772.160 ; gain = 9.305
+INFO: [Common 17-1381] The checkpoint 'U:/results/trials/baseline_power_replicated/design.dcp' has been generated.
+## report_timing_summary -delay_type min_max -report_unconstrained -file $out/timing_summary.rpt
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+## report_timing -delay_type max -max_paths 50 -path_type full_clock_expanded -input_pins -file $out/setup_top50.rpt
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+## report_timing -delay_type min -max_paths 50 -path_type full_clock_expanded -input_pins -file $out/hold_top50.rpt
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type min -sort_by slack.
+## set fd [open $out/path_properties.txt w]
+## foreach path [get_timing_paths -delay_type max -max_paths 50] {
+##     foreach prop [list_property $path] {puts $fd "$prop\t[get_property $prop $path]"}
+##     puts $fd END_PATH
+## }
+## close $fd
+## report_design_analysis -max_paths 50 -setup -file $out/design_analysis_setup.rpt
+## check_timing -verbose -file $out/check_timing.rpt
+## report_utilization -file $out/utilization.rpt
+## report_clock_interaction -file $out/clock_interaction.rpt
+WARNING: [Timing 38-164] This design has multiple clocks. Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+## report_clocks -file $out/clocks.rpt
+## report_exceptions -file $out/exceptions.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+## report_cdc -details -file $out/cdc.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-433] Consider using Xilinx recommended XPM_CDC modules to avoid Critical severities
+INFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.
+## report_drc -file $out/drc.rpt
+Command: report_drc -file U://results/trials/baseline_power_replicated/drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file U:/results/trials/baseline_power_replicated/drc.rpt.
+report_drc completed successfully
+## report_route_status -file $out/route_status.rpt
+## set fd [open $out/frontend_structure.csv w]
+## puts $fd "name,ref_name,loc,bel"
+## foreach cell [lsort [get_cells -hier -filter {NAME =~ u_tdc_fine_layer/*}]] {
+##     set name [get_property NAME $cell]
+##     if {[string match *g_carry* $name] || [string match *thermo_q_reg* $name] || [string match *g_pwm_dist* $name]} {
+##         puts $fd "$name,[get_property REF_NAME $cell],[get_property LOC $cell],[get_property BEL $cell]"
+##     }
+## }
+## close $fd
+## set fd [open $out/frontend_route.tsv w]
+## puts $fd "name\troute"
+## foreach net [lsort [get_nets -hier -filter {NAME =~ u_tdc_fine_layer/* || NAME =~ clk_500m* || NAME =~ pwm_in*}]] {
+##     puts $fd "[get_property NAME $net]\t[get_property ROUTE $net]"
+## }
+## close $fd
+## write_verilog -force -mode timesim -sdf_anno true $out/design.v
+## write_sdf -force -process_corner slow $out/design.sdf
+write_sdf: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2772.160 ; gain = 0.000
+## set bitname [expr {$variant eq "baseline" ? "Baseline_Optimized.bit" : "Compensated_Optimized.bit"}]
+## if {![info exists export_bitstream] || $export_bitstream} {write_bitstream -force $out/$bitname}
+## set fd [open $out/build_metadata.txt w]
+## puts $fd "vivado=[version -short]\npart=xc7k325tffg900-2\nvariant=$variant\nfrequency_mhz=500\nsynthesis=Flow_PerfOptimized_high\nimplementation=Performance_ExplorePostRoutePhysOpt\npost_route_physopt=AggressiveExplore\ncorner=slow/MAX\nadded_frontend_cycles=1"
+## puts $fd "generics=$applied_generics"
+## if {[info exists flow_notes]} {puts $fd "flow_notes=$flow_notes"}
+## close $fd
+## if {$variant eq "compensated"} {file copy $root/results/calibration_params.tcl $out/parameters_used.tcl}
+## close_design
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 03:00:58 2026...

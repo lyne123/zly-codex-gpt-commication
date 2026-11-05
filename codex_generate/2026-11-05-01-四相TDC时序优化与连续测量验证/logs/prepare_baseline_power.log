@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 02:45:43 2026
+# Process ID: 15008
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -log U:/logs/prepare_baseline_power.log -journal U:/logs/prepare_baseline_power.jou -source U:/scripts/prepare_baseline_power.tcl
+# Log file: U:/logs/prepare_baseline_power.log
+# Journal file: U:/logs/prepare_baseline_power.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/prepare_baseline_power.tcl
+# set_param general.maxThreads 2
+# open_project U:/build/baseline/timing_baseline.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1067.660 ; gain = 181.977
+# config_ip_cache -use_cache_location U:/build/shared_ip_cache
+# foreach script {restore_bram_mode.tcl replicate_ila_drivers.tcl} {
+#     add_files -fileset utils_1 -norecurse U:/scripts/$script
+# }
+# reset_run impl_1
+# set_property STEPS.OPT_DESIGN.TCL.POST U:/scripts/restore_bram_mode.tcl [get_runs impl_1]
+# set_property STEPS.PHYS_OPT_DESIGN.TCL.POST U:/scripts/replicate_ila_drivers.tcl [get_runs impl_1]
+# set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE ExtraPostPlacementOpt [get_runs impl_1]
+# launch_runs impl_1 -to_step route_design -scripts_only -dir U:/build/rbaseline_power -jobs 1
+# puts "RUN_DIRECTORY=[get_property DIRECTORY [get_runs impl_1]]"
+RUN_DIRECTORY=U:/build/rbaseline_power/impl_1
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 02:46:00 2026...

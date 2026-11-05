@@ -1,0 +1,81 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/extract_original.tcl
+# set_param general.maxThreads 2
+# set root U:/
+# foreach variant {baseline compensated} {
+#     set out $root/results/original/$variant
+#     file mkdir $out
+#     open_checkpoint T:/results/$variant/design.dcp
+#     report_timing_summary -delay_type min_max -report_unconstrained -file $out/timing_summary.rpt
+#     report_timing -delay_type max -max_paths 50 -path_type full_clock_expanded -input_pins -nets -file $out/setup_top50.rpt
+#     report_timing -delay_type min -max_paths 50 -path_type full_clock_expanded -input_pins -nets -file $out/hold_top50.rpt
+#     report_design_analysis -max_paths 50 -setup -file $out/design_analysis_setup.rpt
+#     redirect -file $out/check_timing.rpt {check_timing -verbose}
+#     report_clock_interaction -file $out/clock_interaction.rpt
+#     report_exceptions -file $out/exceptions.rpt
+#     report_cdc -details -file $out/cdc.rpt
+#     report_utilization -file $out/utilization.rpt
+#     set paths [get_timing_paths -delay_type max -max_paths 50]
+#     set fd [open $out/path_properties.txt w]
+#     foreach p $paths { puts $fd "[report_property -all -return_string $p]\n" }
+#     close $fd
+#     close_design
+# }
+Command: open_checkpoint T:/results/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 893.031 ; gain = 8.129
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 1499.734 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2282.992 ; gain = 4.926
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2282.992 ; gain = 4.926
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2282.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: d5dbd379
+----- Checksum: PlaceDB: 1df85da7 ShapeSum: 11478ef7 RouteDB: a69be6db 
+open_checkpoint: Time (s): cpu = 00:00:26 ; elapsed = 00:00:46 . Memory (MB): peak = 2282.992 ; gain = 1398.273
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type max -sort_by slack.
+CRITICAL WARNING: [Vivado 12-1569] report_timing: The -nets option to is deprecated. The default behavior is to display net names if the timing path format allows it.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 50 -nworst 1 -delay_type min -sort_by slack.
+invalid command name "redirect"
+    while executing
+"redirect -file $out/check_timing.rpt {check_timing -verbose}"
+    ("foreach" body line 9)
+    invoked from within
+"foreach variant {baseline compensated} {
+    set out $root/results/original/$variant
+    file mkdir $out
+    open_checkpoint T:/results/$variant/desig..."
+    (file "U:/scripts/extract_original.tcl" line 4)
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 00:46:19 2026...

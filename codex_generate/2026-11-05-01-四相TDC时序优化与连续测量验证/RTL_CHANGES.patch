@@ -1,0 +1,117 @@
+--- before/tdc_fine_layer.v
++++ after/tdc_fine_layer.v
+@@ -238,7 +238,8 @@
+ 
+     // 匹配上述采样帧在最终0°输出寄存器之前的辅助脉冲。
+     // CARRY_NUM=16时对应bit4；属于RTL推导值，需仿真验证边界行为。
+-    localparam integer AUX_GATE_INDEX = 5;
++    // 编码器输出新增同相位寄存级，辅助门控同步延后一拍，窗口宽度不变。
++    localparam integer AUX_GATE_INDEX = 6;
+     reg [AUX_GATE_INDEX+1:0] aux_rise_pipe, aux_fall_pipe;
+     always @(posedge clk_500m or negedge rst_n_0) begin
+         if (!rst_n_0) begin
+@@ -344,7 +345,13 @@
+         if (!rst_n) ready_pipe <= {DEPTH{1'b0}};
+         else              ready_pipe <= {ready_pipe[DEPTH-2:0], 1'b1};
+     end
+-    assign code_valid = ready_pipe[DEPTH-1];
++    wire encoder_ready = ready_pipe[DEPTH-1];
++    reg output_ready;
++    always @(posedge clk or negedge rst_n) begin
++        if (!rst_n) output_ready <= 1'b0;
++        else        output_ready <= encoder_ready;
++    end
++    assign code_valid = output_ready;
+ 
+     // 3. CARRY4延迟链与采样寄存器
+     (* KEEP="TRUE", DONT_TOUCH="TRUE" *) wire [TAPS-1:0] carry_tap;
+@@ -395,7 +402,7 @@
+             end
+         end
+     endgenerate
+-    assign code = {{(8-CODE_W){1'b0}}, g_sum[LEVELS].sum[0]};
++    wire [7:0] code_raw = {{(8-CODE_W){1'b0}}, g_sum[LEVELS].sum[0]};
+ 
+     // 5. 通路二：温度计码首尾判断极性，流水线对齐到code
+     wire [1:0] detected_type;
+@@ -418,12 +425,20 @@
+ 
+     wire code_in_range =
+         ((raw_edge_type == 2'b11) &&
+-         (code >= 8'd1) && (code <= MAX_VALID_TAP)) ||
++         (code_raw >= 8'd1) && (code_raw <= MAX_VALID_TAP)) ||
+         ((raw_edge_type == 2'b10) &&
+-         (code >= MIN_VALID_TAP) && (code < TAPS));
+-
+-    assign edge_type = (code_valid && code_in_range) ?
+-                       raw_edge_type : 2'b00;
++         (code_raw >= MIN_VALID_TAP) && (code_raw < TAPS));
++
++    // 范围判定留在本相位2ns预算内，跨相位只传递已寄存的整包。
++    // code、type和ready同时延迟一拍，不改变码值、极性或有效范围。
++    reg [7:0] code_q;
++    reg [1:0] edge_type_q;
++    always @(posedge clk) begin
++        code_q <= code_raw;
++        edge_type_q <= (encoder_ready && code_in_range) ? raw_edge_type : 2'b00;
++    end
++    assign code = code_q;
++    assign edge_type = edge_type_q;
+ 
+ endmodule
+ 
+--- before/tdc_time_locate.v
++++ after/tdc_time_locate.v
+@@ -108,17 +108,18 @@
+     reg                    s2_valid, s2_type;
+     reg [10:0]             s2_mid_time, s2_fine_time;
+     reg [COARSE_W-1:0]     s2_coarse;
+-    reg signed [17:0]      s2_offset;
++    reg signed [18:0]      s2_comp_mid;
+     // sel_index不是物理TDL号：0/1/2/3对应90/180/270/下一周期0度。
+-    function signed [17:0] selected_offset;
++    // 每项中测减偏移均为展开期常量，运行时只选择，不串联两次减法。
++    function signed [18:0] selected_comp_mid;
+         input [1:0] index;
+         input is_rise;
+         begin
+             case (index)
+-                2'd0: selected_offset = is_rise ? RISE_OFFSET_90_PS : FALL_OFFSET_90_PS;
+-                2'd1: selected_offset = is_rise ? RISE_OFFSET_180_PS : FALL_OFFSET_180_PS;
+-                2'd2: selected_offset = is_rise ? RISE_OFFSET_270_PS : FALL_OFFSET_270_PS;
+-                2'd3: selected_offset = is_rise ? RISE_OFFSET_0_PS : FALL_OFFSET_0_PS;
++                2'd0: selected_comp_mid = is_rise ? (19'sd500 - RISE_OFFSET_90_PS) : (19'sd500 - FALL_OFFSET_90_PS);
++                2'd1: selected_comp_mid = is_rise ? (19'sd1000 - RISE_OFFSET_180_PS) : (19'sd1000 - FALL_OFFSET_180_PS);
++                2'd2: selected_comp_mid = is_rise ? (19'sd1500 - RISE_OFFSET_270_PS) : (19'sd1500 - FALL_OFFSET_270_PS);
++                2'd3: selected_comp_mid = is_rise ? (19'sd2000 - RISE_OFFSET_0_PS) : (19'sd2000 - FALL_OFFSET_0_PS);
+             endcase
+         end
+     endfunction
+@@ -129,7 +130,7 @@
+             s2_mid_time  <= 11'd0;
+             s2_fine_time <= 11'd0;
+             s2_coarse    <= {COARSE_W{1'b0}};
+-            s2_offset    <= 18'sd0;
++            s2_comp_mid  <= 19'sd0;
+         end else begin
+             s2_valid <= s1_valid;
+             if (s1_valid) begin
+@@ -142,7 +143,7 @@
+                 endcase
+                 s2_fine_time <= taps_to_ps(s1_tap);
+                 s2_coarse    <= coarse_counter;
+-                s2_offset    <= selected_offset(s1_index, s1_type);
++                s2_comp_mid  <= selected_comp_mid(s1_index, s1_type);
+             end
+         end
+     end
+@@ -158,8 +159,7 @@
+     generate
+         if (ENABLE_SKEW_COMP != 0) begin : g_skew_comp
+             // 保持理想中测不变，只从正向时间戳减去已测偏移。
+-            assign relative_adjusted = {{7{mid_minus_fine[11]}}, mid_minus_fine}
+-                                     - {{1{s2_offset[17]}}, s2_offset};
++            assign relative_adjusted = s2_comp_mid - $signed({8'd0, s2_fine_time});
+         end else begin : g_skew_bypass
+             // 显式旁路与参数数值无关，保持原始5级流水及其时间戳。
+             assign relative_adjusted = {{7{mid_minus_fine[11]}}, mid_minus_fine};

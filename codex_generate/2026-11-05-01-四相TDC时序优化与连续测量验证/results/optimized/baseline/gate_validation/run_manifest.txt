@@ -1,0 +1,5 @@
+level=gate
+phase=optimized
+variant=baseline
+dataset=validation
+timing_checks=enabled_for_gate

@@ -1,0 +1,76 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/recover_compensated_ip_cache.tcl
+# set_param general.maxThreads 1
+# set root U:/
+# open_project $root/build/baseline/timing_baseline.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1068.375 ; gain = 183.523
+# config_ip_cache -use_cache_location $root/build/shared_ip_cache
+# set_property IP_CACHE_PERMISSIONS {read write} [current_project]
+# config_ip_cache -import_from_project
+INFO: [Coretcl 2-1503] Importing synthesis data to the IP Cache for IP fifo_tdc_result
+INFO: [Coretcl 2-1503] Importing synthesis data to the IP Cache for IP clk_wiz_0
+INFO: [Coretcl 2-1503] Importing synthesis data to the IP Cache for IP ila_2
+INFO: [Coretcl 2-1503] Importing synthesis data to the IP Cache for IP ila_3
+# foreach ip [get_ips] {puts "BASELINE_IP_CACHE $ip [config_ip_cache -get_id $ip] [config_ip_cache -cache_has_match $ip]"}
+BASELINE_IP_CACHE clk_wiz_0 edf91ad32efa4c8d edf91ad32efa4c8d
+BASELINE_IP_CACHE fifo_tdc_result 9447383cde90d89a 9447383cde90d89a
+BASELINE_IP_CACHE ila_2 79558f9946335dd6 79558f9946335dd6
+BASELINE_IP_CACHE ila_3 dad069dcd81e4cac dad069dcd81e4cac
+# close_project
+# open_project $root/build/compensated/timing_compensated.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'ila_2' generated file not found 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_sim_netlist.vhdl'. Please regenerate to continue.
+# config_ip_cache -use_cache_location $root/build/shared_ip_cache
+# set_property IP_CACHE_PERMISSIONS {read write} [current_project]
+# foreach ip [get_ips] {puts "COMPENSATED_IP_CACHE_BEFORE $ip [config_ip_cache -get_id $ip] [config_ip_cache -cache_has_match $ip]"}
+COMPENSATED_IP_CACHE_BEFORE clk_wiz_0 edf91ad32efa4c8d edf91ad32efa4c8d
+COMPENSATED_IP_CACHE_BEFORE fifo_tdc_result 9447383cde90d89a 9447383cde90d89a
+COMPENSATED_IP_CACHE_BEFORE ila_2 79558f9946335dd6 79558f9946335dd6
+COMPENSATED_IP_CACHE_BEFORE ila_3 dad069dcd81e4cac dad069dcd81e4cac
+# generate_target all [get_ips] -force
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_2'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_3'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_3/ila_3_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_3'...
+# foreach ip [get_ips] {puts "COMPENSATED_IP_CACHE_AFTER $ip used=[config_ip_cache -cache_was_used $ip] match=[config_ip_cache -cache_has_match $ip]"}
+COMPENSATED_IP_CACHE_AFTER clk_wiz_0 used=0 match=edf91ad32efa4c8d
+COMPENSATED_IP_CACHE_AFTER fifo_tdc_result used=0 match=9447383cde90d89a
+COMPENSATED_IP_CACHE_AFTER ila_2 used=0 match=79558f9946335dd6
+COMPENSATED_IP_CACHE_AFTER ila_3 used=0 match=dad069dcd81e4cac
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:35:32 2026...

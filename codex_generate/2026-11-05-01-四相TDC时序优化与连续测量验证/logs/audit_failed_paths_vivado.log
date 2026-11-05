@@ -1,0 +1,99 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 11:00:05 2026
+# Process ID: 11068
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -nojournal -log U:/logs/audit_failed_paths_vivado.log -source U:/scripts/audit_failed_paths.tcl
+# Log file: U:/logs/audit_failed_paths_vivado.log
+# Journal file: 
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/audit_failed_paths.tcl
+# set_param general.maxThreads 2
+# set root U:/
+# foreach variant {baseline compensated} {
+#     set dir $root/results/optimized/$variant
+#     if {[file exists $dir/negative_setup_reachability.csv]} {continue}
+#     open_checkpoint $dir/design.dcp
+#     update_timing -full
+#     set fd [open $dir/negative_setup_reachability.csv w]
+#     puts $fd "slack_ns,startpoint,endpoint,failed_cell,measurement_fifo_reachable_count,measurement_fifo_endpoints"
+#     foreach path [get_timing_paths -delay_type max -slack_lesser_than 0 -max_paths 1000] {
+#         set pin [get_property ENDPOINT_PIN $path]
+#         set cell [get_cells -of_objects [get_pins $pin]]
+#         if {[llength $cell]!=1} {error "无法�?一定位失败�?点：$pin"}
+#         set outputs [get_pins -of_objects $cell -filter {DIRECTION == OUT}]
+#         set reached {}
+#         if {[llength $outputs]} {
+#             foreach end [all_fanout -flat -endpoints_only -from $outputs] {
+#                 set name [get_property NAME $end]
+#                 if {[string match u_tdc_* $name] || [string match u_fifo_tdc_* $name]} {lappend reached $name}
+#             }
+#         }
+#         set reached [lsort -unique $reached]
+#         puts $fd "[get_property SLACK $path],[get_property STARTPOINT_PIN $path],$pin,[get_property NAME $cell],[llength $reached],[join $reached ;]"
+#     }
+#     close $fd
+#     close_design
+# }
+Command: open_checkpoint U://results/optimized/baseline/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 890.934 ; gain = 6.797
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1499.980 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.475 . Memory (MB): peak = 2282.324 ; gain = 2.012
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.476 . Memory (MB): peak = 2282.324 ; gain = 2.012
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2282.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1ace79b6c
+----- Checksum: PlaceDB: 359bac8f ShapeSum: 8ee02d70 RouteDB: e86bc16d 
+open_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2282.324 ; gain = 1398.422
+Command: open_checkpoint U://results/optimized/compensated/design.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2298.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2298.617 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 311 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.546 . Memory (MB): peak = 2306.332 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.764 . Memory (MB): peak = 2306.332 ; gain = 0.000
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2306.332 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 226c65763
+----- Checksum: PlaceDB: 6ce042b7 ShapeSum: ebe9b5e7 RouteDB: cdfc5ec5 
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 11:00:29 2026...

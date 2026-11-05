@@ -1,0 +1,46 @@
+[
+  {
+    "ip": "clk_wiz_0",
+    "component_model_project_parameters_equal": true,
+    "runtime_difference_only": [
+      "OUTPUTDIR"
+    ],
+    "registered_checkpoint": "U:\\build\\compensated\\timing_compensated.gen\\sources_1\\ip\\clk_wiz_0\\clk_wiz_0.dcp",
+    "archived_checkpoint": "inputs\\registered_ip_products\\clk_wiz_0\\clk_wiz_0.dcp",
+    "bytes": 23423,
+    "sha256": "e8331c57e1269f34b134a3d6349df4200061f3a587bdcf9ed8de9d098edd2bf8"
+  },
+  {
+    "ip": "fifo_tdc_result",
+    "component_model_project_parameters_equal": true,
+    "runtime_difference_only": [
+      "OUTPUTDIR"
+    ],
+    "registered_checkpoint": "U:\\build\\compensated\\timing_compensated.gen\\sources_1\\ip\\fifo_tdc_result\\fifo_tdc_result.dcp",
+    "archived_checkpoint": "inputs\\registered_ip_products\\fifo_tdc_result\\fifo_tdc_result.dcp",
+    "bytes": 144913,
+    "sha256": "7abebba617d91bca1930b9e7eb5be0fa0cf87b8d07b0416c4865c75f3a57fc63"
+  },
+  {
+    "ip": "ila_2",
+    "component_model_project_parameters_equal": true,
+    "runtime_difference_only": [
+      "OUTPUTDIR"
+    ],
+    "registered_checkpoint": "U:\\build\\compensated\\timing_compensated.gen\\sources_1\\ip\\ila_2\\ila_2.dcp",
+    "archived_checkpoint": "inputs\\registered_ip_products\\ila_2\\ila_2.dcp",
+    "bytes": 701692,
+    "sha256": "49b66640191406022d804940d0fccf699a38747a52ae808904c56eb5e517f647"
+  },
+  {
+    "ip": "ila_3",
+    "component_model_project_parameters_equal": true,
+    "runtime_difference_only": [
+      "OUTPUTDIR"
+    ],
+    "registered_checkpoint": "U:\\build\\compensated\\timing_compensated.gen\\sources_1\\ip\\ila_3\\ila_3.dcp",
+    "archived_checkpoint": "inputs\\registered_ip_products\\ila_3\\ila_3.dcp",
+    "bytes": 779801,
+    "sha256": "359ec92e54da7930ebd6d8a3ce318288ea178276ded7d1c515c41d109212b0f6"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "selected_trial": "results/trials/baseline_ila_cluster_relaxed",
+  "copied_byte_identically": true,
+  "chain": [
+    "baseline_initial",
+    "baseline_power_replicated",
+    "baseline_ila_cluster",
+    "baseline_ila_cluster_relaxed"
+  ],
+  "actual_recipe": "unroute frozen initial DCP; preplace BRAM power optimization; local ILA counter cluster with capacity 80 Slices; ExtraPostPlacementOpt; AggressiveExplore physical optimization; Explore routing",
+  "metadata_note": "baseline_power_replicated build_metadata中的source=Explore_opt_checkpoint为旧描述；实际输入为冻结baseline_initial/design.dcp，见执行Tcl和控制台。",
+  "artifacts": {
+    "design.dcp": {
+      "bytes": 3840097,
+      "sha256": "486d29daf309a55f666a2dd15440255b2d111e63e8b92130261c036fd811f35f"
+    },
+    "design.v": {
+      "bytes": 5950234,
+      "sha256": "e4389019c08446f841f20c4feb9ce2be1966d0d19753a78b5977a9583dda9fd7"
+    },
+    "design.sdf": {
+      "bytes": 12859190,
+      "sha256": "824f7490473fc2afe86341e23f04f64d14cb90b178dcc5223f621323df6adea1"
+    },
+    "Baseline_Optimized.bit": {
+      "bytes": 11443721,
+      "sha256": "6ef019375acefd0499b78c999afa50f503543d387e9f5f9e22fea1cd3c585ed7"
+    }
+  },
+  "prior_canonical_preserved": "build\\preserved_baseline_initial_canonical",
+  "prior_export_snapshot": "results/trials/baseline_initial"
+}

@@ -1,0 +1,30 @@
+{
+  "selected_trial": "independent_nonproject_initial",
+  "actual_synthesis": "PerformanceOptimized; fsm_one_hot; keep_equivalent_registers; resource_sharing_off; no_lc; shreg_min_size_5",
+  "requested_place": "ExtraPostPlacementOpt",
+  "requested_phys": "AggressiveExplore",
+  "requested_route": "Explore",
+  "effective_place_phys_route": "RuntimeOptimized override from incremental read_checkpoint default; target inherited reference WNS -0.050 ns",
+  "incremental_reference": "results/optimized/baseline/design.dcp",
+  "debug_hub_actual_cache_hit": "7ff2da875a93aee4",
+  "ip_cache_match_but_not_hit": true,
+  "ip_products": "inputs/REGISTERED_IP_PRODUCTS_PROVENANCE.json",
+  "artifacts": {
+    "design.dcp": {
+      "bytes": 3847660,
+      "sha256": "ce8599a5224990852a340aa1c071e865a951784fe14087eaf0ae4bbd775eb066"
+    },
+    "design.v": {
+      "bytes": 5912640,
+      "sha256": "2859847acc53f10bd50417079289e70ab728c1e9aaa45bb981a39fca2f0663ac"
+    },
+    "design.sdf": {
+      "bytes": 12889865,
+      "sha256": "b5bc0c5ebe873917a085b94b3d1652dda71ec4274f4e032559071f64a5c99270"
+    },
+    "Compensated_Optimized.bit": {
+      "bytes": 11443721,
+      "sha256": "0d0485717d0fd0712fdc073a68de47752508e9994b8aa7dbf42e4afe3357e75d"
+    }
+  }
+}

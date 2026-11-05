@@ -1,0 +1,3 @@
+verilog xil_defaultlib -d "GATE_NETLIST=" "design.v"
+sv xil_defaultlib -d "GATE_NETLIST=" "input_tb.sv"
+nosort

@@ -1,0 +1,188 @@
+{
+  "expected_pulses": 3512,
+  "output_widths": 3509,
+  "valid_matched_pulses": 3506,
+  "valid_rate": 0.9982915717539863,
+  "duplicate": [],
+  "missing_rise_ids": [
+    2918,
+    2984,
+    3050
+  ],
+  "missing_fall_ids": [
+    2917,
+    2983,
+    3049
+  ],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "candidate_count": 7018,
+  "timestamp_count": 7018,
+  "fifo_sequence_equal": true,
+  "rise": {
+    "n": 3509,
+    "rmse_ps": 35896.50863633832,
+    "bias_ps": 35896.27757195782,
+    "std_ps": 128.79734341080834,
+    "max_abs_ps": 36118
+  },
+  "fall": {
+    "n": 3509,
+    "rmse_ps": 35895.75686527636,
+    "bias_ps": 35895.518096323736,
+    "std_ps": 130.92565649811488,
+    "max_abs_ps": 36119
+  },
+  "selection_counts": {
+    "1": 2158,
+    "0": 1920,
+    "2": 1210,
+    "3": 1730
+  },
+  "maximum_association_residual_ps": 326.0,
+  "minimum_association_margin_ps": 4783.0,
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "rmse_ps": 219.65882636488797,
+      "bias_ps": 0,
+      "std_ps": 219.65882636488797,
+      "max_abs_ps": 340,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "all": {
+      "n": 3506,
+      "rmse_ps": 174.6609077235733,
+      "bias_ps": -0.598687963491158,
+      "std_ps": 174.65988165444566,
+      "max_abs_ps": 380,
+      "expected_n": 3512,
+      "matched_unique_n": 3506,
+      "complete": false
+    },
+    "10MHz_50": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_50": {
+      "n": 200,
+      "rmse_ps": 244.6221576227305,
+      "bias_ps": 0,
+      "std_ps": 244.6221576227305,
+      "max_abs_ps": 340,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_5": {
+      "n": 200,
+      "rmse_ps": 244.6221576227305,
+      "bias_ps": 0,
+      "std_ps": 244.6221576227305,
+      "max_abs_ps": 340,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_95": {
+      "n": 200,
+      "rmse_ps": 244.6221576227305,
+      "bias_ps": 0,
+      "std_ps": 244.6221576227305,
+      "max_abs_ps": 340,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_5": {
+      "n": 200,
+      "rmse_ps": 181.6865432551349,
+      "bias_ps": 0,
+      "std_ps": 181.6865432551349,
+      "max_abs_ps": 380,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_95": {
+      "n": 200,
+      "rmse_ps": 181.6865432551349,
+      "bias_ps": 0,
+      "std_ps": 181.6865432551349,
+      "max_abs_ps": 380,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "rmse_ps": 153.27856708877428,
+      "bias_ps": 8.09185606060606,
+      "std_ps": 153.06482611717922,
+      "max_abs_ps": 324,
+      "expected_n": 1056,
+      "matched_unique_n": 1056,
+      "complete": true
+    },
+    "complete_frame": {
+      "n": 2106,
+      "rmse_ps": 151.28062544598245,
+      "bias_ps": -0.99667616334283,
+      "std_ps": 151.27734222927458,
+      "max_abs_ps": 324,
+      "expected_n": 2112,
+      "matched_unique_n": 2106,
+      "complete": false
+    },
+    "header_5": {
+      "n": 29,
+      "rmse_ps": 178.2675246499698,
+      "bias_ps": 132.41379310344828,
+      "std_ps": 119.35618015329068,
+      "max_abs_ps": 240,
+      "expected_n": 32,
+      "matched_unique_n": 29,
+      "complete": false
+    },
+    "header_95": {
+      "n": 32,
+      "rmse_ps": 220.90722034374522,
+      "bias_ps": 220,
+      "std_ps": 20.0,
+      "max_abs_ps": 240,
+      "expected_n": 32,
+      "matched_unique_n": 32,
+      "complete": true
+    },
+    "spwm_data": {
+      "n": 2045,
+      "rmse_ps": 149.51323301288676,
+      "bias_ps": -6.346699266503667,
+      "std_ps": 149.3784665016559,
+      "max_abs_ps": 324,
+      "expected_n": 2048,
+      "matched_unique_n": 2045,
+      "complete": false
+    },
+    "ATC_20MHz": {
+      "n": 1050,
+      "rmse_ps": 149.24429318275136,
+      "bias_ps": -10.137142857142857,
+      "std_ps": 148.89962183401582,
+      "max_abs_ps": 304,
+      "expected_n": 1056,
+      "matched_unique_n": 1050,
+      "complete": false
+    }
+  },
+  "stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+}
+missing 6 faults 3 business_errors 0

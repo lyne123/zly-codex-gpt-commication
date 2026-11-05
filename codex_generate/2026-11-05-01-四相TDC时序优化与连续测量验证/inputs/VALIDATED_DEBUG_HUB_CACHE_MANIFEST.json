@@ -1,0 +1,35 @@
+{
+  "validation": "实际布局布线日志确认缓存ID7ff2da875a93aee4被接受；仅保存这一必要IP的缓存条目",
+  "files": [
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\7ff2da875a93aee4.xci",
+      "bytes": 7247,
+      "sha256": "c055c56e6b91603357c23b28da31598343b70b4eeb3d518bba85dad7dfc1b2c3"
+    },
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\dbg_hub.dcp",
+      "bytes": 376133,
+      "sha256": "69a56aa70d1a5b8a37aa29faadb8f5d073b578f94b481fa8794e8767b340b751"
+    },
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\dbg_hub_sim_netlist.v",
+      "bytes": 1019377,
+      "sha256": "1cef07494d16e3633c6077ea1fb001038e4246ea4eed8efd030745df11d42a6d"
+    },
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\dbg_hub_sim_netlist.vhdl",
+      "bytes": 1415432,
+      "sha256": "558adc6fca11da6eb8a3f31a37727af7fd34ab6826fa06d44b2495403895a886"
+    },
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\dbg_hub_stub.v",
+      "bytes": 1475,
+      "sha256": "89ad72d12967cfd1888027af6d14d06711d38522755eb5989b5a8840d008b8e4"
+    },
+    {
+      "file": "inputs\\validated_debug_hub_cache\\2022.2\\7\\f\\7ff2da875a93aee4\\dbg_hub_stub.vhdl",
+      "bytes": 1625,
+      "sha256": "1efeca0da3ef08efcfac734bd0288350ba4bb71a2eb30c6c87523291bc50105b"
+    }
+  ]
+}

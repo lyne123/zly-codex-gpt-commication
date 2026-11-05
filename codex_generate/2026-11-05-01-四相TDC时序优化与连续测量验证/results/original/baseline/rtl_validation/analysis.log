@@ -1,0 +1,180 @@
+{
+  "expected_pulses": 3512,
+  "output_widths": 3512,
+  "valid_matched_pulses": 3512,
+  "valid_rate": 1.0,
+  "duplicate": [],
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "candidate_count": 7024,
+  "timestamp_count": 7024,
+  "fifo_sequence_equal": true,
+  "rise": {
+    "n": 3512,
+    "rmse_ps": 30002.56792894344,
+    "bias_ps": 30002.56776765376,
+    "std_ps": 3.1109820583583447,
+    "max_abs_ps": 30009
+  },
+  "fall": {
+    "n": 3512,
+    "rmse_ps": 30002.640256691368,
+    "bias_ps": 30002.640091116173,
+    "std_ps": 3.152044712355935,
+    "max_abs_ps": 30009
+  },
+  "selection_counts": {
+    "2": 1705,
+    "0": 1649,
+    "1": 1718,
+    "3": 1952
+  },
+  "maximum_association_residual_ps": 270.0,
+  "minimum_association_margin_ps": 3750.0,
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "all": {
+      "n": 3512,
+      "rmse_ps": 3.2047622593496956,
+      "bias_ps": 0.07232346241457858,
+      "std_ps": 3.2039460756599087,
+      "max_abs_ps": 9,
+      "expected_n": 3512,
+      "matched_unique_n": 3512,
+      "complete": true
+    },
+    "10MHz_50": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_50": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_5": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_95": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_5": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_95": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "rmse_ps": 3.938567075226802,
+      "bias_ps": -0.004734848484848485,
+      "std_ps": 3.9385642291665666,
+      "max_abs_ps": 9,
+      "expected_n": 1056,
+      "matched_unique_n": 1056,
+      "complete": true
+    },
+    "complete_frame": {
+      "n": 2112,
+      "rmse_ps": 4.132626100296092,
+      "bias_ps": 0.12026515151515152,
+      "std_ps": 4.130875788277774,
+      "max_abs_ps": 9,
+      "expected_n": 2112,
+      "matched_unique_n": 2112,
+      "complete": true
+    },
+    "header_5": {
+      "n": 32,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 32,
+      "matched_unique_n": 32,
+      "complete": true
+    },
+    "header_95": {
+      "n": 32,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 32,
+      "matched_unique_n": 32,
+      "complete": true
+    },
+    "spwm_data": {
+      "n": 2048,
+      "rmse_ps": 4.196701643850799,
+      "bias_ps": 0.1240234375,
+      "std_ps": 4.194868636137571,
+      "max_abs_ps": 9,
+      "expected_n": 2048,
+      "matched_unique_n": 2048,
+      "complete": true
+    },
+    "ATC_20MHz": {
+      "n": 1056,
+      "rmse_ps": 4.31797248296424,
+      "bias_ps": 0.24526515151515152,
+      "std_ps": 4.311001202631312,
+      "max_abs_ps": 9,
+      "expected_n": 1056,
+      "matched_unique_n": 1056,
+      "complete": true
+    }
+  },
+  "stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+}
+missing 0 faults 0 business_errors 0

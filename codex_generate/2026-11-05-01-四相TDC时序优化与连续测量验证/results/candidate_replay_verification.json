@@ -1,0 +1,11 @@
+{
+  "candidate_replay_exactly_matches_frozen_sdf": true,
+  "emitted": 7019,
+  "conflict_times_ps": [
+    238744150,
+    242044150,
+    245344150
+  ],
+  "input_raw_sha256": "41300ac8fe09fce00e155788ebd562778d199c2cc21b55346dc8fa1672387b51",
+  "conclusion": "给定真实SDF四相输入，未修改的候选RTL确定性重现相同3个混合极性冲突；这不单独证明冲突产生于哪种物理机制。"
+}

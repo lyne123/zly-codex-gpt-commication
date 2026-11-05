@@ -1,0 +1,8 @@
+module,slack_ns,startpoint,endpoint,data_delay_ns,logic_delay_ns,net_delay_ns
+u_tdc_fine_layer,-0.163,u_tdc_fine_layer/u_tdl90/g_sum[4].g_node[0].g_add2.sum_reg[0][3]/C,u_tdc_fine_layer/pack90_d1_reg[9]/D,1.241,0.309,0.932
+u_tdc_time_candicate,0.076,u_tdc_time_candicate/s2_dist1_reg[2]/C,u_tdc_time_candicate/s3_pair01_code_reg[5]/D,1.840,0.565,1.275
+u_tdc_time_locate,0.140,u_tdc_time_locate/s4_sum_reg[3]/C,u_tdc_time_locate/timestamp_ps_reg[18]/D,1.785,0.682,1.103
+u_tdc_time_merge,0.154,u_tdc_time_merge/pulse_width_ps_reg[7]/C,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/DIADI[9],1.156,0.204,0.952
+u_ila2,-0.125,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q/D,2.049,0.687,1.362
+u_fifo_tdc_result,0.210,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg/C,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/WEA[2],1.315,0.309,1.006
+u_fifo_tdc_error,-0.024,u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_reg[1]/C,u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg/D,1.901,0.795,1.106

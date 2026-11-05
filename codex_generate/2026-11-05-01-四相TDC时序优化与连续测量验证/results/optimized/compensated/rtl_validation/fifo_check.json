@@ -1,0 +1,8 @@
+{
+  "result_sequence_equal": true,
+  "error_write_codes": [],
+  "error_read_codes": [],
+  "error_sequence_equal": true,
+  "overflow_observation_cycles": 0,
+  "unknown_observation_rows": 0
+}

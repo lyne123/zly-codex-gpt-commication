@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "U:\scripts\run_case.py", line 105, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "U:\scripts\run_case.py", line 67, in main
+    execute(['cmd.exe','/d','/c','compile.bat'],work,work/'compile_console.log')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "U:\scripts\run_case.py", line 22, in execute
+    if result.returncode:raise RuntimeError(f'����ʧ�� {result.returncode}����� {log}')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: ����ʧ�� 1����� U:\build\gate_optimized_baseline\compile_console.log

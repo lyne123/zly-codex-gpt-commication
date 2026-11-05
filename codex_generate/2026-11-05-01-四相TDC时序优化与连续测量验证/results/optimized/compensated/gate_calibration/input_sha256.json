@@ -1,0 +1,26 @@
+{
+  "U:\\results\\optimized\\compensated\\gate_calibration\\input_tb.sv": {
+    "sha256": "e463e5b7fab68f2fec166475ebe3eca9442f69e452ed8616bb4224c67a4b4c4a",
+    "bytes": 9084
+  },
+  "U:\\results\\optimized\\compensated\\gate_calibration\\stimulus.txt": {
+    "sha256": "c28ad050d76f2971e0280dbf56ecd48da36e6519b83621f8ec8d810dba1eae05",
+    "bytes": 23090
+  },
+  "U:\\results\\optimized\\compensated\\gate_calibration\\truth.csv": {
+    "sha256": "6b1d40b6b466cb423e5a818d883cb8cf35239d15e67eeef34f80f266123eee52",
+    "bytes": 69200
+  },
+  "U:\\results\\optimized\\compensated\\design.v": {
+    "sha256": "2859847acc53f10bd50417079289e70ab728c1e9aaa45bb981a39fca2f0663ac",
+    "bytes": 5912640
+  },
+  "U:\\results\\optimized\\compensated\\design.sdf": {
+    "sha256": "b5bc0c5ebe873917a085b94b3d1652dda71ec4274f4e032559071f64a5c99270",
+    "bytes": 12889865
+  },
+  "U:\\results\\optimized\\compensated\\design.dcp": {
+    "sha256": "ce8599a5224990852a340aa1c071e865a951784fe14087eaf0ae4bbd775eb066",
+    "bytes": 3847660
+  }
+}

@@ -1,0 +1,604 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 01:41:45 2026
+# Process ID: 30644
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal
+# Command line: vivado.exe -mode batch -source U:/scripts/cache_help.tcl -log U:/logs/cache_help_v2.log -journal U:/logs/cache_help_v2.jou
+# Log file: U:/logs/cache_help_v2.log
+# Journal file: U:/logs/cache_help_v2.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/cache_help.tcl
+# puts [help config_ip_cache]
+config_ip_cache
+
+Description: 
+Manage the IP instance Synthesis cache. Lists out the IP Cache entries if no options are specified.
+
+Syntax: 
+config_ip_cache  [-use_cache_location <arg>] [-use_project_cache]
+                 [-disable_cache] [-clear_output_repo] [-clear_local_cache]
+                 [-cache_has_match] [-cache_was_used] [-disable_for_ip]
+                 [-enable_for_ip] [-is_ip_disabled] [-get_id]
+                 [-get_entry_location <arg>] [-disk_usage_output_repo]
+                 [-import_from_project] [-zip_cache <arg>] [-remove] [-purge]
+                 [-vlnv <arg>] [-old_swvers] [-unused] [-swver <arg>]
+                 [-num_days_old <arg>] [-num_days_unused <arg>]
+                 [-obs_synth_crc] [-report] [-rptfile <arg>] [-csvfile <arg>]
+                 [-dir <arg>] [-quiet] [-verbose] [<ip>]
+
+Usage: 
+  Name                       Description
+  --------------------------------------
+  [-use_cache_location]      Set current project properties to use the 
+                             specified cache location
+  [-use_project_cache]       Set current project properties to use the 
+                             default project IP cache location
+  [-disable_cache]           Disable cache use.
+  [-clear_output_repo]       Delete from disk and in memory all cache entries
+                             that exist in the current project's designated 
+                             cache (local or remote).
+  [-clear_local_cache]       Delete from disk and in memory all local cache 
+                             entries for this project.
+  [-cache_has_match]         Returns the cache-ID of the cache entry that 
+                             would work for this IP instance; else ''.
+  [-cache_was_used]          Returns '1' if the cache was used to obtain the 
+                             IP's current synthesis results; else '0'.
+  [-disable_for_ip]          Disable cache usage for a specific IP instance.
+  [-enable_for_ip]           Re-enable cache usage for a specific IP 
+                             instance.
+  [-is_ip_disabled]          Returns '1' if the cache usage is disabled for 
+                             the specified IP instance; else '0'.
+  [-get_id]                  Calculate and return IP cache ID string for 
+                             specified <ip>
+  [-get_entry_location]      Return directory where this cache-ID entry is 
+                             located.
+  [-disk_usage_output_repo]  Return total disk usage in MB for all cache 
+                             entries in the current project's ip_output_repo.
+  [-import_from_project]     Import existing synthesized IP from the project 
+                             into the cache.
+  [-zip_cache]               Zip up all cache entries used by IP instances in
+                             the current project and write to the given 
+                             zipfilename.
+  [-remove]                  Remove the corresponding cache entry for the 
+                             specified IP instance or specified cachedInst; 
+                             return cache ID string if successful, otherwise 
+                             blank.
+  [-purge]                   Delete all cache entries that match the 
+                             specified type(s): -vlnv, -obs_swvers, 
+                             -obs_synth_crc, and/or -swver. Returns the 
+                             number of entries deleted.
+  [-vlnv]                    Used with -purge, specifies the VLNV of the IP 
+                             the cache entries were created from. May use a 
+                             wildcard ('*') in one or more fields in the 
+                             VLNV.
+  [-old_swvers]              Used with -purge to delete cache entries created
+                             with old Vivado SW Versions.
+  [-unused]                  Used with -purge to delete cache entries that 
+                             have never been used.
+  [-swver]                   Used with -purge to delete any cache entries 
+                             created from this specific Vivado SW Version 
+                             (i.e., '2017.1').
+  [-num_days_old]            Used with -purge to delete any cache entries 
+                             that are this number of days old or older.
+  [-num_days_unused]         Used with -purge to delete any cache entries 
+                             that have not been used for this number of days 
+                             or longer.
+  [-obs_synth_crc]           Used with -purge to delete cache entries whose 
+                             component synth checksum is not the same as the 
+                             IP Catalog's current component synthesis 
+                             checksum.
+  [-report]                  Report cache statistics for the specified IP or 
+                             cache object, or for the current cache location 
+                             if none specified. If -rptfile is specified, 
+                             write statistics to that file. If -dir is 
+                             specified, write statistics for cache entries 
+                             found under that directory.
+  [-rptfile]                 Used with -report, specifies the text file to 
+                             write the cache statistics to.
+  [-csvfile]                 Used with -report, specifies the csv file to 
+                             write the cache statistics to, in csv format.
+  [-dir]                     Used eith -report, specifies the directory to 
+                             report cache entry statistics for.
+  [-quiet]                   Ignore command errors
+  [-verbose]                 Suspend message limits during command execution
+  [<ip>]                     IP instance object, IP file, or IP name pattern
+
+Categories: 
+Object, IPFlow
+
+Description:
+
+  This command lets you manage the Vivado Design Suite out-of-context (OOC)
+  IP cache. The Vivado Design Suite caches the synthesis results for
+  customized OOC IP in a cache repository, so multiple IP that use the same
+  customization profile can share OOC synthesis results to decrease run time.
+  The cached synthesis results can be reused in a single project from the
+  project cache, or across multiple projects using a remote cache location.
+
+  When generating the synthesis output products for an OOC IP, if a matching
+  IP customization is found in the cache repository, the cached synthesis
+  results will be used. If no suitable match is found in the cache
+  repository, the synthesis output products will be generated as usual and
+  the results, including the design checkpoint (DCP), will be copied into the
+  cache for future use.
+
+  Note: When cached results are used, an information message is displayed in
+  the Tcl console indicating the IP cache-ID of the results used. The
+  cache-ID is a string value calculated from the IP configuration settings,
+  as well as other pertinent data, such as the vivado software version, used
+  when the cached synthesis results were first generated. This string is also
+  used as the directory name under the cache repository where this entry's
+  files are stored.
+
+  You can specify a location for the cached IP synthesis results either
+  within the current project, or at an external location. The location of the
+  IP cache is defined by the IP_OUTPUT_REPO property on a project, with the
+  value of a string defining a valid file system directory. You can set this
+  property using the config_ip_cache command with either the
+  -use_cache_location or the -use_project_cache options. The default IP
+  synthesis cache location is in the current project folders.
+
+  The use of the IP synthesis cache is controlled by the IP_CACHE_PERMISSIONS
+  project property that can be set with the set_property command. The current
+  values are:
+
+   *  disabled - Do not use the IP synthesis cache.
+
+   *  read - Use the IP synthesis cache to read OOC synthesis results from
+      and apply as appropriate in the current project.
+
+   *  write - Use the IP synthesis cache to write OOC synthesis results into,
+      but do not use them to read IP into the current project.
+
+   *  read write - Use the IP synthesis cache for both writing results to,
+      and using those results in the current project. This is the default
+      setting.
+
+  Note: The IP synthesis cache can be enabled, and the cache repository
+  specified, in the Vivado Design Suite IDE using the Settings dialog box.
+  Refer to the Vivado Design Suite User Guide: Designing with IP (UG896) for
+  more information on using the cache.
+
+  Note: Cache entries created by one Vivado software version are not viable
+  in a different Vivado software version. Local project caches are
+  automatically cleared when updating a Vivado project to a new Vivado
+  release.
+
+  By default, without any of the arguments specified below, the
+  config_ip_cache command returns a list of entries in the IP synthesis
+  cache, or returns an error if it fails.
+
+Arguments:
+
+  -use_cache_location <arg> - (Optional) Specify a directory pathname to use
+  as the IP cache repository for the current project. For example,
+  "config_ip_cache -use_cache_location /mydata/global_cache".
+
+  -use_project_cache - (Optional) This is the default location for the cached
+  IP synthesis results. This option enables the current project to use the
+  default IP cache location inside the local project directory. You can use
+  this option to restore the default. For example, "config_ip_cache
+  -use_project_cache".
+
+  -disable_cache - (Optional) Disable the IP synthesis cache. This has the
+  effect of setting the IP_CACHE_PERMISSIONS property to "disabled". For
+  example, "config_ip_cache -disable_cache".
+
+  Note: To re-enable the cache after it has been disabled, you will need to
+  set the IP_CACHE_PERMISSIONS property, or use the Vivado Design Suite IDE.
+
+  -clear_output_repo - (Optional) This clears the IP synthesis cache of all
+  existing cached results, whether the cache is local to the project or a
+  remote directory that is shared across multiple projects. For example,
+  "config_ip_cache -clear_output_repo".
+
+  Note: You will not be prompted to confirm this command before the cached
+  results are deleted.
+
+  -clear_local_cache - (Optional) This clears the IP synthesis cache of all
+  existing cached results, but only if using the local project cache. For
+  example, "config_ip_cache -clear_local_cache".
+
+  -cache_has_match - (Optional) Returns the cache-ID of the cached entry that
+  would work for the specified IP instance. For example, "config_ip_cache
+  -cache_has_match [get_ips my_ip_0]".
+
+  -cache_was_used - (Optional) Returns '1' if the cache was used to obtain
+  the specified IP's current synthesis results; else '0'. For example,
+  "config_ip_cache -cache_was_used [get_ips my_ip_0]".
+
+  -get_id - (Optional) Calculates and returns the cache-ID string for the
+  specified IP instance. The cache-ID is unique to each cache entry,
+  generated based on the IP instance configuration and current Vivado version
+  and settings. For example, "config_ip_cache -get_id [get_ips my_ip_0]".
+
+  -disk_usage_output_repo - (Optional) Returns the total disk usage in MB for
+  all cache entries in the current project's IP Cache repository. For
+  example, "config_ip_cache -disk_usage_output_repo".
+
+  -import_from_project - (Optional) Populates the current IP cache with
+  synthesis results from the current design. This can be used to populate an
+  IP cache with the synthesis results of an existing project to be reused by
+  other projects or design iterations. For example, config_ip_cache
+  -import_from_project.
+
+  -zip_cache <file_name> - (Optional) Zips up all cache entries used by the
+  IP instances in the current project and writes to the specified
+  <file_name>. The cache entries could be found in the Cache repository, or
+  in any of the loaded user repositories. If any IP instance in the project
+  does not have a cache entry found, then the return string holds a message
+  that lists those IP instances. For example, "config_ip_cache -zip_cache
+  /mydata/projCache.zip".
+
+  -remove - (Optional) Removes the corresponding cache entry for the
+  specified IP instance or specified cache object. Returns cache-ID string if
+  successful, otherwise blank. For example, "config_ip_cache -remove [get_ips
+  my_ip_0]".
+
+  -purge - (Optional) Deletes all cache entries that match the specified
+  type(s): -vlnv, -old_swvers, -unused, -num_days_old, -num_days_unused,
+  -obs_synth_crc, and/or -swver. Returns the number of entries deleted. More
+  than one specified type can be used in a single -purge command. The
+  specific types of entries to purge are provided by the following options:
+
+   *  -vlnv <arg> - (Optional) Used with -purge, specifies the VLNV of the IP
+      the cache entries were created from. Entries created from IPs with the
+      specified VLNV will be deleted. May use a wildcard ('*') in one or more
+      fields in the VLNV. For example, "config_ip_cache -purge -vlnv
+      xilinx.com:ip:axi_gpio:*".
+
+      Note: The VLNV is the IPDEF property on an individual IP instance.
+
+   *  -swver <arg> - (Optional) Used with -purge, deletes cache entries
+      created by the specified software version. The software version can be
+      specified as <version>.<revision>, for example 2017.2. For example,
+      config_ip_cache -purge -swver 2017.2.
+
+   *  -old_swvers - (Optional) Used with -purge, deletes cache entries
+      created by an older software version than the one currently in use. For
+      example, "config_ip_cache -purge -old_swvers".
+
+   *  -unused - (Optional) Used with -purge, deletes cache entries that have
+      never been used. For example, "config_ip_cache -purge -unused".
+
+   *  -num_days_old <arg> - (Optional) Used with -purge, deletes any cache
+      entries older than the specified number of days. For example, to delete
+      cache entries that were created 10 days or longer ago, type
+      "config_ip_cache -purge -num_days_old 10".
+
+   *  -num_days_unused <arg> - (Optional) Used with -purge, deletes cache
+      entries that have not been used for the specified number of days or
+      longer. For example, to delete cached entries that have not been used
+      for 10 days or longer, type "config_ip_cache -purge -num_days_unused
+      10".
+
+   *  -obs_synth_crc - (Optional) Used with -purge, deletes cache entries
+      that were generated with the component's synthesis checksum that is
+      different from the checksum found in the current IP catalog's
+      component. This is only relevant if the component has been modified
+      since the cache entry was generated. For example, "config_ip_cache
+      -purge -obs_synth_crc".
+
+  -report - (Optional) Reports cache statistics for the specified IP or cache
+  object, or for the current cache location if none specified. Use -rptfile
+  to have the report written to a text file, or -csvfile for a csv format
+  file. Use -dir to report statistics for cache entries found under that
+  directory. Cache statistics include the VLNV of the IP used to create the
+  cached synthesis results, the number of times the cache entry was used, the
+  date of the last time it was used, and the synthesis runtime when the entry
+  was created. For example, to write the current cache's statistics to the
+  return string, type config_ip_cache -report. To write the statistics for
+  the cache entry that would work for the specified IP instance, to the
+  return string, type "config_ip_cache -report [get_ips my_ip_0]".
+
+  -rptfile <arg> - (Optional) Used with the -report option to direct the
+  report output to the specified file name. For example, to write statistics
+  for the current cache to a text file, type "config_ip_cache -report
+  /mydata/cacheStats/proj1_stats.txt".
+
+  -csvfile <arg> - (Optional) Used with the -report option to direct the
+  report output in CSV format to the specified CSV file name. For example, to
+  write statistics for a specific IP instance's matching cache entry in CSV
+  format to a file, type "config_ip_cache -report -csvfile
+  /mydata/mystats/proj1_stats.csv [get_ips my_ip_0]".
+
+  -dir <arg> - (Optional) Used with the -report option to specify a directory
+  (that has cache entries under it) to get the statistics for the cache
+  entries found there. Use this to get statistics from a directory other than
+  the current cache setting. For example, to get statistics for all the cache
+  entries found under the specified directory to a text file, type
+  "config_ip_cache -report -dir /mytests/mycache -rptfile
+  /myresults/mycacheStats.txt".
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example returns the contents of the current IP cache, one
+  cache entry per line:
+
+    join [config_ip_cache] \n
+
+  The following example specifies the use of an external IP cache location,
+  and then updates the repository settings of the IP catalog:
+
+    config_ip_cache -use_cache_location C:/Data/ip
+
+See Also:
+
+   *  get_ips
+   *  set_property
+   *  synth_design
+   *  synth_ip
+
+# puts [help launch_runs]
+launch_runs
+
+Description: 
+Launch a set of runs
+
+Syntax: 
+launch_runs  [-jobs <arg>] [-scripts_only] [-lsf <arg>] [-sge <arg>]
+             [-cluster_configuration <arg>] [-dir <arg>] [-to_step <arg>]
+             [-next_step] [-host <args>] [-remote_cmd <arg>] [-email_to <args>]
+             [-email_all] [-pre_launch_script <arg>]
+             [-post_launch_script <arg>] [-custom_script <arg>] [-force]
+             [-quiet] [-verbose] <runs>...
+
+Usage: 
+  Name                      Description
+  -------------------------------------
+  [-jobs]                   Number of jobs
+                            Default: 1
+  [-scripts_only]           Only generate scripts
+  [-lsf]                    Use LSF to launch jobs. Required argument is the 
+                            bsub command line to pass to LSF
+                            Default: empty
+  [-sge]                    Use SGE to launch jobs. Required argument is the 
+                            qsub command line to pass to SGE
+                            Default: empty
+  [-cluster_configuration]  Run jobs on a particular cluster configuration 
+                            (picks cluster configuration from GUI settings).
+                            Default: empty
+  [-dir]                    Launch directory
+  [-to_step]                Last Step to run. Ignored when launching multiple
+                            runs. Not valid with -next_step
+  [-next_step]              Run next step. Ignored when launching multiple 
+                            runs. Not valid with -to_step.
+  [-host]                   Launch on specified remote host with a specified 
+                            number of jobs. Example: -host {machine1 2} -host
+                            {machine2 4}
+  [-remote_cmd]             Command to log in to remote hosts
+                            Default: ssh -q -o ConnectTimeout=30 -o 
+                            ConnectionAttempts=3 -o BatchMode=yes
+  [-email_to]               List of email addresses to notify when jobs 
+                            complete (only applicable with -host)
+  [-email_all]              Send email after each job completes (only 
+                            applicable with -host)
+  [-pre_launch_script]      Script to run before launching each job (only 
+                            applicable with -host)
+  [-post_launch_script]     Script to run after each job completes (only 
+                            applicable with -host)
+  [-custom_script]          User run script map file which contains run name 
+                            to user run script mapping
+  [-force]                  Run the command, even if there are pending 
+                            constraint changes, which will be lost (in a 
+                            Dynamic Function eXchange design)
+  [-quiet]                  Ignore command errors
+  [-verbose]                Suspend message limits during command execution
+  <runs>                    Runs to launch
+
+Categories: 
+Project
+
+Description:
+
+  Launches synthesis and implementation runs when running the Vivado tools in
+  Project Mode. Refer to the Vivado Design Suite User Guide: Design Flows
+  Overview (UG892) for a complete description of Project Mode and Non-Project
+  Mode.
+
+  A run must be previously defined using the create_run command, and the
+  properties of the run must be previously configured using the set_property
+  command. Both synthesis and implementation runs can be specified in the
+  same launch_runs command. However, to launch an implementation run, the
+  parent synthesis run must already be complete.
+
+  In Non-Project Mode, Vivado synthesis can be launched directly using the
+  synth_design command, and does not require the use of a defined run.
+
+  In Non-Project Mode, Vivado implementation steps can be launched
+  individually with the opt_design, power_opt_design, place_design,
+  route_design, phys_opt_design, and write_bitstream commands.
+
+Arguments:
+
+  -jobs <arg> - (Optional) The number of parallel jobs to run on the local
+  host. The number of jobs for a remote host is specified as part of the
+  -host argument. You do not need to specify both -jobs and -host.
+
+  -scripts_only - (Optional) Generate a script called runme.bat for each
+  specified run so you can queue the runs to be launched at a later time.
+
+  -lsf <arg> - (Optional) Use IBM Platform Load Sharing Facility (LSF) to
+  launch synthesis and implementation runs. The bsub command line to pass to
+  LSF must be specified as a required argument.
+
+  -sge <arg> - (Optional) Use Oracle Grid Engine or Sun Grid Engine (SGE) to
+  launch synthesis and implementation runs. The qsub command line is a
+  required argument to submit a job to SGE.
+
+  -cluster_configuration <arg> - (Optional) Run jobs on a particular cluster
+  configuration. Name of the cluster configuration is specified to submit a
+  job on a particular cluster.
+
+   *  To get the list of the cluster configurations, use the
+      get_cluster_configurations command.
+
+   *  To create a cluster configuration, use the create_cluster_configuration
+      command.
+
+   *  To remove a cluster configuration, use the
+      remove_cluster_configurations command.
+
+   *  To validate a cluster configuration, use the
+      validate_cluster_configurations command.
+
+  -dir <arg> - (Optional) The directory for the tool to write run results
+  into. A separate folder for each run is created under the specified
+  directory. As a default the tool will write the results of each run into a
+  separate folder under the <project>.runs directory.
+
+  -to_step <arg> - (Optional) Launch the run through the specified step in
+  the implementation process, and then stop. For instance, run implementation
+  through the place_design step, and then stop. This will allow you to look
+  at specific stages of a run without completing the entire run. The
+  following are the valid steps for implementation runs.
+
+   *  opt_design - Optionally optimize the logical design to more efficiently
+      use the target device resources. This step is usually enabled by
+      default even though it is an optional step.
+
+   *  power_opt_design - Optionally optimize elements of the logic design to
+      reduce power demands of the implemented FPGA.
+
+   *  place_design - Place logic cells onto the target device. This is a
+      required step.
+
+   *  power_opt_design (Post-Place) - Optionally optimize power demands of
+      the placed logic elements. This step must be enclosed in quotes or
+      braces since it includes multiple words (e.g. -to_step
+      "power_opt_design (Post-Place)" ).
+
+   *  phys_opt_design - Optionally optimize design timing by replicating
+      drives of high-fanout nets to better distribute the loads.
+
+   *  route_design - Route the connections of the design onto the target
+      FPGA. This is a required step.
+
+   *  write_bitstream - Generate a bitstream file for Xilinx device
+      configuration. This is a required step.
+
+  Note: The specified -to_step must be enabled for the implementation run
+  using the set_property command, or the Vivado tool will return an error.
+
+  -next_step - (Optional) Continue a prior run from the step at which it was
+  stopped. This option can be used to complete a run previously launched with
+  the -to_step argument.
+
+  Note: The -to_step and -next_step arguments may not be specified together,
+  and are ignored when launching multiple runs.
+
+  -host <args> - (Optional) Launch on the named remote host with a specified
+  number of jobs. The argument is in the form of {<hostname> <jobs> }, for
+  example: -host {machine1 2}. If the -host argument is not specified, the
+  runs will be launched from the local host.
+
+  Note: This argument is supported on the Linux platform only.
+
+  -remote_cmd <arg> - (Optional) The command to use to login to the remote
+  host to launch jobs. The default remote command is "ssh -q -o
+  BatchMode=yes".
+
+  -email_to <args> - (Optional) Email addresses to send a notification to
+  when the runs have completed processing. This option also requires the use
+  of -host with an SMTP server running to send Email notifications.
+
+  -email_all - (Optional) Send a separate Email for each run as it completes.
+  This option also requires the use of -host with an SMTP server running to
+  send Email notifications.
+
+  -pre_launch_script <arg> - (Optional) A shell script to run on the
+  specified host before launching each job. This option also requires the use
+  of -host.
+
+  -post_launch_script <arg> - (Optional) A shell script to run on the
+  specified host after completion of all jobs. This option also requires the
+  use of -host.
+
+  -custom_script <arg> - (Optional) Specify a script map file, which contains
+  a mapping of run names and scripts to launch for that run.
+
+  -force - (Optional) Launch the run regardless of any pending constraint
+  changes for Partial Reconfiguration designs.
+
+  Note: This argument applies only to Partial Reconfiguration projects. Any
+  pending constraint changes will be lost to the specified runs.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <runs> - (Required) The names of synthesis and implementation runs to
+  launch. One or more run names may be specified.
+
+Examples:
+
+  The following command launches three different synthesis runs with two
+  parallel jobs:
+
+    launch_runs synth_1 synth_2 synth_4 -jobs 2 
+    
+
+  Note: The results for each run will be written to a separate folder
+  synth_1, synth_2, and synth_4 inside of the <project>.runs directory.
+
+  The following example creates a results directory to write run results. In
+  this case a separate folder named impl_3, impl_4, and synth_3 will be
+  written to the specified directory. In addition, the -scripts_only argument
+  tells the tool to write runme.bat scripts to each of these folders but not
+  to launch the runs at this time.
+
+    launch_runs impl_3 impl_4 synth_3 -dir C:/Data/FPGA_Design/results -scripts_only 
+    
+
+  The following example configures the impl_1 run, setting options for Vivado
+  Implementation 2013, enabling some of the optional optimizations, and then
+  launches the run to the place_design step:
+
+    set_property flow {Vivado Implementation 2013} [get_runs impl_1]  
+    set_property STEPS.POWER_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]  
+    set_property STEPS.POST_PLACE_POWER_OPT_DESIGN.IS_ENABLED true \  
+       [get_runs impl_1]  
+    set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]  
+    launch_runs -to_step place_design impl_1 
+    
+
+See Also:
+
+   *  create_run
+   *  get_runs
+   *  opt_design
+   *  phys_opt_design
+   *  place_design
+   *  power_opt_design
+   *  reset_runs
+   *  route_design
+   *  set_property
+   *  synth_design
+   *  write_bitstream
+
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 01:41:49 2026...

@@ -1,0 +1,182 @@
+{
+  "expected_pulses": 3512,
+  "output_widths": 3512,
+  "valid_matched_pulses": 3512,
+  "valid_rate": 1.0,
+  "missing": [],
+  "duplicate": [],
+  "faults": [],
+  "business_errors": [],
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "candidate_count": 7024,
+  "timestamp_count": 7024,
+  "fifo_sequence_equal": true,
+  "rise": {
+    "n": 3512,
+    "rmse_ps": 4763.812361018315,
+    "bias_ps": -4763.345387243736,
+    "std_ps": 66.70032094910314,
+    "max_abs_ps": 4861
+  },
+  "fall": {
+    "n": 3512,
+    "rmse_ps": 4760.8639733838,
+    "bias_ps": -4760.394362186788,
+    "std_ps": 66.8677016505257,
+    "max_abs_ps": 4861
+  },
+  "selection_counts": {
+    "2": 1705,
+    "0": 1649,
+    "1": 1718,
+    "3": 1952
+  },
+  "maximum_association_residual_ps": 270.0,
+  "minimum_association_margin_ps": 3750.0,
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "rmse_ps": 111.48372078469573,
+      "bias_ps": 0,
+      "std_ps": 111.48372078469573,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "all": {
+      "n": 3512,
+      "rmse_ps": 88.77237598510587,
+      "bias_ps": 2.9510250569476084,
+      "std_ps": 88.72331254610746,
+      "max_abs_ps": 172,
+      "expected_n": 3512,
+      "matched_unique_n": 3512,
+      "complete": true
+    },
+    "10MHz_50": {
+      "n": 200,
+      "rmse_ps": 0.0,
+      "bias_ps": 0,
+      "std_ps": 0.0,
+      "max_abs_ps": 0,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_50": {
+      "n": 200,
+      "rmse_ps": 130.6553481492434,
+      "bias_ps": 0,
+      "std_ps": 130.6553481492434,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_5": {
+      "n": 200,
+      "rmse_ps": 130.6553481492434,
+      "bias_ps": 0,
+      "std_ps": 130.6553481492434,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "10MHz_95": {
+      "n": 200,
+      "rmse_ps": 130.6553481492434,
+      "bias_ps": 0,
+      "std_ps": 130.6553481492434,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_5": {
+      "n": 200,
+      "rmse_ps": 96.25996052357387,
+      "bias_ps": 0,
+      "std_ps": 96.25996052357387,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "20MHz_95": {
+      "n": 200,
+      "rmse_ps": 96.25996052357387,
+      "bias_ps": 0,
+      "std_ps": 96.25996052357387,
+      "max_abs_ps": 163,
+      "expected_n": 200,
+      "matched_unique_n": 200,
+      "complete": true
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "rmse_ps": 74.93265284321123,
+      "bias_ps": 2.5634469696969697,
+      "std_ps": 74.88879223057856,
+      "max_abs_ps": 172,
+      "expected_n": 1056,
+      "matched_unique_n": 1056,
+      "complete": true
+    },
+    "complete_frame": {
+      "n": 2112,
+      "rmse_ps": 72.95776980036071,
+      "bias_ps": 4.90719696969697,
+      "std_ps": 72.79255176282132,
+      "max_abs_ps": 172,
+      "expected_n": 2112,
+      "matched_unique_n": 2112,
+      "complete": true
+    },
+    "header_5": {
+      "n": 32,
+      "rmse_ps": 92.19544457292888,
+      "bias_ps": 92,
+      "std_ps": 6.0,
+      "max_abs_ps": 98,
+      "expected_n": 32,
+      "matched_unique_n": 32,
+      "complete": true
+    },
+    "header_95": {
+      "n": 32,
+      "rmse_ps": 76.22663576467218,
+      "bias_ps": 10.5,
+      "std_ps": 75.5,
+      "max_abs_ps": 86,
+      "expected_n": 32,
+      "matched_unique_n": 32,
+      "complete": true
+    },
+    "spwm_data": {
+      "n": 2048,
+      "rmse_ps": 72.56426973509414,
+      "bias_ps": 3.458984375,
+      "std_ps": 72.48178163705005,
+      "max_abs_ps": 172,
+      "expected_n": 2048,
+      "matched_unique_n": 2048,
+      "complete": true
+    },
+    "ATC_20MHz": {
+      "n": 1056,
+      "rmse_ps": 70.92792035837253,
+      "bias_ps": 7.25094696969697,
+      "std_ps": 70.55631548207629,
+      "max_abs_ps": 171,
+      "expected_n": 1056,
+      "matched_unique_n": 1056,
+      "complete": true
+    }
+  },
+  "stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+}

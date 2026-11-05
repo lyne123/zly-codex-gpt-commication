@@ -1,0 +1,21 @@
+
+*** Running vivado
+    with args -log ila_2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_2.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+bad allocation
+Could not load library 'librdi_coretasks' needed by 'core', please check installation.
+    while executing
+"error "$result\nCould not load library '$library' needed by '$feature', please check installation.""
+    (procedure "rdi::load_library" line 4)
+    invoked from within
+"rdi::load_library core librdi_coretasks"
+    (file "F:/Xilinx/Vivado/2022.2\lib\scripts\rdi\features\core\core.tcl" line 6)
+ERROR: [Common 17-217] Failed to load feature 'core'.
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 00:58:45 2026...

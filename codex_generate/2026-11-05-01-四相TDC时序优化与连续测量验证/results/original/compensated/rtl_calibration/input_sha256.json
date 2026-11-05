@@ -1,0 +1,14 @@
+{
+  "U:\\results\\original\\compensated\\rtl_calibration\\input_tb.sv": {
+    "sha256": "7ca428411ec1cc5881f9e67d2fc6a67c92608dec19ddfb25899b174cf654bd02",
+    "bytes": 8890
+  },
+  "U:\\results\\original\\compensated\\rtl_calibration\\stimulus.txt": {
+    "sha256": "c28ad050d76f2971e0280dbf56ecd48da36e6519b83621f8ec8d810dba1eae05",
+    "bytes": 23090
+  },
+  "U:\\results\\original\\compensated\\rtl_calibration\\truth.csv": {
+    "sha256": "6b1d40b6b466cb423e5a818d883cb8cf35239d15e67eeef34f80f266123eee52",
+    "bytes": 69200
+  }
+}

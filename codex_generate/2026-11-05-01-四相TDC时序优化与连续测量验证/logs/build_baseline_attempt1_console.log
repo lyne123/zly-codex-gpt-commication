@@ -1,0 +1,87 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source U:/scripts/build_optimized.tcl
+# set_param general.maxThreads 2
+# set root U:/
+# set variant [lindex $argv 0]
+# if {$variant ni {baseline compensated}} {error "invalid variant"}
+# set out $root/results/optimized/$variant
+# if {[file exists $out/design.dcp]} {error "禁�?��?�盖已有冻结实现"}
+# file mkdir $out
+# create_project timing_$variant $root/build/$variant -part xc7k325tffg900-2
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.680 ; gain = 118.797
+# set_property target_language Verilog [current_project]
+# set_property simulator_language Mixed [current_project]
+# add_files [glob $root/rtl/*.v]
+# set_property top tdc_meas_top [get_filesets sources_1]
+# foreach ip {clk_wiz_0 fifo_tdc_result ila_2 ila_3} {import_ip -files $root/inputs/ip/$ip/$ip.xci}
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+import_ip: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1295.672 ; gain = 60.043
+import_ip: Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1312.246 ; gain = 16.574
+# add_files -fileset constrs_1 $root/inputs/combine.xdc
+# set_property USED_IN_SYNTHESIS false [get_files combine.xdc]
+# set_property PROCESSING_ORDER LATE [get_files combine.xdc]
+# set_property strategy Flow_PerfOptimized_high [get_runs synth_1]
+# set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+# if {$variant eq "compensated"} {
+#     source $root/results/calibration_params.tcl
+#     set_property generic $compensation_generics [get_filesets sources_1]
+#     set_property INCREMENTAL_CHECKPOINT $root/results/optimized/baseline/design.dcp [get_runs impl_1]
+# } else {set_property generic {ENABLE_SKEW_COMP=0} [get_filesets sources_1]}
+# generate_target all [get_ips]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_2'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_2_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_3'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_3_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_3'...
+# foreach ip [get_ips] {if {![llength [get_runs -quiet ${ip}_synth_1]]} {create_ip_run $ip}}
+# launch_runs synth_1 -jobs 2
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+
+[Thu Nov  5 00:58:14 2026] Launched clk_wiz_0_synth_1, fifo_tdc_result_synth_1, ila_2_synth_1, ila_3_synth_1...
+Run output will be captured here:
+clk_wiz_0_synth_1: U:/build/baseline/timing_baseline.runs/clk_wiz_0_synth_1/runme.log
+fifo_tdc_result_synth_1: U:/build/baseline/timing_baseline.runs/fifo_tdc_result_synth_1/runme.log
+ila_2_synth_1: U:/build/baseline/timing_baseline.runs/ila_2_synth_1/runme.log
+ila_3_synth_1: U:/build/baseline/timing_baseline.runs/ila_3_synth_1/runme.log
+[Thu Nov  5 00:58:14 2026] Launched synth_1...
+Run output will be captured here: U:/build/baseline/timing_baseline.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Thu Nov  5 00:58:14 2026] Waiting for synth_1 to finish...
+[Thu Nov  5 00:58:50 2026] synth_1 finished
+WARNING: [Vivado 12-13638] Failed runs(s) : 'fifo_tdc_result_synth_1', 'ila_2_synth_1'
+ 'fifo_tdc_result_synth_1' run failed with below errors.
+ 'ila_2_synth_1' run failed with below errors.
+ERROR: [Common 17-217] Failed to load feature 'core'.
+
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:35 . Memory (MB): peak = 1356.570 ; gain = 8.219
+# if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {error "synth failed"}
+synth failed
+    while executing
+"error "synth failed""
+    invoked from within
+"if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {error "synth failed"}"
+    (file "U:/scripts/build_optimized.tcl" line 29)
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 00:58:50 2026...

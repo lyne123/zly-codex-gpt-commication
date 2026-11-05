@@ -1,0 +1,1157 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 10:26:16 2026
+# Process ID: 27084
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -nojournal -log U:/logs/build_compensated_vivado.log -source U:/scripts/build_optimized.tcl -tclargs compensated
+# Log file: U:/logs/build_compensated_vivado.log
+# Journal file: 
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/build_optimized.tcl
+# set_param general.maxThreads 1
+# set root U:/
+# set variant [lindex $argv 0]
+# set stage [lindex $argv 1]
+# if {$variant ni {baseline compensated}} {error "invalid variant"}
+# set out $root/results/optimized/$variant
+# if {[file exists $out/design.dcp]} {error "禁�?��?�盖已有冻结实现"}
+# file mkdir $out
+# set project_file $root/build/$variant/timing_$variant.xpr
+# if {[file exists $project_file]} {
+#     open_project $project_file
+# } else {
+# create_project timing_$variant $root/build/$variant -part xc7k325tffg900-2
+# set_property target_language Verilog [current_project]
+# set_property simulator_language Mixed [current_project]
+# add_files [glob $root/rtl/*.v]
+# set_property top tdc_meas_top [get_filesets sources_1]
+# foreach ip {clk_wiz_0 fifo_tdc_result ila_2 ila_3} {import_ip -files $root/inputs/ip/$ip/$ip.xci}
+# add_files -fileset constrs_1 $root/inputs/combine.xdc
+# set_property USED_IN_SYNTHESIS false [get_files combine.xdc]
+# set_property PROCESSING_ORDER LATE [get_files combine.xdc]
+# set_property strategy Flow_PerfOptimized_high [get_runs synth_1]
+# set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+# if {$variant eq "compensated"} {
+#     source $root/results/calibration_params.tcl
+#     set_property generic $compensation_generics [get_filesets sources_1]
+#     set_property INCREMENTAL_CHECKPOINT $root/results/optimized/baseline/design.dcp [get_runs impl_1]
+# } else {set_property generic {ENABLE_SKEW_COMP=0} [get_filesets sources_1]}
+# generate_target all [get_ips]
+# }
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.461 ; gain = 117.629
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+import_ip: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1233.898 ; gain = 231.438
+import_ip: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1295.352 ; gain = 58.461
+import_ip: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1311.484 ; gain = 16.133
+## set compensation_generics {ENABLE_SKEW_COMP=1 RISE_OFFSET_90_PS=36011 FALL_OFFSET_90_PS=36011 RISE_OFFSET_180_PS=35742 FALL_OFFSET_180_PS=35742 RISE_OFFSET_270_PS=35756 FALL_OFFSET_270_PS=35756 RISE_OFFSET_0_PS=36081 FALL_OFFSET_0_PS=36081}
+WARNING: [Runs 36-537] File U:/results/optimized/baseline/design.dcp is not part of fileset utils_1, but has specified as a incremental checkpoint for run(s) impl_1. This file will not be handled as part of the project for archive and other project based functionality.
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_tdc_result'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_2'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/ila_2_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_2'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_3'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_3/ila_3_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_3'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_3'...
+generate_target: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1342.969 ; gain = 10.570
+# foreach ip [get_ips] {if {![llength [get_runs -quiet ${ip}_synth_1]]} {create_ip_run $ip}}
+# config_ip_cache -use_cache_location $root/build/shared_ip_cache
+# set applied_generics [get_property generic [get_filesets sources_1]]
+# if {$variant eq "compensated"} {
+#     # 根据Baseline实际�?径采用局部ILA布局，并在路由前�?复BRAM模式�?
+#     set_property STEPS.OPT_DESIGN.TCL.POST $root/scripts/restore_bram_mode.tcl [get_runs impl_1]
+#     set_property STEPS.PLACE_DESIGN.TCL.PRE $root/scripts/prepare_ila_cluster.tcl [get_runs impl_1]
+#     set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE ExtraPostPlacementOpt [get_runs impl_1]
+#     set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+#     set_property STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE AggressiveExplore [get_runs impl_1]
+#     set_property STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE Explore [get_runs impl_1]
+#     set flow_notes "independent_compensated_synthesis;incremental_reference=frozen_optimized_baseline;preplace_BRAM_power_opt;localized_ILA_counter_pblock_SLICE_X13Y16_X20Y25;place=ExtraPostPlacementOpt;phys=AggressiveExplore;route=Explore;postroute=AggressiveExplore"
+# }
+WARNING: [Runs 36-537] File U://scripts/restore_bram_mode.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) impl_1. This file will not be handled as part of the project for archive and other project based functionality.
+WARNING: [Runs 36-537] File U://scripts/prepare_ila_cluster.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) impl_1. This file will not be handled as part of the project for archive and other project based functionality.
+# if {$stage eq "prepare_impl"} {
+#     set_param general.maxThreads 2
+#     reset_run impl_1
+#     # 缩短嵌�?�Debug Hub子工程的工作�?径，保留原有工程与失败目录�?
+#     set run_dir $root/build/r$variant
+#     launch_runs impl_1 -to_step route_design -scripts_only -dir $run_dir -jobs 1
+#     puts "ACTUAL_RUN_DIRECTORY=[get_property DIRECTORY [get_runs impl_1]]"
+#     close_project
+#     return
+# }
+# if {$stage ne "export_impl"} {
+# # IP逐个执�?�；首轮并�?�失败日志已另存，避免同时驻留��个综合进程�?
+# foreach ip [get_ips] {
+#     set run ${ip}_synth_1
+#     if {[get_property PROGRESS [get_runs $run]] ne "100%"} {
+#         reset_run $run
+#         set_property STEPS.SYNTH_DESIGN.TCL.PRE $root/scripts/limit_threads.tcl [get_runs $run]
+#         launch_runs $run -jobs 1
+#         wait_on_run $run
+#         if {[get_property PROGRESS [get_runs $run]] ne "100%"} {error "IP synthesis failed: $ip"}
+#     }
+# }
+# reset_run synth_1
+# set_property STEPS.SYNTH_DESIGN.TCL.PRE $root/scripts/limit_threads.tcl [get_runs synth_1]
+# launch_runs synth_1 -jobs 1
+# wait_on_run synth_1
+# if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {error "synth failed"}
+# set_param general.maxThreads 2
+# launch_runs impl_1 -to_step route_design -jobs 1
+# wait_on_run impl_1
+# if {[get_property PROGRESS [get_runs impl_1]] ne "100%"} {error "route failed"}
+# }
+WARNING: [Runs 36-537] File U://scripts/limit_threads.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) clk_wiz_0_synth_1. This file will not be handled as part of the project for archive and other project based functionality.
+[Thu Nov  5 10:27:28 2026] Launched clk_wiz_0_synth_1...
+Run output will be captured here: U:/build/compensated/timing_compensated.runs/clk_wiz_0_synth_1/runme.log
+[Thu Nov  5 10:27:28 2026] Waiting for clk_wiz_0_synth_1 to finish...
+
+*** Running vivado
+    with args -log clk_wiz_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source clk_wiz_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1003.082 ; gain = 118.883
+source U:/scripts/limit_threads.tcl
+Command: synth_design -top clk_wiz_0 -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8180
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1890.109 ; gain = 408.715
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:72]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:72]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 2.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 90.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 180.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 270.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:72]
+WARNING: [Synth 8-3301] Unused top level parameter/generic ENABLE_SKEW_COMP
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_90_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_90_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_180_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_180_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_270_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_270_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_0_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_0_PS
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1982.574 ; gain = 501.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1982.574 ; gain = 501.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1982.574 ; gain = 501.180
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1982.574 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'inst'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'inst'
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'inst'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [u:/build/compensated/timing_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/clk_wiz_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/clk_wiz_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [U:/build/compensated/timing_compensated.runs/clk_wiz_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [U:/build/compensated/timing_compensated.runs/clk_wiz_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1985.734 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1985.734 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  U:/build/compensated/timing_compensated.runs/clk_wiz_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1985.734 ; gain = 504.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     6|
+|2     |MMCME2_ADV |     1|
+|3     |IBUF       |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 1989.453 ; gain = 504.898
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1989.453 ; gain = 508.059
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1989.453 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2011.137 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 506a0b9d
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:58 . Memory (MB): peak = 2011.137 ; gain = 969.879
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Common 17-1381] The checkpoint 'U:/build/compensated/timing_compensated.runs/clk_wiz_0_synth_1/clk_wiz_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file clk_wiz_0_utilization_synth.rpt -pb clk_wiz_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:28:42 2026...
+[Thu Nov  5 10:28:44 2026] clk_wiz_0_synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:15 . Memory (MB): peak = 1348.664 ; gain = 0.000
+WARNING: [Runs 36-537] File U://scripts/limit_threads.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) fifo_tdc_result_synth_1. This file will not be handled as part of the project for archive and other project based functionality.
+[Thu Nov  5 10:28:44 2026] Launched fifo_tdc_result_synth_1...
+Run output will be captured here: U:/build/compensated/timing_compensated.runs/fifo_tdc_result_synth_1/runme.log
+[Thu Nov  5 10:28:44 2026] Waiting for fifo_tdc_result_synth_1 to finish...
+
+*** Running vivado
+    with args -log fifo_tdc_result.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_tdc_result.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source fifo_tdc_result.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.871 ; gain = 116.277
+source U:/scripts/limit_threads.tcl
+Command: synth_design -top fifo_tdc_result -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 35184
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1889.914 ; gain = 408.453
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'fifo_tdc_result' [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/synth/fifo_tdc_result.vhd:76]
+WARNING: [Synth 8-3819] Generic 'ENABLE_SKEW_COMP' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'RISE_OFFSET_90_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'FALL_OFFSET_90_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'RISE_OFFSET_180_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'FALL_OFFSET_180_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'RISE_OFFSET_270_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'FALL_OFFSET_270_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'RISE_OFFSET_0_PS' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'FALL_OFFSET_0_PS' not present in instantiated entity will be ignored
+	Parameter C_COMMON_CLOCK bound to: 0 - type: integer 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
+	Parameter C_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_DEFAULT_VALUE bound to: BlankString - type: string 
+	Parameter C_DIN_WIDTH bound to: 23 - type: integer 
+	Parameter C_DOUT_RST_VAL bound to: 0 - type: string 
+	Parameter C_DOUT_WIDTH bound to: 23 - type: integer 
+	Parameter C_ENABLE_RLOCS bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_FULL_FLAGS_RST_VAL bound to: 1 - type: integer 
+	Parameter C_HAS_ALMOST_EMPTY bound to: 0 - type: integer 
+	Parameter C_HAS_ALMOST_FULL bound to: 0 - type: integer 
+	Parameter C_HAS_BACKUP bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_INT_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_MEMINIT_FILE bound to: 0 - type: integer 
+	Parameter C_HAS_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_RD_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_RD_RST bound to: 0 - type: integer 
+	Parameter C_HAS_RST bound to: 1 - type: integer 
+	Parameter C_HAS_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_VALID bound to: 1 - type: integer 
+	Parameter C_HAS_WR_ACK bound to: 0 - type: integer 
+	Parameter C_HAS_WR_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_WR_RST bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE bound to: 2 - type: integer 
+	Parameter C_INIT_WR_PNTR_VAL bound to: 0 - type: integer 
+	Parameter C_MEMORY_TYPE bound to: 1 - type: integer 
+	Parameter C_MIF_FILE_NAME bound to: BlankString - type: string 
+	Parameter C_OPTIMIZATION_MODE bound to: 0 - type: integer 
+	Parameter C_OVERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_PRELOAD_LATENCY bound to: 1 - type: integer 
+	Parameter C_PRELOAD_REGS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE bound to: 1kx36 - type: string 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL bound to: 2 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_NEGATE_VAL bound to: 3 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL bound to: 1021 - type: integer 
+	Parameter C_PROG_FULL_THRESH_NEGATE_VAL bound to: 1020 - type: integer 
+	Parameter C_PROG_FULL_TYPE bound to: 0 - type: integer 
+	Parameter C_RD_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_RD_DEPTH bound to: 1024 - type: integer 
+	Parameter C_RD_FREQ bound to: 1 - type: integer 
+	Parameter C_RD_PNTR_WIDTH bound to: 10 - type: integer 
+	Parameter C_UNDERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_USE_DOUT_RST bound to: 1 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_USE_EMBEDDED_REG bound to: 0 - type: integer 
+	Parameter C_USE_PIPELINE_REG bound to: 0 - type: integer 
+	Parameter C_POWER_SAVING_MODE bound to: 0 - type: integer 
+	Parameter C_USE_FIFO16_FLAGS bound to: 0 - type: integer 
+	Parameter C_USE_FWFT_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_VALID_LOW bound to: 0 - type: integer 
+	Parameter C_WR_ACK_LOW bound to: 0 - type: integer 
+	Parameter C_WR_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_WR_DEPTH bound to: 1024 - type: integer 
+	Parameter C_WR_FREQ bound to: 1 - type: integer 
+	Parameter C_WR_PNTR_WIDTH bound to: 10 - type: integer 
+	Parameter C_WR_RESPONSE_LATENCY bound to: 1 - type: integer 
+	Parameter C_MSGON_VAL bound to: 1 - type: integer 
+	Parameter C_ENABLE_RST_SYNC bound to: 1 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 1 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE bound to: 0 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 2 - type: integer 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_WR_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_RD_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_SLAVE_CE bound to: 0 - type: integer 
+	Parameter C_HAS_MASTER_CE bound to: 0 - type: integer 
+	Parameter C_ADD_NGC_CONSTRAINT bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_DEFAULT_SETTINGS bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_LEN_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXI_LOCK_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_AWUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_WUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_BUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_ARUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_RUSER bound to: 0 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TDATA bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TID bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TDEST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TUSER bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TREADY bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TSTRB bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TKEEP bound to: 0 - type: integer 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXIS_TSTRB_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TKEEP_WIDTH bound to: 1 - type: integer 
+	Parameter C_WACH_TYPE bound to: 0 - type: integer 
+	Parameter C_WDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_WRCH_TYPE bound to: 0 - type: integer 
+	Parameter C_RACH_TYPE bound to: 0 - type: integer 
+	Parameter C_RDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_AXIS_TYPE bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WRCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_AXIS bound to: 1 - type: integer 
+	Parameter C_APPLICATION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE_WACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WRCH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_AXIS bound to: 1kx18 - type: string 
+	Parameter C_USE_ECC_WACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WRCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_AXIS bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_DIN_WIDTH_WACH bound to: 1 - type: integer 
+	Parameter C_DIN_WIDTH_WDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_WRCH bound to: 2 - type: integer 
+	Parameter C_DIN_WIDTH_RACH bound to: 32 - type: integer 
+	Parameter C_DIN_WIDTH_RDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_AXIS bound to: 1 - type: integer 
+	Parameter C_WR_DEPTH_WACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_WDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_WRCH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_AXIS bound to: 1024 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WRCH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_AXIS bound to: 10 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_AXIS bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WRCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_AXIS bound to: 1023 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WRCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_AXIS bound to: 1022 - type: integer 
+	Parameter C_REG_SLICE_MODE_WACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WRCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_7' declared at 'u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38604' bound to instance 'U0' of component 'fifo_generator_v13_2_7' [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/synth/fifo_tdc_result.vhd:546]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_sync_rst' [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1058]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_sync_rst' (0#1) [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1058]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray' [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray' (0#1) [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-256] done synthesizing module 'fifo_tdc_result' (0#1) [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/synth/fifo_tdc_result.vhd:76]
+WARNING: [Synth 8-3301] Unused top level parameter/generic ENABLE_SKEW_COMP
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_90_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_90_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_180_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_180_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_270_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_270_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic RISE_OFFSET_0_PS
+WARNING: [Synth 8-3301] Unused top level parameter/generic FALL_OFFSET_0_PS
+WARNING: [Synth 8-7129] Port ALMOST_FULL_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ALMOST_EMPTY_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_ACK_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OVERFLOW_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UNDERFLOW_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[10] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[9] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[8] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[7] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[6] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[5] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[4] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[3] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[2] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[1] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[0] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[10] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[9] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[8] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[7] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[6] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[5] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[4] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[3] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[2] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[1] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[0] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[10] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[9] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[8] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[7] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[6] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[5] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[4] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[3] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[2] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[1] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[0] in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR_I in module output_blk is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RST_FULL_FF in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SAFETY_CKT_WR_RST in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[9] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[8] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[7] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[6] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[5] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[4] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[3] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[2] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[1] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[0] in module wr_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RST in module wr_bin_cntr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_EN_INTO_LOGIC in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST_INTO_LOGIC in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_EN in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST_FULL_FF in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST_BUSY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EMPTY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RAM_RD_EN in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ALMOST_EMPTY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[9] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[8] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[7] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[6] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[5] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[9] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[8] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[7] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[6] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[5] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[9] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[8] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[7] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[6] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[5] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_RST in module rd_handshaking_flags is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_RST_BUSY in module rd_handshaking_flags is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_RST in module rd_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SAFETY_CKT_RD_RST in module rd_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[9] in module rd_status_flags_as is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[8] in module rd_status_flags_as is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2236.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_ooc.xdc] for cell 'U0'
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'U0'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'U0'
+Parsing XDC File [U:/build/compensated/timing_compensated.runs/fifo_tdc_result_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [U:/build/compensated/timing_compensated.runs/fifo_tdc_result_synth_1/dont_touch.xdc]
+Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [u:/build/compensated/timing_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fifo_tdc_result_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fifo_tdc_result_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fifo_tdc_result_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fifo_tdc_result_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 6 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2236.379 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2236.379 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:46 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:46 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  U:/build/compensated/timing_compensated.runs/fifo_tdc_result_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst . (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:46 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:47 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 2     
++---XORs : 
+	   2 Input     10 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 60    
++---Registers : 
+	               10 Bit    Registers := 13    
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:58 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:58 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:58 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name            | RTL Name                                                                                                                                                                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|fifo_generator_v13_2_7 | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[4] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |    14|
+|2     |LUT2     |    31|
+|3     |LUT3     |     9|
+|4     |LUT4     |    31|
+|5     |LUT5     |    12|
+|6     |LUT6     |     9|
+|7     |MUXCY    |    20|
+|8     |RAMB36E1 |     1|
+|9     |SRL16E   |     2|
+|10    |FDRE     |   173|
+|11    |FDSE     |     5|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 476 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:59 . Memory (MB): peak = 2236.379 ; gain = 754.918
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2236.379 ; gain = 754.918
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2236.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2236.379 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+
+Synth Design complete, checksum: 8adf66b3
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:12 . Memory (MB): peak = 2236.379 ; gain = 1196.242
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Coretcl 2-1174] Renamed 30 cell refs.
+INFO: [Common 17-1381] The checkpoint 'U:/build/compensated/timing_compensated.runs/fifo_tdc_result_synth_1/fifo_tdc_result.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fifo_tdc_result_utilization_synth.rpt -pb fifo_tdc_result_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:30:10 2026...
+[Thu Nov  5 10:30:14 2026] fifo_tdc_result_synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:30 . Memory (MB): peak = 1348.664 ; gain = 0.000
+WARNING: [Runs 36-537] File U://scripts/limit_threads.tcl is not part of fileset utils_1, but has specified as a Tcl hook script for run(s) ila_2_synth_1. This file will not be handled as part of the project for archive and other project based functionality.
+[Thu Nov  5 10:30:14 2026] Launched ila_2_synth_1...
+Run output will be captured here: U:/build/compensated/timing_compensated.runs/ila_2_synth_1/runme.log
+[Thu Nov  5 10:30:14 2026] Waiting for ila_2_synth_1 to finish...
+
+*** Running vivado
+    with args -log ila_2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_2.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source ila_2.tcl -notrace
+source U:/scripts/limit_threads.tcl
+Command: synth_design -top ila_2 -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 34668
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'rddata_rst_i', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:2188]
+INFO: [Synth 8-11241] undeclared symbol 'datard_overflow', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:2235]
+INFO: [Synth 8-11241] undeclared symbol 'datard_underflow', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:2236]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6379]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6381]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6412]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6414]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6447]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6449]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:69]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:71]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:109]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:111]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:150]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:152]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:192]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:194]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:235]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:237]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:279]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:281]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:324]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:326]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:370]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:372]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:417]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:419]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:465]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:467]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:514]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:516]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:564]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:566]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:615]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_ext.vh:617]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6554]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6556]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6589]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:6591]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:69]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:71]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:109]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:111]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:150]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:152]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:192]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:194]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:235]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:237]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:279]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:281]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:324]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:326]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:370]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:372]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:417]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:419]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:465]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:467]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:514]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:516]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:564]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:566]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:615]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core.vh:617]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10347]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10349]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10380]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10382]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10413]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/xsdbm_v3_0_vl_rfs.v:10415]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:30]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:32]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:65]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:67]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:100]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:102]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:135]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:137]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:170]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:172]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:205]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:207]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:240]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:242]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:275]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:277]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:310]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:312]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:345]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:347]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:380]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:382]
+INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:415]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/verilog/xsdbm_v3_0_0_bs_core_vec.vh:417]
+INFO: [Common 17-14] Message 'Synth 8-11241' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4527]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4528]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4529]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4530]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4531]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4532]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4586]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4587]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:4588]
+WARNING: [Synth 8-10294] parameter declaration is not allowed here in this mode of Verilog [u:/build/compensated/timing_compensated.gen/sources_1/ip/ila_2/hdl/ila_v6_2_syn_rfs.v:5486]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1917.707 ; gain = 420.172
+---------------------------------------------------------------------------------
+Abnormal program termination (EXCEPTION_ACCESS_VIOLATION)
+Please check 'U:/build/compensated/timing_compensated.runs/ila_2_synth_1/hs_err_pid11012.log' for details
+[Thu Nov  5 10:30:50 2026] ila_2_synth_1 finished
+WARNING: [Vivado 12-13638] Failed runs(s) : 'ila_2_synth_1'
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:35 . Memory (MB): peak = 1354.453 ; gain = 0.000
+IP synthesis failed: ila_2
+    while executing
+"error "IP synthesis failed: $ip""
+    invoked from within
+"if {[get_property PROGRESS [get_runs $run]] ne "100%"} {error "IP synthesis failed: $ip"}"
+    invoked from within
+"if {[get_property PROGRESS [get_runs $run]] ne "100%"} {
+        reset_run $run
+        set_property STEPS.SYNTH_DESIGN.TCL.PRE $root/scripts/limit_th..."
+    ("foreach" body line 3)
+    invoked from within
+"foreach ip [get_ips] {
+    set run ${ip}_synth_1
+    if {[get_property PROGRESS [get_runs $run]] ne "100%"} {
+        reset_run $run
+        set_prope..."
+    invoked from within
+"if {$stage ne "export_impl"} {
+# IP逐个执�?�；首轮并�?�失败日志已另存，避免同时驻留��个..."
+    (file "U:/scripts/build_optimized.tcl" line 55)
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:30:50 2026...

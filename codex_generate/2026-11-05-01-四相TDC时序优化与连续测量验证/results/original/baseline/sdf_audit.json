@@ -1,0 +1,59 @@
+{
+  "phase": "original",
+  "variant": "baseline",
+  "critical_inventory": {
+    "LUT1": 7,
+    "CARRY4": 64,
+    "FDRE": 256
+  },
+  "missing_critical": [],
+  "total_sdf_cells": 8705,
+  "exported_and_annotated_sdf_sha256_equal": true,
+  "exported_and_compiled_netlist_sha256_equal": true,
+  "cases": [
+    {
+      "case": "gate_validation",
+      "annotation_success": true,
+      "annotation_warnings": [],
+      "total_timing_warnings": 1159787,
+      "categories": [
+        {
+          "category": "ILA_asynchronous_PWM_debug_capture",
+          "check": "setuphold",
+          "all_time_count": 109,
+          "after_5us_count": 109
+        },
+        {
+          "category": "MMCM_unused_CLKOUT5_6_model",
+          "check": "period",
+          "all_time_count": 1073744,
+          "after_5us_count": 1055598
+        },
+        {
+          "category": "PWM_asynchronous_synchronizer",
+          "check": "setuphold",
+          "all_time_count": 383,
+          "after_5us_count": 383
+        },
+        {
+          "category": "TDL_asynchronous_sampling",
+          "check": "setuphold",
+          "all_time_count": 85549,
+          "after_5us_count": 85549
+        },
+        {
+          "category": "reset_synchronizer",
+          "check": "recrem",
+          "all_time_count": 2,
+          "after_5us_count": 0
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "design.dcp": "0534d05b0b633f31957079f46cd5a8d55ee0a8aade3d85f72e32494adc465c71",
+    "design.sdf": "224f359e5b30ef372e99dcd56d76947c0170c35c56bbf8917b05a0f0b63d660f",
+    "design.v": "354f57e3910d3845e8768a8b341662441b671054126eeb9ed9b4240370f95d2c"
+  },
+  "note": "关键单元清单覆盖及工具成功日志不能冒充全局逐路径注释百分比；时序警告原文完整保留。"
+}

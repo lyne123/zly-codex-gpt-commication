@@ -1,0 +1,808 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 10:34:13 2026
+# Process ID: 19248
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -nojournal -log U:/logs/help_ip_reuse_v2_vivado.log -source U:/scripts/help_ip_reuse.tcl
+# Log file: U:/logs/help_ip_reuse_v2_vivado.log
+# Journal file: 
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/help_ip_reuse.tcl
+# puts [help config_ip_cache]
+config_ip_cache
+
+Description: 
+Manage the IP instance Synthesis cache. Lists out the IP Cache entries if no options are specified.
+
+Syntax: 
+config_ip_cache  [-use_cache_location <arg>] [-use_project_cache]
+                 [-disable_cache] [-clear_output_repo] [-clear_local_cache]
+                 [-cache_has_match] [-cache_was_used] [-disable_for_ip]
+                 [-enable_for_ip] [-is_ip_disabled] [-get_id]
+                 [-get_entry_location <arg>] [-disk_usage_output_repo]
+                 [-import_from_project] [-zip_cache <arg>] [-remove] [-purge]
+                 [-vlnv <arg>] [-old_swvers] [-unused] [-swver <arg>]
+                 [-num_days_old <arg>] [-num_days_unused <arg>]
+                 [-obs_synth_crc] [-report] [-rptfile <arg>] [-csvfile <arg>]
+                 [-dir <arg>] [-quiet] [-verbose] [<ip>]
+
+Usage: 
+  Name                       Description
+  --------------------------------------
+  [-use_cache_location]      Set current project properties to use the 
+                             specified cache location
+  [-use_project_cache]       Set current project properties to use the 
+                             default project IP cache location
+  [-disable_cache]           Disable cache use.
+  [-clear_output_repo]       Delete from disk and in memory all cache entries
+                             that exist in the current project's designated 
+                             cache (local or remote).
+  [-clear_local_cache]       Delete from disk and in memory all local cache 
+                             entries for this project.
+  [-cache_has_match]         Returns the cache-ID of the cache entry that 
+                             would work for this IP instance; else ''.
+  [-cache_was_used]          Returns '1' if the cache was used to obtain the 
+                             IP's current synthesis results; else '0'.
+  [-disable_for_ip]          Disable cache usage for a specific IP instance.
+  [-enable_for_ip]           Re-enable cache usage for a specific IP 
+                             instance.
+  [-is_ip_disabled]          Returns '1' if the cache usage is disabled for 
+                             the specified IP instance; else '0'.
+  [-get_id]                  Calculate and return IP cache ID string for 
+                             specified <ip>
+  [-get_entry_location]      Return directory where this cache-ID entry is 
+                             located.
+  [-disk_usage_output_repo]  Return total disk usage in MB for all cache 
+                             entries in the current project's ip_output_repo.
+  [-import_from_project]     Import existing synthesized IP from the project 
+                             into the cache.
+  [-zip_cache]               Zip up all cache entries used by IP instances in
+                             the current project and write to the given 
+                             zipfilename.
+  [-remove]                  Remove the corresponding cache entry for the 
+                             specified IP instance or specified cachedInst; 
+                             return cache ID string if successful, otherwise 
+                             blank.
+  [-purge]                   Delete all cache entries that match the 
+                             specified type(s): -vlnv, -obs_swvers, 
+                             -obs_synth_crc, and/or -swver. Returns the 
+                             number of entries deleted.
+  [-vlnv]                    Used with -purge, specifies the VLNV of the IP 
+                             the cache entries were created from. May use a 
+                             wildcard ('*') in one or more fields in the 
+                             VLNV.
+  [-old_swvers]              Used with -purge to delete cache entries created
+                             with old Vivado SW Versions.
+  [-unused]                  Used with -purge to delete cache entries that 
+                             have never been used.
+  [-swver]                   Used with -purge to delete any cache entries 
+                             created from this specific Vivado SW Version 
+                             (i.e., '2017.1').
+  [-num_days_old]            Used with -purge to delete any cache entries 
+                             that are this number of days old or older.
+  [-num_days_unused]         Used with -purge to delete any cache entries 
+                             that have not been used for this number of days 
+                             or longer.
+  [-obs_synth_crc]           Used with -purge to delete cache entries whose 
+                             component synth checksum is not the same as the 
+                             IP Catalog's current component synthesis 
+                             checksum.
+  [-report]                  Report cache statistics for the specified IP or 
+                             cache object, or for the current cache location 
+                             if none specified. If -rptfile is specified, 
+                             write statistics to that file. If -dir is 
+                             specified, write statistics for cache entries 
+                             found under that directory.
+  [-rptfile]                 Used with -report, specifies the text file to 
+                             write the cache statistics to.
+  [-csvfile]                 Used with -report, specifies the csv file to 
+                             write the cache statistics to, in csv format.
+  [-dir]                     Used eith -report, specifies the directory to 
+                             report cache entry statistics for.
+  [-quiet]                   Ignore command errors
+  [-verbose]                 Suspend message limits during command execution
+  [<ip>]                     IP instance object, IP file, or IP name pattern
+
+Categories: 
+Object, IPFlow
+
+Description:
+
+  This command lets you manage the Vivado Design Suite out-of-context (OOC)
+  IP cache. The Vivado Design Suite caches the synthesis results for
+  customized OOC IP in a cache repository, so multiple IP that use the same
+  customization profile can share OOC synthesis results to decrease run time.
+  The cached synthesis results can be reused in a single project from the
+  project cache, or across multiple projects using a remote cache location.
+
+  When generating the synthesis output products for an OOC IP, if a matching
+  IP customization is found in the cache repository, the cached synthesis
+  results will be used. If no suitable match is found in the cache
+  repository, the synthesis output products will be generated as usual and
+  the results, including the design checkpoint (DCP), will be copied into the
+  cache for future use.
+
+  Note: When cached results are used, an information message is displayed in
+  the Tcl console indicating the IP cache-ID of the results used. The
+  cache-ID is a string value calculated from the IP configuration settings,
+  as well as other pertinent data, such as the vivado software version, used
+  when the cached synthesis results were first generated. This string is also
+  used as the directory name under the cache repository where this entry's
+  files are stored.
+
+  You can specify a location for the cached IP synthesis results either
+  within the current project, or at an external location. The location of the
+  IP cache is defined by the IP_OUTPUT_REPO property on a project, with the
+  value of a string defining a valid file system directory. You can set this
+  property using the config_ip_cache command with either the
+  -use_cache_location or the -use_project_cache options. The default IP
+  synthesis cache location is in the current project folders.
+
+  The use of the IP synthesis cache is controlled by the IP_CACHE_PERMISSIONS
+  project property that can be set with the set_property command. The current
+  values are:
+
+   *  disabled - Do not use the IP synthesis cache.
+
+   *  read - Use the IP synthesis cache to read OOC synthesis results from
+      and apply as appropriate in the current project.
+
+   *  write - Use the IP synthesis cache to write OOC synthesis results into,
+      but do not use them to read IP into the current project.
+
+   *  read write - Use the IP synthesis cache for both writing results to,
+      and using those results in the current project. This is the default
+      setting.
+
+  Note: The IP synthesis cache can be enabled, and the cache repository
+  specified, in the Vivado Design Suite IDE using the Settings dialog box.
+  Refer to the Vivado Design Suite User Guide: Designing with IP (UG896) for
+  more information on using the cache.
+
+  Note: Cache entries created by one Vivado software version are not viable
+  in a different Vivado software version. Local project caches are
+  automatically cleared when updating a Vivado project to a new Vivado
+  release.
+
+  By default, without any of the arguments specified below, the
+  config_ip_cache command returns a list of entries in the IP synthesis
+  cache, or returns an error if it fails.
+
+Arguments:
+
+  -use_cache_location <arg> - (Optional) Specify a directory pathname to use
+  as the IP cache repository for the current project. For example,
+  "config_ip_cache -use_cache_location /mydata/global_cache".
+
+  -use_project_cache - (Optional) This is the default location for the cached
+  IP synthesis results. This option enables the current project to use the
+  default IP cache location inside the local project directory. You can use
+  this option to restore the default. For example, "config_ip_cache
+  -use_project_cache".
+
+  -disable_cache - (Optional) Disable the IP synthesis cache. This has the
+  effect of setting the IP_CACHE_PERMISSIONS property to "disabled". For
+  example, "config_ip_cache -disable_cache".
+
+  Note: To re-enable the cache after it has been disabled, you will need to
+  set the IP_CACHE_PERMISSIONS property, or use the Vivado Design Suite IDE.
+
+  -clear_output_repo - (Optional) This clears the IP synthesis cache of all
+  existing cached results, whether the cache is local to the project or a
+  remote directory that is shared across multiple projects. For example,
+  "config_ip_cache -clear_output_repo".
+
+  Note: You will not be prompted to confirm this command before the cached
+  results are deleted.
+
+  -clear_local_cache - (Optional) This clears the IP synthesis cache of all
+  existing cached results, but only if using the local project cache. For
+  example, "config_ip_cache -clear_local_cache".
+
+  -cache_has_match - (Optional) Returns the cache-ID of the cached entry that
+  would work for the specified IP instance. For example, "config_ip_cache
+  -cache_has_match [get_ips my_ip_0]".
+
+  -cache_was_used - (Optional) Returns '1' if the cache was used to obtain
+  the specified IP's current synthesis results; else '0'. For example,
+  "config_ip_cache -cache_was_used [get_ips my_ip_0]".
+
+  -get_id - (Optional) Calculates and returns the cache-ID string for the
+  specified IP instance. The cache-ID is unique to each cache entry,
+  generated based on the IP instance configuration and current Vivado version
+  and settings. For example, "config_ip_cache -get_id [get_ips my_ip_0]".
+
+  -disk_usage_output_repo - (Optional) Returns the total disk usage in MB for
+  all cache entries in the current project's IP Cache repository. For
+  example, "config_ip_cache -disk_usage_output_repo".
+
+  -import_from_project - (Optional) Populates the current IP cache with
+  synthesis results from the current design. This can be used to populate an
+  IP cache with the synthesis results of an existing project to be reused by
+  other projects or design iterations. For example, config_ip_cache
+  -import_from_project.
+
+  -zip_cache <file_name> - (Optional) Zips up all cache entries used by the
+  IP instances in the current project and writes to the specified
+  <file_name>. The cache entries could be found in the Cache repository, or
+  in any of the loaded user repositories. If any IP instance in the project
+  does not have a cache entry found, then the return string holds a message
+  that lists those IP instances. For example, "config_ip_cache -zip_cache
+  /mydata/projCache.zip".
+
+  -remove - (Optional) Removes the corresponding cache entry for the
+  specified IP instance or specified cache object. Returns cache-ID string if
+  successful, otherwise blank. For example, "config_ip_cache -remove [get_ips
+  my_ip_0]".
+
+  -purge - (Optional) Deletes all cache entries that match the specified
+  type(s): -vlnv, -old_swvers, -unused, -num_days_old, -num_days_unused,
+  -obs_synth_crc, and/or -swver. Returns the number of entries deleted. More
+  than one specified type can be used in a single -purge command. The
+  specific types of entries to purge are provided by the following options:
+
+   *  -vlnv <arg> - (Optional) Used with -purge, specifies the VLNV of the IP
+      the cache entries were created from. Entries created from IPs with the
+      specified VLNV will be deleted. May use a wildcard ('*') in one or more
+      fields in the VLNV. For example, "config_ip_cache -purge -vlnv
+      xilinx.com:ip:axi_gpio:*".
+
+      Note: The VLNV is the IPDEF property on an individual IP instance.
+
+   *  -swver <arg> - (Optional) Used with -purge, deletes cache entries
+      created by the specified software version. The software version can be
+      specified as <version>.<revision>, for example 2017.2. For example,
+      config_ip_cache -purge -swver 2017.2.
+
+   *  -old_swvers - (Optional) Used with -purge, deletes cache entries
+      created by an older software version than the one currently in use. For
+      example, "config_ip_cache -purge -old_swvers".
+
+   *  -unused - (Optional) Used with -purge, deletes cache entries that have
+      never been used. For example, "config_ip_cache -purge -unused".
+
+   *  -num_days_old <arg> - (Optional) Used with -purge, deletes any cache
+      entries older than the specified number of days. For example, to delete
+      cache entries that were created 10 days or longer ago, type
+      "config_ip_cache -purge -num_days_old 10".
+
+   *  -num_days_unused <arg> - (Optional) Used with -purge, deletes cache
+      entries that have not been used for the specified number of days or
+      longer. For example, to delete cached entries that have not been used
+      for 10 days or longer, type "config_ip_cache -purge -num_days_unused
+      10".
+
+   *  -obs_synth_crc - (Optional) Used with -purge, deletes cache entries
+      that were generated with the component's synthesis checksum that is
+      different from the checksum found in the current IP catalog's
+      component. This is only relevant if the component has been modified
+      since the cache entry was generated. For example, "config_ip_cache
+      -purge -obs_synth_crc".
+
+  -report - (Optional) Reports cache statistics for the specified IP or cache
+  object, or for the current cache location if none specified. Use -rptfile
+  to have the report written to a text file, or -csvfile for a csv format
+  file. Use -dir to report statistics for cache entries found under that
+  directory. Cache statistics include the VLNV of the IP used to create the
+  cached synthesis results, the number of times the cache entry was used, the
+  date of the last time it was used, and the synthesis runtime when the entry
+  was created. For example, to write the current cache's statistics to the
+  return string, type config_ip_cache -report. To write the statistics for
+  the cache entry that would work for the specified IP instance, to the
+  return string, type "config_ip_cache -report [get_ips my_ip_0]".
+
+  -rptfile <arg> - (Optional) Used with the -report option to direct the
+  report output to the specified file name. For example, to write statistics
+  for the current cache to a text file, type "config_ip_cache -report
+  /mydata/cacheStats/proj1_stats.txt".
+
+  -csvfile <arg> - (Optional) Used with the -report option to direct the
+  report output in CSV format to the specified CSV file name. For example, to
+  write statistics for a specific IP instance's matching cache entry in CSV
+  format to a file, type "config_ip_cache -report -csvfile
+  /mydata/mystats/proj1_stats.csv [get_ips my_ip_0]".
+
+  -dir <arg> - (Optional) Used with the -report option to specify a directory
+  (that has cache entries under it) to get the statistics for the cache
+  entries found there. Use this to get statistics from a directory other than
+  the current cache setting. For example, to get statistics for all the cache
+  entries found under the specified directory to a text file, type
+  "config_ip_cache -report -dir /mytests/mycache -rptfile
+  /myresults/mycacheStats.txt".
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example returns the contents of the current IP cache, one
+  cache entry per line:
+
+    join [config_ip_cache] \n
+
+  The following example specifies the use of an external IP cache location,
+  and then updates the repository settings of the IP catalog:
+
+    config_ip_cache -use_cache_location C:/Data/ip
+
+See Also:
+
+   *  get_ips
+   *  set_property
+   *  synth_design
+   *  synth_ip
+
+# puts [help import_files]
+import_files
+
+Description: 
+Import files and/or directories into the active fileset
+
+Syntax: 
+import_files  [-fileset <arg>] [-force] [-of_objects <args>] [-norecurse]
+              [-flat] [-relative_to <arg>] [-quiet] [-verbose] [<files>...]
+
+Returns: 
+A list of file objects that were imported
+
+Usage: 
+  Name            Description
+  ---------------------------
+  [-fileset]      Fileset name
+  [-force]        Overwrite files of the same name in project directory
+  [-of_objects]   RMs to import the files to
+  [-norecurse]    Disables the default behavior of recursive directory 
+                  searches
+  [-flat]         Import the files into a flat directory structure
+  [-relative_to]  Import the files with respect to the given relative 
+                  directory
+  [-quiet]        Ignore command errors
+  [-verbose]      Suspend message limits during command execution
+  [<files>]       Name of the files to import into fileset
+
+Categories: 
+Project, Simulation
+
+Description:
+
+  Imports one or more files or the source file contents of one or more
+  directories to the specified fileset.
+
+  For every file added to a project the Vivado Design Suite attempts to store
+  and maintain both a relative path and an absolute path to the file or
+  directory. When a project is opened, these paths are used to locate the
+  files and directories. By default the Vivado Design Suite applies a
+  Relative First approach to resolving paths, searching the relative path
+  first, then the absolute path. You can use the PATH_MODE property to change
+  how the Vivado tool resolves file paths or properties for specific objects.
+  For more information, see the Vivado Design Suite Properties Reference
+  Guide (UG912).
+
+  Note: Importing multiple files one at a time can cause noticeable
+  performance degradation. It is more efficient to use a single import_files
+  command to import a list of files:
+
+    import_files {file1 file2 file3 ... fileN} 
+    
+
+  This command is different from the add_files command, which adds files by
+  reference into the specified fileset. This command imports the files into
+  the local project folders under project.srcs\<fileset>\imports and then
+  adds the file to the specified fileset.
+
+Arguments:
+
+  -fileset <name> - (Optional) The fileset to which the specified source
+  files should be added. If the specified fileset does not exist, the tool
+  will return an error. If no fileset is specified the files will be added to
+  the source fileset by default.
+
+  -force - (Optional) Overwrite files of the same name in the local project
+  directory and in the fileset.
+
+  -norecurse - (Optional) Do not recurse through subdirectories of any
+  specified directories. Without this argument the tool will also search
+  through any subdirectories for additional source files that can be added to
+  a project.
+
+  -flat - (Optional) Import all files into the imports folder without
+  preserving their relative paths. By default the directory structure of
+  files is preserved as they are imported into the design.
+
+  -relative_to <arg> - (Optional) Import the files relative to the specified
+  directory. This allows you to preserve the path to the imported files in
+  the directory structure of the local project. The files will be imported to
+  the imports folder with the path relative to the specified directory.
+
+  Note: The -relative_to argument is ignored if the -flat argument is also
+  specified. The -flat command eliminates the directory structure of the
+  imported files.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <files> - (Optional) One or more file names or directory names to be added
+  to the specified fileset. If a directory name is specified, all valid
+  source files found in the directory, and in subdirectories of the
+  directory, will be added. If no files are specified, the tool imports files
+  in the source set for the current project.
+
+  Note: If the path is not specified as part of the file name, the current
+  working directory is used, or the directory from which the tool was
+  launched.
+
+Examples:
+
+  The following example imports the top.ucf file into the constrs_1
+  constraint fileset.
+
+    import_files -fileset constrs_1 top.ucf  
+    
+
+  The following example imports the valid source files into the source
+  fileset (sources_1) as a default since the -fileset argument is not
+  specified. In addition, the -norecurse argument restricts the tool to
+  looking only in the specified \level1 directory and not searching any
+  subdirectories. All valid source files will be imported into the \imports
+  folder of the project because the -flat argument has been specified.
+
+    import_files C:/Data/FPGA_Design/level1 -norecurse -flat  
+    
+
+  Note: Without the -flat option a \level1 directory would be created inside
+  of the \imports folder of the project.
+
+  The following example imports files into the source fileset (sources_1)
+  because the -fileset argument is not specified. Valid source files are
+  imported from the \level1 directory, and all subdirectories, and the files
+  will be written into the \imports folder of the project starting at the
+  \Data directory due to the use of the -relative_to argument.
+
+    import_files C:/Data/FPGA_Design/level1 -relative_to C:/Data  
+    
+
+See Also:
+
+   *  add_files
+
+# puts [help read_checkpoint]
+read_checkpoint
+
+Description: 
+Read a design checkpoint
+
+Syntax: 
+read_checkpoint  [-cell <arg>] [-incremental] [-directive <arg>]
+                 [-auto_incremental] [-fix_objects <args>]
+                 [-dcp_cell_list <args>] [-force_incr] [-quiet] [-verbose]
+                 [<file>]
+
+Usage: 
+  Name                 Description
+  --------------------------------
+  [-cell]              Replace this cell with the checkpoint. The cell must 
+                       be a black box.
+  [-incremental]       Input design checkpoint file to be used for re-using 
+                       implementation.
+  [-directive]         Mode of behavior (directive) for this command. Please 
+                       refer to Arguments section of this help for values for
+                       this option.
+                       Default: RuntimeOptimized
+  [-auto_incremental]  Enters automatic mode for incremental compile. This is
+                       less aggressive than the standard incremental mode and
+                       will readily switch from incremental algorithms to the
+                       default algorithms if results might not be maintained.
+                       Should not be used with -reuse_objects.
+  [-fix_objects]       Fix only given list of cells, clock regions, SLRs or 
+                       Design
+  [-dcp_cell_list]     A list of cell/dcp pairs, e.g. {<cell1> <dcp1> <cell2>
+                       <dcp2>}. The option value should be in curly braces.
+  [-force_incr]        Force switch to forcefully run incremental flow 
+                       irrespective of rule/ML based criteria
+  [-quiet]             Ignore command errors
+  [-verbose]           Suspend message limits during command execution
+  [<file>]             Design checkpoint file
+
+Categories: 
+FileIO
+
+Description:
+
+  Reads a design checkpoint file (DCP) that contains the netlist,
+  constraints, and may optionally have the placement and routing information
+  of an implemented design. You can save design checkpoints at any stage in
+  the design using the write_checkpoint command.
+
+  The read_checkpoint command simply reads the associated checkpoint file,
+  without opening a design or project in-memory. To create a project from the
+  imported checkpoint, use the open_checkpoint command instead of
+  read_checkpoint, or use the link_design command after read_checkpoint to
+  open the in-memory design from the checkpoint or checkpoint files currently
+  read.
+
+  Note: When multiple design checkpoints are open in the Vivado tool, you
+  must use the current_project command to switch between the open designs.
+  You can use current_design to check which checkpoint is the active design.
+
+  Important: The -incremental switch is not intended to merge two DCP files
+  into a single design. It applies the placement and routing of the
+  incremental checkpoint to the netlist objects in the current design.
+
+  After loading an incremental design checkpoint, you can use the
+  report_incremental_reuse command to determine the percentage of physical
+  data reused from the incremental checkpoint, in the current design. The
+  place_design and route_design commands will run incremental place and
+  route, preserving reused placement and routing information and
+  incorporating it into the design solution.
+
+  Reading a design checkpoint with -incremental, loads the physical data into
+  the current in-memory design. To clear out the incremental design data, you
+  must either reload the current design, using open_run to open the synthesis
+  run for instance, or read a new incremental checkpoint to overwrite the one
+  previously loaded.
+
+Arguments:
+
+  -cell <arg> - (Optional) Specifies a black box cell in the current design
+  to populate with the netlist data from the checkpoint file being read. This
+  option cannot be used with -incremental, or any of its related options.
+
+  -auto_incremental - (Optional) Enables incremental algorithms only when the
+  quality of the reference checkpoint is high. This allows a user to set this
+  option and let the tool decide whether to run default or incremental
+  algorithms.
+
+  -incremental - (Optional) Load a checkpoint file into an already open
+  design to enable the incremental implementation design flow, where <file>
+  specifies the path and filename of the incremental design checkpoint (DCP)
+  file. In the incremental implementation flow, the placement and routing
+  from the incremental DCP is applied to matching netlist objects in the
+  current design to reuse existing placement and routing. Refer to the Vivado
+  Design Suite User Guide: Implementation (UG904) for more information on
+  incremental implementation.
+
+  -directive [ RuntimeOptimized | TimingClosure | Quick ] - (Optional)
+  Specifies a directive, or mode of operation for the -incremental process.
+
+   *  RuntimeOptimized: The target WNS is the referenced from the incremental
+      DCP. By default, more reuse from the reference checkpoint is
+      encouraged.
+
+   *  TimingClosure: The target WNS is 0. This mode attempts to meet timing
+      at the expense of runtime. Paths not meeting timing will be ripped up
+      and the incremental algorithms will be applied to fix timing on the
+      paths.
+
+   *  Quick: Specifies a low effort, non-timing-driven incremental
+      implementation mode with the fastest runtime.
+
+  -fix_objects - (Optional) When -incremental is specified, mark the
+  placement location of specifed cells as fixed (IS_LOC_FIXED) to prevent
+  changes by the place_design command. This option will fix the placement of
+  the specified list of cells, clock regions, SLRs or the current_design.
+
+  -dcp_cell_list <arg> - (Optional) Lets you specify a list of cell/dcp
+  pairs. This lets you read in multiple DCP files for specified cells in a
+  single run of the read_checkpoint command. The format is specified as a
+  list of cell/DCP pairs enclosed in curly braces: {<cell1> <dcp1> <cell2>
+  <dcp2>}.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The path and filename of the checkpoint file to read.
+
+  Note: If the path is not specified as part of the file name, the tool will
+  search for the specified file in the current working directory and then in
+  the directory from which the tool was launched.
+
+Examples:
+
+  The following example imports the specified checkpoint file into the tool,
+  and then links the various design elements to create an in-memory design of
+  the specified name:
+
+    read_checkpoint C:/Data/checkpoint.dcp
+    link_design -name Test1
+    
+
+  This example reads a design checkpoint on top of the current design for
+  incremental place and route of the design:
+
+    read_checkpoint -incremental C:/Data/routed.dcp
+    
+
+  This example reads a design checkpoint. Incremental algorithms will be used
+  only if the timing is nearly met and if there is a high reuse:
+
+    read_checkpoint -auto_incremental C:/Data/routed.dcp
+
+Related Information:
+
+   *  all_dsps
+   *  config_implementation
+   *  current_design
+   *  current_project
+   *  get_cells
+   *  link_design
+   *  open_checkpoint
+   *  report_config_implementation
+   *  write_checkpoint
+
+# puts [help export_ip_user_files]
+export_ip_user_files
+
+Description: 
+Generate and export IP/IPI user files from a project. This can be scoped to work on one or more IPs.
+
+Syntax: 
+export_ip_user_files  [-of_objects <args>] [-ip_user_files_dir <arg>]
+                      [-ipstatic_source_dir <arg>] [-lib_map_path <arg>]
+                      [-no_script] [-sync] [-reset] [-force] [-quiet]
+                      [-verbose]
+
+Usage: 
+  Name                    Description
+  -----------------------------------
+  [-of_objects]           IP, BD file object
+  [-ip_user_files_dir]    Base directory path for exporting IP files
+  [-ipstatic_source_dir]  Custom directory path for exporting IP static files
+  [-lib_map_path]         Compiled simulation library directory path
+  [-no_script]            Do not export simulation scripts
+  [-sync]                 Delete IP/IPI dynamic and simulation script files
+  [-reset]                Delete all IP/IPI static, dynamic and simulation 
+                          script files
+  [-force]                Overwrite files
+  [-quiet]                Ignore command errors
+  [-verbose]              Suspend message limits during command execution
+
+Categories: 
+ToolLaunch, Simulation
+
+Description:
+
+  Export IP generated static, dynamic, netlist, verilog/vhdl stubs, and
+  memory initializaton files to the ip_user_files.
+
+Arguments:
+
+  -of_objects <arg> - (Optional) Target object, IP, block design (.bd), or a
+  fileset, for which the generated files needs to be exported.
+
+  -ip_user_files_dir <arg> - (Optional) Directory path to IP user files. By
+  default, if this switch is not specified then this this command will use
+  the path specified with the IP.USER_FILES_DIR project property value.
+
+  -ipstatic_source_dir <arg> - (Optional) Directory path to the static IP
+  files. By default, if this switch is not specified then this command will
+  use the path specified with the SIM.IPSTATIC_SOURCE_DIR project property
+  value.
+
+  Note: If the -ip_user_files_dir switch is specified, then by default the IP
+  static files will be exported under the sub-directory with the name
+  ipstatic. If this switch is specified in conjunction with
+  -ipstatic_source_dir, then the IP static files will be exported in the path
+  specified with the -ipstatic_source_dir switch.
+
+  -lib_map_path <arg> - (Optional) Directory path to the pre-compiled
+  simulation library.
+
+  -no_script - (Optional) Do not export simulation scripts generated by the
+  export_simulation Tcl command. By default, this command will call the
+  export_simulation command to generate simulation scripts as well after
+  exporting the generated files.
+
+  -sync - (Optional) Delete exported IP/BD sources and simulation scripts
+  from the ip_user_files dir.
+
+  -reset - (Optional) Delete all IP/BD generated sources and simulation
+  script files from the ip_user_files dir.
+
+  -force - (Optional) Overwrite existing source files in the ip_user_files
+  directory with generated IP/BD files.
+
+  -quiet (Optional) Execute the command quietly, ignoring any command line
+  errors and returning no messages. The command also returns TCL_OK
+  regardless of any errors encountered during execution.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The command export_ip_user_files -of_objects [get_ips char_fifo] exports
+  the following:
+
+   *  Dynamic files for the char_fifo IP to
+      <project>/<project>.ip_user_files/ip/char_fifo directory
+
+   *  IP static files to <project>/<project>.ip_user_files/ipstatic directory
+
+   *  Simulation script to the
+      <project>/<project>.ip_user_files/sim_scripts/char_fifo/<simulator>
+      directory
+
+  The following command, will export char_fifo IP static and dynamic files to
+  the my_proj/user_files/static and /my_proj/user_files directories:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo] \
+         -ipstatic_source_dir /my_proj/user_files/static
+         -ip_user_files_dir /my_proj/user_files \
+
+  The following command will export char_fifo simulation script files using
+  the pre-compiled simulation library from /my_proj/compiled_libs/lib:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo] \
+         -lib_map_path /my_proj/compiled_libs/lib
+
+  The following command will export files without generating simulation
+  scripts for the char_fifo IP:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo] \
+         -no_script
+
+  The following command will delete generated files and simulation scripts
+  for the char_fifo IP:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo]\
+         -sync
+
+  The following command will delete all generated files and simulation
+  scripts for the char_fifo IP:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo] \
+         -reset
+
+  The following command will overwrite all generated files and simulation
+  scripts for the char_fifo:
+
+    export_ip_user_files \
+         -of_objects [get_ips char_fifo] \
+         -force
+
+See Also:
+
+   *  get_files
+   *  get_ips
+
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 10:34:16 2026...

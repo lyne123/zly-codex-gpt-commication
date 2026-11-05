@@ -1,0 +1,7 @@
+category,check,all_time_count,after_5us_count
+ILA_asynchronous_PWM_debug_capture,setuphold,42,42
+MMCM_unused_CLKOUT5_6_model,period,206382,188236
+PWM_asynchronous_synchronizer,setuphold,80,80
+TDL_asynchronous_sampling,setuphold,19504,19504
+reset_synchronizer,recrem,1,0
+synchronous_TDC_digital,setuphold,2,0

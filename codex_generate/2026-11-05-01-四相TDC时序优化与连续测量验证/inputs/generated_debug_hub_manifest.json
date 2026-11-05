@@ -1,0 +1,40 @@
+{
+  "configuration_source": "Vivado自动生成脚本，参数未改变，单独在U盘工作目录执行",
+  "files": [
+    {
+      "file": "dbg_hub_ooc_early.xdc",
+      "sha256": "f6be1edab5e043fedca93dce06cdc0ff0f4fed49b1e28c742bf8920f0e379d04",
+      "bytes": 3244
+    },
+    {
+      "file": "get_cs_ip.tcl",
+      "sha256": "c9d29217ed6b022d94492a99adf918a6b412ebc467c45e4246e05bf4125b6953",
+      "bytes": 1369
+    },
+    {
+      "file": "result.dcp",
+      "sha256": "48eb5c25ac0a6d395164262776b1fd16af55e0c210f836b96015d87b5ac06373",
+      "bytes": 377427
+    },
+    {
+      "file": "result.xci",
+      "sha256": "8948ce9b7bd08cd0f826e8e8486a48fbcf30ff4d0d9066fdf7f9760d8b753586",
+      "bytes": 10447
+    },
+    {
+      "file": "xsdbm_cc_early_early.xdc",
+      "sha256": "bacf9ab5521d441c2272421a450f1d39956039b8572e64f96e989d28625e47b6",
+      "bytes": 266
+    },
+    {
+      "file": "xsdbm_cc_late_late.xdc",
+      "sha256": "4ffeaf016ee2afd8268f06170558764e639cee0bb099855d60276006cee687ea",
+      "bytes": 24719
+    },
+    {
+      "file": "xsdbm_gc_late_late.xdc",
+      "sha256": "6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167",
+      "bytes": 3
+    }
+  ]
+}

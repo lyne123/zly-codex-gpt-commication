@@ -1,0 +1,414 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 01:35:57 2026
+# Process ID: 22128
+# Current directory: U:/build/baseline/timing_baseline.runs/synth_1
+# Command line: vivado.exe -log tdc_meas_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tdc_meas_top.tcl
+# Log file: U:/build/baseline/timing_baseline.runs/synth_1/tdc_meas_top.vds
+# Journal file: U:/build/baseline/timing_baseline.runs/synth_1\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source tdc_meas_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.766 ; gain = 116.156
+source U:/scripts/limit_threads.tcl
+Command: synth_design -top tdc_meas_top -part xc7k325tffg900-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9392
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1917.602 ; gain = 406.941
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'tdc_meas_top' [U:/rtl/tdc_meas_top.v:1]
+	Parameter ENABLE_SKEW_COMP bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'tdc_fine_layer' [U:/rtl/tdc_fine_layer.v:12]
+	Parameter CARRY_NUM bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:78971]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:78971]
+INFO: [Synth 8-6157] synthesizing module 'tdc_phase_tdl_encoder' [U:/rtl/tdc_fine_layer.v:316]
+	Parameter CARRY_NUM bound to: 16 - type: integer 
+	Parameter MAX_VALID_TAP bound to: 60 - type: integer 
+	Parameter MIN_VALID_TAP bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CARRY4' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1497]
+INFO: [Synth 8-6155] done synthesizing module 'CARRY4' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1497]
+INFO: [Synth 8-6157] synthesizing module 'tdl_edge_candidate' [U:/rtl/tdc_fine_layer.v:449]
+	Parameter TAPS bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdl_edge_candidate' (0#1) [U:/rtl/tdc_fine_layer.v:449]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_phase_tdl_encoder' (0#1) [U:/rtl/tdc_fine_layer.v:316]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_fine_layer' (0#1) [U:/rtl/tdc_fine_layer.v:12]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_candicate' [U:/rtl/tdc_time_candicate.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_candicate' (0#1) [U:/rtl/tdc_time_candicate.v:9]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_locate' [U:/rtl/tdc_time_locate.v:3]
+	Parameter COARSE_W bound to: 10 - type: integer 
+	Parameter MAX_TAP bound to: 64 - type: integer 
+	Parameter TAP_PS bound to: 10 - type: integer 
+	Parameter ENABLE_SKEW_COMP bound to: 0 - type: integer 
+	Parameter RISE_OFFSET_0_PS bound to: 18'sb000000000000000000 
+	Parameter RISE_OFFSET_90_PS bound to: 18'sb000000000000000000 
+	Parameter RISE_OFFSET_180_PS bound to: 18'sb000000000000000000 
+	Parameter RISE_OFFSET_270_PS bound to: 18'sb000000000000000000 
+	Parameter FALL_OFFSET_0_PS bound to: 18'sb000000000000000000 
+	Parameter FALL_OFFSET_90_PS bound to: 18'sb000000000000000000 
+	Parameter FALL_OFFSET_180_PS bound to: 18'sb000000000000000000 
+	Parameter FALL_OFFSET_270_PS bound to: 18'sb000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_locate' (0#1) [U:/rtl/tdc_time_locate.v:3]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [U:/rtl/tdc_meas_top.v:176]
+INFO: [Synth 8-6157] synthesizing module 'ila_2' [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/ila_2_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/ila_2_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_merge' [U:/rtl/tdc_time_merge.v:7]
+	Parameter COARSE_W bound to: 10 - type: integer 
+	Parameter MAX_TAP bound to: 64 - type: integer 
+	Parameter TAP_PS bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_merge' (0#1) [U:/rtl/tdc_time_merge.v:7]
+INFO: [Synth 8-6157] synthesizing module 'fifo_tdc_result' [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/fifo_tdc_result_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_tdc_result' (0#1) [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/fifo_tdc_result_stub.v:5]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [U:/rtl/tdc_meas_top.v:283]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/ila_3_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [U:/build/baseline/timing_baseline.runs/synth_1/.Xil/Vivado-22128-Lyne/realtime/ila_3_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_meas_top' (0#1) [U:/rtl/tdc_meas_top.v:1]
+WARNING: [Synth 8-6014] Unused sequential element s2_comp_mid_reg was removed.  [U:/rtl/tdc_time_locate.v:133]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_time_locate'. This will prevent further optimization [U:/rtl/tdc_meas_top.v:161]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_time_merge'. This will prevent further optimization [U:/rtl/tdc_meas_top.v:194]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila2'. This will prevent further optimization [U:/rtl/tdc_meas_top.v:176]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila3'. This will prevent further optimization [U:/rtl/tdc_meas_top.v:283]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_fine_layer'. This will prevent further optimization [U:/rtl/tdc_meas_top.v:80]
+WARNING: [Synth 8-7129] Port repeat_error in module tdc_time_locate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[59] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[58] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[57] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[56] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[55] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[54] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[53] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[52] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[51] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[50] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[49] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[48] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[47] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[46] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[45] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[44] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[43] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[42] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[41] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[40] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[39] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[38] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[37] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[36] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[35] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[34] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[33] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[32] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[31] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[30] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[29] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[28] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[27] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[26] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[25] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[24] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[23] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[22] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[21] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[20] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[19] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[18] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[17] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[16] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[15] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[14] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[13] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[12] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[11] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[10] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[9] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[8] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[7] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[6] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[5] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[4] in module tdl_edge_candidate is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2020.555 ; gain = 509.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2020.555 ; gain = 509.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2020.555 ; gain = 509.895
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2020.555 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 64 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_result'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_result'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_error'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_error'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'u_ila2'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'u_ila2'
+Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'u_ila3'
+Finished Parsing XDC File [u:/build/baseline/timing_baseline.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'u_ila3'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2106.113 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2106.113 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_fifo_tdc_error' at clock pin 'wr_clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_fifo_tdc_result' at clock pin 'wr_clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_ila2' at clock pin 'clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk. (constraint file  u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk. (constraint file  u:/build/baseline/timing_baseline.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_fifo_tdc_error. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_fifo_tdc_result. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila3. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   23 Bit       Adders := 1     
+	   3 Input   22 Bit       Adders := 1     
+	   4 Input   21 Bit       Adders := 1     
+	   2 Input   21 Bit       Adders := 3     
+	   3 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 13    
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    6 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 16    
+	   2 Input    4 Bit       Adders := 32    
+	   4 Input    3 Bit       Adders := 64    
++---Registers : 
+	               64 Bit    Registers := 4     
+	               32 Bit    Registers := 3     
+	               23 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               21 Bit    Registers := 5     
+	               19 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 13    
+	                8 Bit    Registers := 19    
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 12    
+	                5 Bit    Registers := 16    
+	                4 Bit    Registers := 37    
+	                3 Bit    Registers := 64    
+	                2 Bit    Registers := 15    
+	                1 Bit    Registers := 51    
++---Muxes : 
+	   2 Input   21 Bit        Muxes := 2     
+	   4 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 17    
+	   2 Input    4 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 9     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port repeat_error in module tdc_time_locate is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:40 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name    | RTL Name                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|tdc_fine_layer | u_tdl0/type_pipe_reg[9]   | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl90/type_pipe_reg[9]  | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl180/type_pipe_reg[9] | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl270/type_pipe_reg[9] | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl0/ready_pipe_reg[5]  | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|tdc_fine_layer | aux_fall_pipe_reg[5]      | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|tdc_fine_layer | aux_rise_pipe_reg[5]      | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |clk_wiz_0       |         1|
+|2     |ila_2           |         1|
+|3     |fifo_tdc_result |         2|
+|4     |ila_3           |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |clk_wiz         |     1|
+|2     |fifo_tdc_result |     2|
+|4     |ila             |     2|
+|6     |CARRY4          |   123|
+|7     |LUT1            |    40|
+|8     |LUT2            |   202|
+|9     |LUT3            |    68|
+|10    |LUT4            |   302|
+|11    |LUT5            |   126|
+|12    |LUT6            |   175|
+|13    |SRL16E          |    11|
+|14    |FDCE            |   520|
+|15    |FDRE            |   842|
+|16    |IBUF            |     2|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:42 . Memory (MB): peak = 2107.211 ; gain = 509.895
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:46 . Memory (MB): peak = 2107.211 ; gain = 596.551
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 2107.211 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 123 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2107.211 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 6e816a14
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 65 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:56 . Memory (MB): peak = 2107.211 ; gain = 1040.918
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Common 17-1381] The checkpoint 'U:/build/baseline/timing_baseline.runs/synth_1/tdc_meas_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tdc_meas_top_utilization_synth.rpt -pb tdc_meas_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 01:37:07 2026...

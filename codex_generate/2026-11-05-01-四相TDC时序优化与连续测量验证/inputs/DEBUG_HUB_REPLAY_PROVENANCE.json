@@ -1,0 +1,16 @@
+[
+  {
+    "original": "U:\\logs\\debug_capture\\Vivado-24732-Lyne\\dc_drv.0\\dc\\debug_ip_core.tcl",
+    "replayed": "U:\\build\\dbgpre\\debug_ip_core.tcl",
+    "original_sha256": "e5f5827fb579f9ec2c22a2f0f8b64a4043ad529a80c7cd3c90930d8fd9f2a79e",
+    "replayed_sha256": "8c505c3d34d2e7a6dc2268a0b20eb455aa6f644d1f2e72393a1655d661d0d961",
+    "change": "仅替换工作路径，所有IP参数和官方调用不变"
+  },
+  {
+    "original": "U:\\logs\\debug_capture\\Vivado-24732-Lyne\\dbg_hub_CV.0\\out\\get_cs_ip.tcl",
+    "replayed": "U:\\build\\dbgpre\\dbg_hub_CV.0\\out\\get_cs_ip.tcl",
+    "original_sha256": "64dd072ed048b4c7e1cab5f5556cf98f30129a43bf5787128e9b35aa03a13dfb",
+    "replayed_sha256": "5d16f93f1e8b68dc0dbb385e8de3cfe166da71414d90c2bcdbbf3f43842932da",
+    "change": "仅替换工作路径，所有IP参数和官方调用不变"
+  }
+]

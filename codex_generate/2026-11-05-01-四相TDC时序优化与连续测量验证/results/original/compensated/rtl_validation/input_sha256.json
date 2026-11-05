@@ -1,0 +1,14 @@
+{
+  "U:\\results\\original\\compensated\\rtl_validation\\input_tb.sv": {
+    "sha256": "7ca428411ec1cc5881f9e67d2fc6a67c92608dec19ddfb25899b174cf654bd02",
+    "bytes": 8890
+  },
+  "U:\\results\\original\\compensated\\rtl_validation\\stimulus.txt": {
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+    "bytes": 110530
+  },
+  "U:\\results\\original\\compensated\\rtl_validation\\truth.csv": {
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac",
+    "bytes": 301310
+  }
+}

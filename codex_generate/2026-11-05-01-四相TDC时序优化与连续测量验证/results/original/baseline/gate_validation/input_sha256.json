@@ -1,0 +1,26 @@
+{
+  "U:\\results\\original\\baseline\\gate_validation\\input_tb.sv": {
+    "sha256": "7ca428411ec1cc5881f9e67d2fc6a67c92608dec19ddfb25899b174cf654bd02",
+    "bytes": 8890
+  },
+  "U:\\results\\original\\baseline\\gate_validation\\stimulus.txt": {
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+    "bytes": 110530
+  },
+  "U:\\results\\original\\baseline\\gate_validation\\truth.csv": {
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac",
+    "bytes": 301310
+  },
+  "U:\\results\\original\\baseline\\design.v": {
+    "sha256": "354f57e3910d3845e8768a8b341662441b671054126eeb9ed9b4240370f95d2c",
+    "bytes": 5917185
+  },
+  "U:\\results\\original\\baseline\\design.sdf": {
+    "sha256": "224f359e5b30ef372e99dcd56d76947c0170c35c56bbf8917b05a0f0b63d660f",
+    "bytes": 12794751
+  },
+  "U:\\results\\original\\baseline\\design.dcp": {
+    "sha256": "0534d05b0b633f31957079f46cd5a8d55ee0a8aade3d85f72e32494adc465c71",
+    "bytes": 3786938
+  }
+}

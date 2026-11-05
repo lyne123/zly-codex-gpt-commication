@@ -1,0 +1,11 @@
+vivado=2022.2
+part=xc7k325tffg900-2
+variant=baseline
+frequency_mhz=500
+synthesis=Flow_PerfOptimized_high
+implementation=Performance_ExplorePostRoutePhysOpt
+post_route_physopt=AggressiveExplore
+corner=slow/MAX
+added_frontend_cycles=1
+generics=ENABLE_SKEW_COMP=0
+flow_notes=source=Explore_opt_checkpoint;preplace_bram_power_opt;place=ExtraPostPlacementOpt;force_ILA_driver_replication;route=Explore;postroute=targeted_placement_routing

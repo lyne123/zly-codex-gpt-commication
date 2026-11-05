@@ -1,0 +1,368 @@
+[
+  {
+    "source": "U:\\results\\optimized\\baseline\\Baseline_Optimized.bit",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\Baseline_Optimized.bit",
+    "sha256": "7146fd6c1aef1ed38e77ddc91c7520790bf5f9040e7bfce8ea051b9bbf6b98b9",
+    "bytes": 11443721
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\build_metadata.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\build_metadata.txt",
+    "sha256": "d4f5e7db8a7a9bcbdb7c54850760bdba4b0188dada4cde344301555a332cae98",
+    "bytes": 271
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\cdc.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\cdc.rpt",
+    "sha256": "6ccad0d00c73a43a7c09e403c361845388f97c6589ac87647464a0374ea586a6",
+    "bytes": 28337
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\check_timing.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\check_timing.rpt",
+    "sha256": "19734027f7384acfdb036c78696aebf90c5d70ebbf6c8976d1c54f681fcfd446",
+    "bytes": 3070
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\clocks.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\clocks.rpt",
+    "sha256": "2079989683e44fea531dbe38ac7bb2231c782259045e7888a2e8f6ea652a202d",
+    "bytes": 4273
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\clock_interaction.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\clock_interaction.rpt",
+    "sha256": "160f9d15ee6faf074bf5fa23547a8c82cecd170632d81d8264efe0502cd3388a",
+    "bytes": 5651
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\design.dcp",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\design.dcp",
+    "sha256": "ade10e658c02beff69b5bb1f18c4e93d8a73e7bfb830d1fbd758720fb99cf8ec",
+    "bytes": 3823439
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\design.sdf",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\design.sdf",
+    "sha256": "3346c0dac8ae984d2f402c1a3c42565320e20acda39d19c0d4ec4199b3aff4f7",
+    "bytes": 12845946
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\design.v",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\design.v",
+    "sha256": "ec4690a579d34418ac501d2d56a4f14e56f07014b9652b6a83c5ee5859f92965",
+    "bytes": 5938263
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\design_analysis_setup.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\design_analysis_setup.rpt",
+    "sha256": "4d3e69f717d1ec907f11fbaa72dcf9797600fd95d97bc485210411df5cadc67d",
+    "bytes": 32537
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\drc.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\drc.rpt",
+    "sha256": "8b49b925aa319ab9c5b060543e39dccba9b0a3c65226dfb07134c467576405fc",
+    "bytes": 32078
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\exceptions.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\exceptions.rpt",
+    "sha256": "dea8e530750958c1af20a13210fed176a73ad8f7faac727fe5b0c4aa2b822aca",
+    "bytes": 69230
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\frontend_route.tsv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\frontend_route.tsv",
+    "sha256": "e51095f61c73d6fbb47e2cd0561f6f30b2b22f86fe7528efb1b2483267da99de",
+    "bytes": 1224659
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\frontend_structure.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\frontend_structure.csv",
+    "sha256": "19e6b085b66f8fc24040e4cc109a4a25c478457e0a9f1f20a6886f0196c328bf",
+    "bytes": 24007
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\hold_top50.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\hold_top50.rpt",
+    "sha256": "a85643fbff3b9c60691c54ba8e2a53c991205caba4252b50391020904e03d287",
+    "bytes": 311004
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\path_properties.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\path_properties.txt",
+    "sha256": "2561e9231487b7cfec8eb586240df39f7cf49900ee681bfd238ea825ef27d1b3",
+    "bytes": 54315
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\postroute_physopt_timing.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\postroute_physopt_timing.rpt",
+    "sha256": "c6319401462186bf4fe59ca63e696d7f51e7e0e327df32d56c325ef31ee3e61e",
+    "bytes": 333063
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\pre_postroute_physopt_timing.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\pre_postroute_physopt_timing.rpt",
+    "sha256": "e7a35322b35fba0f782efef59e50682db2190536c4f63723c44089863a6f5ec7",
+    "bytes": 332488
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\route_status.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\route_status.rpt",
+    "sha256": "d1862585e1429e9aab669e0d0cc0eae56ea654f233b56d982515712352745a6c",
+    "bytes": 651
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\setup_top50.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\setup_top50.rpt",
+    "sha256": "dc4a1091e89154ccbc0334cfef31c26c07e3bd7e7aca2bf8094b21f6e732e630",
+    "bytes": 385468
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\timing_summary.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\timing_summary.rpt",
+    "sha256": "8d7a2b84a3ee9053816ca339105124a6fb187f45d0b9b2fd5cb70e63a85bd961",
+    "bytes": 333033
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\utilization.rpt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\utilization.rpt",
+    "sha256": "6a6577ab4c3f5d24a28a094075b3dbe6f416e7fe7b7e41fc4d136d2687241f07",
+    "bytes": 11853
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\anomaly_pipeline_trace.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\anomaly_pipeline_trace.csv",
+    "sha256": "ca3610ff9ae37c7222fe33a8a52da4f947bf379a736f3ebf05d84a14dfcb5994",
+    "bytes": 261
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\candidate.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\candidate.csv",
+    "sha256": "963a6a619c1fe4dce3e5418d5fad8659985817233adb33d57a92d5d09b061134",
+    "bytes": 39855
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\clock_epoch.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\clock_epoch.csv",
+    "sha256": "48b64abb216bcd9eef8bdde8b21d1b0886a3c3e29810c7621bc81285a808f445",
+    "bytes": 18
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\errors.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\errors.csv",
+    "sha256": "5956b5ddf9aaa72435ae32bc8375c00ec98b48c49cf03b9910426fa8869f5d69",
+    "bytes": 19
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\error_fifo.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\error_fifo.csv",
+    "sha256": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+    "bytes": 14
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\fifo.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\fifo.csv",
+    "sha256": "5baf0851d8874259e964470b8eda9108aed70a0a2660031886def0dbfa6a2d7d",
+    "bytes": 12818
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\input_sha256.json",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\input_sha256.json",
+    "sha256": "54bd08ead9716c04421e0feac98360ec87c932493dcce9a4cd64e83304a0f9c2",
+    "bytes": 541
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\input_tb.sv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\input_tb.sv",
+    "sha256": "7ca428411ec1cc5881f9e67d2fc6a67c92608dec19ddfb25899b174cf654bd02",
+    "bytes": 8890
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\raw.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\raw.csv",
+    "sha256": "ab130ebe00ca9e9d5dba1b759e497c43c6300098eeaf65718ca263cd40403f45",
+    "bytes": 45735
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\run_manifest.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\run_manifest.txt",
+    "sha256": "ce39fb7c1d1c2afa4b3e019f6d21187578e2cd30d8b32815ec73e029c507e344",
+    "bytes": 99
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\sampled_taps.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\sampled_taps.csv",
+    "sha256": "325a7539043aa7cfdb77690524b0893440ad017cbdadc8bdb3a83c7b69933bd7",
+    "bytes": 93780
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\simulation.log",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\simulation.log",
+    "sha256": "a59e0891337c79b81bdbfdb0c682cc45d9f9d433eb7e7152b4b590ac87c9a7ca",
+    "bytes": 31
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\stimulus.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\stimulus.txt",
+    "sha256": "c28ad050d76f2971e0280dbf56ecd48da36e6519b83621f8ec8d810dba1eae05",
+    "bytes": 23090
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\timestamps.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\timestamps.csv",
+    "sha256": "eefa357e016f46c372cade1cc24f88015b703ddcabc3e11da7066264fd910ad4",
+    "bytes": 31169
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\truth.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\truth.csv",
+    "sha256": "6b1d40b6b466cb423e5a818d883cb8cf35239d15e67eeef34f80f266123eee52",
+    "bytes": 69200
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_calibration\\widths.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_calibration\\widths.csv",
+    "sha256": "2d1a20e94af03237ffd75885c1ee73df64508f97264e7ddc04113b8339bb76d9",
+    "bytes": 12818
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\analysis.log",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\analysis.log",
+    "sha256": "1afe326b3efd26acf5c20cad90d49c530d1d7fe30d2d1f453bfee333c090c3d4",
+    "bytes": 4262
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\anomaly_pipeline_trace.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\anomaly_pipeline_trace.csv",
+    "sha256": "9348d338c81a62457d12f7f7a4ec8d3624da3957824e2bc1a9d683073e7a9c49",
+    "bytes": 33597
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\associated_timestamps.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\associated_timestamps.csv",
+    "sha256": "340e34662f4eb2b72f348b9b41c27a8e6b1b0780cc1d250e1c055998ff99746f",
+    "bytes": 414734
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\candidate.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\candidate.csv",
+    "sha256": "ec03931c8e66673c6b00942c1563b065c3ca3ee7bf4bb5e3d802359d4b1f215a",
+    "bytes": 179298
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\channel_statistics.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\channel_statistics.csv",
+    "sha256": "ea8bd8ba0f92165079f87f0d0f063695660268bd7c483a16c71c749bfeff4acd",
+    "bytes": 14939
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\clock_epoch.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\clock_epoch.csv",
+    "sha256": "48b64abb216bcd9eef8bdde8b21d1b0886a3c3e29810c7621bc81285a808f445",
+    "bytes": 18
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\errors.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\errors.csv",
+    "sha256": "5956b5ddf9aaa72435ae32bc8375c00ec98b48c49cf03b9910426fa8869f5d69",
+    "bytes": 19
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\error_fifo.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\error_fifo.csv",
+    "sha256": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+    "bytes": 14
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\fifo.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\fifo.csv",
+    "sha256": "e8295c93252ff39f32afe3bdb8df18ac81d6c6fd30dbfe5177fdcf9854296733",
+    "bytes": 57943
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\fifo_check.json",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\fifo_check.json",
+    "sha256": "b7860f05f5675f52fa30af808e7de98540e4ab6e8fda838283b5bca27ce4564f",
+    "bytes": 196
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\input_sha256.json",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\input_sha256.json",
+    "sha256": "fd6a66eb064b75a5094ca8a3808a67dfa8a333741a9e17ac767e4148c384f2c5",
+    "bytes": 540
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\input_tb.sv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\input_tb.sv",
+    "sha256": "7ca428411ec1cc5881f9e67d2fc6a67c92608dec19ddfb25899b174cf654bd02",
+    "bytes": 8890
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\measurements.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\measurements.csv",
+    "sha256": "0a174ea02eb795dda3c7bc52c38c7145d9b495ed7be30433deed99fd6bc439ad",
+    "bytes": 451747
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\raw.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\raw.csv",
+    "sha256": "db5e298b3a5128666f781fb518d4ef97342e176ac0172a5f180763de00da6aef",
+    "bytes": 205836
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\run_manifest.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\run_manifest.txt",
+    "sha256": "2135bd8b254967826edc3d8494d2aa818af5abb6bf690143beec4495095dea99",
+    "bytes": 98
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\sampled_taps.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\sampled_taps.csv",
+    "sha256": "64e75689e58445da7ee245c69efce6e2330377e7660cb4f512c4168909495c1b",
+    "bytes": 430842
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\simulation.log",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\simulation.log",
+    "sha256": "0ca9cb1b8c674d23d86e5626f606905af5eab73eeb7207cf05d69ae236b5944f",
+    "bytes": 32
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\stimulus.txt",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\stimulus.txt",
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+    "bytes": 110530
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\summary.json",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\summary.json",
+    "sha256": "90a48bd9ab05c3dc229d71380f3d7d02066a3f7b28da7e87b1a12292babab8eb",
+    "bytes": 4283
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\test_metrics.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\test_metrics.csv",
+    "sha256": "8d99502ced7aca991f69d3c4fe1ca1526a7ca1dee376eec593a6a5bec71a470a",
+    "bytes": 2595
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\timestamps.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\timestamps.csv",
+    "sha256": "8c25c6a4ed411e20dc668caeb337fd2e40c874dbcc54239ae55dd494b62ab340",
+    "bytes": 141336
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\truth.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\truth.csv",
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac",
+    "bytes": 301310
+  },
+  {
+    "source": "U:\\results\\optimized\\baseline\\rtl_validation\\widths.csv",
+    "snapshot": "U:\\results\\trials\\baseline_initial\\rtl_validation\\widths.csv",
+    "sha256": "7772d96af0ee38806e8a9e9733501b6a22f601ccfab8d13a806048958da7d466",
+    "bytes": 57943
+  }
+]

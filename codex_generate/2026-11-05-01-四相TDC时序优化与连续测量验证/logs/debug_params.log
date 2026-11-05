@@ -1,0 +1,72 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 01:50:08 2026
+# Process ID: 27036
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-05-01-四相TDC时序优化与连续测量验证
+# Command line: vivado.exe -mode batch -log U:/logs/debug_params.log -journal U:/logs/debug_params.jou -source U:/scripts/debug_params.tcl
+# Log file: U:/logs/debug_params.log
+# Journal file: U:/logs/debug_params.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/debug_params.tcl
+# puts [help list_param]
+list_param
+
+Description: 
+Get all parameter names
+
+Syntax: 
+list_param  [-quiet] [-verbose]
+
+Returns: 
+list
+
+Usage: 
+  Name        Description
+  -----------------------
+  [-quiet]    Ignore command errors
+  [-verbose]  Suspend message limits during command execution
+
+Categories: 
+PropertyAndParameter
+
+Description:
+
+  Gets a list of user-definable configuration parameters. These parameters
+  configure a variety of settings and behaviors of the tool. For more
+  information on a specific parameter use the report_param command, which
+  returns a description of the parameter as well as its current value.
+
+Arguments:
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example returns a list of all user-definable parameters:
+
+    list_param 
+    
+
+See Also:
+
+   *  get_param
+   *  report_param
+   *  reset_param
+   *  set_param
+
+ERROR: [Common 17-165] Too many positional options when parsing 'chipscope.*', please type 'list_param -help' for usage info.
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 01:50:13 2026...

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\build\\baseline\\timing_baseline.runs\\clk_wiz_0_synth_1\\clk_wiz_0.dcp",
+    "archived": "inputs\\baseline_synthesis_products\\clk_wiz_0.dcp",
+    "sha256": "35911e38079cafc48dd3749cc7883dd6acc67383a41a35cc71173b0855792967",
+    "bytes": 12548
+  },
+  {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\build\\baseline\\timing_baseline.runs\\fifo_tdc_result_synth_1\\fifo_tdc_result.dcp",
+    "archived": "inputs\\baseline_synthesis_products\\fifo_tdc_result.dcp",
+    "sha256": "06bb1e28c9815edcbcafea936f080bad9306915c5b097b61ccfe011539e436de",
+    "bytes": 133535
+  },
+  {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\build\\baseline\\timing_baseline.runs\\ila_2_synth_1\\ila_2.dcp",
+    "archived": "inputs\\baseline_synthesis_products\\ila_2.dcp",
+    "sha256": "e168cc67b3a77e8eb3ff1fc205e9fe53958eba130cfd9dd5c176e6391bd7a7d7",
+    "bytes": 584855
+  },
+  {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\build\\baseline\\timing_baseline.runs\\ila_3_synth_1\\ila_3.dcp",
+    "archived": "inputs\\baseline_synthesis_products\\ila_3.dcp",
+    "sha256": "cbd60e2f4cbc6bb2a0299d9e7b4c8046b38be914e3d1f6f65d78181600035be0",
+    "bytes": 643285
+  },
+  {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-01-四相TDC时序优化与连续测量验证\\build\\baseline\\timing_baseline.runs\\synth_1\\tdc_meas_top.dcp",
+    "archived": "inputs\\baseline_synthesis_products\\tdc_meas_top.dcp",
+    "sha256": "a6fad13741963d9133e45fea15840cbcf9caad0e37b9a2b5e5a2cef479e047e6",
+    "bytes": 300407
+  }
+]

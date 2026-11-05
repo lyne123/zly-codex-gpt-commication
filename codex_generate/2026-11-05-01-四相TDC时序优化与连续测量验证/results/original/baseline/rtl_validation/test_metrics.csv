@@ -1,0 +1,15 @@
+phase,variant,level,test,expected_pulses,expected_rises,expected_falls,expected_edges,actual_rises,actual_falls,missing_rises,missing_falls,duplicate_rises,duplicate_falls,output_widths,correct_pairs,mispairs,complete,valid_rate,rmse_ps,bias_ps,std_ps,max_abs_ps,conditional_rmse_ps,conditional_bias_ps,conditional_std_ps,conditional_max_abs_ps,result_fifo_sequence_equal,error_fifo_sequence_equal,overflow_run_observation_cycles
+original,baseline,rtl,fixed_25300,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,all,3512,3512,3512,7024,3512,3512,0,0,0,0,3512,3512,0,True,1.0,3.2047622593496956,0.07232346241457858,3.2039460756599087,9,3.2047622593496956,0.07232346241457858,3.2039460756599087,9,True,True,0
+original,baseline,rtl,10MHz_50,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,20MHz_50,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,10MHz_5,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,10MHz_95,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,20MHz_5,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,20MHz_95,200,200,200,400,200,200,0,0,0,0,200,200,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,ATC_10MHz,1056,1056,1056,2112,1056,1056,0,0,0,0,1056,1056,0,True,1.0,3.938567075226802,-0.004734848484848485,3.9385642291665666,9,3.938567075226802,-0.004734848484848485,3.9385642291665666,9,True,True,0
+original,baseline,rtl,complete_frame,2112,2112,2112,4224,2112,2112,0,0,0,0,2112,2112,0,True,1.0,4.132626100296092,0.12026515151515152,4.130875788277774,9,4.132626100296092,0.12026515151515152,4.130875788277774,9,True,True,0
+original,baseline,rtl,header_5,32,32,32,64,32,32,0,0,0,0,32,32,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,header_95,32,32,32,64,32,32,0,0,0,0,32,32,0,True,1.0,0.0,0,0.0,0,0.0,0,0.0,0,True,True,0
+original,baseline,rtl,spwm_data,2048,2048,2048,4096,2048,2048,0,0,0,0,2048,2048,0,True,1.0,4.196701643850799,0.1240234375,4.194868636137571,9,4.196701643850799,0.1240234375,4.194868636137571,9,True,True,0
+original,baseline,rtl,ATC_20MHz,1056,1056,1056,2112,1056,1056,0,0,0,0,1056,1056,0,True,1.0,4.31797248296424,0.24526515151515152,4.311001202631312,9,4.31797248296424,0.24526515151515152,4.311001202631312,9,True,True,0

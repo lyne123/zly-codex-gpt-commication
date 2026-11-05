@@ -1,0 +1,12 @@
+{
+  "exact_candidate_replay": true,
+  "emitted": 7018,
+  "conflict_times_ps": [],
+  "baseline_compensated_frontend_byte_equal": {
+    "raw.csv": true,
+    "candidate.csv": true,
+    "sampled_taps.csv": true
+  },
+  "raw_sha256": "58ce2841b7427c4cbbb092738c46f2634086877ab39aa8459a8dc67cf93e4752",
+  "conclusion": "新SDF真实四相帧在理想候选RTL中精确重现7018个输出，未产生混合极性冲突。新漏沿不能直接套用旧版本的冲突机制；需检查候选输入形成及相邻去重规则。"
+}

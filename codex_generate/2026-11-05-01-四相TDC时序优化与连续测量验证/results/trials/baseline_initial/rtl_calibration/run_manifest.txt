@@ -1,0 +1,5 @@
+level=rtl
+phase=optimized
+variant=baseline
+dataset=calibration
+timing_checks=enabled_for_gate

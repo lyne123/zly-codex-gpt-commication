@@ -1,0 +1,800 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  5 02:27:01 2026
+# Process ID: 23728
+# Current directory: U:/
+# Command line: vivado.exe -mode batch -log U:/logs/opt_help.log -journal U:/logs/opt_help.jou -source U:/scripts/opt_help.tcl
+# Log file: U:/logs/opt_help.log
+# Journal file: U:/logs/opt_help.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source U:/scripts/opt_help.tcl
+# puts [help opt_design]
+opt_design
+
+Description: 
+Optimize the current netlist. This will perform the retarget, propconst, sweep and bram_power_opt optimizations by default.
+
+Syntax: 
+opt_design  [-retarget] [-propconst] [-sweep] [-bram_power_opt] [-remap]
+            [-aggressive_remap] [-resynth_remap] [-resynth_area]
+            [-resynth_seq_area] [-directive <arg>] [-muxf_remap]
+            [-hier_fanout_limit <arg>] [-bufg_opt] [-mbufg_opt]
+            [-shift_register_opt] [-dsp_register_opt] [-srl_remap_modes <arg>]
+            [-control_set_merge] [-control_set_opt] [-merge_equivalent_drivers]
+            [-carry_remap] [-debug_log] [-property_opt_only] [-quiet]
+            [-verbose]
+
+Usage: 
+  Name                         Description
+  ----------------------------------------
+  [-retarget]                  Retarget
+  [-propconst]                 Propagate constants across leaf-level 
+                               instances
+  [-sweep]                     Remove unconnected leaf-level instances
+  [-bram_power_opt]            Perform Block RAM power optimizations
+  [-remap]                     Remap logic optimally in LUTs
+  [-aggressive_remap]          High effort remap optimization
+  [-resynth_remap]             High effort re-synthesis to reduce the depth 
+                               of logic in critical timing paths
+  [-resynth_area]              Resynthesis
+  [-resynth_seq_area]          Resynthesis (with Sequential optimizations)
+  [-directive]                 Mode of behavior (directive) for this command.
+                               Please refer to Arguments section of this help
+                               for values for this option
+                               Default: Default
+  [-muxf_remap]                Optimize all MuxFx cells to LUT3
+  [-hier_fanout_limit]         Replicate by module with threshold N
+  [-bufg_opt]                  Insert, Merge and Split BUFGs
+  [-mbufg_opt]                 Merge BUFGs to MBUFGs
+  [-shift_register_opt]        Pull register stage from shift register
+  [-dsp_register_opt]          Push/Pull Registers out of a DSP
+  [-srl_remap_modes]           Remap shift registers to flops or flops to 
+                               shift registers
+  [-control_set_merge]         Merge all equivalent control set drivers to a 
+                               single driver
+  [-control_set_opt]           Optimize control set, Versal only
+  [-merge_equivalent_drivers]  Merge all LUT,Flop equivalent driver 
+                               replications
+  [-carry_remap]               Remap carries into luts
+  [-debug_log]                 Show debug message
+  [-property_opt_only]         Do targeted optimizations on tagged cells
+  [-quiet]                     Ignore command errors
+  [-verbose]                   Suspend message limits during command 
+                               execution
+
+Categories: 
+Tools
+
+Description:
+
+  Optimizes a design netlist for the target part. Optimization can provide
+  improvements to synthesized netlists from third-party tools, or for
+  netlists that may not have been optimized during synthesis.
+
+  Run this command after synthesis but prior to implementation to optimize
+  the design and simplify the netlist before placing and routing the design.
+  Assign the DONT_TOUCH property to prevent the optimization of individual
+  cells.
+
+  Tip: To see what actions opt_design is taking in optimizing your design,
+  you can use the -verbose option to get a more detailed transcript of the
+  process. This can help you in understanding and debugging some of the
+  changes made to your design.
+
+  The opt_design command performs the following optimizations by default:
+
+   *  Retarget
+
+   *  Constant Propagation
+
+   *  Sweep
+
+   *  Global Buffer (BUFG) optimizations
+
+   *  DSP Register optimizations
+
+   *  Shift-Register Logic optimizations
+
+   *  Block RAM Power optimizations
+
+   *  Implement MIG cores
+
+   *  Implement Debug cores
+
+  Important: Using command-line options for specific optimizations results in
+  opt_design performing only the specified optimizations and disabling all
+  others, even the ones that are usually performed by default.
+
+  To perform LUT Remapping, you must specify -remap.
+
+  To perform area-based re-synthesis, you must specify -resynth_area, or
+  -directive ExploreArea.
+
+  To perform sequential area-based re-synthesis, you must specify
+  -resynth_seq_area, or -directive ExploreSequentialArea.
+
+Arguments:
+
+  -retarget - (Optional) Retarget one type of block to another when
+  retargetting the design from one device family to another. For example,
+  retarget instantiated MUXCY or XORCY components into a CARRY4 block; or
+  retarget DCM to MMCM. The retarget optimization also absorbs inverters into
+  downstream logic where possible.
+
+  Note: The -retarget argument is optional, as are the other optimizations.
+  However this optimization is run by default unless explicitly overridden by
+  another optimization.
+
+  -propconst - (Optional) Propagate constant inputs through the circuit,
+  resulting in a simplified netlist. Propagation of constants can eliminate
+  redundant combinational logic from the netlist.
+
+  -sweep - (Optional) Remove unnecessary logic, removing loadless cells and
+  nets. Additional optimization can be performed such as tie-off, register
+  replication driving multiple OBUF, IBUF/OBUF insertion, retargeting dual
+  port RAM to single port RAM, and optimizing IDELAYCTRL by grouping IO.
+
+  -bram_power_opt - (Optional) Enables power optimization on Block RAM cells.
+  Changes the WRITE_MODE on unread ports of true dual-port RAMs to NO_CHANGE,
+  and applies intelligent clock gating to Block RAM outputs.
+
+  Note: Specific Block RAM cells can be excluded from this optimization using
+  the set_power_opt command.
+
+  -remap - (Optional) Remap the design to combine multiple LUTs into a single
+  LUT to reduce the depth of the logic.
+
+  -aggressive_remap - (Optional) Similar to the -remap option to reduce LUT
+  logic depth but more exhaustive. This may reduce more LUT levels at the
+  expense of longer optimization runtime.
+
+  -resynth_area - (Optional) Perform re-synthesis in area mode to reduce the
+  number of LUTs.
+
+  -resynth_seq_area - (Optional) Perform re-synthesis to reduce both
+  combinational and sequential logic. Performs a superset of the optimization
+  provided by -resynth_area.
+
+  -resynth_remap - (Optional) Remap the design to improve the critical paths
+  in timing-driven mode by performing re-synthesis to reduce the depth of
+  logic. This timing-based approach will replicate LUT's with fanout and
+  collapse smaller LUT's into bigger functions at the expense of longer
+  optimization runtime.
+
+  -directive <arg> - (Optional) Direct the mode of optimization with specific
+  design objectives. Only one directive can be specified for a single
+  opt_design command, and values are case-sensitive. Supported values
+  include:
+
+   *  Explore - Run additional optimizations to improve results.
+
+   *  ExploreArea - Run Explore with resynth_area, to reduce the number of
+      LUTs.
+
+   *  ExploreWithRemap - Run Explore with aggresive_remap optimization to
+      compress logic levels.
+
+   *  ExploreSequentialArea - Run Explore with resynth_seq_area optimization
+      to reduce registers and related combinational logic.
+
+   *  RuntimeOptimized - Runs Default without bram_power_opt. Run the fewest
+      optimizations, trading optimization results for faster runtime.
+
+   *  RQS - Instructs opt_design to select the opt_design directive specified
+      by the report_qor_suggestion strategy suggestion. Requires an RQS file
+      with a strategy suggestion to be read in prior to calling this
+      directive. See report_qor_suggestions -help for more details.
+
+   *  Default - Run the default optimization.
+
+  Refer to the Vivado Design Suite User Guide: Implementation (UG904) for
+  more information on the effects of each directive.
+
+  Note: The -directive option controls the overall optimization strategy, and
+  is not compatible with any specific optimization options. It can only be
+  used with -debug_log, -quiet and -verbose.
+
+  -muxf_remap - (Optional) Convert MUXFs to LUT3s opportunistically when it
+  can potentially improve route-ability of the design without affecting
+  timing.
+
+  -hier_fanout_limit <arg> - (Optional) Net drivers with fanout greater than
+  the specified limit (<arg>) will be replicated according to the logical
+  hierarchy. For each hierarchical instance driven by the high-fanout net, if
+  the fanout within the hierarchy is greater than the specified limit, then
+  the net within the hierarchy is driven by a replica of the driver of the
+  high-fanout net. The minimum value for hier_fanout_limit is 512.
+
+  -bufg_opt - (Optional) Perform various optimizations related to global
+  buffers (BUFG/BUFGCE): Insert a buffer on unbuffered clock nets (fanout >
+  30). Insert BUFGs on high fanout nets where the control set pin count on
+  the net exceeds the tool threshold. Perform load-splitting when a
+  high-fanout net drives both combinational and sequential logic: the
+  combinational portion bypasses the BUFG because the added delay is too
+  large.
+
+  Tip: The phys_opt_design command can be used to optimize the combinational
+  portion, while the sequential portion can be driven by BUFG.
+
+  -mbufg_opt - (Optional) MBUFG optimization transforms parallel clock
+  buffers driven by a common driver, or clock modifying blocks (CMB) such as
+  MMCM, DPLL, or XPLL, to MBUFG.
+
+  -shift_register_opt - (Optional) For high-fanout nets originating from an
+  SRL, add output register pipeline stages to improve timing prior to the
+  high-fanout net replication. This optimization is performed as part of the
+  default optimization.
+
+  -dsp_register_opt - (Optional) Pull registers out of a DSP, or push
+  registers into a DSP, to improve timing and resource utilization as needed.
+  This optimization is performed as part of the default optimization.
+
+  -srl_remap_modes <args> - (Optional) Many designs have timing closure
+  issues related to deep SRLs, and long register chains. This option provides
+  both an automatic rule to trigger remapping between FF chains and SRLs, and
+  also a manual rule to specify when to convert a FF chain to an SRL, or an
+  SRL to a FF chain. Automatic remapping starts with the longest FF chains
+  and converts those to SRLs when needed to reduce FF utilization, and takes
+  the shallowest SRLs and converts those to FF chains when needed to reduce
+  LUT utilization. Manual remapping takes FF chains in excess of specified
+  lengths and remaps them to SRLs, and takes SRLs with specified depths and
+  remaps them to FF chains. The automatic and manual modes cannot both be
+  used in the same opt_design command pass. The following shows the syntax
+  for the automatic and manual rules:
+
+   *  Automatic:
+
+       -  -srl_remap_modes {{target_ff_util <util> target_lutram_util
+          <util>}}: Where <util> is a number from 0 to 100 expressed as a
+          percentage of utilization. When either FF or LUTs exceed the
+          specified utilization, the tool remaps as needed. When both
+          utilization rates are exceeded neither is remapped.
+
+   *  Manual:
+
+       -  -srl_remap_modes {{min_depth_ffs_to_srl <val>}{max_depth_srl_to_ffs
+          <val>}}: Where <val> specifies the depth of an SRL or length of a
+          FF chain. When a FF chain is greater than the specified min value,
+          the chain is remapped to an SRL with the required depth. If an SRL
+          has depth less than or equal to the specified max value, the SRL is
+          remapped to a FF chain.
+
+  -control_set_merge - (Optional) Reduce the drivers of logically-equivalent
+  control signals to a single driver. This is like a reverse fanout
+  replication, and results in nets that are better suited for module-based
+  replication.
+
+  -control_set_opt - (Optional) Reduce the control set structure complexity
+  and provide more flexibility to placer by converting smaller control sets
+  into bigger group. This switch introduce new LUT logic in front of flop D
+  pins to preserve functionality. The optimization is enabled by default in
+  all explore strategies.
+
+    Explore/ExploreArea/ExploreSequentialArea/ExploreWithRemap
+
+  -merge_equivalent_drivers - (Optional) This option merges equivalent
+  drivers on both control signals and non-control signals, to reduce logic in
+  the design.
+
+  -carry_remap - (Optional) Remap carry signals into LUTs.
+
+  -debug_log - (Optional) Generate log file for debugging purposes.
+
+  -property_opt_only - (Optional) Indicates that the opt_design command
+  should be driven only by properties on objects in the design, and not by
+  the options defined as part of the command syntax. Refer to the Vivado
+  Design Suite Properties Reference Guide (UG912) for more information on
+  specific properties. The following properties trigger property-only
+  optimizations: CARRY_REMAP, CONTROL_SET_REMAP, EQUIVALENT_DRIVER_OPT,
+  LUT_REMAP, MUXF_REMAP, REG_TO_SRL, SRL_STAGES_TO_REG_INPUT,
+  SRL_STAGES_TO_REG_OUTPUT, SRL_TO_REG.
+
+  Tip: When -property_opt_only is specified, the tool will return an error if
+  additional optimizations have been specified in the opt_design command.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command. This option displays detailed information
+  about the logic that is affected by each optimization.
+
+Examples:
+
+  The following example performs all four default optimizations: retarget,
+  constant propagation, sweep, and Block RAM power optimization. The command
+  returns detailed results with the -verbose switch:
+
+    opt_design -verbose
+
+  This example excludes specific Block RAM cells from power optimization
+  using the set_power_opt command, and then runs opt_design with the four
+  default optimizations:
+
+    set_power_opt -exclude_cells [get_cells \
+       -filter {PRIMITIVE_TYPE =~ BMEM.*.*} \
+       -of_objects [get_pins -leaf -filter {DIRECTION == IN} \
+       -of_objects [get_nets -of_objects [get_pins clock/bufgctrl_clk_mld/O]]]]
+    opt_design
+
+  The following example performs the sweep and retarget optimizations:
+
+    opt_design -sweep -retarget
+
+  Note: Because -sweep and -retarget are expressly enabled in the prior
+  example, -propconst optimization and -bram_power_opt are implicitly
+  disabled.
+
+  The following example directs the opt_design command to use various
+  algorithms to achieve potentially better results:
+
+    opt_design -directive Explore
+
+  The following example directs the opt_design command to use various
+  algorithms to achieve potentially better results, while focusing on area
+  reduction:
+
+    opt_design -directive ExploreArea
+
+  This example uses the -srl_remap_modes argument with the automatic option
+  to convert FF chains into SRLs when FF utilization is greater than 20%, or
+  SRLs into FF chains when SRL utilization is over 50%:
+
+    -srl_remap_modes {{target_ff_util 20 target_lutram_util 50}}
+
+  Tip: In this case, the srl_remap is only performed if either specified
+  utilization rate is exceeded, but NOT if both are exceeded.
+
+  The following example uses the -srl_remap_modes argument with the manual
+  option to convert FF chains with length greater than 5 to SRLs, and SRLs
+  with depth less than or equal to 8 to FF chains:
+
+    -srl_remap_modes {{min_depth_ffs_to_srl 5}{max_depth_srl_to_ffs 8}}
+
+See Also:
+
+   *  phys_opt_design
+   *  place_design
+   *  power_opt_design
+   *  route_design
+   *  set_power_opt
+   *  synth_design
+
+# puts [help power_opt_design]
+power_opt_design
+
+Description: 
+Optimize dynamic power using intelligent clock gating
+
+Syntax: 
+power_opt_design  [-quiet] [-verbose]
+
+Usage: 
+  Name        Description
+  -----------------------
+  [-quiet]    Ignore command errors
+  [-verbose]  Suspend message limits during command execution
+
+Categories: 
+Power
+
+Description:
+
+  Optimizes the dynamic power consumption of the design by changing clock
+  gating to take advantage of clock enable on a flop. Clock gating
+  optimizations are automatically performed on the entire design to improve
+  power consumption while making no changes to the existing logic or the
+  clocks that would alter the behavior of the design.
+
+  You can configure the power optimization to include or exclude specific
+  cells using the set_power_opt command.
+
+  Note: Block RAM power optimizations are performed by default with the
+  opt_design command. You can disable BRAM optimization by changing the
+  defaults of opt_design, or by excluding specific cells from optimization
+  using the set_power_opt command.
+
+  You can also use the read_saif command prior to optimization, and
+  power_opt_design will consider the activity data while optimizing the
+  design.
+
+  You can run power optimization after synthesis, or after placement. When
+  run before placement, this command optimizes the design to save power. When
+  run after placement, this command optimizes the design to save power while
+  preserving timing. Running after placement limits the optimizations
+  available to the power_opt_design command. To achieve the best results, the
+  command should be run prior to placement.
+
+Arguments:
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example performs power optimization of the open design:
+
+    power_opt_design 
+    
+
+  This example optimizes the design, excluding the BRAM power optimization by
+  specifying the optimizations to run, and then runs power optimization on
+  the design:
+
+    opt_design -retarget -propconst -sweep  
+    power_opt_design 
+    
+
+See Also:
+
+   *  opt_design
+   *  phys_opt_design
+   *  read_saif
+   *  report_power
+   *  report_power_opt
+   *  set_power_opt
+
+# puts [help phys_opt_design]
+phys_opt_design
+
+Description: 
+Optimize the current placed netlist.
+
+Syntax: 
+phys_opt_design  [-fanout_opt] [-placement_opt] [-routing_opt]
+                 [-slr_crossing_opt] [-rewire] [-insert_negative_edge_ffs]
+                 [-critical_cell_opt] [-dsp_register_opt] [-bram_register_opt]
+                 [-uram_register_opt] [-bram_enable_opt] [-shift_register_opt]
+                 [-hold_fix] [-aggressive_hold_fix] [-retime]
+                 [-force_replication_on_nets <args>] [-directive <arg>]
+                 [-critical_pin_opt] [-clock_opt] [-path_groups <args>]
+                 [-tns_cleanup] [-sll_reg_hold_fix] [-quiet] [-verbose]
+
+Usage: 
+  Name                          Description
+  -----------------------------------------
+  [-fanout_opt]                 Do cell-duplication based optimization on 
+                                high-fanout timing critical nets
+  [-placement_opt]              Do placement based optimization on timing 
+                                critical nets
+  [-routing_opt]                Do routing based optimization on timing 
+                                critical nets
+  [-slr_crossing_opt]           Do placement optimization of SLR-crossing 
+                                timing critical nets
+  [-rewire]                     Do rewiring optimization
+  [-insert_negative_edge_ffs]   Insert negative edge triggered FFs for hold 
+                                optimization
+  [-critical_cell_opt]          Do cell-duplication based optimization on 
+                                timing critical nets
+  [-dsp_register_opt]           Do DSP register optimization
+  [-bram_register_opt]          Do BRAM register optimization
+  [-uram_register_opt]          Do UltraRAM register optimization
+  [-bram_enable_opt]            Do BRAM enable optimization
+  [-shift_register_opt]         Do Shift register optimization
+  [-hold_fix]                   Attempt to improve slack of high hold 
+                                violators
+  [-aggressive_hold_fix]        Attempt to aggressively improve slack of high
+                                hold violators
+  [-retime]                     Do retiming optimization
+  [-force_replication_on_nets]  Force replication optimization on nets
+  [-directive]                  Mode of behavior (directive) for this 
+                                command. Please refer to Arguments section of
+                                this help for values for this option
+                                Default: Default
+  [-critical_pin_opt]           Do pin-swapping based optimization on timing 
+                                critical nets
+  [-clock_opt]                  Do clock skew optimization in post-route 
+                                optimization
+  [-path_groups]                Work only on specified path groups
+  [-tns_cleanup]                Work on all nets in the design that meet 
+                                criteria for the specified optimizations to 
+                                improve design tns
+  [-sll_reg_hold_fix]           Do hold fixing on SLL Tx-Rx paths
+  [-quiet]                      Ignore command errors
+  [-verbose]                    Suspend message limits during command 
+                                execution
+
+Categories: 
+Tools
+
+Description:
+
+  Performs timing-driven optimization on the negative-slack paths of a
+  design. A path should have negative slack near the worst negative slack
+  (WNS) to be considered for optimization. Optimization will not be performed
+  on designs without negative slack.
+
+  This optional command can be run for post-place or post-route optimizations.
+
+  Note: Because physical optimization requires timing data that is only
+  available after placement, the command cannot be run prior to placement.
+  However, the write_iphys_opt_tcl and read_iphys_opt_tcl commands let you
+  write out the physical optimizations performed on the post-placed design,
+  and then apply those optimizations to the design netlist prior to
+  placement. Refer to the Vivado Design Suite User Guide: Implementation
+  (UG904) for more information on interactive physical optimization.
+
+  Post-place phys_opt_design performs the following optimizations by default:
+
+   *  high-fanout optimization
+
+   *  placement-based optimization of critical paths
+
+   *  rewire
+
+   *  critical-cell optimization
+
+   *  DSP register optimization
+
+   *  BRAM register optimization
+
+   *  URAM register optimization
+
+   *  a final fanout optimization
+
+  Note: Using command-line options for specific optimizations results in
+  phys_opt_design performing only the specified optimizations and disabling
+  all others, even the ones that are usually performed by default.
+
+  Post-route phys_opt_design performs the following optimizations by default:
+
+   *  placement-based optimization of critical paths
+
+   *  routing optimization
+
+   *  rewire
+
+   *  critical-cell optimization
+
+  Physical optimizations involve replication, re-timing, hold fixing, and
+  placement improvement. The phys_opt_design command automatically performs
+  all necessary netlist and placement changes.
+
+  To perform re-timing you must specify the -retime option, or the -directive
+  AddRetime option.
+
+  To perform hold fixing you must specify the -hold_fix option, or the
+  -directive ExploreWithHoldFix option.
+
+  If the phys_opt_design command is used iteratively, the subsequent run
+  optimizes the results of the prior run.
+
+  Note: The phys_opt_design can be multi-threaded to speed the process. Refer
+  to the set_param command for more information on setting the
+  general.maxThreads parameter.
+
+  The command reports each net processed, a summary of any optimizations
+  performed, and the WNS before and after optimization. Replicated objects
+  are named by appending _replica to the original object name, followed by
+  the replicated object count.
+
+Arguments:
+
+  -fanout_opt - (Optional) Performs delay-driven optimization on high-fanout
+  timing critical nets, by replicating drivers to reduce delay.
+
+  Note: The -fanout_opt argument is optional, as are the other optimizations.
+  However this optimization is run by default unless explicitly overridden by
+  another optimization.
+
+  -placement_opt - (Optional) Moves cells to reduce delay on timing-critical
+  nets.
+
+  -routing_opt - (Optional) Performs routing optimization on timing-critical
+  nets to reduce delay.
+
+  -slr_crossing_opt - (Optional) Performs post-place or post-route
+  optimizations to improve the path delay of inter-SLR connections. The
+  optimization adjusts the locations of the driver, load, or both along the
+  SLR crossing after potential replication. For use with UltraScale and
+  UltraScale+ devices.
+
+  -rewire - (Optional) Refactors logic cones to reduce logic levels and
+  reduce delay on critical signals.
+
+  -insert_negative_edge_ffs - (Optional) Inserts negative edge triggered FFs
+  for hold optimization.
+
+  -critical_cell_opt - (Optional) Replicates cells on timing critical nets to
+  reduce delays.
+
+  -dsp_register_opt - (Optional) Improves critical path delay by moving
+  registers from slices to DSP blocks, or from DSP blocks to slices.
+
+  -bram_register_opt - (Optional) Improves critical path delay by moving
+  registers from slices to block RAMs, or from block RAMs to slices.
+
+  -uram_register_opt - (Optional) Improves critical path delay by moving
+  registers across the URAM cell boundary, from slices into URAMs, or from
+  URAMs to slices.
+
+  -bram_enable_opt - (Optional) The block RAM enable optimization improves
+  timing on critical paths involving power-optimized block RAMs.
+  Pre-placement block RAM power optimization restructures the logic driving
+  block RAM read and write enable inputs to reduce dynamic power consumption.
+  After placement the restructured logic may become timing-critical. The
+  block RAM enable optimization reverses the enable-logic optimization to
+  improve the slack on the critical enable-logic paths.
+
+  -shift_register_opt - (Optional) Performs shift register optimization to
+  improve timing on negative slack paths between shift register cells (SRLs)
+  and other logic cells. If there are timing violations to or from shift
+  register cells (SRL16E or SRLC32E), the optimization extracts a register
+  from the beginning or end of the SRL register chain and places it into the
+  logic fabric to improve timing. The optimization shortens the wire length
+  of the original critical path. Refer to the Vivado Design Suite User Guide:
+  Implementation (UG904) for more information.
+
+  -hold_fix - (Optional) Performs optimizations to insert data path delay to
+  fix hold time violations.
+
+  -aggressive_hold_fix - (Optional) Performs optimizations to insert data
+  path delay to fix hold time violations. Considers significantly more hold
+  violations than the standard hold fix algorithm.
+
+  -retime - (Optional) Re-time registers forward through combinational logic
+  to balance path delays.
+
+  -force_replication_on_nets <args> - (Optional) Forces the drivers of the
+  specified net objects to be replicated, regardless of timing slack. This
+  option requires the use of the get_nets command to specify net objects.
+  Replication is based on load placements and requires manual analysis to
+  determine if replication is sufficient. If further replication is required,
+  nets can be replicated repeatedly by successive commands.
+
+  -directive <arg> - (Optional) Directs the mode of physical optimization
+  with specific design objectives. Only one directive can be specified for a
+  single phys_opt_design command, and values are case-sensitive. Supported
+  values include:
+
+   *  Explore - Run different algorithms in multiple passes of optimization,
+      including replication for very high fanout nets.
+
+   *  ExploreWithHoldFix - Run different algorithms in multiple passes of
+      optimization, including hold violation fixing and replication for very
+      high fanout nets.
+
+   *  ExploreWithAggressiveHoldFix - Run different algorithms in multiple
+      passes of optimization, including aggressive hold violation fixing and
+      replication for very high fanout nets.
+
+   *  AggressiveExplore - Similar to Explore but with different optimization
+      algorithms and more aggressive goals.
+
+   *  AlternateReplication - Use different algorithms for performing critical
+      cell replication.
+
+   *  AggressiveFanoutOpt - Uses different algorithms for fanout-related
+      optimizations with more aggressive goals.
+
+   *  AlternateFlowWithRetiming - Perform more aggressive replication and DSP
+      and BRAM optimizations, and enable register re-timing.
+
+   *  AddRetime - Performs the default phys_opt_design flow and adds re-timing.
+
+   *  RuntimeOptimized - Provides a reduced set of physical optimizations
+      with the shortest runtime. Use this directive when compile time
+      reduction is more important than design performance. RuntimeOptimized
+      includes fanout_opt, critical_cell_opt, placement_opt, and
+      bram_enable_opt.
+
+   *  RQS - Instructs phys_opt_design to select the phys_opt_design directive
+      specified by the report_qor_suggestion strategy suggestion. Requires an
+      RQS file with a strategy suggestion to be read in prior to calling this
+      directive. See report_qor_suggestions -help for more details.
+
+
+   *  Default - Run phys_opt_design with default settings.
+
+  Refer to the Vivado Design Suite User Guide: Implementation (UG904) for
+  more information on the effects of each directive.
+
+  Note: The -directive option controls the overall optimization strategy, and
+  is not compatible with any specific optimization options. It can only be
+  used with -quiet and -verbose.
+
+  -critical_pin_opt - For LUT inputs, this optimization performs remapping of
+  logical pins to physical pins, also known as pin-swapping, to improve
+  critical path timing. A critical path traversing a logical pin that has
+  been mapped to a slow physical pin, such as A1 or A2, is reassigned to a
+  faster physical pin, such as A6 or A5 if it improves timing.
+
+  Note: A cell with a LOCK_PINS property will be skipped and the cell will
+  retain the pin mapping specified by LOCK_PINS. Logical-to-physical pin
+  mapping can be obtained with get_site_pins for a selected logical pin
+  object.
+
+  -clock_opt - (Optional) Perform clock skew optimization during post-route
+  optimization. Insert global clock buffers to delay destination clocks to
+  improve setup on critical paths.
+
+  -path_groups <args> - (Optional) Perform optimizations on the specified
+  path groups only.
+
+  -tns_cleanup - (Optional) This option can be used with the
+  -slr_crossing_opt option. This performs a Total Negative Slack (TNS)
+  cleanup, which supports optimizing SLR crossing paths while allowing some
+  slack degradation on other paths, as long as the overall WNS does not
+  degrade. This is applicable to UltraScale and UltraScale+ devices.
+
+  -sll_reg_hold_fix - (Optional) Performs SLL register hold fix optimization.
+  You can use this option when the router is having trouble resolving hold
+  violations on SLR crossing paths.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example performs a physical optimization of the current
+  post-placement design, and then writes the iphys_opt Tcl script for use
+  before placement:
+
+    
+    phys_opt_design  
+    write_iphys_opt_tcl C:/Data/my_iphys_opt.tcl 
+    
+
+  This example sets the LOCK_PINS property on the specified cell, then
+  performs physical optimizations including register re-timing, optimization
+  of registers across DSP blocks and block RAMs, and pin swapping (excluding
+  the locked pins) to improve timing:
+
+    
+    set_property LOCK_PINS {I3:A1 I2:A4} [get_cell cpuEngine/qmem_dack_reg_i_1]  
+    phys_opt_design -retime -dsp_register_opt -bram_register_opt \  
+       -critical_pin_opt 
+    
+
+  This example directs phys_opt_design to run more iterations, with hold
+  violation fixing, to achieve potentially better results:
+
+    
+    phys_opt_design -directive ExploreWithHoldFix 
+    
+
+  This example directs phys_opt_design to consider more nets for replication:
+
+    phys_opt_design -directive AggressiveFanoutOpt 
+    
+
+See Also:
+
+   *  get_pins
+   *  get_site_pins
+   *  opt_design
+   *  place_design
+   *  power_opt_design
+   *  read_iphys_opt_tcl
+   *  route_design
+   *  write_iphys_opt_tcl
+
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 02:27:04 2026...

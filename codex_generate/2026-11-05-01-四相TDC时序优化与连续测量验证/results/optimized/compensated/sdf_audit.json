@@ -1,0 +1,109 @@
+{
+  "phase": "optimized",
+  "variant": "compensated",
+  "critical_inventory": {
+    "LUT1": 7,
+    "CARRY4": 64,
+    "FDRE": 256
+  },
+  "missing_critical": [],
+  "total_sdf_cells": 8794,
+  "exported_and_annotated_sdf_sha256_equal": true,
+  "exported_and_compiled_netlist_sha256_equal": true,
+  "cases": [
+    {
+      "case": "gate_calibration",
+      "annotation_success": true,
+      "annotation_warnings": [],
+      "total_timing_warnings": 226017,
+      "categories": [
+        {
+          "category": "ILA_asynchronous_PWM_debug_capture",
+          "check": "setuphold",
+          "all_time_count": 48,
+          "after_5us_count": 48
+        },
+        {
+          "category": "MMCM_unused_CLKOUT5_6_model",
+          "check": "period",
+          "all_time_count": 206382,
+          "after_5us_count": 188236
+        },
+        {
+          "category": "PWM_asynchronous_synchronizer",
+          "check": "setuphold",
+          "all_time_count": 80,
+          "after_5us_count": 80
+        },
+        {
+          "category": "TDL_asynchronous_sampling",
+          "check": "setuphold",
+          "all_time_count": 19504,
+          "after_5us_count": 19504
+        },
+        {
+          "category": "reset_synchronizer",
+          "check": "recrem",
+          "all_time_count": 1,
+          "after_5us_count": 0
+        },
+        {
+          "category": "synchronous_TDC_digital",
+          "check": "setuphold",
+          "all_time_count": 2,
+          "after_5us_count": 0
+        }
+      ]
+    },
+    {
+      "case": "gate_validation",
+      "annotation_success": true,
+      "annotation_warnings": [],
+      "total_timing_warnings": 1159630,
+      "categories": [
+        {
+          "category": "ILA_asynchronous_PWM_debug_capture",
+          "check": "setuphold",
+          "all_time_count": 222,
+          "after_5us_count": 222
+        },
+        {
+          "category": "MMCM_unused_CLKOUT5_6_model",
+          "check": "period",
+          "all_time_count": 1073744,
+          "after_5us_count": 1055598
+        },
+        {
+          "category": "PWM_asynchronous_synchronizer",
+          "check": "setuphold",
+          "all_time_count": 324,
+          "after_5us_count": 324
+        },
+        {
+          "category": "TDL_asynchronous_sampling",
+          "check": "setuphold",
+          "all_time_count": 85337,
+          "after_5us_count": 85337
+        },
+        {
+          "category": "reset_synchronizer",
+          "check": "recrem",
+          "all_time_count": 1,
+          "after_5us_count": 0
+        },
+        {
+          "category": "synchronous_TDC_digital",
+          "check": "setuphold",
+          "all_time_count": 2,
+          "after_5us_count": 0
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "design.dcp": "ce8599a5224990852a340aa1c071e865a951784fe14087eaf0ae4bbd775eb066",
+    "design.sdf": "b5bc0c5ebe873917a085b94b3d1652dda71ec4274f4e032559071f64a5c99270",
+    "design.v": "2859847acc53f10bd50417079289e70ab728c1e9aaa45bb981a39fca2f0663ac"
+  },
+  "note": "关键单元清单覆盖及工具成功日志不能冒充全局逐路径注释百分比；时序警告原文完整保留。"
+}

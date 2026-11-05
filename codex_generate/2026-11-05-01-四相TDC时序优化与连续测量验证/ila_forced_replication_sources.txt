@@ -1,0 +1,5 @@
+u_ila2/inst/ila_core_inst/capture_qual_ctrl_reg[1]	u_ila2/inst/ila_core_inst/capture_qual_ctrl[1]
+u_ila2/inst/ila_core_inst/en_adv_trigger_reg	u_ila2/inst/ila_core_inst/en_adv_trigger
+u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]	u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]
+u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[9]	u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9]
+u_ila2/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/i_use_input_reg_eq1.probeDelay2_reg[0]	u_ila2/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly2[0]

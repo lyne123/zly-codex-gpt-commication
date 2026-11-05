@@ -1,0 +1,82 @@
+{
+  "eight_case_inputs_verified": true,
+  "rtl_frozen_hashes_verified": true,
+  "cases": [
+    {
+      "phase": "original",
+      "variant": "baseline",
+      "level": "rtl",
+      "input_files": 3,
+      "raw_output_manifest_present": false
+    },
+    {
+      "phase": "original",
+      "variant": "baseline",
+      "level": "gate",
+      "input_files": 6,
+      "raw_output_manifest_present": false
+    },
+    {
+      "phase": "original",
+      "variant": "compensated",
+      "level": "rtl",
+      "input_files": 3,
+      "raw_output_manifest_present": false
+    },
+    {
+      "phase": "original",
+      "variant": "compensated",
+      "level": "gate",
+      "input_files": 6,
+      "raw_output_manifest_present": false
+    },
+    {
+      "phase": "optimized",
+      "variant": "baseline",
+      "level": "rtl",
+      "input_files": 3,
+      "raw_output_manifest_present": false
+    },
+    {
+      "phase": "optimized",
+      "variant": "baseline",
+      "level": "gate",
+      "input_files": 6,
+      "raw_output_manifest_present": true
+    },
+    {
+      "phase": "optimized",
+      "variant": "compensated",
+      "level": "rtl",
+      "input_files": 9,
+      "raw_output_manifest_present": true
+    },
+    {
+      "phase": "optimized",
+      "variant": "compensated",
+      "level": "gate",
+      "input_files": 6,
+      "raw_output_manifest_present": true
+    }
+  ],
+  "bits": [
+    {
+      "variant": "baseline",
+      "file": "results\\optimized\\baseline\\Baseline_Optimized.bit",
+      "bytes": 11443721,
+      "sha256": "6ef019375acefd0499b78c999afa50f503543d387e9f5f9e22fea1cd3c585ed7"
+    },
+    {
+      "variant": "compensated",
+      "file": "results\\optimized\\compensated\\Compensated_Optimized.bit",
+      "bytes": 11443721,
+      "sha256": "0d0485717d0fd0712fdc073a68de47752508e9994b8aa7dbf42e4afe3357e75d"
+    }
+  ],
+  "experimental_acceptance": {
+    "timing_pass": false,
+    "functional_pass": false,
+    "compensation_pass": true,
+    "overall": "FAIL"
+  }
+}

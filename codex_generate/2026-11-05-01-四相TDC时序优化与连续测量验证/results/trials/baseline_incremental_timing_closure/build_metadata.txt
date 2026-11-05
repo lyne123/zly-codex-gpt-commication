@@ -1,0 +1,11 @@
+vivado=2022.2
+part=xc7k325tffg900-2
+variant=baseline
+frequency_mhz=500
+synthesis=Flow_PerfOptimized_high
+implementation=Performance_ExplorePostRoutePhysOpt
+post_route_physopt=AggressiveExplore
+corner=slow/MAX
+added_frontend_cycles=1
+generics=ENABLE_SKEW_COMP=0
+flow_notes=source=U://results/optimized/baseline/design.dcp;incremental_directive=TimingClosure_target_WNS_0;place_phys_route_use_actual_TimingClosure_override;RTL_and_parameters_unchanged
