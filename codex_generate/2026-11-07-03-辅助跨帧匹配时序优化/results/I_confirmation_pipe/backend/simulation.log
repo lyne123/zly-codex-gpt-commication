@@ -1,0 +1,2 @@
+BACKEND_ERROR_WRAP_PASS repeat=1 orphan=1 range=0 pairs=2 wrap=1
+F_PIPELINE_EQUIVALENCE_PASS cycles=1499 added_cycles=1 fifo_width=2 fifo_error=2

@@ -1,0 +1,109 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 04:04:09 2026
+# Process ID: 21536
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03
+# Command line: vivado.exe -mode batch -source physical_finish.tcl -log physical_finish.log -journal physical_finish.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/physical_finish.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03\physical_finish.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source physical_finish.tcl
+# set_param general.maxThreads 1
+# set work [file dirname [file normalize [info script]]]
+# cd $work
+# set out $work/implementation_final
+# if {[file exists $out]} {error "禁�?��?�盖已有物理优化证据"}
+# file mkdir $out
+# source $work/export_timing_proc.tcl
+## proc export_timing {folder} {
+##     file mkdir $folder
+##     update_timing -full
+##     report_timing_summary -delay_type min_max -report_unconstrained -file $folder/timing_summary.rpt
+##     report_timing -delay_type max -max_paths 40 -path_type full_clock_expanded -file $folder/setup_top40.rpt
+##     report_timing -delay_type min -max_paths 20 -file $folder/hold_top20.rpt
+##     foreach delay {max min} {
+##         set fd [open $folder/negative_${delay}.csv w]
+##         puts $fd "slack_ns,startpoint,endpoint"
+##         foreach p [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths 10000 -nworst 1] {
+##             puts $fd "[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"
+##         }
+##         close $fd
+##     }
+##     set fd [open $folder/core_timing.csv w]
+##     puts $fd "module,delay_type,slack_ns,startpoint,endpoint"
+##     foreach module {u_tdc_fine_layer u_tdc_time_candicate u_tdc_time_locate u_tdc_time_merge u_fifo_tdc_result u_fifo_tdc_error} {
+##         set cells [get_cells -quiet -hier -filter "NAME =~ $module/*"]
+##         foreach delay {max min} {
+##             set p [get_timing_paths -quiet -to $cells -delay_type $delay -max_paths 1]
+##             if {[llength $p]} {puts $fd "$module,$delay,[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"}
+##         }
+##     }
+##     close $fd
+##     report_clocks -file $folder/clocks.rpt
+##     report_exceptions -file $folder/exceptions.rpt
+## }
+# open_checkpoint $work/implementation_H2/corrected_routed.dcp
+Command: open_checkpoint D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/corrected_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 894.055 ; gain = 10.078
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1497.824 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.557 . Memory (MB): peak = 2281.980 ; gain = 6.938
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.753 . Memory (MB): peak = 2281.980 ; gain = 6.938
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2281.980 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1f804d3c5
+----- Checksum: PlaceDB: fa256c92 ShapeSum: b1938541 RouteDB: 4c4be1f2 
+open_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2281.980 ; gain = 1398.242
+# set nets {}
+# set fd [open $out/replication_targets.csv w]
+# puts $fd "startpoint,net"
+# foreach p [get_timing_paths -quiet -delay_type max -slack_lesser_than 0 -max_paths 100 -nworst 1] {
+#     set end [get_property ENDPOINT_PIN $p]
+#     if {![string match u_tdc_fine_layer/* $end]} {continue}
+#     set start [get_property STARTPOINT_PIN $p]
+#     regsub {/C$} $start {/Q} qname
+#     set qpin [get_pins -quiet -hier -filter "NAME == $qname"]
+#     if {![llength $qpin]} {error "无法读取真实起点Q引脚�?$qname"}
+#     set net [get_nets -of_objects $qpin]
+#     foreach n $net {lappend nets [get_property NAME $n];puts $fd "$start,[get_property NAME $n]"}
+# }
+# close $fd
+# set nets [lsort -unique $nets]
+# if {[llength $nets]!=3} {error "负路径集合与预期三起点不同，停�?�盲�?物理优化"}
+# puts "TARGETED_NEGATIVE_STARTPOINT_NETS=$nets"
+TARGETED_NEGATIVE_STARTPOINT_NETS=u_tdc_fine_layer/g_aux_4phase.rise_previous_single {u_tdc_fine_layer/pack0_d1[8]} {u_tdc_fine_layer/pack90_d2[9]}
+# phys_opt_design -force_replication_on_nets [get_nets $nets]
+Command: phys_opt_design -force_replication_on_nets [get_nets {u_tdc_fine_layer/g_aux_4phase.rise_previous_single {u_tdc_fine_layer/pack0_d1[8]} {u_tdc_fine_layer/pack90_d2[9]}}]
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+ERROR: [Vivado_Tcl 4-265] Option -force_replication_on_nets is specified but not supported yet for post-route physical synthesis. Please remove the option and rerun phys_opt_design
+INFO: [Common 17-83] Releasing license: Implementation
+2 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+phys_opt_design failed
+ERROR: [Common 17-39] 'phys_opt_design' failed due to earlier errors.
+
+    while executing
+"phys_opt_design -force_replication_on_nets [get_nets $nets]"
+    (file "physical_finish.tcl" line 28)
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 04:04:29 2026...

@@ -1,0 +1,1687 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 03:58:37 2026
+# Process ID: 14224
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03
+# Command line: vivado.exe -mode batch -source build_H2.tcl -log build_H2.log -journal build_H2.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/build_H2.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03\build_H2.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source build_H2.tcl
+# set_param general.maxThreads 1
+# set_param ips.addSpecialDataToCacheID 0
+# set work [file dirname [file normalize [info script]]]
+# cd $work
+# set out $work/implementation_H2
+# file mkdir $out
+# if {[file exists $out/corrected_synth.dcp]} {error "å·²æœ‰ç»¼åˆç»“æžœï¼Œç?æ?¢è?†ç›–é‡è·‘"}
+# proc export_timing {folder} {
+#     file mkdir $folder
+#     update_timing -full
+#     report_timing_summary -delay_type min_max -report_unconstrained -file $folder/timing_summary.rpt
+#     report_timing -delay_type max -max_paths 40 -path_type full_clock_expanded -file $folder/setup_top40.rpt
+#     report_timing -delay_type min -max_paths 20 -file $folder/hold_top20.rpt
+#     foreach delay {max min} {
+#         set fd [open $folder/negative_${delay}.csv w]
+#         puts $fd "slack_ns,startpoint,endpoint"
+#         foreach p [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths 10000 -nworst 1] {
+#             puts $fd "[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"
+#         }
+#         close $fd
+#     }
+#     set fd [open $folder/core_timing.csv w]
+#     puts $fd "module,delay_type,slack_ns,startpoint,endpoint"
+#     foreach module {u_tdc_fine_layer u_tdc_time_candicate u_tdc_time_locate u_tdc_time_merge u_fifo_tdc_result u_fifo_tdc_error} {
+#         set cells [get_cells -quiet -hier -filter "NAME =~ $module/*"]
+#         foreach delay {max min} {
+#             set p [get_timing_paths -quiet -to $cells -delay_type $delay -max_paths 1]
+#             if {[llength $p]} {puts $fd "$module,$delay,[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"}
+#         }
+#     }
+#     close $fd
+#     report_clocks -file $folder/clocks.rpt
+#     report_exceptions -file $folder/exceptions.rpt
+# }
+# create_project -in_memory -part xc7k325tffg900-2
+# set_property target_language Verilog [current_project]
+# set_property simulator_language Mixed [current_project]
+# config_ip_cache -use_cache_location $work/ip_cache
+# read_verilog [glob $work/H2_late_ready/*.v]
+# foreach ip {clk_wiz_0 fifo_tdc_result ila_2 ila_3} {
+#     read_ip $work/registered/aux_compensated.srcs/sources_1/ip/$ip/$ip.xci
+#     synth_ip [get_ips $ip]
+# }
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [Vivado 12-13650] The IP file 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+INFO: [Vivado 12-3441] generate_netlist_ip - operation complete
+WARNING: [Vivado 12-13650] The IP file 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xci
+INFO: [Vivado 12-3441] generate_netlist_ip - operation complete
+WARNING: [Vivado 12-13650] The IP file 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/ila_2/ila_2.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/ila_2/ila_2.xci
+INFO: [Vivado 12-3441] generate_netlist_ip - operation complete
+WARNING: [Vivado 12-13650] The IP file 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/ila_3/ila_3.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.srcs/sources_1/ip/ila_3/ila_3.xci
+INFO: [Vivado 12-3441] generate_netlist_ip - operation complete
+# source -encoding utf-8 $work/compensation_params.tcl
+## set compensation_generics {ENABLE_SKEW_COMP=1 RISE_OFFSET_90_PS=36011 FALL_OFFSET_90_PS=36011 RISE_OFFSET_180_PS=35742 FALL_OFFSET_180_PS=35742 RISE_OFFSET_270_PS=35756 FALL_OFFSET_270_PS=35756 RISE_OFFSET_0_PS=36081 FALL_OFFSET_0_PS=36081}
+# puts "AUXMATCH_STAGE=SYNTHESIS"
+AUXMATCH_STAGE=SYNTHESIS
+# synth_design -top tdc_meas_top -part xc7k325tffg900-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -generic $compensation_generics
+Command: synth_design -top tdc_meas_top -part xc7k325tffg900-2 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -generic {ENABLE_SKEW_COMP=1 RISE_OFFSET_90_PS=36011 FALL_OFFSET_90_PS=36011 RISE_OFFSET_180_PS=35742 FALL_OFFSET_180_PS=35742 RISE_OFFSET_270_PS=35756 FALL_OFFSET_270_PS=35756 RISE_OFFSET_0_PS=36081 FALL_OFFSET_0_PS=36081}
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24620
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1919.301 ; gain = 406.609
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'tdc_meas_top' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:1]
+	Parameter ENABLE_SKEW_COMP bound to: 1 - type: integer 
+	Parameter RISE_OFFSET_0_PS bound to: 18'sb001000110011110001 
+	Parameter RISE_OFFSET_90_PS bound to: 18'sb001000110010101011 
+	Parameter RISE_OFFSET_180_PS bound to: 18'sb001000101110011110 
+	Parameter RISE_OFFSET_270_PS bound to: 18'sb001000101110101100 
+	Parameter FALL_OFFSET_0_PS bound to: 18'sb001000110011110001 
+	Parameter FALL_OFFSET_90_PS bound to: 18'sb001000110010101011 
+	Parameter FALL_OFFSET_180_PS bound to: 18'sb001000101110011110 
+	Parameter FALL_OFFSET_270_PS bound to: 18'sb001000101110101100 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'tdc_fine_layer' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:12]
+	Parameter CARRY_NUM bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:78971]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:78971]
+INFO: [Synth 8-6157] synthesizing module 'LUT6' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+	Parameter INIT bound to: 64'b1100101010101010110010101010101011111111111111110000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'LUT6' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized0' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+	Parameter INIT bound to: 64'b1010110010101010101011001010101011111111111111110000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized0' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+INFO: [Synth 8-6157] synthesizing module 'LUT5' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79131]
+	Parameter INIT bound to: 32'b11110000110011001010101010101010 
+INFO: [Synth 8-6155] done synthesizing module 'LUT5' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79131]
+INFO: [Synth 8-6157] synthesizing module 'LUT6__parameterized1' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+	Parameter INIT bound to: 64'b1111000011001100101010101010101000000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'LUT6__parameterized1' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79181]
+INFO: [Synth 8-6157] synthesizing module 'tdc_phase_tdl_encoder' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:620]
+	Parameter CARRY_NUM bound to: 16 - type: integer 
+	Parameter MAX_VALID_TAP bound to: 60 - type: integer 
+	Parameter MIN_VALID_TAP bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CARRY4' [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1497]
+INFO: [Synth 8-6155] done synthesizing module 'CARRY4' (0#1) [F:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1497]
+INFO: [Synth 8-6157] synthesizing module 'tdl_edge_candidate' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:753]
+	Parameter TAPS bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdl_edge_candidate' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:753]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_phase_tdl_encoder' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:620]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_fine_layer' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:12]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_candicate' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_candicate.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_candicate' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_candicate.v:9]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_locate' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_locate.v:3]
+	Parameter COARSE_W bound to: 10 - type: integer 
+	Parameter MAX_TAP bound to: 64 - type: integer 
+	Parameter TAP_PS bound to: 10 - type: integer 
+	Parameter ENABLE_SKEW_COMP bound to: 1 - type: integer 
+	Parameter RISE_OFFSET_0_PS bound to: 18'sb001000110011110001 
+	Parameter RISE_OFFSET_90_PS bound to: 18'sb001000110010101011 
+	Parameter RISE_OFFSET_180_PS bound to: 18'sb001000101110011110 
+	Parameter RISE_OFFSET_270_PS bound to: 18'sb001000101110101100 
+	Parameter FALL_OFFSET_0_PS bound to: 18'sb001000110011110001 
+	Parameter FALL_OFFSET_90_PS bound to: 18'sb001000110010101011 
+	Parameter FALL_OFFSET_180_PS bound to: 18'sb001000101110011110 
+	Parameter FALL_OFFSET_270_PS bound to: 18'sb001000101110101100 
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_locate' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_locate.v:3]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:184]
+INFO: [Synth 8-6157] synthesizing module 'ila_2' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/ila_2_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ila_2' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/ila_2_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'tdc_time_merge' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_merge.v:7]
+	Parameter COARSE_W bound to: 10 - type: integer 
+	Parameter MAX_TAP bound to: 64 - type: integer 
+	Parameter TAP_PS bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdc_time_merge' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_merge.v:7]
+INFO: [Synth 8-6157] synthesizing module 'fifo_tdc_result' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/fifo_tdc_result_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_tdc_result' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/fifo_tdc_result_stub.v:5]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:291]
+INFO: [Synth 8-6157] synthesizing module 'ila_3' [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/ila_3_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ila_3' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/.Xil/Vivado-14224-Lyne/realtime/ila_3_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_meas_top' (0#1) [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:1]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_align[2].rise_q_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:372]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_align[2].fall_q_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:372]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_align[3].rise_q_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:372]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_align[3].fall_q_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:372]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[0].g_registered.rp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[0].g_registered.fp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[1].g_registered.rp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[1].g_registered.fp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[2].g_registered.rp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[2].g_registered.fp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[3].g_registered.rp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.g_stats[3].g_registered.fp_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:421]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.rise_cover_previous_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:400]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.fall_cover_previous_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:400]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.rise_remaining_previous_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:465]
+WARNING: [Synth 8-6014] Unused sequential element g_aux_4phase.fall_remaining_previous_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_fine_layer.v:465]
+WARNING: [Synth 8-6014] Unused sequential element s2_mid_time_reg was removed.  [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_time_locate.v:130]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_time_locate'. This will prevent further optimization [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:169]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_time_merge'. This will prevent further optimization [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:202]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila2'. This will prevent further optimization [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:184]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila3'. This will prevent further optimization [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:291]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tdc_fine_layer'. This will prevent further optimization [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/H2_late_ready/tdc_meas_top.v:88]
+WARNING: [Synth 8-7129] Port repeat_error in module tdc_time_locate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[59] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[58] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[57] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[56] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[55] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[54] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[53] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[52] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[51] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[50] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[49] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[48] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[47] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[46] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[45] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[44] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[43] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[42] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[41] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[40] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[39] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[38] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[37] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[36] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[35] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[34] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[33] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[32] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[31] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[30] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[29] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[28] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[27] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[26] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[25] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[24] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[23] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[22] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[21] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[20] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[19] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[18] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[17] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[16] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[15] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[14] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[13] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[12] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[11] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[10] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[9] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[8] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[7] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[6] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[5] in module tdl_edge_candidate is either unconnected or has no load
+WARNING: [Synth 8-7129] Port thermo[4] in module tdl_edge_candidate is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2028.051 ; gain = 515.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2045.957 ; gain = 533.266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2045.957 ; gain = 533.266
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2058.008 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 64 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_result'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_result'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_error'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result/fifo_tdc_result_in_context.xdc] for cell 'u_fifo_tdc_error'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'u_ila2'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'u_ila2'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'u_ila3'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_3/ila_3_in_context.xdc] for cell 'u_ila3'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2162.641 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2162.641 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_fifo_tdc_error' at clock pin 'wr_clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_fifo_tdc_result' at clock pin 'wr_clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'u_ila2' at clock pin 'clk' is different from the actual clock period '2.000', this can lead to different synthesis results.
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [F:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk. (constraint file  d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk. (constraint file  d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_fifo_tdc_error. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_fifo_tdc_result. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila3. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 8     
+	   2 Input   23 Bit       Adders := 1     
+	   3 Input   22 Bit       Adders := 1     
+	   4 Input   21 Bit       Adders := 1     
+	   2 Input   21 Bit       Adders := 1     
+	   3 Input   19 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 13    
+	   2 Input    7 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 16    
+	   2 Input    4 Bit       Adders := 32    
+	   4 Input    3 Bit       Adders := 64    
++---Registers : 
+	               64 Bit    Registers := 4     
+	               32 Bit    Registers := 3     
+	               23 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               21 Bit    Registers := 5     
+	               19 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 13    
+	                8 Bit    Registers := 17    
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 12    
+	                5 Bit    Registers := 16    
+	                4 Bit    Registers := 43    
+	                3 Bit    Registers := 68    
+	                2 Bit    Registers := 26    
+	                1 Bit    Registers := 81    
++---Muxes : 
+	   4 Input   17 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 16    
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 14    
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 49    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port repeat_error in module tdc_time_locate is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name    | RTL Name                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|tdc_fine_layer | u_tdl0/type_pipe_reg[9]   | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl90/type_pipe_reg[9]  | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl180/type_pipe_reg[9] | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|tdc_fine_layer | u_tdl270/type_pipe_reg[9] | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
++---------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |clk_wiz_0       |         1|
+|2     |ila_2           |         1|
+|3     |fifo_tdc_result |         2|
+|4     |ila_3           |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |clk_wiz         |     1|
+|2     |fifo_tdc_result |     2|
+|4     |ila             |     2|
+|6     |CARRY4          |   107|
+|7     |LUT1            |    33|
+|8     |LUT2            |   183|
+|9     |LUT3            |    88|
+|10    |LUT4            |   317|
+|11    |LUT5            |   123|
+|12    |LUT6            |   215|
+|13    |SRL16E          |     8|
+|14    |FDCE            |   611|
+|15    |FDRE            |   839|
+|16    |IBUF            |     2|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2162.641 ; gain = 533.266
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2162.641 ; gain = 649.949
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-454] Reading design checkpoint 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'u_clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_2.dcp' for cell 'u_ila2'
+INFO: [Project 1-454] Reading design checkpoint 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp' for cell 'u_fifo_tdc_result'
+INFO: [Project 1-454] Reading design checkpoint 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_3.dcp' for cell 'u_ila3'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2162.641 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 276 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: u_ila2 UUID: c83c0949-52f2-54a2-a908-34971c4269be 
+INFO: [Chipscope 16-324] Core: u_ila3 UUID: 005aaa8f-6beb-5365-914c-104c10152ec8 
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz_0/inst'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz_0/inst'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz_0/inst'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_error/U0'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_error/U0'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_result/U0'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.xdc] for cell 'u_fifo_tdc_result/U0'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila2/inst'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila2/inst'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc] for cell 'u_ila2/inst'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc] for cell 'u_ila2/inst'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila3/inst'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila3/inst'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'u_ila3/inst'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc] for cell 'u_ila3/inst'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_2/ila_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/ila_3/ila_3.dcp'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_error/U0'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_error/U0'
+Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_result/U0'
+Finished Parsing XDC File [d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/registered/aux_compensated.gen/sources_1/ip/fifo_tdc_result/fifo_tdc_result_clocks.xdc] for cell 'u_fifo_tdc_result/U0'
+INFO: [Project 1-1714] 12 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2651.781 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 100 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+
+Synth Design complete, checksum: f3cc133f
+INFO: [Common 17-83] Releasing license: Synthesis
+72 Infos, 81 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2651.781 ; gain = 1584.727
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# write_checkpoint $out/corrected_synth.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/corrected_synth.dcp' has been generated.
+# read_xdc $work/combine_AD23.xdc
+Parsing XDC File [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/combine_AD23.xdc]
+Finished Parsing XDC File [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/combine_AD23.xdc]
+# puts "AUXMATCH_STAGE=IMPLEMENTATION"
+AUXMATCH_STAGE=IMPLEMENTATION
+# opt_design -directive Explore
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.426 . Memory (MB): peak = 2651.781 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = 7ff2da875a93aee4.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2724.105 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 13b064ea3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 2724.105 ; gain = 59.457
+
+Phase 2 Retarget
+INFO: [Opt 31-1287] Pulled Inverter u_ila2/inst/ila_core_inst/xsdb_memory_read_inst/current_state[0]_i_1 into driver instance u_ila2/inst/ila_core_inst/xsdb_memory_read_inst/read_addr[9]_i_3, which resulted in an inversion of 12 pins
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 19d841136
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-389] Phase Retarget created 15 cells and removed 39 cells
+INFO: [Opt 31-1021] In phase Retarget, 169 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: 11ce70446
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-389] Phase Constant propagation created 1 cells and removed 43 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 71 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 16e1b59a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 93 cells
+INFO: [Opt 31-1021] In phase Sweep, 2172 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+Phase 5 BUFG optimization | Checksum: 16e1b59a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 6 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: 16e1b59a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-1555] control_set_opt supports Versal devices only, and device 7k325t is unsupported
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 16e1b59a7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2724.105 ; gain = 59.457
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 79 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              15  |              39  |                                            169  |
+|  Constant propagation         |               1  |              43  |                                             71  |
+|  Sweep                        |               0  |              93  |                                           2172  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             79  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2724.105 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 155d64be9
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2724.105 ; gain = 59.457
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2724.105 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 155d64be9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2724.105 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 2724.105 ; gain = 72.324
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# opt_design -bram_power_opt
+Command: opt_design -bram_power_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.264 . Memory (MB): peak = 2724.105 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 155d64be9
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.188 . Memory (MB): peak = 2724.105 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 3 BRAM(s) out of a total of 5 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 2 newly gated: 0 Total Ports: 10
+Ending PowerOpt Patch Enables Task | Checksum: 1a4e75ee8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1a4e75ee8
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2843.453 ; gain = 119.348
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1a4e75ee8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 101066514
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+10 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# read_checkpoint -incremental $work/implementation_G/corrected_routed.dcp
+Command: read_checkpoint -incremental D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_G/corrected_routed.dcp
+INFO: [Vivado 12-9151] Incremental flow is being run with directive 'RuntimeOptimized'. This will override place_design, post-place phys_opt_design and route_design directives being called in high reuse mode.
+
+Starting Incremental read checkpoint Task
+
+Phase 1 Process Reference Checkpoint Netlist
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.558 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 2 Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.950 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 3 Replay Physical Synthesis Transforms
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 1 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q_0[0]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/I[0]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[8]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt[9]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/scnt[8]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/Q[9]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net u_tdc_time_merge/pulse_width_valid_i_1_n_0. Replicated 3 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/O. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_ila2/inst/ila_core_inst/basic_trigger. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net u_tdc_time_merge/pulse_width_valid_i_1_n_0_repN. Replicated 2 times.
+INFO: [Vivado_Tcl 4-521] iPhys_opt_design summary: tried 11 changes and 11 changes are successfully applied
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4 Build Reuse DB
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 1 CPUs
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.454 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.790 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Designutils 20-2297] Reference Design: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_G/corrected_routed.dcp, Summary | WNS = -0.393 | WHS = 0.073 | State = POST_ROUTE_PHYSOPT |
+WARNING: [Designutils 20-4181] Placement from XDEF will be used for instance dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst of type BSCAN.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 5 Checking legality
+Phase 5 Checking legality | Checksum: 11a05d023
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 6 Reporting
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Nov  7 03:59:39 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Design       : tdc_meas_top
+| Device       : xc7k325t
+| Design State : Unknown
+------------------------------------------------------------------------------------
+
+Incremental Implementation Information
+
+Table of Contents
+-----------------
+1. Incremental Flow Summary
+2. Reuse Summary
+3. Reference Checkpoint Information
+4. Comparison with Reference Run
+5. Optimization Comparison With Reference Run
+5.1 iphys_opt_replay Optimizations
+5.2 QoR Suggestion Optimizations
+6. Command Comparison with Reference Run
+6.1 Reference:
+6.2 Incremental:
+7. Non Reuse Information
+
+1. Incremental Flow Summary
+---------------------------
+
++-----------------------+------------------+
+|    Flow Information   |       Value      |
++-----------------------+------------------+
+| Synthesis Flow        |          Default |
+| Auto Incremental      |               No |
+| Incremental Directive | RuntimeOptimized |
+| Reuse mode            |             High |
+| Target WNS            |           -0.393 |
+| QoR Suggestions       |                0 |
++-----------------------+------------------+
+
+
+2. Reuse Summary
+----------------
+
++-------+----------------------+----------------------------+--------------------+-------+
+|  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) | Total |
++-------+----------------------+----------------------------+--------------------+-------+
+| Cells |                99.21 |                      99.16 |               3.71 |  8892 |
+| Nets  |                99.05 |                      98.19 |               0.00 |  6810 |
+| Pins  |                    - |                      98.18 |                  - | 29062 |
+| Ports |               100.00 |                     100.00 |             100.00 |     3 |
++-------+----------------------+----------------------------+--------------------+-------+
+
+
+3. Reference Checkpoint Information
+-----------------------------------
+
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_G/corrected_routed.dcp |
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+----------------------------+
+|         DCP Information        |            Value           |
++--------------------------------+----------------------------+
+| Vivado Version                 |                     2022.2 |
+| DCP State                      |                 POST_ROUTE |
+| Recorded WNS                   |                     -0.393 |
+| Recorded WHS                   |                      0.073 |
+| Reference Speed File Version   | PRODUCTION 1.12 2017-02-17 |
+| Incremental Speed File Version | PRODUCTION 1.12 2017-02-17 |
++--------------------------------+----------------------------+
+* Recorded WNS/WHS timing numbers are estimated timing numbers. They may vary slightly from sign-off timing numbers.
+
+
+4. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |             |     < 1 min |             |
+| place_design    |      -0.533 |             |     < 1 min |             |     < 1 min |             |
+| phys_opt_design |      -0.533 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |      -0.393 |             |       00:01 |             |       00:01 |             |
+| phys_opt_design |      -0.393 |             |     < 1 min |             |     < 1 min |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+5. Optimization Comparison With Reference Run
+---------------------------------------------
+
+5.1 iphys_opt_replay Optimizations
+----------------------------------
+
++-------------------------+--------+------------+
+| iphys_opt_design replay | Reused | Not Reused |
++-------------------------+--------+------------+
+| critical_cell_opt       |      9 |          0 |
+| fanout_opt              |      2 |          0 |
++-------------------------+--------+------------+
+
+
+5.2 QoR Suggestion Optimizations
+--------------------------------
+
++-------------------------------------+-------+
+|           QoR Suggestions           | Value |
++-------------------------------------+-------+
+| QoR Suggestions (Recommended)       |     0 |
+|   Suggestions Included In Reference |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+|   New Suggestions (INCR_FRIENDLY=1) |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+| QoR Suggestions (Not Recommended)   |     0 |
+|   New Suggestions (INCR_FRIENDLY=0) |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+| Disabled New Suggestions            |     0 |
++-------------------------------------+-------+
+
+
+6. Command Comparison with Reference Run
+----------------------------------------
+
+6.1 Reference:
+--------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -verilog_define default::[not_specified] -keep_equivalent_registers -top  tdc_meas_top -part  xc7k325tffg900-2 
+opt_design -directive Explore
+opt_design -bram_power_opt
+read_checkpoint -directive RuntimeOptimized  -incremental D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/reference_F.dcp
+place_design -directive Default
+phys_opt_design -directive AggressiveExplore
+route_design -directive Default
+phys_opt_design -directive AggressiveExplore
+
+6.2 Incremental:
+----------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -verilog_define default::[not_specified] -keep_equivalent_registers -top  tdc_meas_top -part  xc7k325tffg900-2 
+opt_design -directive Explore
+opt_design -bram_power_opt
+read_checkpoint -directive RuntimeOptimized  -incremental D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_G/corrected_routed.dcp
+
+7. Non Reuse Information
+------------------------
+
++------------------------------------------------------+------+
+|                         Type                         |   %  |
++------------------------------------------------------+------+
+| Non-Reused Cells                                     | 0.83 |
+|   New                                                | 0.77 |
+|   Discarded illegal placement due to netlist changes | 0.01 |
+|   Discarded to improve timing                        | 0.04 |
+| Partially reused nets                                | 0.13 |
+| Non-Reused nets                                      | 1.67 |
+| Non-Reused Ports                                     | 0.00 |
++------------------------------------------------------+------+
+
+
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2843.453 ; gain = 0.000
+# place_design -directive ExtraPostPlacementOpt
+Command: place_design -directive ExtraPostPlacementOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+
+Starting Incremental Placer Task
+INFO: [Vivado_Tcl 4-24] Running Incremental Placer flow for unplaced cells using reference design-checkpoint 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_G/corrected_routed.dcp'.
+INFO: [Place 46-42] Incremental Compile is being run in High Reuse Mode.
+INFO: [Place 46-84] Incremental Directive "RuntimeOptimized" has been set. This will overwrite place_design -directive "ExtraPostPlacementOpt" which was called in this command.
+INFO: [Place 46-44] place_design is using directive Default with target WNS of -0.393 ns.
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 11a05d023
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 11a05d023
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.522 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 21ada7a61
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 21ada7a61
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 21ada7a61
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 193c453a1
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 206bf13ef
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 206bf13ef
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+Phase 2.4 Global Placement Core | Checksum: 25bb60f12
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 25bb60f12
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2516e3076
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 25f07ea1c
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 3.3 Place Remaining
+Phase 3.3 Place Remaining | Checksum: 16b6733c2
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 178192b44
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1d98fb8db
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 1 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.903 | TNS=-6.693 |
+Phase 1 Physical Synthesis Initialization | Checksum: 25f7a5aed
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.268 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 2ce264dea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.353 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1d98fb8db
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.428. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 2d11a6c0e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 2d11a6c0e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 2d11a6c0e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                2x2|                4x4|
+|___________|___________________|___________________|
+|      South|                2x2|                8x8|
+|___________|___________________|___________________|
+|       East|                4x4|                4x4|
+|___________|___________________|___________________|
+|       West|                4x4|                4x4|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 2d87e5cfd
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 2d87e5cfd
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4.4 Post Placement Cleanup
+Phase 4.4 Post Placement Cleanup | Checksum: 2d87e5cfd
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4.5 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 25c6b10a9
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Place 46-3] During incremental compilation, routing data from the original checkpoint is applied during place_design. As a result, dangling route segments and route conflicts may appear in the post place_design implementation due to changes between the original and incremental netlists. These routes can be ignored as they will be subsequently resolved by route_design. This issue will be cleaned up automatically in place_design in a future software release.
+
++-------------------------------------------------------------------------------+
+|Incremental Placement Summary                                                  |
++-------------------------------------------------------------------------------+
+|                          Type                           | Count  | Percentage |
++-------------------------------------------------------------------------------+
+|  Total instances                                        |   8892 |     100.00 |
+|  Reused instances                                       |   8795 |      98.90 |
+|  Non-reused instances                                   |     97 |       1.09 |
+|    New                                                  |     69 |       0.77 |
+|    Discarded illegal placement due to netlist changes   |      7 |       0.07 |
+|    Discarded to improve timing                          |     21 |       0.23 |
++-------------------------------------------------------------------------------+
+|Incremental Placement Runtime Summary                                          |
++-------------------------------------------------------------------------------+
+|  Initialization time(elapsed secs)                                   |   3.20 |
+|  Incremental Placer time(elapsed secs)                               |  15.65 |
++-------------------------------------------------------------------------------+
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |      -0.533 |      -0.428 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.533 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |      -0.393 |             |       00:01 |             |       00:01 |             |
+| phys_opt_design |      -0.393 |             |     < 1 min |             |     < 1 min |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+Ending Incremental Placer Task | Checksum: 16fcb90ea
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# phys_opt_design -directive AggressiveExplore
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-1309] Incremental directive 'RuntimeOptimized' has been set. This will overwrite phys_opt_design -directive 'AggressiveExplore' which was called in this command.
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.346 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 2.00s |  WALL: 0.65s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 1 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.428 | TNS=-2.189 |
+Phase 1 Physical Synthesis Initialization | Checksum: 171a89c87
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.709 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.428 | TNS=-2.189 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 171a89c87
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.726 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.428 | TNS=-2.189 |
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/sync_edge_polarity[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net u_tdc_fine_layer/I20103_out.  Re-placed instance u_tdc_fine_layer/g_aux_4phase.g_guard_mux[1].u_output_i_3
+INFO: [Physopt 32-735] Processed net u_tdc_fine_layer/I20103_out. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.326 | TNS=-1.847 |
+INFO: [Physopt 32-663] Processed net u_tdc_fine_layer/sync_edge_valid[3].  Re-placed instance u_tdc_fine_layer/sync_edge_valid_reg[3]
+INFO: [Physopt 32-735] Processed net u_tdc_fine_layer/sync_edge_valid[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.287 | TNS=-1.743 |
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/I00109_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[0].u_output_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[0].u_output_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/guarded_output_types_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/ready180_d1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/sync_edge_polarity[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/I00109_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[0].u_output_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[0].u_output_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/guarded_output_types_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net u_tdc_fine_layer/ready180_d1.  Re-placed instance u_tdc_fine_layer/ready180_d1_reg
+INFO: [Physopt 32-735] Processed net u_tdc_fine_layer/ready180_d1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.301 | TNS=-1.848 |
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/sync_edge_polarity[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/I00118_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[2].u_output_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[2].u_output_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/guarded_output_types_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/p_0_in[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.280 | TNS=-1.662 |
+Phase 3 Critical Path Optimization | Checksum: 87b01608
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.280 | TNS=-1.662 |
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/sync_edge_valid[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/I00136_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[6].u_output_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[4].u_output_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/guarded_output_types_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/p_0_in[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/sync_edge_valid[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_clk_wiz_0/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/I00136_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[6].u_output_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/g_aux_4phase.g_guard_mux[4].u_output_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/guarded_output_types_7. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_tdc_fine_layer/p_0_in[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.280 | TNS=-1.616 |
+Phase 4 Critical Path Optimization | Checksum: 87b01608
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.280 | TNS=-1.616 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.148  |          0.573  |            0  |              0  |                     3  |           0  |           2  |  00:00:02  |
+|  Total          |          0.148  |          0.573  |            0  |              0  |                     3  |           0  |           3  |  00:00:02  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2843.453 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 26e4e2b20
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2843.453 ; gain = 0.000
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |      -0.533 |      -0.428 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.533 |      -0.280 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |      -0.393 |             |       00:01 |             |       00:01 |             |
+| phys_opt_design |      -0.393 |             |     < 1 min |             |     < 1 min |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+58 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# write_checkpoint $out/corrected_placed.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.403 . Memory (MB): peak = 2843.453 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/corrected_placed.dcp' has been generated.
+# route_design -directive Explore
+Command: route_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command route_design
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Route 72-6] Incremental Directive "RuntimeOptimized" has been set. This will overwrite route_design -directive "Explore" which was called in this command.
+
+Starting Incremental Route Task
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 3c29960c ConstDB: 0 ShapeSum: b1938541 RouteDB: a38e7e29
+Phase 1 Build RT Design | Checksum: ace59669
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2930.488 ; gain = 87.035
+Post Restoration Checksum: NetGraph: 70aa534d NumContArr: cfad117 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 7da52464
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2932.543 ; gain = 89.090
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 12949bb5d
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2932.543 ; gain = 89.090
+--------------------------------------------------------
+|Incremental Routing Reuse Summary                      |
+--------------------------------------------------------
+|Type                     | Count    | Percentage       |
+--------------------------------------------------------
+|Fully reused nets        |      6585|            97.85 |
+|Partially reused nets    |        13|             0.19 |
+|Non-reused nets          |       132|             1.96 |
+--------------------------------------------------------
+INFO: [Route 35-559] route_design is using directive Default with target WNS of -0.393ns
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Disable Unchanged Timing Paths
+Phase 2.3 Disable Unchanged Timing Paths | Checksum: 789f5ba9
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2999.312 ; gain = 155.859
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: d5cffcde
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2999.312 ; gain = 155.859
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.356 | TNS=-2.615 | WHS=-0.379 | THS=-49.117|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 9da5b04f
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2999.312 ; gain = 155.859
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.356 | TNS=-1.038 | WHS=N/A    | THS=N/A    |
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 9da5b04f
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2999.312 ; gain = 155.859
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.000340498 %
+  Global Horizontal Routing Utilization  = 0.00138953 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 145
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 132
+  Number of Partially Routed Nets     = 13
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 157b818c9
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 157b818c9
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 3001.578 ; gain = 158.125
+Phase 3 Initial Routing | Checksum: 1bbf9c388
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 4 Initial Route for Timing
+
+Phase 4.1 Update Timing
+Phase 4.1 Update Timing | Checksum: 212a14957
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 3001.578 ; gain = 158.125
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.186 | TNS=-0.878 | WHS=N/A    | THS=N/A    |
+
+Phase 4 Initial Route for Timing | Checksum: 1ab71cec0
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 3001.578 ; gain = 158.125
+INFO: [Route 35-580] Design has 58 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+====================+===============================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                           |
++====================+====================+===============================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_tdc_time_candicate/s2_dist2_reg[3]/D        |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_tdc_time_candicate/s2_dist2_reg[1]/D        |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_tdc_time_candicate/s2_dist2_reg[2]/D        |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_tdc_time_locate/s4_sum_reg[17]/D            |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_tdc_time_candicate/s3_pair23_index_reg[0]/D |
++--------------------+--------------------+-----------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 88
+ Number of Nodes with overlaps = 40
+ Number of Nodes with overlaps = 16
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.212 | TNS=-1.417 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 29
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 3
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.311 | TNS=-1.926 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.380 | TNS=-2.417 | WHS=N/A    | THS=N/A    |
+
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.002 | TNS=-0.007 | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 232fdc316
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 67
+ Number of Nodes with overlaps = 25
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.314 | TNS=-0.909 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 7
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.326 | TNS=-1.666 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.449 | TNS=-2.186 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.443 | TNS=-2.192 | WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 19a9c2785
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3001.578 ; gain = 158.125
+Phase 5 Rip-up And Reroute | Checksum: 19a9c2785
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1a948cc06
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.266 | TNS=-0.894 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 6.1 Delay CleanUp | Checksum: 14fe55722
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 14fe55722
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+Phase 6 Delay and Skew Optimization | Checksum: 14fe55722
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+
+Phase 7.1.1 Update Timing
+Phase 7.1.1 Update Timing | Checksum: 191060e6a
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.260 | TNS=-0.846 | WHS=0.106  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 1df08f136
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+Phase 7 Post Hold Fix | Checksum: 1df08f136
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.261602 %
+  Global Horizontal Routing Utilization  = 0.368087 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.9369%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 37.8378%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 45.5882%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 54.4118%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 2611a0824
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 2611a0824
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 20a8a5e55
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 3001.578 ; gain = 158.125
+
+Phase 11 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.260 | TNS=-0.846 | WHS=0.106  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 11 Post Router Timing | Checksum: 20a8a5e55
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 3001.578 ; gain = 158.125
+--------------------------------------------------------
+|Incremental Routing Reuse Summary                      |
+--------------------------------------------------------
+|Type                     | Count    | Percentage       |
+--------------------------------------------------------
+|Fully reused nets        |      6553|            97.37 |
+|Partially reused nets    |         0|             0.00 |
+|Non-reused nets          |       177|             2.63 |
+--------------------------------------------------------
+INFO: [Route 35-16] Router Completed Successfully
+Ending Incremental Route Task | Checksum: 20a8a5e55
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 3001.578 ; gain = 158.125
+------------------------------------
+Incremental Router Runtime Summary: 
+------------------------------------
+   Initialization time: 26.134 Secs
+   Incremental Router time: 4.711 Secs
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |      -0.533 |      -0.428 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.533 |      -0.280 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |      -0.393 |      -0.260 |       00:01 |       00:01 |       00:01 |       00:01 |
+| phys_opt_design |      -0.393 |             |     < 1 min |             |     < 1 min |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 3001.578 ; gain = 158.125
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# phys_opt_design -directive AggressiveExplore
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveExplore
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3003.332 ; gain = 0.000
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to -0.393 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |      -0.533 |      -0.428 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.533 |      -0.280 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |      -0.393 |      -0.260 |       00:01 |       00:01 |       00:01 |       00:01 |
+| phys_opt_design |      -0.393 |      -0.260 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# write_checkpoint $out/corrected_routed.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.400 . Memory (MB): peak = 3003.332 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/corrected_routed.dcp' has been generated.
+# export_timing $out/after
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 40 -nworst 1 -delay_type max -sort_by slack.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 20 -nworst 1 -delay_type min -sort_by slack.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+# report_route_status -file $out/after/route_status.rpt
+# report_drc -file $out/after/drc.rpt
+Command: report_drc -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/after/drc.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H2/after/drc.rpt.
+report_drc completed successfully
+# report_utilization -hierarchical -file $out/after/utilization.rpt
+# write_debug_probes $out/Corrected.ltx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+# write_xdc $out/effective_constraints.xdc
+# write_verilog -mode timesim -sdf_anno false $out/post_route_timing.v
+# write_sdf -process_corner slow $out/post_route_max.sdf
+# set bad_core 0
+# foreach delay {max min} {
+#     foreach p [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths 10000 -nworst 1] {
+#         set end [get_property ENDPOINT_PIN $p]
+#         if {![string match u_ila* $end] && ![string match dbg_hub/* $end]} {incr bad_core}
+#     }
+# }
+# set fd [open $out/TIMING_GATE.txt w]
+# puts $fd "core_negative_endpoints=$bad_core\nbit_generated=0\nformal_rtl_modified=0\nfrequency_mhz=500"
+# close $fd
+# if {$bad_core} {error "CORE_TIMING_FAILï¼šä¿ç•™è¯æ?ï¼Œç?æ?¢å?£ç§°ä¿?å¤é€šè¿‡"}
+CORE_TIMING_FAILï¼šä¿ç•™è¯æ?ï¼Œç?æ?¢å?£ç§°ä¿?å¤é€šè¿‡
+    while executing
+"error "CORE_TIMING_FAILï¼šä¿ç•™è¯æ?ï¼Œç?æ?¢å?£ç§°ä¿?å¤é€šè¿‡""
+    invoked from within
+"if {$bad_core} {error "CORE_TIMING_FAILï¼šä¿ç•™è¯æ?ï¼Œç?æ?¢å?£ç§°ä¿?å¤é€šè¿‡"}"
+    (file "build_H2.tcl" line 80)
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 04:00:46 2026...

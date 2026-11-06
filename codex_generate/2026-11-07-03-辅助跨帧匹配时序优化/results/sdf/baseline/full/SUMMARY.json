@@ -1,0 +1,147 @@
+{
+  "variant": "baseline",
+  "dataset": "full",
+  "expected_pulses": 3512,
+  "actual_edges": 7024,
+  "actual_widths": 3512,
+  "correct_pairs": 3512,
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "mispairs": 0,
+  "faults": [],
+  "pairing_faults": [],
+  "business_errors": [],
+  "error_fifo": [],
+  "FIFO_sequence_equal": true,
+  "FIFO_outputs": 3512,
+  "functional_pass": true,
+  "timing_warning_gate_pass": true,
+  "MAX_SDF_pass": true,
+  "warning_counts": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 1073744,
+    "startup_async_reset_first_stage": 1,
+    "asynchronous_TDL_thermometer_sampler": 85684,
+    "asynchronous_aux_first_sampler": 1247,
+    "non_feedback_ILA": 110
+  },
+  "warning_first_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 10004097,
+    "asynchronous_aux_first_sampler": 10103054,
+    "non_feedback_ILA": 41007070
+  },
+  "warning_last_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 268899427,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 268404103,
+    "asynchronous_aux_first_sampler": 268331613,
+    "non_feedback_ILA": 263827116
+  },
+  "width_tolerance_ps": 1000,
+  "input_extra_cycles": 0,
+  "pulse_width": {
+    "n": 3512,
+    "bias_ps": -0.4740888382687927,
+    "rmse_ps": 65.21021509410615,
+    "std_sample_ps": 65.2177773720925,
+    "std_population_ps": 65.20849171996711,
+    "max_abs_ps": 189
+  },
+  "rise": {
+    "n": 3512,
+    "bias_ps": 305.6483485193622,
+    "rmse_ps": 309.91079113579536,
+    "std_sample_ps": 51.23019435970478,
+    "std_population_ps": 51.22290024784896,
+    "max_abs_ps": 437
+  },
+  "fall": {
+    "n": 3512,
+    "bias_ps": 305.1742596810934,
+    "rmse_ps": 309.2727526558192,
+    "std_sample_ps": 50.18987971065794,
+    "std_population_ps": 50.18273371792426,
+    "max_abs_ps": 435
+  },
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 70.80070621116712,
+      "std_sample_ps": 70.9783745111228,
+      "std_population_ps": 70.80070621116712,
+      "max_abs_ps": 189
+    },
+    "10MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 81.15318847710175,
+      "std_sample_ps": 81.35683544341455,
+      "std_population_ps": 81.15318847710175,
+      "max_abs_ps": 120
+    },
+    "10MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 81.15318847710175,
+      "std_sample_ps": 81.35683544341455,
+      "std_population_ps": 81.15318847710175,
+      "max_abs_ps": 120
+    },
+    "10MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 81.15318847710175,
+      "std_sample_ps": 81.35683544341455,
+      "std_population_ps": 81.15318847710175,
+      "max_abs_ps": 120
+    },
+    "20MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 65.96741619921156,
+      "std_sample_ps": 66.13295577241335,
+      "std_population_ps": 65.96741619921156,
+      "max_abs_ps": 140
+    },
+    "20MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 65.96741619921156,
+      "std_sample_ps": 66.13295577241335,
+      "std_population_ps": 65.96741619921156,
+      "max_abs_ps": 140
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "bias_ps": -0.5198863636363636,
+      "rmse_ps": 63.75970662882585,
+      "std_sample_ps": 63.787796767720124,
+      "std_population_ps": 63.757587058818686,
+      "max_abs_ps": 187
+    },
+    "ATC_20MHz": {
+      "n": 1056,
+      "bias_ps": -1.0568181818181819,
+      "rmse_ps": 61.13387259766781,
+      "std_sample_ps": 61.15369954210736,
+      "std_population_ps": 61.12473733373795,
+      "max_abs_ps": 164
+    }
+  },
+  "parameters_refitted": false,
+  "outliers_removed": false,
+  "epoch_ps": 677150,
+  "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+}

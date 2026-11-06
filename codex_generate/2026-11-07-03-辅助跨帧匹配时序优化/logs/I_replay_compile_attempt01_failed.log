@@ -1,0 +1,5 @@
+warning: verinum::as_long() truncated 32 bits to 31, returns 2147483647
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\sim/miter_pipe_checks.svh:2: warning: Vector size is greater than 1073741824.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\sim/miter_pipe_checks.svh:10: warning: Vector size is greater than 1073741824.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\sim/miter_pipe_checks.svh:2: internal error: lval-rval width mismatch: rval->vector_width()==111, lval->vector_width()==2147483648
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\sim/miter_pipe_checks.svh:2: assert: ../elaborate.cc:146: failed assertion rval->vector_width() >= lval->vector_width()

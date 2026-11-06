@@ -1,0 +1,15 @@
+{
+  "pass_all": true,
+  "hardware_programmed": false,
+  "DCP_sha256": "01004b1502ef357304503269eaba73c9e41415456b58ecac76c393a53a6d9584",
+  "files": {
+    "Corrected.bit": {
+      "size": 11443721,
+      "sha256": "59f1630048ade43ec5c0d7560c1e756ba664421e83e53c84028ca4956a61f523"
+    },
+    "Corrected.ltx": {
+      "size": 15916,
+      "sha256": "dcf8e20b6389ec92e7f90afb3bd878865c86cfb940755f67d223603cbac0b2c8"
+    }
+  }
+}

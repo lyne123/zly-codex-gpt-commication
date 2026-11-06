@@ -1,0 +1,360 @@
+--- production_original/rtl/tdc_fine_layer.v
++++ variants/I_confirmation_pipe/tdc_fine_layer.v
+@@ -194,6 +194,7 @@
+     reg ready0_d1;
+     reg ready90_d1, ready90_d2;
+     reg ready180_d1;
++    reg early_frame_ready_q;
+ 
+     always @(posedge clk_500m) begin
+         pack0_d1   <= pack0;
+@@ -208,15 +209,34 @@
+             ready90_d1  <= 1'b0;
+             ready90_d2  <= 1'b0;
+             ready180_d1 <= 1'b0;
++            early_frame_ready_q <= 1'b0;
+         end else begin
+             ready0_d1   <= ready0;
+             ready90_d1  <= ready90;
+             ready90_d2  <= ready90_d1;
+             ready180_d1 <= ready180_to90;
++            // 等于本拍更新后的ready0_d1 & ready90_d2 & ready180_d1，不多打一拍。
++            early_frame_ready_q <= ready0 & ready90_d1 & ready180_to90;
+         end
+     end
+ 
+     wire frame_ready = ready0_d1 & ready90_d2 & ready180_d1 & ready270_to90;
++    // 0°域三路ready先归约；90°域ready保留到末级选择，避免消耗1.5ns预算。
++    wire early_frame_ready=early_frame_ready_q;
++    wire [7:0] guarded_final_types;
++    wire [7:0] guarded_output_types;
++    // 专用确认级：细码、帧ready和确认余因子在同一拍锁存，全部测量输出整组延后一拍。
++    reg [31:0] pipe_fine_codes;
++    reg pipe_frame_ready;
++    reg [7:0] pipe_legacy_types;
++    always @(posedge clk_500m or negedge rst_n_0)
++        if(!rst_n_0) begin pipe_fine_codes<=0;pipe_frame_ready<=0;pipe_legacy_types<=0;end
++        else begin
++            pipe_fine_codes<={pack0_d1[7:0],pack270_to90[7:0],pack180_d1[7:0],pack90_d2[7:0]};
++            pipe_frame_ready<=frame_ready;
++            pipe_legacy_types<={final_type0,final_type270,final_type180,final_type90};
++        end
++
+ 
+     //==================================================================
+     // 4. 辅助通路：四相独立采样 → 相关时钟固定延迟传输 → 有序边沿归属
+@@ -378,36 +398,194 @@
+         // 同一边沿可能在相邻两个TDL帧中都有候选。只允许其首次确认帧参与选择，
+         // 防止已确认边沿的尾部候选与下一个真实异极性边沿混成冲突帧。
+         // 归属位随事件采样帧推进，不使用超时窗口，也不改变原候选的优先级或码值。
+-        reg [3:0] rise_claimed_previous, fall_claimed_previous;
+-        wire [3:0] rise_previous = rise_history[ALIGN_CYCLES+1] & ~rise_claimed_previous;
+-        wire [3:0] fall_previous = fall_history[ALIGN_CYCLES+1] & ~fall_claimed_previous;
+-        wire [3:0] rise_claimed_now = rise_now &
+-            (({4{pack0_d1[9:8]==2'b11}} & 4'b1111) |
+-             ({4{pack270_to90[9:8]==2'b11}} & 4'b0111) |
+-             ({4{pack180_d1[9:8]==2'b11}} & 4'b0011) |
+-             ({4{pack90_d2[9:8]==2'b11}} & 4'b0001));
+-        wire [3:0] fall_claimed_now = fall_now &
+-            (({4{pack0_d1[9:8]==2'b10}} & 4'b1111) |
+-             ({4{pack270_to90[9:8]==2'b10}} & 4'b0111) |
+-             ({4{pack180_d1[9:8]==2'b10}} & 4'b0011) |
+-             ({4{pack90_d2[9:8]==2'b10}} & 4'b0001));
+-        always @(posedge clk_500m or negedge rst_n_0) begin
+-            if (!rst_n_0) begin
+-                rise_claimed_previous <= 0;
+-                fall_claimed_previous <= 0;
++        // claimed是当前事件与相位前缀的交集；寄存前缀后再取交集，与原逐位寄存严格同拍。
++        wire [3:0] rise_cover =
++            ({4{pack0_d1[9:8]==2'b11}} & 4'b1111) |
++            ({4{pack270_to90[9:8]==2'b11}} & 4'b0111) |
++            ({4{pack180_d1[9:8]==2'b11}} & 4'b0011) |
++            ({4{pack90_d2[9:8]==2'b11}} & 4'b0001);
++        wire [3:0] fall_cover =
++            ({4{pack0_d1[9:8]==2'b10}} & 4'b1111) |
++            ({4{pack270_to90[9:8]==2'b10}} & 4'b0111) |
++            ({4{pack180_d1[9:8]==2'b10}} & 4'b0011) |
++            ({4{pack90_d2[9:8]==2'b10}} & 4'b0001);
++        wire [3:0] rise_claimed_now=rise_now & rise_cover;
++        wire [3:0] fall_claimed_now=fall_now & fall_cover;
++        reg [3:0] rise_cover_previous,fall_cover_previous;
++        always @(posedge clk_500m or negedge rst_n_0)
++            if(!rst_n_0) begin rise_cover_previous<=0;fall_cover_previous<=0;end
++            else begin
++                rise_cover_previous<=frame_ready ? rise_cover : 4'b0000;
++                fall_cover_previous<=frame_ready ? fall_cover : 4'b0000;
++            end
++        wire [3:0] rise_claimed_previous=rise_history[ALIGN_CYCLES+1] & rise_cover_previous;
++        wire [3:0] fall_claimed_previous=fall_history[ALIGN_CYCLES+1] & fall_cover_previous;
++        wire [3:0] rise_previous=rise_history[ALIGN_CYCLES+1] & ~rise_claimed_previous;
++        wire [3:0] fall_previous=fall_history[ALIGN_CYCLES+1] & ~fall_claimed_previous;
++        function single_event;
++            input [3:0] events;
++            begin single_event=(|events) && ((events & (events-4'b0001))==0);end
++        endfunction
++        // 与now同时到达的前缀OR、后缀OR和后缀唯一标志，从既有上一级history计算。
++        wire [3:0] rise_prefix_now,fall_prefix_now;
++        wire [3:0] rise_suffix_now,fall_suffix_now,rise_single_now,fall_single_now;
++        genvar stat;
++        for(stat=0;stat<4;stat=stat+1) begin : g_stats
++            if(ALIGN_CYCLES>0) begin : g_registered
++                reg rp,fp,rs,fs,ru,fu;
++                always @(posedge clk_500m or negedge rst_n_0)
++                    if(!rst_n_0) begin rp<=0;fp<=0;rs<=0;fs<=0;ru<=0;fu<=0;end
++                    else begin
++                        rp<=|rise_history[ALIGN_CYCLES-1][stat:0];
++                        fp<=|fall_history[ALIGN_CYCLES-1][stat:0];
++                        rs<=|rise_history[ALIGN_CYCLES-1][3:stat];
++                        fs<=|fall_history[ALIGN_CYCLES-1][3:stat];
++                        ru<=single_event(rise_history[ALIGN_CYCLES-1]>>stat);
++                        fu<=single_event(fall_history[ALIGN_CYCLES-1]>>stat);
++                    end
++                assign rise_prefix_now[stat]=rp;assign fall_prefix_now[stat]=fp;
++                assign rise_suffix_now[stat]=rs;assign fall_suffix_now[stat]=fs;
++                assign rise_single_now[stat]=ru;assign fall_single_now[stat]=fu;
++            end else begin : g_no_align
++                assign rise_prefix_now[stat]=|rise_now[stat:0];assign fall_prefix_now[stat]=|fall_now[stat:0];
++                assign rise_suffix_now[stat]=|rise_now[3:stat];assign fall_suffix_now[stat]=|fall_now[3:stat];
++                assign rise_single_now[stat]=single_event(rise_now>>stat);assign fall_single_now[stat]=single_event(fall_now>>stat);
++            end
++        end
++        wire r0=pack0_d1[9:8]==2'b11;
++        wire r180=pack180_d1[9:8]==2'b11;
++        wire r90=pack90_d2[9:8]==2'b11;
++        wire f0=pack0_d1[9:8]==2'b10;
++        wire f180=pack180_d1[9:8]==2'b10;
++        wire f90=pack90_d2[9:8]==2'b10;
++        wire [3:0] rise_remaining_next,fall_remaining_next;
++        reg [3:0] rise_remaining_previous,fall_remaining_previous;
++        genvar tail;
++        for(tail=0;tail<4;tail=tail+1) begin : g_remaining
++            localparam integer FROM180=(tail<2)?2:tail;
++            localparam integer FROM90=(tail<1)?1:tail;
++            wire r_no270=!r0 && (r180 ? rise_suffix_now[FROM180] : r90 ? rise_suffix_now[FROM90] : rise_suffix_now[tail]);
++            wire f_no270=!f0 && (f180 ? fall_suffix_now[FROM180] : f90 ? fall_suffix_now[FROM90] : fall_suffix_now[tail]);
++            // 晚到270°类型与frame_ready只控制末级选择；ready为0时直接选未扣除的原事件统计。
++            LUT6 #(.INIT(64'hcaaacaaaffff0000)) u_r (.I0(early_frame_ready ? (r_no270) : (rise_suffix_now[tail])),.I1(early_frame_ready ? (!r0 && rise_suffix_now[3]) : (rise_suffix_now[tail])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(rise_suffix_now[tail]),.I5(ready270_to90),.O(rise_remaining_next[tail]));
++            LUT6 #(.INIT(64'hacaaacaaffff0000)) u_f (.I0(early_frame_ready ? (f_no270) : (fall_suffix_now[tail])),.I1(early_frame_ready ? (!f0 && fall_suffix_now[3]) : (fall_suffix_now[tail])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(fall_suffix_now[tail]),.I5(ready270_to90),.O(fall_remaining_next[tail]));
++        end
++        wire rise_single_no270=!r0 && (r180 ? rise_single_now[2] : r90 ? rise_single_now[1] : rise_single_now[0]);
++        wire fall_single_no270=!f0 && (f180 ? fall_single_now[2] : f90 ? fall_single_now[1] : fall_single_now[0]);
++        wire rise_single_next,fall_single_next;
++        reg rise_previous_single_q,fall_previous_single_q;
++        LUT6 #(.INIT(64'hcaaacaaaffff0000)) u_single_r (.I0(early_frame_ready ? (rise_single_no270) : (rise_single_now[0])),.I1(early_frame_ready ? (!r0 && rise_single_now[3]) : (rise_single_now[0])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(rise_single_now[0]),.I5(ready270_to90),.O(rise_single_next));
++        LUT6 #(.INIT(64'hacaaacaaffff0000)) u_single_f (.I0(early_frame_ready ? (fall_single_no270) : (fall_single_now[0])),.I1(early_frame_ready ? (!f0 && fall_single_now[3]) : (fall_single_now[0])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(fall_single_now[0]),.I5(ready270_to90),.O(fall_single_next));
++        always @(posedge clk_500m or negedge rst_n_0)
++            if(!rst_n_0) begin
++                rise_remaining_previous<=0;fall_remaining_previous<=0;
++                rise_previous_single_q<=0;fall_previous_single_q<=0;
+             end else begin
+-                rise_claimed_previous <= frame_ready ? rise_claimed_now : 4'b0000;
+-                fall_claimed_previous <= frame_ready ? fall_claimed_now : 4'b0000;
+-            end
+-        end
+-        assign aux_rise_match[0] = rise_now[0] | (|rise_previous[3:1]);
+-        assign aux_rise_match[1] = (|rise_now[1:0]) | (|rise_previous[3:2]);
+-        assign aux_rise_match[2] = (|rise_now[2:0]) | rise_previous[3];
+-        assign aux_rise_match[3] = |rise_now;
+-        assign aux_fall_match[0] = fall_now[0] | (|fall_previous[3:1]);
+-        assign aux_fall_match[1] = (|fall_now[1:0]) | (|fall_previous[3:2]);
+-        assign aux_fall_match[2] = (|fall_now[2:0]) | fall_previous[3];
+-        assign aux_fall_match[3] = |fall_now;
++                rise_remaining_previous<=rise_remaining_next;fall_remaining_previous<=fall_remaining_next;
++                rise_previous_single_q<=rise_single_next;fall_previous_single_q<=fall_single_next;
++            end
++        // next前缀与remaining_next属于同一输出帧；在原history边界同时寄存，不新增输出拍数。
++        wire [3:0] rise_base_next,fall_base_next;
++        reg [3:0] rise_base_q,fall_base_q;
++        genvar match_phase;
++        for(match_phase=0;match_phase<4;match_phase=match_phase+1) begin : g_base_precompute
++            wire next_rise_prefix,next_fall_prefix;
++            if(ALIGN_CYCLES>0) begin : g_from_history
++                assign next_rise_prefix=|rise_history[ALIGN_CYCLES-1][match_phase:0];
++                assign next_fall_prefix=|fall_history[ALIGN_CYCLES-1][match_phase:0];
++            end else begin : g_from_input
++                wire [3:0] next_rise_slots=(armed && ordered_ready) ? (ordered_samples & ~previous_slots) : 4'b0000;
++                wire [3:0] next_fall_slots=(armed && ordered_ready) ? (~ordered_samples & previous_slots) : 4'b0000;
++                assign next_rise_prefix=|next_rise_slots[match_phase:0];
++                assign next_fall_prefix=|next_fall_slots[match_phase:0];
++            end
++            if(match_phase==3) begin : g_last_phase
++                assign rise_base_next[match_phase]=next_rise_prefix;
++                assign fall_base_next[match_phase]=next_fall_prefix;
++            end else begin : g_with_previous
++                localparam integer FROM=match_phase+1;
++                localparam integer FROM180=(FROM<2)?2:FROM;
++                localparam integer FROM90=(FROM<1)?1:FROM;
++                wire r_none=!r0 && (r180 ? rise_suffix_now[FROM180] : r90 ? rise_suffix_now[FROM90] : rise_suffix_now[FROM]);
++                wire f_none=!f0 && (f180 ? fall_suffix_now[FROM180] : f90 ? fall_suffix_now[FROM90] : fall_suffix_now[FROM]);
++                LUT6 #(.INIT(64'hcaaacaaaffff0000)) u_r (.I0(early_frame_ready ? (next_rise_prefix | r_none) : (next_rise_prefix | rise_suffix_now[FROM])),.I1(early_frame_ready ? (next_rise_prefix | (!r0 && rise_suffix_now[3])) : (next_rise_prefix | rise_suffix_now[FROM])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(next_rise_prefix | rise_suffix_now[FROM]),.I5(ready270_to90),.O(rise_base_next[match_phase]));
++                LUT6 #(.INIT(64'hacaaacaaffff0000)) u_f (.I0(early_frame_ready ? (next_fall_prefix | f_none) : (next_fall_prefix | fall_suffix_now[FROM])),.I1(early_frame_ready ? (next_fall_prefix | (!f0 && fall_suffix_now[3])) : (next_fall_prefix | fall_suffix_now[FROM])),.I2(pack270_to90[8]),.I3(pack270_to90[9]),.I4(next_fall_prefix | fall_suffix_now[FROM]),.I5(ready270_to90),.O(fall_base_next[match_phase]));
++            end
++        end
++        always @(posedge clk_500m or negedge rst_n_0)
++            if(!rst_n_0) begin rise_base_q<=0;fall_base_q<=0;end
++            else begin rise_base_q<=rise_base_next;fall_base_q<=fall_base_next;end
++        wire [3:0] base_rise_match, base_fall_match;
++        assign base_rise_match[0] = rise_base_q[0];
++        assign base_rise_match[1] = rise_base_q[1];
++        assign base_rise_match[2] = rise_base_q[2];
++        assign base_rise_match[3] = rise_base_q[3];
++        assign base_fall_match[0] = fall_base_q[0];
++        assign base_fall_match[1] = fall_base_q[1];
++        assign base_fall_match[2] = fall_base_q[2];
++        assign base_fall_match[3] = fall_base_q[3];
++
++        // 保持原确认优先；仅在整帧无原有效候选时考虑前帧回退。
++        wire base_confirmed =
++            (pack0_d1[9] && (pack0_d1[8] ? base_rise_match[3] : base_fall_match[3])) ||
++            (pack270_to90[9] && (pack270_to90[8] ? base_rise_match[2] : base_fall_match[2])) ||
++            (pack180_d1[9] && (pack180_d1[8] ? base_rise_match[1] : base_fall_match[1])) ||
++            (pack90_d2[9] && (pack90_d2[8] ? base_rise_match[0] : base_fall_match[0]));
++        wire raw_has_rise = pack0_d1[9:8]==2'b11 || pack270_to90[9:8]==2'b11 ||
++                            pack180_d1[9:8]==2'b11 || pack90_d2[9:8]==2'b11;
++        wire raw_has_fall = pack0_d1[9:8]==2'b10 || pack270_to90[9:8]==2'b10 ||
++                            pack180_d1[9:8]==2'b10 || pack90_d2[9:8]==2'b10;
++        // 多事件或混合极性时不推测归属；previous已按原claimed规则扣除使用过的事件。
++        wire rise_previous_single = rise_previous_single_q;
++        wire fall_previous_single = fall_previous_single_q;
++        wire rise_fallback = !base_confirmed && raw_has_rise && !raw_has_fall && rise_previous_single;
++        wire fall_fallback = !base_confirmed && raw_has_fall && !raw_has_rise && fall_previous_single;
++        assign aux_rise_match = base_rise_match | {4{rise_fallback}};
++        assign aux_fall_match = base_fall_match | {4{fall_fallback}};
++        // 270°包在90°时钟产生，到下一0°仅1.5ns；提前计算三个余因子，避免晚到信号穿过全局归约。
++        // 与上方E规则完全等价，末级LUT5只选择对应候选类型；没有增加寄存器或跨域采样。
++        function [7:0] guarded_types;
++            input [7:0] types;
++            input [3:0] base_r,base_f;
++            input single_r,single_f;
++            reg confirmed,has_r,has_f,back_r,back_f;
++            integer q;
++            begin
++                confirmed=0;has_r=0;has_f=0;
++                for(q=0;q<4;q=q+1) begin
++                    has_r=has_r || types[2*q+:2]==2'b11;
++                    has_f=has_f || types[2*q+:2]==2'b10;
++                    confirmed=confirmed || (types[2*q+:2]==2'b11 && base_r[q]) ||
++                                           (types[2*q+:2]==2'b10 && base_f[q]);
++                end
++                back_r=!confirmed && !has_f && single_r;
++                back_f=!confirmed && !has_r && single_f;
++                for(q=0;q<4;q=q+1)
++                    guarded_types[2*q+:2]=confirm_edge(types[2*q+:2],base_r[q] | back_r,base_f[q] | back_f);
++            end
++        endfunction
++        wire [7:0] if_invalid=guarded_types({pack0_d1[9:8],2'b00,pack180_d1[9:8],pack90_d2[9:8]},base_rise_match,base_fall_match,rise_previous_single,fall_previous_single);
++        wire [7:0] if_fall=guarded_types({pack0_d1[9:8],2'b10,pack180_d1[9:8],pack90_d2[9:8]},base_rise_match,base_fall_match,rise_previous_single,fall_previous_single);
++        wire [7:0] if_rise=guarded_types({pack0_d1[9:8],2'b11,pack180_d1[9:8],pack90_d2[9:8]},base_rise_match,base_fall_match,rise_previous_single,fall_previous_single);
++        reg [7:0] pipe_if_invalid,pipe_if_fall,pipe_if_rise;
++        reg [1:0] pipe_type270;
++        always @(posedge clk_500m or negedge rst_n_0)
++            if(!rst_n_0) begin pipe_if_invalid<=0;pipe_if_fall<=0;pipe_if_rise<=0;pipe_type270<=0;end
++            else begin
++                pipe_if_invalid<=if_invalid;pipe_if_fall<=if_fall;pipe_if_rise<=if_rise;
++                pipe_type270<=pack270_to90[9:8];
++            end
++        genvar bit_id;
++        for(bit_id=0;bit_id<8;bit_id=bit_id+1) begin : g_guard_mux
++            LUT5 #(.INIT(32'hf0ccaaaa)) u_mux (
++                .I0(if_invalid[bit_id]),.I1(if_fall[bit_id]),.I2(if_rise[bit_id]),
++                .I3(pack270_to90[8]),.I4(pack270_to90[9]),.O(guarded_final_types[bit_id]));
++            // 将frame_ready门控并入选择LUT；此前专用确认级使整组测量输出增加一拍。
++            LUT6 #(.INIT(64'hf0ccaaaa00000000)) u_output (
++                .I0(pipe_if_invalid[bit_id]),.I1(pipe_if_fall[bit_id]),.I2(pipe_if_rise[bit_id]),
++                .I3(pipe_type270[0]),.I4(pipe_type270[1]),.I5(pipe_frame_ready),.O(guarded_output_types[bit_id]));
++        end
++
+ `ifndef SYNTHESIS
+         initial if (CARRY_NUM<4) $fatal(1,"四相辅助通路要求CARRY_NUM>=4");
+ `endif
+@@ -430,10 +608,10 @@
+         end
+     endfunction
+ 
+-    wire [1:0] final_type0   = confirm_edge(pack0_d1[9:8],        aux_rise_match[3], aux_fall_match[3]);
+-    wire [1:0] final_type90  = confirm_edge(pack90_d2[9:8],       aux_rise_match[0], aux_fall_match[0]);
+-    wire [1:0] final_type180 = confirm_edge(pack180_d1[9:8],      aux_rise_match[1], aux_fall_match[1]);
+-    wire [1:0] final_type270 = confirm_edge(pack270_to90[9:8],    aux_rise_match[2], aux_fall_match[2]);
++    wire [1:0] final_type0   = ENABLE_AUX_4PHASE ? guarded_final_types[6+:2] : confirm_edge(pack0_d1[9:8],        aux_rise_match[3], aux_fall_match[3]);
++    wire [1:0] final_type90  = ENABLE_AUX_4PHASE ? guarded_final_types[0+:2] : confirm_edge(pack90_d2[9:8],       aux_rise_match[0], aux_fall_match[0]);
++    wire [1:0] final_type180 = ENABLE_AUX_4PHASE ? guarded_final_types[2+:2] : confirm_edge(pack180_d1[9:8],      aux_rise_match[1], aux_fall_match[1]);
++    wire [1:0] final_type270 = ENABLE_AUX_4PHASE ? guarded_final_types[4+:2] : confirm_edge(pack270_to90[9:8],    aux_rise_match[2], aux_fall_match[2]);
+ 
+     always @(posedge clk_500m or negedge rst_n_0) begin
+         if (!rst_n_0) begin
+@@ -443,22 +621,13 @@
+             sync_valid         <= 1'b0;
+         end else begin
+             // 位序：{下一周期0°，270°，180°，90°}
+-            all_fine_code <= {
+-                pack0_d1[7:0],
+-                pack270_to90[7:0],
+-                pack180_d1[7:0],
+-                pack90_d2[7:0]
+-            };
+-            sync_valid <= frame_ready;
+-            sync_edge_polarity <= frame_ready ? {
+-                final_type0, final_type270, final_type180, final_type90
+-            } : 8'd0;
+-            sync_edge_valid <= frame_ready ? {
+-                (final_type0   != 2'b00),
+-                (final_type270 != 2'b00),
+-                (final_type180 != 2'b00),
+-                (final_type90  != 2'b00)
+-            } : 4'd0;
++            all_fine_code <= pipe_fine_codes;
++            sync_valid <= pipe_frame_ready;
++            sync_edge_polarity <= ENABLE_AUX_4PHASE ? guarded_output_types :
++                (pipe_frame_ready ? pipe_legacy_types : 8'd0);
++            sync_edge_valid <= ENABLE_AUX_4PHASE ?
++                {guarded_output_types[7],guarded_output_types[5],guarded_output_types[3],guarded_output_types[1]} :
++                (pipe_frame_ready ? {pipe_legacy_types[7],pipe_legacy_types[5],pipe_legacy_types[3],pipe_legacy_types[1]} : 4'd0);
+         end
+     end
+ endmodule
+--- production_original/rtl/tdc_meas_top.v
++++ variants/I_confirmation_pipe/tdc_meas_top.v
+@@ -154,6 +154,7 @@
+ 
+ 
+     tdc_time_locate #(
++        .INPUT_COARSE_DELAY(1), // 与前端新增确认级同拍对齐，不重新拟合补偿。
+         .COARSE_W (COARSE_W),
+         .MAX_TAP  (TAPS),
+         .TAP_PS   (TAP_PS),
+--- production_original/rtl/tdc_time_locate.v
++++ variants/I_confirmation_pipe/tdc_time_locate.v
+@@ -4,6 +4,8 @@
+     parameter integer COARSE_W = 8,
+     parameter integer MAX_TAP  = 64,
+     parameter integer TAP_PS   = 10,
++    // 专用前端确认级增加一拍时，粗计数采样同样回看一拍；不改变时间戳公式或粗计数器。
++    parameter integer INPUT_COARSE_DELAY = 0,
+     // 偏移为正向时间戳的测量偏差，单位ps；默认0仅为未校准占位。
+     parameter integer ENABLE_SKEW_COMP = 0,
+     parameter signed [17:0] RISE_OFFSET_0_PS = 18'sd0,
+@@ -68,6 +70,15 @@
+             coarse_counter <= coarse_counter + 1'b1;
+     end
+ 
++    reg [COARSE_W-1:0] coarse_counter_d1;
++    always @(posedge clk_500m or negedge rst_n)
++        if(!rst_n) coarse_counter_d1 <= {COARSE_W{1'b0}};
++        else coarse_counter_d1 <= coarse_counter;
++    wire [COARSE_W-1:0] coarse_for_capture = INPUT_COARSE_DELAY ? coarse_counter_d1 : coarse_counter;
++`ifndef SYNTHESIS
++    initial if(INPUT_COARSE_DELAY!=0 && INPUT_COARSE_DELAY!=1) $fatal(1,"仅支持零拍或一拍粗计数对齐");
++`endif
++
+     // Constant shift-and-add conversion from tap count directly to ps.
+     function [10:0] taps_to_ps;
+         input [7:0] taps;
+@@ -142,7 +153,7 @@
+                     2'd3: s2_mid_time <= 11'd2000;
+                 endcase
+                 s2_fine_time <= taps_to_ps(s1_tap);
+-                s2_coarse    <= coarse_counter;
++                s2_coarse    <= coarse_for_capture;
+                 s2_comp_mid  <= selected_comp_mid(s1_index, s1_type);
+             end
+         end

@@ -1,0 +1,189 @@
+{
+  "variant": "I_confirmation_pipe",
+  "pass_all": true,
+  "guard_cases": 262144,
+  "real_csv_recovered": true,
+  "added_output_cycles": 1,
+  "pwm": {
+    "0": {
+      "pulses": 1344,
+      "rises": 1344,
+      "falls": 1344,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "mismatched_pairs": 0,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "range_error": 0,
+      "association_residual_over_20ps": 0,
+      "max_abs_width_error_ps": 339,
+      "missing_by_case": {
+        "10M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_5": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_95": {
+          "rise": 0,
+          "fall": 0
+        },
+        "10M_20M_switch": {
+          "rise": 0,
+          "fall": 0
+        },
+        "adjacent_2ns": {
+          "rise": 0,
+          "fall": 0
+        },
+        "phase_boundary": {
+          "rise": 0,
+          "fall": 0
+        }
+      },
+      "functional_pass": true,
+      "width_tolerance_pass": true,
+      "F_cycle_equivalent": false,
+      "F_equal_after_known_delay": true,
+      "added_output_cycles": 1,
+      "byte_equal_to_F": [],
+      "equal_value_CSV": [
+        "candidate.csv",
+        "timestamps.csv",
+        "widths.csv",
+        "errors.csv",
+        "ASSOCIATION.csv",
+        "MEASUREMENTS.csv"
+      ],
+      "result_fifo_overflow": false,
+      "error_fifo_overflow": false
+    },
+    "250": {
+      "pulses": 1344,
+      "rises": 1344,
+      "falls": 1344,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "mismatched_pairs": 0,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "range_error": 0,
+      "association_residual_over_20ps": 0,
+      "max_abs_width_error_ps": 339,
+      "missing_by_case": {
+        "10M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_5": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_95": {
+          "rise": 0,
+          "fall": 0
+        },
+        "10M_20M_switch": {
+          "rise": 0,
+          "fall": 0
+        },
+        "adjacent_2ns": {
+          "rise": 0,
+          "fall": 0
+        },
+        "phase_boundary": {
+          "rise": 0,
+          "fall": 0
+        }
+      },
+      "functional_pass": true,
+      "width_tolerance_pass": true,
+      "F_cycle_equivalent": false,
+      "F_equal_after_known_delay": true,
+      "added_output_cycles": 1,
+      "byte_equal_to_F": [],
+      "equal_value_CSV": [
+        "candidate.csv",
+        "timestamps.csv",
+        "widths.csv",
+        "errors.csv",
+        "ASSOCIATION.csv",
+        "MEASUREMENTS.csv"
+      ],
+      "result_fifo_overflow": false,
+      "error_fifo_overflow": false
+    },
+    "500": {
+      "pulses": 1344,
+      "rises": 1344,
+      "falls": 1344,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "mismatched_pairs": 0,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "range_error": 0,
+      "association_residual_over_20ps": 0,
+      "max_abs_width_error_ps": 339,
+      "missing_by_case": {
+        "10M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_50": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_5": {
+          "rise": 0,
+          "fall": 0
+        },
+        "20M_95": {
+          "rise": 0,
+          "fall": 0
+        },
+        "10M_20M_switch": {
+          "rise": 0,
+          "fall": 0
+        },
+        "adjacent_2ns": {
+          "rise": 0,
+          "fall": 0
+        },
+        "phase_boundary": {
+          "rise": 0,
+          "fall": 0
+        }
+      },
+      "functional_pass": true,
+      "width_tolerance_pass": true,
+      "F_cycle_equivalent": false,
+      "F_equal_after_known_delay": true,
+      "added_output_cycles": 1,
+      "byte_equal_to_F": [],
+      "equal_value_CSV": [
+        "candidate.csv",
+        "timestamps.csv",
+        "widths.csv",
+        "errors.csv",
+        "ASSOCIATION.csv",
+        "MEASUREMENTS.csv"
+      ],
+      "result_fifo_overflow": false,
+      "error_fifo_overflow": false
+    }
+  }
+}

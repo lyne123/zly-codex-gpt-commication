@@ -1,0 +1,128 @@
+{
+  "variant": "corrected",
+  "dataset": "minimal",
+  "expected_pulses": 112,
+  "actual_edges": 224,
+  "actual_widths": 112,
+  "correct_pairs": 112,
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "mispairs": 0,
+  "faults": [],
+  "pairing_faults": [],
+  "business_errors": [],
+  "error_fifo": [],
+  "FIFO_sequence_equal": true,
+  "FIFO_outputs": 112,
+  "functional_pass": true,
+  "timing_warning_gate_pass": false,
+  "MAX_SDF_pass": false,
+  "warning_counts": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 66836,
+    "core_synchronous_or_unclassified": 1,
+    "asynchronous_aux_first_sampler": 86,
+    "asynchronous_TDL_thermometer_sampler": 2936
+  },
+  "warning_first_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+    "core_synchronous_or_unclassified": 671623,
+    "asynchronous_aux_first_sampler": 5203086,
+    "asynchronous_TDL_thermometer_sampler": 5204088
+  },
+  "warning_last_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 17172427,
+    "core_synchronous_or_unclassified": 671623,
+    "asynchronous_aux_first_sampler": 16673084,
+    "asynchronous_TDL_thermometer_sampler": 16677142
+  },
+  "width_tolerance_ps": 1000,
+  "input_extra_cycles": 1,
+  "pulse_width": {
+    "n": 112,
+    "bias_ps": 26.053571428571427,
+    "rmse_ps": 56.902642419185725,
+    "std_sample_ps": 50.815128499564814,
+    "std_population_ps": 50.58776660519854,
+    "max_abs_ps": 140
+  },
+  "rise": {
+    "n": 112,
+    "bias_ps": 296,
+    "rmse_ps": 297.4869745047672,
+    "std_sample_ps": 29.840416392042027,
+    "std_population_ps": 29.706901555025897,
+    "max_abs_ps": 338
+  },
+  "fall": {
+    "n": 112,
+    "bias_ps": 322.05357142857144,
+    "rmse_ps": 325.6568910898182,
+    "std_sample_ps": 48.52766263878821,
+    "std_population_ps": 48.31053554234061,
+    "max_abs_ps": 409
+  },
+  "groups": {
+    "10M_50": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20M_50": {
+      "n": 16,
+      "bias_ps": 35,
+      "rmse_ps": 73.4234295031225,
+      "std_sample_ps": 66.66133311998293,
+      "std_population_ps": 64.5445582524197,
+      "max_abs_ps": 99
+    },
+    "20M_5": {
+      "n": 16,
+      "bias_ps": 37.75,
+      "rmse_ps": 45.06384359994163,
+      "std_sample_ps": 25.41784150290238,
+      "std_population_ps": 24.610719209320152,
+      "max_abs_ps": 69
+    },
+    "20M_95": {
+      "n": 16,
+      "bias_ps": 52.25,
+      "rmse_ps": 102.20200585115734,
+      "std_sample_ps": 90.71677536891032,
+      "std_population_ps": 87.83614005635721,
+      "max_abs_ps": 140
+    },
+    "10M_20M_switch": {
+      "n": 16,
+      "bias_ps": 17.5,
+      "rmse_ps": 51.91820489963034,
+      "std_sample_ps": 50.483000439091704,
+      "std_population_ps": 48.87995499179597,
+      "max_abs_ps": 99
+    },
+    "adjacent_2ns": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "phase_boundary": {
+      "n": 16,
+      "bias_ps": 39.875,
+      "rmse_ps": 45.85711504227016,
+      "std_sample_ps": 23.389100025439202,
+      "std_population_ps": 22.646398720326374,
+      "max_abs_ps": 70
+    }
+  },
+  "parameters_refitted": false,
+  "outliers_removed": false,
+  "epoch_ps": 677150,
+  "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+}

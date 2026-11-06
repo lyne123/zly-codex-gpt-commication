@@ -1,0 +1,6 @@
+core_negative_endpoints=0
+bit_generated=0
+formal_rtl_modified=0
+frequency_mhz=500
+added_output_cycles=1
+FIFO_IP_configuration_changed=0

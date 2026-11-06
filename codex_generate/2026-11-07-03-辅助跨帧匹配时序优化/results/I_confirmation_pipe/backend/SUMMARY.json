@@ -1,0 +1,1 @@
+{"pass_all": true, "simulation_only_forced_candidates": true, "repeat_rise": 1, "orphan_fall": 1, "out_of_range_fine_code_rejected": true, "wrap_pair_checked": true, "FIFO_error_events_equal": 2}

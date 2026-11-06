@@ -1,0 +1,20 @@
+{
+  "full.txt": {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\inputs\\full.txt",
+    "sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f"
+  },
+  "full_truth.csv": {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\inputs\\full_truth.csv",
+    "sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac"
+  },
+  "frozen_event_association.json": {
+    "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-05-06-四相TDC-MAX-SDF验证\\inputs\\frozen_event_association.json",
+    "sha256": "acd3e13ba9d181e873988840133cb3b2f49de818f932036ac411d03337c6087a"
+  },
+  "minimal": {
+    "pulses": 112,
+    "fixed_before_SDF": true,
+    "width_tolerance_ps": 1000,
+    "scope": "独立边界/短脉冲压力；非真实硬件状态再现"
+  }
+}

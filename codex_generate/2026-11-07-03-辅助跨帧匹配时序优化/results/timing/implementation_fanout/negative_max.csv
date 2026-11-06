@@ -1,0 +1,17 @@
+slack_ns,startpoint,endpoint
+-0.073,u_tdc_fine_layer/pack0_d1_reg[8]_replica/C,u_tdc_fine_layer/sync_edge_valid_reg[1]/D
+-0.050,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q/D
+-0.043,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/u_scnt_cmp_q/R
+-0.038,u_tdc_fine_layer/pack0_d1_reg[9]/C,u_tdc_fine_layer/sync_edge_polarity_reg[1]/D
+-0.033,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[8]_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_hcmp_q/D
+-0.011,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/iwcnt_reg[8]/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q/D
+-0.011,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/u_wcnt_lcmp_q/R
+-0.004,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]_replica_1/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[1]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[2]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[3]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[4]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[5]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[8]_replica/R
+-0.002,u_ila2/inst/ila_core_inst/basic_trigger_reg_replica/C,u_ila2/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/iscnt_reg[9]/R

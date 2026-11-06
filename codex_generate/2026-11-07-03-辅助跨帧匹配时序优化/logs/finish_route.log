@@ -1,0 +1,164 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 04:26:41 2026
+# Process ID: 18824
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03
+# Command line: vivado.exe -mode batch -source finish_route.tcl -log finish_route.log -journal finish_route.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/finish_route.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03\finish_route.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source finish_route.tcl
+# set_param general.maxThreads 1
+# set work [file dirname [file normalize [info script]]]
+# cd $work
+# set out $work/implementation_closed
+# if {[file exists $out]} {error "禁�?��?�盖�?由后收尾结果"}
+# file mkdir $out
+# source $work/export_timing_proc.tcl
+## proc export_timing {folder} {
+##     file mkdir $folder
+##     update_timing -full
+##     report_timing_summary -delay_type min_max -report_unconstrained -file $folder/timing_summary.rpt
+##     report_timing -delay_type max -max_paths 40 -path_type full_clock_expanded -file $folder/setup_top40.rpt
+##     report_timing -delay_type min -max_paths 20 -file $folder/hold_top20.rpt
+##     foreach delay {max min} {
+##         set fd [open $folder/negative_${delay}.csv w]
+##         puts $fd "slack_ns,startpoint,endpoint"
+##         foreach p [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths 10000 -nworst 1] {
+##             puts $fd "[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"
+##         }
+##         close $fd
+##     }
+##     set fd [open $folder/core_timing.csv w]
+##     puts $fd "module,delay_type,slack_ns,startpoint,endpoint"
+##     foreach module {u_tdc_fine_layer u_tdc_time_candicate u_tdc_time_locate u_tdc_time_merge u_fifo_tdc_result u_fifo_tdc_error} {
+##         set cells [get_cells -quiet -hier -filter "NAME =~ $module/*"]
+##         foreach delay {max min} {
+##             set p [get_timing_paths -quiet -to $cells -delay_type $delay -max_paths 1]
+##             if {[llength $p]} {puts $fd "$module,$delay,[get_property SLACK $p],[get_property STARTPOINT_PIN $p],[get_property ENDPOINT_PIN $p]"}
+##         }
+##     }
+##     close $fd
+##     report_clocks -file $folder/clocks.rpt
+##     report_exceptions -file $folder/exceptions.rpt
+## }
+# open_checkpoint $work/implementation_H3_physical/corrected_routed.dcp
+Command: open_checkpoint D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_H3_physical/corrected_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 892.070 ; gain = 6.035
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1500.453 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading placer database...
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.494 . Memory (MB): peak = 2284.727 ; gain = 7.969
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.690 . Memory (MB): peak = 2284.727 ; gain = 7.969
+INFO: [Project 1-837] Checkpoint contains data reused from an Incremental Compile. Run report_incremental_reuse for further information about reused data.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2284.727 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: f42c3966
+----- Checksum: PlaceDB: 47cfce40 ShapeSum: 0cfaa376 RouteDB: 9f61c7b0 
+open_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2284.727 ; gain = 1399.922
+# phys_opt_design -placement_opt -routing_opt
+Command: phys_opt_design -placement_opt -routing_opt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2306.379 ; gain = 8.875
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to -0.127 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |      -0.428 |      -0.368 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.280 |      -0.113 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.320 |      -0.113 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |      -0.320 |      -0.113 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |             |      -0.116 |             |     < 1 min |             |     < 1 min |
+| phys_opt_design |             |      -0.116 |             |     < 1 min |             |     < 1 min |
+| route_design    |      -0.127 |      -0.038 |       00:01 |       00:01 |       00:01 |       00:01 |
+| phys_opt_design |             |      -0.038 |             |     < 1 min |             |     < 1 min |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+4 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+# write_checkpoint $out/corrected_routed.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.397 . Memory (MB): peak = 2326.262 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_closed/corrected_routed.dcp' has been generated.
+# export_timing $out/after
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: max.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 40 -nworst 1 -delay_type max -sort_by slack.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 20 -nworst 1 -delay_type min -sort_by slack.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+# report_route_status -file $out/after/route_status.rpt
+# report_drc -file $out/after/drc.rpt
+Command: report_drc -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_closed/after/drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/implementation_closed/after/drc.rpt.
+report_drc completed successfully
+# write_debug_probes $out/Corrected.ltx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+# write_xdc $out/effective_constraints.xdc
+# write_verilog -mode timesim -sdf_anno false $out/post_route_timing.v
+# write_sdf -process_corner slow $out/post_route_max.sdf
+# set bad 0
+# foreach delay {max min} {
+#     foreach p [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths 10000 -nworst 1] {
+#         set end [get_property ENDPOINT_PIN $p]
+#         if {![string match u_ila* $end] && ![string match dbg_hub/* $end]} {incr bad}
+#     }
+# }
+# set fd [open $out/TIMING_GATE.txt w]
+# puts $fd "core_negative_endpoints=$bad\nbit_generated=0\nformal_rtl_modified=0\nfrequency_mhz=500\nadded_output_cycles=0"
+# close $fd
+# if {$bad} {error "CORE_TIMING_FAIL：保留路由后收尾失败证据"}
+CORE_TIMING_FAIL：保留路由后收尾失败证据
+    while executing
+"error "CORE_TIMING_FAIL：保留路由后收尾失败证据""
+    invoked from within
+"if {$bad} {error "CORE_TIMING_FAIL：保留路由后收尾失败证据"}"
+    (file "finish_route.tcl" line 29)
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 04:27:10 2026...

@@ -1,0 +1,2 @@
+PWM_RTL_COMPLETE overflow_result=0 overflow_error=0
+F_PIPELINE_EQUIVALENCE_PASS cycles=45836 added_cycles=1 fifo_width=1344 fifo_error=0

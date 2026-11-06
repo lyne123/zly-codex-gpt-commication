@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "variant": "corrected",
+  "dataset": "minimal",
+  "timing_checks_enabled": true,
+  "stimulus_sha256": "ef6210308db8b79b6ee2c306eccc34937d71fec0ae0a2ba12f50ffd8fd4c2769",
+  "truth_sha256": "dd44255e3e086936b9f61fcdafe6ea6d0b9902a037187e95544190a020bb07de",
+  "native_simulation_log": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\sdf_corrected\\minimal\\simulation.log",
+  "native_log_sha256": "d3543f009224de5f9a38961504f1cc7bd3c758b0aafbb0b5e51a7e3e7dd36408",
+  "compressed_log_sha256": "e57ff5dc6b60b3a79f8bc8d686f444b89c10ac3a598ba39a17f3ebc17a36ea4d"
+}

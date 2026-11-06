@@ -1,0 +1,510 @@
+{
+  "pass_all": true,
+  "archive_ready": true,
+  "base_commit": "0d741ec0cba376da4dc83a7069e1dfb2b28edce7",
+  "variant": "I_confirmation_pipe",
+  "F_function_rules_preserved": true,
+  "F_cycle_equivalent": false,
+  "F_equal_after_known_delay": true,
+  "added_frontend_cycles": 1,
+  "added_latency_ps": 2000,
+  "Locate_pipeline_stages": 5,
+  "modified_formal_RTL": [
+    "tdc_fine_layer.v",
+    "tdc_meas_top.v",
+    "tdc_time_locate.v"
+  ],
+  "formal_sha256": {
+    "tdc_fine_layer.v": "d683f45d2c93876f07d2ad3079ea3975fa049800d270bb0d05c7fc1d28a94be8",
+    "tdc_meas_top.v": "9f4d80ff2acef444a58849f95be5aa502370680f23e242086904659f3bb694ff",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "frozen_8_parameters_ps": {
+    "rise": [
+      36081,
+      36011,
+      35742,
+      35756
+    ],
+    "fall": [
+      36081,
+      36011,
+      35742,
+      35756
+    ],
+    "phase_order": [
+      0,
+      90,
+      180,
+      270
+    ]
+  },
+  "parameters_refitted": false,
+  "TDL_structure_changed": false,
+  "FIFO_configuration_changed": false,
+  "candidate_merge_logic_changed": false,
+  "new_timing_exceptions": false,
+  "core_setup_negative_endpoints": 0,
+  "core_hold_negative_endpoints": 0,
+  "core_setup_min_ns": 0.099,
+  "core_hold_min_ns": 0.054,
+  "global_WNS_ns": -0.05,
+  "global_TNS_ns": -0.166,
+  "global_WHS_ns": 0.054,
+  "global_THS_ns": 0,
+  "historical_ILA_negative_endpoints": 14,
+  "real_sample731_recovered": true,
+  "guard_cases": 262144,
+  "RTL_PWM_pulses_per_group": 1344,
+  "RTL_PWM_groups": 3,
+  "minimal_MAX_SDF": {
+    "variant": "corrected",
+    "dataset": "minimal",
+    "expected_pulses": 112,
+    "actual_edges": 224,
+    "actual_widths": 112,
+    "correct_pairs": 112,
+    "missing_rise_ids": [],
+    "missing_fall_ids": [],
+    "duplicate_rise_ids": [],
+    "duplicate_fall_ids": [],
+    "mispairs": 0,
+    "faults": [],
+    "pairing_faults": [],
+    "business_errors": [],
+    "error_fifo": [],
+    "FIFO_sequence_equal": true,
+    "FIFO_outputs": 112,
+    "functional_pass": true,
+    "timing_warning_gate_pass": true,
+    "MAX_SDF_pass": true,
+    "warning_counts": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 66836,
+      "startup_async_reset_first_stage": 1,
+      "asynchronous_aux_first_sampler": 86,
+      "asynchronous_TDL_thermometer_sampler": 2936
+    },
+    "warning_first_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_aux_first_sampler": 5203086,
+      "asynchronous_TDL_thermometer_sampler": 5204088
+    },
+    "warning_last_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 17172427,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_aux_first_sampler": 16673084,
+      "asynchronous_TDL_thermometer_sampler": 16677142
+    },
+    "width_tolerance_ps": 1000,
+    "input_extra_cycles": 1,
+    "pulse_width": {
+      "n": 112,
+      "bias_ps": 26.053571428571427,
+      "rmse_ps": 56.902642419185725,
+      "std_sample_ps": 50.815128499564814,
+      "std_population_ps": 50.58776660519854,
+      "max_abs_ps": 140
+    },
+    "rise": {
+      "n": 112,
+      "bias_ps": 296,
+      "rmse_ps": 297.4869745047672,
+      "std_sample_ps": 29.840416392042027,
+      "std_population_ps": 29.706901555025897,
+      "max_abs_ps": 338
+    },
+    "fall": {
+      "n": 112,
+      "bias_ps": 322.05357142857144,
+      "rmse_ps": 325.6568910898182,
+      "std_sample_ps": 48.52766263878821,
+      "std_population_ps": 48.31053554234061,
+      "max_abs_ps": 409
+    },
+    "groups": {
+      "10M_50": {
+        "n": 16,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20M_50": {
+        "n": 16,
+        "bias_ps": 35,
+        "rmse_ps": 73.4234295031225,
+        "std_sample_ps": 66.66133311998293,
+        "std_population_ps": 64.5445582524197,
+        "max_abs_ps": 99
+      },
+      "20M_5": {
+        "n": 16,
+        "bias_ps": 37.75,
+        "rmse_ps": 45.06384359994163,
+        "std_sample_ps": 25.41784150290238,
+        "std_population_ps": 24.610719209320152,
+        "max_abs_ps": 69
+      },
+      "20M_95": {
+        "n": 16,
+        "bias_ps": 52.25,
+        "rmse_ps": 102.20200585115734,
+        "std_sample_ps": 90.71677536891032,
+        "std_population_ps": 87.83614005635721,
+        "max_abs_ps": 140
+      },
+      "10M_20M_switch": {
+        "n": 16,
+        "bias_ps": 17.5,
+        "rmse_ps": 51.91820489963034,
+        "std_sample_ps": 50.483000439091704,
+        "std_population_ps": 48.87995499179597,
+        "max_abs_ps": 99
+      },
+      "adjacent_2ns": {
+        "n": 16,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "phase_boundary": {
+        "n": 16,
+        "bias_ps": 39.875,
+        "rmse_ps": 45.85711504227016,
+        "std_sample_ps": 23.389100025439202,
+        "std_population_ps": 22.646398720326374,
+        "max_abs_ps": 70
+      }
+    },
+    "parameters_refitted": false,
+    "outliers_removed": false,
+    "epoch_ps": 677150,
+    "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+  },
+  "full_MAX_SDF": {
+    "variant": "corrected",
+    "dataset": "full",
+    "expected_pulses": 3512,
+    "actual_edges": 7024,
+    "actual_widths": 3512,
+    "correct_pairs": 3512,
+    "missing_rise_ids": [],
+    "missing_fall_ids": [],
+    "duplicate_rise_ids": [],
+    "duplicate_fall_ids": [],
+    "mispairs": 0,
+    "faults": [],
+    "pairing_faults": [],
+    "business_errors": [],
+    "error_fifo": [],
+    "FIFO_sequence_equal": true,
+    "FIFO_outputs": 3512,
+    "functional_pass": true,
+    "timing_warning_gate_pass": true,
+    "MAX_SDF_pass": true,
+    "warning_counts": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 1073744,
+      "startup_async_reset_first_stage": 1,
+      "asynchronous_aux_first_sampler": 1317,
+      "asynchronous_TDL_thermometer_sampler": 85684,
+      "non_feedback_ILA": 110
+    },
+    "warning_first_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_aux_first_sampler": 10003095,
+      "asynchronous_TDL_thermometer_sampler": 10004097,
+      "non_feedback_ILA": 41007070
+    },
+    "warning_last_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 268899427,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_aux_first_sampler": 268031638,
+      "asynchronous_TDL_thermometer_sampler": 268404103,
+      "non_feedback_ILA": 263827116
+    },
+    "width_tolerance_ps": 1000,
+    "input_extra_cycles": 1,
+    "pulse_width": {
+      "n": 3512,
+      "bias_ps": -0.4740888382687927,
+      "rmse_ps": 65.21021509410615,
+      "std_sample_ps": 65.2177773720925,
+      "std_population_ps": 65.20849171996711,
+      "max_abs_ps": 189
+    },
+    "rise": {
+      "n": 3512,
+      "bias_ps": 305.6483485193622,
+      "rmse_ps": 309.91079113579536,
+      "std_sample_ps": 51.23019435970478,
+      "std_population_ps": 51.22290024784896,
+      "max_abs_ps": 437
+    },
+    "fall": {
+      "n": 3512,
+      "bias_ps": 305.1742596810934,
+      "rmse_ps": 309.2727526558192,
+      "std_sample_ps": 50.18987971065794,
+      "std_population_ps": 50.18273371792426,
+      "max_abs_ps": 435
+    },
+    "groups": {
+      "fixed_25300": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 70.80070621116712,
+        "std_sample_ps": 70.9783745111228,
+        "std_population_ps": 70.80070621116712,
+        "max_abs_ps": 189
+      },
+      "10MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "10MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "10MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "20MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.96741619921156,
+        "std_sample_ps": 66.13295577241335,
+        "std_population_ps": 65.96741619921156,
+        "max_abs_ps": 140
+      },
+      "20MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.96741619921156,
+        "std_sample_ps": 66.13295577241335,
+        "std_population_ps": 65.96741619921156,
+        "max_abs_ps": 140
+      },
+      "ATC_10MHz": {
+        "n": 1056,
+        "bias_ps": -0.5198863636363636,
+        "rmse_ps": 63.75970662882585,
+        "std_sample_ps": 63.787796767720124,
+        "std_population_ps": 63.757587058818686,
+        "max_abs_ps": 187
+      },
+      "ATC_20MHz": {
+        "n": 1056,
+        "bias_ps": -1.0568181818181819,
+        "rmse_ps": 61.13387259766781,
+        "std_sample_ps": 61.15369954210736,
+        "std_population_ps": 61.12473733373795,
+        "max_abs_ps": 164
+      }
+    },
+    "parameters_refitted": false,
+    "outliers_removed": false,
+    "epoch_ps": 677150,
+    "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+  },
+  "baseline_full": {
+    "variant": "baseline",
+    "dataset": "full",
+    "expected_pulses": 3512,
+    "actual_edges": 7024,
+    "actual_widths": 3512,
+    "correct_pairs": 3512,
+    "missing_rise_ids": [],
+    "missing_fall_ids": [],
+    "duplicate_rise_ids": [],
+    "duplicate_fall_ids": [],
+    "mispairs": 0,
+    "faults": [],
+    "pairing_faults": [],
+    "business_errors": [],
+    "error_fifo": [],
+    "FIFO_sequence_equal": true,
+    "FIFO_outputs": 3512,
+    "functional_pass": true,
+    "timing_warning_gate_pass": true,
+    "MAX_SDF_pass": true,
+    "warning_counts": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 1073744,
+      "startup_async_reset_first_stage": 1,
+      "asynchronous_TDL_thermometer_sampler": 85684,
+      "asynchronous_aux_first_sampler": 1247,
+      "non_feedback_ILA": 110
+    },
+    "warning_first_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_TDL_thermometer_sampler": 10004097,
+      "asynchronous_aux_first_sampler": 10103054,
+      "non_feedback_ILA": 41007070
+    },
+    "warning_last_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 268899427,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_TDL_thermometer_sampler": 268404103,
+      "asynchronous_aux_first_sampler": 268331613,
+      "non_feedback_ILA": 263827116
+    },
+    "width_tolerance_ps": 1000,
+    "input_extra_cycles": 0,
+    "pulse_width": {
+      "n": 3512,
+      "bias_ps": -0.4740888382687927,
+      "rmse_ps": 65.21021509410615,
+      "std_sample_ps": 65.2177773720925,
+      "std_population_ps": 65.20849171996711,
+      "max_abs_ps": 189
+    },
+    "rise": {
+      "n": 3512,
+      "bias_ps": 305.6483485193622,
+      "rmse_ps": 309.91079113579536,
+      "std_sample_ps": 51.23019435970478,
+      "std_population_ps": 51.22290024784896,
+      "max_abs_ps": 437
+    },
+    "fall": {
+      "n": 3512,
+      "bias_ps": 305.1742596810934,
+      "rmse_ps": 309.2727526558192,
+      "std_sample_ps": 50.18987971065794,
+      "std_population_ps": 50.18273371792426,
+      "max_abs_ps": 435
+    },
+    "groups": {
+      "fixed_25300": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 70.80070621116712,
+        "std_sample_ps": 70.9783745111228,
+        "std_population_ps": 70.80070621116712,
+        "max_abs_ps": 189
+      },
+      "10MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "10MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "10MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 81.15318847710175,
+        "std_sample_ps": 81.35683544341455,
+        "std_population_ps": 81.15318847710175,
+        "max_abs_ps": 120
+      },
+      "20MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.96741619921156,
+        "std_sample_ps": 66.13295577241335,
+        "std_population_ps": 65.96741619921156,
+        "max_abs_ps": 140
+      },
+      "20MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.96741619921156,
+        "std_sample_ps": 66.13295577241335,
+        "std_population_ps": 65.96741619921156,
+        "max_abs_ps": 140
+      },
+      "ATC_10MHz": {
+        "n": 1056,
+        "bias_ps": -0.5198863636363636,
+        "rmse_ps": 63.75970662882585,
+        "std_sample_ps": 63.787796767720124,
+        "std_population_ps": 63.757587058818686,
+        "max_abs_ps": 187
+      },
+      "ATC_20MHz": {
+        "n": 1056,
+        "bias_ps": -1.0568181818181819,
+        "rmse_ps": 61.13387259766781,
+        "std_sample_ps": 61.15369954210736,
+        "std_population_ps": 61.12473733373795,
+        "max_abs_ps": 164
+      }
+    },
+    "parameters_refitted": false,
+    "outliers_removed": false,
+    "epoch_ps": 677150,
+    "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+  },
+  "Corrected_bit_generated": true,
+  "hardware_programmed": false,
+  "old_bits": {
+    "production": {
+      "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-06-02-PWM-AD23\\results\\TDC_Compensated_ILA100M_PWM_AD23.bit",
+      "sha256": "c3c5d5e5afcdab910a59da3d7a1897f1e25450266621569cf50ad819f824a35a",
+      "unchanged": true
+    },
+    "debug": {
+      "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-01-上板边沿配对错误ILA定位\\ILA_DEBUG.bit",
+      "sha256": "4df6b364eda1511abf910637ad8edb64bc518cb092de91f53e7a567736ed58e7",
+      "unchanged": true
+    }
+  },
+  "implemented_RTL_sha256": {
+    "tdc_fine_layer.v": "62b8853700033644f77fd38ec5e771668082bf47b1081ed984c8a37d6bd6122c",
+    "tdc_meas_top.v": "9f4d80ff2acef444a58849f95be5aa502370680f23e242086904659f3bb694ff",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "post_validation_comment_only_change": {
+    "old": "将原末级frame_ready门控并入选择LUT，输出寄存器及拍数不变。",
+    "new": "将frame_ready门控并入选择LUT；此前专用确认级使整组测量输出增加一拍。",
+    "only_comment_changed": true
+  }
+}

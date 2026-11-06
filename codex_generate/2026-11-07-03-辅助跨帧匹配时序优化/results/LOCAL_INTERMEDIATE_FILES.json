@@ -1,0 +1,146 @@
+{
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-02-辅助下降沿跨帧匹配验证\\results\\implementation_F\\corrected_routed.dcp": {
+    "size": 3887229,
+    "sha256": "73e694d48e4c593408871961ddc58a339b11a72089b49fe4a9ff4764b1a4d4c5",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_G\\corrected_placed.dcp": {
+    "size": 3847303,
+    "sha256": "c1e1b4ec0c5caf08200dc0fb6b92708c8803f65c2ab143f88b9bf9da296e7cfb",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_G\\corrected_routed.dcp": {
+    "size": 3879178,
+    "sha256": "dc1eb0fa64f2936ca4f1458e9765062744090d7162f346dedbf32013ad102f70",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_G\\corrected_synth.dcp": {
+    "size": 1704134,
+    "sha256": "629ea6424e3901d5cf7d9a46ddd6820e0a76f8c8a08b2d2992f5160f9bc7322d",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H\\corrected_placed.dcp": {
+    "size": 3833657,
+    "sha256": "13a6e66abea6cdcde48581ebe05497b2379f5c2e6fc0ab438c01a164e84d1d9b",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H\\corrected_routed.dcp": {
+    "size": 3862079,
+    "sha256": "967b1b28a326e187a04e32a6b60398a04b39ac3e64fb96f592b30af762516b67",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H\\corrected_synth.dcp": {
+    "size": 1703290,
+    "sha256": "8b427fd995f716c377ffed83f5e0e9ff066aacdeeb5e918b7a016aed62af8b47",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H2\\corrected_placed.dcp": {
+    "size": 3836874,
+    "sha256": "b269dee4dd9ca56194510e77c22b13364b2b7909a318cd119bbc09deb618ad54",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H2\\corrected_routed.dcp": {
+    "size": 3865414,
+    "sha256": "d1b61b13bccc46b9b2653529a90bb5ed5b557c4dcdf86d775e3f5648bbdf69c6",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H2\\corrected_synth.dcp": {
+    "size": 1703811,
+    "sha256": "f1508a5e231109ed6576b3083cb9be3a25fc98a2e04e31395212678f9b0005a0",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_physical\\corrected_routed.dcp": {
+    "size": 3866601,
+    "sha256": "40abf3cb7b41c4a4840bb050a4cab4090ff2bfc0186c13938bef1140ddb910fc",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H3\\corrected_placed.dcp": {
+    "size": 3845673,
+    "sha256": "96789622376a6b95b21dcafed25acc2ff65c5dc21e03ae3130438ec26665fff1",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H3\\corrected_routed.dcp": {
+    "size": 3870569,
+    "sha256": "fce826ac70addd361ea6a8f58c5a451deee1bd922df7a2da4c3dfcdb749ff4f8",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H3\\corrected_synth.dcp": {
+    "size": 1703912,
+    "sha256": "7a914a6c7bb0c181b80565d929f18f67dc8b7d88ac15423f0a4d54cd8a0c38a3",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_H3_physical\\corrected_routed.dcp": {
+    "size": 3870676,
+    "sha256": "fb86ccb392528d6e6f7da5d8733372ef4bc4ae938693ab2cc0053d0967fc7deb",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_closed\\corrected_routed.dcp": {
+    "size": 3883210,
+    "sha256": "80865b37b3924f162e28f78e8f7602122dd298da1a114bb968ba9f3075bccf6f",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_typepair\\corrected_routed.dcp": {
+    "size": 3872388,
+    "sha256": "a7a178c31e02e21f70a886a8be101b925232c1606cce0761967dac973233a24a",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_fanout\\corrected_routed.dcp": {
+    "size": 3873744,
+    "sha256": "c1a51e62da4d376a966bfe256dcd3d651b2d13930246ebc0a99116212aef6999",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_I\\corrected_placed.dcp": {
+    "size": 3860137,
+    "sha256": "9e3b41dd37407b2a459b439d577fa1d7388387e4288f8e0e36bf4c13b8e66e93",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_I\\corrected_routed.dcp": {
+    "size": 3888234,
+    "sha256": "6f0d8f5007678e9ee7445ef0f8d04a38a0a4b41fd2910ceb9951a50b44478af3",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_I\\corrected_synth.dcp": {
+    "size": 1710689,
+    "sha256": "a110ff0030cd306a48608c11d9bd1872a647bbe63e5ffbaa97fe356bf995c845",
+    "archived": true,
+    "reason": "必要的最终综合或路由DCP已归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_I_physical\\corrected_routed.dcp": {
+    "size": 3891766,
+    "sha256": "76043807d65967ccae4badd6b56606c31d796b7561105dc5ada054a6254ddcf7",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_fifo_reuse2\\corrected_placed.dcp": {
+    "size": 3878598,
+    "sha256": "608f5c4e0f8b7d059c438a19e4849fcfd72119922f9213342f3ab6702058907d",
+    "archived": false,
+    "reason": "中间物理实现不重复打包；最终路由DCP单独归档"
+  },
+  "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\implementation_fifo_reuse2\\corrected_routed.dcp": {
+    "size": 3923856,
+    "sha256": "01004b1502ef357304503269eaba73c9e41415456b58ecac76c393a53a6d9584",
+    "archived": true,
+    "reason": "必要的最终综合或路由DCP已归档"
+  }
+}

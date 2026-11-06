@@ -1,0 +1,9 @@
+{
+  "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-01-上板边沿配对错误ILA定位\\results\\before\\measurement_cells.csv",
+  "source_sha256": "300b120d7563e7b54081c9432a83efee4679e8ff6a172569417808dbf809235b",
+  "reference_DCP": "实际AD23生产DCP",
+  "reference_DCP_sha256": "9ff43fa9bd3cdb776fa7b30820b75d026a0d761da04ab83e83fed68db2846425",
+  "cells": 658,
+  "IP_configuration_changed": false,
+  "timing_exception_added": false
+}

@@ -1,0 +1,13 @@
+module,delay_type,slack_ns,startpoint,endpoint
+u_tdc_fine_layer,max,-0.038,u_tdc_fine_layer/pack270_to90_reg[8]/C,u_tdc_fine_layer/g_aux_4phase.rise_previous_single_q_reg/D
+u_tdc_fine_layer,min,0.108,u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_meta_reg/C,u_tdc_fine_layer/g_aux_4phase.g_phase[2].pwm_sync_reg/D
+u_tdc_time_candicate,max,0.267,u_tdc_time_candicate/s2_dist0_reg[6]/C,u_tdc_time_candicate/s3_pair01_code_reg[5]/D
+u_tdc_time_candicate,min,0.119,u_tdc_time_candicate/s1_codes_reg[17]/C,u_tdc_time_candicate/s2_dist2_reg[3]/D
+u_tdc_time_locate,max,0.171,u_tdc_time_locate/s4_valid_reg/C,u_tdc_time_locate/timestamp_ps_reg[0]/CE
+u_tdc_time_locate,min,0.110,u_tdc_time_candicate/edge_type_q_reg/C,u_tdc_time_locate/s1_tap_reg[1]/D
+u_tdc_time_merge,max,0.150,rst_sync_500m_reg[1]/C,u_tdc_time_merge/s1_diff_reg[10]/CLR
+u_tdc_time_merge,min,0.114,u_tdc_time_merge/s2_width_ps_reg[2]/C,u_tdc_time_merge/pulse_width_ps_reg[2]/D
+u_fifo_tdc_result,max,0.099,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_out_bin_ff_reg[6]/C,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg/D
+u_fifo_tdc_result,min,0.095,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_reg[4]/C,u_fifo_tdc_result/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+u_fifo_tdc_error,max,0.011,rst_sync_500m_reg[1]/C,u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/WEA[0]
+u_fifo_tdc_error,min,0.074,u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_reg[0]/C,u_fifo_tdc_error/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[5]

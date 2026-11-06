@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "variant": "baseline",
+  "dataset": "full",
+  "timing_checks_enabled": true,
+  "stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+  "truth_sha256": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac",
+  "native_simulation_log": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\sdf_baseline\\full\\simulation.log",
+  "native_log_sha256": "1c1dd33364e5d4c54fed7728ecabb2d273f6a3bcd87966843ac8467d43b7bc81",
+  "compressed_log_sha256": "b79e589ba2e85ffd98f7309ecda8ff4a943f9a5964d5ff291510146fa9761637"
+}
