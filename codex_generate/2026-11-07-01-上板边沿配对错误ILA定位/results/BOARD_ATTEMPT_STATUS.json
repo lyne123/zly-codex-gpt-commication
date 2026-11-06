@@ -1,0 +1,38 @@
+{
+  "status": "DEBUG_PROGRAMMED",
+  "source_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "formal_RTL_modified": false,
+  "production_bit_unchanged": true,
+  "debug_bit_generated": true,
+  "debug_bit_sha256": "4df6b364eda1511abf910637ad8edb64bc518cb092de91f53e7a567736ed58e7",
+  "debug_ltx_sha256": "e95afcf627bc5e35036402b97c81c801b06fbff54386aebb817025b5611d3acc",
+  "source_DCP_sha256": "017bd5bd1e4ffdeb9a3dc839ae07a9b1184c8ed03d56c84a0493143298e3fb60",
+  "core_timing_pass": true,
+  "global_timing_converged": false,
+  "user_accepted_ILA_internal_setup_violations": true,
+  "accepted_ILA_setup_paths": 7,
+  "WNS_ns": -0.164,
+  "TNS_ns": -0.653,
+  "WHS_ns": 0.054,
+  "THS_ns": 0.0,
+  "hardware_programmed": true,
+  "flash_programmed": false,
+  "latest_hardware_attempt": "hardware_debug_02",
+  "triggers": {
+    "A": {
+      "saved": true,
+      "event_flag_observed": false,
+      "sample_count": 0,
+      "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74",
+      "confirmed_capture": false
+    },
+    "B": {
+      "saved": true,
+      "event_flag_observed": false,
+      "sample_count": 0,
+      "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74",
+      "confirmed_capture": false
+    }
+  },
+  "hardware_reason": ""
+}

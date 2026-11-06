@@ -13,6 +13,9 @@ def read_csv(p):
     if not p.exists():return []
     with p.open(newline='') as f:return list(csv.DictReader(f))
 def main():
+    if (TASK/'results/authorized_debug_export/FILES.json').exists():
+        from record_authorized_delivery import main as record_authorized
+        return record_authorized()
     src=json.loads((TASK/'inputs/SOURCE.json').read_text(encoding='utf-8'))
     for name,digest in src['formal_RTL_sha256'].items():assert sha(ROOT/'fpga_tdc_v3_cal_rtl'/name)==digest
     assert sha(Path(src['production_bit']))==src['production_bit_sha256']

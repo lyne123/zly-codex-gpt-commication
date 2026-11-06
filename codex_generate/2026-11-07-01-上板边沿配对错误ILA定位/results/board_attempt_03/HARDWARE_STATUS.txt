@@ -1,0 +1,7 @@
+targets=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+selected_target=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+part=xc7k325t
+JTAG_connected=1
+attempt_status=FAILED
+reason=ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+

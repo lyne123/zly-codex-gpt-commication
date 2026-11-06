@@ -1,0 +1,16 @@
+BIT=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/authorized_debug_01/ILA_DEBUG.bit
+programming=volatile_FPGA_RAM; no_flash_programming
+ILA_internal_setup_accepted_by_user=1
+selected_target=localhost:3122/xilinx_tcf/Digilent/C3067D03ABCD
+program_JTAG_Hz=1000000
+device=xc7k325t
+JTAG_connected=1
+programming_started=1
+programming_completed=1
+ILA_clock_MHz=500
+data_depth=1024
+trigger_position=768
+trigger_A=CAPTURED; reason=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/hardware_debug_02/TRIGGER_A.ila
+trigger_B=CAPTURED; reason=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/hardware_debug_02/TRIGGER_B.ila
+attempt_status=COMPLETED
+reason=

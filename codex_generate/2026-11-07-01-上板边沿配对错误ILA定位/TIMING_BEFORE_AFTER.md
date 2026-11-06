@@ -20,6 +20,6 @@
 
 新增核心负Setup路径数：0。详细起终点见results/after/negative_setup.csv；Hold见negative_hold.csv。
 
-BIT门槛：任何测量核心、影子采集、ILA或Hub路径有负Setup/Hold均停止BIT生成。没有新增false path、multicycle或关闭timing check。
+初次BIT门槛包含ILA内部路径。后续按用户指令，仅接受已存在的7条ILA内部Setup路径，核心、影子采集及所有Hold仍保持无负裕量。没有新增false path、multicycle或关闭timing check。
 
-最终状态：TIMING_GATE_FAIL。未生成BIT时不得烧录中间DCP或其他版本替代本任务验收。
+初次门槛状态：TIMING_GATE_FAIL。后续用户明确接受7条ILA内部Setup违例，已从同一DCP导出Debug BIT；时序数值及违例本身未改变。

@@ -1,0 +1,4 @@
+attempt_status=FAILED
+reason=ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost:3121.
+ Targets(s) ", jsn-JTAG-SMT2-C305AA16ABCDjsn-JTAG-SMT2-C3067D03ABCD" may be locked by another hw_server.
+

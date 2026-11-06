@@ -1,0 +1,2 @@
+attempt_status=FAILED
+reason=The application has run out of memory

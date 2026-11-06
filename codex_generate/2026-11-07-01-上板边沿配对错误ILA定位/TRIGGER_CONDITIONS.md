@@ -1,5 +1,7 @@
 # 两个独立错误触发条件
 
+最新状态：用户已明确接受原7条ILA内部Setup违例，本轮已导出同一Debug DCP的BIT/LTX；真实上板状态以RESULTS.md和results/STATUS.json为准。
+
 正式错误判断未复制、未修改。调试触发直接译码原500 MHz注册错误事件，计数器也使用同一译码脉冲。
 
 ```verilog
@@ -29,7 +31,7 @@ debug_trigger_b = error_event_valid && (error_event_code == 4'd2);
 
 `scripts/capture_errors.tcl`在本次BIT存在时可由批处理连接硬件、烧录易失配置并先后捕获A/B；不控制信号发生器、不烧Flash、不覆盖已有CSV。超时应报告NOT_CAPTURED，不能用trigger_now代替真实错误触发。
 
-采集脚本尚未上板执行。每种触发等待15秒；Vivado的`-timeout`参数单位是分钟，因此代码使用0.25。二进制ILA导出采用默认文件格式，CSV使用`-csv_file`，命令语法按[AMD Vivado 2022.2命令参考](https://docs.amd.com/r/2022.2-English/ug835-vivado-tcl-commands/write_hw_ila_data)核对。
+采集脚本已上板执行，Debug BIT配置成功，但首次A/B等待后CSV均为0采样行，不确认捕获。每种触发等待15秒；Vivado的`-timeout`参数单位是分钟，因此代码使用0.25。二进制ILA导出采用默认文件格式，CSV使用`-csv_file`，命令语法按[AMD Vivado 2022.2命令参考](https://docs.amd.com/r/2022.2-English/ug835-vivado-tcl-commands/write_hw_ila_data)核对。
 
 逐拍功能检查见`results/RTL_VALIDATION.json`：原Merge与调试副本输出比较、原条件和事件译码对应关系、计数器及影子总线检查。它不代替上板触发验收。
 

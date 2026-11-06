@@ -1,0 +1,16 @@
+{
+  "A": {
+    "saved": true,
+    "event_flag_observed": false,
+    "sample_count": 0,
+    "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74",
+    "confirmed_capture": false
+  },
+  "B": {
+    "saved": true,
+    "event_flag_observed": false,
+    "sample_count": 0,
+    "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74",
+    "confirmed_capture": false
+  }
+}

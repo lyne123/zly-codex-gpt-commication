@@ -1,0 +1,7 @@
+BIT=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/authorized_debug_01/ILA_DEBUG.bit
+programming=volatile_FPGA_RAM; no_flash_programming
+ILA_internal_setup_accepted_by_user=1
+attempt_status=FAILED
+reason=ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost:3122.
+ Targets(s) ", jsn-JTAG-SMT2-C3067D03ABCD" may be locked by another hw_server.
+
