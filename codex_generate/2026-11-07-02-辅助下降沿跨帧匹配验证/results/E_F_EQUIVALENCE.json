@@ -1,0 +1,26 @@
+{
+  "byte_equal_CSV": [
+    "results\\replay\\F_factored\\RTL_REPLAY.csv",
+    "results\\pwm\\F_factored_lut0\\candidate.csv",
+    "results\\pwm\\F_factored_lut0\\timestamps.csv",
+    "results\\pwm\\F_factored_lut0\\widths.csv",
+    "results\\pwm\\F_factored_lut0\\errors.csv",
+    "results\\pwm\\F_factored_lut0\\ASSOCIATION.csv",
+    "results\\pwm\\F_factored_lut0\\MEASUREMENTS.csv",
+    "results\\pwm\\F_factored_lut250\\candidate.csv",
+    "results\\pwm\\F_factored_lut250\\timestamps.csv",
+    "results\\pwm\\F_factored_lut250\\widths.csv",
+    "results\\pwm\\F_factored_lut250\\errors.csv",
+    "results\\pwm\\F_factored_lut250\\ASSOCIATION.csv",
+    "results\\pwm\\F_factored_lut250\\MEASUREMENTS.csv",
+    "results\\pwm\\F_factored_lut500\\candidate.csv",
+    "results\\pwm\\F_factored_lut500\\timestamps.csv",
+    "results\\pwm\\F_factored_lut500\\widths.csv",
+    "results\\pwm\\F_factored_lut500\\errors.csv",
+    "results\\pwm\\F_factored_lut500\\ASSOCIATION.csv",
+    "results\\pwm\\F_factored_lut500\\MEASUREMENTS.csv"
+  ],
+  "all_equal": true,
+  "formal_RTL_unchanged_at_gate": true,
+  "only_candidate_changed": "tdc_fine_layer.v"
+}

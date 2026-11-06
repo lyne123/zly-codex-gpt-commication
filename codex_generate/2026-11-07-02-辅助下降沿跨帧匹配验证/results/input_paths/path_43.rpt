@@ -1,0 +1,69 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Nov  7 02:54:53 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -of_objects {u_tdc_fine_layer/u_tdl90/thermo_q_reg[63]} -input_pins -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/input_paths/path_43.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 pwm_in
+                            (input port)
+  Destination:            u_tdc_fine_layer/u_tdl90/thermo_q_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.251ns  (logic 0.276ns (12.265%)  route 1.975ns (87.735%))
+  Logic Levels:           5  (CARRY4=1 IBUF=1 LUT1=3)
+  Clock Path Skew:        -0.462ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.462ns = ( 0.038 - 0.500 ) 
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    AD23                                              0.000     0.000 r  pwm_in (IN)
+                         net (fo=0)                   0.000     0.000    pwm_in
+    AD23                                                              r  pwm_in_IBUF_inst/I
+    AD23                 IBUF (Prop_ibuf_I_O)         0.075     0.075 r  pwm_in_IBUF_inst/O
+                         net (fo=7, routed)           1.454     1.529    u_tdc_fine_layer/pwm_in
+    SLICE_X29Y1                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/I0
+    SLICE_X29Y1          LUT1 (Prop_lut1_I0_O)        0.028     1.557 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/O
+                         net (fo=2, routed)           0.236     1.793    u_tdc_fine_layer/pwm_b0
+    SLICE_X27Y2                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_0/I0
+    SLICE_X27Y2          LUT1 (Prop_lut1_I0_O)        0.028     1.821 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_0/O
+                         net (fo=2, routed)           0.188     2.009    u_tdc_fine_layer/pwm_b1[0]
+    SLICE_X28Y3                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_1/I0
+    SLICE_X28Y3          LUT1 (Prop_lut1_I0_O)        0.028     2.037 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_1/O
+                         net (fo=1, routed)           0.098     2.134    u_tdc_fine_layer/u_tdl90/out[0]
+    SLICE_X28Y4                                                       r  u_tdc_fine_layer/u_tdl90/g_carry[0].u_carry4/CYINIT
+    SLICE_X28Y4          CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.117     2.251 r  u_tdc_fine_layer/u_tdl90/g_carry[0].u_carry4/CO[0]
+                         net (fo=1, routed)           0.000     2.251    u_tdc_fine_layer/u_tdl90/carry_tap[0]
+    SLICE_X28Y4          FDRE                                         r  u_tdc_fine_layer/u_tdl90/thermo_q_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_clk_wiz_0 rise edge)
+                                                      0.500     0.500 r  
+    AD12                                              0.000     0.500 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+    AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+    AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+    BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                         net (fo=235, routed)         1.001     0.038    u_tdc_fine_layer/u_tdl90/clk_500m_deg90
+    SLICE_X28Y4          FDRE                                         r  u_tdc_fine_layer/u_tdl90/thermo_q_reg[0]/C
+
+
+
+

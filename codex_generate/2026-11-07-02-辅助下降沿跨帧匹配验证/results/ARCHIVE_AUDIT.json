@@ -1,0 +1,58 @@
+{
+  "sensitive_file_or_token_findings": [],
+  "largest_files": [
+    {
+      "path": "results/implementation_F/post_route_max.sdf",
+      "bytes": 13032843
+    },
+    {
+      "path": "results/implementation/post_route_max.sdf",
+      "bytes": 12994821
+    },
+    {
+      "path": "results/implementation_F/post_route_timing.v",
+      "bytes": 5903814
+    },
+    {
+      "path": "results/implementation/post_route_timing.v",
+      "bytes": 5892784
+    },
+    {
+      "path": "results/implementation_F/corrected_routed.dcp",
+      "bytes": 3887229
+    },
+    {
+      "path": "results/implementation/corrected_routed.dcp",
+      "bytes": 3874374
+    },
+    {
+      "path": "inputs/ip/ila_3/ila_3.xci",
+      "bytes": 691850
+    },
+    {
+      "path": "inputs/ip/ila_2/ila_2.xci",
+      "bytes": 691499
+    },
+    {
+      "path": "results/implementation/before/timing_summary.rpt",
+      "bytes": 402869
+    },
+    {
+      "path": "results/implementation/after/timing_summary.rpt",
+      "bytes": 397834
+    }
+  ],
+  "LFS_extensions": [
+    ".dcp",
+    ".sdf",
+    ".bit"
+  ],
+  "raw_files_changed": false,
+  "excluded": [
+    "github工作树及Git元数据",
+    "Python __pycache__",
+    "真实ASCII运行目录中的OOC缓存和中间综合/布局DCP"
+  ],
+  "current_evidence_omitted": [],
+  "old_reference_locations": "inputs/EXTERNAL_REFERENCES.json"
+}

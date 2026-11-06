@@ -1,0 +1,21 @@
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:456: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:456: error: invalid module item.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:456: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:456: error: Invalid module instantiation
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:456: error: Invalid module instantiation
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:465: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:470: error: invalid module item.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:476: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:476: error: Invalid module instantiation
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:478: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:478: error: Invalid module instantiation
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:480: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:480: error: Invalid module instantiation
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:474: warning: Anachronistic use of begin/end to surround generate schemes.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:484: error: invalid module item.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:515: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:532: error: invalid module item.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:648: syntax error
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:659: error: invalid module item.
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\F_factored\tdc_fine_layer.v:686: syntax error
+I give up.

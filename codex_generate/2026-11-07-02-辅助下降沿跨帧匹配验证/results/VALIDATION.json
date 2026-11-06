@@ -1,0 +1,68 @@
+{
+  "status": "STOP_NO_ACCEPTED_FIX",
+  "reason": "功能候选通过，但两次独立实现均引入核心Setup违例；正式RTL保持Baseline",
+  "real_CSV_reproduced": true,
+  "real_CSV_equivalence_checks": 13209,
+  "observed_aux_to_candidate_lag_cycles": 1,
+  "nominal_cycle_ps": 2000,
+  "physical_origin_of_phase_skew": "尚未充分观测，不认定统一新增流水线错误",
+  "formal_RTL_modified": false,
+  "formal_RTL_sha256": {
+    "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+    "tdc_meas_top.v": "6fc47bdb03fc0fed570a1d20335eb5eaae5c6c0282115d306c4a62c1548d8927",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "8e0336a75d844a727bfe6c0eb9be067cd9a2ef9701cb22a098ff36619d8a45e2",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "compensation_recalculated": false,
+  "adopted_scheme": "A_baseline",
+  "candidate": "F_factored_NOT_ADOPTED",
+  "E_F_RTL_output_tests": "PASS：每模型1344脉冲×3模型，全部参考边沿配对、错误和FIFO检查通过",
+  "F_guard_properties_cases": 262144,
+  "F_guard_properties_pass": true,
+  "strict_onehot_confirmation": "未满足：真实记录Baseline/E/F均有21个多相候选帧；只证明最终未重复输出，未修改选择器",
+  "implementation_gates": {
+    "E_guarded": {
+      "core_negative_endpoints": "12",
+      "bit_generated": "0",
+      "formal_rtl_modified": "0",
+      "frequency_mhz": "500"
+    },
+    "F_factored": {
+      "core_negative_endpoints": "14",
+      "bit_generated": "0",
+      "formal_rtl_modified": "0",
+      "frequency_mhz": "500"
+    }
+  },
+  "baseline_global_timing": [
+    -0.05,
+    -0.166,
+    0.054,
+    0.0
+  ],
+  "E_global_timing": [
+    -0.729,
+    -6.418,
+    0.054,
+    0.0
+  ],
+  "F_global_timing": [
+    -0.579,
+    -5.56,
+    0.054,
+    0.0
+  ],
+  "corrected_SDF_generated": true,
+  "SDF_simulation": "NOT_EXECUTED_CORE_TIMING_GATE_FAILED",
+  "SDF_annotation": "NOT_EXECUTED",
+  "Baseline_bit_generated_or_copied": false,
+  "Corrected_bit_generated": false,
+  "FPGA_programmed": false,
+  "previous_bits_unchanged": true,
+  "failed_logs_preserved": true,
+  "source_commits": {
+    "analysis": "2e9cf594aed51c67d48c090fdea9b92125f7822b",
+    "formal": "ba978229094a8621b30770177727d8e70b831a74"
+  }
+}

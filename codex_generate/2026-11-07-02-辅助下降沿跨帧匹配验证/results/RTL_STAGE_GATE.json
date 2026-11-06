@@ -1,0 +1,9 @@
+{
+  "candidate": "E_guarded",
+  "RTL_gate_pass": true,
+  "real_CSV_recovery": true,
+  "guard_cases": 262144,
+  "formal_RTL_modified": false,
+  "compensation_recalculated": false,
+  "known_scope": "辅助确认无状态回退；原有效帧优先；器件SDF与时序尚待验收"
+}

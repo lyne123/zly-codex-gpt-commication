@@ -1,0 +1,129 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Nov  7 02:54:52 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -of_objects {u_tdc_fine_layer/u_tdl90/thermo_q_reg[63]} -input_pins -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/input_paths/path_23.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 pwm_in
+                            (input port)
+  Destination:            u_tdc_fine_layer/u_tdl0/thermo_q_reg[63]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@1.000ns period=2.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.631ns  (logic 0.664ns (25.246%)  route 1.967ns (74.754%))
+  Logic Levels:           20  (CARRY4=16 IBUF=1 LUT1=3)
+  Clock Path Skew:        -0.471ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.471ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    AD23                                              0.000     0.000 r  pwm_in (IN)
+                         net (fo=0)                   0.000     0.000    pwm_in
+    AD23                                                              r  pwm_in_IBUF_inst/I
+    AD23                 IBUF (Prop_ibuf_I_O)         0.075     0.075 r  pwm_in_IBUF_inst/O
+                         net (fo=7, routed)           1.454     1.529    u_tdc_fine_layer/pwm_in
+    SLICE_X29Y1                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/I0
+    SLICE_X29Y1          LUT1 (Prop_lut1_I0_O)        0.028     1.557 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/O
+                         net (fo=2, routed)           0.236     1.793    u_tdc_fine_layer/pwm_b0
+    SLICE_X27Y2                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_0/I0
+    SLICE_X27Y2          LUT1 (Prop_lut1_I0_O)        0.028     1.821 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_0/O
+                         net (fo=2, routed)           0.179     2.000    u_tdc_fine_layer/pwm_b1[0]
+    SLICE_X26Y3                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_0/I0
+    SLICE_X26Y3          LUT1 (Prop_lut1_I0_O)        0.028     2.028 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_0/O
+                         net (fo=1, routed)           0.098     2.126    u_tdc_fine_layer/u_tdl0/out[0]
+    SLICE_X26Y4                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[0].u_carry4/CYINIT
+    SLICE_X26Y4          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.130     2.256 r  u_tdc_fine_layer/u_tdl0/g_carry[0].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.256    u_tdc_fine_layer/u_tdl0/carry_tap[3]
+    SLICE_X26Y5                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[1].u_carry4/CI
+    SLICE_X26Y5          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.281 r  u_tdc_fine_layer/u_tdl0/g_carry[1].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.281    u_tdc_fine_layer/u_tdl0/carry_tap[7]
+    SLICE_X26Y6                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[2].u_carry4/CI
+    SLICE_X26Y6          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.306 r  u_tdc_fine_layer/u_tdl0/g_carry[2].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.306    u_tdc_fine_layer/u_tdl0/carry_tap[11]
+    SLICE_X26Y7                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[3].u_carry4/CI
+    SLICE_X26Y7          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.331 r  u_tdc_fine_layer/u_tdl0/g_carry[3].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.331    u_tdc_fine_layer/u_tdl0/carry_tap[15]
+    SLICE_X26Y8                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[4].u_carry4/CI
+    SLICE_X26Y8          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.356 r  u_tdc_fine_layer/u_tdl0/g_carry[4].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.356    u_tdc_fine_layer/u_tdl0/carry_tap[19]
+    SLICE_X26Y9                                                       r  u_tdc_fine_layer/u_tdl0/g_carry[5].u_carry4/CI
+    SLICE_X26Y9          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.381 r  u_tdc_fine_layer/u_tdl0/g_carry[5].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.381    u_tdc_fine_layer/u_tdl0/carry_tap[23]
+    SLICE_X26Y10                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[6].u_carry4/CI
+    SLICE_X26Y10         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.406 r  u_tdc_fine_layer/u_tdl0/g_carry[6].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.406    u_tdc_fine_layer/u_tdl0/carry_tap[27]
+    SLICE_X26Y11                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[7].u_carry4/CI
+    SLICE_X26Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.431 r  u_tdc_fine_layer/u_tdl0/g_carry[7].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.431    u_tdc_fine_layer/u_tdl0/carry_tap[31]
+    SLICE_X26Y12                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[8].u_carry4/CI
+    SLICE_X26Y12         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.456 r  u_tdc_fine_layer/u_tdl0/g_carry[8].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.456    u_tdc_fine_layer/u_tdl0/carry_tap[35]
+    SLICE_X26Y13                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[9].u_carry4/CI
+    SLICE_X26Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.481 r  u_tdc_fine_layer/u_tdl0/g_carry[9].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.481    u_tdc_fine_layer/u_tdl0/carry_tap[39]
+    SLICE_X26Y14                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[10].u_carry4/CI
+    SLICE_X26Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.506 r  u_tdc_fine_layer/u_tdl0/g_carry[10].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.506    u_tdc_fine_layer/u_tdl0/carry_tap[43]
+    SLICE_X26Y15                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[11].u_carry4/CI
+    SLICE_X26Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.531 r  u_tdc_fine_layer/u_tdl0/g_carry[11].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.531    u_tdc_fine_layer/u_tdl0/carry_tap[47]
+    SLICE_X26Y16                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[12].u_carry4/CI
+    SLICE_X26Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.556 r  u_tdc_fine_layer/u_tdl0/g_carry[12].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.556    u_tdc_fine_layer/u_tdl0/carry_tap[51]
+    SLICE_X26Y17                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[13].u_carry4/CI
+    SLICE_X26Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.581 r  u_tdc_fine_layer/u_tdl0/g_carry[13].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.581    u_tdc_fine_layer/u_tdl0/carry_tap[55]
+    SLICE_X26Y18                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[14].u_carry4/CI
+    SLICE_X26Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.606 r  u_tdc_fine_layer/u_tdl0/g_carry[14].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.606    u_tdc_fine_layer/u_tdl0/carry_tap[59]
+    SLICE_X26Y19                                                      r  u_tdc_fine_layer/u_tdl0/g_carry[15].u_carry4/CI
+    SLICE_X26Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.631 r  u_tdc_fine_layer/u_tdl0/g_carry[15].u_carry4/CO[3]
+                         net (fo=1, routed)           0.000     2.631    u_tdc_fine_layer/u_tdl0/carry_tap[63]
+    SLICE_X26Y19         FDRE                                         r  u_tdc_fine_layer/u_tdl0/thermo_q_reg[63]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    AD12                                              0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    u_clk_wiz_0/inst/clk_in1
+    AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+    AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.440 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.553     0.993    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.493    -2.500 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.007    -1.493    u_clk_wiz_0/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0                                                     r  u_clk_wiz_0/inst/clkout1_buf/I
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030    -1.463 r  u_clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=3544, routed)        0.992    -0.471    u_tdc_fine_layer/u_tdl0/clk_500m
+    SLICE_X26Y19         FDRE                                         r  u_tdc_fine_layer/u_tdl0/thermo_q_reg[63]/C
+
+
+
+

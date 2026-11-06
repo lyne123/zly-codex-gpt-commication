@@ -1,0 +1,48 @@
+{
+  "pulses": 1344,
+  "rises": 448,
+  "falls": 444,
+  "missing_rise": 896,
+  "missing_fall": 900,
+  "duplicate_edges": 0,
+  "mismatched_pairs": 3,
+  "double_rise": 20,
+  "orphan_fall": 17,
+  "range_error": 0,
+  "association_residual_over_20ps": 0,
+  "max_abs_width_error_ps": 1354838,
+  "missing_by_case": {
+    "10M_50": {
+      "rise": 128,
+      "fall": 128
+    },
+    "20M_50": {
+      "rise": 128,
+      "fall": 128
+    },
+    "20M_5": {
+      "rise": 128,
+      "fall": 128
+    },
+    "20M_95": {
+      "rise": 128,
+      "fall": 128
+    },
+    "10M_20M_switch": {
+      "rise": 128,
+      "fall": 128
+    },
+    "adjacent_2ns": {
+      "rise": 128,
+      "fall": 128
+    },
+    "phase_boundary": {
+      "rise": 128,
+      "fall": 132
+    }
+  },
+  "functional_pass": false,
+  "width_tolerance_pass": false,
+  "result_fifo_overflow": false,
+  "error_fifo_overflow": false
+}

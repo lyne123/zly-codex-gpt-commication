@@ -1,0 +1,30 @@
+{
+  "production_baseline_bit": {
+    "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-06-02-PWM-AD23\\results\\TDC_Compensated_ILA100M_PWM_AD23.bit",
+    "size": 11443721,
+    "sha256": "c3c5d5e5afcdab910a59da3d7a1897f1e25450266621569cf50ad819f824a35a",
+    "packaged": false,
+    "reason": "历史原件保留；本轮无可采用修复，不重复上传旧大文件"
+  },
+  "production_baseline_dcp": {
+    "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxfall_20261107_02\\production_AD23.dcp",
+    "size": 3860709,
+    "sha256": "9ff43fa9bd3cdb776fa7b30820b75d026a0d761da04ab83e83fed68db2846425",
+    "packaged": false,
+    "reason": "历史原件保留；本轮无可采用修复，不重复上传旧大文件"
+  },
+  "previous_debug_bit": {
+    "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-01-上板边沿配对错误ILA定位\\ILA_DEBUG.bit",
+    "size": 11443721,
+    "sha256": "4df6b364eda1511abf910637ad8edb64bc518cb092de91f53e7a567736ed58e7",
+    "packaged": false,
+    "reason": "历史原件保留；本轮无可采用修复，不重复上传旧大文件"
+  },
+  "previous_debug_dcp": {
+    "path": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxfall_20261107_02\\reference_debug.dcp",
+    "size": 4744423,
+    "sha256": "017bd5bd1e4ffdeb9a3dc839ae07a9b1184c8ed03d56c84a0493143298e3fb60",
+    "packaged": false,
+    "reason": "历史原件保留；本轮无可采用修复，不重复上传旧大文件"
+  }
+}

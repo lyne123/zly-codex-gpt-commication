@@ -1,0 +1,129 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Nov  7 02:54:52 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -of_objects {u_tdc_fine_layer/u_tdl90/thermo_q_reg[63]} -input_pins -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/input_paths/path_39.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 pwm_in
+                            (input port)
+  Destination:            u_tdc_fine_layer/u_tdl270/thermo_q_reg[63]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out4_clk_wiz_0  {rise@1.500ns fall@2.500ns period=2.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.675ns  (logic 0.664ns (24.828%)  route 2.011ns (75.172%))
+  Logic Levels:           20  (CARRY4=16 IBUF=1 LUT1=3)
+  Clock Path Skew:        -0.474ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.474ns = ( 1.026 - 1.500 ) 
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    AD23                                              0.000     0.000 r  pwm_in (IN)
+                         net (fo=0)                   0.000     0.000    pwm_in
+    AD23                                                              r  pwm_in_IBUF_inst/I
+    AD23                 IBUF (Prop_ibuf_I_O)         0.075     0.075 r  pwm_in_IBUF_inst/O
+                         net (fo=7, routed)           1.454     1.529    u_tdc_fine_layer/pwm_in
+    SLICE_X29Y1                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/I0
+    SLICE_X29Y1          LUT1 (Prop_lut1_I0_O)        0.028     1.557 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b0/O
+                         net (fo=2, routed)           0.271     1.828    u_tdc_fine_layer/pwm_b0
+    SLICE_X31Y2                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_1/I0
+    SLICE_X31Y2          LUT1 (Prop_lut1_I0_O)        0.028     1.856 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b1_1/O
+                         net (fo=2, routed)           0.188     2.044    u_tdc_fine_layer/pwm_b1[1]
+    SLICE_X32Y3                                                       r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_3/I0
+    SLICE_X32Y3          LUT1 (Prop_lut1_I0_O)        0.028     2.072 r  u_tdc_fine_layer/g_pwm_dist.u_pwm_b2_3/O
+                         net (fo=1, routed)           0.098     2.170    u_tdc_fine_layer/u_tdl270/out[0]
+    SLICE_X32Y4                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[0].u_carry4/CYINIT
+    SLICE_X32Y4          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.130     2.300 r  u_tdc_fine_layer/u_tdl270/g_carry[0].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.300    u_tdc_fine_layer/u_tdl270/carry_tap[3]
+    SLICE_X32Y5                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[1].u_carry4/CI
+    SLICE_X32Y5          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.325 r  u_tdc_fine_layer/u_tdl270/g_carry[1].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.325    u_tdc_fine_layer/u_tdl270/carry_tap[7]
+    SLICE_X32Y6                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[2].u_carry4/CI
+    SLICE_X32Y6          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.350 r  u_tdc_fine_layer/u_tdl270/g_carry[2].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.350    u_tdc_fine_layer/u_tdl270/carry_tap[11]
+    SLICE_X32Y7                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[3].u_carry4/CI
+    SLICE_X32Y7          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.375 r  u_tdc_fine_layer/u_tdl270/g_carry[3].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.375    u_tdc_fine_layer/u_tdl270/carry_tap[15]
+    SLICE_X32Y8                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[4].u_carry4/CI
+    SLICE_X32Y8          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.400 r  u_tdc_fine_layer/u_tdl270/g_carry[4].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.400    u_tdc_fine_layer/u_tdl270/carry_tap[19]
+    SLICE_X32Y9                                                       r  u_tdc_fine_layer/u_tdl270/g_carry[5].u_carry4/CI
+    SLICE_X32Y9          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.425 r  u_tdc_fine_layer/u_tdl270/g_carry[5].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.425    u_tdc_fine_layer/u_tdl270/carry_tap[23]
+    SLICE_X32Y10                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[6].u_carry4/CI
+    SLICE_X32Y10         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.450 r  u_tdc_fine_layer/u_tdl270/g_carry[6].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.450    u_tdc_fine_layer/u_tdl270/carry_tap[27]
+    SLICE_X32Y11                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[7].u_carry4/CI
+    SLICE_X32Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.475 r  u_tdc_fine_layer/u_tdl270/g_carry[7].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.475    u_tdc_fine_layer/u_tdl270/carry_tap[31]
+    SLICE_X32Y12                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[8].u_carry4/CI
+    SLICE_X32Y12         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.500 r  u_tdc_fine_layer/u_tdl270/g_carry[8].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.500    u_tdc_fine_layer/u_tdl270/carry_tap[35]
+    SLICE_X32Y13                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[9].u_carry4/CI
+    SLICE_X32Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.525 r  u_tdc_fine_layer/u_tdl270/g_carry[9].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.525    u_tdc_fine_layer/u_tdl270/carry_tap[39]
+    SLICE_X32Y14                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[10].u_carry4/CI
+    SLICE_X32Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.550 r  u_tdc_fine_layer/u_tdl270/g_carry[10].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.550    u_tdc_fine_layer/u_tdl270/carry_tap[43]
+    SLICE_X32Y15                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[11].u_carry4/CI
+    SLICE_X32Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.575 r  u_tdc_fine_layer/u_tdl270/g_carry[11].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.575    u_tdc_fine_layer/u_tdl270/carry_tap[47]
+    SLICE_X32Y16                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[12].u_carry4/CI
+    SLICE_X32Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.600 r  u_tdc_fine_layer/u_tdl270/g_carry[12].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.600    u_tdc_fine_layer/u_tdl270/carry_tap[51]
+    SLICE_X32Y17                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[13].u_carry4/CI
+    SLICE_X32Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.625 r  u_tdc_fine_layer/u_tdl270/g_carry[13].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.625    u_tdc_fine_layer/u_tdl270/carry_tap[55]
+    SLICE_X32Y18                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[14].u_carry4/CI
+    SLICE_X32Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.650 r  u_tdc_fine_layer/u_tdl270/g_carry[14].u_carry4/CO[3]
+                         net (fo=2, routed)           0.000     2.650    u_tdc_fine_layer/u_tdl270/carry_tap[59]
+    SLICE_X32Y19                                                      r  u_tdc_fine_layer/u_tdl270/g_carry[15].u_carry4/CI
+    SLICE_X32Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.025     2.675 r  u_tdc_fine_layer/u_tdl270/g_carry[15].u_carry4/CO[3]
+                         net (fo=1, routed)           0.000     2.675    u_tdc_fine_layer/u_tdl270/carry_tap[63]
+    SLICE_X32Y19         FDRE                                         r  u_tdc_fine_layer/u_tdl270/thermo_q_reg[63]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out4_clk_wiz_0 rise edge)
+                                                      1.500     1.500 r  
+    AD12                                              0.000     1.500 r  sys_clk (IN)
+                         net (fo=0)                   0.000     1.500    u_clk_wiz_0/inst/clk_in1
+    AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+    AD12                 IBUF (Prop_ibuf_I_O)         0.440     1.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.553     2.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT3)
+                                                     -3.493    -1.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3
+                         net (fo=1, routed)           1.007     0.007    u_clk_wiz_0/inst/clk_out4_clk_wiz_0
+    BUFGCTRL_X0Y3                                                     r  u_clk_wiz_0/inst/clkout4_buf/I
+    BUFGCTRL_X0Y3        BUFG (Prop_bufg_I_O)         0.030     0.037 r  u_clk_wiz_0/inst/clkout4_buf/O
+                         net (fo=211, routed)         0.989     1.026    u_tdc_fine_layer/u_tdl270/clk_500m_deg270
+    SLICE_X32Y19         FDRE                                         r  u_tdc_fine_layer/u_tdl270/thermo_q_reg[63]/C
+
+
+
+

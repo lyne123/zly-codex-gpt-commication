@@ -1,0 +1,866 @@
+{
+  "A_baseline_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "B_previous_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "C_delay_fall_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 0,
+    "missing_rise": 0,
+    "missing_fall": 1344,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 1343,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": null,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 192
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 192
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 192
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 192
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "D_fallback_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "A_baseline_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "B_previous_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "C_delay_fall_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 0,
+    "missing_rise": 0,
+    "missing_fall": 1344,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 1343,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": null,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 192
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 192
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 192
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 192
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 192
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "D_fallback_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "A_baseline_lut500": {
+    "pulses": 1344,
+    "rises": 448,
+    "falls": 444,
+    "missing_rise": 896,
+    "missing_fall": 900,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 3,
+    "double_rise": 20,
+    "orphan_fall": 17,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 1354838,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 128,
+        "fall": 128
+      },
+      "20M_50": {
+        "rise": 128,
+        "fall": 128
+      },
+      "20M_5": {
+        "rise": 128,
+        "fall": 128
+      },
+      "20M_95": {
+        "rise": 128,
+        "fall": 128
+      },
+      "10M_20M_switch": {
+        "rise": 128,
+        "fall": 128
+      },
+      "adjacent_2ns": {
+        "rise": 128,
+        "fall": 128
+      },
+      "phase_boundary": {
+        "rise": 128,
+        "fall": 132
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "B_previous_lut500": {
+    "pulses": 1344,
+    "rises": 448,
+    "falls": 669,
+    "missing_rise": 896,
+    "missing_fall": 675,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 2,
+    "double_rise": 15,
+    "orphan_fall": 237,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 1354838,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_50": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_5": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_95": {
+        "rise": 128,
+        "fall": 96
+      },
+      "10M_20M_switch": {
+        "rise": 128,
+        "fall": 96
+      },
+      "adjacent_2ns": {
+        "rise": 128,
+        "fall": 96
+      },
+      "phase_boundary": {
+        "rise": 128,
+        "fall": 99
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "C_delay_fall_lut500": {
+    "pulses": 1344,
+    "rises": 448,
+    "falls": 900,
+    "missing_rise": 896,
+    "missing_fall": 444,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 24,
+    "double_rise": 400,
+    "orphan_fall": 852,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 302759,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 128,
+        "fall": 64
+      },
+      "20M_50": {
+        "rise": 128,
+        "fall": 64
+      },
+      "20M_5": {
+        "rise": 128,
+        "fall": 64
+      },
+      "20M_95": {
+        "rise": 128,
+        "fall": 64
+      },
+      "10M_20M_switch": {
+        "rise": 128,
+        "fall": 64
+      },
+      "adjacent_2ns": {
+        "rise": 128,
+        "fall": 64
+      },
+      "phase_boundary": {
+        "rise": 128,
+        "fall": 60
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "D_fallback_lut500": {
+    "pulses": 1344,
+    "rises": 448,
+    "falls": 669,
+    "missing_rise": 896,
+    "missing_fall": 675,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 2,
+    "double_rise": 15,
+    "orphan_fall": 237,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 1354838,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_50": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_5": {
+        "rise": 128,
+        "fall": 96
+      },
+      "20M_95": {
+        "rise": 128,
+        "fall": 96
+      },
+      "10M_20M_switch": {
+        "rise": 128,
+        "fall": 96
+      },
+      "adjacent_2ns": {
+        "rise": 128,
+        "fall": 96
+      },
+      "phase_boundary": {
+        "rise": 128,
+        "fall": 99
+      }
+    },
+    "functional_pass": false,
+    "width_tolerance_pass": false,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "E_guarded_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "E_guarded_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "E_guarded_lut500": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "F_factored_lut0": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "F_factored_lut250": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  },
+  "F_factored_lut500": {
+    "pulses": 1344,
+    "rises": 1344,
+    "falls": 1344,
+    "missing_rise": 0,
+    "missing_fall": 0,
+    "duplicate_edges": 0,
+    "mismatched_pairs": 0,
+    "double_rise": 0,
+    "orphan_fall": 0,
+    "range_error": 0,
+    "association_residual_over_20ps": 0,
+    "max_abs_width_error_ps": 339,
+    "missing_by_case": {
+      "10M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_50": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_5": {
+        "rise": 0,
+        "fall": 0
+      },
+      "20M_95": {
+        "rise": 0,
+        "fall": 0
+      },
+      "10M_20M_switch": {
+        "rise": 0,
+        "fall": 0
+      },
+      "adjacent_2ns": {
+        "rise": 0,
+        "fall": 0
+      },
+      "phase_boundary": {
+        "rise": 0,
+        "fall": 0
+      }
+    },
+    "functional_pass": true,
+    "width_tolerance_pass": true,
+    "result_fifo_overflow": false,
+    "error_fifo_overflow": false
+  }
+}

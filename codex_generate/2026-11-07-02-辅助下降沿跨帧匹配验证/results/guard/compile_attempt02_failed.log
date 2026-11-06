@@ -1,0 +1,5 @@
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\sim\tb_guard_properties.sv:16: tgt-vvp sorry: cannot %force from the word of a variable array (packs[0]).
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\sim\tb_guard_properties.sv:16: tgt-vvp sorry: cannot %force from the word of a variable array (packs[1]).
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\sim\tb_guard_properties.sv:17: tgt-vvp sorry: cannot %force from the word of a variable array (packs[2]).
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\sim\tb_guard_properties.sv:17: tgt-vvp sorry: cannot %force from the word of a variable array (packs[3]).
+error: Code generation had 4 error(s).

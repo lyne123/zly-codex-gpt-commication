@@ -1,0 +1,16 @@
+{
+  "analysis_commit": "2e9cf594aed51c67d48c090fdea9b92125f7822b",
+  "formal_source_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "formal_RTL_sha256": {
+    "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+    "tdc_meas_top.v": "6fc47bdb03fc0fed570a1d20335eb5eaae5c6c0282115d306c4a62c1548d8927",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "8e0336a75d844a727bfe6c0eb9be067cd9a2ef9701cb22a098ff36619d8a45e2",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "real_CSV_sha256": "0bfb3038261c9d01d31253d1e445fad8d22bfd88caa34449da21e78b0dce3bca",
+  "work": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxfall_20261107_02",
+  "formal_RTL_modified": false,
+  "parameters_recalculated": false,
+  "real_csv_sample728": "aux_fall_slots=1000; fall_previous=0000"
+}

@@ -1,0 +1,56 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Nov  7 02:54:52 2026
+| Host         : Lyne running 64-bit major release  (build 9200)
+| Command      : report_timing -of_objects {u_tdc_fine_layer/u_tdl90/thermo_q_reg[63]} -input_pins -file D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/input_paths/path_8.rpt
+| Design       : tdc_meas_top
+| Device       : 7k325t-ffg900
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 pwm_in
+                            (input port)
+  Destination:            u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_out2_clk_wiz_0  {rise@0.500ns fall@1.500ns period=2.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.343ns  (logic 0.075ns (5.593%)  route 1.268ns (94.407%))
+  Logic Levels:           1  (IBUF=1)
+  Clock Path Skew:        -0.470ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.470ns = ( 0.030 - 0.500 ) 
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    AD23                                              0.000     0.000 f  pwm_in (IN)
+                         net (fo=0)                   0.000     0.000    pwm_in
+    AD23                                                              f  pwm_in_IBUF_inst/I
+    AD23                 IBUF (Prop_ibuf_I_O)         0.075     0.075 f  pwm_in_IBUF_inst/O
+                         net (fo=7, routed)           1.268     1.343    u_tdc_fine_layer/pwm_in
+    SLICE_X45Y3          FDCE                                         f  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_clk_wiz_0 rise edge)
+                                                      0.500     0.500 r  
+    AD12                                              0.000     0.500 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.500    u_clk_wiz_0/inst/clk_in1
+    AD12                                                              r  u_clk_wiz_0/inst/clkin1_ibufg/I
+    AD12                 IBUF (Prop_ibuf_I_O)         0.440     0.940 r  u_clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.553     1.493    u_clk_wiz_0/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y1                                                   r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.493    -2.000 r  u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, routed)           1.007    -0.993    u_clk_wiz_0/inst/clk_out2_clk_wiz_0
+    BUFGCTRL_X0Y1                                                     r  u_clk_wiz_0/inst/clkout2_buf/I
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030    -0.963 r  u_clk_wiz_0/inst/clkout2_buf/O
+                         net (fo=235, routed)         0.993     0.030    u_tdc_fine_layer/clk_500m_deg90
+    SLICE_X45Y3          FDCE                                         r  u_tdc_fine_layer/g_aux_4phase.g_phase[1].pwm_meta_reg/C
+
+
+
+

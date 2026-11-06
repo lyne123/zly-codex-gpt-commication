@@ -1,0 +1,94 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 02:54:20 2026
+# Process ID: 26824
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02
+# Command line: vivado.exe -mode batch -notrace -source probe_input_paths.tcl -log probe_input_paths.log -journal probe_input_paths.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/probe_input_paths.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02\probe_input_paths.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source probe_input_paths.tcl -notrace
+Command: open_checkpoint D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxfall_20261107_02/reference_debug.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 893.023 ; gain = 8.422
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1501.352 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 355 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2289.645 ; gain = 1.941
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2289.645 ; gain = 1.941
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2289.645 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 1a10a415f
+----- Checksum: PlaceDB: ad1a3598 ShapeSum: 2ebffd19 RouteDB: c5300eae 
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2289.645 ; gain = 1405.238
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+WARNING: [Vivado 12-1072] '-of_objects' option can't be used with options '-path_type', '-input_pins', and 'nets', These options will be ignored.
+ACTUAL_DCP_INPUT_PATH_PROBE_COMPLETE targets=12
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 02:54:53 2026...

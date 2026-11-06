@@ -1,0 +1,79 @@
+{
+  "real_csv_RTL_equivalent": true,
+  "checks": 13209,
+  "scope": "从已观测有序采样/相位包边界重放，不冒充物理TDL传播复现",
+  "variants": {
+    "A_baseline": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 19,
+      "widths": 19,
+      "double_rise": 1,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 1,
+      "multi_phase_frames": 21,
+      "changed_existing_choices": 0,
+      "lost_baseline_events": 0
+    },
+    "B_previous": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 20,
+      "widths": 20,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 0,
+      "multi_phase_frames": 39,
+      "changed_existing_choices": 18,
+      "lost_baseline_events": 0
+    },
+    "C_delay_fall": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 19,
+      "widths": 19,
+      "double_rise": 1,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 1,
+      "multi_phase_frames": 21,
+      "changed_existing_choices": 18,
+      "lost_baseline_events": 1
+    },
+    "D_fallback": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 20,
+      "widths": 20,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 0,
+      "multi_phase_frames": 21,
+      "changed_existing_choices": 0,
+      "lost_baseline_events": 0
+    },
+    "E_guarded": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 20,
+      "widths": 20,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 0,
+      "multi_phase_frames": 21,
+      "changed_existing_choices": 0,
+      "lost_baseline_events": 0
+    },
+    "F_factored": {
+      "timestamp_rises": 21,
+      "timestamp_falls": 20,
+      "widths": 20,
+      "double_rise": 0,
+      "orphan_fall": 0,
+      "conflicts": 0,
+      "repeated_candidates": 0,
+      "multi_phase_frames": 21,
+      "changed_existing_choices": 0,
+      "lost_baseline_events": 0
+    }
+  }
+}

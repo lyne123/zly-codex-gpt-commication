@@ -1,0 +1,2 @@
+D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxfall_20261107_02\sim\tb_guard_properties.sv:23: error: Concatenation operand "((pat)>>(('sd2)*(j)))&('sd3)" has indefinite width.
+1 error(s) during elaboration.
