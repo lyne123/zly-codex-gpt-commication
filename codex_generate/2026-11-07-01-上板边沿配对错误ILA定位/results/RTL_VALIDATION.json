@@ -1,0 +1,9 @@
+{
+  "functional_equivalence": true,
+  "cycles": 12017,
+  "trigger_a": 2097,
+  "trigger_b": 2281,
+  "formal_RTL_unchanged": true,
+  "trigger_source": "原error_event_valid/code，未复制正式错误判断",
+  "limitations": "原配对FSM与Debug副本逐拍比较；不代替全TDC、SDF、物理时序或上板触发验收"
+}

@@ -1,0 +1,69 @@
+{
+  "pass_equivalence": true,
+  "valid_widths": 3512,
+  "files": [
+    {
+      "file": "raw.csv",
+      "debug_sha256": "5e5617a65e2efb26736f051c5b1b48212f3f92c6fc2b52e78e49a9706071c131",
+      "production_source_sha256": "5e5617a65e2efb26736f051c5b1b48212f3f92c6fc2b52e78e49a9706071c131",
+      "identical": true
+    },
+    {
+      "file": "candidate.csv",
+      "debug_sha256": "ec03931c8e66673c6b00942c1563b065c3ca3ee7bf4bb5e3d802359d4b1f215a",
+      "production_source_sha256": "ec03931c8e66673c6b00942c1563b065c3ca3ee7bf4bb5e3d802359d4b1f215a",
+      "identical": true
+    },
+    {
+      "file": "sampled_taps.csv",
+      "debug_sha256": "64e75689e58445da7ee245c69efce6e2330377e7660cb4f512c4168909495c1b",
+      "production_source_sha256": "64e75689e58445da7ee245c69efce6e2330377e7660cb4f512c4168909495c1b",
+      "identical": true
+    },
+    {
+      "file": "aux_trace.csv",
+      "debug_sha256": "9d08ea0a4571c36dc9e32f15554edae907558c1d20ee48d4586137c7b8cca9b5",
+      "production_source_sha256": "9d08ea0a4571c36dc9e32f15554edae907558c1d20ee48d4586137c7b8cca9b5",
+      "identical": true
+    },
+    {
+      "file": "timestamps.csv",
+      "debug_sha256": "53af2b6a9f378e722d51b4c6ef3b6d4d70f65022b00dcdb13aad84fe8a113b77",
+      "production_source_sha256": "53af2b6a9f378e722d51b4c6ef3b6d4d70f65022b00dcdb13aad84fe8a113b77",
+      "identical": true
+    },
+    {
+      "file": "widths.csv",
+      "debug_sha256": "556dfdca85d337935d9bfe9560bf6cb5a0f1732802f65b9da0e9906641b709f8",
+      "production_source_sha256": "556dfdca85d337935d9bfe9560bf6cb5a0f1732802f65b9da0e9906641b709f8",
+      "identical": true
+    },
+    {
+      "file": "fifo.csv",
+      "debug_sha256": "e0cb9897472297ace78a889d3e4dd684112d402f46b868bd84efb7202cc1fffe",
+      "production_source_sha256": "e0cb9897472297ace78a889d3e4dd684112d402f46b868bd84efb7202cc1fffe",
+      "identical": true
+    },
+    {
+      "file": "errors.csv",
+      "debug_sha256": "5956b5ddf9aaa72435ae32bc8375c00ec98b48c49cf03b9910426fa8869f5d69",
+      "production_source_sha256": "5956b5ddf9aaa72435ae32bc8375c00ec98b48c49cf03b9910426fa8869f5d69",
+      "identical": true
+    },
+    {
+      "file": "error_fifo.csv",
+      "debug_sha256": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+      "production_source_sha256": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+      "identical": true
+    },
+    {
+      "file": "anomaly_pipeline_trace.csv",
+      "debug_sha256": "2fccdfe90215822230b340e3beff7e241ea1ef708449b32ee4bc90f66823bf2c",
+      "production_source_sha256": "2fccdfe90215822230b340e3beff7e241ea1ef708449b32ee4bc90f66823bf2c",
+      "identical": true
+    }
+  ],
+  "comparison": "同一冻结3512脉冲激励，Debug理想RTL输出对照05当前源版本冻结结果，10类CSV逐字节一致",
+  "limitation": "不是MAX-SDF或上板测量；本次未重做精度校准",
+  "runtime_output": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_edge_20261107_01\\rtl_validation\\output_ascii"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "TIMING_GATE_FAIL",
+  "source_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "before": {
+    "WNS": -0.05,
+    "TNS": -0.166,
+    "WHS": 0.054,
+    "THS": 0.0
+  },
+  "after": {
+    "WNS": -0.164,
+    "TNS": -0.653,
+    "WHS": 0.054,
+    "THS": 0.0
+  },
+  "formal_RTL_modified": false,
+  "compensation_parameters_modified": false,
+  "production_bit_unchanged": true,
+  "debug_bit_generated": false,
+  "new_negative_core_setup_paths": [],
+  "hardware_programmed": false,
+  "trigger_A_hardware_captured": false,
+  "trigger_B_hardware_captured": false,
+  "hardware_note": "只完成定位工具；没有真实硬件错误触发记录时不宣称上板定位成功"
+}

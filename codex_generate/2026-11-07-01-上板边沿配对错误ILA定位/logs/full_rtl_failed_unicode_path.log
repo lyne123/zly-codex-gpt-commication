@@ -1,0 +1,4 @@
+WARNING: D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\202 $fopen's file name argument contains non-printable characters.
+                                                                "D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-05-05-\377\377\377\377TDC\377\377\377\377\377\377\377\377\377\377\377\377/sim/stimuli/full.txt"
+FATAL: D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\2026-11-05-05-四相TDC核心时序优化\sim\tb_quick.sv:89: Cannot open stimulus
+       Time: 200000 Scope: tb_tdc

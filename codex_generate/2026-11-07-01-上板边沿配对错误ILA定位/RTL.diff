@@ -1,0 +1,180 @@
+--- production/tdc_fine_layer.v
++++ debug/tdc_fine_layer.v
+@@ -25,6 +25,10 @@
+     output reg [31:0]  all_fine_code,       // 每相8位，原始计1码
+     output reg [3:0]   sync_edge_valid,     // 每相1位，联合判断后的有效标志
+     output reg [7:0]   sync_edge_polarity,  // 每相2位：11上升、10下降、00无效
++    output wire [39:0] debug_raw_packets,
++    output wire [63:0] debug_aux,
++    output wire [7:0] debug_final_types,
++    output wire debug_frame_ready,
+     output reg         sync_valid          // 四相数据流水线准备完成
+ );
+ 
+@@ -217,6 +221,8 @@
+     end
+ 
+     wire frame_ready = ready0_d1 & ready90_d2 & ready180_d1 & ready270_to90;
++    assign debug_raw_packets = {pack0_d1,pack270_to90,pack180_d1,pack90_d2};
++    assign debug_frame_ready = frame_ready;
+ 
+     //==================================================================
+     // 4. 辅助通路：四相独立采样 → 相关时钟固定延迟传输 → 有序边沿归属
+@@ -408,6 +414,11 @@
+         assign aux_fall_match[1] = (|fall_now[1:0]) | (|fall_previous[3:2]);
+         assign aux_fall_match[2] = (|fall_now[2:0]) | fall_previous[3];
+         assign aux_fall_match[3] = |fall_now;
++        // 新增只读调试总线；所有位的来源在ILA_SIGNAL_MAP中逐项定义。
++        assign debug_aux = {9'd0, aux_fall_match, aux_rise_match,
++            fall_claimed_now, rise_claimed_now, fall_claimed_previous, rise_claimed_previous,
++            fall_previous, rise_previous, fall_now, rise_now,
++            aux_fall_slots, aux_rise_slots, ordered_ready, armed, previous_sample, ordered_samples};
+ `ifndef SYNTHESIS
+         initial if (CARRY_NUM<4) $fatal(1,"四相辅助通路要求CARRY_NUM>=4");
+ `endif
+@@ -434,6 +445,7 @@
+     wire [1:0] final_type90  = confirm_edge(pack90_d2[9:8],       aux_rise_match[0], aux_fall_match[0]);
+     wire [1:0] final_type180 = confirm_edge(pack180_d1[9:8],      aux_rise_match[1], aux_fall_match[1]);
+     wire [1:0] final_type270 = confirm_edge(pack270_to90[9:8],    aux_rise_match[2], aux_fall_match[2]);
++    assign debug_final_types = {final_type0,final_type270,final_type180,final_type90};
+ 
+     always @(posedge clk_500m or negedge rst_n_0) begin
+         if (!rst_n_0) begin
+--- production/tdc_meas_top.v
++++ debug/tdc_meas_top.v
+@@ -80,6 +80,12 @@
+ wire [31:0] all_fine_code;
+ wire sync_valid;
+ wire [3:0] sync_edge_valid;
++wire [39:0] debug_raw_packets;
++wire [63:0] debug_aux;
++wire [7:0] debug_final_types;
++wire debug_frame_ready;
++wire debug_rise_pending, debug_in_range;
++wire [TIME_W-1:0] debug_rise_timestamp;
+ wire [7:0] sync_edge_polarity;
+ 
+ (* DONT_TOUCH = "TRUE" *)
+@@ -96,6 +102,10 @@
+     .all_fine_code(all_fine_code),
+     .sync_valid(sync_valid),
+     .sync_edge_valid(sync_edge_valid),
++    .debug_raw_packets(debug_raw_packets),
++    .debug_aux(debug_aux),
++    .debug_final_types(debug_final_types),
++    .debug_frame_ready(debug_frame_ready),
+     .sync_edge_polarity(sync_edge_polarity)
+ );
+ 
+@@ -181,11 +191,7 @@
+         .timestamp_ps       (timestamp_ps)
+     );
+ 
+-    ila_2 u_ila2 (
+-    .clk    (clk_500m),
+-    .probe0 ({timestamp_valid,(timestamp_edge_type?1'b1:1'b0)}),
+-    .probe1 (timestamp_ps)
+-);
++    // 原500MHz窄ILA仅在Debug副本中替换为下方观测实例。
+ 
+ //============================================================
+ // 5. 脉宽合并
+@@ -208,6 +214,9 @@
+     .pulse_width_valid    (pulse_width_valid),
+     .pulse_width_ps       (pulse_width_ps),
+     .error_valid          (error_event_valid),
++    .debug_rise_pending(debug_rise_pending),
++    .debug_in_range(debug_in_range),
++    .debug_rise_timestamp(debug_rise_timestamp),
+     .error_code           (error_event_code)
+ );
+ //============================================================
+@@ -305,4 +314,65 @@
+         error_fifo_overflow <= 1'b1;
+ end
+ 
++// 以下逻辑仅属于独立Debug副本；任何输出均不回馈测量、复位或FIFO通路。
++wire debug_trigger_a = error_event_valid && (error_event_code == 4'd1);
++wire debug_trigger_b = error_event_valid && (error_event_code == 4'd2);
++reg [31:0] debug_double_rise_count, debug_orphan_fall_count;
++reg [31:0] debug_cycle;
++reg debug_last_edge_type, debug_have_last_edge, debug_last_rise_paired;
++always @(posedge clk_500m or negedge rst_n_500m) begin
++    if (!rst_n_500m) begin
++        debug_double_rise_count <= 0;
++        debug_orphan_fall_count <= 0;
++        debug_cycle <= 0;
++        debug_last_edge_type <= 0;
++        debug_have_last_edge <= 0;
++        debug_last_rise_paired <= 0;
++    end else begin
++        debug_cycle <= debug_cycle + 1'b1;
++        if (debug_trigger_a) debug_double_rise_count <= debug_double_rise_count + 1'b1;
++        if (debug_trigger_b) debug_orphan_fall_count <= debug_orphan_fall_count + 1'b1;
++        if (timestamp_valid && debug_in_range) begin
++            debug_last_edge_type <= timestamp_edge_type;
++            debug_have_last_edge <= 1;
++            if (timestamp_edge_type) debug_last_rise_paired <= 0;
++            else if (debug_rise_pending) debug_last_rise_paired <= 1;
++        end
++    end
++end
++
++// 每个源信号只增加影子寄存器负载。全部探针统一延迟一拍；ILA另有四拍输入流水。
++// 这些延迟只作用于观测数据，不改变任何正式valid或数据的时序。
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [31:0] debug_control_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [39:0] debug_raw_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [63:0] debug_aux_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [39:0] debug_pipeline_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [20:0] debug_timestamp_q, debug_rise_ts_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [63:0] debug_counts_q;
++(* DONT_TOUCH="TRUE", SHREG_EXTRACT="NO" *) reg [31:0] debug_cycle_q;
++always @(posedge clk_500m) begin
++    debug_control_q <= {8'd0, debug_frame_ready, sync_valid, mmcm_locked, rst_n_500m,
++        error_fifo_overflow, result_fifo_overflow, pulse_width_valid,
++        repeat_error, polarity_conflict, edge_valid, timestamp_edge_type, timestamp_valid,
++        debug_last_rise_paired, debug_have_last_edge, debug_last_edge_type,
++        debug_in_range, debug_rise_pending, error_event_code, error_event_valid,
++        debug_trigger_b, debug_trigger_a};
++    debug_raw_q <= debug_raw_packets;
++    debug_aux_q <= debug_aux;
++    debug_pipeline_q <= {2'd0, debug_frame_ready, debug_final_types,
++        timestamp_edge_type, timestamp_valid, repeat_error, polarity_conflict,
++        edge_type_q, edge_valid, chosen_code, sel_index, sync_valid,
++        sync_edge_polarity, sync_edge_valid};
++    debug_timestamp_q <= timestamp_ps;
++    debug_rise_ts_q <= debug_rise_timestamp;
++    debug_counts_q <= {debug_orphan_fall_count,debug_double_rise_count};
++    debug_cycle_q <= debug_cycle;
++end
++
++ila_edge_debug u_ila_edge_debug (
++    .clk(clk_500m), .probe0(debug_control_q), .probe1(debug_raw_q),
++    .probe2(debug_aux_q), .probe3(debug_pipeline_q), .probe4(debug_timestamp_q),
++    .probe5(debug_rise_ts_q), .probe6(debug_counts_q), .probe7(debug_cycle_q)
++);
++
+ endmodule
+--- production/tdc_time_merge.v
++++ debug/tdc_time_merge.v
+@@ -18,6 +18,9 @@
+     output reg                     pulse_width_valid,
+     output reg  [COARSE_W+10:0]    pulse_width_ps,
+     output reg                     error_valid,
++    output wire debug_rise_pending,
++    output wire debug_in_range,
++    output wire [COARSE_W+10:0] debug_rise_timestamp,
+     output reg  [3:0]               error_code
+ );
+ 
+@@ -55,6 +58,10 @@
+     reg [TS_W:0]   s1_diff;
+ 
+     wire in_range = (timestamp_ps < WRAP_PS);
++    // 只读导出原配对状态和最近上升沿，不参与任何原逻辑反馈。
++    assign debug_rise_pending = rise_pending;
++    assign debug_in_range = in_range;
++    assign debug_rise_timestamp = rise_timestamp_ps;
+ 
+     wire [TS_W:0] diff_w =
+         {1'b0, timestamp_ps} -

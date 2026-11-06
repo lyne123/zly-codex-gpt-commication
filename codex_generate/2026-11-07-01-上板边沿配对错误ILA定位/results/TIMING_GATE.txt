@@ -1,0 +1,5 @@
+core_negative_paths=0
+any_negative_setup=1
+any_negative_hold=0
+production_rtl_modified=0
+measurement_algorithm_modified=0

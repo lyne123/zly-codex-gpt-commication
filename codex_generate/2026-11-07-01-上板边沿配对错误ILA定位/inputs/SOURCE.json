@@ -1,0 +1,20 @@
+{
+  "source_commit": "ba978229094a8621b30770177727d8e70b831a74",
+  "git_base_commit": "31090be88d0fef94835f69a6edcff4e447328220",
+  "source_note": "当前正式RTL与05源Commit一致；实际生产实现为本地AD23引脚ECO版本，非历史SDF版本替代",
+  "production_bit": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-06-02-PWM-AD23\\results\\TDC_Compensated_ILA100M_PWM_AD23.bit",
+  "production_bit_sha256": "c3c5d5e5afcdab910a59da3d7a1897f1e25450266621569cf50ad819f824a35a",
+  "reference_dcp": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-06-02-PWM-AD23\\results\\design_AD23.dcp",
+  "reference_dcp_sha256": "9ff43fa9bd3cdb776fa7b30820b75d026a0d761da04ab83e83fed68db2846425",
+  "formal_RTL_sha256": {
+    "tdc_fine_layer.v": "747794ca2a06bbe321119ce226f5d2ce0a77b1142d99a5f35115d435b8c872a0",
+    "tdc_meas_top.v": "6fc47bdb03fc0fed570a1d20335eb5eaae5c6c0282115d306c4a62c1548d8927",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "8e0336a75d844a727bfe6c0eb9be067cd9a2ef9701cb22a098ff36619d8a45e2",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "formal_RTL_modified": false,
+  "work": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_edge_20261107_01",
+  "no_drive_mapping": true,
+  "debug_note": "只读端口、影子寄存器、独立计数器与ILA；没有测量反馈"
+}

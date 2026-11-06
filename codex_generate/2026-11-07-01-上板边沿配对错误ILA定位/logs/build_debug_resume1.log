@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 01:12:49 2026
+# Process ID: 7196
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01
+# Command line: vivado.exe -mode batch -notrace -source build_debug.tcl -log build_debug_resume1.log -journal build_debug_resume1.jou
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/build_debug_resume1.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01\build_debug_resume1.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source build_debug.tcl -notrace
+DEBUG_STAGE=RESUME_COMPLETED_SYNTHESIS
+Command: open_checkpoint D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/debug_synth.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 890.945 ; gain = 6.527
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1500.609 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 338 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2175.316 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 100 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 100 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 74537868
+----- Checksum: PlaceDB: 00000000 ShapeSum: 74537868 RouteDB: 00000000 
+open_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2175.316 ; gain = 1291.156
+Parsing XDC File [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/combine_AD23.xdc]
+Finished Parsing XDC File [D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/combine_AD23.xdc]
+DEBUG_STAGE=IMPLEMENTATION
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.368 . Memory (MB): peak = 2192.145 ; gain = 9.891
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2022.2/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+ERROR: [Tcltasks 80-2] Caught exception bad allocation
+ERROR: [IP_Flow 19-3477] Update of parameter 'MODELPARAM_VALUE.C_XSDB_PERIOD_INT' failed for IP 'dbg_hub'. 
+ERROR: [IP_Flow 19-3428] Failed to create Customization object dbg_hub
+CRITICAL WARNING: [IP_Flow 19-5622] Failed to create IP instance 'dbg_hub'. Failed to customize IP instance 'dbg_hub'. Failed to load customization data
+ERROR: [IP_Flow 19-3805] Failed to generate and synthesize debug IPs. 
+ ERROR: [Common 17-69] Command failed: Create IP failed with errors
+ERROR: [Chipscope 16-330] Synthesis of Debug Cores has failed 
+ERROR: [Chipscope 16-578] Check "d:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/.Xil/Vivado-7196-Lyne/dc_drv.0/vivado.log" file for more details.
+Phase 1 Generate And Synthesize Debug Cores | Checksum: f36e2935
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 2522.871 ; gain = 1.027
+INFO: [Common 17-83] Releasing license: Implementation
+21 Infos, 0 Warnings, 1 Critical Warnings and 7 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-338] Implementing debug Cores failed due to earlier errors
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 01:13:20 2026...
