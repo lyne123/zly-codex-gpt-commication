@@ -3,6 +3,11 @@
 set task [file normalize [lindex $argv 0]]
 set bit $task/ILA_DEBUG.bit
 set ltx $task/ILA_DEBUG.ltx
+set capture_only [expr {[llength $argv]>4 && [lindex $argv 4] eq "capture_only"}]
+set events [expr {[llength $argv]>5 ? [lindex $argv 5] : "A B"}]
+set timeout_minutes [expr {[llength $argv]>6 ? [lindex $argv 6] : 0.25}]
+foreach event $events {if {$event ne "A" && $event ne "B"} {error "触发类型只能为A或B"}}
+if {$timeout_minutes<=0 || $timeout_minutes>0.75} {error "单次触发等待必须在0到45秒内"}
 if {![file exists $bit] || ![file exists $ltx]} {error "没有配套Debug BIT/LTX，禁止烧录或冒充已采集"}
 set capture_dir [expr {[llength $argv]>3 ? [lindex $argv 3] : "$task/results/captures"}]
 if {[file exists $capture_dir]} {error "采集目录已存在，禁止覆盖原始记录"}
@@ -10,6 +15,7 @@ file mkdir $capture_dir
 set summary [open $capture_dir/HARDWARE_STATUS.txt w]
 fconfigure $summary -encoding utf-8
 puts $summary "BIT=$bit\nprogramming=volatile_FPGA_RAM; no_flash_programming\nILA_internal_setup_accepted_by_user=1"
+puts $summary "capture_only=$capture_only"
 flush $summary
 set opened 0
 proc debug_config_snapshot {device output} {
@@ -61,6 +67,7 @@ debug_config_snapshot $device $capture_dir/CONFIG_BEFORE.txt
 set_property PROGRAM.FILE $bit $device
 set_property PROBES.FILE $ltx $device
 set_property FULL_PROBES.FILE $ltx $device
+if {!$capture_only} {
 puts $summary "programming_started=1"
 flush $summary
 puts "AUTHORIZED_DEBUG_PROGRAM_START"
@@ -72,12 +79,19 @@ puts $summary "programming_completed=1"
 flush $summary
 puts "AUTHORIZED_DEBUG_PROGRAM_COMPLETE"
 flush stdout
+} else {
+    puts $summary "programming_started=0\nexisting_configuration_reused=1"
+    puts "AUTHORIZED_DEBUG_REUSE_EXISTING_CONFIGURATION"
+    flush stdout
+}
 set_property PARAM.FREQUENCY 1000000 $target
 after 2000
 refresh_hw_device $device
 set ila [get_hw_ilas -of_objects $device -filter {CELL_NAME == u_ila_edge_debug}]
 if {[llength $ila]!=1} {error "找不到本次500MHz ILA"}
 if {[string toupper [get_property CORE_UUID $ila]] ne "A912571AD1ED54D397583B5696DB5C21"} {error "本次Debug ILA UUID不匹配"}
+puts $summary "existing_configuration_verified=1"
+flush $summary
 set control [get_hw_probes -of_objects $ila -filter {NAME =~ *debug_control_q*}]
 if {[llength $control]!=1 || [get_property WIDTH $control]!=32} {error "控制探针不匹配"}
 foreach probe [get_hw_probes -of_objects $ila] {set_property DISPLAY_RADIX UNSIGNED $probe}
@@ -86,7 +100,7 @@ set_property CONTROL.WINDOW_COUNT 1 $ila
 set_property CONTROL.TRIGGER_POSITION 768 $ila
 set_property CONTROL.TRIGGER_CONDITION AND $ila
 puts $summary "ILA_clock_MHz=500\ndata_depth=1024\ntrigger_position=768"
-foreach event {A B} {
+foreach event $events {
     # 控制位0/1直接来自原错误事件译码；不是粘滞位或计数器非零判定。
     set mask [expr {$event eq "A" ? "[string repeat X 31]1" : "[string repeat X 30]1X"}]
     set_property TRIGGER_COMPARE_VALUE "eq32'b$mask" $control
@@ -94,8 +108,8 @@ foreach event {A B} {
     if {[file exists $output]} {error "禁止覆盖已完成的原始捕获：$output"}
     set rc [catch {
         run_hw_ila $ila
-        # Vivado的timeout单位为分钟；0.25分钟即15秒。
-        wait_on_hw_ila -timeout 0.25 $ila
+        # Vivado的timeout单位为分钟；默认15秒，单次最多45秒。
+        wait_on_hw_ila -timeout $timeout_minutes $ila
         set data [upload_hw_ila_data $ila]
         write_hw_ila_data -csv_file $output $data
         debug_csv_has_event $output [expr {$event eq "A" ? 1 : 2}]

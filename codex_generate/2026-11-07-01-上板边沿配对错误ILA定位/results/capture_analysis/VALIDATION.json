@@ -1,0 +1,22 @@
+{
+  "source": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-01-上板边沿配对错误ILA定位\\results\\hardware_debug_04\\TRIGGER_A.csv",
+  "source_sha256": "0bfb3038261c9d01d31253d1e445fad8d22bfd88caa34449da21e78b0dce3bca",
+  "samples": 1024,
+  "trigger_sample": 768,
+  "confirm_logic_checks": 4096,
+  "confirm_logic_mismatches": 0,
+  "sync_transfer_checks": 1023,
+  "sync_transfer_mismatches": 0,
+  "first_observed_loss_sample": 731,
+  "first_observed_loss_relative_ps": -74000,
+  "first_observed_loss_signal": "aux_fall_match[3]=0 -> final_type0=00",
+  "valid_TDL0_fall_candidate_code": 13,
+  "auxiliary_fall_seen": true,
+  "claimed_caused_this_loss": false,
+  "timestamp_fall_absent": true,
+  "pairing_error_sample": 768,
+  "A_counter_before": 42801,
+  "A_counter_after": 42802,
+  "B_counter_in_this_window": 0,
+  "limitation": "仅解释这份Debug BIT实测A波形；不能外推全部历史错误，尚不能确定更早的物理偏移来源或排除模拟毛刺"
+}

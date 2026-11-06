@@ -1,0 +1,19 @@
+{
+  "A": {
+    "saved": true,
+    "capture_attempt": "hardware_debug_04",
+    "event_flag_observed": true,
+    "sample_count": 1024,
+    "sha256": "0bfb3038261c9d01d31253d1e445fad8d22bfd88caa34449da21e78b0dce3bca",
+    "confirmed_capture": true
+  },
+  "B": {
+    "saved": true,
+    "capture_attempt": "hardware_debug_04",
+    "event_flag_observed": false,
+    "sample_count": 1024,
+    "sha256": "0bfb3038261c9d01d31253d1e445fad8d22bfd88caa34449da21e78b0dce3bca",
+    "duplicate_of": "TRIGGER_A.csv; not independent B evidence",
+    "confirmed_capture": false
+  }
+}

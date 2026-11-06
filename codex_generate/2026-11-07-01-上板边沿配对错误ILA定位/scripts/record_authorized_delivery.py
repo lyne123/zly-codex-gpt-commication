@@ -29,33 +29,48 @@ def main():
     assert duplicate.resolve().is_relative_to(TASK.resolve())
     if duplicate.exists():
         assert sha(duplicate)==sha(TASK/'ILA_DEBUG.bit');duplicate.unlink()
-    programmed='programming_completed=1' in raw_status
-    trigger_results={}
-    for event,mask in [('A',1),('B',2)]:
-        p=last/f'TRIGGER_{event}.csv'
-        info=dict(saved=p.exists(),event_flag_observed=False,sample_count=0)
-        if p.exists():
-            with p.open(encoding='utf-8-sig',newline='') as f:
-                reader=csv.DictReader(f)
-                col=next((k for k in reader.fieldnames if k.startswith('debug_control_q')),None)
-                assert col,p
-                radix=next(reader)
-                base={'HEX':16,'UNSIGNED':10,'SIGNED':10,'BIN':2,'BINARY':2}.get(radix[col],10)
-                rows=[r for r in reader if r['Sample in Buffer'].isdigit()]
-            info.update(sample_count=len(rows),event_flag_observed=any(int(r[col],base)&mask for r in rows),sha256=sha(p))
-        info['confirmed_capture']=info['sample_count']==1024 and info['event_flag_observed']
-        trigger_results[event]=info
-    status=dict(status='DEBUG_PROGRAMMED' if programmed else 'DEBUG_PROGRAMMING_FAILED' if 'programming_started=1' in raw_status else 'JTAG_CONNECTION_BLOCKED',
+    programmed='programming_completed=1' in raw_status or 'existing_configuration_verified=1' in raw_status
+    trigger_results={};all_results={}
+    for capture in captures:
+        attempt_results={}
+        for event,mask in [('A',1),('B',2)]:
+            p=capture/f'TRIGGER_{event}.csv'
+            info=dict(saved=p.exists(),capture_attempt=capture.name,event_flag_observed=False,sample_count=0)
+            if p.exists():
+                with p.open(encoding='utf-8-sig',newline='') as f:
+                    reader=csv.DictReader(f)
+                    col=next((k for k in reader.fieldnames if k.startswith('debug_control_q')),None)
+                    assert col,p
+                    radix=next(reader)
+                    base={'HEX':16,'UNSIGNED':10,'SIGNED':10,'BIN':2,'BINARY':2}.get(radix[col],10)
+                    rows=[r for r in reader if r['Sample in Buffer'].isdigit()]
+                info.update(sample_count=len(rows),event_flag_observed=any(int(r[col],base)&mask for r in rows),sha256=sha(p))
+                other=capture/'TRIGGER_A.csv'
+                if event=='B' and rows and other.exists() and sha(other)==sha(p):info['duplicate_of']='TRIGGER_A.csv; not independent B evidence'
+            info['confirmed_capture']=info['sample_count']==1024 and info['event_flag_observed']
+            attempt_results[event]=info
+            if info['saved'] and (info['confirmed_capture'] or not trigger_results.get(event,{}).get('confirmed_capture')):
+                trigger_results[event]=info
+        all_results[capture.name]=attempt_results
+        (TASK/'results'/capture.name/'VALIDATED_TRIGGER_STATUS.json').write_text(json.dumps(attempt_results,indent=2),encoding='utf-8')
+    activities=sorted(WORK.glob('hardware_debug_activity_*/ACTIVITY_SUMMARY.json'))
+    activity=json.loads(activities[-1].read_text(encoding='utf-8')) if activities else None
+    if (TASK/'results/hardware_debug_04/TRIGGER_A.csv').exists():
+        from analyze_trigger_a import main as analyze_trigger
+        analyze_trigger()
+    status=dict(status=('DEBUG_PROGRAMMED_A_CAPTURED_B_UNOBSERVED' if trigger_results.get('A',{}).get('confirmed_capture') and not trigger_results.get('B',{}).get('confirmed_capture') else 'DEBUG_PROGRAMMED') if programmed else 'DEBUG_PROGRAMMING_FAILED' if 'programming_started=1' in raw_status else 'JTAG_CONNECTION_BLOCKED',
         source_commit=source['source_commit'],formal_RTL_modified=False,production_bit_unchanged=True,
         debug_bit_generated=True,debug_bit_sha256=sha(TASK/'ILA_DEBUG.bit'),debug_ltx_sha256=sha(TASK/'ILA_DEBUG.ltx'),
         source_DCP_sha256=sha(TASK/'results/debug_routed.dcp'),core_timing_pass=True,
         global_timing_converged=False,user_accepted_ILA_internal_setup_violations=True,accepted_ILA_setup_paths=7,
         WNS_ns=-0.164,TNS_ns=-0.653,WHS_ns=0.054,THS_ns=0.0,
         hardware_programmed=programmed,flash_programmed=False,latest_hardware_attempt=last.name,
+        reprogrammed_this_attempt='programming_completed=1' in raw_status,
+        latest_activity_capture=activities[-1].parent.name if activities else None,activity_summary=activity,
         triggers=trigger_results,hardware_reason=raw_status.split('reason=')[-1].strip())
     (TASK/'results/STATUS.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
     (TASK/'results/BOARD_ATTEMPT_STATUS.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
-    (TASK/'results'/last.name/'VALIDATED_TRIGGER_STATUS.json').write_text(json.dumps(trigger_results,indent=2),encoding='utf-8')
+    (TASK/'results/ALL_TRIGGER_ATTEMPTS.json').write_text(json.dumps(all_results,indent=2),encoding='utf-8')
     result=f'''# 上板边沿配对错误ILA定位
 
 本轮最新状态：**{status['status']}**。上一轮Debug结果的BIT已导出：**是**；上板配置完成：**{'是' if programmed else '否'}**。具体硬件记录见`results/{last.name}/HARDWARE_STATUS.txt`。
@@ -91,7 +106,15 @@ Trigger A=`error_event_valid && error_event_code==1`，probe0位0；Trigger B=`e
 
 硬件A/B结果：`{json.dumps(trigger_results,ensure_ascii=False)}`。只在原始CSV存在并观测到对应事件标志时确认捕获；不以超时或trigger_now冒充错误触发。
 
-首次A/B等待各15秒超时，导出CSV只有表头、0采样行。旧脚本因Vivado超时未抛异常而在原日志误标CAPTURED，原日志原样保留；核验结果见results/{last.name}/VALIDATED_TRIGGER_STATUS.json，两类均不能确认捕获。脚本已加入1024行和实际事件位校验。随后普通活动快照在刷新阶段内存不足，没有获得普通活动CSV，不据此判断当前有无PWM输入或错误。
+历史首轮hardware_debug_02的A/B均为0采样行，旧脚本误标CAPTURED的原日志保留，核验JSON未将其计为捕获；旧普通快照的内存不足日志也保留。修正脚本后，hardware_debug_03重新烧录成功。普通快照02确认当时输入恒低；用户随后开启10MHz/50%输出，hardware_debug_04复用已有配置、不重烧，真实捕获A。hardware_debug_05仅对B再独立等待45秒，未捕获。全部尝试见results/ALL_TRIGGER_ATTEMPTS.json。
+
+最新普通活动快照：`results/{status['latest_activity_capture']}/ACTIVITY_SUMMARY.json`，内容为`{json.dumps(activity,ensure_ascii=False)}`。普通快照不当作错误触发，也不当作10000次正式精度验收。
+
+## 已捕获A的丢失位置
+
+见[逐拍定位报告](results/capture_analysis/CAPTURE_ANALYSIS.md)、EVENT_TRACE_A.csv和KEY_WINDOW_A.csv。样本731的0°TDL已输出下降候选、code=13，辅助下降事件已进入fall_previous=1000；aux_fall_match[3]=0使final_type0=00。claimed为0，后续candidate/Locate没有收到该下降有效位。样本767的新上升timestamp到来时pending仍为1，768报A，计数42801→42802。
+
+本次1024样本的4096次confirm判定、1023次有效位跨拍传输与真实RTL一致。结论仅针对已捕获A；270°为何type=00、上游偏移来自何处、B的原因仍不确定，没有修改正式逻辑修复。
 
 ## 限制和保留记录
 

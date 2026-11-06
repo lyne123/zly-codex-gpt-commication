@@ -1,0 +1,27 @@
+{
+  "capture_kind": "IMMEDIATE_ACTIVITY_ONLY_NOT_ERROR_TRIGGER",
+  "ILA100M": {
+    "sample_count": 2048,
+    "clock_domain_MHz": 100,
+    "input_transitions": 0,
+    "input_high_fraction": 0.0,
+    "input_rises": 0,
+    "rise_period_clock_histogram": {},
+    "valid_width_outputs": 0,
+    "error_events": {}
+  },
+  "ILA500M": {
+    "sample_count": 1024,
+    "clock_domain_MHz": 500,
+    "reset_released_samples": 1024,
+    "mmcm_locked_samples": 1024,
+    "pipeline_ready_samples": 1024,
+    "timestamp_rises": 0,
+    "timestamp_falls": 0,
+    "duplicate_rise_pulses": 0,
+    "orphan_fall_pulses": 0,
+    "cycle_increment_histogram": {
+      "1": 1023
+    }
+  }
+}

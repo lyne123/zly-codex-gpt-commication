@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 02:23:40 2026
+# Process ID: 3396
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01
+# Command line: vivado.exe -mode batch -notrace -source capture_errors.tcl -log authorized_debug_capture_05.log -journal authorized_debug_capture_05.jou -tclargs D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/authorized_debug_01 TCP:127.0.0.1:3048 localhost:3122 D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/hardware_debug_05 capture_only B 0.75
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/authorized_debug_capture_05.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01\authorized_debug_capture_05.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source capture_errors.tcl -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3122
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:127.0.0.1:3048
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3122/xilinx_tcf/Digilent/C3067D03ABCD
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 2 ILA core(s).
+AUTHORIZED_DEBUG_REUSE_EXISTING_CONFIGURATION
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 2 ILA core(s).
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 02:23:54
+wait_on_hw_ila: Time (s): cpu = 00:00:00 ; elapsed = 00:00:45 . Memory (MB): peak = 3232.293 ; gain = 0.070
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_2' trigger was stopped by user at 2026-Nov-07 02:24:39
+WARNING: [Labtools 27-157] hw_ila [hw_ila_2] stopped. No data to upload.
+AUTHORIZED_DEBUG_TRIGGER_B=NOT_CAPTURED
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3122/xilinx_tcf/Digilent/C3067D03ABCD
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 02:24:39 2026...

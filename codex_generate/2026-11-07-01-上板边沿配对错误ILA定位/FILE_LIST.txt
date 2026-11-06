@@ -17,12 +17,18 @@
       9711  inputs/tdc_time_candicate.v
      10656  inputs/tdc_time_locate.v
       4874  inputs/tdc_time_merge.v
+      1242  logs/authorized_debug_capture_04.jou
+      2826  logs/authorized_debug_capture_04.log
+      1248  logs/authorized_debug_capture_05.jou
+      2397  logs/authorized_debug_capture_05.log
        987  logs/authorized_debug_export.jou
      34612  logs/authorized_debug_export.log
       1229  logs/authorized_debug_program_01.jou
       1706  logs/authorized_debug_program_01.log
       1229  logs/authorized_debug_program_02.jou
       3069  logs/authorized_debug_program_02.log
+      1228  logs/authorized_debug_program_03.jou
+      3205  logs/authorized_debug_program_03.log
        950  logs/board_attempt_01.jou
       1492  logs/board_attempt_01.log
        974  logs/board_attempt_02.jou
@@ -53,8 +59,14 @@
        415  logs/cs_board_3048_stdout.log
          0  logs/cs_debug02_stderr.log
        368  logs/cs_debug02_stdout.log
+         0  logs/cs_debug03_stderr.log
+       509  logs/cs_debug03_stdout.log
        938  logs/debug_activity_01.jou
       1549  logs/debug_activity_01.log
+       974  logs/debug_activity_02.jou
+      2210  logs/debug_activity_02.log
+       974  logs/debug_activity_03.jou
+      2210  logs/debug_activity_03.log
          0  logs/equivalence_0.log
         67  logs/equivalence_1.log
          0  logs/full_rtl_compile.log
@@ -66,6 +78,8 @@
          0  logs/hw_board_retry07_stdout.log
          0  logs/hw_debug02_stderr.log
          0  logs/hw_debug02_stdout.log
+         0  logs/hw_debug03_stderr.log
+         0  logs/hw_debug03_stdout.log
      28862  results/after/cdc.rpt
       4467  results/after/clocks.rpt
       2295  results/after/core_timing.csv
@@ -78,6 +92,7 @@
     259465  results/after/setup_top40.rpt
     329120  results/after/timing_summary.rpt
     123410  results/after/utilization.rpt
+      2688  results/ALL_TRIGGER_ATTEMPTS.json
       1755  results/authorized_debug_export/ACCEPTED_TIMING_EXCEPTIONS.csv
        268  results/authorized_debug_export/FILES.json
      70776  results/authorized_debug_export/ILA_DEBUG.ltx
@@ -100,11 +115,16 @@
        105  results/board_attempt_05/HARDWARE_STATUS.txt
        207  results/board_attempt_06/HARDWARE_STATUS.txt
        207  results/board_attempt_07/HARDWARE_STATUS.txt
-      1321  results/BOARD_ATTEMPT_STATUS.json
+      2596  results/BOARD_ATTEMPT_STATUS.json
+      4282  results/capture_analysis/CAPTURE_ANALYSIS.md
+    156627  results/capture_analysis/EVENT_TRACE_A.csv
+      8381  results/capture_analysis/KEY_WINDOW_A.csv
+      1019  results/capture_analysis/VALIDATION.json
    4744423  results/debug_routed.dcp
     176541  results/effective_constraints.xdc
       3094  results/FULL_RTL_EQUIVALENCE.json
        423  results/hardware_debug_01/HARDWARE_STATUS.txt
+       349  results/hardware_debug_01/VALIDATED_TRIGGER_STATUS.json
       2163  results/hardware_debug_02/CONFIG_AFTER.txt
       2163  results/hardware_debug_02/CONFIG_BEFORE.txt
        772  results/hardware_debug_02/HARDWARE_STATUS.txt
@@ -112,30 +132,60 @@
       5311  results/hardware_debug_02/TRIGGER_A.ila
        279  results/hardware_debug_02/TRIGGER_B.csv
       5310  results/hardware_debug_02/TRIGGER_B.ila
-       423  results/hardware_debug_02/VALIDATED_TRIGGER_STATUS.json
+       513  results/hardware_debug_02/VALIDATED_TRIGGER_STATUS.json
+      2163  results/hardware_debug_03/CONFIG_AFTER.txt
+      2163  results/hardware_debug_03/CONFIG_BEFORE.txt
+       734  results/hardware_debug_03/HARDWARE_STATUS.txt
+       279  results/hardware_debug_03/TRIGGER_A.csv
+       279  results/hardware_debug_03/TRIGGER_B.csv
+       513  results/hardware_debug_03/VALIDATED_TRIGGER_STATUS.json
+      2163  results/hardware_debug_04/CONFIG_BEFORE.txt
+       815  results/hardware_debug_04/HARDWARE_STATUS.txt
+     77927  results/hardware_debug_04/TRIGGER_A.csv
+     43627  results/hardware_debug_04/TRIGGER_A.ila
+     77927  results/hardware_debug_04/TRIGGER_B.csv
+       583  results/hardware_debug_04/VALIDATED_TRIGGER_STATUS.json
+      2163  results/hardware_debug_05/CONFIG_BEFORE.txt
+       667  results/hardware_debug_05/HARDWARE_STATUS.txt
+       279  results/hardware_debug_05/TRIGGER_B.csv
+       431  results/hardware_debug_05/VALIDATED_TRIGGER_STATUS.json
         69  results/hardware_debug_activity_01/STATUS.txt
+       690  results/hardware_debug_activity_02/ACTIVITY_SUMMARY.json
+       299  results/hardware_debug_activity_02/STATUS.txt
+     45107  results/hardware_debug_activity_02/u_ila3_ACTIVITY.csv
+     14319  results/hardware_debug_activity_02/u_ila3_ACTIVITY.ila
+     55443  results/hardware_debug_activity_02/u_ila_edge_debug_ACTIVITY.csv
+     25134  results/hardware_debug_activity_02/u_ila_edge_debug_ACTIVITY.ila
+       954  results/hardware_debug_activity_03/ACTIVITY_SUMMARY.json
+       299  results/hardware_debug_activity_03/STATUS.txt
+     53299  results/hardware_debug_activity_03/u_ila3_ACTIVITY.csv
+     22181  results/hardware_debug_activity_03/u_ila3_ACTIVITY.ila
+     79799  results/hardware_debug_activity_03/u_ila_edge_debug_ACTIVITY.csv
+     43366  results/hardware_debug_activity_03/u_ila_edge_debug_ACTIVITY.ila
      70776  results/ILA_DEBUG.ltx
        335  results/RTL_VALIDATION.json
-      1321  results/STATUS.json
+      2596  results/STATUS.json
        127  results/TIMING_GATE.txt
-      5418  RESULTS.md
+      7169  RESULTS.md
      29489  rtl/tdc_fine_layer.v
      15513  rtl/tdc_meas_top.v
       9978  rtl/tdc_time_candicate.v
      10656  rtl/tdc_time_locate.v
       5229  rtl/tdc_time_merge.v
       8133  RTL.diff
+      9008  scripts/analyze_trigger_a.py
       2040  scripts/archive_github.py
       6374  scripts/build_debug.tcl
-      5734  scripts/capture_errors.tcl
+      6468  scripts/capture_errors.tcl
       6323  scripts/check_production_board.tcl
       3229  scripts/debug_top_fragment.vh
       2173  scripts/export_authorized_debug_bit.tcl
      10308  scripts/finalize_delivery.py
+      2961  scripts/inspect_activity.py
       7189  scripts/prepare_debug.py
        930  scripts/prepare_review_workspace.py
-      2424  scripts/probe_activity.tcl
-     11803  scripts/record_authorized_delivery.py
+      2495  scripts/probe_activity.tcl
+     14170  scripts/record_authorized_delivery.py
       1964  scripts/validate_debug.py
       2868  scripts/validate_full_rtl.py
       4013  sim/tb_debug_equivalence.sv

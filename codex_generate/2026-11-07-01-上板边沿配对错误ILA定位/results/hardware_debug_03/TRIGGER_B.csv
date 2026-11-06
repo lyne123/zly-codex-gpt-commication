@@ -1,0 +1,2 @@
+Sample in Buffer,Sample in Window,TRIGGER,debug_control_q[31:0],debug_raw_q[39:0],debug_aux_q[63:0],debug_pipeline_q[39:0],debug_timestamp_q[20:0],debug_rise_ts_q[20:0],debug_counts_q[63:0],debug_cycle_q[31:0]
+Radix - UNSIGNED,UNSIGNED,UNSIGNED,HEX,HEX,HEX,HEX,HEX,HEX,HEX,HEX

@@ -1,0 +1,6 @@
+u_ila3 UUID=005AAA8F6BEB5365914C104C10152EC8
+u_ila3 sample_rows=2048 expected=2048 trigger_kind=IMMEDIATE_ACTIVITY_ONLY
+u_ila_edge_debug UUID=A912571AD1ED54D397583B5696DB5C21
+u_ila_edge_debug sample_rows=1024 expected=1024 trigger_kind=IMMEDIATE_ACTIVITY_ONLY
+attempt_status=COMPLETED
+reason=

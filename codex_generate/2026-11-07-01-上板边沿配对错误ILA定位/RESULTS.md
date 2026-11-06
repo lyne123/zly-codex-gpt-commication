@@ -1,6 +1,6 @@
 # 上板边沿配对错误ILA定位
 
-本轮最新状态：**DEBUG_PROGRAMMED**。上一轮Debug结果的BIT已导出：**是**；上板配置完成：**是**。具体硬件记录见`results/hardware_debug_02/HARDWARE_STATUS.txt`。
+本轮最新状态：**DEBUG_PROGRAMMED_A_CAPTURED_B_UNOBSERVED**。上一轮Debug结果的BIT已导出：**是**；上板配置完成：**是**。具体硬件记录见`results/hardware_debug_05/HARDWARE_STATUS.txt`。
 
 ## 用户后续明确指令
 
@@ -31,9 +31,17 @@
 
 Trigger A=`error_event_valid && error_event_code==1`，probe0位0；Trigger B=`error_event_valid && error_event_code==2`，probe0位1。原100MHz `u_ila3`五探针保留，不用它近似替代500MHz瞬态。操作及精确位图见ILA_SIGNAL_MAP.md、TRIGGER_CONDITIONS.md。
 
-硬件A/B结果：`{"A": {"saved": true, "event_flag_observed": false, "sample_count": 0, "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74", "confirmed_capture": false}, "B": {"saved": true, "event_flag_observed": false, "sample_count": 0, "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74", "confirmed_capture": false}}`。只在原始CSV存在并观测到对应事件标志时确认捕获；不以超时或trigger_now冒充错误触发。
+硬件A/B结果：`{"A": {"saved": true, "capture_attempt": "hardware_debug_04", "event_flag_observed": true, "sample_count": 1024, "sha256": "0bfb3038261c9d01d31253d1e445fad8d22bfd88caa34449da21e78b0dce3bca", "confirmed_capture": true}, "B": {"saved": true, "capture_attempt": "hardware_debug_05", "event_flag_observed": false, "sample_count": 0, "sha256": "b75c3e8a9e109f485cbb863ce0564162b2656df8ec3b0b475364a91865520c74", "confirmed_capture": false}}`。只在原始CSV存在并观测到对应事件标志时确认捕获；不以超时或trigger_now冒充错误触发。
 
-首次A/B等待各15秒超时，导出CSV只有表头、0采样行。旧脚本因Vivado超时未抛异常而在原日志误标CAPTURED，原日志原样保留；核验结果见results/hardware_debug_02/VALIDATED_TRIGGER_STATUS.json，两类均不能确认捕获。脚本已加入1024行和实际事件位校验。随后普通活动快照在刷新阶段内存不足，没有获得普通活动CSV，不据此判断当前有无PWM输入或错误。
+历史首轮hardware_debug_02的A/B均为0采样行，旧脚本误标CAPTURED的原日志保留，核验JSON未将其计为捕获；旧普通快照的内存不足日志也保留。修正脚本后，hardware_debug_03重新烧录成功。普通快照02确认当时输入恒低；用户随后开启10MHz/50%输出，hardware_debug_04复用已有配置、不重烧，真实捕获A。hardware_debug_05仅对B再独立等待45秒，未捕获。全部尝试见results/ALL_TRIGGER_ATTEMPTS.json。
+
+最新普通活动快照：`results/hardware_debug_activity_03/ACTIVITY_SUMMARY.json`，内容为`{"capture_kind": "IMMEDIATE_ACTIVITY_ONLY_NOT_ERROR_TRIGGER", "ILA100M": {"sample_count": 2048, "clock_domain_MHz": 100, "input_transitions": 409, "input_high_fraction": 0.50048828125, "input_rises": 204, "rise_period_clock_histogram": {"10": 203}, "valid_width_outputs": 205, "error_events": {}, "mean_width_ps": 50541.92195121951, "min_width_ps": 50410, "max_width_ps": 50586}, "ILA500M": {"sample_count": 1024, "clock_domain_MHz": 500, "reset_released_samples": 1024, "mmcm_locked_samples": 1024, "pipeline_ready_samples": 1024, "timestamp_rises": 21, "timestamp_falls": 20, "duplicate_rise_pulses": 0, "orphan_fall_pulses": 0, "A_counter_first_last": [133139, 133139], "B_counter_first_last": [0, 0], "cycle_increment_histogram": {"1": 1023}}}`。普通快照不当作错误触发，也不当作10000次正式精度验收。
+
+## 已捕获A的丢失位置
+
+见[逐拍定位报告](results/capture_analysis/CAPTURE_ANALYSIS.md)、EVENT_TRACE_A.csv和KEY_WINDOW_A.csv。样本731的0°TDL已输出下降候选、code=13，辅助下降事件已进入fall_previous=1000；aux_fall_match[3]=0使final_type0=00。claimed为0，后续candidate/Locate没有收到该下降有效位。样本767的新上升timestamp到来时pending仍为1，768报A，计数42801→42802。
+
+本次1024样本的4096次confirm判定、1023次有效位跨拍传输与真实RTL一致。结论仅针对已捕获A；270°为何type=00、上游偏移来自何处、B的原因仍不确定，没有修改正式逻辑修复。
 
 ## 限制和保留记录
 

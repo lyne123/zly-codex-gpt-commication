@@ -1,6 +1,7 @@
 # 只连接已烧录的本次Debug版本；普通活动快照不冒充A/B错误触发。
 set work [file dirname [file normalize [info script]]]
-set out $work/hardware_debug_activity_01
+set attempt [expr {[llength $argv]>0 ? [lindex $argv 0] : "hardware_debug_activity_01"}]
+set out $work/$attempt
 if {[file exists $out]} {error "禁止覆盖已有活动快照"}
 file mkdir $out
 set f [open $out/STATUS.txt w]

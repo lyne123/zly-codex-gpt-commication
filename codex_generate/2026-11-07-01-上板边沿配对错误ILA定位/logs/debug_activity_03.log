@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 02:21:12 2026
+# Process ID: 35736
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01
+# Command line: vivado.exe -mode batch -notrace -source probe_activity.tcl -log debug_activity_03.log -journal debug_activity_03.jou -tclargs hardware_debug_activity_03
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01/debug_activity_03.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_edge_20261107_01\debug_activity_03.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source probe_activity.tcl -notrace
+open_hw_manager: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1004.582 ; gain = 120.219
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3122
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:127.0.0.1:3048
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3122/xilinx_tcf/Digilent/C3067D03ABCD
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 2 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3231.324 ; gain = 2200.598
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2026-Nov-07 02:21:28
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2026-Nov-07 02:21:28
+ACTIVITY u_ila3 rows=2048 expected=2048
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 02:21:28
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 02:21:28
+ACTIVITY u_ila_edge_debug rows=1024 expected=1024
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3122/xilinx_tcf/Digilent/C3067D03ABCD
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 02:21:29 2026...
