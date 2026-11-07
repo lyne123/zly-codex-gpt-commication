@@ -16,3 +16,5 @@
 未重复上传中间失败 DCP、原生产 BIT、旧 Debug BIT、原生产 DCP、Vivado 缓存及重复输出。历史输入仍在原任务；本地中间实现路径、大小、SHA256 见 `results/LOCAL_INTERMEDIATE_FILES.json`。必要最终实现和所有本轮原始 CSV/失败日志均归档。完整 SDF 日志无损压缩，原日志位置和校验值见各 `RUN_MANIFEST.json`。没有因文件过大遗漏验收证据。
 
 `inputs/SOURCE.json` 是开始状态冻结，不代表最终状态；最终新增流水延迟和正式修改以 `VALIDATION.json` 为准。本地另有同编号 ATC 任务目录，原样保留；本任务按用户明确给定名称创建，未覆盖它。GitHub 只归档本任务及追加索引，不合并 main，不强推。
+
+上板后续：用户授权后已完成Corrected BIT烧录。10MHz/50%下，10000有效输出仍记录152次重复上升和37次孤立下降，硬件零配对错误验收未通过。见 [HARDWARE_BRINGUP.md](HARDWARE_BRINGUP.md)。上文未烧录描述和原VALIDATION均为首次交付时快照。

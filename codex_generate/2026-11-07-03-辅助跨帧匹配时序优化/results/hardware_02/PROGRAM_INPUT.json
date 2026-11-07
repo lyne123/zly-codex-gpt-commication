@@ -1,0 +1,10 @@
+{
+  "attempt": 2,
+  "runtime": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\hardware_02",
+  "evidence": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-03-辅助跨帧匹配时序优化\\results\\hardware_02",
+  "input_frequency_MHz": 10,
+  "input_duty_percent": 50,
+  "input_condition_source": "用户再次确认",
+  "reference_pw_ps": null,
+  "programming_requested": false
+}

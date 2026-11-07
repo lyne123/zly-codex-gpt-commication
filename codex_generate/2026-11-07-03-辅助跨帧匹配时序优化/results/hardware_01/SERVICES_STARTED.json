@@ -1,0 +1,12 @@
+[
+  {
+    "name": "hw_server",
+    "port": 3121,
+    "pid": 14464
+  },
+  {
+    "name": "cs_server",
+    "port": 3042,
+    "pid": 9600
+  }
+]

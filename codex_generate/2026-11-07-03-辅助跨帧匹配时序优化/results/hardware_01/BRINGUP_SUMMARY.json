@@ -1,0 +1,63 @@
+{
+  "programming_success": true,
+  "config_DONE": 1,
+  "config_CRC_error": 0,
+  "config_IDCODE_error": 0,
+  "ILA_UUIDs_verified": 2,
+  "flash_programmed": false,
+  "input_settings": "用户尚未再次确认；参考脉宽暂缺",
+  "windows": [
+    {
+      "file": "ACTIVITY_01.csv",
+      "buffer_rows": 2048,
+      "valid_measurements": 0,
+      "idle_cycles": 2048,
+      "invalid_width_events": 0,
+      "unknown_valid_cycles": 0,
+      "error_events": 0,
+      "error_unknown_cycles": 0,
+      "PWM_transitions": 0
+    },
+    {
+      "file": "ACTIVITY_02.csv",
+      "buffer_rows": 2048,
+      "valid_measurements": 0,
+      "idle_cycles": 2048,
+      "invalid_width_events": 0,
+      "unknown_valid_cycles": 0,
+      "error_events": 0,
+      "error_unknown_cycles": 0,
+      "PWM_transitions": 0
+    },
+    {
+      "file": "ACTIVITY_03.csv",
+      "buffer_rows": 2048,
+      "valid_measurements": 0,
+      "idle_cycles": 2048,
+      "invalid_width_events": 0,
+      "unknown_valid_cycles": 0,
+      "error_events": 0,
+      "error_unknown_cycles": 0,
+      "PWM_transitions": 0
+    }
+  ],
+  "counts": {
+    "buffer_rows": 6144,
+    "valid_measurements": 0,
+    "idle_cycles": 6144,
+    "invalid_width_events": 0,
+    "unknown_valid_cycles": 0,
+    "error_events": 0,
+    "error_unknown_cycles": 0
+  },
+  "error_codes": {},
+  "valid_pulse_width_statistics": {
+    "n": 0
+  },
+  "coarse_PWM_frequency_MHz": null,
+  "coarse_PWM_high_fraction": 0,
+  "reference_pw_ps": null,
+  "Bias_ps": null,
+  "inter_window_input_events_unobserved": true,
+  "full_AB_completed": false
+}

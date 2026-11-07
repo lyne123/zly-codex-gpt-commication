@@ -1,0 +1,81 @@
+{
+  "programming_requested": false,
+  "existing_Corrected_configuration_reused": true,
+  "configuration_verified": true,
+  "input_frequency_MHz_user_confirmed": 10,
+  "input_duty_percent_user_confirmed": 50,
+  "windows": [
+    {
+      "file": "ACTIVITY_01.csv",
+      "counts": {
+        "buffer_rows": 2048,
+        "valid_measurements": 191,
+        "idle_cycles": 1857,
+        "invalid_width_events": 0,
+        "unknown_valid_cycles": 0,
+        "error_events": 14,
+        "error_unknown_cycles": 0
+      },
+      "PWM_values": [
+        0,
+        1
+      ],
+      "PWM_transitions": 410
+    },
+    {
+      "file": "ACTIVITY_02.csv",
+      "counts": {
+        "buffer_rows": 2048,
+        "valid_measurements": 204,
+        "idle_cycles": 1844,
+        "invalid_width_events": 0,
+        "unknown_valid_cycles": 0,
+        "error_events": 0,
+        "error_unknown_cycles": 0
+      },
+      "PWM_values": [
+        0,
+        1
+      ],
+      "PWM_transitions": 409
+    },
+    {
+      "file": "ACTIVITY_03.csv",
+      "counts": {
+        "buffer_rows": 2048,
+        "valid_measurements": 205,
+        "idle_cycles": 1843,
+        "invalid_width_events": 0,
+        "unknown_valid_cycles": 0,
+        "error_events": 0,
+        "error_unknown_cycles": 0
+      },
+      "PWM_values": [
+        0,
+        1
+      ],
+      "PWM_transitions": 409
+    }
+  ],
+  "counts": {
+    "buffer_rows": 6144,
+    "valid_measurements": 600,
+    "idle_cycles": 5544,
+    "invalid_width_events": 0,
+    "unknown_valid_cycles": 0,
+    "error_events": 14,
+    "error_unknown_cycles": 0
+  },
+  "measurement_validation_completed": false,
+  "reason": "已观察到输入活动；存在14个错误事件，继续采集，根因未确定",
+  "error_codes": {
+    "1": 14
+  },
+  "valid_pulse_width_statistics": {
+    "n": 600,
+    "mean_ps": 50441.665,
+    "sample_STD_ps": 50.12651215043072,
+    "min_ps": 50300,
+    "max_ps": 50600
+  }
+}

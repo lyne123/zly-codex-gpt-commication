@@ -11,5 +11,8 @@
   "maximum_file_size": 13094662,
   "old_task_deleted": false,
   "no_critical_evidence_omitted": true,
-  "files_not_uploaded_for_size": []
+  "files_not_uploaded_for_size": [],
+  "hardware_followup_added": true,
+  "hardware_pairing_errors_observed": true,
+  "full_hardware_AB_completed": false
 }

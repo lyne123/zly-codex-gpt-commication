@@ -1,0 +1,119 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 14:51:07 2026
+# Process ID: 1528
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/hardware_01
+# Command line: vivado.exe -mode batch -source D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\program_corrected.tcl -log D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\vivado.log -journal D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\vivado.jou -tclargs D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\config.tcl
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/hardware_01/vivado.log
+# Journal file: D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source {D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_auxmatch_20261107_03\hardware_01\program_corrected.tcl}
+# source -encoding utf-8 [lindex $argv 0]
+## set capture_dir {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/hardware_01}
+## set bit_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/hardware_01/Corrected.bit}
+## set ltx_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_auxmatch_20261107_03/hardware_01/Corrected.ltx}
+# set opened 0
+# set f [open $capture_dir/HARDWARE_STATUS.txt w]
+# fconfigure $f -encoding utf-8
+# puts $f "programming=volatile_FPGA_RAM\nflash_programmed=0\nBIT=$bit_file\nLTX=$ltx_file"
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:127.0.0.1:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-07:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+CORRECTED_PROGRAM_START
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1030.539 ; gain = 0.000
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 2 ILA core(s).
+CORRECTED_CONFIG_AND_TWO_ILAS_VERIFIED
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 14:53:05
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 14:53:05
+CORRECTED_ACTIVITY_CAPTURE=1
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 14:53:05
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 14:53:06
+CORRECTED_ACTIVITY_CAPTURE=2
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 14:53:06
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 14:53:06
+CORRECTED_ACTIVITY_CAPTURE=3
+# set rc [catch {
+#     open_hw_manager
+#     connect_hw_server -url localhost:3121 -cs_url TCP:127.0.0.1:3042
+#     set targets [get_hw_targets -quiet]
+#     puts $f "targets=$targets"
+#     set target [get_hw_targets -quiet -filter {NAME =~ *C3067D03ABCD*}]
+#     if {[llength $target]!=1} {error "没有�?一的既有C306板卡，不烧录其他�?�?"}
+#     set_property PARAM.FREQUENCY 1000000 $target
+#     open_hw_target $target
+#     set opened 1
+#     set dev [get_hw_devices -quiet -filter {PART =~ xc7k325t*}]
+#     if {[llength $dev]!=1} {error "需要唯一XC7K325T器件"}
+#     current_hw_device $dev
+#     puts $f "target=$target\npart=[get_property PART $dev]\nprogramming_started=1"
+#     flush $f
+#     set_property PROGRAM.FILE $bit_file $dev
+#     set_property PROBES.FILE $ltx_file $dev
+#     set_property FULL_PROBES.FILE $ltx_file $dev
+#     puts "CORRECTED_PROGRAM_START"
+#     flush stdout
+#     program_hw_devices $dev
+#     puts $f "programming_completed=1"
+#     flush $f
+#     after 2000
+#     refresh_hw_device $dev
+#     set cfg [open $capture_dir/CONFIG_AFTER.txt w]
+#     foreach p [lsort [list_property $dev]] {
+#         if {[string match REGISTER.CONFIG_STATUS* $p] || [string match REGISTER.BOOT_STATUS* $p]} {
+#             if {![catch {get_property $p $dev} value]} {puts $cfg "$p=$value"}
+#         }
+#     }
+#     close $cfg
+#     if {[get_property REGISTER.CONFIG_STATUS.BIT14_DONE_PIN $dev]!=1 ||
+#         [get_property REGISTER.CONFIG_STATUS.BIT00_CRC_ERROR $dev]!=0 ||
+#         [get_property REGISTER.CONFIG_STATUS.BIT15_IDCODE_ERROR $dev]!=0} {error "配置状态未通过DONE/CRC/IDCODE检�?"}
+#     foreach {name expected} {u_ila2 C83C094952F254A2A90834971C4269BE u_ila3 005AAA8F6BEB5365914C104C10152EC8} {
+#         set ila [get_hw_ilas -of_objects $dev -filter "CELL_NAME == $name"]
+#         if {[llength $ila]!=1 || [string toupper [get_property CORE_UUID $ila]] ne $expected} {error "$name 与本�?LTX不匹�?"}
+#         puts $f "$name=[get_property CORE_UUID $ila]"
+#     }
+#     puts "CORRECTED_CONFIG_AND_TWO_ILAS_VERIFIED"
+#     flush stdout
+#     set ila [get_hw_ilas -of_objects $dev -filter {CELL_NAME == u_ila3}]
+#     foreach p [get_hw_probes -of_objects $ila] {
+#         set_property DISPLAY_RADIX UNSIGNED $p
+#         set width [get_property WIDTH $p]
+#         set_property TRIGGER_COMPARE_VALUE "eq${width}'b[string repeat X $width]" $p
+#     }
+#     set_property CONTROL.DATA_DEPTH 2048 $ila
+#     set_property CONTROL.WINDOW_COUNT 1 $ila
+#     set_property CONTROL.TRIGGER_POSITION 0 $ila
+#     for {set n 1} {$n<=3} {incr n} {
+#         run_hw_ila -trigger_now $ila
+#         wait_on_hw_ila -timeout 0.1 $ila
+#         set data [upload_hw_ila_data $ila]
+#         write_hw_ila_data -csv_file $capture_dir/[format "ACTIVITY_%02d.csv" $n] $data
+#         puts "CORRECTED_ACTIVITY_CAPTURE=$n"
+#         flush stdout
+#     }
+#     puts $f "configuration_verified=1\nILA_activity_windows=3"
+# } reason]
+# puts $f "attempt_status=[expr {$rc ? {FAILED} : {COMPLETED}}]\nreason=$reason"
+# close $f
+# if {$opened} {catch {close_hw_target}}
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+# catch {close_hw_manager}
+# if {$rc} {puts stderr "CORRECTED_BOARD_FAILED=$reason";exit 1}
+# puts "CORRECTED_BOARD_BRINGUP_COMPLETE"
+CORRECTED_BOARD_BRINGUP_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 14:53:06 2026...

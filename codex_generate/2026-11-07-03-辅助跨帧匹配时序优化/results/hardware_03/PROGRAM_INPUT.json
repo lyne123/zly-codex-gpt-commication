@@ -1,0 +1,13 @@
+{
+  "attempt": 3,
+  "input_frequency_MHz": 10,
+  "input_duty_percent": 50,
+  "nominal_width_ps": 50000,
+  "reference_width_ps": null,
+  "programming_requested": false,
+  "prior_valid": 600,
+  "prior_repeat_rise_errors": 14,
+  "prior_data_included": true,
+  "target_combined_valid": 10000,
+  "raw_data_preserved": true
+}

@@ -1,0 +1,50 @@
+{
+  "BIT_sha256": "59f1630048ade43ec5c0d7560c1e756ba664421e83e53c84028ca4956a61f523",
+  "state": "Corrected",
+  "input_frequency_MHz_user_confirmed": 10,
+  "input_duty_percent_user_confirmed": 50,
+  "nominal_width_ps": 50000,
+  "reference_width_ps": null,
+  "primary_valid": 10000,
+  "total_valid_preserved": 10047,
+  "extra_valid_preserved": 47,
+  "counts_all": {
+    "buffer_rows": 102400,
+    "valid_measurements": 10047,
+    "idle_cycles": 92353,
+    "invalid_width_events": 0,
+    "unknown_valid_cycles": 0,
+    "error_events": 189,
+    "error_unknown_cycles": 0
+  },
+  "primary_error_codes": {
+    "1": 152,
+    "2": 37
+  },
+  "all_error_codes": {
+    "1": 152,
+    "2": 37
+  },
+  "repeat_rise": 152,
+  "orphan_fall": 37,
+  "range_error": 0,
+  "mean_width_ps": 50405.5798,
+  "sample_STD_ps": 72.60995284728705,
+  "Bias_vs_setpoint_ps": 405.5797999999995,
+  "RMSE_vs_setpoint_ps": 412.0274896168944,
+  "MaxAbs_vs_setpoint_ps": 805,
+  "minimum_width_ps": 50140,
+  "maximum_width_ps": 50805,
+  "absolute_Bias": null,
+  "zero_pairing_errors_requirement_met": false,
+  "previous_600_valid_and_14_errors_included": true,
+  "no_outlier_removal": true,
+  "per_pulse_error_association_available": false,
+  "FIFO_overflow_observable": false,
+  "inter_window_input_events_unobserved": true,
+  "input_event_count_available": false,
+  "full_AB_completed": false,
+  "programmed_once": true,
+  "flash_programmed": false,
+  "selection_rule": "前10000个valid且范围内可读的输出，按采集顺序；截止第10000输出的全部错误计入，剩余数据保留"
+}

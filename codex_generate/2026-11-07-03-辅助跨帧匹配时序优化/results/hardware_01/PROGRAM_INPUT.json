@@ -1,0 +1,20 @@
+{
+  "attempt": 1,
+  "runtime": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_auxmatch_20261107_03\\hardware_01",
+  "evidence": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-03-辅助跨帧匹配时序优化\\results\\hardware_01",
+  "authorization": "用户已明确同意本轮上板",
+  "timestamp_utc": "2026-11-07T06:50:45.150998+00:00",
+  "source_commit": "d8b691b65316246567696cdbf8abd4e0f30950ee",
+  "files": {
+    "Corrected.bit": {
+      "size": 11443721,
+      "sha256": "59f1630048ade43ec5c0d7560c1e756ba664421e83e53c84028ca4956a61f523"
+    },
+    "Corrected.ltx": {
+      "size": 15916,
+      "sha256": "dcf8e20b6389ec92e7f90afb3bd878865c86cfb940755f67d223603cbac0b2c8"
+    }
+  },
+  "input_settings": "等待用户确认；不预设参考脉宽",
+  "flash_programming": false
+}
