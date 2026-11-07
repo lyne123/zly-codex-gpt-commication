@@ -1,0 +1,4 @@
+conflict_time_ps,raw_time_ps,mask,polarity,codes,details
+238744000,238734000,11,202,436208951,"90deg:type=2,code=55;180deg:type=2,code=5;0deg:type=3,code=26"
+242044000,242034000,11,202,436209979,"90deg:type=2,code=59;180deg:type=2,code=9;0deg:type=3,code=26"
+245344000,245334000,9,194,436207631,"90deg:type=2,code=15;0deg:type=3,code=26"

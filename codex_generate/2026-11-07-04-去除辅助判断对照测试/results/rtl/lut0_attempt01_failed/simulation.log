@@ -1,0 +1,4 @@
+WARNING: D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vi $fopen's file name argument contains non-printable characters.
+                                                                "D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/2026-11-07-04-\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377/inputs/full.txt"
+FATAL: D:\00-code\FPGA_Prj\fpga_tdc_v3_cal\codex_generate\.vivado_work\tdc_noaux_20261107_04\sim\tb_compare.sv:132: 激励打开失败
+       Time: 0 Scope: tb_compare

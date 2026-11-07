@@ -1,0 +1,675 @@
+{
+  "pass_all": false,
+  "unit_results": {
+    "tb_range": true,
+    "tb_bypass": true
+  },
+  "base_commit": "d8b691b65316246567696cdbf8abd4e0f30950ee",
+  "cases": [
+    {
+      "delay_ps": 0,
+      "AuxOn_default_matches_base_each_cycle": true,
+      "data_ready_coarse_alignment": true,
+      "results": {
+        "aux_on": {
+          "expected_pulses": 3512,
+          "timestamps": 7024,
+          "rises": 3512,
+          "falls": 3512,
+          "actual_valid_pulses": 3512,
+          "correct_pulses": 3512,
+          "missing_rise_ids": [],
+          "missing_fall_ids": [],
+          "duplicate_edges": 0,
+          "mispairs": 0,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 0,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 808,
+          "raw_range_rejected": 235,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 348,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 348
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 346
+            }
+          },
+          "functional_pass": true,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        },
+        "noaux": {
+          "expected_pulses": 3512,
+          "timestamps": 7024,
+          "rises": 3512,
+          "falls": 3512,
+          "actual_valid_pulses": 3512,
+          "correct_pulses": 3512,
+          "missing_rise_ids": [],
+          "missing_fall_ids": [],
+          "duplicate_edges": 0,
+          "mispairs": 0,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 0,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 808,
+          "raw_range_rejected": 235,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 348,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 348
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 346
+            }
+          },
+          "functional_pass": true,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        }
+      }
+    },
+    {
+      "delay_ps": 250,
+      "AuxOn_default_matches_base_each_cycle": true,
+      "data_ready_coarse_alignment": true,
+      "results": {
+        "aux_on": {
+          "expected_pulses": 3512,
+          "timestamps": 7018,
+          "rises": 3509,
+          "falls": 3509,
+          "actual_valid_pulses": 3509,
+          "correct_pulses": 3506,
+          "missing_rise_ids": [
+            2918,
+            2984,
+            3050
+          ],
+          "missing_fall_ids": [
+            2917,
+            2983,
+            3049
+          ],
+          "duplicate_edges": 0,
+          "mispairs": 3,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 3,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 754,
+          "raw_range_rejected": 173,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 339,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1050,
+              "missing_rise": 3,
+              "missing_fall": 3,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 325
+            }
+          },
+          "functional_pass": false,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        },
+        "noaux": {
+          "expected_pulses": 3512,
+          "timestamps": 7018,
+          "rises": 3509,
+          "falls": 3509,
+          "actual_valid_pulses": 3509,
+          "correct_pulses": 3506,
+          "missing_rise_ids": [
+            2918,
+            2984,
+            3050
+          ],
+          "missing_fall_ids": [
+            2917,
+            2983,
+            3049
+          ],
+          "duplicate_edges": 0,
+          "mispairs": 3,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 3,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 754,
+          "raw_range_rejected": 173,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 339,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1050,
+              "missing_rise": 3,
+              "missing_fall": 3,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 325
+            }
+          },
+          "functional_pass": false,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        }
+      }
+    },
+    {
+      "delay_ps": 500,
+      "AuxOn_default_matches_base_each_cycle": true,
+      "data_ready_coarse_alignment": true,
+      "results": {
+        "aux_on": {
+          "expected_pulses": 3512,
+          "timestamps": 7024,
+          "rises": 3512,
+          "falls": 3512,
+          "actual_valid_pulses": 3512,
+          "correct_pulses": 3512,
+          "missing_rise_ids": [],
+          "missing_fall_ids": [],
+          "duplicate_edges": 0,
+          "mispairs": 0,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 0,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 0,
+          "raw_range_rejected": 235,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 347,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 325
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 325
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 347
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 333
+            }
+          },
+          "functional_pass": true,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        },
+        "noaux": {
+          "expected_pulses": 3512,
+          "timestamps": 7024,
+          "rises": 3512,
+          "falls": 3512,
+          "actual_valid_pulses": 3512,
+          "correct_pulses": 3512,
+          "missing_rise_ids": [],
+          "missing_fall_ids": [],
+          "duplicate_edges": 0,
+          "mispairs": 0,
+          "repeat_rise": 0,
+          "orphan_fall": 0,
+          "merge_range_errors": 0,
+          "polarity_conflict": 0,
+          "candidate_repeat": 0,
+          "accepted_out_of_range": 0,
+          "raw_multiple_candidates": 763,
+          "raw_range_rejected": 235,
+          "FIFO_overflow_seen": 0,
+          "FIFO_sequence_equal": true,
+          "error_FIFO_sequence_equal": true,
+          "association_faults": [],
+          "pair_faults": [],
+          "max_abs_width_error_ps": 339,
+          "by_case": {
+            "fixed_25300": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 0
+            },
+            "20MHz_50": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "10MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_5": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "20MHz_95": {
+              "expected": 200,
+              "correct_pulses": 200,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_10MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 339
+            },
+            "ATC_20MHz": {
+              "expected": 1056,
+              "correct_pulses": 1056,
+              "missing_rise": 0,
+              "missing_fall": 0,
+              "duplicate_edges": 0,
+              "max_abs_width_error_ps": 333
+            }
+          },
+          "functional_pass": true,
+          "NoAux_vs_AuxOn_extra_cycles": 0,
+          "parameters_refitted": false,
+          "outliers_removed": false
+        }
+      }
+    }
+  ],
+  "inputs_identical": true,
+  "thresholds_unchanged": true,
+  "additional_cycles": 0,
+  "parameters_refitted": false
+}

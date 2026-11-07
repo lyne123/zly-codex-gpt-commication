@@ -1,0 +1,15 @@
+{
+  "pass_all": true,
+  "scope": "仅本次任务和索引追加",
+  "secret_pattern_matches": 0,
+  "excluded": [
+    "github/",
+    "__pycache__/",
+    "Vivado临时缓存",
+    "重复中间DCP"
+  ],
+  "maximum_file_size": 691850,
+  "old_task_deleted": false,
+  "no_critical_evidence_omitted": true,
+  "files_not_uploaded_for_size": []
+}

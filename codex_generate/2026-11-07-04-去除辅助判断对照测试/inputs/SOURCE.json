@@ -1,0 +1,60 @@
+{
+  "base_commit": "d8b691b65316246567696cdbf8abd4e0f30950ee",
+  "source_RTL_sha256": {
+    "tdc_fine_layer.v": "d683f45d2c93876f07d2ad3079ea3975fa049800d270bb0d05c7fc1d28a94be8",
+    "tdc_meas_top.v": "9f4d80ff2acef444a58849f95be5aa502370680f23e242086904659f3bb694ff",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "candidate_RTL_sha256": {
+    "tdc_fine_layer.v": "6779e342b622ad84356d69be6f3d6a9cdbeabd904d8e39714a711594e072a05c",
+    "tdc_meas_top.v": "8a5a04290b95e08f28411871c951ff3e1490e5d02a9bc58bf6f4add1811d3adf",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "production_RTL_sha256": {
+    "tdc_fine_layer.v": "d683f45d2c93876f07d2ad3079ea3975fa049800d270bb0d05c7fc1d28a94be8",
+    "tdc_meas_top.v": "9f4d80ff2acef444a58849f95be5aa502370680f23e242086904659f3bb694ff",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  },
+  "phase_encoder_and_CARRY4_unchanged": true,
+  "candidate_locate_merge_unchanged": true,
+  "rise_range_inclusive": [
+    1,
+    60
+  ],
+  "fall_range_inclusive": [
+    5,
+    63
+  ],
+  "previous_confirmation_pipeline_retained": true,
+  "additional_latency_cycles": 0,
+  "NoAux_generic": "ENABLE_AUX_CONFIRM=0",
+  "AuxOn_generic": "ENABLE_AUX_CONFIRM=1",
+  "runtime_switch": false,
+  "hardware_programming_authorized": false,
+  "work": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_noaux_20261107_04",
+  "inputs_sha256": {
+    "combine_AD23.xdc": "b3faef8b7e9ecf6165dd6cf50f795bacd66675fe6671ad5e266212b80f4ebbde",
+    "compensation_params.tcl": "7586183f5fb5ce6fbe623a94d080af877f8ab467b773e1f993d9ecc5a811b715",
+    "FIFO_PLACEMENT_SOURCE.json": "a4714b3ab65b1f3bf96613360edd1fe35bb04d23597c05cd94177c6ce025abd3",
+    "frozen_compensation.csv": "184c030bcd104c5f14951159db84ee459c3c89afcd025aeff107986536fb3e4d",
+    "frozen_event_association.json": "acd3e13ba9d181e873988840133cb3b2f49de818f932036ac411d03337c6087a",
+    "full.txt": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+    "full_truth.csv": "780b31667267cd8560f5d879241c16e60203f5f348e474ba566a0a0b95bae3ac",
+    "minimal.txt": "ef6210308db8b79b6ee2c306eccc34937d71fec0ae0a2ba12f50ffd8fd4c2769",
+    "minimal_truth.csv": "dd44255e3e086936b9f61fcdafe6ea6d0b9902a037187e95544190a020bb07de",
+    "production_fifo_placement.csv": "3a791813780436b00e19a881d570a40ecae71dde74c494140d3aeb86d98c16d3",
+    "PWM_INPUT.txt": "95171734a4b6581285fdffc73e0a5b8afacdb08590a4608b49d9988e912bb6ea",
+    "PWM_TRUTH.csv": "c98029859ec0deab678acbd1d668b0719d7f7649a4d90c27f221f458b20419ec",
+    "SDF_INPUT_MANIFEST.json": "d28f041dd44422458c06b4963b21118085036ccc4809cb87db874122f143dda5",
+    "ip/clk_wiz_0/clk_wiz_0.xci": "18b3bea5cdc66b5172e3412145b1900da95ff32500fe8c56f485e41b6d7ab84b",
+    "ip/fifo_tdc_result/fifo_tdc_result.xci": "e837eb5bd7d4a93fb51725e1f7148bf53172b41ef69e985f3d70d8896c0ae4e0",
+    "ip/ila_2/ila_2.xci": "991c0dddf4f9cb2ceb55cacb698ff43bd9ffa7a39e818d438428a3b9153c4989",
+    "ip/ila_3/ila_3.xci": "dd61ce011b35d62ea18176d26c88cb06069cb996cbf528c41ecfa54a280861cf"
+  }
+}

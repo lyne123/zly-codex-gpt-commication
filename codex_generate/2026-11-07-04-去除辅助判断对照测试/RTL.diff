@@ -1,0 +1,55 @@
+--- aux_on/tdc_fine_layer.v
++++ parameterized/tdc_fine_layer.v
+@@ -14,7 +14,8 @@
+     parameter integer MAX_VALID_TAP = 60,
+     parameter integer MIN_VALID_TAP = 5,
+     parameter integer PWM_DIST_ENABLE = 1, // 1: 对称LUT树形PWM分发；0: 原始直连对照
+-    parameter integer ENABLE_AUX_4PHASE = 1 // 0: 原单相辅助通路；1: 四相有序采样
++    parameter integer ENABLE_AUX_4PHASE = 1, // 0: 原单相辅助通路；1: 四相有序采样
++    parameter integer ENABLE_AUX_CONFIRM = 1 // 1保留原确认；0仅使用TDL已筛选类型，流水延迟不变
+ )(
+     input  wire        clk_500m,
+     input  wire        clk_500m_deg90,
+@@ -234,7 +235,11 @@
+         else begin
+             pipe_fine_codes<={pack0_d1[7:0],pack270_to90[7:0],pack180_d1[7:0],pack90_d2[7:0]};
+             pipe_frame_ready<=frame_ready;
+-            pipe_legacy_types<={final_type0,final_type270,final_type180,final_type90};
++            // 旁路复用原确认级的类型寄存器，与pipe_fine_codes严格同帧同拍。
++            // pack中的类型已经过各TDL的极性检测和code_in_range筛选。
++            pipe_legacy_types<=ENABLE_AUX_CONFIRM ?
++                {final_type0,final_type270,final_type180,final_type90} :
++                {pack0_d1[9:8],pack270_to90[9:8],pack180_d1[9:8],pack90_d2[9:8]};
+         end
+ 
+ 
+@@ -623,9 +628,9 @@
+             // 位序：{下一周期0°，270°，180°，90°}
+             all_fine_code <= pipe_fine_codes;
+             sync_valid <= pipe_frame_ready;
+-            sync_edge_polarity <= ENABLE_AUX_4PHASE ? guarded_output_types :
++            sync_edge_polarity <= (ENABLE_AUX_CONFIRM && ENABLE_AUX_4PHASE) ? guarded_output_types :
+                 (pipe_frame_ready ? pipe_legacy_types : 8'd0);
+-            sync_edge_valid <= ENABLE_AUX_4PHASE ?
++            sync_edge_valid <= (ENABLE_AUX_CONFIRM && ENABLE_AUX_4PHASE) ?
+                 {guarded_output_types[7],guarded_output_types[5],guarded_output_types[3],guarded_output_types[1]} :
+                 (pipe_frame_ready ? {pipe_legacy_types[7],pipe_legacy_types[5],pipe_legacy_types[3],pipe_legacy_types[1]} : 4'd0);
+         end
+--- aux_on/tdc_meas_top.v
++++ parameterized/tdc_meas_top.v
+@@ -1,6 +1,7 @@
+ module tdc_meas_top #(
+     parameter integer COARSE_W = 10,         // 500 MHz: 2048 ns wrap period
+     parameter integer TAP_PS = 10,
++    parameter integer ENABLE_AUX_CONFIRM = 1, // 编译期对照开关；NoAux构建固定为0，默认保持原行为
+     parameter integer CARRY_NUM = 16,          // 16个CARRY4
+     parameter integer TAPS      = CARRY_NUM*4, // 64个采样tap
+     // 默认关闭；8个有符号ps参数由独立校准CSV生成的Tcl统一装载。
+@@ -84,6 +85,7 @@
+ 
+ (* DONT_TOUCH = "TRUE" *)
+ tdc_fine_layer #(
++    .ENABLE_AUX_CONFIRM(ENABLE_AUX_CONFIRM),
+     .CARRY_NUM(CARRY_NUM)
+ ) u_tdc_fine_layer (
+     .clk_500m(clk_500m),

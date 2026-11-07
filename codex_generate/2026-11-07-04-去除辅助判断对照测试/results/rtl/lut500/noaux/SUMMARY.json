@@ -1,0 +1,104 @@
+{
+  "expected_pulses": 3512,
+  "timestamps": 7024,
+  "rises": 3512,
+  "falls": 3512,
+  "actual_valid_pulses": 3512,
+  "correct_pulses": 3512,
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_edges": 0,
+  "mispairs": 0,
+  "repeat_rise": 0,
+  "orphan_fall": 0,
+  "merge_range_errors": 0,
+  "polarity_conflict": 0,
+  "candidate_repeat": 0,
+  "accepted_out_of_range": 0,
+  "raw_multiple_candidates": 763,
+  "raw_range_rejected": 235,
+  "FIFO_overflow_seen": 0,
+  "FIFO_sequence_equal": true,
+  "error_FIFO_sequence_equal": true,
+  "association_faults": [],
+  "pair_faults": [],
+  "max_abs_width_error_ps": 339,
+  "by_case": {
+    "fixed_25300": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "10MHz_50": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 0
+    },
+    "20MHz_50": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "10MHz_5": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "10MHz_95": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "20MHz_5": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "20MHz_95": {
+      "expected": 200,
+      "correct_pulses": 200,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "ATC_10MHz": {
+      "expected": 1056,
+      "correct_pulses": 1056,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 339
+    },
+    "ATC_20MHz": {
+      "expected": 1056,
+      "correct_pulses": 1056,
+      "missing_rise": 0,
+      "missing_fall": 0,
+      "duplicate_edges": 0,
+      "max_abs_width_error_ps": 333
+    }
+  },
+  "functional_pass": true,
+  "NoAux_vs_AuxOn_extra_cycles": 0,
+  "parameters_refitted": false,
+  "outliers_removed": false
+}

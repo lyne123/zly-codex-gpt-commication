@@ -1,0 +1,1 @@
+RANGE_BOUNDARIES_PASS cases=1024 rise=1..60 fall=5..63

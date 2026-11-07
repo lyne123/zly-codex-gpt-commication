@@ -1,0 +1,7 @@
+model_LUT_delay_ps,mode,expected_pulses,actual_valid_pulses,correct_pulses,missing_rise,missing_fall,duplicate_edges,mispairs,polarity_conflict,repeat_rise,orphan_fall,merge_range_errors,accepted_out_of_range,raw_range_rejected,functional_pass
+0,aux_on,3512,3512,3512,0,0,0,0,0,0,0,0,0,235,True
+0,noaux,3512,3512,3512,0,0,0,0,0,0,0,0,0,235,True
+250,aux_on,3512,3509,3506,3,3,0,3,3,0,0,0,0,173,False
+250,noaux,3512,3509,3506,3,3,0,3,3,0,0,0,0,173,False
+500,aux_on,3512,3512,3512,0,0,0,0,0,0,0,0,0,235,True
+500,noaux,3512,3512,3512,0,0,0,0,0,0,0,0,0,235,True

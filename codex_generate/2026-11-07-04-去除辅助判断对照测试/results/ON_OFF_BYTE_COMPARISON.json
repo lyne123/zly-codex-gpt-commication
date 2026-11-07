@@ -1,0 +1,38 @@
+[
+  {
+    "delay_ps": 0,
+    "byte_equal_files": {
+      "raw.csv": false,
+      "candidate.csv": true,
+      "timestamps.csv": true,
+      "widths.csv": true,
+      "errors.csv": true,
+      "fifo.csv": true,
+      "error_fifo.csv": true
+    }
+  },
+  {
+    "delay_ps": 250,
+    "byte_equal_files": {
+      "raw.csv": false,
+      "candidate.csv": true,
+      "timestamps.csv": true,
+      "widths.csv": true,
+      "errors.csv": true,
+      "fifo.csv": true,
+      "error_fifo.csv": true
+    }
+  },
+  {
+    "delay_ps": 500,
+    "byte_equal_files": {
+      "raw.csv": false,
+      "candidate.csv": false,
+      "timestamps.csv": false,
+      "widths.csv": false,
+      "errors.csv": true,
+      "fifo.csv": false,
+      "error_fifo.csv": true
+    }
+  }
+]
