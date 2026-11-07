@@ -1,4 +1,4 @@
-"""只有完整RTL门通过后准备一次增量实现，原IP配置和生产版本保持不动。"""
+"""完整RTL或用户确认范围的RTL门通过后准备一次实现，保留范围外失败。"""
 from pathlib import Path
 import hashlib,json,shutil
 TASK=Path(__file__).resolve().parents[1];ROOT=TASK.parents[1]
@@ -6,7 +6,9 @@ WORK=ROOT/'codex_generate/.vivado_work/tdc_noaux_20261107_04'
 OLD=ROOT/'codex_generate/.vivado_work/tdc_auxmatch_20261107_03'
 PREV=ROOT/'codex_generate/2026-11-07-03-辅助跨帧匹配时序优化'
 gate=json.loads((TASK/'results/RTL_GATE.json').read_text(encoding='utf-8'))
-assert gate['pass_all'],'RTL失败，禁止进入实现'
+scope=json.loads((TASK/'results/SCOPED_RTL_GATE.json').read_text(encoding='utf-8'))
+assert scope['user_scope_confirmed'] and scope['pass_all'],'用户确认范围的RTL门未通过'
+assert hashlib.sha256((TASK/'results/RTL_GATE.json').read_bytes()).hexdigest()==scope['original_RTL_GATE_sha256'],'不得改写原完整FAIL记录'
 assert not (WORK/'implementation').exists(),'不重复覆盖实现'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 frozen=json.loads((TASK/'inputs/SOURCE.json').read_text(encoding='utf-8'))
@@ -22,5 +24,5 @@ source=PREV/'implementation/corrected_routed.dcp'
 assert sha(source)=='01004b1502ef357304503269eaba73c9e41415456b58ecac76c393a53a6d9584'
 shutil.copy2(source,WORK/'reference_corrected.dcp')
 shutil.copy2(TASK/'scripts/build_noaux.tcl',WORK/'build_noaux.tcl')
-(WORK/'RTL_APPROVED.flag').write_text('RTL_GATE pass_all=true; 3512 pulses x 3 identical input/model configurations\n',encoding='ascii')
+(WORK/'RTL_APPROVED.flag').write_text('SCOPED_RTL_GATE pass_all=true; high_and_low_min_ps=2000; original_full_RTL_matrix_pass=false; original_stimulus_unchanged\n',encoding='ascii')
 print('NOAUX_IMPLEMENTATION_PREPARED; frozen inputs; 578 FIFO placements; no hardware access')

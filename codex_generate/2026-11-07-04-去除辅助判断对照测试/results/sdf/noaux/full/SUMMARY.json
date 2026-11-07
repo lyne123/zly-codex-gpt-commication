@@ -1,0 +1,190 @@
+{
+  "variant": "noaux",
+  "dataset": "full",
+  "expected_pulses": 3512,
+  "actual_edges": 7022,
+  "actual_widths": 3510,
+  "correct_pairs": 3510,
+  "missing_rise_ids": [
+    2918,
+    2984
+  ],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "mispairs": 0,
+  "faults": [],
+  "pairing_faults": [
+    {
+      "kind": "orphan_fall",
+      "event_id": 2918
+    },
+    {
+      "kind": "orphan_fall",
+      "event_id": 2984
+    }
+  ],
+  "business_errors": [
+    {
+      "time_ps": "238748150",
+      "code": "100"
+    },
+    {
+      "time_ps": "238750150",
+      "code": "103"
+    },
+    {
+      "time_ps": "238762150",
+      "code": "2"
+    },
+    {
+      "time_ps": "242048150",
+      "code": "100"
+    },
+    {
+      "time_ps": "242050150",
+      "code": "103"
+    },
+    {
+      "time_ps": "242062150",
+      "code": "2"
+    }
+  ],
+  "error_fifo": [
+    {
+      "time_ps": "238810150",
+      "code": "2"
+    },
+    {
+      "time_ps": "242110150",
+      "code": "2"
+    }
+  ],
+  "FIFO_sequence_equal": true,
+  "FIFO_outputs": 3510,
+  "functional_pass": false,
+  "timing_warning_gate_pass": true,
+  "MAX_SDF_pass": false,
+  "warning_counts": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 1073744,
+    "startup_async_reset_first_stage": 1,
+    "asynchronous_TDL_thermometer_sampler": 85541,
+    "non_feedback_ILA": 110
+  },
+  "warning_first_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 10004089,
+    "non_feedback_ILA": 41007070
+  },
+  "warning_last_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 268899427,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 268404141,
+    "non_feedback_ILA": 263827116
+  },
+  "width_tolerance_ps": 1000,
+  "input_extra_cycles": 1,
+  "pulse_width": {
+    "n": 3510,
+    "bias_ps": 0.8301994301994302,
+    "rmse_ps": 64.54212167325669,
+    "std_sample_ps": 64.54597730120862,
+    "std_population_ps": 64.5367820625693,
+    "max_abs_ps": 199
+  },
+  "rise": {
+    "n": 3510,
+    "bias_ps": 297.96467236467237,
+    "rmse_ps": 302.33959039501906,
+    "std_sample_ps": 51.25456452401456,
+    "std_population_ps": 51.247262783892886,
+    "max_abs_ps": 429
+  },
+  "fall": {
+    "n": 3512,
+    "bias_ps": 298.7892938496583,
+    "rmse_ps": 302.94197366450373,
+    "std_sample_ps": 49.995089697507204,
+    "std_population_ps": 49.987971438811265,
+    "max_abs_ps": 429
+  },
+  "groups": {
+    "fixed_25300": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 70.58852597979363,
+      "std_sample_ps": 70.76566183165647,
+      "std_population_ps": 70.58852597979363,
+      "max_abs_ps": 199
+    },
+    "10MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20MHz_50": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 79.62060034940706,
+      "std_sample_ps": 79.8204014172571,
+      "std_population_ps": 79.62060034940706,
+      "max_abs_ps": 120
+    },
+    "10MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 79.62060034940706,
+      "std_sample_ps": 79.8204014172571,
+      "std_population_ps": 79.62060034940706,
+      "max_abs_ps": 120
+    },
+    "10MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 79.62060034940706,
+      "std_sample_ps": 79.8204014172571,
+      "std_population_ps": 79.62060034940706,
+      "max_abs_ps": 120
+    },
+    "20MHz_5": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 65.12987025935182,
+      "std_sample_ps": 65.29330808285034,
+      "std_population_ps": 65.12987025935182,
+      "max_abs_ps": 140
+    },
+    "20MHz_95": {
+      "n": 200,
+      "bias_ps": 0,
+      "rmse_ps": 65.12987025935182,
+      "std_sample_ps": 65.29330808285034,
+      "std_population_ps": 65.12987025935182,
+      "max_abs_ps": 140
+    },
+    "ATC_10MHz": {
+      "n": 1056,
+      "bias_ps": 3.390151515151515,
+      "rmse_ps": 63.429109200266986,
+      "std_sample_ps": 63.36845730794143,
+      "std_population_ps": 63.33844619694826,
+      "max_abs_ps": 178
+    },
+    "ATC_20MHz": {
+      "n": 1054,
+      "bias_ps": -0.6318785578747628,
+      "rmse_ps": 60.64196416539303,
+      "std_sample_ps": 60.667458503335986,
+      "std_population_ps": 60.638672044536975,
+      "max_abs_ps": 167
+    }
+  },
+  "parameters_refitted": false,
+  "outliers_removed": false,
+  "epoch_ps": 677150,
+  "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+}

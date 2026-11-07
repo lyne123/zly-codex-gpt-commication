@@ -1,0 +1,24 @@
+{
+  "annotation_pass": true,
+  "simulator": "Vivado XSim 2022.2",
+  "corner": "slow/MAX",
+  "device": "xc7k325tffg900-2",
+  "timing_checks_enabled": true,
+  "input_extra_cycles": 1,
+  "DCP_sha256": "b5fc73119676dbe56468269dabce2db5ce8466328f4322a0669fd572c2b54a26",
+  "native_global_annotation_success": true,
+  "zero_unmatched_diagnostics": true,
+  "constructs_requested": {
+    "CELL": 8754,
+    "IOPATH": 24812,
+    "INTERCONNECT": 29724,
+    "SETUPHOLD": 30684,
+    "WIDTH": 2184,
+    "PERIOD": 1136,
+    "RECREM": 796
+  },
+  "SDF_sha256": "00085742509528ab0a99037e0315ad44b3e7b00d28184fc4cdf98f3ad00a07eb",
+  "netlist_sha256": "9848da8b2bcca7b97d48d06e13daed179e2b1a046eca69252d48569654674827",
+  "diagnostics": [],
+  "note": "工具提供严格全局成功；请求项计数不是逐条成功率读回。没有关闭specify、timing check或互连延迟。"
+}

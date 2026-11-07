@@ -1,0 +1,24 @@
+{
+  "data_commit": "d8b691b65316246567696cdbf8abd4e0f30950ee",
+  "source": "codex_generate/2026-11-07-03-辅助跨帧匹配时序优化/results/sdf/corrected/full",
+  "reference_is_Corrected_AuxOn_not_production_A": true,
+  "simulator": "XSim 2022.2",
+  "corner": "slow/MAX",
+  "DCP_sha256": "01004b1502ef357304503269eaba73c9e41415456b58ecac76c393a53a6d9584",
+  "original_stimulus_sha256": "451a2cb59cc0704a9e5ac8454bb983237543705f2c4782789b3067be4d9fa76f",
+  "files": {
+    "RUN_MANIFEST.json": "377d0ef0a0e4ca91a4e648df0612f4c755040b0af30463204593e4508398cfd8",
+    "SUMMARY.json": "402ecce13393c8b5c0fccf5d457857b7ef0333622cf0ec3e934750da09e17df9",
+    "PULSE_RESULTS.csv": "3bfb85b4890c9d9de57f265f4c5e1da0ac8291158814ac32e5b13a54ef011158",
+    "EDGE_RESULTS.csv": "30e661d1d1b905ccf551558d8a72eca9cf90d2c1eb50a65760972f936884d806",
+    "candidate.csv": "5ad5138e8a21dbb2b83fc2dd0045f834859c92b2820bcc53bb954dfc1cdc04bd",
+    "raw.csv": "b5becc878e966743684100d5fbea2bc8638e1b984d1cdebc9caf9924e70619dd",
+    "widths.csv": "82b5fb962eb3275cc38a3fc1e2fbdbf41acaa80442c73d87c5070bbf720d0665",
+    "errors.csv": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+    "fifo.csv": "655f043b181909614307cdd0494054435e821dddea56be1e2a95d3c06af7aa03",
+    "error_fifo.csv": "0d9a570ca2ff2f1874bfedf2b5dd740139ecbae4bb53cb8c0385b08f50fdc443",
+    "simulation.log.gz": "c22312761c3a6e7266f64e8c2cc88cce54e61a39c1a038d20c2e3ac14fd99a1e"
+  },
+  "old_files_not_duplicated": true,
+  "reason": "既有相同输入/参数/角的完整AuxOn SDF已完成，用不可变提交和校验引用，不重复运行或复制大型旧文件"
+}

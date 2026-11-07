@@ -1,0 +1,90 @@
+{
+  "dataset": "minimal",
+  "scope": "input high>=2000ps AND adjacent low>=2000ps",
+  "full_input_pulses": 112,
+  "scope_pulses": 112,
+  "scope_correct_pulses": 112,
+  "excluded_ids": [],
+  "short_gaps": [],
+  "original_full_functional_pass": true,
+  "original_full_MAX_SDF_pass": true,
+  "scope_violations": [],
+  "original_errors_classified": [],
+  "accepted_out_of_range": [],
+  "merge_error_replay_exact": true,
+  "merge_error_output_cycles": 1,
+  "candidate_to_timestamp_cycles": 5,
+  "scope_pulse_width": {
+    "n": 112,
+    "bias_ps": 21.053571428571427,
+    "rmse_ps": 41.49505134006085,
+    "std_sample_ps": 35.91803463937319,
+    "std_population_ps": 35.75732674314911,
+    "max_abs_ps": 100
+  },
+  "scope_groups": {
+    "10M_50": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20M_50": {
+      "n": 16,
+      "bias_ps": 22.5,
+      "rmse_ps": 39.88734135035826,
+      "std_sample_ps": 34.01568265766052,
+      "std_population_ps": 32.93554311074891,
+      "max_abs_ps": 59
+    },
+    "20M_5": {
+      "n": 16,
+      "bias_ps": 35.25,
+      "rmse_ps": 45.34037935439006,
+      "std_sample_ps": 29.45165530152762,
+      "std_population_ps": 28.516442625264464,
+      "max_abs_ps": 69
+    },
+    "20M_95": {
+      "n": 16,
+      "bias_ps": 42.25,
+      "rmse_ps": 73.79193722894121,
+      "std_sample_ps": 62.48359784775521,
+      "std_population_ps": 60.499483468869386,
+      "max_abs_ps": 100
+    },
+    "10M_20M_switch": {
+      "n": 16,
+      "bias_ps": 11.25,
+      "rmse_ps": 28.20460955234091,
+      "std_sample_ps": 26.71204472393181,
+      "std_population_ps": 25.8638260897339,
+      "max_abs_ps": 59
+    },
+    "adjacent_2ns": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "phase_boundary": {
+      "n": 16,
+      "bias_ps": 36.125,
+      "rmse_ps": 46.53359001839424,
+      "std_sample_ps": 30.293838757520756,
+      "std_population_ps": 29.331883250142667,
+      "max_abs_ps": 78
+    }
+  },
+  "timing_warning_gate_pass": true,
+  "pass_all": true,
+  "input_waveform_changed": false,
+  "thresholds_changed": false,
+  "parameters_refitted": false,
+  "scope_selection_uses_only_true_input_times": true,
+  "original_failure_summary_preserved": true
+}

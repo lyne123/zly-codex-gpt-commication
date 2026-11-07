@@ -1,0 +1,125 @@
+{
+  "variant": "noaux",
+  "dataset": "minimal",
+  "expected_pulses": 112,
+  "actual_edges": 224,
+  "actual_widths": 112,
+  "correct_pairs": 112,
+  "missing_rise_ids": [],
+  "missing_fall_ids": [],
+  "duplicate_rise_ids": [],
+  "duplicate_fall_ids": [],
+  "mispairs": 0,
+  "faults": [],
+  "pairing_faults": [],
+  "business_errors": [],
+  "error_fifo": [],
+  "FIFO_sequence_equal": true,
+  "FIFO_outputs": 112,
+  "functional_pass": true,
+  "timing_warning_gate_pass": true,
+  "MAX_SDF_pass": true,
+  "warning_counts": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 66836,
+    "startup_async_reset_first_stage": 1,
+    "asynchronous_TDL_thermometer_sampler": 3326
+  },
+  "warning_first_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 5204080
+  },
+  "warning_last_ps": {
+    "unused_MMCM_CLKOUT5_6_zero_period": 17172427,
+    "startup_async_reset_first_stage": 671623,
+    "asynchronous_TDL_thermometer_sampler": 16677134
+  },
+  "width_tolerance_ps": 1000,
+  "input_extra_cycles": 1,
+  "pulse_width": {
+    "n": 112,
+    "bias_ps": 21.053571428571427,
+    "rmse_ps": 41.49505134006085,
+    "std_sample_ps": 35.91803463937319,
+    "std_population_ps": 35.75732674314911,
+    "max_abs_ps": 100
+  },
+  "rise": {
+    "n": 112,
+    "bias_ps": 286,
+    "rmse_ps": 286.59815072676236,
+    "std_sample_ps": 18.589932371732438,
+    "std_population_ps": 18.506755523321747,
+    "max_abs_ps": 310
+  },
+  "fall": {
+    "n": 112,
+    "bias_ps": 307.05357142857144,
+    "rmse_ps": 308.9525795790859,
+    "std_sample_ps": 34.356068555488804,
+    "std_population_ps": 34.20234935688793,
+    "max_abs_ps": 376
+  },
+  "groups": {
+    "10M_50": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "20M_50": {
+      "n": 16,
+      "bias_ps": 22.5,
+      "rmse_ps": 39.88734135035826,
+      "std_sample_ps": 34.01568265766052,
+      "std_population_ps": 32.93554311074891,
+      "max_abs_ps": 59
+    },
+    "20M_5": {
+      "n": 16,
+      "bias_ps": 35.25,
+      "rmse_ps": 45.34037935439006,
+      "std_sample_ps": 29.45165530152762,
+      "std_population_ps": 28.516442625264464,
+      "max_abs_ps": 69
+    },
+    "20M_95": {
+      "n": 16,
+      "bias_ps": 42.25,
+      "rmse_ps": 73.79193722894121,
+      "std_sample_ps": 62.48359784775521,
+      "std_population_ps": 60.499483468869386,
+      "max_abs_ps": 100
+    },
+    "10M_20M_switch": {
+      "n": 16,
+      "bias_ps": 11.25,
+      "rmse_ps": 28.20460955234091,
+      "std_sample_ps": 26.71204472393181,
+      "std_population_ps": 25.8638260897339,
+      "max_abs_ps": 59
+    },
+    "adjacent_2ns": {
+      "n": 16,
+      "bias_ps": 0,
+      "rmse_ps": 0.0,
+      "std_sample_ps": 0.0,
+      "std_population_ps": 0.0,
+      "max_abs_ps": 0
+    },
+    "phase_boundary": {
+      "n": 16,
+      "bias_ps": 36.125,
+      "rmse_ps": 46.53359001839424,
+      "std_sample_ps": 30.293838757520756,
+      "std_population_ps": 29.331883250142667,
+      "max_abs_ps": 78
+    }
+  },
+  "parameters_refitted": false,
+  "outliers_removed": false,
+  "epoch_ps": 677150,
+  "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+}

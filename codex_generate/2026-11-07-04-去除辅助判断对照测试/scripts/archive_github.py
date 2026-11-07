@@ -5,7 +5,7 @@ import csv,hashlib,json,re,shutil
 TASK=Path(__file__).resolve().parents[1];REPO=TASK/'github'
 assert json.loads((TASK/'VALIDATION.json').read_text(encoding='utf-8'))['archive_ready']
 DEST=REPO/'codex_generate'/TASK.name
-assert not DEST.exists(),'不覆盖已有任务'
+assert DEST.parent==REPO/'codex_generate' and DEST.name==TASK.name,'只更新本次任务目录'
 
 def sha(p):
     with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -42,6 +42,5 @@ for p in files+[TASK/'FILE_LIST.csv',TASK/'SHA256SUMS.txt']:
 index=REPO/'codex_generate/README.md'
 old=index.read_bytes()
 line=f'\n2026-11-07-04：[去除辅助判断对照测试]({TASK.name}/README.md)。\n'.encode('utf-8')
-assert TASK.name.encode('utf-8') not in old,'已有本任务索引，不重复追加'
-index.write_bytes(old+line)
+if TASK.name.encode('utf-8') not in old:index.write_bytes(old+line)
 print('ARCHIVE_COPIED',len(files)+2,'files; index append only; no commit or push yet',flush=True)

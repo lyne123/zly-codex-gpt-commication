@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "variant": "noaux",
+  "dataset": "minimal",
+  "timing_checks_enabled": true,
+  "stimulus_sha256": "ef6210308db8b79b6ee2c306eccc34937d71fec0ae0a2ba12f50ffd8fd4c2769",
+  "truth_sha256": "dd44255e3e086936b9f61fcdafe6ea6d0b9902a037187e95544190a020bb07de",
+  "native_simulation_log": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_noaux_20261107_04\\sdf_noaux\\minimal\\simulation.log",
+  "native_log_sha256": "7378f860aff12d658c69a049488d1891a51e49741a5fa5b5b6e212573f0dc685",
+  "compressed_log_sha256": "a4c7aa271eb126e37296a47340e55423aae394bfb485ad326b4acf888ca203ad"
+}

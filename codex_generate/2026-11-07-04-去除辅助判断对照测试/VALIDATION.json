@@ -1,9 +1,9 @@
 {
   "base_commit": "d8b691b65316246567696cdbf8abd4e0f30950ee",
-  "status": "RTL_SUPPLEMENTAL_FAIL_SCOPE_PENDING",
+  "status": "PASS_IN_USER_SCOPE",
   "requested_six_PWM_cases_pass": true,
   "complete_RTL_matrix_pass": false,
-  "scope_clarification_pending": true,
+  "scope_clarification_pending": false,
   "extra_cycles_vs_Corrected": 0,
   "rise_range_inclusive": [
     1,
@@ -18,12 +18,516 @@
   "production_RTL_unchanged": true,
   "TDL_CARRY_encoder_unchanged": true,
   "candidate_locate_merge_unchanged": true,
-  "synthesis": "NOT_RUN",
-  "implementation": "NOT_RUN",
-  "core_timing": "NOT_EVALUATED",
-  "MAX_SDF": "NOT_RUN",
-  "NoAux_BIT_generated": false,
-  "NoAux_LTX_generated": false,
+  "synthesis": "COMPLETED",
+  "implementation": "COMPLETED",
+  "core_timing": "PASS",
+  "MAX_SDF": "COMPLETED",
+  "NoAux_BIT_generated": true,
+  "NoAux_LTX_generated": true,
   "FPGA_programmed": false,
-  "archive_ready": true
+  "archive_ready": true,
+  "scope_user_confirmed": true,
+  "scope_high_min_ps": 2000,
+  "scope_low_min_ps": 2000,
+  "scope_pulses": 3504,
+  "scoped_RTL_matrix_pass": true,
+  "core_setup_min_ns": 0.099,
+  "core_hold_min_ns": 0.054,
+  "core_setup_negative": 0,
+  "core_hold_negative": 0,
+  "global_WNS_ns": -0.05,
+  "global_TNS_ns": -0.166,
+  "global_WHS_ns": 0.054,
+  "global_THS_ns": 0.0,
+  "historical_ILA_negative_endpoints": 14,
+  "MAX_SDF_minimal": {
+    "dataset": "minimal",
+    "scope": "input high>=2000ps AND adjacent low>=2000ps",
+    "full_input_pulses": 112,
+    "scope_pulses": 112,
+    "scope_correct_pulses": 112,
+    "excluded_ids": [],
+    "short_gaps": [],
+    "original_full_functional_pass": true,
+    "original_full_MAX_SDF_pass": true,
+    "scope_violations": [],
+    "original_errors_classified": [],
+    "accepted_out_of_range": [],
+    "merge_error_replay_exact": true,
+    "merge_error_output_cycles": 1,
+    "candidate_to_timestamp_cycles": 5,
+    "scope_pulse_width": {
+      "n": 112,
+      "bias_ps": 21.053571428571427,
+      "rmse_ps": 41.49505134006085,
+      "std_sample_ps": 35.91803463937319,
+      "std_population_ps": 35.75732674314911,
+      "max_abs_ps": 100
+    },
+    "scope_groups": {
+      "10M_50": {
+        "n": 16,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20M_50": {
+        "n": 16,
+        "bias_ps": 22.5,
+        "rmse_ps": 39.88734135035826,
+        "std_sample_ps": 34.01568265766052,
+        "std_population_ps": 32.93554311074891,
+        "max_abs_ps": 59
+      },
+      "20M_5": {
+        "n": 16,
+        "bias_ps": 35.25,
+        "rmse_ps": 45.34037935439006,
+        "std_sample_ps": 29.45165530152762,
+        "std_population_ps": 28.516442625264464,
+        "max_abs_ps": 69
+      },
+      "20M_95": {
+        "n": 16,
+        "bias_ps": 42.25,
+        "rmse_ps": 73.79193722894121,
+        "std_sample_ps": 62.48359784775521,
+        "std_population_ps": 60.499483468869386,
+        "max_abs_ps": 100
+      },
+      "10M_20M_switch": {
+        "n": 16,
+        "bias_ps": 11.25,
+        "rmse_ps": 28.20460955234091,
+        "std_sample_ps": 26.71204472393181,
+        "std_population_ps": 25.8638260897339,
+        "max_abs_ps": 59
+      },
+      "adjacent_2ns": {
+        "n": 16,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "phase_boundary": {
+        "n": 16,
+        "bias_ps": 36.125,
+        "rmse_ps": 46.53359001839424,
+        "std_sample_ps": 30.293838757520756,
+        "std_population_ps": 29.331883250142667,
+        "max_abs_ps": 78
+      }
+    },
+    "timing_warning_gate_pass": true,
+    "pass_all": true,
+    "input_waveform_changed": false,
+    "thresholds_changed": false,
+    "parameters_refitted": false,
+    "scope_selection_uses_only_true_input_times": true,
+    "original_failure_summary_preserved": true
+  },
+  "MAX_SDF_full": "IN_PROGRESS",
+  "NoAux_LTX_native_generated": true,
+  "NoAux_LTX_delivered": true,
+  "original_complete_RTL_matrix_pass": false,
+  "MAX_SDF_full_scoped": {
+    "dataset": "full",
+    "scope": "input high>=2000ps AND adjacent low>=2000ps",
+    "full_input_pulses": 3512,
+    "scope_pulses": 3504,
+    "scope_correct_pulses": 3504,
+    "excluded_ids": [
+      2851,
+      2852,
+      2917,
+      2918,
+      2983,
+      2984,
+      3049,
+      3050
+    ],
+    "short_gaps": [
+      {
+        "left": 2851,
+        "right": 2852,
+        "low_gap_ps": 1845
+      },
+      {
+        "left": 2917,
+        "right": 2918,
+        "low_gap_ps": 1330
+      },
+      {
+        "left": 2983,
+        "right": 2984,
+        "low_gap_ps": 1293
+      },
+      {
+        "left": 3049,
+        "right": 3050,
+        "low_gap_ps": 1736
+      }
+    ],
+    "original_full_functional_pass": false,
+    "original_full_MAX_SDF_pass": false,
+    "scope_violations": [],
+    "original_errors_classified": [
+      {
+        "time_ps": "238748150",
+        "code": "100",
+        "event_ids": [
+          2917,
+          2918,
+          2918
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      },
+      {
+        "time_ps": "238750150",
+        "code": "103",
+        "event_ids": [
+          2917,
+          2918
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      },
+      {
+        "time_ps": "238762150",
+        "code": "2",
+        "event_ids": [
+          2918
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      },
+      {
+        "time_ps": "242048150",
+        "code": "100",
+        "event_ids": [
+          2983,
+          2984,
+          2984
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      },
+      {
+        "time_ps": "242050150",
+        "code": "103",
+        "event_ids": [
+          2983,
+          2984
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      },
+      {
+        "time_ps": "242062150",
+        "code": "2",
+        "event_ids": [
+          2984
+        ],
+        "classification": "OUT_OF_SCOPE",
+        "basis": "固定RTL流水和实际事件ID；Merge错误另经状态重放校验"
+      }
+    ],
+    "accepted_out_of_range": [],
+    "merge_error_replay_exact": true,
+    "merge_error_output_cycles": 1,
+    "candidate_to_timestamp_cycles": 5,
+    "scope_pulse_width": {
+      "n": 3504,
+      "bias_ps": 0.800513698630137,
+      "rmse_ps": 64.5813462649094,
+      "std_sample_ps": 64.58560135724042,
+      "std_population_ps": 64.57638471768479,
+      "max_abs_ps": 199
+    },
+    "scope_groups": {
+      "fixed_25300": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 70.58852597979363,
+        "std_sample_ps": 70.76566183165647,
+        "std_population_ps": 70.58852597979363,
+        "max_abs_ps": 199
+      },
+      "10MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "10MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "10MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "20MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.12987025935182,
+        "std_sample_ps": 65.29330808285034,
+        "std_population_ps": 65.12987025935182,
+        "max_abs_ps": 140
+      },
+      "20MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.12987025935182,
+        "std_sample_ps": 65.29330808285034,
+        "std_population_ps": 65.12987025935182,
+        "max_abs_ps": 140
+      },
+      "ATC_10MHz": {
+        "n": 1056,
+        "bias_ps": 3.390151515151515,
+        "rmse_ps": 63.429109200266986,
+        "std_sample_ps": 63.36845730794143,
+        "std_population_ps": 63.33844619694826,
+        "max_abs_ps": 178
+      },
+      "ATC_20MHz": {
+        "n": 1048,
+        "bias_ps": -0.7395038167938931,
+        "rmse_ps": 60.758430131637446,
+        "std_sample_ps": 60.782936049098446,
+        "std_population_ps": 60.753929635588314,
+        "max_abs_ps": 167
+      }
+    },
+    "timing_warning_gate_pass": true,
+    "pass_all": true,
+    "input_waveform_changed": false,
+    "thresholds_changed": false,
+    "parameters_refitted": false,
+    "scope_selection_uses_only_true_input_times": true,
+    "original_failure_summary_preserved": true
+  },
+  "MAX_SDF_full_original": {
+    "variant": "noaux",
+    "dataset": "full",
+    "expected_pulses": 3512,
+    "actual_edges": 7022,
+    "actual_widths": 3510,
+    "correct_pairs": 3510,
+    "missing_rise_ids": [
+      2918,
+      2984
+    ],
+    "missing_fall_ids": [],
+    "duplicate_rise_ids": [],
+    "duplicate_fall_ids": [],
+    "mispairs": 0,
+    "faults": [],
+    "pairing_faults": [
+      {
+        "kind": "orphan_fall",
+        "event_id": 2918
+      },
+      {
+        "kind": "orphan_fall",
+        "event_id": 2984
+      }
+    ],
+    "business_errors": [
+      {
+        "time_ps": "238748150",
+        "code": "100"
+      },
+      {
+        "time_ps": "238750150",
+        "code": "103"
+      },
+      {
+        "time_ps": "238762150",
+        "code": "2"
+      },
+      {
+        "time_ps": "242048150",
+        "code": "100"
+      },
+      {
+        "time_ps": "242050150",
+        "code": "103"
+      },
+      {
+        "time_ps": "242062150",
+        "code": "2"
+      }
+    ],
+    "error_fifo": [
+      {
+        "time_ps": "238810150",
+        "code": "2"
+      },
+      {
+        "time_ps": "242110150",
+        "code": "2"
+      }
+    ],
+    "FIFO_sequence_equal": true,
+    "FIFO_outputs": 3510,
+    "functional_pass": false,
+    "timing_warning_gate_pass": true,
+    "MAX_SDF_pass": false,
+    "warning_counts": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 1073744,
+      "startup_async_reset_first_stage": 1,
+      "asynchronous_TDL_thermometer_sampler": 85541,
+      "non_feedback_ILA": 110
+    },
+    "warning_first_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 463927,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_TDL_thermometer_sampler": 10004089,
+      "non_feedback_ILA": 41007070
+    },
+    "warning_last_ps": {
+      "unused_MMCM_CLKOUT5_6_zero_period": 268899427,
+      "startup_async_reset_first_stage": 671623,
+      "asynchronous_TDL_thermometer_sampler": 268404141,
+      "non_feedback_ILA": 263827116
+    },
+    "width_tolerance_ps": 1000,
+    "input_extra_cycles": 1,
+    "pulse_width": {
+      "n": 3510,
+      "bias_ps": 0.8301994301994302,
+      "rmse_ps": 64.54212167325669,
+      "std_sample_ps": 64.54597730120862,
+      "std_population_ps": 64.5367820625693,
+      "max_abs_ps": 199
+    },
+    "rise": {
+      "n": 3510,
+      "bias_ps": 297.96467236467237,
+      "rmse_ps": 302.33959039501906,
+      "std_sample_ps": 51.25456452401456,
+      "std_population_ps": 51.247262783892886,
+      "max_abs_ps": 429
+    },
+    "fall": {
+      "n": 3512,
+      "bias_ps": 298.7892938496583,
+      "rmse_ps": 302.94197366450373,
+      "std_sample_ps": 49.995089697507204,
+      "std_population_ps": 49.987971438811265,
+      "max_abs_ps": 429
+    },
+    "groups": {
+      "fixed_25300": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 70.58852597979363,
+        "std_sample_ps": 70.76566183165647,
+        "std_population_ps": 70.58852597979363,
+        "max_abs_ps": 199
+      },
+      "10MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 0.0,
+        "std_sample_ps": 0.0,
+        "std_population_ps": 0.0,
+        "max_abs_ps": 0
+      },
+      "20MHz_50": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "10MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "10MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 79.62060034940706,
+        "std_sample_ps": 79.8204014172571,
+        "std_population_ps": 79.62060034940706,
+        "max_abs_ps": 120
+      },
+      "20MHz_5": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.12987025935182,
+        "std_sample_ps": 65.29330808285034,
+        "std_population_ps": 65.12987025935182,
+        "max_abs_ps": 140
+      },
+      "20MHz_95": {
+        "n": 200,
+        "bias_ps": 0,
+        "rmse_ps": 65.12987025935182,
+        "std_sample_ps": 65.29330808285034,
+        "std_population_ps": 65.12987025935182,
+        "max_abs_ps": 140
+      },
+      "ATC_10MHz": {
+        "n": 1056,
+        "bias_ps": 3.390151515151515,
+        "rmse_ps": 63.429109200266986,
+        "std_sample_ps": 63.36845730794143,
+        "std_population_ps": 63.33844619694826,
+        "max_abs_ps": 178
+      },
+      "ATC_20MHz": {
+        "n": 1054,
+        "bias_ps": -0.6318785578747628,
+        "rmse_ps": 60.64196416539303,
+        "std_sample_ps": 60.667458503335986,
+        "std_population_ps": 60.638672044536975,
+        "max_abs_ps": 167
+      }
+    },
+    "parameters_refitted": false,
+    "outliers_removed": false,
+    "epoch_ps": 677150,
+    "formula": "Bias=mean(error); RMSE=sqrt(mean(error^2)); STD=sqrt(sum((error-Bias)^2)/(N-1)); no sqrt(2) divisor"
+  },
+  "Corrected_BIT_unchanged": true,
+  "DCP_sha256": "b5fc73119676dbe56468269dabce2db5ce8466328f4322a0669fd572c2b54a26",
+  "candidate_RTL_sha256": {
+    "tdc_fine_layer.v": "6779e342b622ad84356d69be6f3d6a9cdbeabd904d8e39714a711594e072a05c",
+    "tdc_meas_top.v": "8a5a04290b95e08f28411871c951ff3e1490e5d02a9bc58bf6f4add1811d3adf",
+    "tdc_time_candicate.v": "d82a5cf970716b4246717c16ff2185cece61c8dc333e479fb66d9e557b570fd2",
+    "tdc_time_locate.v": "b6f239b1e436a4d79b8ff937f2cf45b8094ddb71c3b59138a5507aa51302513e",
+    "tdc_time_merge.v": "f47fdda3bb4aa87930d9ad0050a5cdc29104fcc7bf2fd13fd470e7fc1d46aa2a"
+  }
 }

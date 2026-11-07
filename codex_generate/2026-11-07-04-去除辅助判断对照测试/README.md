@@ -1,16 +1,16 @@
 # 2026-11-07-04 去除辅助判断对照测试
 
-六个指定固定PWM工况在三组RTL模型下均通过；额外ATC短低间隔测试两版同样失败。整体RTL门保持FAIL，未综合、布局布线、执行MAX-SDF或生成NoAux BIT，等待范围澄清。
+**约定范围验收通过**，高电平和相邻低电平均≥2ns。NoAux BIT生成状态：True；本轮未烧录FPGA/Flash，正式RTL与Corrected BIT保留。
 
-- [详细结果](RESULTS.md)、[时序状态](TIMING_REPORT.md)、[机器状态](VALIDATION.json)。
-- `rtl/`：完整参数化候选，默认ENABLE_AUX_CONFIRM=1，NoAux编译固定0；`reference/rtl/`：指定提交原版；`RTL.diff`：两个修改文件。
-- `inputs/`：冻结激励、真实边沿、8参数、XCI/XDC及SHA256来源。
-- `sim/`、`scripts/`：阈值/流水单元、三实例对照、分析和未执行的构建脚本。
-- `results/REQUESTED_PWM_COMPARISON.csv`：六工况；`RTL_COMPARISON.csv`：完整含失败比较。
-- `results/SHORT_GAPS.csv`、`CONFLICT_TRACE.csv`：不足2ns低间隔及首个混合极性帧。
-- `results/rtl/`：全部原始CSV、错误、FIFO及日志，两次准备期失败单独保留。
-- `SHA256SUMS.txt`、`FILE_LIST.csv`：校验和清单，均不包含自身以避免循环。
+- [详细结果](RESULTS.md)、[范围确认](SCOPE_DECISION.md)、[时序报告](TIMING_REPORT.md)、[机器状态](VALIDATION.json)。
+- `rtl/`：完整参数化候选；默认ENABLE_AUX_CONFIRM=1，NoAux编译固定0。`reference/rtl/`及`RTL.diff`保留原版和差异。
+- 原阈值上升1～60、下降5～63，8参数不变，确认级保留，相对Corrected新增延迟0。
+- 核心Setup/Hold +0.099/+0.054ns；历史14条ILA负端点保留，全部实际NoAux报告在results/timing。
+- `results/RTL_GATE.json`保留原完整补充FAIL；`SCOPED_RTL_GATE.json`是用户确认范围的新判定。没有改波形或删异常。
+- `results/sdf/noaux/`：最小和完整原始CSV、完整压缩日志、注释证据、原完整与范围两份摘要。
+- `results/SDF_COMPARISON.csv`：相同输入ID的AuxOn/NoAux误差比较；旧AuxOn文件通过不可变提交和SHA256引用，不重复打包。
+- `implementation/`：本次路由/综合DCP、SDF、网表、有效约束，以及NoAux.bit/NoAux.ltx。大文件使用Git LFS。
+- `inputs/`、`sim/`、`scripts/`、`results/rtl/`保存全部必要输入、验证程序和失败记录。完整SDF日志无损压缩，原日志位置及原始SHA见RUN_MANIFEST。
+- `FILE_LIST.csv`及`SHA256SUMS.txt`为清单与校验，均不含自身，避免循环。
 
-正式RTL、旧BIT及板上配置未在本轮改动。没有NoAux BIT，不用Corrected.bit冒充。
-
-从原始CSV复核可调用 `scripts/analyze_rtl.py` 中的 `analyze(case,delay)`；运行参数由 `run_rtl.py` 保存。再次仿真应在独立副本使用新的输出目录，禁止覆盖原始记录。真实ASCII运行目录为 `codex_generate/.vivado_work/tdc_noaux_20261107_04`，没有创建虚拟盘符。功能FIFO模型只验证序列，不代表器件CDC/时序已通过。未重新拟合参数或剔除异常数据。
+原完整RTL补充模型的短间隔FAIL仍保留；通过范围门不等于无条件支持<2ns输入。未重新校准或拟合参数，也没有把数字验收结果当作上板修复结论。

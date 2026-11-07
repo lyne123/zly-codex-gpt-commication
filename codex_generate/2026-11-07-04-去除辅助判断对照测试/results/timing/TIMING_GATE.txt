@@ -1,0 +1,5 @@
+core_setup_negative=0
+core_hold_negative=0
+ENABLE_AUX_CONFIRM=0
+additional_cycles_vs_Corrected=0
+hardware_programmed=0

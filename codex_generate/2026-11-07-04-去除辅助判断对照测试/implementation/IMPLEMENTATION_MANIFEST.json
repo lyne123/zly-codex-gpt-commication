@@ -1,0 +1,46 @@
+{
+  "files": {
+    "NoAux_routed.dcp": {
+      "size": 3882840,
+      "sha256": "b5fc73119676dbe56468269dabce2db5ce8466328f4322a0669fd572c2b54a26"
+    },
+    "NoAux_synth.dcp": {
+      "size": 1701120,
+      "sha256": "b275543f05fe1b1247bb225c68fbd9ebde3cd726f3207942ffc4748038f49ea2"
+    },
+    "post_route_max.sdf": {
+      "size": 12849644,
+      "sha256": "00085742509528ab0a99037e0315ad44b3e7b00d28184fc4cdf98f3ad00a07eb"
+    },
+    "post_route_timing.v": {
+      "size": 5845154,
+      "sha256": "9848da8b2bcca7b97d48d06e13daed179e2b1a046eca69252d48569654674827"
+    },
+    "effective_constraints.xdc": {
+      "size": 533412,
+      "sha256": "7c053ccd95d053bd446a84dcc993b08633ba943bc953f0d36a2da32ae9bf7c25"
+    }
+  },
+  "NoAux_generic": 0,
+  "hardware_programmed": false,
+  "NoAux_BIT_generated": true,
+  "BIT_MANIFEST": {
+    "pass_all": true,
+    "acceptance_scope": "input high and low >=2000ps",
+    "ENABLE_AUX_CONFIRM": 0,
+    "extra_cycles_vs_Corrected": 0,
+    "DCP_sha256": "b5fc73119676dbe56468269dabce2db5ce8466328f4322a0669fd572c2b54a26",
+    "hardware_programmed": false,
+    "original_RTL_supplemental_FAIL_preserved": true,
+    "files": {
+      "NoAux.bit": {
+        "size": 11443721,
+        "sha256": "967f33ac042342b99c2c9fe9c03250c97b3ca8fad1ea1b03a4f0cf55dd609604"
+      },
+      "NoAux.ltx": {
+        "size": 15916,
+        "sha256": "dcf8e20b6389ec92e7f90afb3bd878865c86cfb940755f67d223603cbac0b2c8"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+time_ps,code,event_ids,classification,basis
+238748150,100,2917;2918;2918,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
+238750150,103,2917;2918,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
+238762150,2,2918,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
+242048150,100,2983;2984;2984,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
+242050150,103,2983;2984,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
+242062150,2,2984,OUT_OF_SCOPE,固定RTL流水和实际事件ID；Merge错误另经状态重放校验
