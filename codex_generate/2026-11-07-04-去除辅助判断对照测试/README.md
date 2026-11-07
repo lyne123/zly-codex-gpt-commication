@@ -1,6 +1,8 @@
 # 2026-11-07-04 去除辅助判断对照测试
 
-**约定范围验收通过**，高电平和相邻低电平均≥2ns。NoAux BIT生成状态：True；本轮未烧录FPGA/Flash，正式RTL与Corrected BIT保留。
+**离线约定范围验收通过**，高电平和相邻低电平均≥2ns。NoAux BIT生成状态：True；原离线交付时未烧录FPGA/Flash，正式RTL与Corrected BIT保留。
+
+**后续上板实测：零配对错误验收 FAIL。** 用户授权后已成功下载NoAux，未写Flash。10MHz/50%下前10000个有效输出同时记录重复上升沿202次、孤立下降沿29次、时间越界0次；样本STD=76.055889ps，MAE相对50ns设定值=384.312500ps，MaxAbs=779ps。全部10011个有效输出、50份原始ILA CSV及之前失败日志保留，见[上板报告](HARDWARE_REPORT.md)。缺少示波器实测参考，不作绝对准确度结论；没有修改RTL或重新构建。
 
 - [详细结果](RESULTS.md)、[范围确认](SCOPE_DECISION.md)、[时序报告](TIMING_REPORT.md)、[机器状态](VALIDATION.json)。
 - `rtl/`：完整参数化候选；默认ENABLE_AUX_CONFIRM=1，NoAux编译固定0。`reference/rtl/`及`RTL.diff`保留原版和差异。

@@ -1,0 +1,11 @@
+programming=volatile_FPGA_RAM
+flash_programmed=0
+BIT=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_01/NoAux.bit
+LTX=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_01/NoAux.ltx
+targets=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+target=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+part=xc7k325t
+programming_started=1
+attempt_status=FAILED
+reason=ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+

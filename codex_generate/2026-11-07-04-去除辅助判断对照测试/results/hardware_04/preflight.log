@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 17:00:17 2026
+# Process ID: 27616
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04
+# Command line: vivado.exe -mode batch -source ./read_board_status.tcl -log ./preflight.log -journal ./preflight.jou -tclargs ./config.tcl
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/./preflight.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04\./preflight.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source ./read_board_status.tcl
+# source -encoding utf-8 [lindex $argv 0]
+## set capture_dir {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04}
+## set bit_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.bit}
+## set ltx_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.ltx}
+## set program_requested 1
+## set max_windows 100
+## set target_valid 10000
+# set opened 0
+# set out [open $capture_dir/CONFIG_READBACK.txt w]
+# fconfigure $out -encoding utf-8
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:127.0.0.1:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-07:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+INFO: [Labtools 27-1435] Device xc7k325t (JTAG device index = 0) is not programmed (DONE status = 0).
+refresh_hw_device: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3229.809 ; gain = 2198.586
+# set rc [catch {
+#     open_hw_manager
+#     connect_hw_server -url localhost:3121 -cs_url TCP:127.0.0.1:3042
+#     set target [get_hw_targets -quiet -filter {NAME =~ *C3067D03ABCD*}]
+#     if {[llength $target]!=1} {error "需要唯一的既有C306�?�?"}
+#     set_property PARAM.FREQUENCY 1000000 $target
+#     open_hw_target $target
+#     set opened 1
+#     set dev [get_hw_devices -quiet -filter {PART =~ xc7k325t*}]
+#     if {[llength $dev]!=1} {error "需要唯一XC7K325T"}
+#     current_hw_device $dev
+#     refresh_hw_device -update_hw_probes false $dev
+#     foreach p [lsort [list_property $dev]] {
+#         if {[string match REGISTER.CONFIG_STATUS* $p] || [string match REGISTER.BOOT_STATUS* $p]} {
+#             if {![catch {get_property $p $dev} v]} {puts $out "$p=$v"}
+#         }
+#     }
+#     puts $out "part=[get_property PART $dev]"
+# } reason]
+# puts $out "read_status=[expr {$rc ? {FAILED} : {COMPLETED}}]\nreason=$reason"
+# close $out
+# if {$opened} {catch {close_hw_target}}
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+# catch {close_hw_manager}
+# if {$rc} {puts stderr $reason;exit 1}
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 17:00:34 2026...

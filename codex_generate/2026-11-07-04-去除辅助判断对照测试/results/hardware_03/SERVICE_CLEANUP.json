@@ -1,0 +1,8 @@
+{
+  "reason": "清理Codex既有调试服务，等待板卡断电重启；没有终止Vivado",
+  "stopped_owned_services": [
+    37420,
+    37276,
+    3920
+  ]
+}

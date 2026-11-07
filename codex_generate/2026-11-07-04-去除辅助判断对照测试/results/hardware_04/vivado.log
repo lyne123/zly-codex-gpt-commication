@@ -1,0 +1,294 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov  7 17:00:49 2026
+# Process ID: 2188
+# Current directory: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04
+# Command line: vivado.exe -mode batch -source ./program_noaux.tcl -log ./vivado.log -journal ./vivado.jou -tclargs ./config.tcl
+# Log file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/./vivado.log
+# Journal file: D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04\./vivado.jou
+# Running On: Lyne, OS: Windows, CPU Frequency: 3686 MHz, CPU Physical cores: 10, Host memory: 16984 MB
+#-----------------------------------------------------------
+source ./program_noaux.tcl
+# source -encoding utf-8 [lindex $argv 0]
+## set capture_dir {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04}
+## set bit_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.bit}
+## set ltx_file {D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.ltx}
+## set program_requested 1
+## set max_windows 100
+## set target_valid 10000
+# set opened 0
+# set f [open $capture_dir/HARDWARE_STATUS.txt w]
+# fconfigure $f -encoding utf-8
+# puts $f "programming=volatile_FPGA_RAM\nflash_programmed=0\nBIT=$bit_file\nLTX=$ltx_file"
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:127.0.0.1:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-07:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+NOAUX_PROGRAM_START
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:01:34 ; elapsed = 00:01:39 . Memory (MB): peak = 1028.098 ; gain = 0.000
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 2 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 3228.461 ; gain = 2200.363
+NOAUX_CONFIG_AND_TWO_ILAS_VERIFIED
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:44
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:44
+NOAUX_ACTIVITY_CAPTURE=1 VALID=204 TOTAL=204 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:44
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:44
+NOAUX_ACTIVITY_CAPTURE=2 VALID=205 TOTAL=409 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:44
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:44
+NOAUX_ACTIVITY_CAPTURE=3 VALID=205 TOTAL=614 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:45
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:45
+NOAUX_ACTIVITY_CAPTURE=4 VALID=200 TOTAL=814 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:45
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:45
+NOAUX_ACTIVITY_CAPTURE=5 VALID=205 TOTAL=1019 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:45
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:45
+NOAUX_ACTIVITY_CAPTURE=6 VALID=196 TOTAL=1215 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:45
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:45
+NOAUX_ACTIVITY_CAPTURE=7 VALID=204 TOTAL=1419 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:46
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:46
+NOAUX_ACTIVITY_CAPTURE=8 VALID=205 TOTAL=1624 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:46
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:46
+NOAUX_ACTIVITY_CAPTURE=9 VALID=82 TOTAL=1706 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:46
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:46
+NOAUX_ACTIVITY_CAPTURE=10 VALID=205 TOTAL=1911 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:47
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:47
+NOAUX_ACTIVITY_CAPTURE=11 VALID=192 TOTAL=2103 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:47
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:47
+NOAUX_ACTIVITY_CAPTURE=12 VALID=205 TOTAL=2308 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:47
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:47
+NOAUX_ACTIVITY_CAPTURE=13 VALID=205 TOTAL=2513 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:47
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:47
+NOAUX_ACTIVITY_CAPTURE=14 VALID=205 TOTAL=2718 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:48
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:48
+NOAUX_ACTIVITY_CAPTURE=15 VALID=205 TOTAL=2923 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:48
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:48
+NOAUX_ACTIVITY_CAPTURE=16 VALID=204 TOTAL=3127 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:48
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:48
+NOAUX_ACTIVITY_CAPTURE=17 VALID=205 TOTAL=3332 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:48
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:48
+NOAUX_ACTIVITY_CAPTURE=18 VALID=205 TOTAL=3537 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:49
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:49
+NOAUX_ACTIVITY_CAPTURE=19 VALID=205 TOTAL=3742 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:49
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:49
+NOAUX_ACTIVITY_CAPTURE=20 VALID=204 TOTAL=3946 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:49
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:49
+NOAUX_ACTIVITY_CAPTURE=21 VALID=205 TOTAL=4151 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:50
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:50
+NOAUX_ACTIVITY_CAPTURE=22 VALID=205 TOTAL=4356 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:50
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:50
+NOAUX_ACTIVITY_CAPTURE=23 VALID=205 TOTAL=4561 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:50
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:50
+NOAUX_ACTIVITY_CAPTURE=24 VALID=205 TOTAL=4766 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:51
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:51
+NOAUX_ACTIVITY_CAPTURE=25 VALID=205 TOTAL=4971 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:51
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:51
+NOAUX_ACTIVITY_CAPTURE=26 VALID=205 TOTAL=5176 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:51
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:51
+NOAUX_ACTIVITY_CAPTURE=27 VALID=205 TOTAL=5381 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:52
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:52
+NOAUX_ACTIVITY_CAPTURE=28 VALID=205 TOTAL=5586 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:52
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:52
+NOAUX_ACTIVITY_CAPTURE=29 VALID=205 TOTAL=5791 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:52
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:52
+NOAUX_ACTIVITY_CAPTURE=30 VALID=204 TOTAL=5995 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:52
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:52
+NOAUX_ACTIVITY_CAPTURE=31 VALID=205 TOTAL=6200 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:53
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:53
+NOAUX_ACTIVITY_CAPTURE=32 VALID=205 TOTAL=6405 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:53
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:53
+NOAUX_ACTIVITY_CAPTURE=33 VALID=205 TOTAL=6610 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:53
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:53
+NOAUX_ACTIVITY_CAPTURE=34 VALID=204 TOTAL=6814 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:54
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:54
+NOAUX_ACTIVITY_CAPTURE=35 VALID=129 TOTAL=6943 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:54
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:54
+NOAUX_ACTIVITY_CAPTURE=36 VALID=205 TOTAL=7148 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:54
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:54
+NOAUX_ACTIVITY_CAPTURE=37 VALID=202 TOTAL=7350 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:55
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:55
+NOAUX_ACTIVITY_CAPTURE=38 VALID=205 TOTAL=7555 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:55
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:55
+NOAUX_ACTIVITY_CAPTURE=39 VALID=204 TOTAL=7759 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:55
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:55
+NOAUX_ACTIVITY_CAPTURE=40 VALID=205 TOTAL=7964 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:55
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:55
+NOAUX_ACTIVITY_CAPTURE=41 VALID=204 TOTAL=8168 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:56
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:56
+NOAUX_ACTIVITY_CAPTURE=42 VALID=205 TOTAL=8373 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:56
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:56
+NOAUX_ACTIVITY_CAPTURE=43 VALID=205 TOTAL=8578 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:56
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:56
+NOAUX_ACTIVITY_CAPTURE=44 VALID=204 TOTAL=8782 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:56
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:56
+NOAUX_ACTIVITY_CAPTURE=45 VALID=205 TOTAL=8987 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:57
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:57
+NOAUX_ACTIVITY_CAPTURE=46 VALID=205 TOTAL=9192 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:57
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:57
+NOAUX_ACTIVITY_CAPTURE=47 VALID=205 TOTAL=9397 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:57
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:57
+NOAUX_ACTIVITY_CAPTURE=48 VALID=205 TOTAL=9602 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:58
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:58
+NOAUX_ACTIVITY_CAPTURE=49 VALID=205 TOTAL=9807 TARGET=10000
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_2' trigger was armed at 2026-Nov-07 17:02:58
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_2' triggered at 2026-Nov-07 17:02:58
+NOAUX_ACTIVITY_CAPTURE=50 VALID=204 TOTAL=10011 TARGET=10000
+# set rc [catch {
+#     open_hw_manager
+#     connect_hw_server -url localhost:3121 -cs_url TCP:127.0.0.1:3042
+#     set targets [get_hw_targets -quiet]
+#     puts $f "targets=$targets"
+#     set target [get_hw_targets -quiet -filter {NAME =~ *C3067D03ABCD*}]
+#     if {[llength $target]!=1} {error "没有�?一的既有C306板卡，不烧录其他�?�?"}
+#     set_property PARAM.FREQUENCY 1000000 $target
+#     open_hw_target $target
+#     set opened 1
+#     set dev [get_hw_devices -quiet -filter {PART =~ xc7k325t*}]
+#     if {[llength $dev]!=1} {error "需要唯一XC7K325T器件"}
+#     current_hw_device $dev
+#     puts $f "target=$target\npart=[get_property PART $dev]"
+#     flush $f
+#     set_property PROGRAM.FILE $bit_file $dev
+#     set_property PROBES.FILE $ltx_file $dev
+#     set_property FULL_PROBES.FILE $ltx_file $dev
+#     if {![info exists program_requested] || $program_requested} {
+#         puts $f "programming_started=1"
+#         puts "NOAUX_PROGRAM_START"
+#         flush stdout
+#         program_hw_devices $dev
+#         puts $f "programming_completed=1"
+#     } else {
+#         # �?复�?�刚刚完成的配置，不复位、不重烧，保留原测量通路连续运�?��?
+#         puts $f "programming_started=0\nexisting_configuration_reused=1"
+#         puts "NOAUX_REUSE_CONFIGURATION_NO_REPROGRAMMING"
+#     }
+#     flush $f
+#     after 2000
+#     refresh_hw_device $dev
+#     set cfg [open $capture_dir/CONFIG_AFTER.txt w]
+#     foreach p [lsort [list_property $dev]] {
+#         if {[string match REGISTER.CONFIG_STATUS* $p] || [string match REGISTER.BOOT_STATUS* $p]} {
+#             if {![catch {get_property $p $dev} value]} {puts $cfg "$p=$value"}
+#         }
+#     }
+#     close $cfg
+#     if {[get_property REGISTER.CONFIG_STATUS.BIT14_DONE_PIN $dev]!=1 ||
+#         [get_property REGISTER.CONFIG_STATUS.BIT00_CRC_ERROR $dev]!=0 ||
+#         [get_property REGISTER.CONFIG_STATUS.BIT15_IDCODE_ERROR $dev]!=0} {error "配置状态未通过DONE/CRC/IDCODE检�?"}
+#     foreach {name expected} {u_ila2 C83C094952F254A2A90834971C4269BE u_ila3 005AAA8F6BEB5365914C104C10152EC8} {
+#         set ila [get_hw_ilas -of_objects $dev -filter "CELL_NAME == $name"]
+#         if {[llength $ila]!=1 || [string toupper [get_property CORE_UUID $ila]] ne $expected} {error "$name 与本�?LTX不匹�?"}
+#         puts $f "$name=[get_property CORE_UUID $ila]"
+#     }
+#     puts "NOAUX_CONFIG_AND_TWO_ILAS_VERIFIED"
+#     flush stdout
+#     set ila [get_hw_ilas -of_objects $dev -filter {CELL_NAME == u_ila3}]
+#     foreach p [get_hw_probes -of_objects $ila] {
+#         set_property DISPLAY_RADIX UNSIGNED $p
+#         set width [get_property WIDTH $p]
+#         set_property TRIGGER_COMPARE_VALUE "eq${width}'b[string repeat X $width]" $p
+#     }
+#     set_property CONTROL.DATA_DEPTH 2048 $ila
+#     set_property CONTROL.WINDOW_COUNT 1 $ila
+#     set_property CONTROL.TRIGGER_POSITION 0 $ila
+#     set count 0
+#     set limit [expr {[info exists max_windows] ? $max_windows : 3}]
+#     set goal [expr {[info exists target_valid] ? $target_valid : 0}]
+#     for {set n 1} {$n<=$limit && (!$goal || $count<$goal)} {incr n} {
+#         run_hw_ila -trigger_now $ila
+#         wait_on_hw_ila -timeout 0.1 $ila
+#         set data [upload_hw_ila_data $ila]
+#         set output $capture_dir/[format "ACTIVITY_%02d.csv" $n]
+#         if {[file exists $output]} {error "禁�?��?�盖已有原��采�?"}
+#         write_hw_ila_data -csv_file $output $data
+#         # 复用既有采集流程的valid计数规则；所有�?�录都保留，不筛选�?�群脉�?��?
+#         set stream [open $output r]
+#         set lines [split [string trim [read $stream]] \n]
+#         close $stream
+#         if {[llength $lines]!=2050} {error "ILA导出行数不完整，保留文件"}
+#         set columns [split [string trim [lindex $lines 0]] ,]
+#         set vi [lsearch -exact $columns pulse_width_valid_100m]
+#         set wi [lsearch -glob $columns {pulse_width_ps_100m*}]
+#         if {$vi<0 || $wi<0} {error "缺少有效位或脉�?�列"}
+#         set batch_count 0
+#         foreach line [lrange $lines 2 end] {
+#             set fields [split [string trim $line] ,]
+#             set value [lindex $fields $wi]
+#             if {[lindex $fields $vi] eq "1" && [string is integer -strict $value] && $value>=0 && $value<2048000} {incr batch_count}
+#         }
+#         incr count $batch_count
+#         puts "NOAUX_ACTIVITY_CAPTURE=$n VALID=$batch_count TOTAL=$count TARGET=$goal"
+#         flush stdout
+#         if {$goal && $n>=3 && $count==0} {error "连续三窗没有有效输出，保留采样并检查输�?"}
+#     }
+#     puts $f "configuration_verified=1\nILA_activity_windows=[expr {$n-1}]\nvalid_measurements=$count\ntarget_valid=$goal"
+#     if {$goal && $count<$goal} {error "有效测量不足；保留全部已完成窗口"}
+# } reason]
+# puts $f "attempt_status=[expr {$rc ? {FAILED} : {COMPLETED}}]\nreason=$reason"
+# close $f
+# if {$opened} {catch {close_hw_target}}
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+# catch {close_hw_manager}
+# if {$rc} {puts stderr "NOAUX_BOARD_FAILED=$reason";exit 1}
+# puts "NOAUX_BOARD_BRINGUP_COMPLETE"
+NOAUX_BOARD_BRINGUP_COMPLETE
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 17:02:58 2026...

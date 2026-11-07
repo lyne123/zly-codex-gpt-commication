@@ -1,0 +1,7 @@
+{
+  "old_parent_pid": 14464,
+  "reason": "已确认是上一轮Codex启动的调试服务，用户已释放硬件目标",
+  "old_pid": 29424,
+  "port": 3121,
+  "new_pid": 37420
+}

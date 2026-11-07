@@ -1,0 +1,67 @@
+{
+  "BIT_sha256": "967f33ac042342b99c2c9fe9c03250c97b3ca8fad1ea1b03a4f0cf55dd609604",
+  "state": "NoAux",
+  "ENABLE_AUX_CONFIRM": 0,
+  "source_commit": "05b35fc946a0dd87c28ff6a1695bd4f8de34252a",
+  "attempt": "hardware_04",
+  "input_condition_source": "沿用最近用户明确确认10MHz/50%，通过本次ILA粗采样复核输入活动",
+  "nominal_frequency_MHz": 10,
+  "nominal_duty_percent": 50,
+  "nominal_width_ps": 50000,
+  "reference_width_ps": null,
+  "primary_valid": 10000,
+  "total_valid_preserved": 10011,
+  "extra_valid_preserved": 11,
+  "counts_all": {
+    "buffer_rows": 102400,
+    "valid_measurements": 10011,
+    "idle_cycles": 92389,
+    "invalid_width_events": 0,
+    "unknown_valid_cycles": 0,
+    "error_events": 231,
+    "error_unknown_cycles": 0
+  },
+  "primary_error_codes": {
+    "2": 29,
+    "1": 202
+  },
+  "all_error_codes": {
+    "2": 29,
+    "1": 202
+  },
+  "repeat_rise": 202,
+  "orphan_fall": 29,
+  "range_error": 0,
+  "mean_width_ps": 50384.3125,
+  "sample_STD_ps": 76.05588927610641,
+  "MAE_vs_setpoint_ps": 384.3125,
+  "RMSE_vs_setpoint_ps": 391.7652581585049,
+  "MaxAbs_vs_setpoint_ps": 779,
+  "minimum_width_ps": 50015,
+  "maximum_width_ps": 50779,
+  "absolute_accuracy_available": false,
+  "zero_pairing_errors_requirement_met": false,
+  "no_outlier_removal": true,
+  "per_pulse_error_association_available": false,
+  "FIFO_overflow_observable": false,
+  "inter_window_input_events_unobserved": true,
+  "input_event_count_available": false,
+  "full_AB_completed": false,
+  "FPGA_programming_verified": true,
+  "flash_programmed": false,
+  "PWM_100MHz_observation": {
+    "level_counts": {
+      "0": 51003,
+      "1": 51397
+    },
+    "period_sample_counts": {
+      "10": 10166,
+      "9": 8,
+      "11": 7
+    },
+    "median_period_ps": 100000,
+    "high_fraction": 0.501923828125,
+    "note": "粗采样用于复核输入活动，不能排除短毛刺或提供校准脉宽参考"
+  },
+  "selection_rule": "采集顺序前10000个valid且范围内可读的输出；同期全部错误计入；额外、无效、原始记录全部保留"
+}

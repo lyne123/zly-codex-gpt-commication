@@ -1,0 +1,29 @@
+{
+  "attempt": 4,
+  "runtime": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\.vivado_work\\tdc_noaux_20261107_04\\hardware_04",
+  "evidence": "D:\\00-code\\FPGA_Prj\\fpga_tdc_v3_cal\\codex_generate\\2026-11-07-04-去除辅助判断对照测试\\results\\hardware_04",
+  "authorization": "用户：好的，我们现在上板实测一下",
+  "source_commit": "05b35fc946a0dd87c28ff6a1695bd4f8de34252a",
+  "timestamp_utc": "2026-11-07T09:00:08.179861+00:00",
+  "files": {
+    "NoAux.bit": {
+      "size": 11443721,
+      "sha256": "967f33ac042342b99c2c9fe9c03250c97b3ca8fad1ea1b03a4f0cf55dd609604"
+    },
+    "NoAux.ltx": {
+      "size": 15916,
+      "sha256": "dcf8e20b6389ec92e7f90afb3bd878865c86cfb940755f67d223603cbac0b2c8"
+    }
+  },
+  "state": "NoAux",
+  "ENABLE_AUX_CONFIRM": 0,
+  "input_frequency_MHz": 10,
+  "input_duty_percent": 50,
+  "nominal_width_ps": 50000,
+  "condition_source": "沿用最近用户明确确认10MHz/50%，通过本次ILA粗采样复核输入活动",
+  "reference_width_ps": null,
+  "flash_programming": false,
+  "target_valid": 10000,
+  "retry_authorization": "用户确认已释放并重插JTAG，板卡已上电",
+  "recovery": "用户确认板卡已断电重启；重新启动Codex调试服务，先只读检查"
+}

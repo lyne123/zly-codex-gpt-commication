@@ -1,0 +1,19 @@
+{
+  "commit": "94d69bf159db3cd2269616f44e17a23eb2b9d467",
+  "files": [
+    {
+      "path": "codex_generate/2026-11-07-03-辅助跨帧匹配时序优化/results/hardware_validation_10MHz_50/SUMMARY.json",
+      "sha256": "74a26db311c45e83ab94ad77df3c8aa63a452445335f974a4a1cd3acebf26624",
+      "size": 1611,
+      "immutable_url": "https://github.com/lyne123/zly-codex-gpt-commication/blob/94d69bf159db3cd2269616f44e17a23eb2b9d467/codex_generate/2026-11-07-03-辅助跨帧匹配时序优化/results/hardware_validation_10MHz_50/SUMMARY.json"
+    },
+    {
+      "path": "codex_generate/2026-11-07-03-辅助跨帧匹配时序优化/results/hardware_validation_10MHz_50/SAMPLES.csv",
+      "sha256": "ab03a80113a619c68102789d65d29621755c532b74be2cae04a61ad84fc060cf",
+      "size": 212567,
+      "immutable_url": "https://github.com/lyne123/zly-codex-gpt-commication/blob/94d69bf159db3cd2269616f44e17a23eb2b9d467/codex_generate/2026-11-07-03-辅助跨帧匹配时序优化/results/hardware_validation_10MHz_50/SAMPLES.csv"
+    }
+  ],
+  "not_contemporaneous_AB": true,
+  "MAE_definition": "mean(abs(T_i-50000 ps)); historical samples retained in referenced immutable commit"
+}

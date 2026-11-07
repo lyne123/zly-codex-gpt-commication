@@ -1,0 +1,17 @@
+programming=volatile_FPGA_RAM
+flash_programmed=0
+BIT=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.bit
+LTX=D:/00-code/FPGA_Prj/fpga_tdc_v3_cal/codex_generate/.vivado_work/tdc_noaux_20261107_04/hardware_04/NoAux.ltx
+targets=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+target=localhost:3121/xilinx_tcf/Digilent/C3067D03ABCD
+part=xc7k325t
+programming_started=1
+programming_completed=1
+u_ila2=C83C094952F254A2A90834971C4269BE
+u_ila3=005AAA8F6BEB5365914C104C10152EC8
+configuration_verified=1
+ILA_activity_windows=50
+valid_measurements=10011
+target_valid=10000
+attempt_status=COMPLETED
+reason=
